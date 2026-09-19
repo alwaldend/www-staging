@@ -44,7 +44,7 @@
 
 	<meta itemprop="name" content="Al">
 	<meta itemprop="description" content="Repository command runner and Bazel configuration rules">
-	<meta itemprop="dateModified" content="2026-09-19T21:45:24+03:00">
+	<meta itemprop="dateModified" content="2026-09-19T22:49:53+03:00">
 	<meta itemprop="wordCount" content="105">
 	<meta itemprop="keywords" content="Bzl_rules,Fp,Proto">
 	<meta name="twitter:card" content="summary">
@@ -145,7 +145,7 @@
     aria-label='Search this site…'
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.3c874201433d2f77122ffd7d6733ca08.json"
+    data-offline-search-index-json-src="/offline-search-index.f6ecdb5e27d237ca51e6da89f58c393e.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="10"
   >
@@ -417,7 +417,7 @@ a fallback; service-specific logout requirements are documented with each plugin
         data-bs-target="#print-652226f353b09ab1409a7a9d983ce444-release-0a118e046f55db876bac8b68ea96694d-list-0_collapse"
         aria-expanded="false"
         aria-controls="print-652226f353b09ab1409a7a9d983ce444-release-0a118e046f55db876bac8b68ea96694d-list-0_collapse"
-      >Changelog<span class="badge rounded-pill bg-secondary ms-1">141</span>
+      >Changelog<span class="badge rounded-pill bg-secondary ms-1">143</span>
 </button>
     </h3>
     <div
@@ -427,6 +427,160 @@ a fallback; service-specific logout requirements are documented with each plugin
       data-bs-parent="#print-652226f353b09ab1409a7a9d983ce444-release-0a118e046f55db876bac8b68ea96694d-list-0_accordion"
     >
       <div class="accordion-body"><ul class="list-group">
+          <li class="list-group-item my-auto">
+            <p>Center the project index on the documentation axis</p>
+<p>The section index resolved layouts/projects/list.html inside the default
+baseof, whose bare <main class="td-main"> gave it no grid column and no
+padding offset from the .td-main main rule, so it rendered full width at
+48px with a 128px heading.</p>
+<p>Give the section its own projects_index type with a baseof that keeps the
+documentation row and column but omits both asides. The index now starts
+at 88px and centers at 259px with a 771px column, matching /docs/ and
+/blog/ exactly.</p>
+
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">248c9e0bc2b857a4f0b390054a98e699fc571c70</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            <p>Render the project index in the documentation column</p>
+<p>The index rendered in the layout&rsquo;s root wrapper, so its text spanned the full
+page width instead of the column the documentation and blog pages use. That
+made it read as a stray full-width list rather than a page of the site.</p>
+<p>Lay the index out like a documentation list page: the documentation column
+(<code>col-12 col-md-9 col-xl-8 ps-md-5</code>) inside a row, the section description as
+a lead, and the theme&rsquo;s <code>section-index</code> entries separated by a panel line. The
+documentation sidebars are deliberately absent, so the list stays a plain
+single-column page.</p>
+<p>LLM-disclaimer: This commit was generated by an LLM.</p>
+
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">b3cc1fccfb7a27c5cf9b28ca657026c33e49b327</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                PGP
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">-----BEGIN SSH SIGNATURE-----
+U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAg0/OoO0fyfgVXnUZTMZXlNFA3cn
+78YxSrrdPiskRJNxUAAAADZ2l0AAAAAAAAAAZzaGE1MTIAAABTAAAAC3NzaC1lZDI1NTE5
+AAAAQFOgy7fVgdKpeOP&#43;2TrdMHQOB6LPH/8RDp0N47xpswOBosBR2ZGUhdusM21lHvn7/4
+f4Okk7vq4x89BFruoh&#43;gA=
+-----END SSH SIGNATURE-----
+</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
           <li class="list-group-item my-auto">
             <p>Lay the project index out as a single-column section list</p>
 <p>The card grid read as a separate component next to the rest of the site. The
@@ -12008,7 +12162,7 @@ AAAAQP&#43;VcOIIqPR8DY7q4bmucDZO9dJLiApozQqq/IQXHkw4cm9pr98jiPQVSU0J4UBBtx
         data-bs-target="#print-0a118e046f55db876bac8b68ea96694d-release-0a118e046f55db876bac8b68ea96694d-page-0_collapse"
         aria-expanded="true"
         aria-controls="print-0a118e046f55db876bac8b68ea96694d-release-0a118e046f55db876bac8b68ea96694d-page-0_collapse"
-      >Changelog<span class="badge rounded-pill bg-secondary ms-1">141</span>
+      >Changelog<span class="badge rounded-pill bg-secondary ms-1">143</span>
 </button>
     </h3>
     <div
@@ -12018,6 +12172,160 @@ AAAAQP&#43;VcOIIqPR8DY7q4bmucDZO9dJLiApozQqq/IQXHkw4cm9pr98jiPQVSU0J4UBBtx
       data-bs-parent="#print-0a118e046f55db876bac8b68ea96694d-release-0a118e046f55db876bac8b68ea96694d-page-0_accordion"
     >
       <div class="accordion-body"><ul class="list-group">
+          <li class="list-group-item my-auto">
+            <p>Center the project index on the documentation axis</p>
+<p>The section index resolved layouts/projects/list.html inside the default
+baseof, whose bare <main class="td-main"> gave it no grid column and no
+padding offset from the .td-main main rule, so it rendered full width at
+48px with a 128px heading.</p>
+<p>Give the section its own projects_index type with a baseof that keeps the
+documentation row and column but omits both asides. The index now starts
+at 88px and centers at 259px with a 771px column, matching /docs/ and
+/blog/ exactly.</p>
+
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">248c9e0bc2b857a4f0b390054a98e699fc571c70</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            <p>Render the project index in the documentation column</p>
+<p>The index rendered in the layout&rsquo;s root wrapper, so its text spanned the full
+page width instead of the column the documentation and blog pages use. That
+made it read as a stray full-width list rather than a page of the site.</p>
+<p>Lay the index out like a documentation list page: the documentation column
+(<code>col-12 col-md-9 col-xl-8 ps-md-5</code>) inside a row, the section description as
+a lead, and the theme&rsquo;s <code>section-index</code> entries separated by a panel line. The
+documentation sidebars are deliberately absent, so the list stays a plain
+single-column page.</p>
+<p>LLM-disclaimer: This commit was generated by an LLM.</p>
+
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">b3cc1fccfb7a27c5cf9b28ca657026c33e49b327</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                PGP
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">-----BEGIN SSH SIGNATURE-----
+U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAg0/OoO0fyfgVXnUZTMZXlNFA3cn
+78YxSrrdPiskRJNxUAAAADZ2l0AAAAAAAAAAZzaGE1MTIAAABTAAAAC3NzaC1lZDI1NTE5
+AAAAQFOgy7fVgdKpeOP&#43;2TrdMHQOB6LPH/8RDp0N47xpswOBosBR2ZGUhdusM21lHvn7/4
+f4Okk7vq4x89BFruoh&#43;gA=
+-----END SSH SIGNATURE-----
+</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
           <li class="list-group-item my-auto">
             <p>Lay the project index out as a single-column section list</p>
 <p>The card grid read as a separate component next to the rest of the site. The
