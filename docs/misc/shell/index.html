@@ -45,13 +45,13 @@ A subshell starts out as an almost identical copy of the original shell process.
 	<meta property="og:locale" content="en">
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="docs">
-		<meta property="article:modified_time" content="2026-09-19T21:26:48+03:00">
+		<meta property="article:modified_time" content="2026-09-19T21:45:24+03:00">
 
 	<meta itemprop="name" content="Shell">
 	<meta itemprop="description" content="Deactivate venv in subshellA subshell doesn’t have the deactivate function, so you have to use a workaround:
 . .venv/bin/activate ( echo &#34;subshell, still in venv: $(which python)&#34; &amp;&amp; \ . &#34;$(dirname &#34;$(which python)&#34;)/activate&#34; &amp;&amp; \ deactivate &amp;&amp; \ echo &#34;subshell, out of venv: $(which python)&#34; ) A subshell () is different from a subprocesshttps://unix.stackexchange.com/a/138498
 A subshell starts out as an almost identical copy of the original shell process. Under the hood, the shell calls the fork system call1, which creates a new process whose code and memory are copies2. When the subshell is created, there are very few differences between it and its parent. In particular, they have the same variables. Even the $$ special variable keeps the same value in subshells: it’s the original shell’s process ID. Similarly $PPID is the PID of the parent of the original shell.">
-	<meta itemprop="dateModified" content="2026-09-19T21:26:48+03:00">
+	<meta itemprop="dateModified" content="2026-09-19T21:45:24+03:00">
 	<meta itemprop="wordCount" content="406">
 	<meta itemprop="keywords" content="Misc">
 	<meta name="twitter:card" content="summary">
@@ -154,7 +154,7 @@ A subshell starts out as an almost identical copy of the original shell process.
     aria-label='Search this site…'
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.10145167ec53fcd4968a4a86c9046145.json"
+    data-offline-search-index-json-src="/offline-search-index.3c874201433d2f77122ffd7d6733ca08.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="10"
   >
@@ -179,7 +179,7 @@ A subshell starts out as an almost identical copy of the original shell process.
     aria-label='Search this site…'
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.10145167ec53fcd4968a4a86c9046145.json"
+    data-offline-search-index-json-src="/offline-search-index.3c874201433d2f77122ffd7d6733ca08.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="10"
   >
