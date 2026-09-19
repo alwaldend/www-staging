@@ -47,7 +47,7 @@ If /hooks is empty in a linked Git worktree, check the primary checkout’s .cod
 	<meta itemprop="name" content="Alwaldend">
 	<meta itemprop="description" content="Bazel session cleanupThe repository’s .codex/config.toml queues asynchronous Bazel expunge when a Codex session ends. Review and trust the hook with /hooks in Codex; project hooks do not run until trusted. A completed assistant turn does not trigger cleanup.
 If /hooks is empty in a linked Git worktree, check the primary checkout’s .codex/config.toml. In Codex CLI 0.153.4, observed on 2026-09-06, config/read returned the primary checkout’s configuration even though its project-layer metadata named the linked worktree. That primary configuration had no hooks, so hooks/list returned an empty list. The exact worktree TOML listed both hooks in an isolated normal checkout; separate user-config probes also accepted both TOML and JSON. Changing formats is therefore not an established fix. Merge the hook configuration and update the primary checkout, then start a new CLI session and check /hooks to trust it. Recheck configuration resolution after upgrading Codex; this is an observed version-specific behavior, not a guarantee for every release.">
-	<meta itemprop="dateModified" content="2026-09-19T20:06:21+03:00">
+	<meta itemprop="dateModified" content="2026-09-19T20:45:41+03:00">
 	<meta itemprop="wordCount" content="393">
 	<meta itemprop="keywords" content="Tool">
 	<meta name="twitter:card" content="summary">
@@ -149,7 +149,7 @@ If /hooks is empty in a linked Git worktree, check the primary checkout’s .cod
     aria-label='Search this site…'
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-index-json-src="/offline-search-index.9c23acc4af0be8dfcb90014b94dad41b.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="10"
   >
@@ -174,7 +174,7 @@ If /hooks is empty in a linked Git worktree, check the primary checkout’s .cod
     aria-label='Search this site…'
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-index-json-src="/offline-search-index.9c23acc4af0be8dfcb90014b94dad41b.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="10"
   >
