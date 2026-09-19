@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Repositories on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/docs/infra/repos/</link>
+		<description>Recent content in Repositories on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/docs/infra/repos/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title></title>
+				<link>https://www-staging.alwaldend.com/docs/infra/repos/openspec/spec/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/repos/openspec/spec/</guid>
+				<description>&lt;h1 id=&#34;repository-catalog-specification&#34;&gt;repository-catalog Specification&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#repository-catalog-specification&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#purpose&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Define shared organization, repository identity, naming, and named access&#xA;configuration for the GitHub, GitLab, and Forgejo infrastructure consumers.&lt;/p&gt;&#xA;&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirements&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id=&#34;requirement-authoritative-organization-and-repository-inventory&#34;&gt;Requirement: Authoritative organization and repository inventory&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirement-authoritative-organization-and-repository-inventory&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The repository catalog SHALL store shared defaults and schema version at its&#xA;root, one configuration file per organization, and one configuration file per&#xA;repository beneath its organization. Those records SHALL own the configured&#xA;organizations, repositories, named administrators, and named developers.&#xA;Each forge consumer SHALL use&#xA;that catalog for its selected repositories and named roles, preserving&#xA;forge-specific settings without maintaining another copy of the inventory.&#xA;Authentication and service-specific grants SHALL remain with their existing&#xA;owners.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Bzl on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/docs/tools/md/main/bzl/</link>
+		<description>Recent content in Bzl on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/docs/tools/md/main/bzl/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>al_md_data</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/md/main/bzl/bzl/al_md_data.stardoc/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/md/main/bzl/bzl/al_md_data.stardoc/</guid>
+				<description>&lt;!-- Generated with Stardoc: http://skydoc.bazel.build --&gt;&#xA;&lt;p&gt;&lt;a id=&#34;al_md_data&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2&gt;al_md_data&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#al_md_data&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;pre&gt;&#xA;load(&#34;@com_alwaldend_src//tools/md/main/bzl:al_md_data.bzl&#34;, &#34;al_md_data&#34;)&#xA;&#xA;al_md_data(&lt;a href=&#34;#al_md_data-name&#34;&gt;name&lt;/a&gt;, &lt;a href=&#34;#al_md_data-srcs&#34;&gt;srcs&lt;/a&gt;, &lt;a href=&#34;#al_md_data-deps&#34;&gt;deps&lt;/a&gt;, &lt;a href=&#34;#al_md_data-kwargs&#34;&gt;**kwargs&lt;/a&gt;)&#xA;&lt;/pre&gt;&#xA;&lt;p&gt;Markdown data backed by a filegroup&lt;/p&gt;&#xA;&lt;p&gt;Targets:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;${name}: filegroup&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;PARAMETERS&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;table&gt;&#xA;&#x9;&lt;thead&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th style=&#34;text-align: left&#34;&gt;Name&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th style=&#34;text-align: left&#34;&gt;Description&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th style=&#34;text-align: left&#34;&gt;Default Value&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/thead&gt;&#xA;&#x9;&lt;tbody&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;&lt;a id=&#34;al_md_data-name&#34;&gt;&lt;/a&gt;name&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;filegroup name&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;none&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;&lt;a id=&#34;al_md_data-srcs&#34;&gt;&lt;/a&gt;srcs&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;markdown files&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;none&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;&lt;a id=&#34;al_md_data-deps&#34;&gt;&lt;/a&gt;deps&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;deps&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;[]&lt;/code&gt;&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;&lt;a id=&#34;al_md_data-kwargs&#34;&gt;&lt;/a&gt;kwargs&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;filegroup kwargs&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;none&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/tbody&gt;&#xA;&lt;/table&gt;</description>
+			</item>
+	</channel>
+</rss>

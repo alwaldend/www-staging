@@ -1,0 +1,716 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js" data-theme-init>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000000">
+
+<style>
+  html { background: Canvas; color: CanvasText; }
+  @media (prefers-color-scheme: dark) {
+    html { background: #0b0d12; color: #e6e6e6; }
+  }
+  html[data-theme-init] * { transition: none !important; }
+</style>
+
+<script>
+  (function() {
+    const themeKey = 'td-color-theme';
+    const storedTheme = localStorage.getItem(themeKey);
+    let theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (theme === 'auto') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
+<link rel="canonical" type="text/html" href="https://www-staging.alwaldend.com/docs/infra/forgejo/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://www-staging.alwaldend.com/docs/infra/forgejo/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+<title>forgejo | Alwaldend</title>
+<meta name="description" content="git.alwaldend.com">
+<meta property="og:url" content="https://www-staging.alwaldend.com/docs/infra/forgejo/">
+	<meta property="og:site_name" content="Alwaldend">
+	<meta property="og:title" content="forgejo">
+	<meta property="og:description" content="git.alwaldend.com">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="forgejo">
+	<meta itemprop="description" content="git.alwaldend.com">
+	<meta itemprop="dateModified" content="2026-09-19T20:06:21+03:00">
+	<meta itemprop="wordCount" content="319">
+	<meta itemprop="keywords" content="Ansible,Xcp-Ng,Forgejo">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="forgejo">
+	<meta name="twitter:description" content="git.alwaldend.com">
+<link rel="preload" href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" as="style" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<link href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" rel="stylesheet" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll">
+<div class="td-navbar-container container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">Alwaldend</span></a>
+  <div class="td-navbar__main td-navbar-nav-scroll td-navbar-nav-scroll--indicator" id="main_navbar">
+    <div class="scroll-indicator scroll-left"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/projects/"><span>Projects</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item td-navbar__light-dark-menu">
+        <div class="td-light-dark-menu dropdown"><svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+<button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        title="Toggle theme (Auto)"
+        aria-label="Toggle theme (Auto)">
+  <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="bd-theme">
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
+      Light
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>
+      Dark
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+      <svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>
+      Auto
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+</ul>
+</div>
+
+      </li>
+      </ul>
+    <div class="scroll-indicator scroll-right"></div>
+  </div>
+  <div class="td-navbar__search d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon" aria-hidden="true"></div>
+  <input
+    type="search"
+    name="q"
+    class="td-search__input form-control"
+    placeholder='Search this site…'
+    aria-label='Search this site…'
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/infra/forgejo/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">forgejo</h1>
+<div class="lead">git.alwaldend.com</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-3d897c628782fb475c1ed365d5d2cbad"></a></li>
+
+
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-e1c572e5bbd518221d622301b3fc717f"></a></li>
+
+
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-4631e4abd1138ca67304d2dacb44d29f">Ansible</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>4: <a href="#pg-f3cee4c8624cb7f2609ceabdfcf85a16">Tf</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>5: <a href="#pg-23e19713f3783652b8b451d0e26fbe6f">Tf setup</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      <h2 id="print-0ffd6cbf558ebcb119cece8c34f2b34d-links">Links<a class="td-heading-self-link" href="#print-0ffd6cbf558ebcb119cece8c34f2b34d-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Docs: <a href="https://forgejo.org/docs/latest/admin/installation/binary/">https://forgejo.org/docs/latest/admin/installation/binary/</a></li>
+<li>Config reference: <a href="https://forgejo.org/docs/latest/admin/config-cheat-sheet/">https://forgejo.org/docs/latest/admin/config-cheat-sheet/</a></li>
+</ul>
+<h2 id="print-0ffd6cbf558ebcb119cece8c34f2b34d-repository-configuration">Repository configuration<a class="td-heading-self-link" href="#print-0ffd6cbf558ebcb119cece8c34f2b34d-repository-configuration" aria-label="Heading self-link"></a></h2><p>Service Terraform consumes the shared <a href="/docs/infra/repos/">repository catalog</a>
+for organization-owned repositories and named administrator/developer roles.
+Vault continues to own OIDC login identities and service-specific access.
+See <a href="/docs/infra/forgejo/tf/">service Terraform</a> for identity validation, state adoption,
+and the preserved automation grants.</p>
+<h2 id="print-0ffd6cbf558ebcb119cece8c34f2b34d-deployment">Deployment<a class="td-heading-self-link" href="#print-0ffd6cbf558ebcb119cece8c34f2b34d-deployment" aria-label="Heading self-link"></a></h2><p>Forgejo is recreated on XCP-ng through Xen Orchestra, using the
+<code>src_infra_dc1_forgejo1</code> resource set provisioned by <code>infra/xcp_ng</code>.
+VM provisioning authenticates to XO through Vault OIDC as Forgejo&rsquo;s own
+AppRole. Its exact synchronized user receives the resource-set membership
+and an explicit administration ACL on the existing Forgejo VM; it does not
+use the shared infrastructure administrator token. These bindings must be
+applied by <code>infra/xcp_ng/tf</code> before Forgejo&rsquo;s setup Terraform runs.</p>
+<p>The canonical service URL is <code>https://git.alwaldend.com</code>. The previous
+<code>forgejo.alwaldend.com</code> name remains available for existing clients.
+The VM retains <code>192.168.10.40</code> and <code>host1.forgejo.alwaldend.com</code>. Its boot, Forgejo,
+and Traefik disks are 20, 40, and 5 GiB respectively.</p>
+<p>See <a href="/docs/infra/forgejo/tf_setup/">Terraform setup</a> for the template, network, storage,
+and previous-state prerequisites. These commands create and configure a
+fresh service; they do not restore the destroyed Proxmox VM&rsquo;s data.</p>
+<p>Fresh host hardening can outlast the ten-minute Vault token. Run host setup
+and service deployment separately to obtain fresh authentication for each phase. Ansible
+creates the missing Vault OIDC login source after starting Forgejo; existing
+active Vault sources are preserved.</p>
+<p>Before configuring Forgejo with Terraform, set <code>TF_VAR_vault_oauth_source_id</code>
+to the verified ID of the active <code>vault</code> OIDC source, as described in
+<a href="/docs/infra/forgejo/tf/">service Terraform</a>. Its narrowly scoped Vault entity-read policy
+must be provisioned first so the required external users can be created.</p>
+<p>The guest disables IPv4 redirect acceptance so its traffic uses the configured
+gateway. LAN clients must also retain symmetric routes: same-interface router
+redirects can otherwise make connections fail. Router redirect policy and stale
+client route caches must be resolved before relying on LAN access.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel_agent bazel run //infra/forgejo/tf_setup:tf_setup.apply
+</span></span><span style="display:flex;"><span>bazel_agent bazel run //infra/forgejo/ansible:ansible -- --skip-tags traefik,forgejo,forgejo_oidc
+</span></span><span style="display:flex;"><span>bazel_agent bazel run //infra/forgejo/ansible:ansible -- --tags traefik,forgejo,forgejo_oidc
+</span></span><span style="display:flex;"><span>bazel_agent bazel run //infra/forgejo/tf:tf.apply
+</span></span></code></pre></div>
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-3d897c628782fb475c1ed365d5d2cbad">1 - </h1>
+    
+	<h1 id="print-104392a0061b18c209ca81aa609d73e8-forgejo-infrastructure-specification">Forgejo infrastructure specification<a class="td-heading-self-link" href="#print-104392a0061b18c209ca81aa609d73e8-forgejo-infrastructure-specification" aria-label="Heading self-link"></a></h1><h2 id="print-104392a0061b18c209ca81aa609d73e8-purpose">Purpose<a class="td-heading-self-link" href="#print-104392a0061b18c209ca81aa609d73e8-purpose" aria-label="Heading self-link"></a></h2><p>Describe the Forgejo service owned by <code>infra/forgejo</code>, including Xen
+Orchestra provisioning, Ansible service configuration, and Terraform account
+and repository management. The <code>tf_setup</code>, <code>ansible</code>, and <code>tf</code> packages are
+implementation stages of this owner. This baseline records source guarantees
+and prerequisites; it does not verify live service health or restore earlier
+Forgejo data.</p>
+<p>Baseline revision: <code>550d7e79b1f5fdbc2b6017b75178471d6914082f</code>.
+Observed: 2026-09-08. Sources: <a href="/docs/infra/forgejo/">owner README</a>,
+<a href="../../../BUILD.bazel">BUILD</a>, and the implementation links below.</p>
+<h2 id="print-104392a0061b18c209ca81aa609d73e8-requirements">Requirements<a class="td-heading-self-link" href="#print-104392a0061b18c209ca81aa609d73e8-requirements" aria-label="Heading self-link"></a></h2><h3 id="print-104392a0061b18c209ca81aa609d73e8-requirement-scoped-xen-orchestra-provisioning-and-disk-checks">Requirement: Scoped Xen Orchestra provisioning and disk checks<a class="td-heading-self-link" href="#print-104392a0061b18c209ca81aa609d73e8-requirement-scoped-xen-orchestra-provisioning-and-disk-checks" aria-label="Heading self-link"></a></h3><p>Setup SHALL provision Forgejo through Xen Orchestra in the
+<code>src_infra_dc1_forgejo1</code> resource set using the owner&rsquo;s Vault AppRole and
+packaged XO OIDC login flow. The VM SHALL declare 20 GiB boot, 40 GiB
+Forgejo, and 5 GiB Traefik disks. Ansible SHALL verify the expected sizes
+of <code>xvdb</code> and <code>xvdc</code> before applying the service roles that use them.</p>
+<p>Sources: <a href="/docs/infra/forgejo/tf_setup/">setup contract</a>,
+<a href="../../../tf_setup/BUILD.bazel">setup BUILD</a>,
+<a href="../../../tf_setup/vms.tf">VM definition</a>, and
+<a href="../../../ansible/playbook_deploy.yaml">deployment playbook</a>.</p>
+<h4 id="print-104392a0061b18c209ca81aa609d73e8-scenario-detect-unexpected-xen-disk-attachments">Scenario: Detect unexpected Xen disk attachments<a class="td-heading-self-link" href="#print-104392a0061b18c209ca81aa609d73e8-scenario-detect-unexpected-xen-disk-attachments" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> Ansible gathers disks that do not match the expected Forgejo and
+Traefik device names and sizes</li>
+<li><strong>THEN</strong> its pre-task assertion fails before the service roles run</li>
+</ul>
+<h3 id="print-104392a0061b18c209ca81aa609d73e8-requirement-canonical-service-routing-with-legacy-hostname-support">Requirement: Canonical service routing with legacy hostname support<a class="td-heading-self-link" href="#print-104392a0061b18c209ca81aa609d73e8-requirement-canonical-service-routing-with-legacy-hostname-support" aria-label="Heading self-link"></a></h3><p>Forgejo SHALL configure <code>https://git.alwaldend.com/</code> as its canonical root
+URL, bind its HTTP service to loopback port 3000, and enable the built-in
+SSH service on port 3005. Traefik SHALL route the canonical hostname, the
+inventory hostname, and <code>forgejo.alwaldend.com</code> to that HTTP service with
+the Vault certificate resolver.</p>
+<p>Sources: <a href="../../../ansible/group_vars/all.yaml">service variables</a>,
+<a href="../../../ansible/files/forgejo.ini">Forgejo configuration</a>, and
+<a href="../../../ansible/files/traefik_dynamic.toml">Traefik routing</a>.</p>
+<h4 id="print-104392a0061b18c209ca81aa609d73e8-scenario-inspect-support-for-existing-forgejo-clients">Scenario: Inspect support for existing Forgejo clients<a class="td-heading-self-link" href="#print-104392a0061b18c209ca81aa609d73e8-scenario-inspect-support-for-existing-forgejo-clients" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the Traefik routing template is rendered with the owner&rsquo;s variables</li>
+<li><strong>THEN</strong> the canonical and legacy hostnames resolve to the same configured
+loopback service</li>
+<li><strong>AND</strong> generated Forgejo URLs use the canonical Git hostname</li>
+</ul>
+<h3 id="print-104392a0061b18c209ca81aa609d73e8-requirement-guarded-vault-oidc-bootstrap">Requirement: Guarded Vault OIDC bootstrap<a class="td-heading-self-link" href="#print-104392a0061b18c209ca81aa609d73e8-requirement-guarded-vault-oidc-bootstrap" aria-label="Heading self-link"></a></h3><p>The deployment playbook SHALL create a missing <code>vault</code> OIDC authentication
+source after configuring the Forgejo service. It SHALL preserve one existing
+active OAuth2 source and reject multiple matches, an inactive source, or a
+source of another type. Creation SHALL obtain client credentials from the
+injected environment and suppress secret-bearing task output.</p>
+<p>Source: <a href="../../../ansible/playbook_deploy.yaml">deployment playbook</a>.</p>
+<h4 id="print-104392a0061b18c209ca81aa609d73e8-scenario-preserve-an-existing-active-authentication-source">Scenario: Preserve an existing active authentication source<a class="td-heading-self-link" href="#print-104392a0061b18c209ca81aa609d73e8-scenario-preserve-an-existing-active-authentication-source" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> Forgejo reports exactly one active OAuth2 source named <code>vault</code></li>
+<li><strong>THEN</strong> the bootstrap accepts it and skips source creation</li>
+</ul>
+<h4 id="print-104392a0061b18c209ca81aa609d73e8-scenario-reject-an-ambiguous-authentication-source">Scenario: Reject an ambiguous authentication source<a class="td-heading-self-link" href="#print-104392a0061b18c209ca81aa609d73e8-scenario-reject-an-ambiguous-authentication-source" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> more than one <code>vault</code> source is discovered, or its type or active
+state is incompatible</li>
+<li><strong>THEN</strong> the bootstrap assertion fails rather than selecting or replacing
+an arbitrary source</li>
+</ul>
+<h3 id="print-104392a0061b18c209ca81aa609d73e8-requirement-vault-identities-and-service-grants-with-catalog-named-roles">Requirement: Vault identities and service grants with catalog named roles<a class="td-heading-self-link" href="#print-104392a0061b18c209ca81aa609d73e8-requirement-vault-identities-and-service-grants-with-catalog-named-roles" aria-label="Heading self-link"></a></h3><p>Service Terraform SHALL require a verified positive integer Vault OAuth
+source ID, discover login users from the owning Vault group through at most
+two nested group levels, and use entity UUIDs as external login names.
+Managed accounts SHALL be protected from deletion. The shared repository
+catalog SHALL own named organization administrator and developer assignments
+and organization-owned repository identities. Catalog members and Vault
+access-group members SHALL belong to the discovered login population.
+Existing Vault service-administrator, package-writer, and automation-writer
+grants SHALL be retained; the <code>src</code> automation writer group SHALL resolve to
+exactly one user. A catalog developer SHALL NOT also receive administrator
+access through the retained Vault groups.</p>
+<p>Sources: <a href="/docs/infra/forgejo/tf/">service Terraform contract</a>,
+<a href="../../../tf/users.tf">users</a>,
+<a href="../../../tf/access.tf">access validation</a>, and
+<a href="../../../tf/alwaldend_repos.tf">repository access</a>.
+The <a href="/docs/infra/repos/">shared catalog contract</a> owns repository
+naming and named-role assignments; its
+<a href="../../../../repos/openspec/changes/archive/2026-09-13-adopt-shared-repository-catalog/design.md">adoption change</a>
+records the source migration and pending verification.</p>
+<h4 id="print-104392a0061b18c209ca81aa609d73e8-scenario-reject-unsupported-group-membership">Scenario: Reject unsupported group membership<a class="td-heading-self-link" href="#print-104392a0061b18c209ca81aa609d73e8-scenario-reject-unsupported-group-membership" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> a login group extends beyond two nested levels, an access-group
+member is outside the login population, or the automation writer count is
+not one</li>
+<li><strong>THEN</strong> the corresponding Terraform condition rejects the configuration</li>
+<li><strong>AND</strong> Terraform does not silently omit the unsupported membership</li>
+</ul>
+<h4 id="print-104392a0061b18c209ca81aa609d73e8-scenario-resolve-a-catalog-member-through-vault">Scenario: Resolve a catalog member through Vault<a class="td-heading-self-link" href="#print-104392a0061b18c209ca81aa609d73e8-scenario-resolve-a-catalog-member-through-vault" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> a catalog administrator or developer is assigned organization access</li>
+<li><strong>THEN</strong> that assignment uses the discovered account&rsquo;s existing Vault entity
+UUID and verified OAuth source mapping</li>
+<li><strong>AND</strong> the assignment does not create a password-based replacement account</li>
+</ul>
+<h4 id="print-104392a0061b18c209ca81aa609d73e8-scenario-retain-service-access-while-restricting-a-named-developer">Scenario: Retain service access while restricting a named developer<a class="td-heading-self-link" href="#print-104392a0061b18c209ca81aa609d73e8-scenario-retain-service-access-while-restricting-a-named-developer" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> shared named roles are adopted</li>
+<li><strong>THEN</strong> existing Vault service administration, package-writing, and
+automation-writer grants remain configured</li>
+<li><strong>AND</strong> the catalog developer receives feature-branch and pull-request
+access without a default-branch push or merge bypass</li>
+<li><strong>AND</strong> an overlapping administrator grant for that developer fails
+validation</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-e1c572e5bbd518221d622301b3fc717f">2 - </h1>
+    
+	<h1 id="print-7bc1604caa4e256030a625215dd30531-owned-dns-specification">owned-dns Specification<a class="td-heading-self-link" href="#print-7bc1604caa4e256030a625215dd30531-owned-dns-specification" aria-label="Heading self-link"></a></h1><h2 id="print-7bc1604caa4e256030a625215dd30531-purpose">Purpose<a class="td-heading-self-link" href="#print-7bc1604caa4e256030a625215dd30531-purpose" aria-label="Heading self-link"></a></h2><p>Define Forgejo DNS management through the owner&rsquo;s <code>tf_setup</code> root,
+including canonical declarations, scoped credentials, and offline source checks
+before adopting live records.</p>
+<h2 id="print-7bc1604caa4e256030a625215dd30531-requirements">Requirements<a class="td-heading-self-link" href="#print-7bc1604caa4e256030a625215dd30531-requirements" aria-label="Heading self-link"></a></h2><h3 id="print-7bc1604caa4e256030a625215dd30531-requirement-owner-local-dns-configuration">Requirement: Owner-local DNS configuration<a class="td-heading-self-link" href="#print-7bc1604caa4e256030a625215dd30531-requirement-owner-local-dns-configuration" aria-label="Heading self-link"></a></h3><p>The <code>tf_setup</code> root SHALL consume this owner&rsquo;s canonical <code>dnsconfig.json</code> through
+the shared DNS Terraform module, preserving declared record identities and views.
+DNS resources SHALL default to disabled before adoption and SHALL remain enabled
+by default after authorized adoption. Adoption SHALL bind existing provider records
+to the owner&rsquo;s state without adding, changing, replacing, or deleting DNS records.
+Subsequent reconciliation of unchanged declarations SHALL preserve owned and
+unrelated records.</p>
+<h4 id="print-7bc1604caa4e256030a625215dd30531-scenario-inspect-the-preparatory-configuration">Scenario: Inspect the preparatory configuration<a class="td-heading-self-link" href="#print-7bc1604caa4e256030a625215dd30531-scenario-inspect-the-preparatory-configuration" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the checked-in root is evaluated with default inputs before adoption</li>
+<li><strong>THEN</strong> it reads this owner&rsquo;s declaration and disables managed DNS records</li>
+<li><strong>AND</strong> the package contains the module and declaration inputs</li>
+</ul>
+<h4 id="print-7bc1604caa4e256030a625215dd30531-scenario-inspect-the-adopted-configuration">Scenario: Inspect the adopted configuration<a class="td-heading-self-link" href="#print-7bc1604caa4e256030a625215dd30531-scenario-inspect-the-adopted-configuration" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the adopted root is evaluated with default inputs</li>
+<li><strong>THEN</strong> it reads this owner&rsquo;s declaration and enables managed DNS records</li>
+<li><strong>AND</strong> the package contains the module and declaration inputs</li>
+</ul>
+<h4 id="print-7bc1604caa4e256030a625215dd30531-scenario-adopt-existing-records">Scenario: Adopt existing records<a class="td-heading-self-link" href="#print-7bc1604caa4e256030a625215dd30531-scenario-adopt-existing-records" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the owner reviews the matched existing provider imports through
+<code>//infra/forgejo/tf_setup:dns.plan</code> and <code>:dns.show</code>, then applies that saved
+plan through <code>:dns.apply</code></li>
+<li><strong>THEN</strong> the owner state binds each declared record to its existing provider identity</li>
+<li><strong>AND</strong> the reviewed adoption plan proposes no record additions, changes,
+replacements, or deletions</li>
+</ul>
+<h4 id="print-7bc1604caa4e256030a625215dd30531-scenario-reconcile-unchanged-declarations">Scenario: Reconcile unchanged declarations<a class="td-heading-self-link" href="#print-7bc1604caa4e256030a625215dd30531-scenario-reconcile-unchanged-declarations" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the adopted root plans unchanged declarations through
+<code>//infra/forgejo/tf_setup:dns.plan</code> and applies its reviewed saved plan
+through <code>:dns.apply</code></li>
+<li><strong>THEN</strong> it makes no DNS resource changes</li>
+<li><strong>AND</strong> owned records retain their declared values and views while unrelated
+records remain unchanged</li>
+</ul>
+<h3 id="print-7bc1604caa4e256030a625215dd30531-requirement-scoped-dns-execution-and-offline-checks">Requirement: Scoped DNS execution and offline checks<a class="td-heading-self-link" href="#print-7bc1604caa4e256030a625215dd30531-requirement-scoped-dns-execution-and-offline-checks" aria-label="Heading self-link"></a></h3><p>The DNS wrapper SHALL select <code>src_infra_dc1_forgejo1</code> through the repository AL
+flow and keep secret values in injected variables. Dedicated DNS commands SHALL
+select <code>dns=1</code>, retain the existing setup backend, and target <code>module.dns</code> without
+starting unrelated service authentication. DNS apply SHALL consume only a
+reviewed saved plan. Real DNS credentials and Vault policy grants SHALL be
+prerequisites for operational Terraform calls. RouterOS DNS credentials SHALL be
+isolated from unrelated RouterOS resources. The package SHALL expose a format
+test that does not authenticate to Vault or contact DNS providers.</p>
+<h4 id="print-7bc1604caa4e256030a625215dd30531-scenario-validate-the-terraform-source">Scenario: Validate the Terraform source<a class="td-heading-self-link" href="#print-7bc1604caa4e256030a625215dd30531-scenario-validate-the-terraform-source" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the package format test executes</li>
+<li><strong>THEN</strong> it checks the packaged Terraform configuration without live credentials</li>
+<li><strong>AND</strong> existing non-DNS authentication and backend paths remain unchanged</li>
+</ul>
+<h4 id="print-7bc1604caa4e256030a625215dd30531-scenario-prepare-an-operational-terraform-invocation">Scenario: Prepare an operational Terraform invocation<a class="td-heading-self-link" href="#print-7bc1604caa4e256030a625215dd30531-scenario-prepare-an-operational-terraform-invocation" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the wrapper selects its Terraform stage labels</li>
+<li><strong>THEN</strong> it selects DNS credential injection through the owner AppRole with
+<code>dns=1</code>, the existing setup backend, and the <code>module.dns</code> target</li>
+<li><strong>AND</strong> disabled DNS resources do not imply offline provider configuration</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-4631e4abd1138ca67304d2dacb44d29f">3 - Ansible</h1>
+    <div class="lead">Ansible setup</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-f3cee4c8624cb7f2609ceabdfcf85a16">4 - Tf</h1>
+    <div class="lead">Terraform config</div>
+	<p>This package configures Forgejo organizations, repositories, and access from
+the shared <a href="/docs/infra/repos/">repository catalog</a>. The catalog owns named
+administrators, developers, repository identities, and destination names.
+Its <a href="/docs/infra/repos/tf/">Terraform module</a> supplies the consumer&rsquo;s
+repository projection. First-party names remain stable across forges;
+external fork and mirror names retain their original upstream identity.</p>
+<p>Before applying, provision the Vault OIDC authentication source with Ansible and set
+<code>TF_VAR_vault_oauth_source_id</code> to its verified positive numeric ID. Obtain the
+ID from <code>forgejo admin auth list</code> on the instance using the service&rsquo;s config
+and work path; confirm that the <code>vault</code> source is active and uses OpenID
+Connect with the expected Vault issuer. Do not assume source IDs survive
+instance recreation.</p>
+<p>Terraform discovers users from the authoritative Vault
+<code>src_infra_dc1_forgejo1_users</code> login group, then looks up their entities,
+following the PVE Terraform pattern. Discovery includes direct members and
+two levels of nested groups, covering the current administrator membership.
+Deeper nesting fails validation rather than silently omitting accounts.
+Each account uses its Vault entity UUID as the OIDC login name and its
+canonical username/email metadata. No local password or user impersonation is
+used. The Forgejo AppRole receives the existing group/entity lookup permissions,
+as PVE does. Apply those Vault group memberships before running this package.</p>
+<p>The accounts are protected from Terraform deletion. OIDC group claims retain
+ownership of administrator/restricted status after login. If a user already
+exists outside this state, verify its source and login-name mapping before
+importing it; never replace an existing account to resolve a name collision.
+Resource addresses remain keyed by Vault entity name, preserving existing
+managed users. The Forgejo service identity may already exist from the first
+OIDC login: verify and import it before applying its newly discovered resource.</p>
+<p>Named organization administrator and developer assignments come from the
+catalog and must resolve to the discovered Vault login population. The
+Developer team can read repositories, write feature branches, and open pull
+requests. Its members receive no default-branch push or merge bypass.</p>
+<p>Existing service administration remains sourced from
+<code>src_infra_dc1_forgejo1_admins</code> and its direct child groups. Those grants are
+retained for entities with a Vault AppRole alias, alongside catalog
+administrators. The separate instance-wide OIDC administrator claim remains
+owned by Vault. Validation rejects a catalog
+developer who also receives administrator access through those Vault groups.
+Package writers and the repository automation writer retain the grants from
+<code>src_infra_dc1_forgejo1_package_writers</code> and
+<code>src_infra_dc1_forgejo1_src_writers</code>. These dedicated groups avoid granting
+service permissions to AppRole credential issuers. The existing singleton
+collaborator still requires exactly one discovered writer. Access-group
+members outside the login population also fail validation.</p>
+<p>Repository adoption preserves remote IDs. The existing singleton repository
+address has an explicit move to its catalog key, while account and service
+access addresses remain stable. Import an existing untracked destination
+before applying; never recreate it to resolve a name collision. Review the
+full plan before execution and obtain separate approval for any deletion or
+replacement. The retained branch rules continue to own administrator and
+automation-writer exceptions.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel_agent bazel run //infra/forgejo/tf:tf.plan
+</span></span><span style="display:flex;"><span>bazel_agent bazel run //infra/forgejo/tf:tf.apply
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-23e19713f3783652b8b451d0e26fbe6f">5 - Tf setup</h1>
+    <div class="lead">Terraform setup</div>
+	<p>This package creates a Xen Orchestra VM in the <code>src_infra_dc1_forgejo1</code>
+resource set. <code>infra/forgejo/al.lua</code> authenticates with Forgejo&rsquo;s own Vault
+AppRole and the packaged XO OIDC login plugin. The plugin supplies a temporary
+XO token and revokes it on shutdown; no infrastructure administrator token
+is loaded. The setup HTTP backend remains owned by the same Forgejo config.</p>
+<p>Before running this package, bootstrap the AppRole&rsquo;s XO OIDC user and apply
+its resource-set membership and existing VM ACL through <code>infra/xcp_ng/tf</code>.
+Subjects are matched by immutable Vault entity UUID under the configured
+OIDC issuer, not by login name or AppRole group membership. See
+<a href="../../xcp_ng/cmd/xo_login/README.md">XO authentication</a>.</p>
+<p>Defaults select the imported Fedora 44 template, local storage and wired
+network by name from the Forgejo resource set. Override
+<code>TF_VAR_xoa_template_name</code>, <code>TF_VAR_xoa_storage_name</code>, and
+<code>TF_VAR_xoa_network_name</code> for another assignment. Native provider lookups run
+as Forgejo&rsquo;s own identity and reject ambiguous matches. No infrastructure
+UUID defaults are required; resolved IDs are passed to the XO API.
+The template must contain a single boot disk no larger than 20 GiB, Fedora,
+and cloud-init. Bootstrap installs Xen guest tools. The pinned Fedora 44
+image uses predictable interface naming; <code>xoa_guest_interface</code> defaults to
+<code>enX0</code> for its first Xen interface and can be overridden for another template.
+The selected network must carry <code>192.168.10.0/24</code>; gateway and DNS default to
+<code>192.168.10.1</code> (the wired router) and can be overridden with the Terraform variables.</p>
+<p>The PVE-based <code>infra/cloud_init:xen_linux</code> target supplies the shared Ansible
+user and CA configuration through the repository template rule. Terraform adds
+the hostname and static network configuration from <code>../dnsconfig.json</code>. After cloud-init completes, verify that <code>/dev/xvda</code> is the
+boot disk, <code>/dev/xvdb</code> is the 40 GiB Forgejo disk, and <code>/dev/xvdc</code> is the 5 GiB
+Traefik disk before running Ansible, which creates filesystems on the latter
+two devices.</p>
+<p>The old Proxmox VM was destroyed and its obsolete Terraform state binding
+was removed without issuing a destroy. This package now uses only XO.
+There is no cross-provider state move or data restoration in this package.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel_agent bazel run //infra/forgejo/tf_setup:tf_setup.plan
+</span></span><span style="display:flex;"><span>bazel_agent bazel run //infra/forgejo/tf_setup:tf_setup.apply
+</span></span></code></pre></div><p>Use this package&rsquo;s <code>dns.plan</code>, <code>dns.show</code>, and <code>dns.apply</code> targets for the
+<a href="/docs/infra/dns/">scoped DNS workflow</a>. They select <code>dns=1</code>, retain the
+existing setup backend and <code>src_infra_dc1_forgejo1</code> AppRole, and target
+<code>module.dns</code> without starting unrelated service authentication. Inspect the
+saved plan through <code>dns.show</code> and pass only that reviewed file to <code>dns.apply</code>.</p>
+<p><code>dns_enabled</code> defaults to <code>true</code> after verified adoption. Keep it enabled to
+retain existing records; disabling it would propose deletion. Follow the
+<a href="../../dns/openspec/changes/archive/2026-09-13-migrate-project-dns-to-terraform/cutover.md#prepare-the-owner">cutover procedure</a>
+for prerequisites, reconciliation, and recovery. The owner adoption change
+records the historical import and DNS verification evidence; scoped DNS checks
+do not establish service or VM health.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        Built with <a href="https://gohugo.io/">Hugo 0.165.0</a>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="/js/main.min.259204f469f58eb3b665605a24e964264772df2adaded180b3669b6ce33d84c8.js" integrity="sha256-JZIE9Gn1jrO2ZWBaJOlkJkdy3yra3tGAs2abbOM9hMg=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.decf3b53d8827d840369f490775626e2a5200e150a733f78f0081c126426cbbf.js" integrity="sha256-3s87U9iCfYQDafSQd1Ym4qUgDhUKcz948AgcEmQmy78=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

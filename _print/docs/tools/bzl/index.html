@@ -1,0 +1,627 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js" data-theme-init>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000000">
+
+<style>
+  html { background: Canvas; color: CanvasText; }
+  @media (prefers-color-scheme: dark) {
+    html { background: #0b0d12; color: #e6e6e6; }
+  }
+  html[data-theme-init] * { transition: none !important; }
+</style>
+
+<script>
+  (function() {
+    const themeKey = 'td-color-theme';
+    const storedTheme = localStorage.getItem(themeKey);
+    let theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (theme === 'auto') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
+<link rel="canonical" type="text/html" href="https://www-staging.alwaldend.com/docs/tools/bzl/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://www-staging.alwaldend.com/docs/tools/bzl/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+<title>Bzl | Alwaldend</title>
+<meta name="description" content="Bazel rules related to Bazel itself">
+<meta property="og:url" content="https://www-staging.alwaldend.com/docs/tools/bzl/">
+	<meta property="og:site_name" content="Alwaldend">
+	<meta property="og:title" content="Bzl">
+	<meta property="og:description" content="Bazel rules related to Bazel itself">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="Bzl">
+	<meta itemprop="description" content="Bazel rules related to Bazel itself">
+	<meta itemprop="dateModified" content="2026-09-19T20:06:21+03:00">
+	<meta itemprop="keywords" content="Bzl_rules,Bzl_registry">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Bzl">
+	<meta name="twitter:description" content="Bazel rules related to Bazel itself">
+<link rel="preload" href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" as="style" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<link href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" rel="stylesheet" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll">
+<div class="td-navbar-container container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">Alwaldend</span></a>
+  <div class="td-navbar__main td-navbar-nav-scroll td-navbar-nav-scroll--indicator" id="main_navbar">
+    <div class="scroll-indicator scroll-left"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/projects/"><span>Projects</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item td-navbar__light-dark-menu">
+        <div class="td-light-dark-menu dropdown"><svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+<button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        title="Toggle theme (Auto)"
+        aria-label="Toggle theme (Auto)">
+  <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="bd-theme">
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
+      Light
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>
+      Dark
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+      <svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>
+      Auto
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+</ul>
+</div>
+
+      </li>
+      </ul>
+    <div class="scroll-indicator scroll-right"></div>
+  </div>
+  <div class="td-navbar__search d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon" aria-hidden="true"></div>
+  <input
+    type="search"
+    name="q"
+    class="td-search__input form-control"
+    placeholder='Search this site…'
+    aria-label='Search this site…'
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/tools/bzl/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Bzl</h1>
+<div class="lead">Bazel rules related to Bazel itself</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-bce95ba81722dc3070e6f93f2d4e7077">Bzl</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1.1: <a href="#pg-13c2794fd1de76dc43f9b8289574f4ca">al_alias_map</a></li>
+
+
+    
+  
+    
+    
+	
+<li>1.2: <a href="#pg-5fea4f744f42487599b8e1ad15b77c4b">al_bzl_generate_repository</a></li>
+
+
+    
+  
+    
+    
+	
+<li>1.3: <a href="#pg-f572d50d287773cca7bd8c343ee7fa76">al_bzl_library_map</a></li>
+
+
+    
+  
+    
+    
+	
+<li>1.4: <a href="#pg-39035fa84d0d1bf2c85239e1a5f1debf">al_bzl_target_doc</a></li>
+
+
+    
+  
+    
+    
+	
+<li>1.5: <a href="#pg-484c98ccd744485cbcf1b55fec2e134b">al_genquery_write_to_source_file</a></li>
+
+
+    
+  
+
+    </ul>
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-bce95ba81722dc3070e6f93f2d4e7077">1 - Bzl</h1>
+    <div class="lead">Bazel code</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-13c2794fd1de76dc43f9b8289574f4ca">1.1 - al_alias_map</h1>
+    
+	<!-- Generated with Stardoc: http://skydoc.bazel.build -->
+<p><a id="print-3b6ba2be2a2f48d10e7c7105740853d7-al_alias_map"></a></p>
+<h2>al_alias_map<a class="td-heading-self-link" href="#print-3b6ba2be2a2f48d10e7c7105740853d7-al_alias_map" aria-label="Heading self-link"></a></h2><pre>
+load("@com_alwaldend_src//tools/bzl/main/bzl:al_alias_map.bzl", "al_alias_map")
+
+al_alias_map(<a href="#print-3b6ba2be2a2f48d10e7c7105740853d7-al_alias_map-aliases">aliases</a>, <a href="#print-3b6ba2be2a2f48d10e7c7105740853d7-al_alias_map-visibility">visibility</a>)
+</pre>
+<p>Generate aliases from an alias map</p>
+<p><strong>PARAMETERS</strong></p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Name</th>
+					<th style="text-align: left">Description</th>
+					<th style="text-align: left">Default Value</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><a id="print-3b6ba2be2a2f48d10e7c7105740853d7-al_alias_map-aliases"></a>aliases</td>
+					<td style="text-align: left">alias map, keys are names, values are alias arguments</td>
+					<td style="text-align: left">none</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-3b6ba2be2a2f48d10e7c7105740853d7-al_alias_map-visibility"></a>visibility</td>
+					<td style="text-align: left">default visibility</td>
+					<td style="text-align: left"><code>[&quot;//:__subpackages__&quot;]</code></td>
+			</tr>
+	</tbody>
+</table>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-5fea4f744f42487599b8e1ad15b77c4b">1.2 - al_bzl_generate_repository</h1>
+    
+	<!-- Generated with Stardoc: http://skydoc.bazel.build -->
+<p><a id="print-d22031134f29f98429c1e675c2faf61d-al_bzl_generate_repository"></a></p>
+<h2>al_bzl_generate_repository<a class="td-heading-self-link" href="#print-d22031134f29f98429c1e675c2faf61d-al_bzl_generate_repository" aria-label="Heading self-link"></a></h2><pre>
+load("@com_alwaldend_src//tools/bzl/main/bzl:al_bzl_generate_repository.bzl", "al_bzl_generate_repository")
+
+al_bzl_generate_repository(<a href="#print-d22031134f29f98429c1e675c2faf61d-al_bzl_generate_repository-name">name</a>, <a href="#print-d22031134f29f98429c1e675c2faf61d-al_bzl_generate_repository-files">files</a>, <a href="#print-d22031134f29f98429c1e675c2faf61d-al_bzl_generate_repository-repo_mapping">repo_mapping</a>)
+</pre>
+<p>Generate a repository</p>
+<p><strong>ATTRIBUTES</strong></p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Name</th>
+					<th style="text-align: left">Description</th>
+					<th style="text-align: left">Type</th>
+					<th style="text-align: left">Mandatory</th>
+					<th style="text-align: left">Default</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><a id="print-d22031134f29f98429c1e675c2faf61d-al_bzl_generate_repository-name"></a>name</td>
+					<td style="text-align: left">A unique name for this repository.</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels#target-names">Name</a></td>
+					<td style="text-align: left">required</td>
+					<td style="text-align: left"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-d22031134f29f98429c1e675c2faf61d-al_bzl_generate_repository-files"></a>files</td>
+					<td style="text-align: left">Files to generate, keys are paths, values are file contents</td>
+					<td style="text-align: left"><a href="https://bazel.build/rules/lib/core/dict">Dictionary: String -&gt; String</a></td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>{}</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-d22031134f29f98429c1e675c2faf61d-al_bzl_generate_repository-repo_mapping"></a>repo_mapping</td>
+					<td style="text-align: left">In <code>WORKSPACE</code> context only: a dictionary from local repository name to global repository name. This allows controls over workspace dependency resolution for dependencies of this repository.<br><br>For example, an entry <code>&quot;@foo&quot;: &quot;@bar&quot;</code> declares that, for any time this repository depends on <code>@foo</code> (such as a dependency on <code>@foo//some:target</code>, it should actually resolve that dependency within globally-declared <code>@bar</code> (<code>@bar//some:target</code>).<br><br>This attribute is <em>not</em> supported in <code>MODULE.bazel</code> context (when invoking a repository rule inside a module extension&rsquo;s implementation function).</td>
+					<td style="text-align: left"><a href="https://bazel.build/rules/lib/core/dict">Dictionary: String -&gt; String</a></td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"></td>
+			</tr>
+	</tbody>
+</table>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-f572d50d287773cca7bd8c343ee7fa76">1.3 - al_bzl_library_map</h1>
+    
+	<!-- Generated with Stardoc: http://skydoc.bazel.build -->
+<p><a id="print-ae3ad1a109abd5cff273abdc7d305960-al_bzl_library_map"></a></p>
+<h2>al_bzl_library_map<a class="td-heading-self-link" href="#print-ae3ad1a109abd5cff273abdc7d305960-al_bzl_library_map" aria-label="Heading self-link"></a></h2><pre>
+load("@com_alwaldend_src//tools/bzl/main/bzl:al_bzl_library_map.bzl", "al_bzl_library_map")
+
+al_bzl_library_map(<a href="#print-ae3ad1a109abd5cff273abdc7d305960-al_bzl_library_map-name">name</a>, <a href="#print-ae3ad1a109abd5cff273abdc7d305960-al_bzl_library_map-visibility">visibility</a>, <a href="#print-ae3ad1a109abd5cff273abdc7d305960-al_bzl_library_map-libs">libs</a>, <a href="#print-ae3ad1a109abd5cff273abdc7d305960-al_bzl_library_map-deps">deps</a>, <a href="#print-ae3ad1a109abd5cff273abdc7d305960-al_bzl_library_map-kwargs">**kwargs</a>)
+</pre>
+<p>Create bzl_library targets from a map</p>
+<p><strong>PARAMETERS</strong></p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Name</th>
+					<th style="text-align: left">Description</th>
+					<th style="text-align: left">Default Value</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><a id="print-ae3ad1a109abd5cff273abdc7d305960-al_bzl_library_map-name"></a>name</td>
+					<td style="text-align: left">combined bzl_library target name</td>
+					<td style="text-align: left">none</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-ae3ad1a109abd5cff273abdc7d305960-al_bzl_library_map-visibility"></a>visibility</td>
+					<td style="text-align: left"><p align="center"> - </p></td>
+					<td style="text-align: left"><code>None</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-ae3ad1a109abd5cff273abdc7d305960-al_bzl_library_map-libs"></a>libs</td>
+					<td style="text-align: left">bzl_library names</td>
+					<td style="text-align: left"><code>{}</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-ae3ad1a109abd5cff273abdc7d305960-al_bzl_library_map-deps"></a>deps</td>
+					<td style="text-align: left">other al_bzl_library_map targets</td>
+					<td style="text-align: left"><code>[]</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-ae3ad1a109abd5cff273abdc7d305960-al_bzl_library_map-kwargs"></a>kwargs</td>
+					<td style="text-align: left">bzl_library kwargs</td>
+					<td style="text-align: left">none</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-39035fa84d0d1bf2c85239e1a5f1debf">1.4 - al_bzl_target_doc</h1>
+    
+	<!-- Generated with Stardoc: http://skydoc.bazel.build -->
+<p><a id="print-1cdc32e2d7cf3993cc4bcea8218e014d-al_bzl_target_doc"></a></p>
+<h2>al_bzl_target_doc<a class="td-heading-self-link" href="#print-1cdc32e2d7cf3993cc4bcea8218e014d-al_bzl_target_doc" aria-label="Heading self-link"></a></h2><pre>
+load("@com_alwaldend_src//tools/bzl/main/bzl:al_bzl_target_doc.bzl", "al_bzl_target_doc")
+
+al_bzl_target_doc(<a href="#print-1cdc32e2d7cf3993cc4bcea8218e014d-al_bzl_target_doc-name">name</a>, <a href="#print-1cdc32e2d7cf3993cc4bcea8218e014d-al_bzl_target_doc-visibility">visibility</a>, <a href="#print-1cdc32e2d7cf3993cc4bcea8218e014d-al_bzl_target_doc-subpackages">subpackages</a>)
+</pre>
+<p>Document bazel targets</p>
+<p><strong>PARAMETERS</strong></p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Name</th>
+					<th style="text-align: left">Description</th>
+					<th style="text-align: left">Default Value</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><a id="print-1cdc32e2d7cf3993cc4bcea8218e014d-al_bzl_target_doc-name"></a>name</td>
+					<td style="text-align: left">target name</td>
+					<td style="text-align: left">none</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-1cdc32e2d7cf3993cc4bcea8218e014d-al_bzl_target_doc-visibility"></a>visibility</td>
+					<td style="text-align: left"><p align="center"> - </p></td>
+					<td style="text-align: left">none</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-1cdc32e2d7cf3993cc4bcea8218e014d-al_bzl_target_doc-subpackages"></a>subpackages</td>
+					<td style="text-align: left">list of subpackages</td>
+					<td style="text-align: left"><code>[]</code></td>
+			</tr>
+	</tbody>
+</table>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-484c98ccd744485cbcf1b55fec2e134b">1.5 - al_genquery_write_to_source_file</h1>
+    
+	<!-- Generated with Stardoc: http://skydoc.bazel.build -->
+<p><a id="print-898ffb8a31e9c0bbd6ef4744f642ce9a-al_genquery_write_to_source_file"></a></p>
+<h2>al_genquery_write_to_source_file<a class="td-heading-self-link" href="#print-898ffb8a31e9c0bbd6ef4744f642ce9a-al_genquery_write_to_source_file" aria-label="Heading self-link"></a></h2><pre>
+load("@com_alwaldend_src//tools/bzl/main/bzl:al_genquery_write_to_source_file.bzl", "al_genquery_write_to_source_file")
+
+al_genquery_write_to_source_file(<a href="#print-898ffb8a31e9c0bbd6ef4744f642ce9a-al_genquery_write_to_source_file-name">name</a>, <a href="#print-898ffb8a31e9c0bbd6ef4744f642ce9a-al_genquery_write_to_source_file-expression">expression</a>, <a href="#print-898ffb8a31e9c0bbd6ef4744f642ce9a-al_genquery_write_to_source_file-scope">scope</a>, <a href="#print-898ffb8a31e9c0bbd6ef4744f642ce9a-al_genquery_write_to_source_file-var_name">var_name</a>, <a href="#print-898ffb8a31e9c0bbd6ef4744f642ce9a-al_genquery_write_to_source_file-out_file">out_file</a>)
+</pre>
+<p>Write genquery result to a bzl file</p>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-starlark" data-lang="starlark"><span style="display:flex;"><span>    al_genquery_write_to_source_file(
+</span></span><span style="display:flex;"><span>        name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;al_bzl_libs&#34;</span>,
+</span></span><span style="display:flex;"><span>        expression <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            filter(
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;^//&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                attr(
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    &#34;srcs&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    &#34;.{3,}&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    kind(
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                        &#34;bzl_library&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                        deps(&#34;//bzl&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    )
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                )
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            )
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>        out_file <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;al_bzl_libs.bzl&#34;</span>,
+</span></span><span style="display:flex;"><span>        scope <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;//bzl&#34;</span>],
+</span></span><span style="display:flex;"><span>        var_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;AL_BZL_LIBS&#34;</span>,
+</span></span><span style="display:flex;"><span>    )
+</span></span></code></pre></div><p><strong>PARAMETERS</strong></p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Name</th>
+					<th style="text-align: left">Description</th>
+					<th style="text-align: left">Default Value</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><a id="print-898ffb8a31e9c0bbd6ef4744f642ce9a-al_genquery_write_to_source_file-name"></a>name</td>
+					<td style="text-align: left">name prefix</td>
+					<td style="text-align: left">none</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-898ffb8a31e9c0bbd6ef4744f642ce9a-al_genquery_write_to_source_file-expression"></a>expression</td>
+					<td style="text-align: left">genquery expression</td>
+					<td style="text-align: left">none</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-898ffb8a31e9c0bbd6ef4744f642ce9a-al_genquery_write_to_source_file-scope"></a>scope</td>
+					<td style="text-align: left">genquery scope</td>
+					<td style="text-align: left">none</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-898ffb8a31e9c0bbd6ef4744f642ce9a-al_genquery_write_to_source_file-var_name"></a>var_name</td>
+					<td style="text-align: left">variable name in the generated .bzl file</td>
+					<td style="text-align: left">none</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-898ffb8a31e9c0bbd6ef4744f642ce9a-al_genquery_write_to_source_file-out_file"></a>out_file</td>
+					<td style="text-align: left">output bzl file</td>
+					<td style="text-align: left">none</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>
+
+
+
+    
+	
+  
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        Built with <a href="https://gohugo.io/">Hugo 0.165.0</a>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="/js/main.min.259204f469f58eb3b665605a24e964264772df2adaded180b3669b6ce33d84c8.js" integrity="sha256-JZIE9Gn1jrO2ZWBaJOlkJkdy3yra3tGAs2abbOM9hMg=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.decf3b53d8827d840369f490775626e2a5200e150a733f78f0081c126426cbbf.js" integrity="sha256-3s87U9iCfYQDafSQd1Ym4qUgDhUKcz948AgcEmQmy78=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

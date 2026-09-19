@@ -1,0 +1,1894 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js" data-theme-init>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000000">
+
+<style>
+  html { background: Canvas; color: CanvasText; }
+  @media (prefers-color-scheme: dark) {
+    html { background: #0b0d12; color: #e6e6e6; }
+  }
+  html[data-theme-init] * { transition: none !important; }
+</style>
+
+<script>
+  (function() {
+    const themeKey = 'td-color-theme';
+    const storedTheme = localStorage.getItem(themeKey);
+    let theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (theme === 'auto') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
+<link rel="alternate" type="application/rss&#43;xml" href="https://www-staging.alwaldend.com/tags/ansible_role/index.xml">
+<meta name="robots" content="index, follow">
+
+<title>Ansible_role | Alwaldend</title>
+<meta name="description" content="">
+<meta property="og:url" content="https://www-staging.alwaldend.com/tags/ansible_role/">
+	<meta property="og:site_name" content="Alwaldend">
+	<meta property="og:title" content="Ansible_role">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="Ansible_role">
+	<meta itemprop="dateModified" content="2026-09-19T20:06:21+03:00">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Ansible_role">
+<link rel="preload" href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" as="style" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<link href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" rel="stylesheet" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-term">
+    <header>
+      <nav class="td-navbar js-navbar-scroll">
+<div class="td-navbar-container container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">Alwaldend</span></a>
+  <div class="td-navbar__main td-navbar-nav-scroll td-navbar-nav-scroll--indicator" id="main_navbar">
+    <div class="scroll-indicator scroll-left"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/projects/"><span>Projects</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item td-navbar__light-dark-menu">
+        <div class="td-light-dark-menu dropdown"><svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+<button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        title="Toggle theme (Auto)"
+        aria-label="Toggle theme (Auto)">
+  <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="bd-theme">
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
+      Light
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>
+      Dark
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+      <svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>
+      Auto
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+</ul>
+</div>
+
+      </li>
+      </ul>
+    <div class="scroll-indicator scroll-right"></div>
+  </div>
+  <div class="td-navbar__search d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon" aria-hidden="true"></div>
+  <input
+    type="search"
+    name="q"
+    class="td-search__input form-control"
+    placeholder='Search this site…'
+    aria-label='Search this site…'
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <div class="td-content">
+  <main class="taxonomy-taxonomy-page">
+    <h1>Tag: <span>Ansible_role</span></h1>
+    <div>
+      
+    </div>
+    <div>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/adguard/">Adguard</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    Adguard</li>
+  </ol>
+</nav><p>Role to deploy adguard</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/caddy/">Caddy</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    Caddy</li>
+  </ol>
+</nav><p>Role to deploy caddy</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/cifs/">CIFS</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    CIFS</li>
+  </ol>
+</nav><p>Setup cifs</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/consul/">Consul</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    Consul</li>
+  </ol>
+</nav><p>Consul</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/consul_old/">Consul</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    Consul</li>
+  </ol>
+</nav><p>Setup consul</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/consul_envoy/">Consul envoy</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    Consul envoy</li>
+  </ol>
+</nav><p>Setup envoy for consul</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/dev_vm/">Dev VM</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    Dev VM</li>
+  </ol>
+</nav><p>Set up repositories and packages for a development VM</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/dns/">DNS</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    DNS</li>
+  </ol>
+</nav><p>Setup dns records</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/docker/">Docker</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    Docker</li>
+  </ol>
+</nav><p>Setup docker</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/facts/">Facts</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    Facts</li>
+  </ol>
+</nav><p>Setup ansible facts</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/filesystem/">Filesystem</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    Filesystem</li>
+  </ol>
+</nav><p>Setup filesystems</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/firewall/">Firewall</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    Firewall</li>
+  </ol>
+</nav><p>Setup firewall</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/forgejo/">Forgejo</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    Forgejo</li>
+  </ol>
+</nav><p>Forgejo</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/forgejo/" data-taxonomy-term="forgejo"><span class="taxonomy-label">Forgejo</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/threexui/">Forgejo</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    Forgejo</li>
+  </ol>
+</nav><p>Forgejo</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/forgejo/" data-taxonomy-term="forgejo"><span class="taxonomy-label">Forgejo</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/forgejo_runner/">Forgejo runner</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    Forgejo runner</li>
+  </ol>
+</nav><p>Install and register a Forgejo Actions runner</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/gpg/">Gpg</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    Gpg</li>
+  </ol>
+</nav><p>Setup GPG</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/harbor/">Harboer</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    Harboer</li>
+  </ol>
+</nav><p>Harbor</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/harbor/" data-taxonomy-term="harbor"><span class="taxonomy-label">Harbor</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/hermes/">Hermes</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    Hermes</li>
+  </ol>
+</nav><p>Install and run the Hermes Agent gateway</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ai/" data-taxonomy-term="ai"><span class="taxonomy-label">Ai</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/hiddify_manager/">Hiddify manager</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    Hiddify manager</li>
+  </ol>
+</nav><p>Setup hiddify manager</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/hiddify_manager_host/">Hiddify manager with host</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    Hiddify manager with host</li>
+  </ol>
+</nav><p>Setup host and then hiddify manager</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/host/">Host</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    Host</li>
+  </ol>
+</nav><p>Common host setup</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/install_ca/">Install CA</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    Install CA</li>
+  </ol>
+</nav><p>Install a certificate authority</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/k3s/">K3s</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    K3s</li>
+  </ol>
+</nav><p>Setup k3s</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/k3s_bootstrap/">K3s bootstrap</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    K3s bootstrap</li>
+  </ol>
+</nav><p>Bootstrap k3s cluster</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/k3s_cluster/">K3s cluster</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    K3s cluster</li>
+  </ol>
+</nav><p>Setup k3s cluster</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/k3s_kubeconfig/">K3s kubeconfig</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    K3s kubeconfig</li>
+  </ol>
+</nav><p>Write k3s kubeconfig to a secret</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/lvg/">lvg</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    lvg</li>
+  </ol>
+</nav><p>Setup LVM volume groups</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/lvol/">lvol</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    lvol</li>
+  </ol>
+</nav><p>Setup LVM logical volumes</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/mount/">Mount</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    Mount</li>
+  </ol>
+</nav><p>Setup posix mounts</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/opencode/">Opencode</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    Opencode</li>
+  </ol>
+</nav><p>Opencode</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/openhands_automation/">OpenHands automation</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    OpenHands automation</li>
+  </ol>
+</nav><p>OpenHands automation server</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/openhands/" data-taxonomy-term="openhands"><span class="taxonomy-label">Openhands</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/openhands_canvas/">OpenHands canvas</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    OpenHands canvas</li>
+  </ol>
+</nav><p>OpenHands Agent Canvas frontend</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/openhands/" data-taxonomy-term="openhands"><span class="taxonomy-label">Openhands</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/openhands_server/">Openhands server</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    Openhands server</li>
+  </ol>
+</nav><p>OpenHands agent server</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/openhands/" data-taxonomy-term="openhands"><span class="taxonomy-label">Openhands</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/os/">OS</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    OS</li>
+  </ol>
+</nav><p>Common os setup</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/pve/">Pve</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    Pve</li>
+  </ol>
+</nav><p>Proxmox Virtual Environment deploy</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/pve_cluster/">PVE cluster</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    PVE cluster</li>
+  </ol>
+</nav><p>Setup PVE cluster</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/pve_vm/">PVE VM</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    PVE VM</li>
+  </ol>
+</nav><p>Setup PVE VM</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/pve_vm_remove/">PVE VM remove</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    PVE VM remove</li>
+  </ol>
+</nav><p>Remove PVE VM</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/raspberry_pi/">Raspberry pi</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    Raspberry pi</li>
+  </ol>
+</nav><p>Setup raspberry pi</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/ssh/">SSH</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    SSH</li>
+  </ol>
+</nav><p>Setup ssh</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/ssh_port_forward/">SSH port forwarding</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    SSH port forwarding</li>
+  </ol>
+</nav><p>Setup SSH port forwarding</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/ssh_update_known_hosts/">SSH update known hosts</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    SSH update known hosts</li>
+  </ol>
+</nav><p>Update known hosts</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/t3code/">T3 Code</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    T3 Code</li>
+  </ol>
+</nav><p>Run the T3 Code server as a systemd service</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ai/" data-taxonomy-term="ai"><span class="taxonomy-label">Ai</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/traefik/">Traefik</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    Traefik</li>
+  </ol>
+</nav><p>Traefik</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/traefik_old/">Traefik (old)</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    Traefik (old)</li>
+  </ol>
+</nav><p>Old traefik role</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/update_all_packages/">Update all packages</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    Update all packages</li>
+  </ol>
+</nav><p>Update all system packages</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/users/">Users</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    Users</li>
+  </ol>
+</nav><p>Setup system users</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/vault/">Vault</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    Vault</li>
+  </ol>
+</nav><p>Setup Hashicorp Vault</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/wireguard/">Wireguard</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    Wireguard</li>
+  </ol>
+</nav><p>Setup wireguard</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/projects/ansible_collection/roles/xray/">Xray</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/">Projects</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/">Ansible collection</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/projects/ansible_collection/roles/">Roles</a></li>
+  <li class="td-breadcrumbs__item">
+    Xray</li>
+  </ol>
+</nav><p>Setup xray</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/project/" data-taxonomy-term="project"><span class="taxonomy-label">Project</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible_role/" data-taxonomy-term="ansible_role"><span class="taxonomy-label">Ansible_role</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+    </div>
+    <a href="https://www-staging.alwaldend.com/tags/" class="all-taxonomy-terms">All Tags</a>
+  </main>
+</div>
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        Built with <a href="https://gohugo.io/">Hugo 0.165.0</a>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="/js/main.min.259204f469f58eb3b665605a24e964264772df2adaded180b3669b6ce33d84c8.js" integrity="sha256-JZIE9Gn1jrO2ZWBaJOlkJkdy3yra3tGAs2abbOM9hMg=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.decf3b53d8827d840369f490775626e2a5200e150a733f78f0081c126426cbbf.js" integrity="sha256-3s87U9iCfYQDafSQd1Ym4qUgDhUKcz948AgcEmQmy78=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

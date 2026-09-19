@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>K8s on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/tags/k8s/</link>
+		<description>Recent content in K8s on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>cl</title>
+				<link>https://www-staging.alwaldend.com/docs/infra/flux/cl/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/flux/cl/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Cert manager charts: &lt;a href=&#34;https://artifacthub.io/packages/helm/cert-manager/cert-manager&#34;&gt;https://artifacthub.io/packages/helm/cert-manager/cert-manager&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>cl</title>
+				<link>https://www-staging.alwaldend.com/docs/infra/harbor/cl/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/harbor/cl/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>io_goharbor_helm_harbor</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/io_goharbor_helm_harbor/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/io_goharbor_helm_harbor/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Releases: &lt;a href=&#34;https://github.com/goharbor/harbor-helm/releases&#34;&gt;https://github.com/goharbor/harbor-helm/releases&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>io_k3s_k3s</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/io_k3s_k3s/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/io_k3s_k3s/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://docs.k3s.io/&#34;&gt;https://docs.k3s.io/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Repo: &lt;a href=&#34;https://github.com/k3s-io/k3s&#34;&gt;https://github.com/k3s-io/k3s&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>io_kubernetes_kubectl</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/io_kubernetes_kubectl/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/io_kubernetes_kubectl/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/&#34;&gt;https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Kustomization</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/kustomization/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/kustomization/</guid>
+				<description>&lt;p&gt;This project contains Kubernetes Kustomization resources for Flux, Traefik,&#xA;and cert-manager. It is still in progress.&lt;/p&gt;&#xA;&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Docs: &lt;a href=&#34;https://fluxcd.io/flux/components/kustomize/kustomizations/&#34;&gt;https://fluxcd.io/flux/components/kustomize/kustomizations/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Kustomization</title>
+				<link>https://www-staging.alwaldend.com/projects/kustomization/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/projects/kustomization/</guid>
+				<description>&lt;p&gt;Kubernetes resources for Flux, Traefik, and cert-manager, maintained as&#xA;Kustomizations. This work is still in progress.&lt;/p&gt;&#xA;&lt;h2 id=&#34;status&#34;&gt;Status&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#status&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;In progress. The resource set is not yet complete.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>sh_helm_helm</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/sh_helm_helm/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/sh_helm_helm/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://helm.sh/&#34;&gt;https://helm.sh/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Releases: &lt;a href=&#34;https://github.com/helm/helm/releases&#34;&gt;https://github.com/helm/helm/releases&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+	</channel>
+</rss>

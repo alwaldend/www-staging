@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Android on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/tags/android/</link>
+		<description>Recent content in Android on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/tags/android/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>ActivityWatch ingester Android</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/activitywatch_ingester_android/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/activitywatch_ingester_android/</guid>
+				<description>&lt;h1 id=&#34;activitywatch-ingester-android&#34;&gt;ActivityWatch ingester Android&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#activitywatch-ingester-android&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;An Android collector that reads supported browser address-bar text through&#xA;Android accessibility and sends it to an ActivityWatch server. The app holds&#xA;full accessibility permission only to obtain the URL; it never uses that&#xA;permission for anything else.&lt;/p&gt;&#xA;&lt;h2 id=&#34;how-it-works&#34;&gt;How it works&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#how-it-works&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Enabling accessibility for this app lets it read the focused address bar.&lt;/li&gt;&#xA;&lt;li&gt;The accessibility service matches browser view IDs (&lt;code&gt;url_bar&lt;/code&gt; and common&#xA;Chrome-derived variants), extracts the current URL, and sends an&#xA;ActivityWatch heartbeat for the &lt;code&gt;web.tab.current&lt;/code&gt; bucket to a configurable&#xA;server.&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;web.tab.current&lt;/code&gt; heartbeats use &lt;code&gt;pulsetime=1.0&lt;/code&gt;; consecutive URLs are sent&#xA;with the time spent on the previous tab as the &lt;code&gt;duration&lt;/code&gt; field.&lt;/li&gt;&#xA;&lt;li&gt;Data goes directly from this app to the ActivityWatch HTTP API; it is not&#xA;uploaded to any other service.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;configuration&#34;&gt;Configuration&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#configuration&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Open the app to configure:&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>ActivityWatch ingester Android</title>
+				<link>https://www-staging.alwaldend.com/projects/activitywatch_ingester_android/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/projects/activitywatch_ingester_android/</guid>
+				<description>&lt;p&gt;An Android collector that reads the browser address bar through Android&#xA;accessibility services and sends visited URLs to an ActivityWatch server, so&#xA;browser activity appears alongside the rest of your tracked time.&lt;/p&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#features&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Reads supported browsers through accessibility, with no browser extension&lt;/li&gt;&#xA;&lt;li&gt;Sends browser URLs to a configured ActivityWatch server&lt;/li&gt;&#xA;&lt;li&gt;Written in Kotlin for Android&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Android</title>
+				<link>https://www-staging.alwaldend.com/docs/misc/android/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/misc/android/</guid>
+				<description>&lt;h2 id=&#34;diagnostics&#34;&gt;Diagnostics&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#diagnostics&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Android has some built-in tests for the display and other components in&#xA;&lt;code&gt;Settings -&amp;gt; System -&amp;gt; Device diagnostics&lt;/code&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Android cmdtools</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/android_cmdtools/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/android_cmdtools/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Android launcher</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/android_launcher/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/android_launcher/</guid>
+				<description>&lt;p&gt;A text-only Android launcher built with Kotlin and Jetpack Compose. It lets&#xA;you hide apps and runs without ads, tracking, or internet access.&lt;/p&gt;&#xA;&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Source code: &lt;a href=&#34;https://github.com/alwaldend/src/tree/master/projects/android_launcher&#34;&gt;https://github.com/alwaldend/src/tree/master/projects/android_launcher&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#features&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Android app&lt;/li&gt;&#xA;&lt;li&gt;Kotlin, Jetpack Compose&lt;/li&gt;&#xA;&lt;li&gt;Only text&lt;/li&gt;&#xA;&lt;li&gt;FOSS, no ads, no internet access, no tracking, minimal dependencies&lt;/li&gt;&#xA;&lt;li&gt;Allows you to hide apps&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Android launcher</title>
+				<link>https://www-staging.alwaldend.com/projects/android_launcher/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/projects/android_launcher/</guid>
+				<description>&lt;p&gt;A text-only Android launcher built with Kotlin and Jetpack Compose. It&#xA;lets you hide apps from the launcher and runs without ads, tracking, or&#xA;internet access.&lt;/p&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#features&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Text-only launcher interface&lt;/li&gt;&#xA;&lt;li&gt;Hide selected apps&lt;/li&gt;&#xA;&lt;li&gt;No ads, tracking, or network access&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>F-Droid</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/fdroid/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/fdroid/</guid>
+				<description>&lt;p&gt;Pinned &lt;code&gt;fdroidserver&lt;/code&gt; environment for local F-Droid builds. The wrapper&#xA;provisions an isolated Python virtualenv and delegates to &lt;code&gt;fdroid&lt;/code&gt;. Use&#xA;&lt;code&gt;tools/gradle/gradle-wrapper&lt;/code&gt; for the Android app&amp;rsquo;s Gradle build; this tool&#xA;only drives F-Droid metadata and local builds.&lt;/p&gt;&#xA;&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#usage&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tools/fdroid/fdroid-wrapper &amp;lt;fdroid-subcommand&amp;gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Run from an F-Droid data directory containing &lt;code&gt;config.yml&lt;/code&gt; and &lt;code&gt;metadata/&lt;/code&gt;.&#xA;Caches go under the workspace&amp;rsquo;s ignored &lt;code&gt;out/&lt;/code&gt; tree.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Gradle</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/net_gradle_gradle/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/net_gradle_gradle/</guid>
+				<description>&lt;p&gt;Pinned Gradle 8.13 binary distribution from the primary publisher.&lt;/p&gt;&#xA;&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Source code: &lt;a href=&#34;https://github.com/gradle/gradle/tree/v8.13.0&#34;&gt;https://github.com/gradle/gradle/tree/v8.13.0&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Maven Install Gradle Converter</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/maven_install_gradle_converter/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/maven_install_gradle_converter/</guid>
+				<description>&lt;p&gt;Converts &lt;code&gt;rules_jvm_external&lt;/code&gt; &lt;code&gt;maven_install.json&lt;/code&gt; lock files into Gradle&#xA;version catalogs and dependency verification metadata so Bazel-built Android&#xA;apps can maintain the parallel Gradle build required for F-Droid.&lt;/p&gt;&#xA;&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#usage&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Use the &lt;code&gt;al_gradle_lock&lt;/code&gt; Starlark macro from&#xA;&lt;code&gt;main/bzl/gradle_lock.bzl&lt;/code&gt; in your app&amp;rsquo;s &lt;code&gt;gradle/BUILD.bazel&lt;/code&gt;:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-starlark&#34; data-lang=&#34;starlark&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;load(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;//tools/maven_install_gradle_converter:defs.bzl&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;al_gradle_lock&amp;#34;&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;al_gradle_lock(&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;update&amp;#34;&lt;/span&gt;,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    lock_file &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;//projects/&amp;lt;app&amp;gt;:maven_lock.json&amp;#34;&lt;/span&gt;,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    tool &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;//tools/maven_install_gradle_converter/cmd/gradle_lock_gen&amp;#34;&lt;/span&gt;,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Run &lt;code&gt;bazel run :update_toml_write&lt;/code&gt; to regenerate the checked-in version&#xA;catalog. The corresponding &lt;code&gt;*_write_test&lt;/code&gt; target fails when it goes stale.&lt;/p&gt;&#xA;&lt;p&gt;Gradle owns &lt;code&gt;verification-metadata.xml&lt;/code&gt; because it must record the plugin&#xA;classpath in addition to the Bazel lock. Regenerate it with:&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Waydroid</title>
+				<link>https://www-staging.alwaldend.com/docs/misc/waydroid/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/misc/waydroid/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://docs.waydro.id/&#34;&gt;https://docs.waydro.id/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;shared-folder-and-copying-files&#34;&gt;Shared folder and copying files&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#shared-folder-and-copying-files&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chmod &lt;span style=&#34;color:#ae81ff&#34;&gt;777&lt;/span&gt; file&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo cp file ~/.local/share/waydroid/data/media/0/Download/&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Docs: &lt;a href=&#34;https://docs.waydro.id/faq/setting-up-a-shared-folder&#34;&gt;https://docs.waydro.id/faq/setting-up-a-shared-folder&lt;/a&gt;&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

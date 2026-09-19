@@ -1,0 +1,929 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js" data-theme-init>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000000">
+
+<style>
+  html { background: Canvas; color: CanvasText; }
+  @media (prefers-color-scheme: dark) {
+    html { background: #0b0d12; color: #e6e6e6; }
+  }
+  html[data-theme-init] * { transition: none !important; }
+</style>
+
+<script>
+  (function() {
+    const themeKey = 'td-color-theme';
+    const storedTheme = localStorage.getItem(themeKey);
+    let theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (theme === 'auto') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
+<link rel="canonical" type="text/html" href="https://www-staging.alwaldend.com/docs/projects/activitywatch_ingester_android/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://www-staging.alwaldend.com/docs/projects/activitywatch_ingester_android/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+<title>ActivityWatch ingester Android | Alwaldend</title>
+<meta name="description" content="Accessibility-based Android collector that sends browser URLs to ActivityWatch">
+<meta property="og:url" content="https://www-staging.alwaldend.com/docs/projects/activitywatch_ingester_android/">
+	<meta property="og:site_name" content="Alwaldend">
+	<meta property="og:title" content="ActivityWatch ingester Android">
+	<meta property="og:description" content="Accessibility-based Android collector that sends browser URLs to ActivityWatch">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="ActivityWatch ingester Android">
+	<meta itemprop="description" content="Accessibility-based Android collector that sends browser URLs to ActivityWatch">
+	<meta itemprop="dateModified" content="2026-09-19T20:06:21+03:00">
+	<meta itemprop="wordCount" content="395">
+	<meta itemprop="keywords" content="Android,Activitywatch">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="ActivityWatch ingester Android">
+	<meta name="twitter:description" content="Accessibility-based Android collector that sends browser URLs to ActivityWatch">
+<link rel="preload" href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" as="style" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<link href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" rel="stylesheet" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll">
+<div class="td-navbar-container container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">Alwaldend</span></a>
+  <div class="td-navbar__main td-navbar-nav-scroll td-navbar-nav-scroll--indicator" id="main_navbar">
+    <div class="scroll-indicator scroll-left"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/projects/"><span>Projects</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item td-navbar__light-dark-menu">
+        <div class="td-light-dark-menu dropdown"><svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+<button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        title="Toggle theme (Auto)"
+        aria-label="Toggle theme (Auto)">
+  <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="bd-theme">
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
+      Light
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>
+      Dark
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+      <svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>
+      Auto
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+</ul>
+</div>
+
+      </li>
+      </ul>
+    <div class="scroll-indicator scroll-right"></div>
+  </div>
+  <div class="td-navbar__search d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon" aria-hidden="true"></div>
+  <input
+    type="search"
+    name="q"
+    class="td-search__input form-control"
+    placeholder='Search this site…'
+    aria-label='Search this site…'
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/projects/activitywatch_ingester_android/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">ActivityWatch ingester Android</h1>
+<div class="lead">Accessibility-based Android collector that sends browser URLs to ActivityWatch</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-997dd77df96bd4023cd59356ead30c98"></a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1.1: <a href="#pg-56b3ca18e8446704e66a67f8ab89588f">head</a></li>
+
+
+    
+  
+
+    </ul>
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      <h1 id="print-0a71226d1393a3471d552752d61cc8a0-activitywatch-ingester-android">ActivityWatch ingester Android<a class="td-heading-self-link" href="#print-0a71226d1393a3471d552752d61cc8a0-activitywatch-ingester-android" aria-label="Heading self-link"></a></h1><p>An Android collector that reads supported browser address-bar text through
+Android accessibility and sends it to an ActivityWatch server. The app holds
+full accessibility permission only to obtain the URL; it never uses that
+permission for anything else.</p>
+<h2 id="print-0a71226d1393a3471d552752d61cc8a0-how-it-works">How it works<a class="td-heading-self-link" href="#print-0a71226d1393a3471d552752d61cc8a0-how-it-works" aria-label="Heading self-link"></a></h2><ul>
+<li>Enabling accessibility for this app lets it read the focused address bar.</li>
+<li>The accessibility service matches browser view IDs (<code>url_bar</code> and common
+Chrome-derived variants), extracts the current URL, and sends an
+ActivityWatch heartbeat for the <code>web.tab.current</code> bucket to a configurable
+server.</li>
+<li><code>web.tab.current</code> heartbeats use <code>pulsetime=1.0</code>; consecutive URLs are sent
+with the time spent on the previous tab as the <code>duration</code> field.</li>
+<li>Data goes directly from this app to the ActivityWatch HTTP API; it is not
+uploaded to any other service.</li>
+</ul>
+<h2 id="print-0a71226d1393a3471d552752d61cc8a0-configuration">Configuration<a class="td-heading-self-link" href="#print-0a71226d1393a3471d552752d61cc8a0-configuration" aria-label="Heading self-link"></a></h2><p>Open the app to configure:</p>
+<ul>
+<li><strong>ActivityWatch server URL</strong> — the base URL of the ActivityWatch server.
+The default is <code>http://127.0.0.1:5600</code> for the ActivityWatch Android app on
+the same device. Changes are saved immediately.</li>
+<li><strong>API key (optional)</strong> — bearer token sent as <code>Authorization: Bearer ...</code>
+when the ActivityWatch server has API authentication enabled.</li>
+</ul>
+<p>The <code>INTERNET</code> permission is required to reach the ActivityWatch HTTP API. The
+default loopback URL is sent over cleartext HTTP only to <code>127.0.0.1</code> and
+<code>localhost</code>, so no host data leaves the device.</p>
+<h2 id="print-0a71226d1393a3471d552752d61cc8a0-supported-browsers">Supported browsers<a class="td-heading-self-link" href="#print-0a71226d1393a3471d552752d61cc8a0-supported-browsers" aria-label="Heading self-link"></a></h2><p>Chrome and Chromium-based browsers that expose the <code>url_bar</code> view ID
+(including ordinary Chrome and many Chrome-based forks). Firefox, Samsung
+Internet, Opera, and Edge do not use that view ID yet.</p>
+<h2 id="print-0a71226d1393a3471d552752d61cc8a0-build-and-install">Build and install<a class="td-heading-self-link" href="#print-0a71226d1393a3471d552752d61cc8a0-build-and-install" aria-label="Heading self-link"></a></h2><ol>
+<li>Build the APK:
+<code>bazel build //projects/activitywatch_ingester_android/main/java:ingester_binary</code></li>
+<li>Verify the APK starts on an already running device or emulator:
+<code>bazel run //projects/activitywatch_ingester_android/test:ingester_smoke_test</code>
+This manual smoke test installs the Bazel-built APK, launches the activity,
+waits for the process, and confirms it stays alive. It is not a CI test.</li>
+<li>Install the APK on the device from <code>bazel-bin/projects/activitywatch_ingester_android/main/java/ingester_binary.apk</code>.</li>
+<li>Start the app and set the ActivityWatch server URL.</li>
+<li>Enable accessibility for the app in Android settings; Android shows the
+full-access warning, which is the mechanism this collector is built on.</li>
+<li>Open a browser. The current URL is re-sent to ActivityWatch whenever the
+address bar changes.</li>
+</ol>
+<h2 id="print-0a71226d1393a3471d552752d61cc8a0-compatibility">Compatibility<a class="td-heading-self-link" href="#print-0a71226d1393a3471d552752d61cc8a0-compatibility" aria-label="Heading self-link"></a></h2><ul>
+<li>Minimum Android SDK 25 (Android 7.0).</li>
+<li>Tested against the ActivityWatch v0.13 HTTP API (<code>POST /api/0/buckets</code> and
+<code>POST /api/0/buckets/web.tab.current/heartbeat</code>).</li>
+</ul>
+<h2 id="print-0a71226d1393a3471d552752d61cc8a0-landing-page">Landing page<a class="td-heading-self-link" href="#print-0a71226d1393a3471d552752d61cc8a0-landing-page" aria-label="Heading self-link"></a></h2><p>The landing page is published at
+<a href="https://activitywatch-ingester-android.alwaldend.com/">activitywatch-ingester-android.alwaldend.com</a>,
+built from this README by the shared Hugo landing template. The DNS record
+lives in <code>dnsconfig.json</code>; the <a href="tf/README.md">project Terraform stage</a> describes
+its configuration and ownership activation workflow.</p>
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-997dd77df96bd4023cd59356ead30c98">1 - </h1>
+    
+	<h1 id="print-c112446eec449943e1541204778acd32-releases">Releases<a class="td-heading-self-link" href="#print-c112446eec449943e1541204778acd32-releases" aria-label="Heading self-link"></a></h1><p>Release packaging for the ActivityWatch ingester Android app.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-56b3ca18e8446704e66a67f8ab89588f">1.1 - head</h1>
+    <div class="lead">Release head</div>
+	
+
+
+
+<div class="accordion mt-2" id="print-09ed6f8d8f0f2c34f70d7c16459b7324-release-09ed6f8d8f0f2c34f70d7c16459b7324-page-0_accordion">
+  <div class="accordion-item">
+    <h3 class="accordion-header" id="print-09ed6f8d8f0f2c34f70d7c16459b7324-release-09ed6f8d8f0f2c34f70d7c16459b7324-page-0">
+      <button
+        class="accordion-button"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#print-09ed6f8d8f0f2c34f70d7c16459b7324-release-09ed6f8d8f0f2c34f70d7c16459b7324-page-0_collapse"
+        aria-expanded="true"
+        aria-controls="print-09ed6f8d8f0f2c34f70d7c16459b7324-release-09ed6f8d8f0f2c34f70d7c16459b7324-page-0_collapse"
+      >Changelog<span class="badge rounded-pill bg-secondary ms-1">6</span>
+</button>
+    </h3>
+    <div
+      id="print-09ed6f8d8f0f2c34f70d7c16459b7324-release-09ed6f8d8f0f2c34f70d7c16459b7324-page-0_collapse"
+      class="accordion-collapse collapse show"
+      aria-labelledby="print-09ed6f8d8f0f2c34f70d7c16459b7324-release-09ed6f8d8f0f2c34f70d7c16459b7324-page-0"
+      data-bs-parent="#print-09ed6f8d8f0f2c34f70d7c16459b7324-release-09ed6f8d8f0f2c34f70d7c16459b7324-page-0_accordion"
+    >
+      <div class="accordion-body"><ul class="list-group">
+          <li class="list-group-item my-auto">
+            <p>Move project landings into the main site</p>
+<p>Publish every registered project&rsquo;s visitor-facing landing page at
+/projects/<name>/ from the main site instead of a dedicated subdomain, and
+retire the per-project Pages repository, CNAME, and Terraform DNS stage that
+existed only to serve one page derived from the project README.</p>
+<p>Each project owns its landing content in projects/<name>/site/content/ as pure
+content: no layouts, styles, or build rules. The main site packages those
+directories into content/projects/<name>/ from the registry in
+projects/projects.bzl, so membership is declared once. The landing is a short
+hand-written page for visitors while the README keeps its /docs/projects/<name>/
+URL for repository reference documentation, and landing front matter now feeds
+the statuses, languages, and tags taxonomies.</p>
+<p>Merge the reusable hugo_landing project into the main site: its shared canvas
+and accent styles and its landing page rules move into the apex tree, and its
+landing macro, generated configuration, standalone publisher, and
+repository-relative rewrite layouts are removed. The theme keeps owning the
+taxonomy and term layouts, which are richer than the heading-only versions the
+reusable project carried. Remove the now-unused apex deploy_project.sh and
+deploy_all.sh landing publishers with it.</p>
+<p>Retire the per-project publication and DNS ownership: the project landing
+targets and the landing deployment command, each landing project&rsquo;s
+dnsconfig.json and Terraform root, the build plumbing that served only those
+stages, and the landing repository and Pages membership in the repository
+catalog. The apex Terraform root is retained because it also declares VM
+resources, and no Vault configuration is changed.</p>
+<p>Replace the provider-snapshot zone files with generated declaration pages, one
+per destination view, that project the checked-in declarations and are verified
+for freshness by the DNS offline check. The DNS linter, both destination pages,
+the apex site, the skills projection, and the repository quality suite pass, and
+the whole repository builds.</p>
+<p>OpenSpec-Change: projects/alwaldend.com/openspec/changes/consolidate-project-landings-into-apex</p>
+<p>LLM-disclaimer: This commit was generated by an LLM.</p>
+
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">976a6a218ec8b3450fee44481674463b9c5115fd</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                PGP
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">-----BEGIN SSH SIGNATURE-----
+U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAg0/OoO0fyfgVXnUZTMZXlNFA3cn
+78YxSrrdPiskRJNxUAAAADZ2l0AAAAAAAAAAZzaGE1MTIAAABTAAAAC3NzaC1lZDI1NTE5
+AAAAQFCTwf73FSK2HZgURFxfuGc1FDJ7ZDAaDQ&#43;pmJIIsu2gjTQrOQf22bMN0TWvMdhL6j
+YsCh424/NCqnhwVpaE6Qk=
+-----END SSH SIGNATURE-----
+</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            <p>Manage forge resources with hermetic Terraform rules</p>
+<p>Centralize organization, repository, and named access configuration in
+infra/repos. Adopt existing GitHub resources, protect master defaults while
+retaining Pages publication on pages, and preserve existing repository
+identities. Manage GitLab one-time imports, the F-Droid metadata fork, and
+default-branch protections through Vault-backed authentication. Forgejo
+consumes the same catalog. Ongoing repository synchronization is deferred.</p>
+<p>Retire the eleven Bazel rule landing sites through their owning Terraform
+workflows, removing their DNS records, Pages repositories, and landing
+configuration. Move all twelve existing standalone rule modules into tools/
+and retain their public interfaces and documentation on the main site.</p>
+<p>Add tools/rules_terraform with verified provider downloads, packed mirrors
+in runfiles, and reusable Terraform execution rules. Enforce one version per
+provider source at an extensible resolution boundary. Migrate every Terraform
+consumer to thirteen shared provider pins in third_party/terraform. Execution
+and command maps belong to rules_terraform; consumers explicitly select generic
+AL wrappers for authentication and Vault injection. Remove tools/terraform
+and all 43 checked-in Terraform provider locks.
+Validate installed providers against the declared archives before execution.</p>
+<p>Validation covers all fourteen workspace builds, all thirteen standalone
+test suites, Terraform consumers, offline real-provider regressions, rendered
+documentation, formatting, and semantic lint. The full root test run has
+295 passing tests and one skip; its only failure is the historical secret
+scan, reduced to four pre-existing synthetic fixture matches. Earlier live
+imports and the exact landing retirement scope have verified postconditions;
+the Terraform rules migration uses only offline implementation checks.</p>
+<p>OpenSpec-Change: infra/repos/openspec/changes/archive/2026-09-13-adopt-shared-repository-catalog
+OpenSpec-Change: infra/src/openspec/changes/archive/2026-09-13-retire-bazel-rule-landings
+OpenSpec-Change: tools/rules_terraform/openspec/changes/archive/2026-09-14-add-hermetic-terraform-rules
+OpenSpec-Change: tools/rules_terraform/openspec/changes/archive/2026-09-14-correct-terraform-ownership</p>
+<p>LLM-disclaimer: This commit was generated by an LLM.</p>
+
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">6cb4d63c7b473cbff738332389c05168b9158cc4</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;bf4f0e49-086a-48b0-bafd-88001a8bf12d@simplelogin.alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            <p>Deploy project DNS through Terraform modules</p>
+<p>Move DNS ownership into each project’s Terraform state using shared modules.
+Load dnsconfig.json files at runtime, reject conflicting domain ownership,
+and render their records as a table. Add missing project AppRoles and scoped
+DNS policies, and document grouping related Terraform resources in modules.</p>
+<p>Deploy all 45 owners sequentially: adopt 155 existing records and create 13
+missing OpenHands records. Preserve every pre-existing provider record and
+verify no-op follow-up plans and DNS answers. Add DNS-scoped plan/show/apply
+wrappers with a saved-plan guard for roots that also manage services.
+Allow bounded aggregate path inventories large enough to deliver this migration
+while retaining truncation refusal in the delivery tool.</p>
+<p>Validate runtime ownership, provider imports and preservation with isolated
+fixtures, Terraform formatting, wrapper builds, repository quality checks,
+semantic lint, and project documentation/specification builds.</p>
+<p>OpenSpec-Change: infra/dns/openspec/changes/archive/2026-09-13-migrate-project-dns-to-terraform</p>
+<p>LLM-disclaimer: This commit was generated by an LLM.</p>
+
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">cc4f205bf73b49364ba3bd441b7f485b9872e742</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;bf4f0e49-086a-48b0-bafd-88001a8bf12d@simplelogin.alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            <p>Fix Android review feedback</p>
+<p>Add a shared <code>androidPlugins</code> version catalog so both Android apps declare the
+AGP, Kotlin, Compose, and protobuf plugin versions once, and derive their
+versions from it instead of duplicating literals per root Gradle file.</p>
+<p>Align the launcher and ingester app versions with the repository versioning
+contract: development builds use <code>0.0.0-dev</code> with <code>versionCode</code> 1 in both the
+Gradle default config and the Bazel <code>manifest_values</code>.</p>
+<p>Ignore the whole materialized <code>.agents/skills</code> directory in Prettier because
+every entry is either a source-tree symlink or a byte-pinned external archive
+copy.</p>
+<p>Apply the ingester&rsquo;s themed surface background to the main content surface so
+the status bar area follows the system theme, not a default white surface.</p>
+<p>Token: z-ai-glm-flash-latest</p>
+<p>LLM-disclaimer: This commit was generated by an LLM.</p>
+
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">eca2feb173b09d58d466a82000e8152bd2e664d0</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;bf4f0e49-086a-48b0-bafd-88001a8bf12d@simplelogin.alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            <p>Add spellcheck skill</p>
+<p>This commit was generated by an LLM.</p>
+
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">28444214f7295282ff11dcb7aa83d8ad827ab8b4</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                PGP
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">-----BEGIN SSH SIGNATURE-----
+U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAg0/OoO0fyfgVXnUZTMZXlNFA3cn
+78YxSrrdPiskRJNxUAAAADZ2l0AAAAAAAAAAZzaGE1MTIAAABTAAAAC3NzaC1lZDI1NTE5
+AAAAQFleXCIfJFf2rgDHhwXqPLotFU4BO88V9IdIUoSObYTaiLW/Fo47g2NLUnF97uDMfx
+99QQEo1a8VTCBw5ZM6YQs=
+-----END SSH SIGNATURE-----
+</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            <p>Restore light and dark site canvases and set the shared accent</p>
+<p>The shared Docsy canvas set the same Bootstrap dark palette and the same
+black page background on <code>:root</code>, <code>[data-bs-theme=&quot;light&quot;]</code>, and
+<code>[data-bs-theme=&quot;dark&quot;]</code>, so the light/dark toggle changed nothing. The site
+also rendered Bootstrap&rsquo;s stock blue instead of its intended accent.</p>
+<p>Split the shared palette so light mode uses a pure white canvas with the
+light-mode palette and dark mode uses a pure black canvas with the dark-mode
+palette, and keep the pre-stylesheet paint and footer on the active mode.
+Assign <code>$primary</code> to <code>#7c3aed</code> before Bootstrap compiles, so links, buttons,
+badges, focus rings, and the dark-mode link tint all derive from one value
+rather than from a site-local copy.</p>
+<p>Both files stay in the reusable shell; the apex site consumes them through
+the existing declared exports and no longer carries the footer&rsquo;s own blue.</p>
+<p>OpenSpec-Change: projects/hugo_landing/openspec/changes/restore-light-dark-canvas-and-accent</p>
+<p>LLM-disclaimer: This commit was generated by an LLM.</p>
+
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">022861965f3e3407c0f630dd5827b54bb87ee779</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                PGP
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">-----BEGIN SSH SIGNATURE-----
+U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAg0/OoO0fyfgVXnUZTMZXlNFA3cn
+78YxSrrdPiskRJNxUAAAADZ2l0AAAAAAAAAAZzaGE1MTIAAABTAAAAC3NzaC1lZDI1NTE5
+AAAAQP&#43;VcOIIqPR8DY7q4bmucDZO9dJLiApozQqq/IQXHkw4cm9pr98jiPQVSU0J4UBBtx
+0yeucLMBAFev0fFMYQigY=
+-----END SSH SIGNATURE-----
+</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul></div>
+    </div>
+  </div>
+</div><div class="accordion mt-2" id="print-09ed6f8d8f0f2c34f70d7c16459b7324-release-09ed6f8d8f0f2c34f70d7c16459b7324-page-1_accordion">
+  <div class="accordion-item">
+    <h3 class="accordion-header" id="print-09ed6f8d8f0f2c34f70d7c16459b7324-release-09ed6f8d8f0f2c34f70d7c16459b7324-page-1">
+      <button
+        class="accordion-button"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#print-09ed6f8d8f0f2c34f70d7c16459b7324-release-09ed6f8d8f0f2c34f70d7c16459b7324-page-1_collapse"
+        aria-expanded="true"
+        aria-controls="print-09ed6f8d8f0f2c34f70d7c16459b7324-release-09ed6f8d8f0f2c34f70d7c16459b7324-page-1_collapse"
+      >Artifacts<span class="badge rounded-pill bg-secondary ms-1">0</span>
+</button>
+    </h3>
+    <div
+      id="print-09ed6f8d8f0f2c34f70d7c16459b7324-release-09ed6f8d8f0f2c34f70d7c16459b7324-page-1_collapse"
+      class="accordion-collapse collapse show"
+      aria-labelledby="print-09ed6f8d8f0f2c34f70d7c16459b7324-release-09ed6f8d8f0f2c34f70d7c16459b7324-page-1"
+      data-bs-parent="#print-09ed6f8d8f0f2c34f70d7c16459b7324-release-09ed6f8d8f0f2c34f70d7c16459b7324-page-1_accordion"
+    >
+      <div class="accordion-body"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+
+    
+	
+  
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        Built with <a href="https://gohugo.io/">Hugo 0.165.0</a>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="/js/main.min.259204f469f58eb3b665605a24e964264772df2adaded180b3669b6ce33d84c8.js" integrity="sha256-JZIE9Gn1jrO2ZWBaJOlkJkdy3yra3tGAs2abbOM9hMg=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.decf3b53d8827d840369f490775626e2a5200e150a733f78f0081c126426cbbf.js" integrity="sha256-3s87U9iCfYQDafSQd1Ym4qUgDhUKcz948AgcEmQmy78=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

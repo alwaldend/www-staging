@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Yubikey on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/tags/yubikey/</link>
+		<description>Recent content in Yubikey on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/tags/yubikey/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Ykman</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/ykman/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/ykman/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Install: &lt;a href=&#34;https://docs.yubico.com/software/yubikey/tools/ykman/Install_ykman.html&#34;&gt;https://docs.yubico.com/software/yubikey/tools/ykman/Install_ykman.html&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Import certificate: &lt;a href=&#34;https://docs.yubico.com/software/yubikey/tools/authenticator/auth-guide/smartc-import-certificates.html&#34;&gt;https://docs.yubico.com/software/yubikey/tools/authenticator/auth-guide/smartc-import-certificates.html&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+	</channel>
+</rss>

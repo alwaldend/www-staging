@@ -1,0 +1,2446 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js" data-theme-init>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000000">
+
+<style>
+  html { background: Canvas; color: CanvasText; }
+  @media (prefers-color-scheme: dark) {
+    html { background: #0b0d12; color: #e6e6e6; }
+  }
+  html[data-theme-init] * { transition: none !important; }
+</style>
+
+<script>
+  (function() {
+    const themeKey = 'td-color-theme';
+    const storedTheme = localStorage.getItem(themeKey);
+    let theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (theme === 'auto') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
+<link rel="canonical" type="text/html" href="https://www-staging.alwaldend.com/docs/third_party/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://www-staging.alwaldend.com/docs/third_party/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+<title>Third party | Alwaldend</title>
+<meta name="description" content="Third party tree">
+<meta property="og:url" content="https://www-staging.alwaldend.com/docs/third_party/">
+	<meta property="og:site_name" content="Alwaldend">
+	<meta property="og:title" content="Third party">
+	<meta property="og:description" content="Third party tree">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="Third party">
+	<meta itemprop="description" content="Third party tree">
+	<meta itemprop="dateModified" content="2026-09-19T20:06:21+03:00">
+	<meta itemprop="wordCount" content="100">
+	<meta itemprop="keywords" content="Third_party">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Third party">
+	<meta name="twitter:description" content="Third party tree">
+<link rel="preload" href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" as="style" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<link href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" rel="stylesheet" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll">
+<div class="td-navbar-container container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">Alwaldend</span></a>
+  <div class="td-navbar__main td-navbar-nav-scroll td-navbar-nav-scroll--indicator" id="main_navbar">
+    <div class="scroll-indicator scroll-left"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/projects/"><span>Projects</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item td-navbar__light-dark-menu">
+        <div class="td-light-dark-menu dropdown"><svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+<button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        title="Toggle theme (Auto)"
+        aria-label="Toggle theme (Auto)">
+  <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="bd-theme">
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
+      Light
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>
+      Dark
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+      <svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>
+      Auto
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+</ul>
+</div>
+
+      </li>
+      </ul>
+    <div class="scroll-indicator scroll-right"></div>
+  </div>
+  <div class="td-navbar__search d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon" aria-hidden="true"></div>
+  <input
+    type="search"
+    name="q"
+    class="td-search__input form-control"
+    placeholder='Search this site…'
+    aria-label='Search this site…'
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/third_party/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Third party</h1>
+<div class="lead">Third party tree</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-9f66b3e198b6c8e57ce5ab8160c9b7a7"></a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-94a1899badaffa719e5cd4a0b34245ff"></a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-36c1ba1c736dd5d0f33bbf783c489b92">ai_opencode_opencode</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>4: <a href="#pg-ee88ff5b6d5f0a29810ae9c01de5e78e">com_drawio_desktop_bin</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>5: <a href="#pg-500efe0ce84e5691438ac284882d00b4">com_github_bazelbuild_bazel_protobuf</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>6: <a href="#pg-fe9d4639ce9b100d853bccffa9e7fda1">com_github_bazelbuild_bazelisk</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>7: <a href="#pg-c2602e54ba3497bb5a00471c94b53da7">com_github_georgewfraser_java_language_server</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>8: <a href="#pg-525104d29a8d5097aaed32b7516d5501">com_nanovms_ops</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>9: <a href="#pg-42b6cb523f44a8fba5fb86ad5d5c405c">com_nousresearch_hermes_agent</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>10: <a href="#pg-3ead4c3fb2f168f9b20932b9d8e49478">com_truenas_scale</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>11: <a href="#pg-a69b1a96a866bdb79feec7ddceccd78e">dev_sanaei_3xui</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>12: <a href="#pg-68a19c81c687d7732c8cb146dca1c9f2">flux</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>13: <a href="#pg-c45a1a7206baa650f9403f6e636b3e23">Gradle</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>14: <a href="#pg-48d292d7bc29749e2b3830dd0f5e41fe">Images</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>14.1: <a href="#pg-718ceefae2e9be811f7db805e97284a8">Tf</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>15: <a href="#pg-5728b4fe9cd84fe42384e5bad1681de8">io_cert_manager_cmctl</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>16: <a href="#pg-e348e51d46f4536cb1bdae208c72869c">io_controlplane_flux_operator</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>17: <a href="#pg-60e0699ec3e04313303fd624c399e156">io_docker_library_alpine</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>18: <a href="#pg-17aea6cccba228efa1a2a474fdd0e41f">io_getsops_sops</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>19: <a href="#pg-222becd33d63f4f409fbba75afac79e6">io_goharbor_harbor_cli</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>20: <a href="#pg-934792e8a4b131130198ca75724246ad">io_goharbor_helm_harbor</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>21: <a href="#pg-5bcb4e50b2b89474e9d48dba18c38169">io_goharbor_offline_installer</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>22: <a href="#pg-858ee7da69e492523290c743fb03e64c">io_k3s_k3s</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>23: <a href="#pg-1b3874a9bb8ba2bace7dd365ee302480">io_kubernetes_kubectl</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>24: <a href="#pg-34b248ca8677106b1d04495735896b01">io_traefik_traefik</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>25: <a href="#pg-027551df1c96ed55c42b6dfabc754731">Lego ACME client</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>26: <a href="#pg-f26a997b250a21224cbd5c2c630a968b">net_zlib_zlib</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>27: <a href="#pg-fbf945cb87da515878d03aac8a70516a">OpenHands canvas UI compatibility module</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>28: <a href="#pg-cc0af430028b26e4b0d59331c9bf5f4b">org_codeberg_forgejo</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>29: <a href="#pg-259f12169cf13118aaa0a4e8d92db212">org_codeberg_forgejo_bin</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>30: <a href="#pg-9d789097838ab694d965da189b4180d0">org_codeberg_forgejo_contrib_forgejo_cli_bin</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>31: <a href="#pg-637a131f1f8227ce7813a995b3e7b344">org_codeberg_forgejo_runner_bin</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>32: <a href="#pg-afd5c974ea02d5775699b8c98c79fab1">org_fedora_cloud</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>33: <a href="#pg-77108056f386056fe9d47757220ddc29">org_kernel_headers</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>34: <a href="#pg-1537ff72ae41570cdfd17a819bf64bc2">org_nmap_nmap</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>35: <a href="#pg-94a9930b2844d61e5d59c6ae8140166b">org_openssl_openssl</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>36: <a href="#pg-41d1886736de57a6bee8eff005093824">org_pcre_pcre2</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>37: <a href="#pg-a16f413e7778b7b02ba5258b7fc454c3">org_xcp_ng</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>38: <a href="#pg-152f4d00f9b4c609c8e1561b6837e52a">sh_helm_helm</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>39: <a href="#pg-65e5f9992988b148070f5355a19cdd15">Terraform dependencies</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>40: <a href="#pg-ffa19397b7a256c9064297638e6f86ed">us_nasm_nasm</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>41: <a href="#pg-10fef7b2e565d1e52bf9eb7607ddaee9">Xen Orchestra OIDC plugin</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      <p>This tree contains vendored and externally sourced code. All tracked content
+follows the repository&rsquo;s public-source policy and retains its upstream license
+and provenance requirements.</p>
+<h2 id="print-366bcbc2955588480514e4b78887d73f-requirements">Requirements<a class="td-heading-self-link" href="#print-366bcbc2955588480514e4b78887d73f-requirements" aria-label="Heading self-link"></a></h2><ul>
+<li>Bazel targets MUST use repository-internal visibility unless an owning
+toolchain contract requires otherwise.</li>
+<li>Third-party content MUST NOT be represented or published as first-party
+source or artifacts.</li>
+<li>Third-party content MAY be used in builds.</li>
+<li>An explicit repackaging or mirroring target MAY publish an upstream artifact
+under its owner and license policy.</li>
+</ul>
+<h2 id="print-366bcbc2955588480514e4b78887d73f-publish-vendored-helm">Publish vendored helm<a class="td-heading-self-link" href="#print-366bcbc2955588480514e4b78887d73f-publish-vendored-helm" aria-label="Heading self-link"></a></h2><p>This is a state-changing operator example. An agent needs explicit publication
+authority and must invoke the target through <code>bazel_agent</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel_agent bazel run //third_party:publish_helm.io_goharbor_helm_harbor
+</span></span></code></pre></div>
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-9f66b3e198b6c8e57ce5ab8160c9b7a7">1 - </h1>
+    
+	<h1 id="print-136d4485368e5dcbb4ace989067fc5bd-openspec">OpenSpec<a class="td-heading-self-link" href="#print-136d4485368e5dcbb4ace989067fc5bd-openspec" aria-label="Heading self-link"></a></h1><p>The pinned OpenSpec CLI wrapper lives at <code>//tools/openspec</code>. Its generated
+<code>openspec-*</code> agent skills are materialized from the pinned upstream release
+archive declared in <code>third_party/org_fissionai_openspec/</code>; the resulting
+<code>.agents/skills/openspec-*</code> entries are written as regular files by
+<code>//.agents:write_skills</code> and verified by <code>//.agents:write_skills_test</code>.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-94a1899badaffa719e5cd4a0b34245ff">2 - </h1>
+    
+	<h1 id="print-1f722d9f35a614deb2cebe8194ea0996-openspec">OpenSpec<a class="td-heading-self-link" href="#print-1f722d9f35a614deb2cebe8194ea0996-openspec" aria-label="Heading self-link"></a></h1><p>Upstream OpenSpec release archive pinned by tag. <code>//third_party/openspec</code>
+materializes the <code>skills/openspec-*</code> instructions from this archive into the
+consuming repository.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-36c1ba1c736dd5d0f33bbf783c489b92">3 - ai_opencode_opencode</h1>
+    <div class="lead">Opencode - The open source AI coding agent</div>
+	<h2 id="print-16bfe8481274d0c80634de36914a43b9-links">Links<a class="td-heading-self-link" href="#print-16bfe8481274d0c80634de36914a43b9-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Site: <a href="https://opencode.ai/">https://opencode.ai/</a></li>
+<li>Repo: <a href="https://github.com/anomalyco/opencode">https://github.com/anomalyco/opencode</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-ee88ff5b6d5f0a29810ae9c01de5e78e">4 - com_drawio_desktop_bin</h1>
+    <div class="lead">Drawio desktop app</div>
+	<h2 id="print-a77c21330fe297ca1f4fffa324b03c4f-links">Links<a class="td-heading-self-link" href="#print-a77c21330fe297ca1f4fffa324b03c4f-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Site: <a href="https://www.drawio.com/">https://www.drawio.com/</a></li>
+<li>Repo: <a href="https://github.com/jgraph/drawio-desktop">https://github.com/jgraph/drawio-desktop</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-500efe0ce84e5691438ac284882d00b4">5 - com_github_bazelbuild_bazel_protobuf</h1>
+    <div class="lead">Bazel protobuf contracts</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-fe9d4639ce9b100d853bccffa9e7fda1">6 - com_github_bazelbuild_bazelisk</h1>
+    <div class="lead">Bazelisk</div>
+	<h2 id="print-1eec5e5bc7a83fc00716dce64245f20e-links">Links<a class="td-heading-self-link" href="#print-1eec5e5bc7a83fc00716dce64245f20e-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Site: <a href="https://github.com/bazelbuild/bazelisk">https://github.com/bazelbuild/bazelisk</a></li>
+<li>Releases: <a href="https://github.com/bazelbuild/bazelisk/releases">https://github.com/bazelbuild/bazelisk/releases</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-c2602e54ba3497bb5a00471c94b53da7">7 - com_github_georgewfraser_java_language_server</h1>
+    <div class="lead">Java language server using the Java compiler API</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-525104d29a8d5097aaed32b7516d5501">8 - com_nanovms_ops</h1>
+    <div class="lead">Ops CLI binary</div>
+	<h2 id="print-e58a399bba500e9b487c3f41e43b11be-links">Links<a class="td-heading-self-link" href="#print-e58a399bba500e9b487c3f41e43b11be-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Site: <a href="https://ops.city/">https://ops.city/</a></li>
+<li>Nanovms site: <a href="https://nanovms.com/">https://nanovms.com/</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-42b6cb523f44a8fba5fb86ad5d5c405c">9 - com_nousresearch_hermes_agent</h1>
+    <div class="lead">Hermes Agent - an open-source AI agent by Nous Research</div>
+	<h2 id="print-b5745e02819a25f328e3781db4f1de74-links">Links<a class="td-heading-self-link" href="#print-b5745e02819a25f328e3781db4f1de74-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Site: <a href="https://hermes-agent.nousresearch.com/">https://hermes-agent.nousresearch.com/</a></li>
+<li>Repo: <a href="https://github.com/NousResearch/hermes-agent">https://github.com/NousResearch/hermes-agent</a></li>
+<li>Release: <a href="https://github.com/NousResearch/hermes-agent/releases/tag/v2026.7.20">https://github.com/NousResearch/hermes-agent/releases/tag/v2026.7.20</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-3ead4c3fb2f168f9b20932b9d8e49478">10 - com_truenas_scale</h1>
+    <div class="lead">TrueNAS SCALE installer image</div>
+	<h2 id="print-9e565e54767894284906cfd89e011959-links">Links<a class="td-heading-self-link" href="#print-9e565e54767894284906cfd89e011959-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Download: <a href="https://download.sys.truenas.net/TrueNAS-SCALE-Goldeye/25.10.6/">https://download.sys.truenas.net/TrueNAS-SCALE-Goldeye/25.10.6/</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-a69b1a96a866bdb79feec7ddceccd78e">11 - dev_sanaei_3xui</h1>
+    <div class="lead">3x-ui</div>
+	<h2 id="print-33043c759195a80e3fb5699b1c2a2496-links">Links<a class="td-heading-self-link" href="#print-33043c759195a80e3fb5699b1c2a2496-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Site: <a href="https://docs.sanaei.dev/">https://docs.sanaei.dev/</a></li>
+<li>Releases: <a href="https://github.com/MHSanaei/3x-ui/releases">https://github.com/MHSanaei/3x-ui/releases</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-68a19c81c687d7732c8cb146dca1c9f2">12 - flux</h1>
+    <div class="lead">flux</div>
+	<h2 id="print-ca3066727c451e8d5bc82d3a194cf6c9-links">Links<a class="td-heading-self-link" href="#print-ca3066727c451e8d5bc82d3a194cf6c9-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Site: <a href="https://fluxcd.io/flux/installation/">https://fluxcd.io/flux/installation/</a></li>
+<li>Releases: <a href="https://github.com/fluxcd/flux2/releases">https://github.com/fluxcd/flux2/releases</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-c45a1a7206baa650f9403f6e636b3e23">13 - Gradle</h1>
+    <div class="lead">Pinned Gradle build tool distribution</div>
+	<p>Pinned Gradle 8.13 binary distribution from the primary publisher.</p>
+<h2 id="print-e8f05535738a4ea251efdc122b8c6484-links">Links<a class="td-heading-self-link" href="#print-e8f05535738a4ea251efdc122b8c6484-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Source code: <a href="https://github.com/gradle/gradle/tree/v8.13.0">https://github.com/gradle/gradle/tree/v8.13.0</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-48d292d7bc29749e2b3830dd0f5e41fe">14 - Images</h1>
+    <div class="lead">Deploy of VM images</div>
+	<h2 id="print-aba2a12410fdea57b953b67ac7fc5299-deploy-iso-to-proxmox">Deploy ISO to Proxmox<a class="td-heading-self-link" href="#print-aba2a12410fdea57b953b67ac7fc5299-deploy-iso-to-proxmox" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //third_party/images:deploy_proxmox
+</span></span></code></pre></div><h2 id="print-aba2a12410fdea57b953b67ac7fc5299-deploy-iso-to-yandex-cloud">Deploy ISO to Yandex Cloud<a class="td-heading-self-link" href="#print-aba2a12410fdea57b953b67ac7fc5299-deploy-iso-to-yandex-cloud" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //third_party/images:deploy_yc
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-718ceefae2e9be811f7db805e97284a8">14.1 - Tf</h1>
+    <div class="lead">Terraform config</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-5728b4fe9cd84fe42384e5bad1681de8">15 - io_cert_manager_cmctl</h1>
+    <div class="lead">Cert Manager cmctl</div>
+	<h2 id="print-b7557677b4300641dff1c978acaf0b65-links">Links<a class="td-heading-self-link" href="#print-b7557677b4300641dff1c978acaf0b65-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Site: <a href="https://cert-manager.io/docs/reference/cmctl/#installation">https://cert-manager.io/docs/reference/cmctl/#installation</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-e348e51d46f4536cb1bdae208c72869c">16 - io_controlplane_flux_operator</h1>
+    <div class="lead">Flux operator</div>
+	<h2 id="print-44d447e72d8d5d910a57a3339bc8798a-links">Links<a class="td-heading-self-link" href="#print-44d447e72d8d5d910a57a3339bc8798a-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Site: <a href="https://fluxoperator.dev">https://fluxoperator.dev</a></li>
+<li>Releases: <a href="https://github.com/controlplaneio-fluxcd/flux-operator/releases">https://github.com/controlplaneio-fluxcd/flux-operator/releases</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-60e0699ec3e04313303fd624c399e156">17 - io_docker_library_alpine</h1>
+    <div class="lead">Alpine image from Dockerhub</div>
+	<h2 id="print-bc093c0edc93b337eab237c203ba2d70-links">Links<a class="td-heading-self-link" href="#print-bc093c0edc93b337eab237c203ba2d70-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Image: <a href="https://hub.docker.com/_/alpine/">https://hub.docker.com/_/alpine/</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-17aea6cccba228efa1a2a474fdd0e41f">18 - io_getsops_sops</h1>
+    <div class="lead">Sops</div>
+	<h2 id="print-9984e14ee8b58bde2bfdbb5bb861ad2d-links">Links<a class="td-heading-self-link" href="#print-9984e14ee8b58bde2bfdbb5bb861ad2d-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Site: <a href="https://getsops.io/">https://getsops.io/</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-222becd33d63f4f409fbba75afac79e6">19 - io_goharbor_harbor_cli</h1>
+    <div class="lead">Harbor CLI</div>
+	<h2 id="print-0b0b349689d4daf5c14a2277c6781ff0-links">Links<a class="td-heading-self-link" href="#print-0b0b349689d4daf5c14a2277c6781ff0-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Site: <a href="https://goharbor.io/">https://goharbor.io/</a></li>
+<li>Releases: <a href="https://github.com/goharbor/harbor-cli/releases">https://github.com/goharbor/harbor-cli/releases</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-934792e8a4b131130198ca75724246ad">20 - io_goharbor_helm_harbor</h1>
+    <div class="lead">Harbor</div>
+	<h2 id="print-efe18251a9e7d3bd158685b5ef44e8ca-links">Links<a class="td-heading-self-link" href="#print-efe18251a9e7d3bd158685b5ef44e8ca-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Releases: <a href="https://github.com/goharbor/harbor-helm/releases">https://github.com/goharbor/harbor-helm/releases</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-5bcb4e50b2b89474e9d48dba18c38169">21 - io_goharbor_offline_installer</h1>
+    <div class="lead">Offline installer for Harber</div>
+	<h2 id="print-d046df170b5a6175e26cf133f9d3c326-links">Links<a class="td-heading-self-link" href="#print-d046df170b5a6175e26cf133f9d3c326-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Site: <a href="https://goharbor.io/">https://goharbor.io/</a></li>
+<li>Releases: <a href="https://github.com/goharbor/harbor/releases">https://github.com/goharbor/harbor/releases</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-858ee7da69e492523290c743fb03e64c">22 - io_k3s_k3s</h1>
+    <div class="lead">K3s</div>
+	<h2 id="print-b59229ae5d461dddb3342599872c9217-links">Links<a class="td-heading-self-link" href="#print-b59229ae5d461dddb3342599872c9217-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Site: <a href="https://docs.k3s.io/">https://docs.k3s.io/</a></li>
+<li>Repo: <a href="https://github.com/k3s-io/k3s">https://github.com/k3s-io/k3s</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-1b3874a9bb8ba2bace7dd365ee302480">23 - io_kubernetes_kubectl</h1>
+    <div class="lead">Kubectl</div>
+	<h2 id="print-2b7fc639e263da44e62bac6ab080a514-links">Links<a class="td-heading-self-link" href="#print-2b7fc639e263da44e62bac6ab080a514-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Site: <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/">https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-34b248ca8677106b1d04495735896b01">24 - io_traefik_traefik</h1>
+    <div class="lead">Traefik</div>
+	<h2 id="print-43135e9cf3a112b08fab0938eb065da8-links">Links<a class="td-heading-self-link" href="#print-43135e9cf3a112b08fab0938eb065da8-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Repo: <a href="https://github.com/traefik/traefik">https://github.com/traefik/traefik</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-027551df1c96ed55c42b6dfabc754731">25 - Lego ACME client</h1>
+    <div class="lead">Pinned Lego binary for XCP-ng host certificates</div>
+	<p>This package supplies the Linux x86-64 build of
+<a href="https://github.com/go-acme/lego/releases/tag/v5.4.1">Lego 5.4.1</a>, licensed under
+MIT. Its archive checksum matches both the publisher&rsquo;s release checksum file
+and GitHub release asset metadata. The binary is packaged by the XCP-ng
+Ansible workflow; no package manager or lifecycle download runs on the host.</p>
+<p>The <code>binary_toolchain.json</code> file owns the immutable version and integrity pin.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-f26a997b250a21224cbd5c2c630a968b">26 - net_zlib_zlib</h1>
+    <div class="lead">Zlib</div>
+	<h2 id="print-6beb635364fb9c2184d96f200319496f-links">Links<a class="td-heading-self-link" href="#print-6beb635364fb9c2184d96f200319496f-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Site: <a href="https://zlib.net/">https://zlib.net/</a></li>
+<li>Module: <a href="https://registry.bazel.build/modules/zlib">https://registry.bazel.build/modules/zlib</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-fbf945cb87da515878d03aac8a70516a">27 - OpenHands canvas UI compatibility module</h1>
+    <div class="lead">Pinned OpenHands Agent Canvas compatibility tool</div>
+	<p><code>tools/canvas_ui_tool.py</code> from <code>OpenHands/OpenHands</code> at tag <code>v1.18.0</code>
+(commit <code>9120ff6cbbe23640f0e475661e5a9c9729cdbf1f</code>). The OpenHands Agent
+Canvas launchers import it into the agent server through
+<code>--import-modules canvas_ui_tool</code>.</p>
+<p>It is required because the automation preset builds its agent with a
+<code>finish_tool_response_schema</code>, which registers the SDK&rsquo;s builtin <code>FinishTool</code>
+only inside the preset&rsquo;s own process while advertising it to the agent server as
+<code>openhands.sdk.tool.builtins.finish</code>. That SDK module does not self-register, so
+every automation-dispatched remote conversation fails to resolve <code>FinishTool</code>
+unless the compatibility module registers it in the agent server process first.</p>
+<p>The module also keeps persisted pre-<code>client_tools</code> conversations resolvable.
+It is vendored rather than copied so the upstream revision, license, and
+provenance stay with the third-party tree.</p>
+<p>Upstream license: MIT, see
+<a href="https://github.com/OpenHands/OpenHands/blob/v1.18.0/LICENSE">LICENSE</a>.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-cc0af430028b26e4b0d59331c9bf5f4b">28 - org_codeberg_forgejo</h1>
+    <div class="lead">Forgejo</div>
+	<h2 id="print-9ab258ec4577aeb991752a5754f16d27-links">Links<a class="td-heading-self-link" href="#print-9ab258ec4577aeb991752a5754f16d27-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Site: <a href="https://forgejo.org/">https://forgejo.org/</a></li>
+<li>Repo: <a href="https://codeberg.org/forgejo/forgejo">https://codeberg.org/forgejo/forgejo</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-259f12169cf13118aaa0a4e8d92db212">29 - org_codeberg_forgejo_bin</h1>
+    <div class="lead">Forgejo binary</div>
+	<h2 id="print-28e177a23fc6142182c41a4db3c9f4a1-links">Links<a class="td-heading-self-link" href="#print-28e177a23fc6142182c41a4db3c9f4a1-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Site: <a href="https://forgejo.org/">https://forgejo.org/</a></li>
+<li>Repo: <a href="https://codeberg.org/forgejo/forgejo">https://codeberg.org/forgejo/forgejo</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-9d789097838ab694d965da189b4180d0">30 - org_codeberg_forgejo_contrib_forgejo_cli_bin</h1>
+    <div class="lead">Forgejo CLI</div>
+	<h2 id="print-0945961c107530161c2d96fd7134b064-links">Links<a class="td-heading-self-link" href="#print-0945961c107530161c2d96fd7134b064-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Site: <a href="https://forgejo.org/">https://forgejo.org/</a></li>
+<li>Repo: <a href="https://codeberg.org/forgejo-contrib/forgejo-cli">https://codeberg.org/forgejo-contrib/forgejo-cli</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-637a131f1f8227ce7813a995b3e7b344">31 - org_codeberg_forgejo_runner_bin</h1>
+    <div class="lead">Forgejo Actions runner binary</div>
+	<h2 id="print-494ed475b004387edc8688076eabfac0-links">Links<a class="td-heading-self-link" href="#print-494ed475b004387edc8688076eabfac0-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Site: <a href="https://forgejo.org/">https://forgejo.org/</a></li>
+<li>Repo: <a href="https://code.forgejo.org/forgejo/runner">https://code.forgejo.org/forgejo/runner</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-afd5c974ea02d5775699b8c98c79fab1">32 - org_fedora_cloud</h1>
+    <div class="lead">Fedora Cloud image</div>
+	<h2 id="print-aece16a7eccede3af7fd4b28d9ff7bd0-links">Links<a class="td-heading-self-link" href="#print-aece16a7eccede3af7fd4b28d9ff7bd0-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Download: <a href="https://fedoraproject.org/cloud/download/">https://fedoraproject.org/cloud/download/</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-77108056f386056fe9d47757220ddc29">33 - org_kernel_headers</h1>
+    <div class="lead">Linux kernel headers</div>
+	<h2 id="print-b5d5a0ceb76fc8d18012a064ea3c17fb-links">Links<a class="td-heading-self-link" href="#print-b5d5a0ceb76fc8d18012a064ea3c17fb-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Site: <a href="https://www.kernel.org/">https://www.kernel.org/</a></li>
+<li>Header install: <a href="https://www.kernel.org/doc/Documentation/kbuild/headers_install.txt">https://www.kernel.org/doc/Documentation/kbuild/headers_install.txt</a></li>
+<li>Reference: <a href="https://github.com/DanielEliad/rules_linux_kernel_headers/tree/main">https://github.com/DanielEliad/rules_linux_kernel_headers/tree/main</a></li>
+</ul>
+<h2 id="print-b5d5a0ceb76fc8d18012a064ea3c17fb-generate-the-config">Generate the config<a class="td-heading-self-link" href="#print-b5d5a0ceb76fc8d18012a064ea3c17fb-generate-the-config" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>zcat /proc/config.gz &gt;third_party/org_kernel_headers/config.txt
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-1537ff72ae41570cdfd17a819bf64bc2">34 - org_nmap_nmap</h1>
+    <div class="lead">Nmap</div>
+	<h2 id="print-58d117b3488bc7f071335fcf1bd7f62a-links">Links<a class="td-heading-self-link" href="#print-58d117b3488bc7f071335fcf1bd7f62a-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Site: <a href="https://nmap.org/">https://nmap.org/</a></li>
+<li>Build: <a href="https://nmap.org/book/inst-source.html">https://nmap.org/book/inst-source.html</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-94a9930b2844d61e5d59c6ae8140166b">35 - org_openssl_openssl</h1>
+    <div class="lead">OpenSSL</div>
+	<h2 id="print-ce69660dd85b88853c266d5be9f3e61c-links">Links<a class="td-heading-self-link" href="#print-ce69660dd85b88853c266d5be9f3e61c-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Site: <a href="https://www.openssl.org/">https://www.openssl.org/</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-41d1886736de57a6bee8eff005093824">36 - org_pcre_pcre2</h1>
+    <div class="lead">PCRE - Perl Compatible Regular Expressions</div>
+	<h2 id="print-4ab2595ef90a248047e3f2b1d6890ce6-links">Links<a class="td-heading-self-link" href="#print-4ab2595ef90a248047e3f2b1d6890ce6-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Site: <a href="https://www.pcre.org/">https://www.pcre.org/</a></li>
+<li>Repo: <a href="https://github.com/PCRE2Project/pcre2">https://github.com/PCRE2Project/pcre2</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-a16f413e7778b7b02ba5258b7fc454c3">37 - org_xcp_ng</h1>
+    <div class="lead">XCP-ng installer image</div>
+	<h2 id="print-4fbc3c839adb002b720c34475329eaa0-links">Links<a class="td-heading-self-link" href="#print-4fbc3c839adb002b720c34475329eaa0-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Download: <a href="https://updates.xcp-ng.org/isos/8.3/">https://updates.xcp-ng.org/isos/8.3/</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-152f4d00f9b4c609c8e1561b6837e52a">38 - sh_helm_helm</h1>
+    <div class="lead">Helm</div>
+	<h2 id="print-468dcad4a22683f36cf22288e00db8bb-links">Links<a class="td-heading-self-link" href="#print-468dcad4a22683f36cf22288e00db8bb-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Site: <a href="https://helm.sh/">https://helm.sh/</a></li>
+<li>Releases: <a href="https://github.com/helm/helm/releases">https://github.com/helm/helm/releases</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-65e5f9992988b148070f5355a19cdd15">39 - Terraform dependencies</h1>
+    <div class="lead">Shared provider archive declarations for repository Terraform targets</div>
+	<p><code>include.MODULE.bazel</code> owns the repository&rsquo;s Terraform provider versions,
+immutable release URLs, and SHA256 integrity. Consumers select the generated
+provider labels through the public
+<a href="/docs/tools/rules_terraform/">rules_terraform</a> rules. One version is
+selected per provider source; the rule module&rsquo;s resolution boundary can support
+an explicit override policy later.</p>
+<p>The pins were verified against the publishers&rsquo; release checksums listed by the
+<a href="https://developer.hashicorp.com/terraform/internals/provider-registry-protocol">Terraform registry protocol</a>.
+Provider downloads use Bazel&rsquo;s verified downloader. Terraform installs only
+from the selected runfiles mirror and writes provider locks in runtime workspaces.</p>
+<p>The offline fixture in <code>test/</code> checks installation with the declared Local
+provider, failure without it, and isolation from inherited registry/cache settings.
+Updating a pin also requires checking consuming Terraform constraints and these
+provider integration tests.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-ffa19397b7a256c9064297638e6f86ed">40 - us_nasm_nasm</h1>
+    <div class="lead">NASM - The Netwide Assembler</div>
+	<h2 id="print-39c49e458b567ab40feb11e3dfe57b46-links">Links<a class="td-heading-self-link" href="#print-39c49e458b567ab40feb11e3dfe57b46-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Site: <a href="https://nasm.us/">https://nasm.us/</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-10fef7b2e565d1e52bf9eb7607ddaee9">41 - Xen Orchestra OIDC plugin</h1>
+    <div class="lead">Pinned upstream authentication plugin and runtime dependencies</div>
+	<p>This package supplies Xen Orchestra&rsquo;s AGPL-3.0-or-later <code>auth-oidc</code> 0.4.0
+from upstream commit <code>4bc614ffd1417d3e0563522aeb4a195fa494c57c</code>, including
+OIDC group synchronization and the single-group claim fix. It can be installed
+independently of the XO server; the Ansible deployment verifies its runtime
+before restarting XO.</p>
+<p>The plugin is plain CommonJS. Its complete runtime dependency set is
+<code>passport-openidconnect</code> 0.1.2 (MIT), <code>passport-strategy</code> 1.0.0 (MIT), and
+<code>oauth</code> 0.10.2 (MIT). The npm archives retain upstream license files and use
+integrity values from the appliance revision&rsquo;s
+<a href="https://github.com/vatesfr/xen-orchestra/blob/961b505cfb74cbf24aaeb8d61c5613f97e78de2c/yarn.lock">upstream lockfile</a>.
+Bazel fetches and verifies all inputs before deployment; Ansible extracts them
+without a package-manager resolution or lifecycle script.</p>
+<p><a href="https://github.com/vatesfr/xen-orchestra/tree/4bc614ffd1417d3e0563522aeb4a195fa494c57c/packages/xo-server-auth-oidc">Plugin source</a>.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        Built with <a href="https://gohugo.io/">Hugo 0.165.0</a>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="/js/main.min.259204f469f58eb3b665605a24e964264772df2adaded180b3669b6ce33d84c8.js" integrity="sha256-JZIE9Gn1jrO2ZWBaJOlkJkdy3yra3tGAs2abbOM9hMg=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.decf3b53d8827d840369f490775626e2a5200e150a733f78f0081c126426cbbf.js" integrity="sha256-3s87U9iCfYQDafSQd1Ym4qUgDhUKcz948AgcEmQmy78=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

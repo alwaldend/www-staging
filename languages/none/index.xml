@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>None on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/languages/none/</link>
+		<description>Recent content in None on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/languages/none/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Gradle</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/net_gradle_gradle/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/net_gradle_gradle/</guid>
+				<description>&lt;p&gt;Pinned Gradle 8.13 binary distribution from the primary publisher.&lt;/p&gt;&#xA;&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Source code: &lt;a href=&#34;https://github.com/gradle/gradle/tree/v8.13.0&#34;&gt;https://github.com/gradle/gradle/tree/v8.13.0&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Third_party on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/tags/third_party/</link>
+		<description>Recent content in Third_party on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/tags/third_party/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>OpenHands canvas UI compatibility module</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/com_openhands_openhands_canvas_ui_tool/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/com_openhands_openhands_canvas_ui_tool/</guid>
+				<description>&lt;p&gt;&lt;code&gt;tools/canvas_ui_tool.py&lt;/code&gt; from &lt;code&gt;OpenHands/OpenHands&lt;/code&gt; at tag &lt;code&gt;v1.18.0&lt;/code&gt;&#xA;(commit &lt;code&gt;9120ff6cbbe23640f0e475661e5a9c9729cdbf1f&lt;/code&gt;). The OpenHands Agent&#xA;Canvas launchers import it into the agent server through&#xA;&lt;code&gt;--import-modules canvas_ui_tool&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;It is required because the automation preset builds its agent with a&#xA;&lt;code&gt;finish_tool_response_schema&lt;/code&gt;, which registers the SDK&amp;rsquo;s builtin &lt;code&gt;FinishTool&lt;/code&gt;&#xA;only inside the preset&amp;rsquo;s own process while advertising it to the agent server as&#xA;&lt;code&gt;openhands.sdk.tool.builtins.finish&lt;/code&gt;. That SDK module does not self-register, so&#xA;every automation-dispatched remote conversation fails to resolve &lt;code&gt;FinishTool&lt;/code&gt;&#xA;unless the compatibility module registers it in the agent server process first.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

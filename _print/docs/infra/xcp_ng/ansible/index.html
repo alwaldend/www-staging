@@ -1,0 +1,299 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js" data-theme-init>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000000">
+
+<style>
+  html { background: Canvas; color: CanvasText; }
+  @media (prefers-color-scheme: dark) {
+    html { background: #0b0d12; color: #e6e6e6; }
+  }
+  html[data-theme-init] * { transition: none !important; }
+</style>
+
+<script>
+  (function() {
+    const themeKey = 'td-color-theme';
+    const storedTheme = localStorage.getItem(themeKey);
+    let theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (theme === 'auto') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
+<link rel="canonical" type="text/html" href="https://www-staging.alwaldend.com/docs/infra/xcp_ng/ansible/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://www-staging.alwaldend.com/docs/infra/xcp_ng/ansible/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+<title>Xen Orchestra certificates | Alwaldend</title>
+<meta name="description" content="Vault ACME certificate issuance and renewal for the XOA appliance">
+<meta property="og:url" content="https://www-staging.alwaldend.com/docs/infra/xcp_ng/ansible/">
+	<meta property="og:site_name" content="Alwaldend">
+	<meta property="og:title" content="Xen Orchestra certificates">
+	<meta property="og:description" content="Vault ACME certificate issuance and renewal for the XOA appliance">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="Xen Orchestra certificates">
+	<meta itemprop="description" content="Vault ACME certificate issuance and renewal for the XOA appliance">
+	<meta itemprop="dateModified" content="2026-09-19T20:06:21+03:00">
+	<meta itemprop="wordCount" content="554">
+	<meta itemprop="keywords" content="Infra">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Xen Orchestra certificates">
+	<meta name="twitter:description" content="Vault ACME certificate issuance and renewal for the XOA appliance">
+<link rel="preload" href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" as="style" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<link href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" rel="stylesheet" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll">
+<div class="td-navbar-container container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">Alwaldend</span></a>
+  <div class="td-navbar__main td-navbar-nav-scroll td-navbar-nav-scroll--indicator" id="main_navbar">
+    <div class="scroll-indicator scroll-left"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/projects/"><span>Projects</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item td-navbar__light-dark-menu">
+        <div class="td-light-dark-menu dropdown"><svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+<button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        title="Toggle theme (Auto)"
+        aria-label="Toggle theme (Auto)">
+  <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="bd-theme">
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
+      Light
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>
+      Dark
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+      <svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>
+      Auto
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+</ul>
+</div>
+
+      </li>
+      </ul>
+    <div class="scroll-indicator scroll-right"></div>
+  </div>
+  <div class="td-navbar__search d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon" aria-hidden="true"></div>
+  <input
+    type="search"
+    name="q"
+    class="td-search__input form-control"
+    placeholder='Search this site…'
+    aria-label='Search this site…'
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/infra/xcp_ng/ansible/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Xen Orchestra certificates</h1>
+<div class="lead">Vault ACME certificate issuance and renewal for the XOA appliance</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+
+    </ul>
+
+
+<div class="content">
+      <p>This playbook installs Debian&rsquo;s Certbot package and obtains a certificate for
+<code>xoa.xcp-ng.alwaldend.com</code> and <code>host1.xoa.xcp-ng.alwaldend.com</code> from the Vault
+<code>src_infra_xcp_ng_pki_server</code> ACME role. The XCP-ng AppRole creates the
+external account binding; its registration file is removed after issuance.</p>
+<p>The target injects <code>xoa_ssh_password</code> from
+<code>secrets/alwaldend.com/vault1/approles/src_infra_xcp_ng/xoa</code> for the appliance&rsquo;s
+<code>xoa</code> SSH account and sudo. Ansible uses its <code>sshpass</code> password mechanism;
+the controller must provide <code>sshpass</code> and a verified SSH host key. Passwords
+are runtime environment inputs and are not stored in inventory.</p>
+<p>Run the read-only inspection target before deploying a different appliance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel_agent bazel run //infra/xcp_ng/ansible:ansible.inspect
+</span></span><span style="display:flex;"><span>bazel_agent bazel run //infra/xcp_ng/ansible:ansible
+</span></span></code></pre></div><p>The checked-in settings match the inspected appliance: <code>xo-server</code> runs as
+root and listens on HTTPS with <code>/etc/ssl/cert.pem</code> and <code>/etc/ssl/key.pem</code>.
+Native <code>autoCert</code> is disabled. The deployment preserves these listener paths.
+Apply the Vault PKI role before certificate issuance.</p>
+<p>Certbot uses standalone HTTP-01 validation. Vault must resolve both names to
+the appliance and reach TCP port 80. Issuance and renewal briefly stop
+<code>xo-server</code> to free that port, interrupting management access but not guest VMs.
+The existing TLS files are preserved with <code>.before-vault-acme</code> suffixes before
+their paths become symlinks to Certbot&rsquo;s renewable files. The dedicated
+<code>xo-acme-renew.timer</code> checks twice daily. Certbot is configured to renew the
+seven-day Vault certificates with two days remaining; stop/start hooks run
+when renewal is needed. Certificate keys and ACME account files remain root-only.</p>
+<p>The playbook adds a service-specific Vault CA trust override using
+<code>NODE_EXTRA_CA_CERTS</code> so XO can also validate Vault&rsquo;s OIDC endpoint. It verifies
+the appliance HTTPS endpoint against that CA after deployment.</p>
+<p>The deployment target is <code>//infra/xcp_ng/ansible:ansible</code>. Building
+<code>//infra/xcp_ng/ansible:ansible_bin</code> packages the playbook without deploying it.</p>
+<p>XO&rsquo;s <a href="https://github.com/vatesfr/xen-orchestra/blob/master/%40xen-orchestra/mixins/SslCertificate.mjs">native ACME implementation</a>
+does not pass EAB credentials to its ACME client. Certbot supports
+<a href="https://eff-certbot.readthedocs.io/en/stable/using.html#configuration-file">external account binding</a>
+without changing Vault&rsquo;s mandatory-EAB policy.</p>
+<h2 id="print-3d313e067793daf7730ee8cf099bb18b-xcp-ng-host-certificates">XCP-ng host certificates<a class="td-heading-self-link" href="#print-3d313e067793daf7730ee8cf099bb18b-xcp-ng-host-certificates" aria-label="Heading self-link"></a></h2><p><code>//infra/xcp_ng/ansible:ansible.host</code> provisions a Vault ACME certificate for
+<code>host1.xcp-ng.alwaldend.com</code> and <code>xcp-ng.alwaldend.com</code>. Inspect a different
+host with <code>//infra/xcp_ng/ansible:ansible.inspect_host</code> before deployment.
+The host must serve <code>/opt/xensource/www/.well-known/acme-challenge</code> through
+HTTP or an HTTP-to-HTTPS redirect; the inspection verifies and cleans up a
+public probe file. This host supports that path without changing XAPI settings.</p>
+<p>XCP-ng&rsquo;s Python 3.6 cannot run the current Ansible modules. The playbook uses
+Ansible&rsquo;s script transport for a Python 3.6-compatible helper, without adding
+packages to dom0. The helper downloads the immutable Lego release declared in
+<code>third_party/com_github_go_acme_lego_bin/binary_toolchain.json</code>, verifies its
+checksum, and installs it under root-only <code>/etc/xcp-ng-acme</code>.</p>
+<p>The initial EAB is temporary. Only the ACME account remains for unattended
+renewal; no Vault token is retained on the host. The client requests RSA4096
+keys to match the Vault role. <code>xcp-ng-acme-renew.timer</code> runs twice daily and
+uses XAPI&rsquo;s supported <code>xe host-server-certificate-install</code> command when the
+issued certificate differs from the installed certificate. Installation is
+retried independently of issuance. Renewal does not stop XAPI or running VMs.
+The final deployment verifies HTTPS and enables the timer.</p>
+<p>Set an absolute task-private <code>TMPDIR</code> for controller registration scratch.
+Ansible removes the temporary registration script after execution. The
+<code>bootstrap</code> tag updates the helper without ordering a certificate.</p>
+<h2 id="print-3d313e067793daf7730ee8cf099bb18b-openid-connect-plugin">OpenID Connect plugin<a class="td-heading-self-link" href="#print-3d313e067793daf7730ee8cf099bb18b-openid-connect-plugin" aria-label="Heading self-link"></a></h2><p>The XO playbook installs the official <code>xo-server-auth-oidc</code> 0.4.0 plugin with
+pinned, checksum-verified upstream files and isolated dependencies. This
+version supports Vault group synchronization while remaining compatible with
+the installed XO core. Ansible verifies the plugin before restarting XO;
+Terraform configures it and reconciles group ACLs through the API.</p>
+<p>SSH connection reuse keeps deployment within the appliance&rsquo;s existing UFW
+limit of six new SSH connections per 30 seconds. No firewall exception is
+required.</p>
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        Built with <a href="https://gohugo.io/">Hugo 0.165.0</a>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="/js/main.min.259204f469f58eb3b665605a24e964264772df2adaded180b3669b6ce33d84c8.js" integrity="sha256-JZIE9Gn1jrO2ZWBaJOlkJkdy3yra3tGAs2abbOM9hMg=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.decf3b53d8827d840369f490775626e2a5200e150a733f78f0081c126426cbbf.js" integrity="sha256-3s87U9iCfYQDafSQd1Ym4qUgDhUKcz948AgcEmQmy78=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

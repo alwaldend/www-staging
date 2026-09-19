@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Statuses on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/statuses/</link>
+		<description>Recent content in Statuses on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/statuses/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Abandoned</title>
+				<link>https://www-staging.alwaldend.com/statuses/abandoned/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/statuses/abandoned/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Active</title>
+				<link>https://www-staging.alwaldend.com/statuses/active/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/statuses/active/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Finished</title>
+				<link>https://www-staging.alwaldend.com/statuses/finished/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/statuses/finished/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>In_progress</title>
+				<link>https://www-staging.alwaldend.com/statuses/in_progress/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/statuses/in_progress/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Maintenance</title>
+				<link>https://www-staging.alwaldend.com/statuses/maintenance/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/statuses/maintenance/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

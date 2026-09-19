@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Rules Terraform on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/docs/tools/rules_terraform/</link>
+		<description>Recent content in Rules Terraform on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/docs/tools/rules_terraform/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title></title>
+				<link>https://www-staging.alwaldend.com/docs/tools/rules_terraform/openspec/specs/terraform-execution/spec/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/rules_terraform/openspec/specs/terraform-execution/spec/</guid>
+				<description>&lt;h1 id=&#34;terraform-execution-specification&#34;&gt;terraform-execution Specification&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#terraform-execution-specification&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#purpose&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Provide reusable Bazel rules that acquire pinned Terraform providers and run&#xA;Terraform with declared configuration, executable, and provider inputs.&lt;/p&gt;&#xA;&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirements&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id=&#34;requirement-verified-provider-acquisition&#34;&gt;Requirement: Verified provider acquisition&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirement-verified-provider-acquisition&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The provider module extension SHALL download immutable HTTPS archives with&#xA;mandatory SHA256 integrity through Bazel repository fetching. It SHALL select&#xA;one version for each canonical provider source across the extension graph.&lt;/p&gt;&#xA;&lt;h4 id=&#34;scenario-conflicting-provider-versions&#34;&gt;Scenario: Conflicting provider versions&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#scenario-conflicting-provider-versions&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;WHEN&lt;/strong&gt; declarations select different versions of the same provider source&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;THEN&lt;/strong&gt; extension resolution fails before provider repositories are created.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h4 id=&#34;scenario-verified-archive&#34;&gt;Scenario: Verified archive&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#scenario-verified-archive&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;WHEN&lt;/strong&gt; a provider archive is fetched&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;THEN&lt;/strong&gt; Bazel verifies the declared integrity and exposes its canonical source,&#xA;version, platform, and packed filesystem-mirror path.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;requirement-declared-provider-execution&#34;&gt;Requirement: Declared provider execution&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirement-declared-provider-execution&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Terraform rules SHALL place selected provider archives in runfiles using the&#xA;packed filesystem-mirror layout. The runner SHALL configure only that mirror&#xA;for provider installation and SHALL preserve the declared Terraform executable.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

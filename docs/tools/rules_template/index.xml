@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Rules template on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/docs/tools/rules_template/</link>
+		<description>Recent content in Rules template on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/docs/tools/rules_template/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title></title>
+				<link>https://www-staging.alwaldend.com/docs/tools/rules_template/openspec/specs/project-dns/spec/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/rules_template/openspec/specs/project-dns/spec/</guid>
+				<description>&lt;h1 id=&#34;project-dns-specification&#34;&gt;project-dns Specification&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#project-dns-specification&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#purpose&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Record the retirement of &lt;code&gt;rules_template&lt;/code&gt; landing infrastructure while preserving&#xA;its reusable Bazel module.&lt;/p&gt;&#xA;&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirements&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id=&#34;requirement-keep-landing-infrastructure-retired&#34;&gt;Requirement: Keep landing infrastructure retired&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirement-keep-landing-infrastructure-retired&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The module SHALL follow the &lt;a href=&#34;https://www-staging.alwaldend.com/docs/tools/&#34;&gt;tools boundary&lt;/a&gt; and SHALL&#xA;have no dedicated landing DNS declarations, Terraform root, or operational&#xA;source exports.&lt;/p&gt;&#xA;&lt;h4 id=&#34;scenario-inspect-the-module-after-landing-retirement&#34;&gt;Scenario: Inspect the module after landing retirement&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#scenario-inspect-the-module-after-landing-retirement&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;WHEN&lt;/strong&gt; the module is consumed from &lt;code&gt;tools/rules_template&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;THEN&lt;/strong&gt; its reusable Bazel rules remain available without landing infrastructure.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title></title>
+				<link>https://www-staging.alwaldend.com/docs/tools/rules_template/openspec/specs/project-rules-template/spec/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/rules_template/openspec/specs/project-rules-template/spec/</guid>
+				<description>&lt;h1 id=&#34;rules-template&#34;&gt;Rules template&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#rules-template&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#purpose&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Render Go text templates from declared data files through a command and a Bazel&#xA;toolchain rule. This source baseline was observed on 2026-09-08 at revision&#xA;&lt;code&gt;550d7e79b1f5fdbc2b6017b75178471d6914082f&lt;/code&gt;. The command operates on one template&#xA;and output per invocation; the rule&amp;rsquo;s list attributes do not establish a&#xA;multi-template rendering guarantee.&lt;/p&gt;&#xA;&lt;p&gt;Sources: &lt;a href=&#34;https://www-staging.alwaldend.com/docs/tools/rules_template/&#34;&gt;project description&lt;/a&gt;,&#xA;&lt;a href=&#34;../../../main/go/cmd.go&#34;&gt;command flags&lt;/a&gt;,&#xA;&lt;a href=&#34;../../../main/go/templater.go&#34;&gt;templater&lt;/a&gt;,&#xA;&lt;a href=&#34;../../../main/go/templater_func_map.go&#34;&gt;template functions&lt;/a&gt;,&#xA;and &lt;a href=&#34;../../../main/bzl/template_run_binary.bzl&#34;&gt;Bazel action&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirements&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id=&#34;requirement-load-supported-data-formats-into-template-context&#34;&gt;Requirement: Load supported data formats into template context&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirement-load-supported-data-formats-into-template-context&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The &lt;code&gt;template&lt;/code&gt; command SHALL load data files in argument order into &lt;code&gt;DataFiles&lt;/code&gt;,&#xA;decode &lt;code&gt;.toml&lt;/code&gt;, &lt;code&gt;.json&lt;/code&gt;, &lt;code&gt;.ndjson&lt;/code&gt;, and &lt;code&gt;.yaml&lt;/code&gt; data, and expose &lt;code&gt;.txt&lt;/code&gt; files as&#xA;lines without structured decoding. &lt;code&gt;--extension&lt;/code&gt; SHALL override extension&#xA;selection for the supplied data files.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

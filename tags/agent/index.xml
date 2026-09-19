@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Agent on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/tags/agent/</link>
+		<description>Recent content in Agent on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 19 Sep 2026 20:06:21 +0300</lastBuildDate>
+		
+			<atom:link href="https://www-staging.alwaldend.com/tags/agent/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Slop without a clear goal</title>
+				<link>https://www-staging.alwaldend.com/blog/slop-without-a-clear-goal/</link>
+				<pubDate>Sat, 12 Sep 2026 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/blog/slop-without-a-clear-goal/</guid>
+				<description>&lt;p&gt;A while back, I said to Jipity&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;: &amp;ldquo;Jipity, how can I improve agent ergonomics in this monorepo?&amp;rdquo;, and Jipity gave me some useful suggestions, but one of them was not like the rest. It said that context in the repo was too splintered — agents had to read many things in different directories to understand how things are done. In my infinite wisdom, I said, &amp;ldquo;Jipity, write me a comprehensive plan implementing a unified agent system with the goal of improving ergonomics in this monorepo&amp;rdquo;. And it wrote me a plan, I did not really read it.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Agents</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/agents/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/agents/</guid>
+				<description>&lt;h1 id=&#34;repository-agent-skills&#34;&gt;Repository agent skills&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#repository-agent-skills&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;This project owns the reusable cross-repository agent skills. Maintained&#xA;improvement work lives in this project&amp;rsquo;s &lt;a href=&#34;openspec/&#34;&gt;OpenSpec workspace&lt;/a&gt;. It&#xA;does not centralize component facts or runtime state: each fact remains&#xA;canonical at its natural owner.&lt;/p&gt;&#xA;&lt;h2 id=&#34;start-here&#34;&gt;Start here&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#start-here&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;&#xA;&#x9;&lt;thead&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;Document&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;Purpose&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/thead&gt;&#xA;&#x9;&lt;tbody&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;&lt;a href=&#34;openspec/changes/&#34;&gt;OpenSpec changes&lt;/a&gt;&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;Maintained work, acceptance, and preserved goal history&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;&lt;a href=&#34;https://github.com/alwaldend/src/blob/master/AGENTS.md&#34;&gt;Root agent guide&lt;/a&gt;&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;Current repository-wide operating policy&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;Dated audits remain in&#xA;&lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/src/openspec/migration/&#34;&gt;migrated history&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;ownership-boundaries&#34;&gt;Ownership boundaries&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#ownership-boundaries&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;openspec/&lt;/code&gt; owns agent-system requirements, changes, and evidence;&#xA;&lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/src/openspec/migration/&#34;&gt;the migration map&lt;/a&gt; locates historical records.&lt;/li&gt;&#xA;&lt;li&gt;Other components own their specifications and changes under their own&#xA;&lt;code&gt;openspec/&lt;/code&gt; directory. &lt;code&gt;infra/src/openspec/&lt;/code&gt; describes repository evolution.&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;skills/&lt;/code&gt; owns reusable cross-product, repository-wide agent procedures and&#xA;their development-time evaluations. A product-specific procedure belongs&#xA;with its product; a procedure that no narrower project genuinely owns lives&#xA;here rather than in a contrived local home.&lt;/li&gt;&#xA;&lt;li&gt;Product-specific skills remain with their project at&#xA;&lt;code&gt;projects/&amp;lt;project&amp;gt;/skills/&amp;lt;name&amp;gt;&lt;/code&gt;. Do not split one skill across owners.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;skill-packaging-and-discovery&#34;&gt;Skill packaging and discovery&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#skill-packaging-and-discovery&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Every canonical skill is packaged as a &lt;code&gt;skill_library&lt;/code&gt; in its owning&#xA;directory.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Agents</title>
+				<link>https://www-staging.alwaldend.com/projects/agents/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/projects/agents/</guid>
+				<description>&lt;p&gt;This project owns the reusable, cross-project agent skills used across&#xA;this repository. Each skill is a procedure with its own scope and ownership&#xA;rules, so an agent loads the guidance it needs for the task at hand instead of&#xA;one large document.&lt;/p&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#features&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;One skill per procedure, with an explicit description and scope&lt;/li&gt;&#xA;&lt;li&gt;Discovery written into the agent skills directory from declared sources&lt;/li&gt;&#xA;&lt;li&gt;Product-specific skills stay with their product; only genuinely shared ones&#xA;live here&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Bazel agent</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/bazel_agent/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/bazel_agent/</guid>
+				<description>&lt;p&gt;&lt;code&gt;bazel_agent&lt;/code&gt; is the repository Bazel entry point for agents. It keeps the&#xA;Bazel invocation behind a validated subcommand while consistently applying the&#xA;agent configuration:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bazel_agent bazel test //path/to/package:all&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    -&amp;gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bazel test --config=agent //path/to/package:all&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;bazel&lt;/code&gt; is the only Bazel entry point, and it is a validated subcommand. The&#xA;runner accepts a known Bazel command after the &lt;code&gt;bazel&lt;/code&gt; keyword, rejects&#xA;arbitrary leading arguments, and places &lt;code&gt;--config=agent&lt;/code&gt; after the command.&#xA;Targets, command options, and arguments after the &lt;code&gt;--&lt;/code&gt; separator of a&#xA;&lt;code&gt;bazel run&lt;/code&gt; invocation pass through unchanged. Later options therefore retain&#xA;Bazel&amp;rsquo;s normal precedence and can override settings supplied by the agent&#xA;configuration. The runner resolves &lt;code&gt;bazel&lt;/code&gt; from &lt;code&gt;PATH&lt;/code&gt; and replaces itself&#xA;with that process, so signals and the final exit status are not mediated by&#xA;another wrapper process. Uses of the persistent Bazel server follow the host&#xA;Codex network policy; the &lt;code&gt;host-bot&lt;/code&gt; profile allows loopback so the&#xA;client-server connection is not blocked.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Bazel agent</title>
+				<link>https://www-staging.alwaldend.com/projects/bazel_agent/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/projects/bazel_agent/</guid>
+				<description>&lt;p&gt;&lt;code&gt;bazel_agent&lt;/code&gt; is the Bazel entry point for agents working in this&#xA;repository. It keeps Bazel behind a validated subcommand while consistently&#xA;applying the agent configuration.&lt;/p&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#features&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Validated &lt;code&gt;bazel&lt;/code&gt; subcommand instead of arbitrary arguments&lt;/li&gt;&#xA;&lt;li&gt;Applies the agent configuration in the required position&lt;/li&gt;&#xA;&lt;li&gt;Preserves signals and exit status by replacing itself with the Bazel process&lt;/li&gt;&#xA;&lt;li&gt;Read-only &lt;code&gt;doctor&lt;/code&gt; diagnostics for runner and workspace state&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+	</channel>
+</rss>

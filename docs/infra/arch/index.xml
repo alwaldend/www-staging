@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Architecture on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/docs/infra/arch/</link>
+		<description>Recent content in Architecture on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/docs/infra/arch/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title></title>
+				<link>https://www-staging.alwaldend.com/docs/infra/arch/openspec/spec/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/arch/openspec/spec/</guid>
+				<description>&lt;h1 id=&#34;infrastructure-architecture-specification&#34;&gt;Infrastructure architecture Specification&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#infrastructure-architecture-specification&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#purpose&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Describe the maintained infrastructure diagrams owned by &lt;code&gt;infra/arch&lt;/code&gt;.&#xA;The baseline is checked-in source at revision&#xA;&lt;code&gt;550d7e79b1f5fdbc2b6017b75178471d6914082f&lt;/code&gt;, observed on 2026-09-08.&#xA;These diagrams describe their source document; they do not establish live&#xA;inventory, deployment, or health.&lt;/p&gt;&#xA;&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirements&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id=&#34;requirement-canonical-multi-page-architecture-source&#34;&gt;Requirement: Canonical multi-page architecture source&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirement-canonical-multi-page-architecture-source&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The project SHALL use &lt;code&gt;arch.drawio&lt;/code&gt; as the canonical source for its maintained&#xA;SVG diagrams and SHALL expose the source through the &lt;code&gt;//infra/arch&lt;/code&gt; editor&#xA;target. The named render mapping SHALL preserve all 15 source pages, including&#xA;the five pages classified as archives.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

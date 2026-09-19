@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Terraform on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/tags/terraform/</link>
+		<description>Recent content in Terraform on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 19 Sep 2026 20:06:21 +0300</lastBuildDate>
+		
+			<atom:link href="https://www-staging.alwaldend.com/tags/terraform/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>DNS management in a monorepo</title>
+				<link>https://www-staging.alwaldend.com/blog/dns-management-in-a-monorepo/</link>
+				<pubDate>Sun, 13 Sep 2026 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/blog/dns-management-in-a-monorepo/</guid>
+				<description>&lt;p&gt;Buying a domain is one of the best purchases you can make because they are very cheap and owning one offers you more independence - you can have your email not tied to a specific provider, you can have a site, etc.&lt;/p&gt;&#xA;&lt;p&gt;After I bought a domain, I needed a way to manage DNS of that domain. Since using the registrar&amp;rsquo;s UI to do that is not the best idea, I searched for an IaC tool that can do that for me - I settled on &lt;a href=&#34;https://dnscontrol.org/&#34;&gt;DNSControl&lt;/a&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Dns</title>
+				<link>https://www-staging.alwaldend.com/docs/infra/dns/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/dns/</guid>
+				<description>&lt;p&gt;DNS records live in each owner&amp;rsquo;s &lt;code&gt;dnsconfig.json&lt;/code&gt;. Each owner manages its records&#xA;through the reusable &lt;a href=&#34;https://www-staging.alwaldend.com/docs/projects/tf_modules/dns_records/&#34;&gt;Terraform DNS module&lt;/a&gt;&#xA;from its designated &lt;code&gt;tf_setup&lt;/code&gt; or &lt;code&gt;tf&lt;/code&gt; root. This component&amp;rsquo;s&#xA;&lt;a href=&#34;dnsconfig.json&#34;&gt;dnsconfig.json&lt;/a&gt; owns shared apex and mail records.&lt;/p&gt;&#xA;&lt;h2 id=&#34;declaration-pages&#34;&gt;Declaration pages&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#declaration-pages&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/dns/cloudflare_dns/&#34;&gt;Cloudflare DNS&lt;/a&gt; and &lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/dns/mikrotik_dns/&#34;&gt;Mikrotik DNS&lt;/a&gt; list the&#xA;records this repository declares for each destination view, with the owning&#xA;declaration for every record. They are generated from &lt;code&gt;dnsconfig.json&lt;/code&gt;:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bazel_agent bazel run //infra/dns/cmd/dump -- --write&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;//infra/dns:config_test&lt;/code&gt; fails when a checked-in page is out of date, so the&#xA;pages cannot drift from the declarations they project.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>OpenHands</title>
+				<link>https://www-staging.alwaldend.com/docs/infra/openhands/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/openhands/</guid>
+				<description>&lt;p&gt;OpenHands deploys as separate components because each owns a distinct&#xA;responsibility and trust boundary:&lt;/p&gt;&#xA;&lt;table&gt;&#xA;&#x9;&lt;thead&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;Component&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;Responsibility&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/thead&gt;&#xA;&#x9;&lt;tbody&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;Agent Canvas&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;Browser client for conversations, files, settings, backends, automations&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;Agent Server&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;Runs conversations, agents, tools, and workspace operations&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;Automation Server&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;Stores schedules and triggers, tracks runs, dispatches conversations&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;The agent server runs directly on the host with the service account&amp;rsquo;s&#xA;permissions. Its workspace is a working directory; operating-system account&#xA;permissions define its access to the host. Treat the agent server host as&#xA;trusted infrastructure.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Org1</title>
+				<link>https://www-staging.alwaldend.com/docs/infra/yandex_cloud/org1/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/yandex_cloud/org1/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://yandex.cloud&#34;&gt;https://yandex.cloud&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Pve vm qemu</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/tf_modules/pve_vm_qemu/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/tf_modules/pve_vm_qemu/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Shared DNS Terraform</title>
+				<link>https://www-staging.alwaldend.com/docs/infra/dns/tf/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/dns/tf/</guid>
+				<description>&lt;p&gt;This root consumes &lt;a href=&#34;../dnsconfig.json&#34;&gt;the canonical common declarations&lt;/a&gt;&#xA;through the reusable DNS module. It uses the &lt;code&gt;src_infra_dns&lt;/code&gt; AppRole and its&#xA;existing Vault-backed HTTP state. Both Cloudflare and RouterOS credentials&#xA;are injected through the &lt;code&gt;tf=1&lt;/code&gt; stage label.&lt;/p&gt;&#xA;&lt;p&gt;Shared apex and mail records were adopted on 2026-09-13. &lt;code&gt;dns_enabled&lt;/code&gt; now&#xA;defaults to &lt;code&gt;true&lt;/code&gt;; reconciliation against the adopted state and unchanged&#xA;declarations must propose no record changes. The &lt;a href=&#34;../openspec/changes/archive/2026-09-13-adopt-dns-records/design.md&#34;&gt;adoption evidence&lt;/a&gt;&#xA;records 60 imports and preservation of both complete provider inventories.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Terraform setup</title>
+				<link>https://www-staging.alwaldend.com/docs/infra/forgejo_runner/tf_setup/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/forgejo_runner/tf_setup/</guid>
+				<description>&lt;p&gt;Use this package&amp;rsquo;s &lt;code&gt;dns.plan&lt;/code&gt;, &lt;code&gt;dns.show&lt;/code&gt;, and &lt;code&gt;dns.apply&lt;/code&gt; targets for the&#xA;&lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/dns/&#34;&gt;scoped DNS adoption workflow&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;These targets select &lt;code&gt;dns=1&lt;/code&gt; and target &lt;code&gt;module.dns&lt;/code&gt; with the existing&#xA;&lt;code&gt;src_infra_forgejo_runner&lt;/code&gt; AppRole and setup backend. Plan declared imports,&#xA;inspect the saved plan with &lt;code&gt;dns.show&lt;/code&gt;, and apply only the reviewed file with&#xA;&lt;code&gt;dns.apply&lt;/code&gt;. Ordinary setup commands retain their &lt;code&gt;tf=setup&lt;/code&gt; flow.&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;dns_enabled&lt;/code&gt; defaults to &lt;code&gt;true&lt;/code&gt; after verified adoption. Keep it enabled to&#xA;retain existing records; disabling it would propose deletion. The&#xA;&lt;a href=&#34;../openspec/changes/archive/2026-09-13-adopt-dns-records/design.md&#34;&gt;adoption record&lt;/a&gt;&#xA;contains the import, follow-up plan, inventory, and DNS verification evidence.&#xA;The shared &lt;a href=&#34;../../dns/openspec/changes/archive/2026-09-13-migrate-project-dns-to-terraform/cutover.md#prepare-the-owner&#34;&gt;cutover procedure&lt;/a&gt;&#xA;owns prerequisites and recovery. Scoped DNS checks do not establish VM or runner&#xA;service health.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Tf</title>
+				<link>https://www-staging.alwaldend.com/docs/infra/forgejo/tf/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/forgejo/tf/</guid>
+				<description>&lt;p&gt;This package configures Forgejo organizations, repositories, and access from&#xA;the shared &lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/repos/&#34;&gt;repository catalog&lt;/a&gt;. The catalog owns named&#xA;administrators, developers, repository identities, and destination names.&#xA;Its &lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/repos/tf/&#34;&gt;Terraform module&lt;/a&gt; supplies the consumer&amp;rsquo;s&#xA;repository projection. First-party names remain stable across forges;&#xA;external fork and mirror names retain their original upstream identity.&lt;/p&gt;&#xA;&lt;p&gt;Before applying, provision the Vault OIDC authentication source with Ansible and set&#xA;&lt;code&gt;TF_VAR_vault_oauth_source_id&lt;/code&gt; to its verified positive numeric ID. Obtain the&#xA;ID from &lt;code&gt;forgejo admin auth list&lt;/code&gt; on the instance using the service&amp;rsquo;s config&#xA;and work path; confirm that the &lt;code&gt;vault&lt;/code&gt; source is active and uses OpenID&#xA;Connect with the expected Vault issuer. Do not assume source IDs survive&#xA;instance recreation.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Tf</title>
+				<link>https://www-staging.alwaldend.com/docs/infra/harbor/tf/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/harbor/tf/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Tf</title>
+				<link>https://www-staging.alwaldend.com/docs/infra/ingress/tf/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/ingress/tf/</guid>
+				<description>&lt;p&gt;Use this package&amp;rsquo;s &lt;code&gt;dns.plan&lt;/code&gt;, &lt;code&gt;dns.show&lt;/code&gt;, and &lt;code&gt;dns.apply&lt;/code&gt; targets for the&#xA;&lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/dns/&#34;&gt;scoped DNS adoption workflow&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;DNS ownership is enabled by default after the verified 2026-09-13 adoption.&#xA;The &lt;a href=&#34;../openspec/changes/archive/2026-09-13-adopt-dns-records/design.md&#34;&gt;adoption evidence&lt;/a&gt;&#xA;records four imports, a no-change follow-up plan, and preserved provider inventories.&#xA;The DNS wrappers select &lt;code&gt;dns=1&lt;/code&gt; and &lt;code&gt;module.dns&lt;/code&gt; within this root and backend;&#xA;their validation covers DNS and its dependencies. Apply requires a reviewed&#xA;saved plan, and ordinary ingress service authentication remains separate.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Tf</title>
+				<link>https://www-staging.alwaldend.com/docs/infra/pve/tf/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/pve/tf/</guid>
+				<description>&lt;p&gt;Use this package&amp;rsquo;s &lt;code&gt;dns.plan&lt;/code&gt;, &lt;code&gt;dns.show&lt;/code&gt;, and &lt;code&gt;dns.apply&lt;/code&gt; targets for the&#xA;&lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/dns/&#34;&gt;scoped DNS adoption workflow&lt;/a&gt;.&#xA;They select &lt;code&gt;dns=1&lt;/code&gt; and target &lt;code&gt;module.dns&lt;/code&gt; in this root, retaining the&#xA;&lt;code&gt;src_infra_dc1_pve1&lt;/code&gt; AppRole and existing backend. Use the&#xA;&lt;a href=&#34;../../dns/openspec/changes/archive/2026-09-13-migrate-project-dns-to-terraform/cutover.md#prepare-the-owner&#34;&gt;owner preparation and import procedure&lt;/a&gt;&#xA;for declarative import maps and reviewed saved-plan apply.&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;dns_enabled&lt;/code&gt; defaults to &lt;code&gt;true&lt;/code&gt; after the&#xA;&lt;a href=&#34;../openspec/changes/archive/2026-09-13-adopt-dns-records/design.md&#34;&gt;completed adoption&lt;/a&gt;.&#xA;Reconciliation against adopted state and unchanged declarations produces no DNS&#xA;changes. DNS targeting covers DNS and its dependencies; it does not establish&#xA;PVE host, API, or service health. Ordinary Terraform commands retain their&#xA;existing Proxmox authentication.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Tf</title>
+				<link>https://www-staging.alwaldend.com/docs/infra/threexui/tf/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/threexui/tf/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Tf</title>
+				<link>https://www-staging.alwaldend.com/docs/infra/vault/tf/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/vault/tf/</guid>
+				<description>&lt;h2 id=&#34;dns-identities&#34;&gt;DNS identities&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#dns-identities&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;approles_dns.tf&#34;&gt;Missing DNS-owner AppRoles&lt;/a&gt; compose the existing reusable&#xA;AppRole module with an owner-specific DNS policy in &lt;code&gt;approles/&amp;lt;name&amp;gt;/&lt;/code&gt;.&#xA;&lt;a href=&#34;dns_access/main.tf&#34;&gt;DNS access&lt;/a&gt; grants read-only access to the existing&#xA;provider credentials for the owner&amp;rsquo;s views. Existing component identities&#xA;receive these policies through their existing module declarations.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;group_dns_approles.tf&#34;&gt;DNS-only group membership&lt;/a&gt; adds no policies. These&#xA;identities retain their own state and named shared-secret access without&#xA;joining the general infrastructure AppRole group or receiving cloud&#xA;provisioning, SSH, or PKI permissions.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Tf</title>
+				<link>https://www-staging.alwaldend.com/docs/infra/yandex_cloud/org1/tf/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/yandex_cloud/org1/tf/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Tf</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/alwaldend.com/tf/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/alwaldend.com/tf/</guid>
+				<description>&lt;p&gt;This service stage consumes the &lt;a href=&#34;../dnsconfig.json&#34;&gt;project DNS declaration&lt;/a&gt;&#xA;through the &lt;a href=&#34;https://www-staging.alwaldend.com/docs/projects/tf_modules/dns_records/global/&#34;&gt;shared global DNS module&lt;/a&gt;.&#xA;The DNS workflow uses the project&amp;rsquo;s AppRole, HTTP state backend, and Cloudflare&#xA;credentials. This public-only module does not require RouterOS. Ordinary&#xA;service commands retain their &lt;code&gt;tf=main&lt;/code&gt; authentication, including PVE login.&lt;/p&gt;&#xA;&lt;p&gt;Operational commands require the project AppRole and Vault provider fields in&#xA;the &lt;a href=&#34;../../../infra/dns/openspec/changes/archive/2026-09-13-migrate-project-dns-to-terraform/cutover.md#prepare-the-owner&#34;&gt;migration prerequisites&lt;/a&gt;.&#xA;&lt;code&gt;dns_enabled&lt;/code&gt; defaults to &lt;code&gt;true&lt;/code&gt; after verified adoption. Keep it enabled to&#xA;retain existing records; disabling it would propose deletion. The zone input&#xA;remains optional.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Tf</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/images/tf/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/images/tf/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Tf</title>
+				<link>https://www-staging.alwaldend.com/docs/users/simeonwarren/tf/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/users/simeonwarren/tf/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Tf backend</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/vault/tf_backend/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/vault/tf_backend/</guid>
+				<description>&lt;p&gt;The plugin tracks each running backend for shutdown, including backends created&#xA;before a later call fails. Shutdown drains HTTP requests before revoking the&#xA;backend&amp;rsquo;s invocation-owned Vault credentials. If the shutdown deadline expires,&#xA;connections are forcibly closed and the timeout is reported. Normal HTTP server&#xA;closure is not an error. Vault requests use their incoming request context.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Tf modules</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/tf_modules/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/tf_modules/</guid>
+				<description>&lt;p&gt;This project contains reusable Terraform modules for Vault configuration,&#xA;Proxmox virtual machines, backup storage, and related infrastructure. The&#xA;module collection is still in progress.&lt;/p&gt;&#xA;&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Source code: &lt;a href=&#34;https://github.com/alwaldend/src/tree/master/projects/tf_modules&#34;&gt;https://github.com/alwaldend/src/tree/master/projects/tf_modules&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Docs: &lt;a href=&#34;https://developer.hashicorp.com/terraform/language/modules&#34;&gt;https://developer.hashicorp.com/terraform/language/modules&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#features&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Terraform modules&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Tf modules</title>
+				<link>https://www-staging.alwaldend.com/projects/tf_modules/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/projects/tf_modules/</guid>
+				<description>&lt;p&gt;Reusable Terraform modules for Vault configuration, Proxmox virtual&#xA;machines, backup storage, and related infrastructure. The collection is still&#xA;in progress.&lt;/p&gt;&#xA;&lt;h2 id=&#34;status&#34;&gt;Status&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#status&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;In progress. The module collection is not yet complete.&lt;/p&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#features&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Vault configuration modules&lt;/li&gt;&#xA;&lt;li&gt;Proxmox virtual machine and storage modules&lt;/li&gt;&#xA;&lt;li&gt;Shared patterns reused by infrastructure stages&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Tf setup</title>
+				<link>https://www-staging.alwaldend.com/docs/infra/flux/tf_setup/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/flux/tf_setup/</guid>
+				<description>&lt;p&gt;This root owns the &lt;a href=&#34;../dnsconfig.json&#34;&gt;Flux DNS declaration&lt;/a&gt;. DNS ownership&#xA;defaults to enabled after &lt;a href=&#34;../openspec/changes/archive/2026-09-13-adopt-dns-records/design.md&#34;&gt;verified adoption&lt;/a&gt;;&#xA;keep it enabled to retain the managed records.&lt;/p&gt;&#xA;&lt;p&gt;Use &lt;code&gt;//infra/flux/tf_setup:dns.plan&lt;/code&gt;, &lt;code&gt;:dns.show&lt;/code&gt;, and &lt;code&gt;:dns.apply&lt;/code&gt; for&#xA;&lt;a href=&#34;../../dns/openspec/changes/archive/2026-09-13-migrate-project-dns-to-terraform/cutover.md#prepare-the-owner&#34;&gt;scoped DNS reconciliation&lt;/a&gt;.&#xA;These targets retain the setup backend and &lt;code&gt;src_infra_flux&lt;/code&gt; AppRole, select&#xA;&lt;code&gt;dns=1&lt;/code&gt;, and target &lt;code&gt;module.dns&lt;/code&gt;. Apply requires a reviewed saved plan.&#xA;Reconciliation of unchanged declarations must produce no DNS changes.&lt;/p&gt;&#xA;&lt;p&gt;The ordinary setup targets retain their service authentication behavior.&#xA;DNS checks do not establish PVE VM or service health; current aggregate source&#xA;validation remains part of repository delivery.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Tf setup</title>
+				<link>https://www-staging.alwaldend.com/docs/infra/forgejo/tf_setup/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/forgejo/tf_setup/</guid>
+				<description>&lt;p&gt;This package creates a Xen Orchestra VM in the &lt;code&gt;src_infra_dc1_forgejo1&lt;/code&gt;&#xA;resource set. &lt;code&gt;infra/forgejo/al.lua&lt;/code&gt; authenticates with Forgejo&amp;rsquo;s own Vault&#xA;AppRole and the packaged XO OIDC login plugin. The plugin supplies a temporary&#xA;XO token and revokes it on shutdown; no infrastructure administrator token&#xA;is loaded. The setup HTTP backend remains owned by the same Forgejo config.&lt;/p&gt;&#xA;&lt;p&gt;Before running this package, bootstrap the AppRole&amp;rsquo;s XO OIDC user and apply&#xA;its resource-set membership and existing VM ACL through &lt;code&gt;infra/xcp_ng/tf&lt;/code&gt;.&#xA;Subjects are matched by immutable Vault entity UUID under the configured&#xA;OIDC issuer, not by login name or AppRole group membership. See&#xA;&lt;a href=&#34;../../xcp_ng/cmd/xo_login/README.md&#34;&gt;XO authentication&lt;/a&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Tf setup</title>
+				<link>https://www-staging.alwaldend.com/docs/infra/harbor/tf_setup/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/harbor/tf_setup/</guid>
+				<description>&lt;p&gt;This root owns the &lt;a href=&#34;../dnsconfig.json&#34;&gt;Harbor DNS declaration&lt;/a&gt;. DNS ownership&#xA;defaults to enabled after &lt;a href=&#34;../openspec/changes/archive/2026-09-13-adopt-dns-records/design.md&#34;&gt;verified adoption&lt;/a&gt;;&#xA;keep it enabled to retain the managed records.&lt;/p&gt;&#xA;&lt;p&gt;Use &lt;code&gt;//infra/harbor/tf_setup:dns.plan&lt;/code&gt;, &lt;code&gt;:dns.show&lt;/code&gt;, and &lt;code&gt;:dns.apply&lt;/code&gt; for&#xA;&lt;a href=&#34;../../dns/openspec/changes/archive/2026-09-13-migrate-project-dns-to-terraform/cutover.md#prepare-the-owner&#34;&gt;scoped DNS reconciliation&lt;/a&gt;.&#xA;These targets retain the setup backend and &lt;code&gt;src_infra_harbor&lt;/code&gt; AppRole, select&#xA;&lt;code&gt;dns=1&lt;/code&gt;, and target &lt;code&gt;module.dns&lt;/code&gt;. Apply requires a reviewed saved plan.&#xA;Reconciliation of unchanged declarations must produce no DNS changes.&lt;/p&gt;&#xA;&lt;p&gt;The ordinary setup targets retain their service authentication behavior.&#xA;DNS checks do not establish PVE VM or service health; current aggregate source&#xA;validation remains part of repository delivery.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Tf setup</title>
+				<link>https://www-staging.alwaldend.com/docs/infra/openhands/tf_setup/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/openhands/tf_setup/</guid>
+				<description>&lt;p&gt;This package creates Xen Orchestra VMs in the &lt;code&gt;src_infra_openhands&lt;/code&gt; resource&#xA;set for the three OpenHands components that run off host-bot: Agent Canvas,&#xA;the agent server, and the automation server. &lt;code&gt;infra/openhands/al.lua&lt;/code&gt;&#xA;authenticates with OpenHands&amp;rsquo; own Vault AppRole and the packaged XO OIDC login&#xA;plugin. The plugin supplies a temporary XO token and revokes it on shutdown;&#xA;no infrastructure administrator token is loaded. The setup HTTP backend&#xA;remains owned by the same OpenHands config.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Tf setup</title>
+				<link>https://www-staging.alwaldend.com/docs/infra/threexui/tf_setup/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/threexui/tf_setup/</guid>
+				<description>&lt;p&gt;Use this package&amp;rsquo;s &lt;code&gt;dns.plan&lt;/code&gt;, &lt;code&gt;dns.show&lt;/code&gt;, and &lt;code&gt;dns.apply&lt;/code&gt; targets for the&#xA;&lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/dns/&#34;&gt;scoped DNS adoption workflow&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;DNS ownership is enabled by default after the verified 2026-09-13 adoption.&#xA;The &lt;a href=&#34;../openspec/changes/archive/2026-09-13-adopt-dns-records/design.md&#34;&gt;adoption evidence&lt;/a&gt;&#xA;records 12 imports, a no-change follow-up plan, and preserved provider inventories.&#xA;The DNS wrappers select &lt;code&gt;dns=1&lt;/code&gt; and &lt;code&gt;module.dns&lt;/code&gt; within this setup root and&#xA;backend; their validation covers DNS and its dependencies. Apply requires a&#xA;reviewed saved plan, and ordinary service authentication remains separate.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Tf setup</title>
+				<link>https://www-staging.alwaldend.com/docs/infra/vault/tf_setup/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/vault/tf_setup/</guid>
+				<description>&lt;p&gt;This root owns Vault&amp;rsquo;s canonical &lt;a href=&#34;../dnsconfig.json&#34;&gt;DNS declaration&lt;/a&gt; and&#xA;retains its existing &lt;code&gt;src_infra_dc1_vault&lt;/code&gt; AppRole and setup state backend.&#xA;Use &lt;code&gt;//infra/vault/tf_setup:dns.plan&lt;/code&gt;, &lt;code&gt;dns.show&lt;/code&gt;, and &lt;code&gt;dns.apply&lt;/code&gt; for the&#xA;&lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/dns/&#34;&gt;scoped DNS workflow&lt;/a&gt;. They select &lt;code&gt;dns=1&lt;/code&gt; and&#xA;&lt;code&gt;module.dns&lt;/code&gt;; apply requires a reviewed saved plan. Ordinary setup and service&#xA;wrappers retain their existing authentication flow.&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;dns_enabled&lt;/code&gt; defaults to &lt;code&gt;true&lt;/code&gt; after verified adoption. Keep it enabled to&#xA;retain existing records; disabling it would propose deletion. The&#xA;&lt;a href=&#34;../openspec/changes/archive/2026-09-13-adopt-dns-records/design.md&#34;&gt;adoption record&lt;/a&gt;&#xA;contains the import and verification evidence. Targeted DNS checks do not&#xA;establish the health of other resources in the root.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Vault</title>
+				<link>https://www-staging.alwaldend.com/docs/infra/vault/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/vault/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Intermediate CA: &lt;a href=&#34;https://developer.hashicorp.com/vault/tutorials/pki/pki-engine-external-ca&#34;&gt;https://developer.hashicorp.com/vault/tutorials/pki/pki-engine-external-ca&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;ACME: &lt;a href=&#34;https://developer.hashicorp.com/vault/docs/secrets/pki/acme&#34;&gt;https://developer.hashicorp.com/vault/docs/secrets/pki/acme&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;deployment&#34;&gt;Deployment&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#deployment&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bazel run //infra/vault/tf_setup:tf.apply &lt;span style=&#34;color:#75715e&#34;&gt;# Create VMs (requires an active Vault host)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bazel run //infra/vault/ansible &lt;span style=&#34;color:#75715e&#34;&gt;# Set up hosts (BM and VMs)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bazel run //infra/vault/tf:tf.apply &lt;span style=&#34;color:#75715e&#34;&gt;# Configure vault&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;backup&#34;&gt;Backup&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#backup&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bazel run //infra/vault:backup&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;unseal&#34;&gt;Unseal&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#unseal&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;With a working Vault:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bazel run //infra/vault:unseal&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Without a working Vault:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bazel run //infra/vault:unseal_standalone&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;fix-quorum&#34;&gt;Fix quorum&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#fix-quorum&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bazel run //infra/vault/ansible:fix_quorum&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;set-up-only-vms&#34;&gt;Set up only VMs&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#set-up-only-vms&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bazel run //infra/vault/ansible:ansible.vm &lt;span style=&#34;color:#75715e&#34;&gt;# Set up only VMs&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;set-up-only-bare-metal&#34;&gt;Set up only bare metal&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#set-up-only-bare-metal&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bazel run //infra/vault/ansible:ansible.bm &lt;span style=&#34;color:#75715e&#34;&gt;# Set up only bare metal&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;tf&#34;&gt;Tf&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#tf&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Plan:&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Vault approle</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/tf_modules/vault_approle/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/tf_modules/vault_approle/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Vault approle</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/tf_modules/vault_pki_ica/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/tf_modules/vault_pki_ica/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Vault OIDC provider</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/tf_modules/vault_oidc_provider/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/tf_modules/vault_oidc_provider/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Vault pki server</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/tf_modules/vault_pki_server/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/tf_modules/vault_pki_server/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Vault transit key</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/tf_modules/vault_transit_key/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/tf_modules/vault_transit_key/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Docs: &lt;a href=&#34;https://developer.hashicorp.com/vault/docs/secrets/transit&#34;&gt;https://developer.hashicorp.com/vault/docs/secrets/transit&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>XCP-ng</title>
+				<link>https://www-staging.alwaldend.com/docs/infra/xcp_ng/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/xcp_ng/</guid>
+				<description>&lt;p&gt;Terraform in &lt;code&gt;tf&lt;/code&gt; manages a Xen Orchestra resource set for every&#xA;entity in Vault&amp;rsquo;s &lt;code&gt;approles&lt;/code&gt; group, following &lt;code&gt;infra/pve/tf&lt;/code&gt;. Resource sets&#xA;are the XO grouping and delegation mechanism; XCP-ng host pools represent&#xA;physical clusters and are not created per AppRole.&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;resource_set_inventory&lt;/code&gt; assigns a pool, template, storage repository and&#xA;network by name to each AppRole. Native provider lookups resolve their IDs&#xA;and reject ambiguous matches. Forgejo and OpenHands have assignments by default;&#xA;other sets remain empty. Subjects are the exact synchronized OIDC users&#xA;selected by Vault issuer and immutable AppRole entity UUID. Bootstrap has&#xA;synchronized the 18 AppRole users; new AppRoles need their first OIDC login&#xA;before Terraform can bind their sets. &lt;code&gt;resource_set_cpu_limit&lt;/code&gt; defaults to&#xA;32 CPUs per set. Creating a set does not allocate CPUs or storage.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Flux-Operator on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/tags/flux-operator/</link>
+		<description>Recent content in Flux-Operator on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/tags/flux-operator/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Flux operator</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/flux_operator/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/flux_operator/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://fluxoperator.dev&#34;&gt;https://fluxoperator.dev&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Releases: &lt;a href=&#34;https://github.com/controlplaneio-fluxcd/flux-operator/releases&#34;&gt;https://github.com/controlplaneio-fluxcd/flux-operator/releases&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>io_controlplane_flux_operator</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/io_controlplane_flux_operator/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/io_controlplane_flux_operator/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://fluxoperator.dev&#34;&gt;https://fluxoperator.dev&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Releases: &lt;a href=&#34;https://github.com/controlplaneio-fluxcd/flux-operator/releases&#34;&gt;https://github.com/controlplaneio-fluxcd/flux-operator/releases&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+	</channel>
+</rss>

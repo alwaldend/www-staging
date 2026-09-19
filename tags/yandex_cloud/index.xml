@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Yandex_cloud on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/tags/yandex_cloud/</link>
+		<description>Recent content in Yandex_cloud on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/tags/yandex_cloud/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Tf setup</title>
+				<link>https://www-staging.alwaldend.com/docs/infra/threexui/tf_setup/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/threexui/tf_setup/</guid>
+				<description>&lt;p&gt;Use this package&amp;rsquo;s &lt;code&gt;dns.plan&lt;/code&gt;, &lt;code&gt;dns.show&lt;/code&gt;, and &lt;code&gt;dns.apply&lt;/code&gt; targets for the&#xA;&lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/dns/&#34;&gt;scoped DNS adoption workflow&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;DNS ownership is enabled by default after the verified 2026-09-13 adoption.&#xA;The &lt;a href=&#34;../openspec/changes/archive/2026-09-13-adopt-dns-records/design.md&#34;&gt;adoption evidence&lt;/a&gt;&#xA;records 12 imports, a no-change follow-up plan, and preserved provider inventories.&#xA;The DNS wrappers select &lt;code&gt;dns=1&lt;/code&gt; and &lt;code&gt;module.dns&lt;/code&gt; within this setup root and&#xA;backend; their validation covers DNS and its dependencies. Apply requires a&#xA;reviewed saved plan, and ordinary service authentication remains separate.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Yc folder</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/tf_modules/yc_folder/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/tf_modules/yc_folder/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

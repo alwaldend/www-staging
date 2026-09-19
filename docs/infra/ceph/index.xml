@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Ceph on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/docs/infra/ceph/</link>
+		<description>Recent content in Ceph on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/docs/infra/ceph/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title></title>
+				<link>https://www-staging.alwaldend.com/docs/infra/ceph/openspec/spec/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/ceph/openspec/spec/</guid>
+				<description>&lt;h1 id=&#34;ceph-infrastructure-specification&#34;&gt;Ceph infrastructure specification&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#ceph-infrastructure-specification&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#purpose&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Describe the single-host Ceph CRUSH map maintained by &lt;code&gt;infra/ceph&lt;/code&gt; and its&#xA;documented operator workflow. This owner contains a map and documentation;&#xA;its BUILD file exposes documentation, not a Ceph deployment target. The&#xA;baseline describes checked-in source, not an observed running cluster.&lt;/p&gt;&#xA;&lt;p&gt;Baseline revision: &lt;code&gt;550d7e79b1f5fdbc2b6017b75178471d6914082f&lt;/code&gt;.&#xA;Observed: 2026-09-08. Sources: &lt;a href=&#34;https://www-staging.alwaldend.com/docs/&#34;&gt;owner README&lt;/a&gt;,&#xA;&lt;a href=&#34;../../../BUILD.bazel&#34;&gt;BUILD&lt;/a&gt;, and&#xA;&lt;a href=&#34;../../../crush_map.txt&#34;&gt;CRUSH map&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirements&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id=&#34;requirement-single-host-crush-topology&#34;&gt;Requirement: Single-host CRUSH topology&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirement-single-host-crush-topology&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The maintained CRUSH map SHALL place four HDD devices, &lt;code&gt;osd.0&lt;/code&gt; through&#xA;&lt;code&gt;osd.3&lt;/code&gt;, in the &lt;code&gt;host1&lt;/code&gt; bucket beneath the &lt;code&gt;default&lt;/code&gt; root, using the declared&#xA;device weights and &lt;code&gt;straw2&lt;/code&gt; bucket algorithm.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

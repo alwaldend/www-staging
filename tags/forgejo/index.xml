@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Forgejo on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/tags/forgejo/</link>
+		<description>Recent content in Forgejo on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/tags/forgejo/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>fj</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/fj/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/fj/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://forgejo.org/&#34;&gt;https://forgejo.org/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Repo: &lt;a href=&#34;https://codeberg.org/forgejo-contrib/forgejo-cli&#34;&gt;https://codeberg.org/forgejo-contrib/forgejo-cli&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>forgejo</title>
+				<link>https://www-staging.alwaldend.com/docs/infra/forgejo/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/forgejo/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Docs: &lt;a href=&#34;https://forgejo.org/docs/latest/admin/installation/binary/&#34;&gt;https://forgejo.org/docs/latest/admin/installation/binary/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Config reference: &lt;a href=&#34;https://forgejo.org/docs/latest/admin/config-cheat-sheet/&#34;&gt;https://forgejo.org/docs/latest/admin/config-cheat-sheet/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;repository-configuration&#34;&gt;Repository configuration&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#repository-configuration&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Service Terraform consumes the shared &lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/repos/&#34;&gt;repository catalog&lt;/a&gt;&#xA;for organization-owned repositories and named administrator/developer roles.&#xA;Vault continues to own OIDC login identities and service-specific access.&#xA;See &lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/forgejo/tf/&#34;&gt;service Terraform&lt;/a&gt; for identity validation, state adoption,&#xA;and the preserved automation grants.&lt;/p&gt;&#xA;&lt;h2 id=&#34;deployment&#34;&gt;Deployment&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#deployment&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Forgejo is recreated on XCP-ng through Xen Orchestra, using the&#xA;&lt;code&gt;src_infra_dc1_forgejo1&lt;/code&gt; resource set provisioned by &lt;code&gt;infra/xcp_ng&lt;/code&gt;.&#xA;VM provisioning authenticates to XO through Vault OIDC as Forgejo&amp;rsquo;s own&#xA;AppRole. Its exact synchronized user receives the resource-set membership&#xA;and an explicit administration ACL on the existing Forgejo VM; it does not&#xA;use the shared infrastructure administrator token. These bindings must be&#xA;applied by &lt;code&gt;infra/xcp_ng/tf&lt;/code&gt; before Forgejo&amp;rsquo;s setup Terraform runs.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Forgejo</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/forgejo/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/forgejo/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Forgejo</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/threexui/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/threexui/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Forgejo</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/forgejo/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/forgejo/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://forgejo.org/&#34;&gt;https://forgejo.org/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Repo: &lt;a href=&#34;https://codeberg.org/forgejo/forgejo&#34;&gt;https://codeberg.org/forgejo/forgejo&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Forgejo login</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/vault/forgejo_login/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/vault/forgejo_login/</guid>
+				<description>&lt;p&gt;The plugin registers token removal before issuance, using a unique token name.&#xA;Startup failure and normal shutdown attempt removal through the authenticated&#xA;Forgejo browser session, including when creation did not return a usable token.&#xA;Cleanup parses the complete applications settings page and verifies token absence&#xA;after deletion. It then logs out the invocation&amp;rsquo;s browser session and verifies&#xA;that the retained original cookie no longer accesses authenticated settings.&#xA;Cleanup failures are reported.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Forgejo runner</title>
+				<link>https://www-staging.alwaldend.com/docs/infra/forgejo_runner/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/forgejo_runner/</guid>
+				<description>&lt;h2 id=&#34;deploy-vms&#34;&gt;Deploy VMs&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#deploy-vms&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bazel run //infra/forgejo_runner/tf_setup &lt;span style=&#34;color:#75715e&#34;&gt;# Create VMs&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bazel run //infra/forgejo_runner/ansible &lt;span style=&#34;color:#75715e&#34;&gt;# Configure VMs&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+			</item>
+			<item>
+				<title>org_codeberg_forgejo</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/org_codeberg_forgejo/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/org_codeberg_forgejo/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://forgejo.org/&#34;&gt;https://forgejo.org/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Repo: &lt;a href=&#34;https://codeberg.org/forgejo/forgejo&#34;&gt;https://codeberg.org/forgejo/forgejo&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>org_codeberg_forgejo_bin</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/org_codeberg_forgejo_bin/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/org_codeberg_forgejo_bin/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://forgejo.org/&#34;&gt;https://forgejo.org/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Repo: &lt;a href=&#34;https://codeberg.org/forgejo/forgejo&#34;&gt;https://codeberg.org/forgejo/forgejo&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>org_codeberg_forgejo_contrib_forgejo_cli_bin</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/org_codeberg_forgejo_contrib_forgejo_cli_bin/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/org_codeberg_forgejo_contrib_forgejo_cli_bin/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://forgejo.org/&#34;&gt;https://forgejo.org/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Repo: &lt;a href=&#34;https://codeberg.org/forgejo-contrib/forgejo-cli&#34;&gt;https://codeberg.org/forgejo-contrib/forgejo-cli&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>org_codeberg_forgejo_runner_bin</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/org_codeberg_forgejo_runner_bin/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/org_codeberg_forgejo_runner_bin/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://forgejo.org/&#34;&gt;https://forgejo.org/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Repo: &lt;a href=&#34;https://code.forgejo.org/forgejo/runner&#34;&gt;https://code.forgejo.org/forgejo/runner&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+	</channel>
+</rss>

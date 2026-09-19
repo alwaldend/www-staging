@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>OpenHands automation on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/openhands_automation/</link>
+		<description>Recent content in OpenHands automation on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/openhands_automation/index.xml" rel="self" type="application/rss+xml" />
+	</channel>
+</rss>

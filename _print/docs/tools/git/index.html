@@ -1,0 +1,981 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js" data-theme-init>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000000">
+
+<style>
+  html { background: Canvas; color: CanvasText; }
+  @media (prefers-color-scheme: dark) {
+    html { background: #0b0d12; color: #e6e6e6; }
+  }
+  html[data-theme-init] * { transition: none !important; }
+</style>
+
+<script>
+  (function() {
+    const themeKey = 'td-color-theme';
+    const storedTheme = localStorage.getItem(themeKey);
+    let theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (theme === 'auto') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
+<link rel="canonical" type="text/html" href="https://www-staging.alwaldend.com/docs/tools/git/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://www-staging.alwaldend.com/docs/tools/git/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+<title>Git | Alwaldend</title>
+<meta name="description" content="Git rules">
+<meta property="og:url" content="https://www-staging.alwaldend.com/docs/tools/git/">
+	<meta property="og:site_name" content="Alwaldend">
+	<meta property="og:title" content="Git">
+	<meta property="og:description" content="Git rules">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="Git">
+	<meta itemprop="description" content="Git rules">
+	<meta itemprop="dateModified" content="2026-09-19T20:06:21+03:00">
+	<meta itemprop="keywords" content="Bzl_rules,Git">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Git">
+	<meta name="twitter:description" content="Git rules">
+<link rel="preload" href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" as="style" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<link href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" rel="stylesheet" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll">
+<div class="td-navbar-container container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">Alwaldend</span></a>
+  <div class="td-navbar__main td-navbar-nav-scroll td-navbar-nav-scroll--indicator" id="main_navbar">
+    <div class="scroll-indicator scroll-left"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/projects/"><span>Projects</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item td-navbar__light-dark-menu">
+        <div class="td-light-dark-menu dropdown"><svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+<button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        title="Toggle theme (Auto)"
+        aria-label="Toggle theme (Auto)">
+  <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="bd-theme">
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
+      Light
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>
+      Dark
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+      <svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>
+      Auto
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+</ul>
+</div>
+
+      </li>
+      </ul>
+    <div class="scroll-indicator scroll-right"></div>
+  </div>
+  <div class="td-navbar__search d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon" aria-hidden="true"></div>
+  <input
+    type="search"
+    name="q"
+    class="td-search__input form-control"
+    placeholder='Search this site…'
+    aria-label='Search this site…'
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/tools/git/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Git</h1>
+<div class="lead">Git rules</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-ffce9dac7f26511d3ce9162bdbcf6d71">Bzl</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1.1: <a href="#pg-b59b5cb8e274de1edc023b8945e6420b">al_git_binary</a></li>
+
+
+    
+  
+    
+    
+	
+<li>1.2: <a href="#pg-012b8da2a5c2e7e1d6c97403bd37a197">al_git_changelog</a></li>
+
+
+    
+  
+    
+    
+	
+<li>1.3: <a href="#pg-c00651df7c457a02d6aa6b641b25c011">al_git_current_state</a></li>
+
+
+    
+  
+    
+    
+	
+<li>1.4: <a href="#pg-c5742c4bd99c92bf803ce6be8e4b93c1">al_git_extension</a></li>
+
+
+    
+  
+    
+    
+	
+<li>1.5: <a href="#pg-658a36282c00ea391b9fb2bd813def77">al_git_info_file</a></li>
+
+
+    
+  
+    
+    
+	
+<li>1.6: <a href="#pg-e7f6b38c019a395d1a68f8b42f02ca9f">al_git_repo</a></li>
+
+
+    
+  
+    
+    
+	
+<li>1.7: <a href="#pg-551ef41fe462a19572f4bc1a1aba20e7">al_git_resolved_toolchain</a></li>
+
+
+    
+  
+    
+    
+	
+<li>1.8: <a href="#pg-bdb99ac0943d9da3e11b60832766339b">al_git_run_binary</a></li>
+
+
+    
+  
+    
+    
+	
+<li>1.9: <a href="#pg-b4a4bd32910c680949c2447cc9fa0a13">al_git_toolchain</a></li>
+
+
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-fb81b7daa5ceaebe30d5a6f372c66e9c">Proto</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>2.1: <a href="#pg-34f08c4cd5eb1bb84f1991fb92c2ff66">contracts</a></li>
+
+
+    
+  
+
+    </ul>
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-ffce9dac7f26511d3ce9162bdbcf6d71">1 - Bzl</h1>
+    <div class="lead">Bazel rules</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-b59b5cb8e274de1edc023b8945e6420b">1.1 - al_git_binary</h1>
+    
+	<!-- Generated with Stardoc: http://skydoc.bazel.build -->
+<p><a id="print-2a13d19da4d28420927a6b84235a5a97-al_git_binary"></a></p>
+<h2>al_git_binary<a class="td-heading-self-link" href="#print-2a13d19da4d28420927a6b84235a5a97-al_git_binary" aria-label="Heading self-link"></a></h2><pre>
+load("@com_alwaldend_src//tools/git/main/bzl:al_git_binary.bzl", "al_git_binary")
+
+al_git_binary(<a href="#print-2a13d19da4d28420927a6b84235a5a97-al_git_binary-name">name</a>, <a href="#print-2a13d19da4d28420927a6b84235a5a97-al_git_binary-arguments">arguments</a>)
+</pre>
+<p>Run git binary</p>
+<p><strong>ATTRIBUTES</strong></p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Name</th>
+					<th style="text-align: left">Description</th>
+					<th style="text-align: left">Type</th>
+					<th style="text-align: left">Mandatory</th>
+					<th style="text-align: left">Default</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><a id="print-2a13d19da4d28420927a6b84235a5a97-al_git_binary-name"></a>name</td>
+					<td style="text-align: left">A unique name for this target.</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels#target-names">Name</a></td>
+					<td style="text-align: left">required</td>
+					<td style="text-align: left"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-2a13d19da4d28420927a6b84235a5a97-al_git_binary-arguments"></a>arguments</td>
+					<td style="text-align: left">Git arguments (templated)</td>
+					<td style="text-align: left">List of strings</td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>[]</code></td>
+			</tr>
+	</tbody>
+</table>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-012b8da2a5c2e7e1d6c97403bd37a197">1.2 - al_git_changelog</h1>
+    
+	<!-- Generated with Stardoc: http://skydoc.bazel.build -->
+<p><a id="print-701e13cb17d54c07338dffc6787e006c-al_git_changelog"></a></p>
+<h2>al_git_changelog<a class="td-heading-self-link" href="#print-701e13cb17d54c07338dffc6787e006c-al_git_changelog" aria-label="Heading self-link"></a></h2><pre>
+load("@com_alwaldend_src//tools/git/main/bzl:al_git_changelog.bzl", "al_git_changelog")
+
+al_git_changelog(<a href="#print-701e13cb17d54c07338dffc6787e006c-al_git_changelog-name">name</a>, <a href="#print-701e13cb17d54c07338dffc6787e006c-al_git_changelog-visibility">visibility</a>, <a href="#print-701e13cb17d54c07338dffc6787e006c-al_git_changelog-git_binary">git_binary</a>, <a href="#print-701e13cb17d54c07338dffc6787e006c-al_git_changelog-subpackages">subpackages</a>)
+</pre>
+<p>Create changelog target</p>
+<p><strong>PARAMETERS</strong></p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Name</th>
+					<th style="text-align: left">Description</th>
+					<th style="text-align: left">Default Value</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><a id="print-701e13cb17d54c07338dffc6787e006c-al_git_changelog-name"></a>name</td>
+					<td style="text-align: left">target name prefix</td>
+					<td style="text-align: left">none</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-701e13cb17d54c07338dffc6787e006c-al_git_changelog-visibility"></a>visibility</td>
+					<td style="text-align: left">visibility</td>
+					<td style="text-align: left">none</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-701e13cb17d54c07338dffc6787e006c-al_git_changelog-git_binary"></a>git_binary</td>
+					<td style="text-align: left"><p align="center"> - </p></td>
+					<td style="text-align: left"><code>&quot;@git//:git&quot;</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-701e13cb17d54c07338dffc6787e006c-al_git_changelog-subpackages"></a>subpackages</td>
+					<td style="text-align: left">subpackages</td>
+					<td style="text-align: left"><code>[]</code></td>
+			</tr>
+	</tbody>
+</table>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-c00651df7c457a02d6aa6b641b25c011">1.3 - al_git_current_state</h1>
+    
+	<!-- Generated with Stardoc: http://skydoc.bazel.build -->
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-c5742c4bd99c92bf803ce6be8e4b93c1">1.4 - al_git_extension</h1>
+    
+	<!-- Generated with Stardoc: http://skydoc.bazel.build -->
+<p><a id="print-3bd3106c44e23f1239620d18131b0499-al_git_extension"></a></p>
+<h2>al_git_extension<a class="td-heading-self-link" href="#print-3bd3106c44e23f1239620d18131b0499-al_git_extension" aria-label="Heading self-link"></a></h2><pre>
+al_git_extension = use_extension("@com_alwaldend_src//tools/git/main/bzl:al_git_extension.bzl", "al_git_extension")
+al_git_extension.local_git(<a href="#print-3bd3106c44e23f1239620d18131b0499-al_git_extension.local_git-name">name</a>)
+</pre>
+<p>Create git repos</p>
+<p><strong>TAG CLASSES</strong></p>
+<p><a id="print-3bd3106c44e23f1239620d18131b0499-al_git_extension.local_git"></a></p>
+<h3 id="print-3bd3106c44e23f1239620d18131b0499-local_git">local_git<a class="td-heading-self-link" href="#print-3bd3106c44e23f1239620d18131b0499-local_git" aria-label="Heading self-link"></a></h3><p><strong>Attributes</strong></p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Name</th>
+					<th style="text-align: left">Description</th>
+					<th style="text-align: left">Type</th>
+					<th style="text-align: left">Mandatory</th>
+					<th style="text-align: left">Default</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><a id="print-3bd3106c44e23f1239620d18131b0499-al_git_extension.local_git-name"></a>name</td>
+					<td style="text-align: left">Name</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels#target-names">Name</a></td>
+					<td style="text-align: left">required</td>
+					<td style="text-align: left"></td>
+			</tr>
+	</tbody>
+</table>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-658a36282c00ea391b9fb2bd813def77">1.5 - al_git_info_file</h1>
+    
+	<!-- Generated with Stardoc: http://skydoc.bazel.build -->
+<p><a id="print-014498de83b59b245c9cccf066c69070-al_git_info_file"></a></p>
+<h2>al_git_info_file<a class="td-heading-self-link" href="#print-014498de83b59b245c9cccf066c69070-al_git_info_file" aria-label="Heading self-link"></a></h2><pre>
+load("@com_alwaldend_src//tools/git/main/bzl:al_git_info_file.bzl", "al_git_info_file")
+
+al_git_info_file(<a href="#print-014498de83b59b245c9cccf066c69070-al_git_info_file-name">name</a>, <a href="#print-014498de83b59b245c9cccf066c69070-al_git_info_file-git_state">git_state</a>, <a href="#print-014498de83b59b245c9cccf066c69070-al_git_info_file-git_tool">git_tool</a>, <a href="#print-014498de83b59b245c9cccf066c69070-al_git_info_file-timeout">timeout</a>)
+</pre>
+<p>Generate git info file</p>
+<p><strong>ATTRIBUTES</strong></p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Name</th>
+					<th style="text-align: left">Description</th>
+					<th style="text-align: left">Type</th>
+					<th style="text-align: left">Mandatory</th>
+					<th style="text-align: left">Default</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><a id="print-014498de83b59b245c9cccf066c69070-al_git_info_file-name"></a>name</td>
+					<td style="text-align: left">A unique name for this target.</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels#target-names">Name</a></td>
+					<td style="text-align: left">required</td>
+					<td style="text-align: left"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-014498de83b59b245c9cccf066c69070-al_git_info_file-git_state"></a>git_state</td>
+					<td style="text-align: left">Files that should invalidate the cache on new commit</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>[]</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-014498de83b59b245c9cccf066c69070-al_git_info_file-git_tool"></a>git_tool</td>
+					<td style="text-align: left">Git tool to use</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels">Label</a></td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>&quot;@com_alwaldend_src//tools/git/main/go&quot;</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-014498de83b59b245c9cccf066c69070-al_git_info_file-timeout"></a>timeout</td>
+					<td style="text-align: left">Timeout in seconds</td>
+					<td style="text-align: left">Integer</td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>60</code></td>
+			</tr>
+	</tbody>
+</table>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-e7f6b38c019a395d1a68f8b42f02ca9f">1.6 - al_git_repo</h1>
+    
+	<!-- Generated with Stardoc: http://skydoc.bazel.build -->
+<p><a id="print-cad9d6ede7d171255e2c129653c7af8a-al_git_repo"></a></p>
+<h2>al_git_repo<a class="td-heading-self-link" href="#print-cad9d6ede7d171255e2c129653c7af8a-al_git_repo" aria-label="Heading self-link"></a></h2><pre>
+load("@com_alwaldend_src//tools/git/main/bzl:al_git_repo.bzl", "al_git_repo")
+
+al_git_repo(<a href="#print-cad9d6ede7d171255e2c129653c7af8a-al_git_repo-name">name</a>, <a href="#print-cad9d6ede7d171255e2c129653c7af8a-al_git_repo-repo_mapping">repo_mapping</a>)
+</pre>
+<p>Git repo</p>
+<p><strong>ATTRIBUTES</strong></p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Name</th>
+					<th style="text-align: left">Description</th>
+					<th style="text-align: left">Type</th>
+					<th style="text-align: left">Mandatory</th>
+					<th style="text-align: left">Default</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><a id="print-cad9d6ede7d171255e2c129653c7af8a-al_git_repo-name"></a>name</td>
+					<td style="text-align: left">A unique name for this repository.</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels#target-names">Name</a></td>
+					<td style="text-align: left">required</td>
+					<td style="text-align: left"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-cad9d6ede7d171255e2c129653c7af8a-al_git_repo-repo_mapping"></a>repo_mapping</td>
+					<td style="text-align: left">In <code>WORKSPACE</code> context only: a dictionary from local repository name to global repository name. This allows controls over workspace dependency resolution for dependencies of this repository.<br><br>For example, an entry <code>&quot;@foo&quot;: &quot;@bar&quot;</code> declares that, for any time this repository depends on <code>@foo</code> (such as a dependency on <code>@foo//some:target</code>, it should actually resolve that dependency within globally-declared <code>@bar</code> (<code>@bar//some:target</code>).<br><br>This attribute is <em>not</em> supported in <code>MODULE.bazel</code> context (when invoking a repository rule inside a module extension&rsquo;s implementation function).</td>
+					<td style="text-align: left"><a href="https://bazel.build/rules/lib/core/dict">Dictionary: String -&gt; String</a></td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"></td>
+			</tr>
+	</tbody>
+</table>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-551ef41fe462a19572f4bc1a1aba20e7">1.7 - al_git_resolved_toolchain</h1>
+    
+	<!-- Generated with Stardoc: http://skydoc.bazel.build -->
+<p><a id="print-b6407f828d43d275a973d31f0ec6e66a-al_git_resolved_toolchain"></a></p>
+<h2>al_git_resolved_toolchain<a class="td-heading-self-link" href="#print-b6407f828d43d275a973d31f0ec6e66a-al_git_resolved_toolchain" aria-label="Heading self-link"></a></h2><pre>
+load("@com_alwaldend_src//tools/git/main/bzl:al_git_resolved_toolchain.bzl", "al_git_resolved_toolchain")
+
+al_git_resolved_toolchain(<a href="#print-b6407f828d43d275a973d31f0ec6e66a-al_git_resolved_toolchain-name">name</a>)
+</pre>
+<p>Resolved git toolchain</p>
+<p><strong>ATTRIBUTES</strong></p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Name</th>
+					<th style="text-align: left">Description</th>
+					<th style="text-align: left">Type</th>
+					<th style="text-align: left">Mandatory</th>
+					<th style="text-align: left">Default</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><a id="print-b6407f828d43d275a973d31f0ec6e66a-al_git_resolved_toolchain-name"></a>name</td>
+					<td style="text-align: left">A unique name for this target.</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels#target-names">Name</a></td>
+					<td style="text-align: left">required</td>
+					<td style="text-align: left"></td>
+			</tr>
+	</tbody>
+</table>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-bdb99ac0943d9da3e11b60832766339b">1.8 - al_git_run_binary</h1>
+    
+	<!-- Generated with Stardoc: http://skydoc.bazel.build -->
+<p><a id="print-ba2e163fbc72c7d11310952f1bb8fa0f-al_git_run_binary"></a></p>
+<h2>al_git_run_binary<a class="td-heading-self-link" href="#print-ba2e163fbc72c7d11310952f1bb8fa0f-al_git_run_binary" aria-label="Heading self-link"></a></h2><pre>
+load("@com_alwaldend_src//tools/git/main/bzl:al_git_run_binary.bzl", "al_git_run_binary")
+
+al_git_run_binary(<a href="#print-ba2e163fbc72c7d11310952f1bb8fa0f-al_git_run_binary-name">name</a>, <a href="#print-ba2e163fbc72c7d11310952f1bb8fa0f-al_git_run_binary-srcs">srcs</a>, <a href="#print-ba2e163fbc72c7d11310952f1bb8fa0f-al_git_run_binary-outs">outs</a>, <a href="#print-ba2e163fbc72c7d11310952f1bb8fa0f-al_git_run_binary-arguments">arguments</a>, <a href="#print-ba2e163fbc72c7d11310952f1bb8fa0f-al_git_run_binary-git">git</a>)
+</pre>
+<p>Run a git binary as a build action</p>
+<p><strong>ATTRIBUTES</strong></p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Name</th>
+					<th style="text-align: left">Description</th>
+					<th style="text-align: left">Type</th>
+					<th style="text-align: left">Mandatory</th>
+					<th style="text-align: left">Default</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><a id="print-ba2e163fbc72c7d11310952f1bb8fa0f-al_git_run_binary-name"></a>name</td>
+					<td style="text-align: left">A unique name for this target.</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels#target-names">Name</a></td>
+					<td style="text-align: left">required</td>
+					<td style="text-align: left"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-ba2e163fbc72c7d11310952f1bb8fa0f-al_git_run_binary-srcs"></a>srcs</td>
+					<td style="text-align: left">Files to be made available</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>[]</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-ba2e163fbc72c7d11310952f1bb8fa0f-al_git_run_binary-outs"></a>outs</td>
+					<td style="text-align: left">Outputs</td>
+					<td style="text-align: left">List of labels; <a href="https://bazel.build/reference/be/common-definitions#configurable-attributes">nonconfigurable</a></td>
+					<td style="text-align: left">required</td>
+					<td style="text-align: left"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-ba2e163fbc72c7d11310952f1bb8fa0f-al_git_run_binary-arguments"></a>arguments</td>
+					<td style="text-align: left">Arguments (Location is expanded)</td>
+					<td style="text-align: left">List of strings</td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>[]</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-ba2e163fbc72c7d11310952f1bb8fa0f-al_git_run_binary-git"></a>git</td>
+					<td style="text-align: left">Git binary</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels">Label</a></td>
+					<td style="text-align: left">required</td>
+					<td style="text-align: left"></td>
+			</tr>
+	</tbody>
+</table>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-b4a4bd32910c680949c2447cc9fa0a13">1.9 - al_git_toolchain</h1>
+    
+	<!-- Generated with Stardoc: http://skydoc.bazel.build -->
+<p><a id="print-770ac156c65668a2a344219141635660-al_git_toolchain"></a></p>
+<h2>al_git_toolchain<a class="td-heading-self-link" href="#print-770ac156c65668a2a344219141635660-al_git_toolchain" aria-label="Heading self-link"></a></h2><pre>
+load("@com_alwaldend_src//tools/git/main/bzl:al_git_toolchain.bzl", "al_git_toolchain")
+
+al_git_toolchain(<a href="#print-770ac156c65668a2a344219141635660-al_git_toolchain-name">name</a>, <a href="#print-770ac156c65668a2a344219141635660-al_git_toolchain-git_dir">git_dir</a>, <a href="#print-770ac156c65668a2a344219141635660-al_git_toolchain-git_path">git_path</a>, <a href="#print-770ac156c65668a2a344219141635660-al_git_toolchain-git_root">git_root</a>, <a href="#print-770ac156c65668a2a344219141635660-al_git_toolchain-invalidation">invalidation</a>)
+</pre>
+<p>Local git toolchain</p>
+<p><strong>ATTRIBUTES</strong></p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Name</th>
+					<th style="text-align: left">Description</th>
+					<th style="text-align: left">Type</th>
+					<th style="text-align: left">Mandatory</th>
+					<th style="text-align: left">Default</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><a id="print-770ac156c65668a2a344219141635660-al_git_toolchain-name"></a>name</td>
+					<td style="text-align: left">A unique name for this target.</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels#target-names">Name</a></td>
+					<td style="text-align: left">required</td>
+					<td style="text-align: left"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-770ac156c65668a2a344219141635660-al_git_toolchain-git_dir"></a>git_dir</td>
+					<td style="text-align: left">Git directory path</td>
+					<td style="text-align: left">String</td>
+					<td style="text-align: left">required</td>
+					<td style="text-align: left"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-770ac156c65668a2a344219141635660-al_git_toolchain-git_path"></a>git_path</td>
+					<td style="text-align: left">Git binary path</td>
+					<td style="text-align: left">String</td>
+					<td style="text-align: left">required</td>
+					<td style="text-align: left"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-770ac156c65668a2a344219141635660-al_git_toolchain-git_root"></a>git_root</td>
+					<td style="text-align: left">Git workspace path</td>
+					<td style="text-align: left">String</td>
+					<td style="text-align: left">required</td>
+					<td style="text-align: left"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-770ac156c65668a2a344219141635660-al_git_toolchain-invalidation"></a>invalidation</td>
+					<td style="text-align: left">Files that should invalidate git actions</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>[]</code></td>
+			</tr>
+	</tbody>
+</table>
+
+</div>
+
+
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-fb81b7daa5ceaebe30d5a6f372c66e9c">2 - Proto</h1>
+    <div class="lead">Protobuf contracts</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-34f08c4cd5eb1bb84f1991fb92c2ff66">2.1 - contracts</h1>
+    <div class="lead">Proto docs for contracts.proto</div>
+	<h2 id="print-6e012614bdbfccbe0b8575190b4a45d5-java">Java<a class="td-heading-self-link" href="#print-6e012614bdbfccbe0b8575190b4a45d5-java" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bzl" data-lang="bzl"><span style="display:flex;"><span>load(<span style="color:#e6db74">&#34;@rules_java//java:defs.bzl&#34;</span>, <span style="color:#e6db74">&#34;java_library&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>java_library(
+</span></span><span style="display:flex;"><span>    name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;name&#34;</span>,
+</span></span><span style="display:flex;"><span>    deps <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;@com_alwaldend_src//tools/git/main/proto/contracts:contracts_java_library&#34;</span>,
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h2 id="print-6e012614bdbfccbe0b8575190b4a45d5-golang">Golang<a class="td-heading-self-link" href="#print-6e012614bdbfccbe0b8575190b4a45d5-golang" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bzl" data-lang="bzl"><span style="display:flex;"><span>load(<span style="color:#e6db74">&#34;@rules_go//go:def.bzl&#34;</span>, <span style="color:#e6db74">&#34;go_library&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>go_library(
+</span></span><span style="display:flex;"><span>    name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;name&#34;</span>,
+</span></span><span style="display:flex;"><span>    deps <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;@com_alwaldend_src//tools/git/main/proto/contracts:contracts&#34;</span>,
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h2 id="print-6e012614bdbfccbe0b8575190b4a45d5-proto">Proto<a class="td-heading-self-link" href="#print-6e012614bdbfccbe0b8575190b4a45d5-proto" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-proto" data-lang="proto"><span style="display:flex;"><span><span style="color:#66d9ef">syntax</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;proto3&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">package</span> git;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">option</span> go_package <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;git.alwaldend.com/alwaldend/src/tools/git/main/proto/contracts&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">GitSignature</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> name <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> email <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int64</span> when <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">GitCommit</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> hash <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  GitSignature author <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>  GitSignature committer <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> merge_tag <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> pgp_signature <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> <span style="color:#66d9ef">message</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">repeated</span> <span style="color:#66d9ef">string</span> tags <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">map</span>&lt;<span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">bool</span>&gt; changed_files <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">GitTagAnnotated</span> {
+</span></span><span style="display:flex;"><span>  GitSignature tagger <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> hash <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> <span style="color:#66d9ef">message</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> pgp_signature <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">GitTag</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> name <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> target <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>  GitTagAnnotated annotated <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">GitRemote</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> name <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">repeated</span> <span style="color:#66d9ef">string</span> urls <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">GitInfo</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">map</span>&lt;<span style="color:#66d9ef">string</span>, GitCommit&gt; commits <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">repeated</span> <span style="color:#66d9ef">string</span> commits_order <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">map</span>&lt;<span style="color:#66d9ef">string</span>, GitTag&gt; tags <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">repeated</span> GitRemote remotes <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+	
+  
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        Built with <a href="https://gohugo.io/">Hugo 0.165.0</a>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="/js/main.min.259204f469f58eb3b665605a24e964264772df2adaded180b3669b6ce33d84c8.js" integrity="sha256-JZIE9Gn1jrO2ZWBaJOlkJkdy3yra3tGAs2abbOM9hMg=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.decf3b53d8827d840369f490775626e2a5200e150a733f78f0081c126426cbbf.js" integrity="sha256-3s87U9iCfYQDafSQd1Ym4qUgDhUKcz948AgcEmQmy78=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

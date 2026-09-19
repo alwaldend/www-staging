@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>C on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/languages/c/</link>
+		<description>Recent content in C on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/languages/c/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Sri</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/sri/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/sri/</guid>
+				<description>&lt;p&gt;&lt;code&gt;sri&lt;/code&gt; calculates Subresource Integrity hashes for files using OpenSSL. Its&#xA;command-line interface accepts an input file and a digest algorithm, such as&#xA;SHA-256.&lt;/p&gt;&#xA;&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Source code: &lt;a href=&#34;https://github.com/alwaldend/src/tree/master/projects/sri&#34;&gt;https://github.com/alwaldend/src/tree/master/projects/sri&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Docs: &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity&#34;&gt;https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#features&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Cli app that calculates SRI using &lt;a href=&#34;https://www.openssl.org/&#34;&gt;OpenSSL&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;C, OpenSSL&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#usage&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Usage: sri [OPTION...]&#xA;Generate sri of a file&#xA;&#xA;Example:&#xA;    bazel run //projects/sri -- --digest sha256 --file ${PWD}/README.md&#xA;&#xA;  -d, --digest=String        Digest type (sha256, for example)&#xA;  -f, --file=Path            Path to the file to parse&#xA;  -?, --help                 Give this help list&#xA;      --usage                Give a short usage message&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+			</item>
+			<item>
+				<title>Sri</title>
+				<link>https://www-staging.alwaldend.com/projects/sri/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/projects/sri/</guid>
+				<description>&lt;p&gt;Sri calculates &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity&#34;&gt;Subresource Integrity&lt;/a&gt; hashes for files using OpenSSL. Point it at a file and a digest algorithm and it prints the hash to embed in a &lt;code&gt;integrity&lt;/code&gt; attribute.&lt;/p&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#features&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Command-line hashing for Subresource Integrity attributes&lt;/li&gt;&#xA;&lt;li&gt;Implemented in C on top of OpenSSL&lt;/li&gt;&#xA;&lt;li&gt;Digest algorithm selected per invocation&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#usage&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Usage: sri [OPTION...]&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Generate sri of a file&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  -d, --digest=String        Digest type (sha256, for example)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  -f, --file=Path            Path to the file to parse&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  -?, --help                 Give this help list&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      --usage                Give a short usage message&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://www-staging.alwaldend.com/docs/projects/sri/&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

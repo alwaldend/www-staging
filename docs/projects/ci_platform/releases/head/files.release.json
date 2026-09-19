@@ -1,0 +1,32 @@
+{
+    "items": [
+        {
+            "file": {
+                "hashes": [
+                    {
+                        "algo": "SHA-256",
+                        "content": "ad30f99eba70f88cf1d79350837b0740d4201beb80436b52208d7522f3f622c4"
+                    },
+                    {
+                        "algo": "MD5",
+                        "content": "e5533d5223117cbfefdb3af620855bbf"
+                    }
+                ],
+                "name": "go",
+                "safeName": "go",
+                "size": "22482304"
+            },
+            "deployments": [
+                {
+                    "oci": {
+                        "repository": "docker.io/alwaldend/src",
+                        "tags": [
+                            "docker.io/alwaldend/src:_go_"
+                        ]
+                    }
+                }
+            ]
+        }
+    ],
+    "project": {}
+}

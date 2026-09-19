@@ -1,0 +1,754 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js" data-theme-init>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000000">
+
+<style>
+  html { background: Canvas; color: CanvasText; }
+  @media (prefers-color-scheme: dark) {
+    html { background: #0b0d12; color: #e6e6e6; }
+  }
+  html[data-theme-init] * { transition: none !important; }
+</style>
+
+<script>
+  (function() {
+    const themeKey = 'td-color-theme';
+    const storedTheme = localStorage.getItem(themeKey);
+    let theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (theme === 'auto') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
+<link rel="canonical" type="text/html" href="https://www-staging.alwaldend.com/docs/infra/mikrotik/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://www-staging.alwaldend.com/docs/infra/mikrotik/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+<title>Mikrotik | Alwaldend</title>
+<meta name="description" content="Mikrotik setup for dc1.alwaldend.com">
+<meta property="og:url" content="https://www-staging.alwaldend.com/docs/infra/mikrotik/">
+	<meta property="og:site_name" content="Alwaldend">
+	<meta property="og:title" content="Mikrotik">
+	<meta property="og:description" content="Mikrotik setup for dc1.alwaldend.com">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="Mikrotik">
+	<meta itemprop="description" content="Mikrotik setup for dc1.alwaldend.com">
+	<meta itemprop="dateModified" content="2026-09-19T20:06:21+03:00">
+	<meta itemprop="wordCount" content="1528">
+	<meta itemprop="keywords" content="Mikrotik">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Mikrotik">
+	<meta name="twitter:description" content="Mikrotik setup for dc1.alwaldend.com">
+<link rel="preload" href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" as="style" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<link href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" rel="stylesheet" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll">
+<div class="td-navbar-container container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">Alwaldend</span></a>
+  <div class="td-navbar__main td-navbar-nav-scroll td-navbar-nav-scroll--indicator" id="main_navbar">
+    <div class="scroll-indicator scroll-left"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/projects/"><span>Projects</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item td-navbar__light-dark-menu">
+        <div class="td-light-dark-menu dropdown"><svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+<button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        title="Toggle theme (Auto)"
+        aria-label="Toggle theme (Auto)">
+  <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="bd-theme">
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
+      Light
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>
+      Dark
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+      <svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>
+      Auto
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+</ul>
+</div>
+
+      </li>
+      </ul>
+    <div class="scroll-indicator scroll-right"></div>
+  </div>
+  <div class="td-navbar__search d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon" aria-hidden="true"></div>
+  <input
+    type="search"
+    name="q"
+    class="td-search__input form-control"
+    placeholder='Search this site…'
+    aria-label='Search this site…'
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/infra/mikrotik/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Mikrotik</h1>
+<div class="lead">Mikrotik setup for dc1.alwaldend.com</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-4a7aa602631c1397a463a49d6fbaa9ba"></a></li>
+
+
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-7d4c79db8afd894dc74d9aea9a0ac2c3"></a></li>
+
+
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-89bb8f0db70375d53494f67dc3b50533"></a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      <p>The <a href="/docs/infra/mikrotik/tf/">Terraform package</a> prepares owner-local DNS management.
+Router exports remain documentation inputs and are not applied by that package.</p>
+<h2 id="print-64d11e5be6a668973b7676b14465fedd-deployment">Deployment<a class="td-heading-self-link" href="#print-64d11e5be6a668973b7676b14465fedd-deployment" aria-label="Heading self-link"></a></h2><ul>
+<li>Open <a href="https://help.mikrotik.com/docs/spaces/ROS/pages/328129/WinBox">Winbox</a></li>
+<li>Open new terminal</li>
+<li>Run <code>/export</code></li>
+<li>Copy output</li>
+</ul>
+<h2 id="print-64d11e5be6a668973b7676b14465fedd-links">Links<a class="td-heading-self-link" href="#print-64d11e5be6a668973b7676b14465fedd-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Website: <a href="https://mikrotik.com">https://mikrotik.com</a></li>
+<li>Docs: <a href="https://help.mikrotik.com/docs/spaces/ROS/pages/328155/Configuration&#43;Management">https://help.mikrotik.com/docs/spaces/ROS/pages/328155/Configuration+Management</a></li>
+</ul>
+<h2 id="print-64d11e5be6a668973b7676b14465fedd-exports">Exports<a class="td-heading-self-link" href="#print-64d11e5be6a668973b7676b14465fedd-exports" aria-label="Heading self-link"></a></h2><h3 id="print-64d11e5be6a668973b7676b14465fedd-router1">Router1<a class="td-heading-self-link" href="#print-64d11e5be6a668973b7676b14465fedd-router1" aria-label="Heading self-link"></a></h3><pre tabindex="0"><code class="language-rsc" data-lang="rsc">/interface bridge
+add admin-mac=78:9A:18:38:6C:CA auto-mac=no comment=&#34;bridge1 (wired)&#34; name=bridge1
+add comment=&#34;bridge2 (wireless)&#34; name=bridge2
+/interface wifi
+set [ find default-name=wifi1 ] channel.frequency=5000-5400 .skip-dfs-channels=10min-cac comment=&#34;wifi1 (5GHz)&#34; configuration.country=Russia .mode=ap .ssid=divinity-5GHz datapath.client-isolation=yes disabled=no security.authentication-types=wpa2-psk,wpa3-psk .connect-priority=0 .ft=yes .ft-over-ds=yes
+set [ find default-name=wifi2 ] channel.skip-dfs-channels=10min-cac comment=&#34;wifi2 (2GHz)&#34; configuration.country=Russia .mode=ap .ssid=divinity-2GHz datapath.client-isolation=yes disabled=no security.authentication-types=wpa2-psk,wpa3-psk .connect-priority=0 .ft=yes .ft-over-ds=yes
+/interface ethernet
+set [ find default-name=ether1 ] comment=ether1 l2mtu=1500 mac-address=F4:28:53:7F:A4:59
+set [ find default-name=ether2 ] comment=ether2
+set [ find default-name=ether3 ] comment=ether3
+set [ find default-name=ether4 ] comment=ether4
+set [ find default-name=ether5 ] comment=ether5
+/interface wireguard
+add comment=&#34;tf[users/simeonwarren/hermes/tf_setup]&#34; disabled=yes listen-port=13232 mtu=1420 name=hermes-vpc
+add comment=&#34;tf[infra/ingress/tf]&#34; listen-port=13231 mtu=1420 name=ingress-vpc
+/interface ethernet switch
+set switch1 cpu-flow-control=yes
+/interface list
+add comment=defconf name=WAN
+add comment=defconf name=LAN
+add name=accept-forward-WAN
+add name=accept-input-DNS
+add name=accept-input-DHCP-server
+add name=accept-input-ICMP
+add name=accept-input-winbox
+add name=accept-input-web-ui
+add name=accept-input-mikrotik-neighbor-discovery
+add name=accept-forward-LAN
+add name=accept-output-LAN
+add name=accept-input-NTP
+add name=accept-input-API
+/ip pool
+add comment=bridge1 name=bridge1 ranges=192.168.1.10-192.168.1.254
+add comment=bridge2 name=bridge2 ranges=192.168.2.10-192.168.2.254
+/ip dhcp-server
+add address-pool=bridge1 comment=bridge1 interface=bridge1 lease-time=10m name=bridge1
+add address-pool=bridge2 interface=bridge2 name=bridge2
+/ipv6 pool
+add name=dc01 prefix=fd2e:546d:5738::/48 prefix-length=64
+/user group
+add comment=src_infra_dns name=src_infra_dns policy=read,write,api,rest-api,!local,!telnet,!ssh,!ftp,!reboot,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!romon
+add comment=src_infra_ingress name=src_infra_ingress policy=read,write,api,rest-api,!local,!telnet,!ssh,!ftp,!reboot,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!romon
+add comment=users_simeonwarren name=users_simeonwarren policy=read,write,api,rest-api,!local,!telnet,!ssh,!ftp,!reboot,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!romon
+/interface bridge port
+add bridge=bridge1 comment=bridge1-ether2 interface=ether2
+add bridge=bridge1 comment=bridge1-ether3 interface=ether3
+add bridge=bridge1 comment=bridge1-ether4 interface=ether4
+add bridge=bridge1 comment=bridge1-ether5 interface=ether5
+add bridge=bridge2 comment=bridge2-wifi1 interface=wifi1
+add bridge=bridge2 comment=bridge2-wifi2 interface=wifi2
+/ip neighbor discovery-settings
+set discover-interface-list=LAN
+/interface detect-internet
+set detect-interface-list=WAN
+/interface list member
+add interface=bridge1 list=LAN
+add interface=ether1 list=WAN
+add interface=bridge2 list=LAN
+add interface=bridge2 list=accept-forward-WAN
+add interface=bridge1 list=accept-forward-WAN
+add interface=bridge1 list=accept-input-DNS
+add interface=bridge2 list=accept-input-DNS
+add interface=bridge1 list=accept-input-DHCP-server
+add interface=bridge2 list=accept-input-DHCP-server
+add interface=bridge1 list=accept-input-ICMP
+add interface=bridge2 list=accept-input-ICMP
+add interface=bridge1 list=accept-input-winbox
+add interface=bridge1 list=accept-input-web-ui
+add interface=bridge1 list=accept-input-mikrotik-neighbor-discovery
+add interface=bridge1 list=accept-forward-LAN
+add interface=bridge1 list=accept-output-LAN
+add interface=bridge1 list=accept-input-NTP
+add interface=bridge1 list=accept-input-API
+add comment=&#34;tf[infra/ingress/tf]&#34; interface=ingress-vpc list=accept-input-ICMP
+add comment=&#34;tf[infra/ingress/tf]&#34; interface=ingress-vpc list=LAN
+add comment=&#34;tf[infra/ingress/tf]&#34; interface=ingress-vpc list=accept-forward-LAN
+add comment=&#34;tf[users/simeonwarren/hermes/tf_setup]&#34; interface=hermes-vpc list=accept-forward-LAN
+add comment=&#34;tf[users/simeonwarren/hermes/tf_setup]&#34; interface=hermes-vpc list=accept-input-ICMP
+add comment=&#34;tf[users/simeonwarren/hermes/tf_setup]&#34; interface=hermes-vpc list=LAN
+/interface ovpn-server server
+add mac-address=FE:B3:B4:C4:A4:48 name=ovpn-server1
+/interface wireguard peers
+add allowed-address=10.10.0.2/24 comment=host2 endpoint-address=103.76.53.6 endpoint-port=51820 interface=ingress-vpc name=ingress-vpc-host2 persistent-keepalive=5s public-key=&#34;Z2JamOjZYOGaf4tPZzchyHjLw/XlOtUtQObyROEQ9DM=&#34;
+add allowed-address=10.10.0.1/24 comment=host1 endpoint-address=158.160.196.128 endpoint-port=51820 interface=ingress-vpc name=ingress-vpc-host1 persistent-keepalive=5s public-key=&#34;xmyl+frvngmzRB9z5yEURxQj4vTw47tKQV7EZrTAREw=&#34;
+add allowed-address=10.20.0.1/24 comment=host1 endpoint-address=158.160.220.223 endpoint-port=51820 interface=hermes-vpc name=hermes-vpc-host1 persistent-keepalive=5s public-key=&#34;oA4ZpsmrclIOIWh3ECsb4ZFKH1hQMDtuW3xNXat3IyQ=&#34;
+/ip settings
+set send-redirects=no
+/ip address
+add address=192.168.1.1/24 comment=&#34;bridge1 (LAN)&#34; interface=bridge1 network=192.168.1.0
+add address=192.168.2.1/24 comment=&#34;bridge2 (Wireless)&#34; interface=bridge2 network=192.168.2.0
+add address=192.168.10.1/24 comment=host1.pve1.dc1.alwaldend.com interface=bridge1 network=192.168.10.0
+add address=10.10.0.0/24 comment=&#34;tf[infra/ingress/tf]&#34; interface=ingress-vpc network=10.10.0.0
+add address=10.20.0.0/24 comment=&#34;tf[users/simeonwarren/hermes/tf_setup]&#34; interface=hermes-vpc network=10.20.0.0
+/ip dhcp-client
+add comment=defconf interface=ether1 name=ether1 use-peer-dns=no
+/ip dhcp-server lease
+add address=192.168.1.250 client-id=1:2c:cf:67:67:b5:13 mac-address=2C:CF:67:67:B5:13 server=bridge1
+add address=192.168.1.218 client-id=1:e0:be:3:2b:9a:1a mac-address=E0:BE:03:2B:9A:1A server=bridge1
+add address=192.168.1.216 client-id=ff:60:8:6d:aa:0:1:0:1:31:93:31:1a:34:5a:60:8:6d:aa mac-address=34:5A:60:08:6D:AA server=bridge1
+/ip dhcp-server network
+add address=192.168.1.0/24 comment=defconf dns-server=192.168.1.1 gateway=192.168.1.1
+add address=192.168.2.0/24 dns-server=192.168.2.1 gateway=192.168.2.1
+/ip dns
+set allow-remote-requests=yes servers=1.1.1.2,1.0.0.2 use-doh-server=https://odoh.cloudflare-dns.com/dns-query verify-doh-cert=yes
+/ip dns static
+add address=185.199.108.153 name=alwaldend.com ttl=5m type=A
+add address=185.199.109.153 name=alwaldend.com ttl=5m type=A
+add address=185.199.110.153 name=alwaldend.com ttl=5m type=A
+add address=185.199.111.153 name=alwaldend.com ttl=5m type=A
+add address=2606:50c0:8000::153 name=alwaldend.com ttl=5m type=AAAA
+add address=2606:50c0:8001::153 name=alwaldend.com ttl=5m type=AAAA
+add address=2606:50c0:8002::153 name=alwaldend.com ttl=5m type=AAAA
+add address=2606:50c0:8003::153 name=alwaldend.com ttl=5m type=AAAA
+add mx-exchange=mail.protonmail.ch mx-preference=10 name=alwaldend.com ttl=5m type=MX
+add mx-exchange=mailsec.protonmail.ch mx-preference=20 name=alwaldend.com ttl=5m type=MX
+add name=alwaldend.com text=&#34;_globalsign-domain-verification=0QBJgVV_uwcFLTi1Rot3bb1LyJ5uW1WD0ygvIS4OM5&#34; ttl=5m type=TXT
+add name=alwaldend.com text=&#34;protonmail-verification=bdcd133d3f472fa17f66328950d02fbeae1bef75&#34; ttl=5m type=TXT
+add name=alwaldend.com text=&#34;v=spf1 include:_spf.protonmail.ch ~all&#34; ttl=5m type=TXT
+add name=_dmarc.alwaldend.com text=&#34;v=DMARC1; p=quarantine; adkim=s&#34; ttl=5m type=TXT
+add cname=protonmail.domainkey.djgwfzcu5fgjtpoijqqomgifmqj6zeiuwdd4mzim4hrxab3zsgwkq.domains.proton.ch name=protonmail._domainkey.alwaldend.com ttl=5m type=CNAME
+add cname=protonmail2.domainkey.djgwfzcu5fgjtpoijqqomgifmqj6zeiuwdd4mzim4hrxab3zsgwkq.domains.proton.ch name=protonmail2._domainkey.alwaldend.com ttl=5m type=CNAME
+add cname=protonmail3.domainkey.djgwfzcu5fgjtpoijqqomgifmqj6zeiuwdd4mzim4hrxab3zsgwkq.domains.proton.ch name=protonmail3._domainkey.alwaldend.com ttl=5m type=CNAME
+add address=192.168.1.222 name=bm1.dc1.alwaldend.com ttl=5m type=A
+add address=192.168.1.216 name=bm2.dc1.alwaldend.com ttl=5m type=A
+add address=fd2e:546d:5738:0:365a:60ff:fe08:6daa name=bm2.dc1.alwaldend.com ttl=10m type=AAAA
+add address=192.168.1.218 name=bm3.dc1.alwaldend.com ttl=5m type=A
+add address=fd2e:546d:5738:0:e2be:3ff:fe2b:9a1a name=bm3.dc1.alwaldend.com ttl=10m type=AAAA
+add cname=bm2.dc1.alwaldend.com name=host1.pve1.dc1.alwaldend.com ttl=10m type=CNAME
+add address=192.168.10.10 name=cloudinit-test.vm.pve1.dc1.alwaldend.com ttl=5m type=A
+add address=192.168.1.1 name=router1.dc1.alwaldend.com ttl=5m type=A
+add address=fd2e:546d:5738::1 name=router1.dc1.alwaldend.com ttl=10m type=AAAA
+add address=192.168.1.254 name=switch1.dc1.alwaldend.com ttl=5m type=A
+add address=192.168.1.218 name=vault.dc1.alwaldend.com ttl=5m type=A
+add mx-exchange=mx1.simplelogin.co mx-preference=10 name=simplelogin.alwaldend.com ttl=3h type=MX
+add mx-exchange=mx2.simplelogin.co mx-preference=20 name=simplelogin.alwaldend.com ttl=3h type=MX
+add name=simplelogin.alwaldend.com text=&#34;sl-verification=bxfzzfjiggzsxyzxhhmkmjqkaskjgy&#34; ttl=3h type=TXT
+add name=simplelogin.alwaldend.com text=&#34;v=spf1 include:simplelogin.co ~all&#34; ttl=3h type=TXT
+add name=_dmarc.simplelogin.alwaldend.com text=&#34;v=DMARC1; p=quarantine; pct=100; adkim=s; aspf=s&#34; ttl=3h type=TXT
+add cname=dkim._domainkey.simplelogin.co name=dkim._domainkey.simplelogin.alwaldend.com ttl=3h type=CNAME
+add cname=dkim02._domainkey.simplelogin.co name=dkim02._domainkey.simplelogin.alwaldend.com ttl=3h type=CNAME
+add cname=dkim03._domainkey.simplelogin.co name=dkim03._domainkey.simplelogin.alwaldend.com ttl=3h type=CNAME
+add cname=alwaldend.com name=www.alwaldend.com ttl=5m type=CNAME
+add mx-exchange=mx.yandex.net mx-preference=10 name=yandex.alwaldend.com ttl=6h type=MX
+add name=yandex.alwaldend.com text=&#34;v=spf1 redirect=_spf.yandex.net&#34; ttl=5m type=TXT
+add name=yandex.alwaldend.com text=&#34;yandex-verification: b83672f59b3dbe16&#34; ttl=5m type=TXT
+add name=mail._domainkey.yandex.alwaldend.com text=&#34;v=DKIM1; k=rsa; t=s; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCcYzFVgkeDOhaIIkWM8gNQjxVsv0/aXfU+ax5urB5y6hA6lSjRnjRo6tm0bXbkOJf41GmiwMNgdXpwRtzgzAlX1i2aJbtEr4b9jzibEGLQ7Cvqs44bOYES9f/K3ueQpnvdTOJmFqlRReFL7ZrUyDFCoQ7f4+7h4i8s01cCcRrt5wIDAQAB&#34; ttl=5m type=TXT
+add address=192.168.1.218 name=host1.vault.dc1.alwaldend.com ttl=5m type=A
+add address=192.168.10.60 name=flux.alwaldend.com ttl=5m type=A
+add address=192.168.10.60 name=host1.flux.alwaldend.com ttl=5m type=A
+add cname=flux.alwaldend.com name=openid.flux.alwaldend.com ttl=10m type=CNAME
+add cname=flux.alwaldend.com name=operator.flux.alwaldend.com ttl=10m type=CNAME
+add address=192.168.10.40 name=forgejo.alwaldend.com ttl=5m type=A
+add address=192.168.10.40 name=host1.forgejo.alwaldend.com ttl=5m type=A
+add address=192.168.10.50 name=harbor.alwaldend.com ttl=5m type=A
+add address=192.168.10.50 name=host1.harbor.alwaldend.com ttl=5m type=A
+add address=192.168.1.216 name=pve.alwaldend.com ttl=5m type=A
+add address=192.168.10.80 name=threexui.alwaldend.com ttl=5m type=A
+add address=192.168.10.80 name=host1.threexui.alwaldend.com ttl=5m type=A
+add address=45.142.141.133 name=njalla1.nodes.threexui.alwaldend.com ttl=5m type=A
+add address=2a0a:3840:8078:141:0:2d8e:8d85:1337 name=njalla1.nodes.threexui.alwaldend.com ttl=10m type=AAAA
+add address=192.168.1.218 name=vault.alwaldend.com ttl=5m type=A
+add address=103.76.53.6 name=ingress.alwaldend.com ttl=5m type=A
+add address=158.160.196.128 name=ingress.alwaldend.com ttl=5m type=A
+add address=158.160.196.128 name=host1.ingress.alwaldend.com ttl=5m type=A
+add address=103.76.53.6 name=host2.ingress.alwaldend.com ttl=5m type=A
+add name=yc.threexui.alwaldend.com ns=ns1.yandexcloud.net ttl=5m type=NS
+add name=yc.threexui.alwaldend.com ns=ns2.yandexcloud.net ttl=5m type=NS
+add cname=host1.nodes.yc.threexui.alwaldend.com name=yc1.nodes.threexui.alwaldend.com ttl=10m type=CNAME
+add address=192.168.10.100 name=runner1.forgejo-runner.alwaldend.com ttl=5m type=A
+add cname=host1.yc.hermes.simeonwarren.users.alwaldend.com name=hermes.simeonwarren.users.alwaldend.com ttl=10m type=CNAME
+add cname=host1.yc.hermes.simeonwarren.users.alwaldend.com name=host1.hermes.simeonwarren.users.alwaldend.com ttl=10m type=CNAME
+add name=yc.hermes.simeonwarren.users.alwaldend.com ns=ns1.yandexcloud.net ttl=5m type=NS
+add name=yc.hermes.simeonwarren.users.alwaldend.com ns=ns2.yandexcloud.net ttl=5m type=NS
+/ip firewall filter
+add action=accept chain=input comment=&#34;defconf: accept established,related,untracked&#34; connection-state=established,related,untracked
+add action=drop chain=input comment=&#34;defconf: drop invalid&#34; connection-state=invalid log-prefix=drop-invalid
+add action=accept chain=input comment=&#34;defconf: accept ICMP&#34; in-interface-list=accept-input-ICMP protocol=icmp
+add action=accept chain=input comment=&#34;defconf: accept to local loopback (for CAPsMAN)&#34; dst-address=127.0.0.1
+add action=drop chain=input comment=&#34;defconf: drop all not coming from LAN&#34; in-interface-list=!LAN log-prefix=drop-not-coming-from-lan
+add action=accept chain=forward comment=&#34;defconf: accept in ipsec policy&#34; ipsec-policy=in,ipsec
+add action=accept chain=forward comment=&#34;defconf: accept out ipsec policy&#34; ipsec-policy=out,ipsec
+add action=fasttrack-connection chain=forward comment=&#34;defconf: fasttrack&#34; connection-state=established,related
+add action=accept chain=forward comment=&#34;defconf: accept established,related, untracked&#34; connection-state=established,related,untracked
+add action=drop chain=forward comment=&#34;defconf: drop invalid&#34; connection-state=invalid log-prefix=drop-invalid
+add action=drop chain=forward comment=&#34;defconf: drop all from WAN not DSTNATed&#34; connection-nat-state=!dstnat connection-state=new in-interface-list=WAN log-prefix=drop-from-wan-not-dstnated
+add action=accept chain=input in-interface-list=WAN protocol=gre
+add action=accept chain=forward comment=&#34;accept forward WAN&#34; in-interface-list=accept-forward-WAN out-interface-list=WAN
+add action=accept chain=forward comment=&#34;accept forward LAN&#34; in-interface-list=accept-forward-LAN out-interface-list=LAN
+add action=accept chain=input comment=&#34;accept input DNS (udp)&#34; dst-port=53 in-interface-list=accept-input-DNS protocol=udp
+add action=accept chain=input comment=&#34;accept input DNS (tcp)&#34; dst-port=53 in-interface-list=accept-input-DNS protocol=tcp
+add action=accept chain=input comment=accept-input-NTP dst-port=123 in-interface-list=accept-input-NTP protocol=udp
+add action=accept chain=input comment=&#34;accept input DHCP-server&#34; dst-port=67 in-interface-list=accept-input-DHCP-server log-prefix=accept-DHCP protocol=udp
+add action=accept chain=input comment=&#34;accept input winbox (tcp)&#34; dst-port=8291 in-interface-list=accept-input-winbox protocol=tcp
+add action=accept chain=input comment=&#34;accept input winbox (udp)&#34; dst-port=20561 in-interface-list=accept-input-winbox protocol=udp
+add action=accept chain=input comment=&#34;accept input web ui&#34; dst-port=80,443 in-interface-list=accept-input-web-ui protocol=tcp
+add action=accept chain=input comment=&#34;accept input mikrotik neighbor discovery&#34; dst-port=5678 in-interface-list=accept-input-mikrotik-neighbor-discovery protocol=udp
+add action=drop chain=forward comment=&#34;drop forward&#34; log=yes log-prefix=drop-forward
+add action=drop chain=input comment=&#34;drop input&#34; log=yes log-prefix=drop-input
+add action=accept chain=output comment=accept-output-LAN out-interface-list=LAN
+/ip firewall nat
+add action=masquerade chain=srcnat comment=&#34;defconf: masquerade&#34; ipsec-policy=out,none out-interface-list=WAN
+/ip ipsec profile
+set [ find default=yes ] dpd-interval=2m dpd-maximum-failures=5
+/ip service
+set www-ssl certificate=alwaldend.com_acme disabled=no
+set reverse-proxy certificate=alwaldend.com_acme
+set api-ssl certificate=alwaldend.com_acme
+/ipv6 address
+add address=::1 from-pool=dc01 interface=bridge1
+add address=::1:0:0:0:1 from-pool=dc01 interface=bridge2
+/ipv6 firewall address-list
+add address=::/128 comment=&#34;defconf: unspecified address&#34; list=bad_ipv6
+add address=::1/128 comment=&#34;defconf: lo&#34; list=bad_ipv6
+add address=fec0::/10 comment=&#34;defconf: site-local&#34; list=bad_ipv6
+add address=::ffff:0.0.0.0/96 comment=&#34;defconf: ipv4-mapped&#34; list=bad_ipv6
+add address=::/96 comment=&#34;defconf: ipv4 compat&#34; list=bad_ipv6
+add address=100::/64 comment=&#34;defconf: discard only &#34; list=bad_ipv6
+add address=2001:db8::/32 comment=&#34;defconf: documentation&#34; list=bad_ipv6
+add address=2001:10::/28 comment=&#34;defconf: ORCHID&#34; list=bad_ipv6
+add address=3ffe::/16 comment=&#34;defconf: 6bone&#34; list=bad_ipv6
+/ipv6 firewall filter
+add action=accept chain=input comment=&#34;defconf: accept established,related,untracked&#34; connection-state=established,related,untracked
+add action=drop chain=input comment=&#34;defconf: drop invalid&#34; connection-state=invalid
+add action=accept chain=input comment=&#34;defconf: accept ICMPv6&#34; in-interface-list=accept-input-ICMP protocol=icmpv6
+add action=accept chain=input comment=&#34;defconf: accept UDP traceroute&#34; dst-port=33434-33534 protocol=udp
+add action=accept chain=input comment=&#34;defconf: accept DHCPv6-Client prefix delegation.&#34; dst-port=546 protocol=udp src-address=fe80::/10
+add action=accept chain=input comment=&#34;defconf: accept IKE&#34; dst-port=500,4500 protocol=udp
+add action=accept chain=input comment=&#34;defconf: accept ipsec AH&#34; protocol=ipsec-ah
+add action=accept chain=input comment=&#34;defconf: accept ipsec ESP&#34; protocol=ipsec-esp
+add action=accept chain=input comment=&#34;defconf: accept all that matches ipsec policy&#34; ipsec-policy=in,ipsec
+add action=drop chain=input comment=&#34;defconf: drop everything else not coming from LAN&#34; in-interface-list=!LAN
+add action=accept chain=forward comment=&#34;defconf: accept established,related,untracked&#34; connection-state=established,related,untracked
+add action=drop chain=forward comment=&#34;defconf: drop invalid&#34; connection-state=invalid
+add action=drop chain=forward comment=&#34;defconf: drop packets with bad src ipv6&#34; src-address-list=bad_ipv6
+add action=drop chain=forward comment=&#34;defconf: drop packets with bad dst ipv6&#34; dst-address-list=bad_ipv6
+add action=drop chain=forward comment=&#34;defconf: rfc4890 drop hop-limit=1&#34; hop-limit=equal:1 protocol=icmpv6
+add action=accept chain=forward comment=&#34;defconf: accept ICMPv6&#34; in-interface-list=accept-input-ICMP protocol=icmpv6
+add action=accept chain=forward comment=&#34;defconf: accept HIP&#34; protocol=139
+add action=accept chain=forward comment=&#34;defconf: accept IKE&#34; dst-port=500,4500 protocol=udp
+add action=accept chain=forward comment=&#34;defconf: accept ipsec AH&#34; protocol=ipsec-ah
+add action=accept chain=forward comment=&#34;defconf: accept ipsec ESP&#34; protocol=ipsec-esp
+add action=accept chain=forward comment=&#34;defconf: accept all that matches ipsec policy&#34; ipsec-policy=in,ipsec
+add action=drop chain=forward comment=&#34;defconf: drop everything else not coming from LAN&#34; in-interface-list=!LAN
+add action=accept chain=forward comment=&#34;accept forward WAN&#34; in-interface-list=accept-forward-WAN out-interface-list=WAN
+add action=accept chain=forward comment=&#34;accept forward LAN&#34; in-interface-list=accept-forward-LAN out-interface-list=LAN
+add action=accept chain=input comment=&#34;accept input DNS (udp)&#34; dst-port=53 in-interface-list=accept-input-DNS protocol=udp
+add action=accept chain=input comment=&#34;accept input DNS (tcp)&#34; dst-port=53 in-interface-list=accept-input-DNS protocol=tcp
+add action=accept chain=input comment=accept-input-NTP dst-port=123 in-interface-list=accept-input-NTP protocol=udp
+add action=accept chain=input comment=&#34;accept input winbox (tcp)&#34; dst-port=8291 in-interface-list=accept-input-winbox protocol=tcp
+add action=accept chain=input comment=&#34;accept input winbox (udp)&#34; dst-port=20561 in-interface-list=accept-input-winbox protocol=udp
+add action=accept chain=input comment=&#34;accept input web ui&#34; dst-port=80,443 in-interface-list=accept-input-web-ui protocol=tcp
+add action=accept chain=input comment=&#34;accept input mikrotik neighbor discovery&#34; dst-port=5678 in-interface-list=accept-input-mikrotik-neighbor-discovery protocol=udp
+add action=drop chain=forward comment=&#34;drop forward&#34; log=yes log-prefix=drop-forward-ipv6
+add action=drop chain=input comment=&#34;drop input&#34; log=yes log-prefix=drop-input-ipv6
+add action=accept chain=output comment=accept-output-LAN out-interface-list=LAN
+/ipv6 nd
+set [ find default=yes ] advertise-dns=yes interface=bridge1
+add advertise-dns=yes interface=bridge2
+/system clock
+set time-zone-name=Europe/Moscow
+/system identity
+set name=router1.dc1.alwaldend.com
+/system ntp server
+set enabled=yes
+/system routerboard settings
+set auto-upgrade=yes
+/tool mac-server
+set allowed-interface-list=LAN
+/tool mac-server mac-winbox
+set allowed-interface-list=LAN
+</code></pre>
+<h3 id="print-64d11e5be6a668973b7676b14465fedd-router2">Router2<a class="td-heading-self-link" href="#print-64d11e5be6a668973b7676b14465fedd-router2" aria-label="Heading self-link"></a></h3><pre tabindex="0"><code class="language-rsc" data-lang="rsc"># 2025-09-07 11:04:01 by RouterOS 7.19.4
+# model = L009UiGS-2HaxD
+/interface bridge
+add name=bridge01
+/port
+set 0 name=serial0
+/interface bridge port
+add bridge=bridge01 interface=ether2
+add bridge=bridge01 interface=ether3
+add bridge=bridge01 interface=ether4
+add bridge=bridge01 interface=ether5
+add bridge=bridge01 interface=ether6
+add bridge=bridge01 interface=ether7
+add bridge=bridge01 interface=ether8
+add bridge=bridge01 interface=ether1
+/ip neighbor discovery-settings
+set discover-interface-list=!dynamic
+/ipv6 settings
+set accept-router-advertisements=yes
+/ip dhcp-client
+add interface=bridge01
+/system clock
+set time-zone-name=Europe/Moscow
+/system identity
+set name=router02.dc01.alwaldend.com
+/system routerboard settings
+set enter-setup-on=delete-key
+</code></pre>
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-4a7aa602631c1397a463a49d6fbaa9ba">1 - </h1>
+    
+	<h1 id="print-f648ce6b9e1fa8aa6d8246c95a0619c0-infrastructure-mikrotik">Infrastructure MikroTik<a class="td-heading-self-link" href="#print-f648ce6b9e1fa8aa6d8246c95a0619c0-infrastructure-mikrotik" aria-label="Heading self-link"></a></h1><h2 id="print-f648ce6b9e1fa8aa6d8246c95a0619c0-purpose">Purpose<a class="td-heading-self-link" href="#print-f648ce6b9e1fa8aa6d8246c95a0619c0-purpose" aria-label="Heading self-link"></a></h2><p>Describe the checked-in RouterOS export snapshots and site DNS declarations for
+the dc1 routers. This package is a documentation and record-input owner: its
+BUILD file declares no router deployment executable. Export contents are
+historical source evidence, not a verification of current device configuration.</p>
+<p>Baseline source revision: <code>550d7e79b1f5fdbc2b6017b75178471d6914082f</code>.
+Observation date: 2026-09-08. Sources are linked in full; no excerpts are used.</p>
+<p>Sources: <a href="/docs/infra/mikrotik/">export workflow</a>,
+<a href="../../../BUILD.bazel">package targets</a>,
+<a href="/docs/infra/mikrotik/router1.rsc">router1 snapshot</a>,
+<a href="/docs/infra/mikrotik/router2.rsc">router2 snapshot</a>, and
+<a href="../../../dnsconfig.json">DNS declarations</a>.</p>
+<h2 id="print-f648ce6b9e1fa8aa6d8246c95a0619c0-requirements">Requirements<a class="td-heading-self-link" href="#print-f648ce6b9e1fa8aa6d8246c95a0619c0-requirements" aria-label="Heading self-link"></a></h2><h3 id="print-f648ce6b9e1fa8aa6d8246c95a0619c0-requirement-preserve-export-snapshots-as-the-packages-documented-interface">Requirement: Preserve export snapshots as the package&rsquo;s documented interface<a class="td-heading-self-link" href="#print-f648ce6b9e1fa8aa6d8246c95a0619c0-requirement-preserve-export-snapshots-as-the-packages-documented-interface" aria-label="Heading self-link"></a></h3><p>The package SHALL retain the router export files as documentation inputs and
+describe the RouterOS <code>/export</code> collection workflow. Documentation SHALL
+distinguish these snapshots from automatically applied desired state. The
+Terraform root SHALL manage DNS records only and SHALL NOT apply router exports.</p>
+<h4 id="print-f648ce6b9e1fa8aa6d8246c95a0619c0-scenario-inspect-the-router-package">Scenario: Inspect the router package<a class="td-heading-self-link" href="#print-f648ce6b9e1fa8aa6d8246c95a0619c0-scenario-inspect-the-router-package" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> a reader opens the component documentation</li>
+<li><strong>THEN</strong> the reader can inspect both router export snapshots</li>
+<li><strong>AND</strong> the Terraform package exposes owner-local DNS management while the
+snapshots remain documentary inputs</li>
+</ul>
+<h3 id="print-f648ce6b9e1fa8aa6d8246c95a0619c0-requirement-describe-the-two-routers-according-to-their-recorded-topology">Requirement: Describe the two routers according to their recorded topology<a class="td-heading-self-link" href="#print-f648ce6b9e1fa8aa6d8246c95a0619c0-requirement-describe-the-two-routers-according-to-their-recorded-topology" aria-label="Heading self-link"></a></h3><p>The baseline description SHALL identify router1&rsquo;s separate wired and wireless
+bridges with their own DHCP networks, and router2&rsquo;s single bridge containing its
+eight Ethernet interfaces with a DHCP client. It SHALL NOT infer additional
+live devices or enabled topology from comments elsewhere in the repository.</p>
+<h4 id="print-f648ce6b9e1fa8aa6d8246c95a0619c0-scenario-compare-the-recorded-network-roles">Scenario: Compare the recorded network roles<a class="td-heading-self-link" href="#print-f648ce6b9e1fa8aa6d8246c95a0619c0-scenario-compare-the-recorded-network-roles" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the two checked-in exports are compared</li>
+<li><strong>THEN</strong> router1 records <code>bridge1</code> for wired ports and <code>bridge2</code> for Wi-Fi ports</li>
+<li><strong>AND</strong> router2 records <code>bridge01</code> and an IP DHCP client on that bridge</li>
+</ul>
+<h3 id="print-f648ce6b9e1fa8aa6d8246c95a0619c0-requirement-retain-the-recorded-router1-traffic-policy-structure">Requirement: Retain the recorded router1 traffic-policy structure<a class="td-heading-self-link" href="#print-f648ce6b9e1fa8aa6d8246c95a0619c0-requirement-retain-the-recorded-router1-traffic-policy-structure" aria-label="Heading self-link"></a></h3><p>The router1 snapshot SHALL describe named interface lists for input and
+forwarding permissions, explicit terminal IPv4 input and forwarding drops,
+and source NAT masquerading for WAN egress. This contract describes the export
+and SHALL NOT be represented as a live firewall audit.</p>
+<h4 id="print-f648ce6b9e1fa8aa6d8246c95a0619c0-scenario-review-router1s-recorded-ipv4-policy">Scenario: Review router1&rsquo;s recorded IPv4 policy<a class="td-heading-self-link" href="#print-f648ce6b9e1fa8aa6d8246c95a0619c0-scenario-review-router1s-recorded-ipv4-policy" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> a reader follows the IPv4 firewall section of the snapshot</li>
+<li><strong>THEN</strong> the listed service permissions precede terminal input and forwarding
+drop rules</li>
+<li><strong>AND</strong> the NAT section declares masquerading for traffic leaving the WAN list</li>
+</ul>
+<h3 id="print-f648ce6b9e1fa8aa6d8246c95a0619c0-requirement-supply-site-local-dns-records-to-the-dns-owner">Requirement: Supply site-local DNS records to the DNS owner<a class="td-heading-self-link" href="#print-f648ce6b9e1fa8aa6d8246c95a0619c0-requirement-supply-site-local-dns-records-to-the-dns-owner" aria-label="Heading self-link"></a></h3><p>The package SHALL expose its <code>dnsconfig.json</code> as a Bazel filegroup. Its router,
+switch, and bare-metal records SHALL be assigned to the <code>dc1</code> destination view.</p>
+<h4 id="print-f648ce6b9e1fa8aa6d8246c95a0619c0-scenario-assemble-the-dc1-dns-configuration">Scenario: Assemble the dc1 DNS configuration<a class="td-heading-self-link" href="#print-f648ce6b9e1fa8aa6d8246c95a0619c0-scenario-assemble-the-dc1-dns-configuration" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the DNS owner consumes <code>//infra/mikrotik:dnsconfig</code></li>
+<li><strong>THEN</strong> router1 IPv4 and IPv6 records and the declared switch and bare-metal
+IPv4 records are available for the dc1 view</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-7d4c79db8afd894dc74d9aea9a0ac2c3">2 - </h1>
+    
+	<h1 id="print-ac9efe641dd659616487e8baa99a35e5-owned-dns-specification">owned-dns Specification<a class="td-heading-self-link" href="#print-ac9efe641dd659616487e8baa99a35e5-owned-dns-specification" aria-label="Heading self-link"></a></h1><h2 id="print-ac9efe641dd659616487e8baa99a35e5-purpose">Purpose<a class="td-heading-self-link" href="#print-ac9efe641dd659616487e8baa99a35e5-purpose" aria-label="Heading self-link"></a></h2><p>Define MikroTik router DNS management through the owner&rsquo;s <code>tf</code> root,
+including canonical declarations, scoped credentials, and offline source checks
+before adopting live records.</p>
+<h2 id="print-ac9efe641dd659616487e8baa99a35e5-requirements">Requirements<a class="td-heading-self-link" href="#print-ac9efe641dd659616487e8baa99a35e5-requirements" aria-label="Heading self-link"></a></h2><h3 id="print-ac9efe641dd659616487e8baa99a35e5-requirement-owner-local-dns-configuration">Requirement: Owner-local DNS configuration<a class="td-heading-self-link" href="#print-ac9efe641dd659616487e8baa99a35e5-requirement-owner-local-dns-configuration" aria-label="Heading self-link"></a></h3><p>The <code>tf</code> root SHALL consume this owner&rsquo;s canonical <code>dnsconfig.json</code> through
+the shared DNS Terraform module, preserving declared record identities and views.
+DNS resources SHALL default to disabled until the authorized adoption revision
+and SHALL retain enabled ownership after existing records are imported into the
+owner&rsquo;s state. Reconciliation against unchanged declarations and adopted state
+SHALL propose no record additions, changes, replacements, or deletions.</p>
+<h4 id="print-ac9efe641dd659616487e8baa99a35e5-scenario-inspect-the-preparatory-configuration">Scenario: Inspect the preparatory configuration<a class="td-heading-self-link" href="#print-ac9efe641dd659616487e8baa99a35e5-scenario-inspect-the-preparatory-configuration" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the checked-in root is evaluated with default inputs before its
+authorized adoption revision</li>
+<li><strong>THEN</strong> it reads this owner&rsquo;s declaration and disables managed DNS records</li>
+<li><strong>AND</strong> the package contains the module and declaration inputs</li>
+</ul>
+<h4 id="print-ac9efe641dd659616487e8baa99a35e5-scenario-adopt-existing-dns-records">Scenario: Adopt existing DNS records<a class="td-heading-self-link" href="#print-ac9efe641dd659616487e8baa99a35e5-scenario-adopt-existing-dns-records" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the authorized adoption audits competing writers within its documented
+coverage, keeps identified competing writers stopped, and enables the owner&rsquo;s
+record management</li>
+<li><strong>THEN</strong> the owning root imports existing records by exact provider ID into
+its state while preserving their declared identities and views</li>
+</ul>
+<h4 id="print-ac9efe641dd659616487e8baa99a35e5-scenario-inspect-adopted-source-defaults">Scenario: Inspect adopted source defaults<a class="td-heading-self-link" href="#print-ac9efe641dd659616487e8baa99a35e5-scenario-inspect-adopted-source-defaults" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the adopted root uses its checked-in source defaults</li>
+<li><strong>THEN</strong> DNS ownership remains enabled and the package retains the module
+and canonical declaration inputs</li>
+</ul>
+<h4 id="print-ac9efe641dd659616487e8baa99a35e5-scenario-reconcile-existing-dns-records">Scenario: Reconcile existing DNS records<a class="td-heading-self-link" href="#print-ac9efe641dd659616487e8baa99a35e5-scenario-reconcile-existing-dns-records" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the owning root plans against its adopted state and unchanged declarations</li>
+<li><strong>THEN</strong> it proposes no record additions, changes, replacements, or deletions</li>
+</ul>
+<h3 id="print-ac9efe641dd659616487e8baa99a35e5-requirement-scoped-dns-execution-and-offline-checks">Requirement: Scoped DNS execution and offline checks<a class="td-heading-self-link" href="#print-ac9efe641dd659616487e8baa99a35e5-requirement-scoped-dns-execution-and-offline-checks" aria-label="Heading self-link"></a></h3><p>The DNS wrapper SHALL select <code>src_infra_mikrotik</code> through the repository AL flow and keep
+secret values in injected variables. DNS injection SHALL select the root&rsquo;s existing
+Terraform stage label. Real DNS credentials and Vault policy grants SHALL be
+prerequisites for operational Terraform calls. RouterOS DNS credentials SHALL be isolated
+from unrelated RouterOS resources. The package SHALL expose a format test that
+does not authenticate to Vault or contact DNS providers.</p>
+<h4 id="print-ac9efe641dd659616487e8baa99a35e5-scenario-validate-the-terraform-source">Scenario: Validate the Terraform source<a class="td-heading-self-link" href="#print-ac9efe641dd659616487e8baa99a35e5-scenario-validate-the-terraform-source" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the package format test executes</li>
+<li><strong>THEN</strong> it checks the packaged Terraform configuration without live credentials</li>
+<li><strong>AND</strong> existing non-DNS authentication and backend paths remain unchanged</li>
+</ul>
+<h4 id="print-ac9efe641dd659616487e8baa99a35e5-scenario-prepare-an-operational-terraform-invocation">Scenario: Prepare an operational Terraform invocation<a class="td-heading-self-link" href="#print-ac9efe641dd659616487e8baa99a35e5-scenario-prepare-an-operational-terraform-invocation" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the wrapper selects its Terraform stage labels</li>
+<li><strong>THEN</strong> it selects DNS credential injection through the owner AppRole</li>
+<li><strong>AND</strong> disabled DNS resources do not imply offline provider configuration</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-89bb8f0db70375d53494f67dc3b50533">3 - </h1>
+    
+	<h1 id="print-42997b0c34769282fcd3a007f9381bb4-dns-terraform">DNS Terraform<a class="td-heading-self-link" href="#print-42997b0c34769282fcd3a007f9381bb4-dns-terraform" aria-label="Heading self-link"></a></h1><p>This root packages the owner&rsquo;s canonical <a href="../dnsconfig.json">DNS declaration</a>
+through the shared DNS module and keeps state in the owner AppRole&rsquo;s Vault HTTP
+backend. The root contains DNS resources only. <code>dns_enabled</code> defaults to <code>true</code>
+after verified adoption. Keep it enabled to retain existing records; disabling
+it would propose deletion.</p>
+<p>Use the normal <code>//infra/mikrotik/tf:tf.&lt;operation&gt;</code> wrappers for this DNS-only
+root. The <a href="/docs/infra/dns/">DNS migration procedure</a> owns credential
+provisioning, reconciliation, and recovery. The
+<a href="../openspec/changes/archive/2026-09-13-adopt-dns-records/design.md">adoption record</a>
+contains the import and inventory-preservation evidence. The package exposes
+<code>//infra/mikrotik/tf:tf_tests.fmt_test</code> for offline formatting checks.</p>
+<p>Operational Terraform calls require the DNS AppRole policy grants and credential
+fields described by the migration procedure. Provider configuration requires
+real credentials and live access independently of the activation setting.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        Built with <a href="https://gohugo.io/">Hugo 0.165.0</a>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="/js/main.min.259204f469f58eb3b665605a24e964264772df2adaded180b3669b6ce33d84c8.js" integrity="sha256-JZIE9Gn1jrO2ZWBaJOlkJkdy3yra3tGAs2abbOM9hMg=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.decf3b53d8827d840369f490775626e2a5200e150a733f78f0081c126426cbbf.js" integrity="sha256-3s87U9iCfYQDafSQd1Ym4qUgDhUKcz948AgcEmQmy78=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

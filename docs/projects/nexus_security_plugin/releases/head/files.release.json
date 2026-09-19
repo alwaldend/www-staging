@@ -1,0 +1,32 @@
+{
+    "items": [
+        {
+            "file": {
+                "hashes": [
+                    {
+                        "algo": "SHA-256",
+                        "content": "57641419a596105f95a29554dcae6ca0212001fe62ddecb8d5968823c7ba5e54"
+                    },
+                    {
+                        "algo": "MD5",
+                        "content": "5942591f19965bb3f1986ac9c61988fe"
+                    }
+                ],
+                "name": "libjava_lib.jar",
+                "safeName": "libjava_lib_jar",
+                "size": "62534"
+            },
+            "deployments": [
+                {
+                    "oci": {
+                        "repository": "docker.io/alwaldend/src",
+                        "tags": [
+                            "docker.io/alwaldend/src:_libjava_lib_jar_"
+                        ]
+                    }
+                }
+            ]
+        }
+    ],
+    "project": {}
+}

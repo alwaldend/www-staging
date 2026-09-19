@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Ops on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/tags/ops/</link>
+		<description>Recent content in Ops on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/tags/ops/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>com_nanovms_ops</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/com_nanovms_ops/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/com_nanovms_ops/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://ops.city/&#34;&gt;https://ops.city/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Nanovms site: &lt;a href=&#34;https://nanovms.com/&#34;&gt;https://nanovms.com/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Ops</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/ops/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/ops/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://ops.city/&#34;&gt;https://ops.city/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Nanovms site: &lt;a href=&#34;https://nanovms.com/&#34;&gt;https://nanovms.com/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+	</channel>
+</rss>

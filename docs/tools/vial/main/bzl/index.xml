@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Bzl on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/docs/tools/vial/main/bzl/</link>
+		<description>Recent content in Bzl on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/docs/tools/vial/main/bzl/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>al_vial_configs</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/vial/main/bzl/bzl/al_vial_configs.stardoc/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/vial/main/bzl/bzl/al_vial_configs.stardoc/</guid>
+				<description>&lt;!-- Generated with Stardoc: http://skydoc.bazel.build --&gt;&#xA;&lt;p&gt;&lt;a id=&#34;al_vial_configs&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2&gt;al_vial_configs&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#al_vial_configs&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;pre&gt;&#xA;load(&#34;@com_alwaldend_src//tools/vial/main/bzl:al_vial_configs.bzl&#34;, &#34;al_vial_configs&#34;)&#xA;&#xA;al_vial_configs(&lt;a href=&#34;#al_vial_configs-name&#34;&gt;name&lt;/a&gt;, &lt;a href=&#34;#al_vial_configs-srcs&#34;&gt;srcs&lt;/a&gt;, &lt;a href=&#34;#al_vial_configs-visibility&#34;&gt;visibility&lt;/a&gt;, &lt;a href=&#34;#al_vial_configs-kwargs&#34;&gt;**kwargs&lt;/a&gt;)&#xA;&lt;/pre&gt;&#xA;&lt;p&gt;Generate vial config targets&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;PARAMETERS&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;table&gt;&#xA;&#x9;&lt;thead&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th style=&#34;text-align: left&#34;&gt;Name&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th style=&#34;text-align: left&#34;&gt;Description&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th style=&#34;text-align: left&#34;&gt;Default Value&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/thead&gt;&#xA;&#x9;&lt;tbody&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;&lt;a id=&#34;al_vial_configs-name&#34;&gt;&lt;/a&gt;name&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;generated docs archive name&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;none&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;&lt;a id=&#34;al_vial_configs-srcs&#34;&gt;&lt;/a&gt;srcs&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;vial config&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;none&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;&lt;a id=&#34;al_vial_configs-visibility&#34;&gt;&lt;/a&gt;visibility&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;visibility&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;None&lt;/code&gt;&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;&lt;a id=&#34;al_vial_configs-kwargs&#34;&gt;&lt;/a&gt;kwargs&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;kwargs for template_files&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;none&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/tbody&gt;&#xA;&lt;/table&gt;</description>
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,691 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js" data-theme-init>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000000">
+
+<style>
+  html { background: Canvas; color: CanvasText; }
+  @media (prefers-color-scheme: dark) {
+    html { background: #0b0d12; color: #e6e6e6; }
+  }
+  html[data-theme-init] * { transition: none !important; }
+</style>
+
+<script>
+  (function() {
+    const themeKey = 'td-color-theme';
+    const storedTheme = localStorage.getItem(themeKey);
+    let theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (theme === 'auto') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
+<link rel="canonical" type="text/html" href="https://www-staging.alwaldend.com/docs/infra/vault/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://www-staging.alwaldend.com/docs/infra/vault/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+<title>Vault | Alwaldend</title>
+<meta name="description" content="Setup for vault.dc1.alwaldend.com">
+<meta property="og:url" content="https://www-staging.alwaldend.com/docs/infra/vault/">
+	<meta property="og:site_name" content="Alwaldend">
+	<meta property="og:title" content="Vault">
+	<meta property="og:description" content="Setup for vault.dc1.alwaldend.com">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="Vault">
+	<meta itemprop="description" content="Setup for vault.dc1.alwaldend.com">
+	<meta itemprop="dateModified" content="2026-09-19T20:06:21+03:00">
+	<meta itemprop="wordCount" content="271">
+	<meta itemprop="keywords" content="Ansible,Terraform">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Vault">
+	<meta name="twitter:description" content="Setup for vault.dc1.alwaldend.com">
+<link rel="preload" href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" as="style" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<link href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" rel="stylesheet" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll">
+<div class="td-navbar-container container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">Alwaldend</span></a>
+  <div class="td-navbar__main td-navbar-nav-scroll td-navbar-nav-scroll--indicator" id="main_navbar">
+    <div class="scroll-indicator scroll-left"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/projects/"><span>Projects</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item td-navbar__light-dark-menu">
+        <div class="td-light-dark-menu dropdown"><svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+<button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        title="Toggle theme (Auto)"
+        aria-label="Toggle theme (Auto)">
+  <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="bd-theme">
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
+      Light
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>
+      Dark
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+      <svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>
+      Auto
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+</ul>
+</div>
+
+      </li>
+      </ul>
+    <div class="scroll-indicator scroll-right"></div>
+  </div>
+  <div class="td-navbar__search d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon" aria-hidden="true"></div>
+  <input
+    type="search"
+    name="q"
+    class="td-search__input form-control"
+    placeholder='Search this site…'
+    aria-label='Search this site…'
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/infra/vault/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Vault</h1>
+<div class="lead">Setup for vault.dc1.alwaldend.com</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-24d61639a1d6cb6c91dca8cfe2331506"></a></li>
+
+
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-142afefc4fc14debbbdc788046fca63a"></a></li>
+
+
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-f68ccfab09e0692ff0158601a5e103f8">Ansible</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>4: <a href="#pg-76e2c966f28dd06c1b7face04e64fef5">Tf</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>4.1: <a href="#pg-9f42dd3acd4ae40b5be7877c8f79052f">Output</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>5: <a href="#pg-9b2a26a59bfce6aa9b63d80cfb3c3160">Tf setup</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      <h2 id="print-cdd2e7db4c7a4056792696e8d7ced583-links">Links<a class="td-heading-self-link" href="#print-cdd2e7db4c7a4056792696e8d7ced583-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Intermediate CA: <a href="https://developer.hashicorp.com/vault/tutorials/pki/pki-engine-external-ca">https://developer.hashicorp.com/vault/tutorials/pki/pki-engine-external-ca</a></li>
+<li>ACME: <a href="https://developer.hashicorp.com/vault/docs/secrets/pki/acme">https://developer.hashicorp.com/vault/docs/secrets/pki/acme</a></li>
+</ul>
+<h2 id="print-cdd2e7db4c7a4056792696e8d7ced583-deployment">Deployment<a class="td-heading-self-link" href="#print-cdd2e7db4c7a4056792696e8d7ced583-deployment" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //infra/vault/tf_setup:tf.apply <span style="color:#75715e"># Create VMs (requires an active Vault host)</span>
+</span></span><span style="display:flex;"><span>bazel run //infra/vault/ansible <span style="color:#75715e"># Set up hosts (BM and VMs)</span>
+</span></span><span style="display:flex;"><span>bazel run //infra/vault/tf:tf.apply <span style="color:#75715e"># Configure vault</span>
+</span></span></code></pre></div><h2 id="print-cdd2e7db4c7a4056792696e8d7ced583-backup">Backup<a class="td-heading-self-link" href="#print-cdd2e7db4c7a4056792696e8d7ced583-backup" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //infra/vault:backup
+</span></span></code></pre></div><h2 id="print-cdd2e7db4c7a4056792696e8d7ced583-unseal">Unseal<a class="td-heading-self-link" href="#print-cdd2e7db4c7a4056792696e8d7ced583-unseal" aria-label="Heading self-link"></a></h2><p>With a working Vault:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //infra/vault:unseal
+</span></span></code></pre></div><p>Without a working Vault:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //infra/vault:unseal_standalone
+</span></span></code></pre></div><h2 id="print-cdd2e7db4c7a4056792696e8d7ced583-fix-quorum">Fix quorum<a class="td-heading-self-link" href="#print-cdd2e7db4c7a4056792696e8d7ced583-fix-quorum" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //infra/vault/ansible:fix_quorum
+</span></span></code></pre></div><h2 id="print-cdd2e7db4c7a4056792696e8d7ced583-set-up-only-vms">Set up only VMs<a class="td-heading-self-link" href="#print-cdd2e7db4c7a4056792696e8d7ced583-set-up-only-vms" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //infra/vault/ansible:ansible.vm <span style="color:#75715e"># Set up only VMs</span>
+</span></span></code></pre></div><h2 id="print-cdd2e7db4c7a4056792696e8d7ced583-set-up-only-bare-metal">Set up only bare metal<a class="td-heading-self-link" href="#print-cdd2e7db4c7a4056792696e8d7ced583-set-up-only-bare-metal" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //infra/vault/ansible:ansible.bm <span style="color:#75715e"># Set up only bare metal</span>
+</span></span></code></pre></div><h2 id="print-cdd2e7db4c7a4056792696e8d7ced583-tf">Tf<a class="td-heading-self-link" href="#print-cdd2e7db4c7a4056792696e8d7ced583-tf" aria-label="Heading self-link"></a></h2><p>Plan:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //infra/vault/tf:tf.plan
+</span></span></code></pre></div><p>Apply:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //infra/vault/tf:tf.apply
+</span></span></code></pre></div><p>Run terraform directly:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //infra/vault/tf:tf.direct -- -chdir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>PWD<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> plan
+</span></span></code></pre></div><h2 id="print-cdd2e7db4c7a4056792696e8d7ced583-replace-vms">Replace VMs<a class="td-heading-self-link" href="#print-cdd2e7db4c7a4056792696e8d7ced583-replace-vms" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //infra/vault/tf:tf.apply -- -replace <span style="color:#e6db74">&#39;module.vm_ha[&#34;host2&#34;].proxmox_vm_qemu.vm&#39;</span> -replace <span style="color:#960050;background-color:#1e0010">&#39;</span>module.vm_ha<span style="color:#f92672">[</span><span style="color:#e6db74">&#34;host3&#34;</span><span style="color:#f92672">]</span>.proxmox_vm_qemu.vm
+</span></span></code></pre></div><h2 id="print-cdd2e7db4c7a4056792696e8d7ced583-generate-and-import-a-user-cilent-certificate">Generate and import a user cilent certificate<a class="td-heading-self-link" href="#print-cdd2e7db4c7a4056792696e8d7ced583-generate-and-import-a-user-cilent-certificate" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>username<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;username&#34;</span>
+</span></span><span style="display:flex;"><span>bazel run //infra/vault:gen_client_cert -- --user <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>username<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> --output_dir <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>PWD<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>bazel run //tools/ykman -- piv certificates import 9A <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>PWD<span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span>username<span style="color:#e6db74">}</span><span style="color:#e6db74">.pfx&#34;</span>
+</span></span><span style="display:flex;"><span>bazel run //tools/ykman -- piv keys import 9A <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>PWD<span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span>username<span style="color:#e6db74">}</span><span style="color:#e6db74">.pfx&#34;</span>
+</span></span></code></pre></div><h2 id="print-cdd2e7db4c7a4056792696e8d7ced583-generate-a-host-cilent-certificate">Generate a host cilent certificate<a class="td-heading-self-link" href="#print-cdd2e7db4c7a4056792696e8d7ced583-generate-a-host-cilent-certificate" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //infra/vault:gen_client_cert -- --host some-host --output_dir <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>HOME<span style="color:#e6db74">}</span><span style="color:#e6db74">/.al/client_cert&#34;</span>
+</span></span></code></pre></div><h2 id="print-cdd2e7db4c7a4056792696e8d7ced583-generate-a-user-device-cilent-certificate">Generate a user device cilent certificate<a class="td-heading-self-link" href="#print-cdd2e7db4c7a4056792696e8d7ced583-generate-a-user-device-cilent-certificate" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //infra/vault:gen_client_cert -- --host some-host --user username --output_dir <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>HOME<span style="color:#e6db74">}</span><span style="color:#e6db74">/.al/client_cert&#34;</span>
+</span></span></code></pre></div><h2 id="print-cdd2e7db4c7a4056792696e8d7ced583-unseal-1">Unseal<a class="td-heading-self-link" href="#print-cdd2e7db4c7a4056792696e8d7ced583-unseal-1" aria-label="Heading self-link"></a></h2><ul>
+<li>Prepare encrypted unseal token</li>
+<li>Run and input the encrypted token:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //infra/vault:unseal
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="print-cdd2e7db4c7a4056792696e8d7ced583-root-token">Root token<a class="td-heading-self-link" href="#print-cdd2e7db4c7a4056792696e8d7ced583-root-token" aria-label="Heading self-link"></a></h2><ul>
+<li>Prepare encrypted unseal token</li>
+<li>Run and input the encrypted token:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //infra/vault:gen_root_token -- --pgp_key path_to_public_gpg_key_in_base64
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="print-cdd2e7db4c7a4056792696e8d7ced583-generate-an-eab-for-acme">Generate an EAB for ACME<a class="td-heading-self-link" href="#print-cdd2e7db4c7a4056792696e8d7ced583-generate-an-eab-for-acme" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //infra/vault -- write -f pki/ica_servers/roles/ica_servers_dc1_pve1/acme/new-eab
+</span></span></code></pre></div><h2 id="print-cdd2e7db4c7a4056792696e8d7ced583-sign-a-client-ssh-key">Sign a client ssh key<a class="td-heading-self-link" href="#print-cdd2e7db4c7a4056792696e8d7ced583-sign-a-client-ssh-key" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //:vault -- write ssh/clients/sign/admins ttl<span style="color:#f92672">=</span><span style="color:#ae81ff">30000000</span>  public_key<span style="color:#f92672">=</span>@<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>HOME<span style="color:#e6db74">}</span><span style="color:#e6db74">/.ssh/key&#34;</span>
+</span></span></code></pre></div><h2 id="print-cdd2e7db4c7a4056792696e8d7ced583-revoke-all-tokens">Revoke all tokens<a class="td-heading-self-link" href="#print-cdd2e7db4c7a4056792696e8d7ced583-revoke-all-tokens" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //infra/vault -- token revoke -mode<span style="color:#f92672">=</span>path auth
+</span></span></code></pre></div><h2 id="print-cdd2e7db4c7a4056792696e8d7ced583-vault-certificates">Vault certificates<a class="td-heading-self-link" href="#print-cdd2e7db4c7a4056792696e8d7ced583-vault-certificates" aria-label="Heading self-link"></a></h2><p>Vault certificates (<code>tls_cert_file</code>, <code>tls_key_file</code>) should be updated manually</p>
+<h2 id="print-cdd2e7db4c7a4056792696e8d7ced583-read-oidc-client-info">Read OIDC client info<a class="td-heading-self-link" href="#print-cdd2e7db4c7a4056792696e8d7ced583-read-oidc-client-info" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //infra/vault -- read identity/oidc/client/src_infra_dc1_forgejo1_provider
+</span></span></code></pre></div><h2 id="print-cdd2e7db4c7a4056792696e8d7ced583-read-all-entity-aliases">Read all entity aliases<a class="td-heading-self-link" href="#print-cdd2e7db4c7a4056792696e8d7ced583-read-all-entity-aliases" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span> bazel run //infra/vault -- list -format json identity/entity-alias/id | jq <span style="color:#e6db74">&#34;.[]&#34;</span> | xargs <span style="color:#e6db74">&#34;-I{}&#34;</span> bazel run //infra/vault -- read <span style="color:#e6db74">&#34;identity/entity-alias/id/{}&#34;</span>
+</span></span></code></pre></div>
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-24d61639a1d6cb6c91dca8cfe2331506">1 - </h1>
+    
+	<h1 id="print-1b50ce3ae542cee99e93840e275bbd4a-infrastructure-vault">Infrastructure Vault<a class="td-heading-self-link" href="#print-1b50ce3ae542cee99e93840e275bbd4a-infrastructure-vault" aria-label="Heading self-link"></a></h1><h2 id="print-1b50ce3ae542cee99e93840e275bbd4a-purpose">Purpose<a class="td-heading-self-link" href="#print-1b50ce3ae542cee99e93840e275bbd4a-purpose" aria-label="Heading self-link"></a></h2><p>Describe the Vault host configuration, authentication and certificate services,
+and packaged recovery entry points. This baseline concerns checked-in desired
+state and supported wrapper structure; it does not establish live unsealed
+state, successful backups, quorum, or certificate freshness.</p>
+<p>Baseline source revision: <code>550d7e79b1f5fdbc2b6017b75178471d6914082f</code>.
+Observation date: 2026-09-08. Sources are linked in full; no excerpts are used.</p>
+<p>Sources: <a href="/docs/infra/vault/">operator documentation</a>,
+<a href="../../../BUILD.bazel">operational wrappers</a>,
+<a href="../../../ansible/BUILD.bazel">Ansible entry points</a>,
+<a href="../../../ansible/files/vault.hcl">Vault host template</a>,
+<a href="../../../tf/auth.tf">authentication backends</a>,
+<a href="../../../tf/mounts.tf">storage engines</a>,
+<a href="../../../tf/pki_servers.tf">server PKI</a>,
+<a href="../../../tf/pki_clients.tf">client PKI</a>, and
+<a href="../../../tf/outputs.tf">public CA outputs</a>.</p>
+<h2 id="print-1b50ce3ae542cee99e93840e275bbd4a-requirements">Requirements<a class="td-heading-self-link" href="#print-1b50ce3ae542cee99e93840e275bbd4a-requirements" aria-label="Heading self-link"></a></h2><h3 id="print-1b50ce3ae542cee99e93840e275bbd4a-requirement-separate-host-provisioning-from-vault-configuration">Requirement: Separate host provisioning from Vault configuration<a class="td-heading-self-link" href="#print-1b50ce3ae542cee99e93840e275bbd4a-requirement-separate-host-provisioning-from-vault-configuration" aria-label="Heading self-link"></a></h3><p>The documented workflow SHALL separate <code>tf_setup</code> VM provisioning, Ansible host
+setup, and the <code>tf</code> Vault configuration stage. Ansible SHALL expose combined,
+VM-only, and bare-metal-only setup entry points using the shared host and Vault
+roles.</p>
+<h4 id="print-1b50ce3ae542cee99e93840e275bbd4a-scenario-prepare-an-authorized-host-setup">Scenario: Prepare an authorized host setup<a class="td-heading-self-link" href="#print-1b50ce3ae542cee99e93840e275bbd4a-scenario-prepare-an-authorized-host-setup" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> an operator selects <code>ansible.vm</code> or <code>ansible.bm</code></li>
+<li><strong>THEN</strong> the wrapper selects the matching checked-in playbook and inventory</li>
+<li><strong>AND</strong> Vault&rsquo;s API configuration remains owned by the separate Terraform stage</li>
+</ul>
+<h3 id="print-1b50ce3ae542cee99e93840e275bbd4a-requirement-configure-tls-endpoints-and-raft-storage">Requirement: Configure TLS endpoints and Raft storage<a class="td-heading-self-link" href="#print-1b50ce3ae542cee99e93840e275bbd4a-requirement-configure-tls-endpoints-and-raft-storage" aria-label="Heading self-link"></a></h3><p>The host template SHALL configure TLS API and cluster endpoints on ports 8200
+and 8201 and Raft storage under <code>/opt/vault/raft</code>. It SHALL derive each Raft node
+identifier from the inventory hostname and emit retry-join addresses for hosts
+in the Vault inventory group.</p>
+<h4 id="print-1b50ce3ae542cee99e93840e275bbd4a-scenario-render-a-vault-host-configuration">Scenario: Render a Vault host configuration<a class="td-heading-self-link" href="#print-1b50ce3ae542cee99e93840e275bbd4a-scenario-render-a-vault-host-configuration" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> Ansible renders <code>vault.hcl</code> for a member of the Vault group</li>
+<li><strong>THEN</strong> its API and cluster URLs use its inventory hostname</li>
+<li><strong>AND</strong> Raft receives that hostname as node ID and the group&rsquo;s HTTPS join URLs</li>
+</ul>
+<h3 id="print-1b50ce3ae542cee99e93840e275bbd4a-requirement-declare-authentication-and-secret-engine-boundaries">Requirement: Declare authentication and secret-engine boundaries<a class="td-heading-self-link" href="#print-1b50ce3ae542cee99e93840e275bbd4a-requirement-declare-authentication-and-secret-engine-boundaries" aria-label="Heading self-link"></a></h3><p>Terraform SHALL declare <code>userpass</code>, <code>approle</code>, and <code>cert</code> authentication
+backends, a version-two KV engine at <code>secrets</code>, and a transit engine at
+<code>transit/default</code>. Client and server certificate authorities SHALL remain
+distinct, and server PKI ACME SHALL require external account binding with the
+default directory policy set to <code>forbid</code>.</p>
+<h4 id="print-1b50ce3ae542cee99e93840e275bbd4a-scenario-inspect-the-configured-credential-services">Scenario: Inspect the configured credential services<a class="td-heading-self-link" href="#print-1b50ce3ae542cee99e93840e275bbd4a-scenario-inspect-the-configured-credential-services" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the main Terraform configuration is evaluated</li>
+<li><strong>THEN</strong> authentication, KV, transit, client PKI, and server PKI are distinct
+declared resources</li>
+<li><strong>AND</strong> server ACME is enabled with <code>eab_policy = &quot;always-required&quot;</code></li>
+<li><strong>AND</strong> published CA output files contain certificate or public-key material</li>
+</ul>
+<h3 id="print-1b50ce3ae542cee99e93840e275bbd4a-requirement-package-recovery-and-certificate-operations-explicitly">Requirement: Package recovery and certificate operations explicitly<a class="td-heading-self-link" href="#print-1b50ce3ae542cee99e93840e275bbd4a-requirement-package-recovery-and-certificate-operations-explicitly" aria-label="Heading self-link"></a></h3><p>The package SHALL expose separate wrappers for backup, ordinary unseal,
+standalone unseal, client certificate generation, and root-token generation.
+Standalone unseal SHALL use the <code>default_no_auth</code> environment without selecting
+the ordinary unseal plugin; these wrappers SHALL NOT imply that recovery has
+been executed successfully.</p>
+<h4 id="print-1b50ce3ae542cee99e93840e275bbd4a-scenario-select-the-standalone-unseal-workflow">Scenario: Select the standalone unseal workflow<a class="td-heading-self-link" href="#print-1b50ce3ae542cee99e93840e275bbd4a-scenario-select-the-standalone-unseal-workflow" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> an authorized operator invokes <code>//infra/vault:unseal_standalone</code></li>
+<li><strong>THEN</strong> the wrapper selects the packaged unseal utility and declared Vault
+endpoint with its no-auth environment</li>
+<li><strong>AND</strong> success remains an operational result to be observed separately</li>
+</ul>
+<h3 id="print-1b50ce3ae542cee99e93840e275bbd4a-requirement-give-each-dns-owner-a-component-identity">Requirement: Give each DNS owner a component identity<a class="td-heading-self-link" href="#print-1b50ce3ae542cee99e93840e275bbd4a-requirement-give-each-dns-owner-a-component-identity" aria-label="Heading self-link"></a></h3><p>Every owner that manages DNS records through Terraform SHALL use its existing
+component AppRole or a dedicated owner AppRole when one is missing. A DNS-only
+identity SHALL retain the shared AppRole module&rsquo;s own-state and named shared
+secret access without cloud provisioning, SSH, or PKI permissions. Existing
+component identities and unrelated authentication flows SHALL remain stable.</p>
+<h4 id="print-1b50ce3ae542cee99e93840e275bbd4a-scenario-introduce-a-landing-sites-dns-stage">Scenario: Introduce a landing site&rsquo;s DNS stage<a class="td-heading-self-link" href="#print-1b50ce3ae542cee99e93840e275bbd4a-scenario-introduce-a-landing-sites-dns-stage" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> a project has DNS records but no existing component AppRole</li>
+<li><strong>THEN</strong> Vault configuration declares an AppRole named for that owner</li>
+<li><strong>AND</strong> the identity can manage its own Terraform state without access to
+another owner&rsquo;s state</li>
+</ul>
+<h4 id="print-1b50ce3ae542cee99e93840e275bbd4a-scenario-add-host-dns-management">Scenario: Add host DNS management<a class="td-heading-self-link" href="#print-1b50ce3ae542cee99e93840e275bbd4a-scenario-add-host-dns-management" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> host_bot uses its dedicated DNS AppRole</li>
+<li><strong>THEN</strong> its existing Ansible authentication remains unchanged</li>
+</ul>
+<h3 id="print-1b50ce3ae542cee99e93840e275bbd4a-requirement-restrict-provider-secret-reads-to-owned-dns-views">Requirement: Restrict provider secret reads to owned DNS views<a class="td-heading-self-link" href="#print-1b50ce3ae542cee99e93840e275bbd4a-requirement-restrict-provider-secret-reads-to-owned-dns-views" aria-label="Heading self-link"></a></h3><p>DNS identities SHALL receive read access to the existing Cloudflare credential
+only when they own global records and to the existing RouterOS DNS credential
+only when they own dc1 records. DNS access SHALL NOT grant writes to either
+provider secret or duplicate credential values.</p>
+<h4 id="print-1b50ce3ae542cee99e93840e275bbd4a-scenario-configure-a-global-only-landing-site">Scenario: Configure a global-only landing site<a class="td-heading-self-link" href="#print-1b50ce3ae542cee99e93840e275bbd4a-scenario-configure-a-global-only-landing-site" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> an owner declares only global records</li>
+<li><strong>THEN</strong> its DNS policy grants Cloudflare credential reads</li>
+<li><strong>AND</strong> its DNS policy grants no RouterOS credential access</li>
+</ul>
+<h4 id="print-1b50ce3ae542cee99e93840e275bbd4a-scenario-configure-records-in-both-views">Scenario: Configure records in both views<a class="td-heading-self-link" href="#print-1b50ce3ae542cee99e93840e275bbd4a-scenario-configure-records-in-both-views" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> an owner declares global and dc1 records</li>
+<li><strong>THEN</strong> its DNS policy grants reads for both existing credential references</li>
+<li><strong>AND</strong> neither read policy grants mutation of the provider credential</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-142afefc4fc14debbbdc788046fca63a">2 - </h1>
+    
+	<h1 id="print-8cf28bdb6edf50e14fd6509d0a2cca24-owned-dns-specification">owned-dns Specification<a class="td-heading-self-link" href="#print-8cf28bdb6edf50e14fd6509d0a2cca24-owned-dns-specification" aria-label="Heading self-link"></a></h1><h2 id="print-8cf28bdb6edf50e14fd6509d0a2cca24-purpose">Purpose<a class="td-heading-self-link" href="#print-8cf28bdb6edf50e14fd6509d0a2cca24-purpose" aria-label="Heading self-link"></a></h2><p>Define Vault service DNS management through the owner&rsquo;s <code>tf_setup</code> root,
+including canonical declarations, scoped credentials, and offline source checks
+before adopting live records.</p>
+<h2 id="print-8cf28bdb6edf50e14fd6509d0a2cca24-requirements">Requirements<a class="td-heading-self-link" href="#print-8cf28bdb6edf50e14fd6509d0a2cca24-requirements" aria-label="Heading self-link"></a></h2><h3 id="print-8cf28bdb6edf50e14fd6509d0a2cca24-requirement-owner-local-dns-configuration">Requirement: Owner-local DNS configuration<a class="td-heading-self-link" href="#print-8cf28bdb6edf50e14fd6509d0a2cca24-requirement-owner-local-dns-configuration" aria-label="Heading self-link"></a></h3><p>The <code>tf_setup</code> root SHALL consume this owner&rsquo;s canonical <code>dnsconfig.json</code> through
+the shared DNS Terraform module, preserving declared record identities and views.
+DNS resources SHALL default to disabled until the authorized adoption revision
+and SHALL retain enabled ownership after existing records are imported into the
+owner&rsquo;s state. Reconciliation against unchanged declarations and adopted state
+SHALL propose no record additions, changes, replacements, or deletions.</p>
+<h4 id="print-8cf28bdb6edf50e14fd6509d0a2cca24-scenario-inspect-the-preparatory-configuration">Scenario: Inspect the preparatory configuration<a class="td-heading-self-link" href="#print-8cf28bdb6edf50e14fd6509d0a2cca24-scenario-inspect-the-preparatory-configuration" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the checked-in root is evaluated with default inputs before its
+authorized adoption revision</li>
+<li><strong>THEN</strong> it reads this owner&rsquo;s declaration and disables managed DNS records</li>
+<li><strong>AND</strong> the package contains the module and declaration inputs</li>
+</ul>
+<h4 id="print-8cf28bdb6edf50e14fd6509d0a2cca24-scenario-adopt-existing-dns-records">Scenario: Adopt existing DNS records<a class="td-heading-self-link" href="#print-8cf28bdb6edf50e14fd6509d0a2cca24-scenario-adopt-existing-dns-records" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the authorized adoption completes the shared writer audit and
+applicable recovery prerequisites and enables the owner&rsquo;s record management</li>
+<li><strong>THEN</strong> the owning root imports existing records by exact provider ID into
+its state while preserving their declared identities and views</li>
+</ul>
+<h4 id="print-8cf28bdb6edf50e14fd6509d0a2cca24-scenario-inspect-adopted-source-defaults">Scenario: Inspect adopted source defaults<a class="td-heading-self-link" href="#print-8cf28bdb6edf50e14fd6509d0a2cca24-scenario-inspect-adopted-source-defaults" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the adopted root uses its checked-in source defaults</li>
+<li><strong>THEN</strong> DNS ownership remains enabled and the package retains the module
+and canonical declaration inputs</li>
+</ul>
+<h4 id="print-8cf28bdb6edf50e14fd6509d0a2cca24-scenario-reconcile-existing-dns-records">Scenario: Reconcile existing DNS records<a class="td-heading-self-link" href="#print-8cf28bdb6edf50e14fd6509d0a2cca24-scenario-reconcile-existing-dns-records" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the owning root plans against its adopted state and unchanged declarations</li>
+<li><strong>THEN</strong> it proposes no record additions, changes, replacements, or deletions</li>
+</ul>
+<h3 id="print-8cf28bdb6edf50e14fd6509d0a2cca24-requirement-scoped-dns-execution-and-offline-checks">Requirement: Scoped DNS execution and offline checks<a class="td-heading-self-link" href="#print-8cf28bdb6edf50e14fd6509d0a2cca24-requirement-scoped-dns-execution-and-offline-checks" aria-label="Heading self-link"></a></h3><p>The <code>dns.plan</code>, <code>dns.show</code>, and <code>dns.apply</code> entrypoints SHALL select
+<code>src_infra_dc1_vault</code> through the repository AL flow using <code>dns=1</code> and operate
+on <code>module.dns</code> in the existing <code>tf_setup</code> root and Vault HTTP backend. The
+apply entrypoint SHALL require a saved plan. Ordinary setup and service
+wrappers SHALL retain their stage labels, authentication, and backend paths.
+Secret values SHALL remain in injected variables. Real DNS credentials and
+Vault policy grants SHALL be prerequisites for operational DNS calls.
+RouterOS DNS credentials SHALL remain isolated from unrelated RouterOS
+resources. The package SHALL expose a format test that does not authenticate
+to Vault or contact DNS providers.</p>
+<h4 id="print-8cf28bdb6edf50e14fd6509d0a2cca24-scenario-validate-the-terraform-source">Scenario: Validate the Terraform source<a class="td-heading-self-link" href="#print-8cf28bdb6edf50e14fd6509d0a2cca24-scenario-validate-the-terraform-source" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the package format test executes</li>
+<li><strong>THEN</strong> it checks the packaged Terraform configuration without live credentials</li>
+<li><strong>AND</strong> existing non-DNS authentication and backend paths remain unchanged</li>
+</ul>
+<h4 id="print-8cf28bdb6edf50e14fd6509d0a2cca24-scenario-prepare-an-operational-terraform-invocation">Scenario: Prepare an operational Terraform invocation<a class="td-heading-self-link" href="#print-8cf28bdb6edf50e14fd6509d0a2cca24-scenario-prepare-an-operational-terraform-invocation" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> a scoped DNS entrypoint selects <code>dns=1</code></li>
+<li><strong>THEN</strong> it selects DNS credential injection through the owner AppRole and
+existing setup backend, with plan and show scoped to <code>module.dns</code> and apply
+requiring a saved plan</li>
+<li><strong>AND</strong> disabled DNS resources do not imply offline provider configuration</li>
+<li><strong>AND</strong> ordinary setup and service authentication retains its original labels</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-f68ccfab09e0692ff0158601a5e103f8">3 - Ansible</h1>
+    <div class="lead">Ansible setup</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-76e2c966f28dd06c1b7face04e64fef5">4 - Tf</h1>
+    <div class="lead">Terraform config</div>
+	<h2 id="print-b7a2418aa7c39d2007559719295c342c-dns-identities">DNS identities<a class="td-heading-self-link" href="#print-b7a2418aa7c39d2007559719295c342c-dns-identities" aria-label="Heading self-link"></a></h2><p><a href="approles_dns.tf">Missing DNS-owner AppRoles</a> compose the existing reusable
+AppRole module with an owner-specific DNS policy in <code>approles/&lt;name&gt;/</code>.
+<a href="dns_access/main.tf">DNS access</a> grants read-only access to the existing
+provider credentials for the owner&rsquo;s views. Existing component identities
+receive these policies through their existing module declarations.</p>
+<p><a href="group_dns_approles.tf">DNS-only group membership</a> adds no policies. These
+identities retain their own state and named shared-secret access without
+joining the general infrastructure AppRole group or receiving cloud
+provisioning, SSH, or PKI permissions.</p>
+<p>The operator bootstrap membership follows the existing component pattern.
+An authorized Vault apply must create the roles and policies before their DNS
+stages can authenticate; source validation does not establish deployed access.
+Follow the <a href="/docs/infra/dns/">DNS migration</a> for the coordinated cutover and
+the <a href="../../../projects/agents/skills/repo-infra/references/vault.md">AppRole bootstrap procedure</a>
+when distinguishing missing deployment from insufficient operator access.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-9f42dd3acd4ae40b5be7877c8f79052f">4.1 - Output</h1>
+    <div class="lead">Output files</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-9b2a26a59bfce6aa9b63d80cfb3c3160">5 - Tf setup</h1>
+    <div class="lead">Terraform setup</div>
+	<p>This root owns Vault&rsquo;s canonical <a href="../dnsconfig.json">DNS declaration</a> and
+retains its existing <code>src_infra_dc1_vault</code> AppRole and setup state backend.
+Use <code>//infra/vault/tf_setup:dns.plan</code>, <code>dns.show</code>, and <code>dns.apply</code> for the
+<a href="/docs/infra/dns/">scoped DNS workflow</a>. They select <code>dns=1</code> and
+<code>module.dns</code>; apply requires a reviewed saved plan. Ordinary setup and service
+wrappers retain their existing authentication flow.</p>
+<p><code>dns_enabled</code> defaults to <code>true</code> after verified adoption. Keep it enabled to
+retain existing records; disabling it would propose deletion. The
+<a href="../openspec/changes/archive/2026-09-13-adopt-dns-records/design.md">adoption record</a>
+contains the import and verification evidence. Targeted DNS checks do not
+establish the health of other resources in the root.</p>
+<p>Offline formatting is available through
+<code>//infra/vault/tf_setup:tf_tests.fmt_test</code>.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        Built with <a href="https://gohugo.io/">Hugo 0.165.0</a>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="/js/main.min.259204f469f58eb3b665605a24e964264772df2adaded180b3669b6ce33d84c8.js" integrity="sha256-JZIE9Gn1jrO2ZWBaJOlkJkdy3yra3tGAs2abbOM9hMg=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.decf3b53d8827d840369f490775626e2a5200e150a733f78f0081c126426cbbf.js" integrity="sha256-3s87U9iCfYQDafSQd1Ym4qUgDhUKcz948AgcEmQmy78=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

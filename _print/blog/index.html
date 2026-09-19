@@ -1,0 +1,483 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js" data-theme-init>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000000">
+
+<style>
+  html { background: Canvas; color: CanvasText; }
+  @media (prefers-color-scheme: dark) {
+    html { background: #0b0d12; color: #e6e6e6; }
+  }
+  html[data-theme-init] * { transition: none !important; }
+</style>
+
+<script>
+  (function() {
+    const themeKey = 'td-color-theme';
+    const storedTheme = localStorage.getItem(themeKey);
+    let theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (theme === 'auto') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
+<link rel="canonical" type="text/html" href="https://www-staging.alwaldend.com/blog/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://www-staging.alwaldend.com/blog/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+<title>Blog | Alwaldend</title>
+<meta name="description" content="Blog">
+<meta property="og:url" content="https://www-staging.alwaldend.com/blog/">
+	<meta property="og:site_name" content="Alwaldend">
+	<meta property="og:title" content="Blog">
+	<meta property="og:description" content="Blog">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="Blog">
+	<meta itemprop="description" content="Blog">
+	<meta itemprop="dateModified" content="2026-09-19T20:06:20+03:00">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Blog">
+	<meta name="twitter:description" content="Blog">
+<link rel="preload" href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" as="style" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<link href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" rel="stylesheet" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section td-blog">
+    <header>
+      <nav class="td-navbar js-navbar-scroll">
+<div class="td-navbar-container container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">Alwaldend</span></a>
+  <div class="td-navbar__main td-navbar-nav-scroll td-navbar-nav-scroll--indicator" id="main_navbar">
+    <div class="scroll-indicator scroll-left"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/projects/"><span>Projects</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item td-navbar__light-dark-menu">
+        <div class="td-light-dark-menu dropdown"><svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+<button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        title="Toggle theme (Auto)"
+        aria-label="Toggle theme (Auto)">
+  <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="bd-theme">
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
+      Light
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>
+      Dark
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+      <svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>
+      Auto
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+</ul>
+</div>
+
+      </li>
+      </ul>
+    <div class="scroll-indicator scroll-right"></div>
+  </div>
+  <div class="td-navbar__search d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon" aria-hidden="true"></div>
+  <input
+    type="search"
+    name="q"
+    class="td-search__input form-control"
+    placeholder='Search this site…'
+    aria-label='Search this site…'
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5 pe-md-4" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/blog/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Blog</h1>
+<div class="lead">Blog</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+
+    <li><a href="#pg-4f88bb5d6b5d83c8039ee6a5ceeca1d7">DNS management in a monorepo</a></li>
+
+
+
+    
+  
+    
+    
+	
+
+    <li><a href="#pg-79bf4a204ab93c4b5e17a9686fa780cc">Slop without a clear goal</a></li>
+
+
+
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+
+  
+
+<div class="td-content" style="">
+    <h1 id="pg-4f88bb5d6b5d83c8039ee6a5ceeca1d7">DNS management in a monorepo</h1>
+	<div class="lead">Evolution of DNS management in my monorepo</div>
+	<div class="td-byline mb-4">
+		
+        
+		<time datetime="2026-09-13" class="text-body-secondary">Sunday, September 13, 2026</time>
+        
+	</div>
+	<p>Buying a domain is one of the best purchases you can make because they are very cheap and owning one offers you more independence - you can have your email not tied to a specific provider, you can have a site, etc.</p>
+<p>After I bought a domain, I needed a way to manage DNS of that domain. Since using the registrar&rsquo;s UI to do that is not the best idea, I searched for an IaC tool that can do that for me - I settled on <a href="https://dnscontrol.org/">DNSControl</a>.</p>
+<h2 id="single-file-config">Single-file config<a class="td-heading-self-link" href="#single-file-config" aria-label="Heading self-link"></a></h2><p>Initially, I just needed to set up email and GitHub Pages, so I used the most basic setup imaginable.</p>
+<pre tabindex="0"><code>infra/dns/
+├── dnsconfig.js # DNS config
+├── creds.json.tpl # Credential config
+└── zones/
+    └── alwaldend.com.zone # BIND file
+</code></pre><p>I just wrote records in DNSControl&rsquo;s subset of JavaScript and templated secrets from the environment using <code>envsubst</code>. It worked alright, and DNSControl rendered a BIND file so I could see the computed DNS records as text.</p>
+<h2 id="single-file-config-with-secret-injection">Single-file config with secret injection<a class="td-heading-self-link" href="#single-file-config-with-secret-injection" aria-label="Heading self-link"></a></h2><p>At some point, I migrated my secrets to HashiCorp Vault because storing secrets in environment variables is a big no-no. That didn&rsquo;t change the layout. The credential config just became a Go template that used secrets from Vault.</p>
+<h2 id="per-project-config">Per-project config<a class="td-heading-self-link" href="#per-project-config" aria-label="Heading self-link"></a></h2><p>Once I started setting up infrastructure, I hit an annoying limitation - extracting records from <code>.js</code> is extremely inconvenient, which means that you have to duplicate IPs for VMs instead of just extracting them from the config. And managing all DNS records in a single <code>.js</code> file is not very convenient either. To solve it, I split the main config into several static per-project configs and then just parsed them in the main <code>.js</code> file.</p>
+<p>The layout became like this:</p>
+<pre tabindex="0"><code>infra/dns/ # The main DNS project
+infra/project/ # Another infra project
+├── dnsconfig.json # Static DNS config
+</code></pre><p>And the config looked like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;domains&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;default&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;records&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;host1_a&#34;</span>: {
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;A&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;host1.consul1.dc1&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;address&#34;</span>: <span style="color:#e6db74">&#34;192.168.10.20&#34;</span>
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This was a bad config design as will become clear later.</p>
+<h2 id="split-horizon-dns">Split-horizon DNS<a class="td-heading-self-link" href="#split-horizon-dns" aria-label="Heading self-link"></a></h2><p>Later, I decided to set up <a href="https://en.wikipedia.org/wiki/Split-horizon_DNS">Split-horizon DNS</a> so I can have different records for internal and external DNS servers. Thankfully, DNSControl supports this, so there were no problems from this side, but configs had to be redone because they grouped records by domains which did not translate well to DNSControl&rsquo;s DNS providers.</p>
+<p>I simplified the config and added <code>dsp</code> fields to select which DNS provider the record belongs to.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;records&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;host1&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;A&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;host1.threexui&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;address&#34;</span>: <span style="color:#e6db74">&#34;192.168.10.80&#34;</span>
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;dsp&#34;</span>: [<span style="color:#e6db74">&#34;dc1&#34;</span>]
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="terraform">Terraform<a class="td-heading-self-link" href="#terraform" aria-label="Heading self-link"></a></h2><p>That setup worked fine for a while, but then I stumbled upon an obvious flaw during a clanker session - there is no way to work in parallel (without mucking around with <code>IGNORE</code> and <code>NO_PURGE</code>). DNSControl controls the whole zone, so if you have different sessions applying different configs, then those changes override each other.</p>
+<p>That seems like an easy problem to fix - just split the domain into different zones, and it was easy for my local DNS (a MikroTik router) because DNSControl&rsquo;s provider has zone hints, but there is no way to split the domain on the external DNS (Cloudflare) without buying an Enterprise plan or without delegating to yet another DNS provider.</p>
+<p>I thought about my options and decided to just switch to Terraform because I already have a standard way of handling Terraform in the repo. This approach fixed the problem, because now projects own only their own DNS records, so you can work on them in parallel.</p>
+<p>To implement DNS control in Terraform, I wrote a Terraform module which parses the config and updates DNS, then used it in each project. I also added a linter that checks that projects do not overlap DNS records. The final layout looks like this:</p>
+<pre tabindex="0"><code>projects/
+├── project name/
+│   ├── dnsconfig.json # DNS config, unchanged
+│   └── tf/ # A Terraform directory
+└── tf_modules/dns_records/ # Reusable Terraform module
+
+infra/dns/
+├── dnsconfig.json # Generic DNS like email
+├── tf/ # A Terraform directory
+└── cmd/lint/ # A linter that checks configs for collisions
+</code></pre><h2 id="future">Future<a class="td-heading-self-link" href="#future" aria-label="Heading self-link"></a></h2><p>There are no restrictions on DNS management - each project uses the same API keys and can modify the whole domain. This is not ideal, of course, but it&rsquo;s not that big of a deal because I trust all developers involved (Me and clankers) to not fuck it up. I might revisit this problem in the future, but for now this setup is good enough.</p>
+
+</div>
+
+
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+
+  
+
+<div class="td-content" style="page-break-before: always">
+    <h1 id="pg-79bf4a204ab93c4b5e17a9686fa780cc">Slop without a clear goal</h1>
+	<div class="lead">Imprecise goals without quality assurance lead to bad results, obviously.</div>
+	<div class="td-byline mb-4">
+		
+        
+		<time datetime="2026-09-12" class="text-body-secondary">Saturday, September 12, 2026</time>
+        
+	</div>
+	<p>A while back, I said to Jipity<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>: &ldquo;Jipity, how can I improve agent ergonomics in this monorepo?&rdquo;, and Jipity gave me some useful suggestions, but one of them was not like the rest. It said that context in the repo was too splintered — agents had to read many things in different directories to understand how things are done. In my infinite wisdom, I said, &ldquo;Jipity, write me a comprehensive plan implementing a unified agent system with the goal of improving ergonomics in this monorepo&rdquo;. And it wrote me a plan, I did not really read it.</p>
+<p>The plan consisted of several phases which gradually added more agent ergonomics improvements. Over the course of several days I made several PRs implementing the plan. In each PR, agents added things I did not understand according to the plan I did not read. After I prompted them to explain and still did not understand, I gave up and decided to just &ldquo;trust the plan&rdquo;, and merged everything. After implementing the plan, my repo was littered with garbage manifests, I had a lot of new code, and nothing really changed.</p>
+<p>I decided that maybe I did not trust the plan enough, and did a couple more phases of &ldquo;ergonomics improvements&rdquo;, which also did nothing but increase line count and litter the repo with garbage. Overall, I got around crisp 30k lines of new code.</p>
+<p>30k of code is not much in the grand scheme of things, but I don&rsquo;t like that my pristine monorepo had 30k lines of pointless slop, so I&rsquo;ve deleted the &ldquo;agent system&rdquo;.</p>
+<p>The lesson here is that you need to have a clear idea of what you are trying to accomplish, I guess.</p>
+<hr>
+<h2 id="data">Data<a class="td-heading-self-link" href="#data" aria-label="Heading self-link"></a></h2><p>Jipity made me a table, seems about right.</p>
+<table>
+	<thead>
+			<tr>
+					<th>Date</th>
+					<th>Timeline item</th>
+					<th style="text-align: right">Code files</th>
+					<th style="text-align: right">Non-code files</th>
+					<th style="text-align: right">Code LOC</th>
+					<th style="text-align: right">Non-code LOC</th>
+					<th style="text-align: right">Total LOC</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>2026-08-31</td>
+					<td>Phase 0 — System contract</td>
+					<td style="text-align: right">4</td>
+					<td style="text-align: right">39</td>
+					<td style="text-align: right"><strong>21</strong> (+21/−0)</td>
+					<td style="text-align: right"><strong>6,908</strong> (+6,825/−83)</td>
+					<td style="text-align: right"><strong>6,929</strong></td>
+			</tr>
+			<tr>
+					<td>2026-08-31</td>
+					<td>Phase 1 — Shared semantics and controls</td>
+					<td style="text-align: right">32</td>
+					<td style="text-align: right">58</td>
+					<td style="text-align: right"><strong>2,661</strong> (+2,456/−205)</td>
+					<td style="text-align: right"><strong>2,779</strong> (+2,736/−43)</td>
+					<td style="text-align: right"><strong>5,440</strong></td>
+			</tr>
+			<tr>
+					<td>2026-09-01</td>
+					<td>Phases 2–3 — Context, recovery, planning, and evidence</td>
+					<td style="text-align: right">115</td>
+					<td style="text-align: right">73</td>
+					<td style="text-align: right"><strong>18,018</strong> (+17,850/−168)</td>
+					<td style="text-align: right"><strong>3,121</strong> (+2,980/−141)</td>
+					<td style="text-align: right"><strong>21,139</strong></td>
+			</tr>
+			<tr>
+					<td>2026-09-02</td>
+					<td>Phase 4 — Connect work, delivery, and release</td>
+					<td style="text-align: right">26</td>
+					<td style="text-align: right">19</td>
+					<td style="text-align: right"><strong>2,996</strong> (+2,883/−113)</td>
+					<td style="text-align: right"><strong>566</strong> (+521/−45)</td>
+					<td style="text-align: right"><strong>3,562</strong></td>
+			</tr>
+			<tr>
+					<td>2026-09-02</td>
+					<td>Phase 5 — Learning contracts</td>
+					<td style="text-align: right">21</td>
+					<td style="text-align: right">16</td>
+					<td style="text-align: right"><strong>1,524</strong> (+1,523/−1)</td>
+					<td style="text-align: right"><strong>311</strong> (+258/−53)</td>
+					<td style="text-align: right"><strong>1,835</strong></td>
+			</tr>
+			<tr>
+					<td>2026-09-03</td>
+					<td>Phase 5 follow-up — Exercise the learning workflow</td>
+					<td style="text-align: right">25</td>
+					<td style="text-align: right">27</td>
+					<td style="text-align: right"><strong>914</strong> (+883/−31)</td>
+					<td style="text-align: right"><strong>1,043</strong> (+1,007/−36)</td>
+					<td style="text-align: right"><strong>1,957</strong></td>
+			</tr>
+			<tr>
+					<td>2026-09-03</td>
+					<td>Phase 6 — Reduce workflow friction</td>
+					<td style="text-align: right">28</td>
+					<td style="text-align: right">69</td>
+					<td style="text-align: right"><strong>1,198</strong> (+1,101/−97)</td>
+					<td style="text-align: right"><strong>1,206</strong> (+793/−413)</td>
+					<td style="text-align: right"><strong>2,404</strong></td>
+			</tr>
+			<tr>
+					<td>2026-09-05</td>
+					<td>System simplification</td>
+					<td style="text-align: right">41</td>
+					<td style="text-align: right">49</td>
+					<td style="text-align: right"><strong>5,037</strong> (+4,548/−489)</td>
+					<td style="text-align: right"><strong>4,714</strong> (+2,293/−2,421)</td>
+					<td style="text-align: right"><strong>9,751</strong></td>
+			</tr>
+			<tr>
+					<td><strong>Overall</strong></td>
+					<td><strong>8 commits</strong></td>
+					<td style="text-align: right"><strong>292</strong></td>
+					<td style="text-align: right"><strong>350</strong></td>
+					<td style="text-align: right"><strong>32,369</strong> (+31,265/−1,104)</td>
+					<td style="text-align: right"><strong>20,648</strong> (+17,413/−3,235)</td>
+					<td style="text-align: right"><strong>53,017</strong></td>
+			</tr>
+	</tbody>
+</table>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>GPT 5.6 Sol.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+</div>
+
+
+
+
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        Built with <a href="https://gohugo.io/">Hugo 0.165.0</a>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="/js/main.min.259204f469f58eb3b665605a24e964264772df2adaded180b3669b6ce33d84c8.js" integrity="sha256-JZIE9Gn1jrO2ZWBaJOlkJkdy3yra3tGAs2abbOM9hMg=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.decf3b53d8827d840369f490775626e2a5200e150a733f78f0081c126426cbbf.js" integrity="sha256-3s87U9iCfYQDafSQd1Ym4qUgDhUKcz948AgcEmQmy78=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

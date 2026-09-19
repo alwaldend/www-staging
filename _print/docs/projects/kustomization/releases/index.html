@@ -1,0 +1,3401 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js" data-theme-init>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000000">
+
+<style>
+  html { background: Canvas; color: CanvasText; }
+  @media (prefers-color-scheme: dark) {
+    html { background: #0b0d12; color: #e6e6e6; }
+  }
+  html[data-theme-init] * { transition: none !important; }
+</style>
+
+<script>
+  (function() {
+    const themeKey = 'td-color-theme';
+    const storedTheme = localStorage.getItem(themeKey);
+    let theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (theme === 'auto') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
+<link rel="canonical" type="text/html" href="https://www-staging.alwaldend.com/docs/projects/kustomization/releases/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://www-staging.alwaldend.com/docs/projects/kustomization/releases/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+<title>Releases | Alwaldend</title>
+<meta name="description" content="Releases">
+<meta property="og:url" content="https://www-staging.alwaldend.com/docs/projects/kustomization/releases/">
+	<meta property="og:site_name" content="Alwaldend">
+	<meta property="og:title" content="Releases">
+	<meta property="og:description" content="Releases">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="Releases">
+	<meta itemprop="description" content="Releases">
+	<meta itemprop="dateModified" content="2026-09-19T20:06:21+03:00">
+	<meta itemprop="wordCount" content="2010">
+	<meta itemprop="keywords" content="Project">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Releases">
+	<meta name="twitter:description" content="Releases">
+<link rel="preload" href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" as="style" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<link href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" rel="stylesheet" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll">
+<div class="td-navbar-container container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">Alwaldend</span></a>
+  <div class="td-navbar__main td-navbar-nav-scroll td-navbar-nav-scroll--indicator" id="main_navbar">
+    <div class="scroll-indicator scroll-left"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/projects/"><span>Projects</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item td-navbar__light-dark-menu">
+        <div class="td-light-dark-menu dropdown"><svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+<button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        title="Toggle theme (Auto)"
+        aria-label="Toggle theme (Auto)">
+  <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="bd-theme">
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
+      Light
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>
+      Dark
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+      <svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>
+      Auto
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+</ul>
+</div>
+
+      </li>
+      </ul>
+    <div class="scroll-indicator scroll-right"></div>
+  </div>
+  <div class="td-navbar__search d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon" aria-hidden="true"></div>
+  <input
+    type="search"
+    name="q"
+    class="td-search__input form-control"
+    placeholder='Search this site…'
+    aria-label='Search this site…'
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/projects/kustomization/releases/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Releases</h1>
+<div class="lead">Releases</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-0339c5af163875920ed3058e337bc9b0">head</a></li>
+
+
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      
+
+
+
+
+<div class="card">
+  <div class="card-body">
+    <h2 class="card-title" id="print-0926f4a9c0c689981d491355e570dc61-head"><a href="/docs/projects/kustomization/releases/head/">head</a><a class="td-heading-self-link" href="#print-0926f4a9c0c689981d491355e570dc61-head" aria-label="Heading self-link"></a></h2>
+    
+    
+
+
+<div class="accordion mt-2" id="print-0926f4a9c0c689981d491355e570dc61-release-f0b0c73438bbe0cda5c1058ee9990fcf-list-0_accordion">
+  <div class="accordion-item">
+    <h3 class="accordion-header" id="print-0926f4a9c0c689981d491355e570dc61-release-f0b0c73438bbe0cda5c1058ee9990fcf-list-0">
+      <button
+        class="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#print-0926f4a9c0c689981d491355e570dc61-release-f0b0c73438bbe0cda5c1058ee9990fcf-list-0_collapse"
+        aria-expanded="false"
+        aria-controls="print-0926f4a9c0c689981d491355e570dc61-release-f0b0c73438bbe0cda5c1058ee9990fcf-list-0_collapse"
+      >Changelog<span class="badge rounded-pill bg-secondary ms-1">19</span>
+</button>
+    </h3>
+    <div
+      id="print-0926f4a9c0c689981d491355e570dc61-release-f0b0c73438bbe0cda5c1058ee9990fcf-list-0_collapse"
+      class="accordion-collapse collapse"
+      aria-labelledby="print-0926f4a9c0c689981d491355e570dc61-release-f0b0c73438bbe0cda5c1058ee9990fcf-list-0"
+      data-bs-parent="#print-0926f4a9c0c689981d491355e570dc61-release-f0b0c73438bbe0cda5c1058ee9990fcf-list-0_accordion"
+    >
+      <div class="accordion-body"><ul class="list-group">
+          <li class="list-group-item my-auto">
+            <p>Move project landings into the main site</p>
+<p>Publish every registered project&rsquo;s visitor-facing landing page at
+/projects/<name>/ from the main site instead of a dedicated subdomain, and
+retire the per-project Pages repository, CNAME, and Terraform DNS stage that
+existed only to serve one page derived from the project README.</p>
+<p>Each project owns its landing content in projects/<name>/site/content/ as pure
+content: no layouts, styles, or build rules. The main site packages those
+directories into content/projects/<name>/ from the registry in
+projects/projects.bzl, so membership is declared once. The landing is a short
+hand-written page for visitors while the README keeps its /docs/projects/<name>/
+URL for repository reference documentation, and landing front matter now feeds
+the statuses, languages, and tags taxonomies.</p>
+<p>Merge the reusable hugo_landing project into the main site: its shared canvas
+and accent styles and its landing page rules move into the apex tree, and its
+landing macro, generated configuration, standalone publisher, and
+repository-relative rewrite layouts are removed. The theme keeps owning the
+taxonomy and term layouts, which are richer than the heading-only versions the
+reusable project carried. Remove the now-unused apex deploy_project.sh and
+deploy_all.sh landing publishers with it.</p>
+<p>Retire the per-project publication and DNS ownership: the project landing
+targets and the landing deployment command, each landing project&rsquo;s
+dnsconfig.json and Terraform root, the build plumbing that served only those
+stages, and the landing repository and Pages membership in the repository
+catalog. The apex Terraform root is retained because it also declares VM
+resources, and no Vault configuration is changed.</p>
+<p>Replace the provider-snapshot zone files with generated declaration pages, one
+per destination view, that project the checked-in declarations and are verified
+for freshness by the DNS offline check. The DNS linter, both destination pages,
+the apex site, the skills projection, and the repository quality suite pass, and
+the whole repository builds.</p>
+<p>OpenSpec-Change: projects/alwaldend.com/openspec/changes/consolidate-project-landings-into-apex</p>
+<p>LLM-disclaimer: This commit was generated by an LLM.</p>
+
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">976a6a218ec8b3450fee44481674463b9c5115fd</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                PGP
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">-----BEGIN SSH SIGNATURE-----
+U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAg0/OoO0fyfgVXnUZTMZXlNFA3cn
+78YxSrrdPiskRJNxUAAAADZ2l0AAAAAAAAAAZzaGE1MTIAAABTAAAAC3NzaC1lZDI1NTE5
+AAAAQFCTwf73FSK2HZgURFxfuGc1FDJ7ZDAaDQ&#43;pmJIIsu2gjTQrOQf22bMN0TWvMdhL6j
+YsCh424/NCqnhwVpaE6Qk=
+-----END SSH SIGNATURE-----
+</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            <p>Manage forge resources with hermetic Terraform rules</p>
+<p>Centralize organization, repository, and named access configuration in
+infra/repos. Adopt existing GitHub resources, protect master defaults while
+retaining Pages publication on pages, and preserve existing repository
+identities. Manage GitLab one-time imports, the F-Droid metadata fork, and
+default-branch protections through Vault-backed authentication. Forgejo
+consumes the same catalog. Ongoing repository synchronization is deferred.</p>
+<p>Retire the eleven Bazel rule landing sites through their owning Terraform
+workflows, removing their DNS records, Pages repositories, and landing
+configuration. Move all twelve existing standalone rule modules into tools/
+and retain their public interfaces and documentation on the main site.</p>
+<p>Add tools/rules_terraform with verified provider downloads, packed mirrors
+in runfiles, and reusable Terraform execution rules. Enforce one version per
+provider source at an extensible resolution boundary. Migrate every Terraform
+consumer to thirteen shared provider pins in third_party/terraform. Execution
+and command maps belong to rules_terraform; consumers explicitly select generic
+AL wrappers for authentication and Vault injection. Remove tools/terraform
+and all 43 checked-in Terraform provider locks.
+Validate installed providers against the declared archives before execution.</p>
+<p>Validation covers all fourteen workspace builds, all thirteen standalone
+test suites, Terraform consumers, offline real-provider regressions, rendered
+documentation, formatting, and semantic lint. The full root test run has
+295 passing tests and one skip; its only failure is the historical secret
+scan, reduced to four pre-existing synthetic fixture matches. Earlier live
+imports and the exact landing retirement scope have verified postconditions;
+the Terraform rules migration uses only offline implementation checks.</p>
+<p>OpenSpec-Change: infra/repos/openspec/changes/archive/2026-09-13-adopt-shared-repository-catalog
+OpenSpec-Change: infra/src/openspec/changes/archive/2026-09-13-retire-bazel-rule-landings
+OpenSpec-Change: tools/rules_terraform/openspec/changes/archive/2026-09-14-add-hermetic-terraform-rules
+OpenSpec-Change: tools/rules_terraform/openspec/changes/archive/2026-09-14-correct-terraform-ownership</p>
+<p>LLM-disclaimer: This commit was generated by an LLM.</p>
+
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">6cb4d63c7b473cbff738332389c05168b9158cc4</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;bf4f0e49-086a-48b0-bafd-88001a8bf12d@simplelogin.alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            <p>Deploy project DNS through Terraform modules</p>
+<p>Move DNS ownership into each project’s Terraform state using shared modules.
+Load dnsconfig.json files at runtime, reject conflicting domain ownership,
+and render their records as a table. Add missing project AppRoles and scoped
+DNS policies, and document grouping related Terraform resources in modules.</p>
+<p>Deploy all 45 owners sequentially: adopt 155 existing records and create 13
+missing OpenHands records. Preserve every pre-existing provider record and
+verify no-op follow-up plans and DNS answers. Add DNS-scoped plan/show/apply
+wrappers with a saved-plan guard for roots that also manage services.
+Allow bounded aggregate path inventories large enough to deliver this migration
+while retaining truncation refusal in the delivery tool.</p>
+<p>Validate runtime ownership, provider imports and preservation with isolated
+fixtures, Terraform formatting, wrapper builds, repository quality checks,
+semantic lint, and project documentation/specification builds.</p>
+<p>OpenSpec-Change: infra/dns/openspec/changes/archive/2026-09-13-migrate-project-dns-to-terraform</p>
+<p>LLM-disclaimer: This commit was generated by an LLM.</p>
+
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">cc4f205bf73b49364ba3bd441b7f485b9872e742</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;bf4f0e49-086a-48b0-bafd-88001a8bf12d@simplelogin.alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            <p>Simplify OpenSpec workspace globs</p>
+<p>Collapse OpenSpec source globs to specs and changes, drop redundant
+package visibility blocks already covered by REPO.bazel, and regenerate
+the affected catalogs.</p>
+<p>LLM-disclaimer: This commit was generated by an LLM.</p>
+
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">c50fbf5a9fe9e8a99fe26a313eefd1154f841349</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;bf4f0e49-086a-48b0-bafd-88001a8bf12d@simplelogin.alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            <p>Provision XCP-ng with isolated AppRole access and deploy Forgejo</p>
+<p>Create one Xen Orchestra resource set and OIDC user per Vault AppRole.
+Bind access by trusted issuer and immutable Vault entity ID. Forgejo uses
+its own short-lived login and has access only to its resource set and VM.
+Resolve pools, templates, storage, networks and existing VMs by name.
+Manage pool and VM ACLs natively in Terraform; retain the XO API helper
+only for unsupported OIDC configuration, identity discovery and bootstrap.</p>
+<p>Deploy Forgejo at git.alwaldend.com through Ansible. Install the official
+XO OIDC plugin and Vault ACME certificates on XO and XCP-ng with managed
+renewal. Move PVE cloud-init into infra/cloud_init and derive Xen settings
+from that foundation using a repository Go template. Move XCP-ng Terraform
+to tf and retain one labeled AL configuration for administration.</p>
+<p>Discover Forgejo accounts and team access from Vault groups, adopting
+existing OIDC accounts without replacement. Reuse PVE&rsquo;s group/entity lookup
+policies and remove the bespoke user_entities policy.</p>
+<p>Require checked-in IaC for infrastructure and approval for exceptions.
+Include all configured formatter changes as requested.</p>
+<p>Goal-Ref: refine-shared-cloud-init-and-group-driven-infrastructu-b9aba214
+Attempt-ID: attempt-8c0d942b05f3</p>
+<p>LLM-disclaimer: This commit was generated by an LLM.</p>
+
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">550d7e79b1f5fdbc2b6017b75178471d6914082f</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;bf4f0e49-086a-48b0-bafd-88001a8bf12d@simplelogin.alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            <p>Publish project sites and reproducible infrastructure diagrams</p>
+<p>Build and deploy all 30 remaining project sites with the standard Docsy
+header, project descriptions and a linked documentation directory. Omit the
+repeated page title and generated language heading. Remove
+the unused cgit and xray_manager projects and retire their site resources.</p>
+<p>Add a repeatable GitHub Pages publisher, staged Terraform bootstrap and direct
+GitHub Pages DNS records. Preserve repeated publication when pages is the
+remote default branch, and include Rules ISO in the main documentation.
+Document site onboarding in a registered, validated skill. Keep AL
+introduction short with useful links and preserve its lifecycle details in
+a dedicated documentation page.</p>
+<p>Render all 15 existing infrastructure Drawio pages with pinned Drawio and
+Chrome inputs, sandboxed export actions, an update target and freshness
+checks, and include the maintained diagrams in infra/arch documentation.
+Paint an opaque white canvas to preserve readability in dark themes.</p>
+<p>Validation covers project and apex builds, rendered pages, publisher tests,
+diagram repeatability and freshness, DNS configuration, Terraform formatting,
+semantic lint and repository quality.</p>
+<p>Goal-Ref: build-and-deploy-every-project-landing-page-a782b800
+Attempt-ID: attempt-00941092c164</p>
+<p>LLM-disclaimer: This commit was generated by an LLM.</p>
+
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">491eb7e05aa1ef71ff8e01b4ad320cdc355edbee</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;bf4f0e49-086a-48b0-bafd-88001a8bf12d@simplelogin.alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            <p>Extract DNSControl setup into rules_dnscontrol</p>
+<p>Extract the DNSControl setup into <code>rules_dnscontrol</code>, generate its Bazel
+dependency bundle from project-owned record files, and update the DNS
+guidance. Move Hugo rules and the worker to role-based package paths, and
+give each non-nested project a locally owned Hugo landing target that reuses
+the shared README-to-landing macro.</p>
+<p>Clean all landing and Pages DNS records so GitHub Pages serves each project
+subdomain directly without Cloudflare proxying. Improve the main site with
+a three-panel home layout, complete project links, documentation explore
+links, and current deployment guidance.</p>
+<p>All affected root-workspace landing, DNS, and site targets pass, along with
+the nested <code>rules_hugo</code> tests, Buildifier, and repository quality checks.</p>
+<p>LLM-disclaimer: This commit was generated by an LLM.</p>
+
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">df7e40ff27251e8b4f9a4e399658f353087619d4</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;bf4f0e49-086a-48b0-bafd-88001a8bf12d@simplelogin.alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            <p>Add hermetic repository-wide formatting and linting</p>
+<p>Integrate upstream formatters for the repository&rsquo;s meaningful tracked source
+and configuration file types through Bazel, and add Buildifier, Ruff, and
+ShellCheck lint aspects for correctness-oriented repository-wide checks.</p>
+<p>Pin all new external tools through Bzlmod or the existing pnpm lock, add thin
+cache/runfiles adapters where required, expose format and check targets, and
+wire the checks into the pre-commit workflow. Format the existing tree and fix
+the correctness defects uncovered by the new checks. Preserve generated
+sources and exact-content fixtures that are not safely rewritable, and clarify
+that ordinary
+infrastructure build output is safe to display.</p>
+<p>Validation:</p>
+<ul>
+<li>all 21 repository quality and compatibility formatter tests pass</li>
+<li>Buildifier test passes</li>
+<li>lint aspects analyze all 4,629 ordinary root targets without findings</li>
+<li>the complete 18-command root and nested full-repository audit was exercised;
+remaining failures are documented environment or pre-existing test limits</li>
+</ul>
+<p>LLM-disclaimer: This commit was generated by an LLM.</p>
+
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">6c74af20480baad6cfbaa9bb4c42f4a33e02c450</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;bf4f0e49-086a-48b0-bafd-88001a8bf12d@simplelogin.alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            <p>Add standalone documentation rules</p>
+<p>Move docs_filegroup into a reusable rules_docs nested Bzlmod workspace and migrate every root and nested consumer to it. Add a module-aware Gazelle language that creates docs targets only for existing README packages while preserving manual mappings.</p>
+<p>Wire the workspace into module resolution, documentation aggregation, and the ten-command full-repo-check. Add the bazel-nested-module skill so future nested workspaces follow the repository&rsquo;s rc, lockfile, docs, toolchain, Gazelle, and validation conventions.</p>
+<p>Keep reviewed Gazelle dependency canonicalization, while protecting the hand-maintained Go proto, Python resource, Android, embedded-site, and skill runner definitions that generic language plugins would otherwise break.</p>
+<p>This commit was generated by an LLM.</p>
+
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">a0b20b74bed560720f5e9d878da53e8021859e66</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;bf4f0e49-086a-48b0-bafd-88001a8bf12d@simplelogin.alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            <p>Make release generation hermetic</p>
+<p>Add the missing AL and Kustomization release targets and give release actions a declared bare Git snapshot instead of access to the workspace repository.\n\nThis commit was generated by an LLM.</p>
+
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">7c81ab3f13be1e5b7efda3bb1e4ed5a64d75f9d6</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;bf4f0e49-086a-48b0-bafd-88001a8bf12d@simplelogin.alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            Move traefik into a separate kustomization
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">dac9ea5882a67ad748f3e5f41067202946b251eb</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;simeonwarren@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;simeonwarren@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                PGP
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEFuxvv2wIGF1W5BG5192IqwwHN/IFAmpVL/QACgkQ192IqwwH
+N/IJyBAAsvVMCS0Vtzqw5oIIGblix3ATPD5BuU3OorRIBlDHBy80C5F1yw9oj3fe
+6J6r8/HebLNx1pKIIWd&#43;m6OnpDAHOVr5rtBMIWq6mAxkg5i/BQvttSZInBbKeF8Q
+6HgFdG8Bb0QCDtAAKGt8JeIQ1Iuy7GZy&#43;2Aotg2HsyZtAhYiTcp92Z/pmSQNtApp
+sLVivjWuvgTz3i2nEevYIz04QE&#43;ZqXTGsNm56Qyhsz/0MWGJBbLXsT7ji0AwDSWa
+8j4DNSMOS3dhSOGsXE5TOm3J9NaS3RAci5k4AlRnVVCbbt4a47YOJmhBdO5sGMWD
+KiTvXQyXNSUJOGF9enf8R0ZLsdweEN7RhOrdfrrrwPeztHuGCamrP9GbBsLs/6w&#43;
+ISoWjdyTOt2iq&#43;WQrlHt0Tp6hNbZkj0WgrV76drj/WP5Pvz4qDtPlGBj2fd5GNzA
+KZuU8rg8VjrC2lNBQk7AZ/Que7pq58yeKz0j7VZkScIogHejbgj/9Qdx2STwA4qO
+LiO9g8W63s&#43;2fMnp1kYCtNO/suv6FBzQPxkHhiRW&#43;ADJ2UJHhTpfMRKgSaygpIZj
+yjA/nMfDmg7EfeOCACDgP20jvrfgkwLEYN94rcfyPo1hLSa1woYRwyNQ6jdPPpdh
+WANHfAaXLay0BnG7mrvI&#43;fuYQYiwu1no8&#43;4VLhjXaFEq2vaK6gc=
+=aT9P
+-----END PGP SIGNATURE-----
+</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            Fix ca.crt path
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">b8a889595153d9bcf42fe895f931d59ce6891e46</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;simeonwarren@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;simeonwarren@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                PGP
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEFuxvv2wIGF1W5BG5192IqwwHN/IFAmpVKSQACgkQ192IqwwH
+N/KMrhAA18UsdYJ3aMpkCFaCUW/pSB8mIjXwP9vCUifSUPhjTXxfeh1BMf/qX5JG
+jLWmbL5O6z8TwLpSZczOUfLYa7s3hfy8f0J8MCkAOVQo7WZVHFnKNpwA&#43;kgZFEHO
+e0HXxjZ5cpDzR9wloLmnhQcOUxwZ4/MukD0NgMVp9mn9TVPUbpUQVb9hA8kq2Eeu
+8C2KtvVo0CUN/cKaBAkSPkjLV9SLi3zfvdqVYZCDvcR6QHA5WHKZRtKI/7Qy8S&#43;9
+5ghfvVi7xXjFGfQ1sZmg5MKAZmCUw7P&#43;/8MF3f5chyV9GzFYp0IHOlAVbz3N&#43;gyP
+ObPZ5WQpxV1UIZokg/w78PB0RK/Artx&#43;N8ttsgls2mQ4feRWIGBSLwiOJryg3K1D
+OJvLlr&#43;h4g3N/3R/K4lfDkJj51jAjGxGSfCx6Q&#43;G&#43;oGYtTR2VdRPA9pwO2qyR/oq
+/uyT5OOF6EmVZJDA8Y69TNpOPnpy&#43;IYQqdm36QetSxXSbeB4SjDRX7bTfFRGIccH
+zXRvtfZdnd/oYsRoOQz9dzvFWGzT5OTZTw0FFes/H1mfV5XriEQDlvLV1setaeXj
+ayAgYVmvDVM0jZvZ89LFP&#43;BCc0iHBvilt58b/oPgCFIuADOO3Gxvgx/JFthVKtn0
+yuMqBBxjCekn7hYMtjKyhLLGkv3NdXa3vW608Hp0wZ9S4Ko7C1w=
+=kjC/
+-----END PGP SIGNATURE-----
+</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            Move cert-manager into a reusable kustomization
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">be8128b253a50cf09c0e3ca892edbe61f093aa66</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;simeonwarren@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;simeonwarren@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                PGP
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEFuxvv2wIGF1W5BG5192IqwwHN/IFAmpVKLAACgkQ192IqwwH
+N/IwdhAA34Qhrl0cO0LKgNsQX2AcN96htGwKnFB3UcyJM3abVm9RBQdBbLdiM6FC
+uzu1ZyKpuni9fVkt36k/KoLRFpmb7PP4Z1LekEgiiBf4C7ZqDMB5bkPrrXwzRXjr
+cVlfHU1TAHQdn84XiFbN7D&#43;wBeneCTO7bSKVR&#43;/xoOjQwPNmo15QS2wu1pdpiwgw
+Q1vad7UFksEEPNyx&#43;h4AEfdNjTQ3wf0mmaa/kzhUHugslotkPJ7c0SNTjwCMxoxN
+dW17q23y64Cud89I0eZTVeyVRwlj4Gjc7ttGdAniW4hcQDnh6BsORR10LZg7ed4Y
+cLi/VO1&#43;No&#43;YtqJVAVj1qken2jktW5&#43;9zXKCbU7RYDCxzEtQGPTxEY9c8iCa7SdI
+vH6rsVQh2lxV25ggCrtLUF2r4tMz5DT186QuyR0ylRfuMQcEO&#43;drCfVi6RyzGxy&#43;
+s6UPr1n5QKBgRc4rRX9bt2cvoocZKeBritrk9Q8ba1Q1gZkWt9T0zufRKEP4OhZp
+//qNlyVxlgV464JRBT&#43;rJz&#43;1/C2AtOsSIP7mTt&#43;DFTx4OHxJWAnyiuotSZVucRfA
+B2w0EULcM2cKl3rGXrMSMXD/rIt9thLBGbaWauRhmq10JjerWqCFqhKLcHA2h3bF
+vH4ucchw&#43;50sALIzdaIc40sGp5nw2bBgyIHDZTbjODTGug8TmtY=
+=5NVW
+-----END PGP SIGNATURE-----
+</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            Fix CA path
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">e42debd10dbeebc540b1e28e6893b89b147b5e1b</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;simeonwarren@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;simeonwarren@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                PGP
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEFuxvv2wIGF1W5BG5192IqwwHN/IFAmpThqIACgkQ192IqwwH
+N/LUzg/7BQUQkIhQ7fARUoyo3H98J8GQ57TkgbUZWhouaDoB7Z0ZAmPacOyxaQxi
+sNTddL7uGxIh4JjogfqTFkIPgTLk2HXkzWwKYYOi5IVJQVCL&#43;COtxx6tRFNSffS3
+Aw544TlKJNXSVe&#43;uqxtuCrNampRJ33dPoD/Jxwox7m9oAj9QGf87swikr1RuvBww
+&#43;dKT3in&#43;KX4LdQLKZbmacD8RxDTSu6hNa5seOG8suOuddCSjfHUXFavQimW9reQ7
+jeC2rb1yPm&#43;3DiA7gxYxXbPCDMO1pOi0t7VJcWh/271M2YgC7InoH3WXNGxwmLmR
+i5U8Dq5VZLe21rwaIPxquyPkHYOwL6bxcxT2G/yckYguwgOmzJW//bk26LHb0fjh
+Fzg4s9zSpeVJhSO9HUGyS3bgFBq0usTorZrlYOcdJhViFsqyAVFl4y8ENWMLAvf8
+7WWniNriUuhdtV0tIWTnmvDnbjiLdJCG8B/0y3TxhN5KiLSuixiZAl04mfWP4ISj
+FG/Ezg87P/2HJZY356Ll0T2uKnrIqG9SkNFPCs7GVvuIh/f3Bc5eaR1&#43;XnLYrsip
+70RYs5iJ&#43;CzOq88ZgLt9aYAHvQg&#43;59uOAjH95kPFbuYBP90aDvt3h&#43;ec7LKLAO&#43;P
+FOs&#43;9z1uLQ2BmJcjUwceM2njrgOvYoLDUiaI9LuPdjXk8TUSD4U=
+=hXTY
+-----END PGP SIGNATURE-----
+</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            Update ca path
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">6cb2f0201c2dc56ce687bc8486a888c5686ccc67</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;simeonwarren@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;simeonwarren@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                PGP
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEFuxvv2wIGF1W5BG5192IqwwHN/IFAmpThhcACgkQ192IqwwH
+N/JXYRAAhWhUfUThIsKfPacksnc6eobn1ZQRcTLxLPYXHHV/K2eiisaNkZmtNk0W
+utQzMlXHNzvf7&#43;OCnuxmvgwYPDTqguaiRw6z9w1EVCpSJ2MU/li2HPbj0&#43;cqsKXi
+42XR9Zrx25bbS8kMCvm0Q1k8L1kTF0Z3cqU3Pc6D4CjYZFpOf3dDz11cEwwJbi6K
+hrOqehGQdJuVD8Jvs7xtZy&#43;3T9H9ooqcSH3LnWs3hp7ff6QmY11NNlB8hazh0Ioy
+xWeTDs3Bl4Nt8iB9XlA3&#43;Yi6vuEZEYaEU/Gkl/3IeTpIkKDydpQuAYVinLkwXCb5
+3DdLc1p42gfTAlJKHA44ffjlEfZmvOncb02d9&#43;T8Ka349zraWrM2Ahr80PesgP/&#43;
+ubE00q7&#43;2BXtXPmoTJVniSMz0XR5t67gFpSHsmyu8Xl&#43;PN0MfLDBJH8h9O64S0kW
+XlcIggdtEpNg08yeBwnMGCPpsVaYnkYP6HPhBLP/17ZWe&#43;1PwDaud12njCUPtRF0
+Mw/CbuH3AEl4AY1sqAXOvJVxPHZCvn9&#43;QN8dDedLWuRxbZDgjo2FfD6e3DOFcw7g
+raPKEuxA8owsL0bi3tA1JuisMVpjvG5sNgv0M3zXaJtRCnplPGsS6igxxuARWB&#43;/
+4DLrNg5aFPLAXPQH&#43;KElsjBHTMC6CVCjE7Khfaht6WUQUmTPuLc=
+=Z1qW
+-----END PGP SIGNATURE-----
+</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            Create //projects/kustomization
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">71441f5a14072690c8712add0f88b97f25d27347</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;simeonwarren@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;simeonwarren@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                PGP
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEFuxvv2wIGF1W5BG5192IqwwHN/IFAmpThRwACgkQ192IqwwH
+N/LEhBAAl30H63hW7Wxwve9bBDcldM2hboPIPmC2um4Fz17d3iPtNQ1xmRucv197
+UNb/xGgg8DbD352fxOYIw5ffOpGQpUIYtJQqJyG5soI&#43;RuLYnfyybRcM1k1UVore
+qCG7eH6p0Wecm8oGfdo9EZ/1sJoF8RZcqgPBkJx238kmtQkeVXjBZgZblmSC8XNF
+sMzmwbSp4R9f9Y0DcA3pWK0xyA4gLlhn19vCps2F4ZpZl&#43;e5Ac6F4k0q91b/8OuZ
+SFAprRQSRnbBRq/vMFZ3XewZIxTuqZvgrm6gzgOttK/sjWo4525FHqnEXSEdGsA7
+5OnWVHWCwO/UxJSBd7GIj7yyX4y4gs&#43;jLaLu8Ca0fdt//aRcFcGR9LriaIY5u2x2
+7mwUsnMPJDNRAfLb4A/abeipexzC&#43;IOVCBzLLVBrruQDfm9O3zihDNOGKNTwSdRb
+rlke4trrcFN70MpqWRCVJK1mKQhZ2FIknwPshLQur8v7Mmow&#43;YVRC7lVEwdtZUse
+5ZN3OmmrF8Y0cEoUTMgIPabF9&#43;3yIMPdUI1V1BBbYuq&#43;&#43;icUyKgZ7CFRFEL8bHVB
+P10Y7Kd6d2qFKyzZQ5Li60W377WVbdJpUH8wyMH0diEwUrEtPuMcYbp3dJ8xcMsa
+Js6qDOu0Tc9wXDswgx&#43;mrwJdnuI84cQGUm5ef89eqmHrpbGAgRw=
+=JqCb
+-----END PGP SIGNATURE-----
+</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            Initial commit
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">00bcaa157103012b187a208a240dc4b6e9feaeec</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;simeonwarren-git-pzewq@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;simeonwarren-git-pzewq@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            <p>Add spellcheck skill</p>
+<p>This commit was generated by an LLM.</p>
+
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">28444214f7295282ff11dcb7aa83d8ad827ab8b4</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                PGP
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">-----BEGIN SSH SIGNATURE-----
+U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAg0/OoO0fyfgVXnUZTMZXlNFA3cn
+78YxSrrdPiskRJNxUAAAADZ2l0AAAAAAAAAAZzaGE1MTIAAABTAAAAC3NzaC1lZDI1NTE5
+AAAAQFleXCIfJFf2rgDHhwXqPLotFU4BO88V9IdIUoSObYTaiLW/Fo47g2NLUnF97uDMfx
+99QQEo1a8VTCBw5ZM6YQs=
+-----END SSH SIGNATURE-----
+</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            <p>Restore light and dark site canvases and set the shared accent</p>
+<p>The shared Docsy canvas set the same Bootstrap dark palette and the same
+black page background on <code>:root</code>, <code>[data-bs-theme=&quot;light&quot;]</code>, and
+<code>[data-bs-theme=&quot;dark&quot;]</code>, so the light/dark toggle changed nothing. The site
+also rendered Bootstrap&rsquo;s stock blue instead of its intended accent.</p>
+<p>Split the shared palette so light mode uses a pure white canvas with the
+light-mode palette and dark mode uses a pure black canvas with the dark-mode
+palette, and keep the pre-stylesheet paint and footer on the active mode.
+Assign <code>$primary</code> to <code>#7c3aed</code> before Bootstrap compiles, so links, buttons,
+badges, focus rings, and the dark-mode link tint all derive from one value
+rather than from a site-local copy.</p>
+<p>Both files stay in the reusable shell; the apex site consumes them through
+the existing declared exports and no longer carries the footer&rsquo;s own blue.</p>
+<p>OpenSpec-Change: projects/hugo_landing/openspec/changes/restore-light-dark-canvas-and-accent</p>
+<p>LLM-disclaimer: This commit was generated by an LLM.</p>
+
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">022861965f3e3407c0f630dd5827b54bb87ee779</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                PGP
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">-----BEGIN SSH SIGNATURE-----
+U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAg0/OoO0fyfgVXnUZTMZXlNFA3cn
+78YxSrrdPiskRJNxUAAAADZ2l0AAAAAAAAAAZzaGE1MTIAAABTAAAAC3NzaC1lZDI1NTE5
+AAAAQP&#43;VcOIIqPR8DY7q4bmucDZO9dJLiApozQqq/IQXHkw4cm9pr98jiPQVSU0J4UBBtx
+0yeucLMBAFev0fFMYQigY=
+-----END SSH SIGNATURE-----
+</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul></div>
+    </div>
+  </div>
+</div><div class="accordion mt-2" id="print-0926f4a9c0c689981d491355e570dc61-release-f0b0c73438bbe0cda5c1058ee9990fcf-list-1_accordion">
+  <div class="accordion-item">
+    <h3 class="accordion-header" id="print-0926f4a9c0c689981d491355e570dc61-release-f0b0c73438bbe0cda5c1058ee9990fcf-list-1">
+      <button
+        class="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#print-0926f4a9c0c689981d491355e570dc61-release-f0b0c73438bbe0cda5c1058ee9990fcf-list-1_collapse"
+        aria-expanded="false"
+        aria-controls="print-0926f4a9c0c689981d491355e570dc61-release-f0b0c73438bbe0cda5c1058ee9990fcf-list-1_collapse"
+      >Artifacts<span class="badge rounded-pill bg-secondary ms-1">0</span>
+</button>
+    </h3>
+    <div
+      id="print-0926f4a9c0c689981d491355e570dc61-release-f0b0c73438bbe0cda5c1058ee9990fcf-list-1_collapse"
+      class="accordion-collapse collapse"
+      aria-labelledby="print-0926f4a9c0c689981d491355e570dc61-release-f0b0c73438bbe0cda5c1058ee9990fcf-list-1"
+      data-bs-parent="#print-0926f4a9c0c689981d491355e570dc61-release-f0b0c73438bbe0cda5c1058ee9990fcf-list-1_accordion"
+    >
+      <div class="accordion-body"></div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</div>
+
+
+
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-0339c5af163875920ed3058e337bc9b0">1 - head</h1>
+    <div class="lead">Release head</div>
+	
+
+
+
+<div class="accordion mt-2" id="print-f0b0c73438bbe0cda5c1058ee9990fcf-release-f0b0c73438bbe0cda5c1058ee9990fcf-page-0_accordion">
+  <div class="accordion-item">
+    <h3 class="accordion-header" id="print-f0b0c73438bbe0cda5c1058ee9990fcf-release-f0b0c73438bbe0cda5c1058ee9990fcf-page-0">
+      <button
+        class="accordion-button"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#print-f0b0c73438bbe0cda5c1058ee9990fcf-release-f0b0c73438bbe0cda5c1058ee9990fcf-page-0_collapse"
+        aria-expanded="true"
+        aria-controls="print-f0b0c73438bbe0cda5c1058ee9990fcf-release-f0b0c73438bbe0cda5c1058ee9990fcf-page-0_collapse"
+      >Changelog<span class="badge rounded-pill bg-secondary ms-1">19</span>
+</button>
+    </h3>
+    <div
+      id="print-f0b0c73438bbe0cda5c1058ee9990fcf-release-f0b0c73438bbe0cda5c1058ee9990fcf-page-0_collapse"
+      class="accordion-collapse collapse show"
+      aria-labelledby="print-f0b0c73438bbe0cda5c1058ee9990fcf-release-f0b0c73438bbe0cda5c1058ee9990fcf-page-0"
+      data-bs-parent="#print-f0b0c73438bbe0cda5c1058ee9990fcf-release-f0b0c73438bbe0cda5c1058ee9990fcf-page-0_accordion"
+    >
+      <div class="accordion-body"><ul class="list-group">
+          <li class="list-group-item my-auto">
+            <p>Move project landings into the main site</p>
+<p>Publish every registered project&rsquo;s visitor-facing landing page at
+/projects/<name>/ from the main site instead of a dedicated subdomain, and
+retire the per-project Pages repository, CNAME, and Terraform DNS stage that
+existed only to serve one page derived from the project README.</p>
+<p>Each project owns its landing content in projects/<name>/site/content/ as pure
+content: no layouts, styles, or build rules. The main site packages those
+directories into content/projects/<name>/ from the registry in
+projects/projects.bzl, so membership is declared once. The landing is a short
+hand-written page for visitors while the README keeps its /docs/projects/<name>/
+URL for repository reference documentation, and landing front matter now feeds
+the statuses, languages, and tags taxonomies.</p>
+<p>Merge the reusable hugo_landing project into the main site: its shared canvas
+and accent styles and its landing page rules move into the apex tree, and its
+landing macro, generated configuration, standalone publisher, and
+repository-relative rewrite layouts are removed. The theme keeps owning the
+taxonomy and term layouts, which are richer than the heading-only versions the
+reusable project carried. Remove the now-unused apex deploy_project.sh and
+deploy_all.sh landing publishers with it.</p>
+<p>Retire the per-project publication and DNS ownership: the project landing
+targets and the landing deployment command, each landing project&rsquo;s
+dnsconfig.json and Terraform root, the build plumbing that served only those
+stages, and the landing repository and Pages membership in the repository
+catalog. The apex Terraform root is retained because it also declares VM
+resources, and no Vault configuration is changed.</p>
+<p>Replace the provider-snapshot zone files with generated declaration pages, one
+per destination view, that project the checked-in declarations and are verified
+for freshness by the DNS offline check. The DNS linter, both destination pages,
+the apex site, the skills projection, and the repository quality suite pass, and
+the whole repository builds.</p>
+<p>OpenSpec-Change: projects/alwaldend.com/openspec/changes/consolidate-project-landings-into-apex</p>
+<p>LLM-disclaimer: This commit was generated by an LLM.</p>
+
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">976a6a218ec8b3450fee44481674463b9c5115fd</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                PGP
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">-----BEGIN SSH SIGNATURE-----
+U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAg0/OoO0fyfgVXnUZTMZXlNFA3cn
+78YxSrrdPiskRJNxUAAAADZ2l0AAAAAAAAAAZzaGE1MTIAAABTAAAAC3NzaC1lZDI1NTE5
+AAAAQFCTwf73FSK2HZgURFxfuGc1FDJ7ZDAaDQ&#43;pmJIIsu2gjTQrOQf22bMN0TWvMdhL6j
+YsCh424/NCqnhwVpaE6Qk=
+-----END SSH SIGNATURE-----
+</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            <p>Manage forge resources with hermetic Terraform rules</p>
+<p>Centralize organization, repository, and named access configuration in
+infra/repos. Adopt existing GitHub resources, protect master defaults while
+retaining Pages publication on pages, and preserve existing repository
+identities. Manage GitLab one-time imports, the F-Droid metadata fork, and
+default-branch protections through Vault-backed authentication. Forgejo
+consumes the same catalog. Ongoing repository synchronization is deferred.</p>
+<p>Retire the eleven Bazel rule landing sites through their owning Terraform
+workflows, removing their DNS records, Pages repositories, and landing
+configuration. Move all twelve existing standalone rule modules into tools/
+and retain their public interfaces and documentation on the main site.</p>
+<p>Add tools/rules_terraform with verified provider downloads, packed mirrors
+in runfiles, and reusable Terraform execution rules. Enforce one version per
+provider source at an extensible resolution boundary. Migrate every Terraform
+consumer to thirteen shared provider pins in third_party/terraform. Execution
+and command maps belong to rules_terraform; consumers explicitly select generic
+AL wrappers for authentication and Vault injection. Remove tools/terraform
+and all 43 checked-in Terraform provider locks.
+Validate installed providers against the declared archives before execution.</p>
+<p>Validation covers all fourteen workspace builds, all thirteen standalone
+test suites, Terraform consumers, offline real-provider regressions, rendered
+documentation, formatting, and semantic lint. The full root test run has
+295 passing tests and one skip; its only failure is the historical secret
+scan, reduced to four pre-existing synthetic fixture matches. Earlier live
+imports and the exact landing retirement scope have verified postconditions;
+the Terraform rules migration uses only offline implementation checks.</p>
+<p>OpenSpec-Change: infra/repos/openspec/changes/archive/2026-09-13-adopt-shared-repository-catalog
+OpenSpec-Change: infra/src/openspec/changes/archive/2026-09-13-retire-bazel-rule-landings
+OpenSpec-Change: tools/rules_terraform/openspec/changes/archive/2026-09-14-add-hermetic-terraform-rules
+OpenSpec-Change: tools/rules_terraform/openspec/changes/archive/2026-09-14-correct-terraform-ownership</p>
+<p>LLM-disclaimer: This commit was generated by an LLM.</p>
+
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">6cb4d63c7b473cbff738332389c05168b9158cc4</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;bf4f0e49-086a-48b0-bafd-88001a8bf12d@simplelogin.alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            <p>Deploy project DNS through Terraform modules</p>
+<p>Move DNS ownership into each project’s Terraform state using shared modules.
+Load dnsconfig.json files at runtime, reject conflicting domain ownership,
+and render their records as a table. Add missing project AppRoles and scoped
+DNS policies, and document grouping related Terraform resources in modules.</p>
+<p>Deploy all 45 owners sequentially: adopt 155 existing records and create 13
+missing OpenHands records. Preserve every pre-existing provider record and
+verify no-op follow-up plans and DNS answers. Add DNS-scoped plan/show/apply
+wrappers with a saved-plan guard for roots that also manage services.
+Allow bounded aggregate path inventories large enough to deliver this migration
+while retaining truncation refusal in the delivery tool.</p>
+<p>Validate runtime ownership, provider imports and preservation with isolated
+fixtures, Terraform formatting, wrapper builds, repository quality checks,
+semantic lint, and project documentation/specification builds.</p>
+<p>OpenSpec-Change: infra/dns/openspec/changes/archive/2026-09-13-migrate-project-dns-to-terraform</p>
+<p>LLM-disclaimer: This commit was generated by an LLM.</p>
+
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">cc4f205bf73b49364ba3bd441b7f485b9872e742</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;bf4f0e49-086a-48b0-bafd-88001a8bf12d@simplelogin.alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            <p>Simplify OpenSpec workspace globs</p>
+<p>Collapse OpenSpec source globs to specs and changes, drop redundant
+package visibility blocks already covered by REPO.bazel, and regenerate
+the affected catalogs.</p>
+<p>LLM-disclaimer: This commit was generated by an LLM.</p>
+
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">c50fbf5a9fe9e8a99fe26a313eefd1154f841349</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;bf4f0e49-086a-48b0-bafd-88001a8bf12d@simplelogin.alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            <p>Provision XCP-ng with isolated AppRole access and deploy Forgejo</p>
+<p>Create one Xen Orchestra resource set and OIDC user per Vault AppRole.
+Bind access by trusted issuer and immutable Vault entity ID. Forgejo uses
+its own short-lived login and has access only to its resource set and VM.
+Resolve pools, templates, storage, networks and existing VMs by name.
+Manage pool and VM ACLs natively in Terraform; retain the XO API helper
+only for unsupported OIDC configuration, identity discovery and bootstrap.</p>
+<p>Deploy Forgejo at git.alwaldend.com through Ansible. Install the official
+XO OIDC plugin and Vault ACME certificates on XO and XCP-ng with managed
+renewal. Move PVE cloud-init into infra/cloud_init and derive Xen settings
+from that foundation using a repository Go template. Move XCP-ng Terraform
+to tf and retain one labeled AL configuration for administration.</p>
+<p>Discover Forgejo accounts and team access from Vault groups, adopting
+existing OIDC accounts without replacement. Reuse PVE&rsquo;s group/entity lookup
+policies and remove the bespoke user_entities policy.</p>
+<p>Require checked-in IaC for infrastructure and approval for exceptions.
+Include all configured formatter changes as requested.</p>
+<p>Goal-Ref: refine-shared-cloud-init-and-group-driven-infrastructu-b9aba214
+Attempt-ID: attempt-8c0d942b05f3</p>
+<p>LLM-disclaimer: This commit was generated by an LLM.</p>
+
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">550d7e79b1f5fdbc2b6017b75178471d6914082f</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;bf4f0e49-086a-48b0-bafd-88001a8bf12d@simplelogin.alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            <p>Publish project sites and reproducible infrastructure diagrams</p>
+<p>Build and deploy all 30 remaining project sites with the standard Docsy
+header, project descriptions and a linked documentation directory. Omit the
+repeated page title and generated language heading. Remove
+the unused cgit and xray_manager projects and retire their site resources.</p>
+<p>Add a repeatable GitHub Pages publisher, staged Terraform bootstrap and direct
+GitHub Pages DNS records. Preserve repeated publication when pages is the
+remote default branch, and include Rules ISO in the main documentation.
+Document site onboarding in a registered, validated skill. Keep AL
+introduction short with useful links and preserve its lifecycle details in
+a dedicated documentation page.</p>
+<p>Render all 15 existing infrastructure Drawio pages with pinned Drawio and
+Chrome inputs, sandboxed export actions, an update target and freshness
+checks, and include the maintained diagrams in infra/arch documentation.
+Paint an opaque white canvas to preserve readability in dark themes.</p>
+<p>Validation covers project and apex builds, rendered pages, publisher tests,
+diagram repeatability and freshness, DNS configuration, Terraform formatting,
+semantic lint and repository quality.</p>
+<p>Goal-Ref: build-and-deploy-every-project-landing-page-a782b800
+Attempt-ID: attempt-00941092c164</p>
+<p>LLM-disclaimer: This commit was generated by an LLM.</p>
+
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">491eb7e05aa1ef71ff8e01b4ad320cdc355edbee</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;bf4f0e49-086a-48b0-bafd-88001a8bf12d@simplelogin.alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            <p>Extract DNSControl setup into rules_dnscontrol</p>
+<p>Extract the DNSControl setup into <code>rules_dnscontrol</code>, generate its Bazel
+dependency bundle from project-owned record files, and update the DNS
+guidance. Move Hugo rules and the worker to role-based package paths, and
+give each non-nested project a locally owned Hugo landing target that reuses
+the shared README-to-landing macro.</p>
+<p>Clean all landing and Pages DNS records so GitHub Pages serves each project
+subdomain directly without Cloudflare proxying. Improve the main site with
+a three-panel home layout, complete project links, documentation explore
+links, and current deployment guidance.</p>
+<p>All affected root-workspace landing, DNS, and site targets pass, along with
+the nested <code>rules_hugo</code> tests, Buildifier, and repository quality checks.</p>
+<p>LLM-disclaimer: This commit was generated by an LLM.</p>
+
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">df7e40ff27251e8b4f9a4e399658f353087619d4</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;bf4f0e49-086a-48b0-bafd-88001a8bf12d@simplelogin.alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            <p>Add hermetic repository-wide formatting and linting</p>
+<p>Integrate upstream formatters for the repository&rsquo;s meaningful tracked source
+and configuration file types through Bazel, and add Buildifier, Ruff, and
+ShellCheck lint aspects for correctness-oriented repository-wide checks.</p>
+<p>Pin all new external tools through Bzlmod or the existing pnpm lock, add thin
+cache/runfiles adapters where required, expose format and check targets, and
+wire the checks into the pre-commit workflow. Format the existing tree and fix
+the correctness defects uncovered by the new checks. Preserve generated
+sources and exact-content fixtures that are not safely rewritable, and clarify
+that ordinary
+infrastructure build output is safe to display.</p>
+<p>Validation:</p>
+<ul>
+<li>all 21 repository quality and compatibility formatter tests pass</li>
+<li>Buildifier test passes</li>
+<li>lint aspects analyze all 4,629 ordinary root targets without findings</li>
+<li>the complete 18-command root and nested full-repository audit was exercised;
+remaining failures are documented environment or pre-existing test limits</li>
+</ul>
+<p>LLM-disclaimer: This commit was generated by an LLM.</p>
+
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">6c74af20480baad6cfbaa9bb4c42f4a33e02c450</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;bf4f0e49-086a-48b0-bafd-88001a8bf12d@simplelogin.alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            <p>Add standalone documentation rules</p>
+<p>Move docs_filegroup into a reusable rules_docs nested Bzlmod workspace and migrate every root and nested consumer to it. Add a module-aware Gazelle language that creates docs targets only for existing README packages while preserving manual mappings.</p>
+<p>Wire the workspace into module resolution, documentation aggregation, and the ten-command full-repo-check. Add the bazel-nested-module skill so future nested workspaces follow the repository&rsquo;s rc, lockfile, docs, toolchain, Gazelle, and validation conventions.</p>
+<p>Keep reviewed Gazelle dependency canonicalization, while protecting the hand-maintained Go proto, Python resource, Android, embedded-site, and skill runner definitions that generic language plugins would otherwise break.</p>
+<p>This commit was generated by an LLM.</p>
+
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">a0b20b74bed560720f5e9d878da53e8021859e66</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;bf4f0e49-086a-48b0-bafd-88001a8bf12d@simplelogin.alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            <p>Make release generation hermetic</p>
+<p>Add the missing AL and Kustomization release targets and give release actions a declared bare Git snapshot instead of access to the workspace repository.\n\nThis commit was generated by an LLM.</p>
+
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">7c81ab3f13be1e5b7efda3bb1e4ed5a64d75f9d6</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;bf4f0e49-086a-48b0-bafd-88001a8bf12d@simplelogin.alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            Move traefik into a separate kustomization
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">dac9ea5882a67ad748f3e5f41067202946b251eb</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;simeonwarren@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;simeonwarren@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                PGP
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEFuxvv2wIGF1W5BG5192IqwwHN/IFAmpVL/QACgkQ192IqwwH
+N/IJyBAAsvVMCS0Vtzqw5oIIGblix3ATPD5BuU3OorRIBlDHBy80C5F1yw9oj3fe
+6J6r8/HebLNx1pKIIWd&#43;m6OnpDAHOVr5rtBMIWq6mAxkg5i/BQvttSZInBbKeF8Q
+6HgFdG8Bb0QCDtAAKGt8JeIQ1Iuy7GZy&#43;2Aotg2HsyZtAhYiTcp92Z/pmSQNtApp
+sLVivjWuvgTz3i2nEevYIz04QE&#43;ZqXTGsNm56Qyhsz/0MWGJBbLXsT7ji0AwDSWa
+8j4DNSMOS3dhSOGsXE5TOm3J9NaS3RAci5k4AlRnVVCbbt4a47YOJmhBdO5sGMWD
+KiTvXQyXNSUJOGF9enf8R0ZLsdweEN7RhOrdfrrrwPeztHuGCamrP9GbBsLs/6w&#43;
+ISoWjdyTOt2iq&#43;WQrlHt0Tp6hNbZkj0WgrV76drj/WP5Pvz4qDtPlGBj2fd5GNzA
+KZuU8rg8VjrC2lNBQk7AZ/Que7pq58yeKz0j7VZkScIogHejbgj/9Qdx2STwA4qO
+LiO9g8W63s&#43;2fMnp1kYCtNO/suv6FBzQPxkHhiRW&#43;ADJ2UJHhTpfMRKgSaygpIZj
+yjA/nMfDmg7EfeOCACDgP20jvrfgkwLEYN94rcfyPo1hLSa1woYRwyNQ6jdPPpdh
+WANHfAaXLay0BnG7mrvI&#43;fuYQYiwu1no8&#43;4VLhjXaFEq2vaK6gc=
+=aT9P
+-----END PGP SIGNATURE-----
+</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            Fix ca.crt path
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">b8a889595153d9bcf42fe895f931d59ce6891e46</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;simeonwarren@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;simeonwarren@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                PGP
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEFuxvv2wIGF1W5BG5192IqwwHN/IFAmpVKSQACgkQ192IqwwH
+N/KMrhAA18UsdYJ3aMpkCFaCUW/pSB8mIjXwP9vCUifSUPhjTXxfeh1BMf/qX5JG
+jLWmbL5O6z8TwLpSZczOUfLYa7s3hfy8f0J8MCkAOVQo7WZVHFnKNpwA&#43;kgZFEHO
+e0HXxjZ5cpDzR9wloLmnhQcOUxwZ4/MukD0NgMVp9mn9TVPUbpUQVb9hA8kq2Eeu
+8C2KtvVo0CUN/cKaBAkSPkjLV9SLi3zfvdqVYZCDvcR6QHA5WHKZRtKI/7Qy8S&#43;9
+5ghfvVi7xXjFGfQ1sZmg5MKAZmCUw7P&#43;/8MF3f5chyV9GzFYp0IHOlAVbz3N&#43;gyP
+ObPZ5WQpxV1UIZokg/w78PB0RK/Artx&#43;N8ttsgls2mQ4feRWIGBSLwiOJryg3K1D
+OJvLlr&#43;h4g3N/3R/K4lfDkJj51jAjGxGSfCx6Q&#43;G&#43;oGYtTR2VdRPA9pwO2qyR/oq
+/uyT5OOF6EmVZJDA8Y69TNpOPnpy&#43;IYQqdm36QetSxXSbeB4SjDRX7bTfFRGIccH
+zXRvtfZdnd/oYsRoOQz9dzvFWGzT5OTZTw0FFes/H1mfV5XriEQDlvLV1setaeXj
+ayAgYVmvDVM0jZvZ89LFP&#43;BCc0iHBvilt58b/oPgCFIuADOO3Gxvgx/JFthVKtn0
+yuMqBBxjCekn7hYMtjKyhLLGkv3NdXa3vW608Hp0wZ9S4Ko7C1w=
+=kjC/
+-----END PGP SIGNATURE-----
+</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            Move cert-manager into a reusable kustomization
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">be8128b253a50cf09c0e3ca892edbe61f093aa66</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;simeonwarren@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;simeonwarren@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                PGP
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEFuxvv2wIGF1W5BG5192IqwwHN/IFAmpVKLAACgkQ192IqwwH
+N/IwdhAA34Qhrl0cO0LKgNsQX2AcN96htGwKnFB3UcyJM3abVm9RBQdBbLdiM6FC
+uzu1ZyKpuni9fVkt36k/KoLRFpmb7PP4Z1LekEgiiBf4C7ZqDMB5bkPrrXwzRXjr
+cVlfHU1TAHQdn84XiFbN7D&#43;wBeneCTO7bSKVR&#43;/xoOjQwPNmo15QS2wu1pdpiwgw
+Q1vad7UFksEEPNyx&#43;h4AEfdNjTQ3wf0mmaa/kzhUHugslotkPJ7c0SNTjwCMxoxN
+dW17q23y64Cud89I0eZTVeyVRwlj4Gjc7ttGdAniW4hcQDnh6BsORR10LZg7ed4Y
+cLi/VO1&#43;No&#43;YtqJVAVj1qken2jktW5&#43;9zXKCbU7RYDCxzEtQGPTxEY9c8iCa7SdI
+vH6rsVQh2lxV25ggCrtLUF2r4tMz5DT186QuyR0ylRfuMQcEO&#43;drCfVi6RyzGxy&#43;
+s6UPr1n5QKBgRc4rRX9bt2cvoocZKeBritrk9Q8ba1Q1gZkWt9T0zufRKEP4OhZp
+//qNlyVxlgV464JRBT&#43;rJz&#43;1/C2AtOsSIP7mTt&#43;DFTx4OHxJWAnyiuotSZVucRfA
+B2w0EULcM2cKl3rGXrMSMXD/rIt9thLBGbaWauRhmq10JjerWqCFqhKLcHA2h3bF
+vH4ucchw&#43;50sALIzdaIc40sGp5nw2bBgyIHDZTbjODTGug8TmtY=
+=5NVW
+-----END PGP SIGNATURE-----
+</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            Fix CA path
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">e42debd10dbeebc540b1e28e6893b89b147b5e1b</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;simeonwarren@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;simeonwarren@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                PGP
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEFuxvv2wIGF1W5BG5192IqwwHN/IFAmpThqIACgkQ192IqwwH
+N/LUzg/7BQUQkIhQ7fARUoyo3H98J8GQ57TkgbUZWhouaDoB7Z0ZAmPacOyxaQxi
+sNTddL7uGxIh4JjogfqTFkIPgTLk2HXkzWwKYYOi5IVJQVCL&#43;COtxx6tRFNSffS3
+Aw544TlKJNXSVe&#43;uqxtuCrNampRJ33dPoD/Jxwox7m9oAj9QGf87swikr1RuvBww
+&#43;dKT3in&#43;KX4LdQLKZbmacD8RxDTSu6hNa5seOG8suOuddCSjfHUXFavQimW9reQ7
+jeC2rb1yPm&#43;3DiA7gxYxXbPCDMO1pOi0t7VJcWh/271M2YgC7InoH3WXNGxwmLmR
+i5U8Dq5VZLe21rwaIPxquyPkHYOwL6bxcxT2G/yckYguwgOmzJW//bk26LHb0fjh
+Fzg4s9zSpeVJhSO9HUGyS3bgFBq0usTorZrlYOcdJhViFsqyAVFl4y8ENWMLAvf8
+7WWniNriUuhdtV0tIWTnmvDnbjiLdJCG8B/0y3TxhN5KiLSuixiZAl04mfWP4ISj
+FG/Ezg87P/2HJZY356Ll0T2uKnrIqG9SkNFPCs7GVvuIh/f3Bc5eaR1&#43;XnLYrsip
+70RYs5iJ&#43;CzOq88ZgLt9aYAHvQg&#43;59uOAjH95kPFbuYBP90aDvt3h&#43;ec7LKLAO&#43;P
+FOs&#43;9z1uLQ2BmJcjUwceM2njrgOvYoLDUiaI9LuPdjXk8TUSD4U=
+=hXTY
+-----END PGP SIGNATURE-----
+</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            Update ca path
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">6cb2f0201c2dc56ce687bc8486a888c5686ccc67</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;simeonwarren@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;simeonwarren@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                PGP
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEFuxvv2wIGF1W5BG5192IqwwHN/IFAmpThhcACgkQ192IqwwH
+N/JXYRAAhWhUfUThIsKfPacksnc6eobn1ZQRcTLxLPYXHHV/K2eiisaNkZmtNk0W
+utQzMlXHNzvf7&#43;OCnuxmvgwYPDTqguaiRw6z9w1EVCpSJ2MU/li2HPbj0&#43;cqsKXi
+42XR9Zrx25bbS8kMCvm0Q1k8L1kTF0Z3cqU3Pc6D4CjYZFpOf3dDz11cEwwJbi6K
+hrOqehGQdJuVD8Jvs7xtZy&#43;3T9H9ooqcSH3LnWs3hp7ff6QmY11NNlB8hazh0Ioy
+xWeTDs3Bl4Nt8iB9XlA3&#43;Yi6vuEZEYaEU/Gkl/3IeTpIkKDydpQuAYVinLkwXCb5
+3DdLc1p42gfTAlJKHA44ffjlEfZmvOncb02d9&#43;T8Ka349zraWrM2Ahr80PesgP/&#43;
+ubE00q7&#43;2BXtXPmoTJVniSMz0XR5t67gFpSHsmyu8Xl&#43;PN0MfLDBJH8h9O64S0kW
+XlcIggdtEpNg08yeBwnMGCPpsVaYnkYP6HPhBLP/17ZWe&#43;1PwDaud12njCUPtRF0
+Mw/CbuH3AEl4AY1sqAXOvJVxPHZCvn9&#43;QN8dDedLWuRxbZDgjo2FfD6e3DOFcw7g
+raPKEuxA8owsL0bi3tA1JuisMVpjvG5sNgv0M3zXaJtRCnplPGsS6igxxuARWB&#43;/
+4DLrNg5aFPLAXPQH&#43;KElsjBHTMC6CVCjE7Khfaht6WUQUmTPuLc=
+=Z1qW
+-----END PGP SIGNATURE-----
+</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            Create //projects/kustomization
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">71441f5a14072690c8712add0f88b97f25d27347</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;simeonwarren@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;simeonwarren@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                PGP
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEFuxvv2wIGF1W5BG5192IqwwHN/IFAmpThRwACgkQ192IqwwH
+N/LEhBAAl30H63hW7Wxwve9bBDcldM2hboPIPmC2um4Fz17d3iPtNQ1xmRucv197
+UNb/xGgg8DbD352fxOYIw5ffOpGQpUIYtJQqJyG5soI&#43;RuLYnfyybRcM1k1UVore
+qCG7eH6p0Wecm8oGfdo9EZ/1sJoF8RZcqgPBkJx238kmtQkeVXjBZgZblmSC8XNF
+sMzmwbSp4R9f9Y0DcA3pWK0xyA4gLlhn19vCps2F4ZpZl&#43;e5Ac6F4k0q91b/8OuZ
+SFAprRQSRnbBRq/vMFZ3XewZIxTuqZvgrm6gzgOttK/sjWo4525FHqnEXSEdGsA7
+5OnWVHWCwO/UxJSBd7GIj7yyX4y4gs&#43;jLaLu8Ca0fdt//aRcFcGR9LriaIY5u2x2
+7mwUsnMPJDNRAfLb4A/abeipexzC&#43;IOVCBzLLVBrruQDfm9O3zihDNOGKNTwSdRb
+rlke4trrcFN70MpqWRCVJK1mKQhZ2FIknwPshLQur8v7Mmow&#43;YVRC7lVEwdtZUse
+5ZN3OmmrF8Y0cEoUTMgIPabF9&#43;3yIMPdUI1V1BBbYuq&#43;&#43;icUyKgZ7CFRFEL8bHVB
+P10Y7Kd6d2qFKyzZQ5Li60W377WVbdJpUH8wyMH0diEwUrEtPuMcYbp3dJ8xcMsa
+Js6qDOu0Tc9wXDswgx&#43;mrwJdnuI84cQGUm5ef89eqmHrpbGAgRw=
+=JqCb
+-----END PGP SIGNATURE-----
+</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            Initial commit
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">00bcaa157103012b187a208a240dc4b6e9feaeec</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;simeonwarren-git-pzewq@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarren &lt;simeonwarren-git-pzewq@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            <p>Add spellcheck skill</p>
+<p>This commit was generated by an LLM.</p>
+
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">28444214f7295282ff11dcb7aa83d8ad827ab8b4</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                PGP
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">-----BEGIN SSH SIGNATURE-----
+U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAg0/OoO0fyfgVXnUZTMZXlNFA3cn
+78YxSrrdPiskRJNxUAAAADZ2l0AAAAAAAAAAZzaGE1MTIAAABTAAAAC3NzaC1lZDI1NTE5
+AAAAQFleXCIfJFf2rgDHhwXqPLotFU4BO88V9IdIUoSObYTaiLW/Fo47g2NLUnF97uDMfx
+99QQEo1a8VTCBw5ZM6YQs=
+-----END SSH SIGNATURE-----
+</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul><ul class="list-group">
+          <li class="list-group-item my-auto">
+            <p>Restore light and dark site canvases and set the shared accent</p>
+<p>The shared Docsy canvas set the same Bootstrap dark palette and the same
+black page background on <code>:root</code>, <code>[data-bs-theme=&quot;light&quot;]</code>, and
+<code>[data-bs-theme=&quot;dark&quot;]</code>, so the light/dark toggle changed nothing. The site
+also rendered Bootstrap&rsquo;s stock blue instead of its intended accent.</p>
+<p>Split the shared palette so light mode uses a pure white canvas with the
+light-mode palette and dark mode uses a pure black canvas with the dark-mode
+palette, and keep the pre-stylesheet paint and footer on the active mode.
+Assign <code>$primary</code> to <code>#7c3aed</code> before Bootstrap compiles, so links, buttons,
+badges, focus rings, and the dark-mode link tint all derive from one value
+rather than from a site-local copy.</p>
+<p>Both files stay in the reusable shell; the apex site consumes them through
+the existing declared exports and no longer carries the footer&rsquo;s own blue.</p>
+<p>OpenSpec-Change: projects/hugo_landing/openspec/changes/restore-light-dark-canvas-and-accent</p>
+<p>LLM-disclaimer: This commit was generated by an LLM.</p>
+
+          </li>
+          <li class="list-group-item"><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Hash
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">022861965f3e3407c0f630dd5827b54bb87ee779</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Author
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                Committer
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">simeonwarrenbot &lt;simeonwarrenbot@alwaldend.com&gt;</pre>
+                  </span>
+                </li>
+              </ul>
+            </div><div class="btn-group me-2">
+              <button
+                class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+              >
+                PGP
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <span class="dropdown-item-text">
+                    <pre class="my-auto">-----BEGIN SSH SIGNATURE-----
+U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAg0/OoO0fyfgVXnUZTMZXlNFA3cn
+78YxSrrdPiskRJNxUAAAADZ2l0AAAAAAAAAAZzaGE1MTIAAABTAAAAC3NzaC1lZDI1NTE5
+AAAAQP&#43;VcOIIqPR8DY7q4bmucDZO9dJLiApozQqq/IQXHkw4cm9pr98jiPQVSU0J4UBBtx
+0yeucLMBAFev0fFMYQigY=
+-----END SSH SIGNATURE-----
+</pre>
+                  </span>
+                </li>
+              </ul>
+            </div></li>
+        </ul></div>
+    </div>
+  </div>
+</div><div class="accordion mt-2" id="print-f0b0c73438bbe0cda5c1058ee9990fcf-release-f0b0c73438bbe0cda5c1058ee9990fcf-page-1_accordion">
+  <div class="accordion-item">
+    <h3 class="accordion-header" id="print-f0b0c73438bbe0cda5c1058ee9990fcf-release-f0b0c73438bbe0cda5c1058ee9990fcf-page-1">
+      <button
+        class="accordion-button"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#print-f0b0c73438bbe0cda5c1058ee9990fcf-release-f0b0c73438bbe0cda5c1058ee9990fcf-page-1_collapse"
+        aria-expanded="true"
+        aria-controls="print-f0b0c73438bbe0cda5c1058ee9990fcf-release-f0b0c73438bbe0cda5c1058ee9990fcf-page-1_collapse"
+      >Artifacts<span class="badge rounded-pill bg-secondary ms-1">0</span>
+</button>
+    </h3>
+    <div
+      id="print-f0b0c73438bbe0cda5c1058ee9990fcf-release-f0b0c73438bbe0cda5c1058ee9990fcf-page-1_collapse"
+      class="accordion-collapse collapse show"
+      aria-labelledby="print-f0b0c73438bbe0cda5c1058ee9990fcf-release-f0b0c73438bbe0cda5c1058ee9990fcf-page-1"
+      data-bs-parent="#print-f0b0c73438bbe0cda5c1058ee9990fcf-release-f0b0c73438bbe0cda5c1058ee9990fcf-page-1_accordion"
+    >
+      <div class="accordion-body"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        Built with <a href="https://gohugo.io/">Hugo 0.165.0</a>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="/js/main.min.259204f469f58eb3b665605a24e964264772df2adaded180b3669b6ce33d84c8.js" integrity="sha256-JZIE9Gn1jrO2ZWBaJOlkJkdy3yra3tGAs2abbOM9hMg=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.decf3b53d8827d840369f490775626e2a5200e150a733f78f0081c126426cbbf.js" integrity="sha256-3s87U9iCfYQDafSQd1Ym4qUgDhUKcz948AgcEmQmy78=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

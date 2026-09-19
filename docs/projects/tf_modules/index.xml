@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Tf modules on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/docs/projects/tf_modules/</link>
+		<description>Recent content in Tf modules on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/docs/projects/tf_modules/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title></title>
+				<link>https://www-staging.alwaldend.com/docs/projects/tf_modules/openspec/specs/dns-records/spec/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/tf_modules/openspec/specs/dns-records/spec/</guid>
+				<description>&lt;h1 id=&#34;dns-records-specification&#34;&gt;dns-records Specification&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#dns-records-specification&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#purpose&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Provide one canonical DNS transformation for project-local Terraform resources&#xA;and offline inspection, preserving declared names, values, and view ownership.&lt;/p&gt;&#xA;&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirements&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id=&#34;requirement-normalize-canonical-declarations-without-providers&#34;&gt;Requirement: Normalize canonical declarations without providers&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirement-normalize-canonical-declarations-without-providers&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The module SHALL accept decoded owner DNS documents and a zone, flatten every&#xA;supported type member, expand and deduplicate destinations, and expose one&#xA;normalized map without provider configuration. It SHALL reject unsupported&#xA;types, destinations, malformed members, and absolute names outside the zone.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title></title>
+				<link>https://www-staging.alwaldend.com/docs/projects/tf_modules/openspec/specs/project-dns/spec/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/tf_modules/openspec/specs/project-dns/spec/</guid>
+				<description>&lt;h1 id=&#34;project-dns-specification&#34;&gt;project-dns Specification&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#project-dns-specification&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#purpose&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Record the retirement of this project&amp;rsquo;s landing DNS infrastructure while&#xA;preserving its repository documentation and builds.&lt;/p&gt;&#xA;&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirements&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id=&#34;requirement-keep-landing-infrastructure-retired&#34;&gt;Requirement: Keep landing infrastructure retired&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirement-keep-landing-infrastructure-retired&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The project SHALL have no dedicated landing DNS declaration, Terraform root, or&#xA;operational source export. Its landing page SHALL be published by the main site&#xA;under &lt;code&gt;/projects/tf_modules/&lt;/code&gt; instead of a dedicated hostname.&lt;/p&gt;&#xA;&lt;h4 id=&#34;scenario-inspect-the-project-after-landing-retirement&#34;&gt;Scenario: Inspect the project after landing retirement&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#scenario-inspect-the-project-after-landing-retirement&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;WHEN&lt;/strong&gt; the project tree is consumed&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;THEN&lt;/strong&gt; it contains no landing DNS declaration, Terraform DNS stage, or&#xA;landing build target, and the main site owns its landing page.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title></title>
+				<link>https://www-staging.alwaldend.com/docs/projects/tf_modules/openspec/specs/project-tf-modules/spec/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/tf_modules/openspec/specs/project-tf-modules/spec/</guid>
+				<description>&lt;h1 id=&#34;reusable-terraform-modules&#34;&gt;Reusable Terraform modules&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#reusable-terraform-modules&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#purpose&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Provide reusable infrastructure declarations for Vault, virtual machines,&#xA;storage, and related services. This baseline was observed at repository&#xA;revision &lt;code&gt;550d7e79&lt;/code&gt; on 2026-09-08. The collection remains in progress according&#xA;to its &lt;a href=&#34;https://www-staging.alwaldend.com/docs/projects/tf_modules/&#34;&gt;README&lt;/a&gt;. Sources for the&#xA;representative module contracts below are the&#xA;&lt;a href=&#34;../../../vault_approle/main.tf&#34;&gt;AppRole module&lt;/a&gt;,&#xA;&lt;a href=&#34;../../../vault_transit_key/main.tf&#34;&gt;transit-key module&lt;/a&gt;,&#xA;&lt;a href=&#34;../../../backup_bucket/main.tf&#34;&gt;backup-bucket module&lt;/a&gt;, and&#xA;&lt;a href=&#34;../../../vault_approle/BUILD.bazel&#34;&gt;module packaging&lt;/a&gt;.&#xA;These are declarative source contracts; no live provisioning is asserted.&lt;/p&gt;&#xA;&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirements&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id=&#34;requirement-package-reusable-module-source&#34;&gt;Requirement: Package reusable module source&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirement-package-reusable-module-source&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The AppRole, transit-key, backup-bucket, and Proxmox VM module packages SHALL&#xA;each expose their &lt;code&gt;main.tf&lt;/code&gt; through a same-named Bazel filegroup available to&#xA;repository subpackages.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Pve on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/docs/infra/pve/</link>
+		<description>Recent content in Pve on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/docs/infra/pve/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title></title>
+				<link>https://www-staging.alwaldend.com/docs/infra/pve/openspec/specs/infra-pve/spec/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/pve/openspec/specs/infra-pve/spec/</guid>
+				<description>&lt;h1 id=&#34;proxmox-infrastructure-specification&#34;&gt;Proxmox infrastructure Specification&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#proxmox-infrastructure-specification&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#purpose&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Specify the Proxmox cluster configuration, resource pools, and bootstrap test&#xA;VM owned by &lt;code&gt;infra/pve&lt;/code&gt;. The baseline is checked-in source at revision&#xA;&lt;code&gt;550d7e79b1f5fdbc2b6017b75178471d6914082f&lt;/code&gt;, observed on 2026-09-08.&#xA;It describes declared infrastructure and packaged operator entry points;&#xA;deployment and cluster health have not been observed for this baseline.&lt;/p&gt;&#xA;&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirements&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id=&#34;requirement-approle-resource-pools&#34;&gt;Requirement: AppRole resource pools&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirement-approle-resource-pools&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The Terraform configuration SHALL resolve the members of Vault&amp;rsquo;s &lt;code&gt;approles&lt;/code&gt;&#xA;identity group and declare one Proxmox pool per resolved entity, keyed and&#xA;named by that entity&amp;rsquo;s name. It SHALL also declare a separate &lt;code&gt;templates&lt;/code&gt; pool.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title></title>
+				<link>https://www-staging.alwaldend.com/docs/infra/pve/openspec/specs/owned-dns/spec/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/pve/openspec/specs/owned-dns/spec/</guid>
+				<description>&lt;h1 id=&#34;owned-dns-specification&#34;&gt;owned-dns Specification&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#owned-dns-specification&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#purpose&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Define Proxmox cluster DNS management through the owner&amp;rsquo;s &lt;code&gt;tf&lt;/code&gt; root,&#xA;including canonical declarations, scoped credentials, and offline source checks&#xA;before adopting live records.&lt;/p&gt;&#xA;&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirements&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id=&#34;requirement-owner-local-dns-configuration&#34;&gt;Requirement: Owner-local DNS configuration&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirement-owner-local-dns-configuration&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The &lt;code&gt;tf&lt;/code&gt; root SHALL consume this owner&amp;rsquo;s canonical &lt;code&gt;dnsconfig.json&lt;/code&gt; through&#xA;the shared DNS Terraform module, preserving declared record identities and views.&#xA;DNS resources SHALL default to disabled until the authorized adoption revision&#xA;and SHALL retain enabled ownership after existing records are imported into the&#xA;owner&amp;rsquo;s state. Reconciliation against unchanged declarations and adopted state&#xA;SHALL propose no record additions, changes, replacements, or deletions.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

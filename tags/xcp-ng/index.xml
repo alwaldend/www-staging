@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Xcp-Ng on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/tags/xcp-ng/</link>
+		<description>Recent content in Xcp-Ng on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/tags/xcp-ng/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>forgejo</title>
+				<link>https://www-staging.alwaldend.com/docs/infra/forgejo/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/forgejo/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Docs: &lt;a href=&#34;https://forgejo.org/docs/latest/admin/installation/binary/&#34;&gt;https://forgejo.org/docs/latest/admin/installation/binary/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Config reference: &lt;a href=&#34;https://forgejo.org/docs/latest/admin/config-cheat-sheet/&#34;&gt;https://forgejo.org/docs/latest/admin/config-cheat-sheet/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;repository-configuration&#34;&gt;Repository configuration&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#repository-configuration&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Service Terraform consumes the shared &lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/repos/&#34;&gt;repository catalog&lt;/a&gt;&#xA;for organization-owned repositories and named administrator/developer roles.&#xA;Vault continues to own OIDC login identities and service-specific access.&#xA;See &lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/forgejo/tf/&#34;&gt;service Terraform&lt;/a&gt; for identity validation, state adoption,&#xA;and the preserved automation grants.&lt;/p&gt;&#xA;&lt;h2 id=&#34;deployment&#34;&gt;Deployment&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#deployment&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Forgejo is recreated on XCP-ng through Xen Orchestra, using the&#xA;&lt;code&gt;src_infra_dc1_forgejo1&lt;/code&gt; resource set provisioned by &lt;code&gt;infra/xcp_ng&lt;/code&gt;.&#xA;VM provisioning authenticates to XO through Vault OIDC as Forgejo&amp;rsquo;s own&#xA;AppRole. Its exact synchronized user receives the resource-set membership&#xA;and an explicit administration ACL on the existing Forgejo VM; it does not&#xA;use the shared infrastructure administrator token. These bindings must be&#xA;applied by &lt;code&gt;infra/xcp_ng/tf&lt;/code&gt; before Forgejo&amp;rsquo;s setup Terraform runs.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>org_xcp_ng</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/org_xcp_ng/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/org_xcp_ng/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Download: &lt;a href=&#34;https://updates.xcp-ng.org/isos/8.3/&#34;&gt;https://updates.xcp-ng.org/isos/8.3/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Tf setup</title>
+				<link>https://www-staging.alwaldend.com/docs/infra/forgejo/tf_setup/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/forgejo/tf_setup/</guid>
+				<description>&lt;p&gt;This package creates a Xen Orchestra VM in the &lt;code&gt;src_infra_dc1_forgejo1&lt;/code&gt;&#xA;resource set. &lt;code&gt;infra/forgejo/al.lua&lt;/code&gt; authenticates with Forgejo&amp;rsquo;s own Vault&#xA;AppRole and the packaged XO OIDC login plugin. The plugin supplies a temporary&#xA;XO token and revokes it on shutdown; no infrastructure administrator token&#xA;is loaded. The setup HTTP backend remains owned by the same Forgejo config.&lt;/p&gt;&#xA;&lt;p&gt;Before running this package, bootstrap the AppRole&amp;rsquo;s XO OIDC user and apply&#xA;its resource-set membership and existing VM ACL through &lt;code&gt;infra/xcp_ng/tf&lt;/code&gt;.&#xA;Subjects are matched by immutable Vault entity UUID under the configured&#xA;OIDC issuer, not by login name or AppRole group membership. See&#xA;&lt;a href=&#34;../../xcp_ng/cmd/xo_login/README.md&#34;&gt;XO authentication&lt;/a&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Tf setup</title>
+				<link>https://www-staging.alwaldend.com/docs/infra/openhands/tf_setup/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/openhands/tf_setup/</guid>
+				<description>&lt;p&gt;This package creates Xen Orchestra VMs in the &lt;code&gt;src_infra_openhands&lt;/code&gt; resource&#xA;set for the three OpenHands components that run off host-bot: Agent Canvas,&#xA;the agent server, and the automation server. &lt;code&gt;infra/openhands/al.lua&lt;/code&gt;&#xA;authenticates with OpenHands&amp;rsquo; own Vault AppRole and the packaged XO OIDC login&#xA;plugin. The plugin supplies a temporary XO token and revokes it on shutdown;&#xA;no infrastructure administrator token is loaded. The setup HTTP backend&#xA;remains owned by the same OpenHands config.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>XCP-ng</title>
+				<link>https://www-staging.alwaldend.com/docs/infra/xcp_ng/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/xcp_ng/</guid>
+				<description>&lt;p&gt;Terraform in &lt;code&gt;tf&lt;/code&gt; manages a Xen Orchestra resource set for every&#xA;entity in Vault&amp;rsquo;s &lt;code&gt;approles&lt;/code&gt; group, following &lt;code&gt;infra/pve/tf&lt;/code&gt;. Resource sets&#xA;are the XO grouping and delegation mechanism; XCP-ng host pools represent&#xA;physical clusters and are not created per AppRole.&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;resource_set_inventory&lt;/code&gt; assigns a pool, template, storage repository and&#xA;network by name to each AppRole. Native provider lookups resolve their IDs&#xA;and reject ambiguous matches. Forgejo and OpenHands have assignments by default;&#xA;other sets remain empty. Subjects are the exact synchronized OIDC users&#xA;selected by Vault issuer and immutable AppRole entity UUID. Bootstrap has&#xA;synchronized the 18 AppRole users; new AppRoles need their first OIDC login&#xA;before Terraform can bind their sets. &lt;code&gt;resource_set_cpu_limit&lt;/code&gt; defaults to&#xA;32 CPUs per set. Creating a set does not allocate CPUs or storage.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

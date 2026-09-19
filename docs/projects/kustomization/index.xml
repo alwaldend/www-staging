@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Kustomization on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/docs/projects/kustomization/</link>
+		<description>Recent content in Kustomization on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/docs/projects/kustomization/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title></title>
+				<link>https://www-staging.alwaldend.com/docs/projects/kustomization/openspec/specs/project-dns/spec/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/kustomization/openspec/specs/project-dns/spec/</guid>
+				<description>&lt;h1 id=&#34;project-dns-specification&#34;&gt;project-dns Specification&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#project-dns-specification&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#purpose&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Record the retirement of this project&amp;rsquo;s landing DNS infrastructure while&#xA;preserving its repository documentation and builds.&lt;/p&gt;&#xA;&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirements&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id=&#34;requirement-keep-landing-infrastructure-retired&#34;&gt;Requirement: Keep landing infrastructure retired&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirement-keep-landing-infrastructure-retired&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The project SHALL have no dedicated landing DNS declaration, Terraform root, or&#xA;operational source export. Its landing page SHALL be published by the main site&#xA;under &lt;code&gt;/projects/kustomization/&lt;/code&gt; instead of a dedicated hostname.&lt;/p&gt;&#xA;&lt;h4 id=&#34;scenario-inspect-the-project-after-landing-retirement&#34;&gt;Scenario: Inspect the project after landing retirement&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#scenario-inspect-the-project-after-landing-retirement&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;WHEN&lt;/strong&gt; the project tree is consumed&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;THEN&lt;/strong&gt; it contains no landing DNS declaration, Terraform DNS stage, or&#xA;landing build target, and the main site owns its landing page.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title></title>
+				<link>https://www-staging.alwaldend.com/docs/projects/kustomization/openspec/specs/project-kustomization/spec/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/kustomization/openspec/specs/project-kustomization/spec/</guid>
+				<description>&lt;h1 id=&#34;kustomization-specification&#34;&gt;Kustomization Specification&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#kustomization-specification&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#purpose&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Provide in-progress Kubernetes resource definitions for Flux, Traefik, and&#xA;cert-manager. This baseline records declared resources at revision&#xA;&lt;code&gt;550d7e79b1f5fdbc2b6017b75178471d6914082f&lt;/code&gt;, observed on 2026-09-08. It does not&#xA;assert successful rendering, reconciliation, or a deployed cluster state.&lt;/p&gt;&#xA;&lt;p&gt;Sources: &lt;a href=&#34;https://www-staging.alwaldend.com/docs/projects/kustomization/&#34;&gt;project README&lt;/a&gt;,&#xA;&lt;a href=&#34;../../../flux-repo/flux-git-src.yaml&#34;&gt;Flux source&lt;/a&gt;,&#xA;&lt;a href=&#34;../../../traefik/flux/release.yaml&#34;&gt;Traefik release&lt;/a&gt;,&#xA;&lt;a href=&#34;../../../traefik/remote/kustomization.yaml&#34;&gt;Traefik remote resources&lt;/a&gt;,&#xA;and &lt;a href=&#34;../../../cert-manager/flux/release.yaml&#34;&gt;cert-manager release&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirements&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id=&#34;requirement-scoped-flux-repository-source&#34;&gt;Requirement: Scoped Flux repository source&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirement-scoped-flux-repository-source&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The Flux GitRepository declaration SHALL select the repository&amp;rsquo;s &lt;code&gt;master&lt;/code&gt;&#xA;branch, refer to the &lt;code&gt;flux-git-src&lt;/code&gt; credential secret, and include only &lt;code&gt;infra&lt;/code&gt;&#xA;and &lt;code&gt;projects/kustomization&lt;/code&gt; from the repository through its ignore rules.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

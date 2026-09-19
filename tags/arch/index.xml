@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Arch on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/tags/arch/</link>
+		<description>Recent content in Arch on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/tags/arch/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Architecture</title>
+				<link>https://www-staging.alwaldend.com/docs/infra/arch/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/arch/</guid>
+				<description>&lt;p&gt;These diagrams render every page of the checked-in &lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/arch/arch.drawio&#34;&gt;Drawio source&lt;/a&gt;.&#xA;They describe the source document, not a live inventory or health check. Pages&#xA;marked &lt;strong&gt;Archive&lt;/strong&gt; retain the source&amp;rsquo;s historical classification.&#xA;Open an image for its full-size SVG.&lt;/p&gt;&#xA;&lt;h2 id=&#34;dc1&#34;&gt;DC1&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#dc1&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/arch/assets/dc1.svg&#34;&gt;&lt;img src=&#34;https://www-staging.alwaldend.com/docs/infra/arch/assets/dc1.svg&#34; alt=&#34;DC1 infrastructure diagram&#34; loading=&#34;lazy&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;vault&#34;&gt;Vault&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#vault&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/arch/assets/vault.svg&#34;&gt;&lt;img src=&#34;https://www-staging.alwaldend.com/docs/infra/arch/assets/vault.svg&#34; alt=&#34;Vault infrastructure diagram&#34; loading=&#34;lazy&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;flux&#34;&gt;Flux&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#flux&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/arch/assets/flux.svg&#34;&gt;&lt;img src=&#34;https://www-staging.alwaldend.com/docs/infra/arch/assets/flux.svg&#34; alt=&#34;Flux infrastructure diagram&#34; loading=&#34;lazy&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;forgejo&#34;&gt;Forgejo&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#forgejo&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/arch/assets/forgejo.svg&#34;&gt;&lt;img src=&#34;https://www-staging.alwaldend.com/docs/infra/arch/assets/forgejo.svg&#34; alt=&#34;Forgejo infrastructure diagram&#34; loading=&#34;lazy&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;www&#34;&gt;www&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#www&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/arch/assets/www.svg&#34;&gt;&lt;img src=&#34;https://www-staging.alwaldend.com/docs/infra/arch/assets/www.svg&#34; alt=&#34;www infrastructure diagram&#34; loading=&#34;lazy&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;threexui&#34;&gt;Threexui&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#threexui&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/arch/assets/threexui.svg&#34;&gt;&lt;img src=&#34;https://www-staging.alwaldend.com/docs/infra/arch/assets/threexui.svg&#34; alt=&#34;Threexui infrastructure diagram&#34; loading=&#34;lazy&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;dns&#34;&gt;DNS&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#dns&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/arch/assets/dns.svg&#34;&gt;&lt;img src=&#34;https://www-staging.alwaldend.com/docs/infra/arch/assets/dns.svg&#34; alt=&#34;DNS infrastructure diagram&#34; loading=&#34;lazy&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

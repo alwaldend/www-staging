@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Languages on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/languages/</link>
+		<description>Recent content in Languages on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/languages/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Bzl</title>
+				<link>https://www-staging.alwaldend.com/languages/bzl/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/languages/bzl/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>C</title>
+				<link>https://www-staging.alwaldend.com/languages/c/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/languages/c/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Cpp</title>
+				<link>https://www-staging.alwaldend.com/languages/cpp/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/languages/cpp/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Go</title>
+				<link>https://www-staging.alwaldend.com/languages/go/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/languages/go/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Java</title>
+				<link>https://www-staging.alwaldend.com/languages/java/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/languages/java/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Javascript</title>
+				<link>https://www-staging.alwaldend.com/languages/javascript/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/languages/javascript/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Js</title>
+				<link>https://www-staging.alwaldend.com/languages/js/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/languages/js/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Kt</title>
+				<link>https://www-staging.alwaldend.com/languages/kt/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/languages/kt/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Kustomization</title>
+				<link>https://www-staging.alwaldend.com/languages/kustomization/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/languages/kustomization/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Lua</title>
+				<link>https://www-staging.alwaldend.com/languages/lua/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/languages/lua/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Markdown</title>
+				<link>https://www-staging.alwaldend.com/languages/markdown/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/languages/markdown/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>None</title>
+				<link>https://www-staging.alwaldend.com/languages/none/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/languages/none/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Py</title>
+				<link>https://www-staging.alwaldend.com/languages/py/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/languages/py/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Python</title>
+				<link>https://www-staging.alwaldend.com/languages/python/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/languages/python/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Rsc</title>
+				<link>https://www-staging.alwaldend.com/languages/rsc/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/languages/rsc/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Sh</title>
+				<link>https://www-staging.alwaldend.com/languages/sh/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/languages/sh/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

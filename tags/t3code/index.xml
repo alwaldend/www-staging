@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>T3code on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/tags/t3code/</link>
+		<description>Recent content in T3code on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/tags/t3code/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Host Bot</title>
+				<link>https://www-staging.alwaldend.com/docs/users/simeonwarren/host_bot/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/users/simeonwarren/host_bot/</guid>
+				<description>&lt;p&gt;Host Bot runs Traefik with mTLS in front of T3 Code. The host firewall blocks&#xA;direct external access to T3 Code and accepts new connections only on SSH,&#xA;HTTP, and HTTPS ports.&lt;/p&gt;&#xA;&lt;p&gt;The &lt;a href=&#34;https://www-staging.alwaldend.com/docs/users/simeonwarren/host_bot/tf/&#34;&gt;DNS Terraform package&lt;/a&gt; uses the dedicated&#xA;&lt;code&gt;src_users_simeonwarren_host_bot&lt;/code&gt; AppRole through &lt;code&gt;dns_al&lt;/code&gt;. Ansible retains&#xA;its existing &lt;code&gt;al&lt;/code&gt; configuration and &lt;code&gt;user_simeonwarren&lt;/code&gt; authentication.&lt;/p&gt;&#xA;&lt;p&gt;T3 Code controls permissions per thread. Its &lt;strong&gt;Auto&lt;/strong&gt; mode maps to Codex&#xA;Auto-review. The managed Codex requirements allow read-only and &lt;code&gt;host-bot&lt;/code&gt;&#xA;permissions with on-request approvals, so threads cannot select &lt;strong&gt;Full&#xA;access&lt;/strong&gt; or disable approvals. The requirements file only allowlists the&#xA;&lt;code&gt;host-bot&lt;/code&gt; profile; it must not define the profile because T3 Code supplies a&#xA;per-thread config layer with the same name, and Codex rejects profiles defined&#xA;by both requirements and config. The normal and isolated provider configs&#xA;define &lt;code&gt;host-bot&lt;/code&gt; with workspace writes, public command-network access, and&#xA;write access to the Bazel cache and Bazelisk directories while keeping local&#xA;network binding and loopback connections available for Bazel servers. Other&#xA;private network targets remain blocked. T3 Code must select that profile for&#xA;the thread. Hosted web search is not restricted by this role.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

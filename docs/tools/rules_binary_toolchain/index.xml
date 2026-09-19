@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Rules binary toolchain on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/docs/tools/rules_binary_toolchain/</link>
+		<description>Recent content in Rules binary toolchain on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/docs/tools/rules_binary_toolchain/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title></title>
+				<link>https://www-staging.alwaldend.com/docs/tools/rules_binary_toolchain/openspec/specs/project-dns/spec/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/rules_binary_toolchain/openspec/specs/project-dns/spec/</guid>
+				<description>&lt;h1 id=&#34;project-dns-specification&#34;&gt;project-dns Specification&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#project-dns-specification&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#purpose&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Record the retirement of &lt;code&gt;rules_binary_toolchain&lt;/code&gt; landing infrastructure while preserving&#xA;its reusable Bazel module.&lt;/p&gt;&#xA;&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirements&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id=&#34;requirement-keep-landing-infrastructure-retired&#34;&gt;Requirement: Keep landing infrastructure retired&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirement-keep-landing-infrastructure-retired&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The module SHALL follow the &lt;a href=&#34;https://www-staging.alwaldend.com/docs/tools/&#34;&gt;tools boundary&lt;/a&gt; and SHALL&#xA;have no dedicated landing DNS declarations, Terraform root, or operational&#xA;source exports.&lt;/p&gt;&#xA;&lt;h4 id=&#34;scenario-inspect-the-module-after-landing-retirement&#34;&gt;Scenario: Inspect the module after landing retirement&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#scenario-inspect-the-module-after-landing-retirement&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;WHEN&lt;/strong&gt; the module is consumed from &lt;code&gt;tools/rules_binary_toolchain&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;THEN&lt;/strong&gt; its reusable Bazel rules remain available without landing infrastructure.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title></title>
+				<link>https://www-staging.alwaldend.com/docs/tools/rules_binary_toolchain/openspec/specs/project-rules-binary-toolchain/spec/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/rules_binary_toolchain/openspec/specs/project-rules-binary-toolchain/spec/</guid>
+				<description>&lt;h1 id=&#34;rules-binary-toolchain&#34;&gt;Rules binary toolchain&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#rules-binary-toolchain&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#purpose&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Provide Bazel toolchains and runnable targets for packaged executable binaries,&#xA;including their runtime files. This source baseline was observed on 2026-09-08&#xA;at revision &lt;code&gt;550d7e79b1f5fdbc2b6017b75178471d6914082f&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Sources: &lt;a href=&#34;https://www-staging.alwaldend.com/docs/tools/rules_binary_toolchain/&#34;&gt;project description&lt;/a&gt;,&#xA;&lt;a href=&#34;../../../main/bzl/binary_toolchain_lock.bzl&#34;&gt;lock parsing&lt;/a&gt;,&#xA;&lt;a href=&#34;../../../main/bzl/binary_toolchain_extension.bzl&#34;&gt;module extension&lt;/a&gt;,&#xA;&lt;a href=&#34;../../../main/bzl/binary_toolchain_repo.bzl&#34;&gt;archive repositories&lt;/a&gt;,&#xA;and &lt;a href=&#34;../../../main/bzl/binary_toolchain_binary.bzl&#34;&gt;runnable wrapper&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirements&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id=&#34;requirement-select-archives-from-the-declared-toolchain-lock&#34;&gt;Requirement: Select archives from the declared toolchain lock&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirement-select-archives-from-the-declared-toolchain-lock&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The module extension SHALL resolve a requested toolchain by name and version&#xA;from its JSON lock and create repositories for the matching archives.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

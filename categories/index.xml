@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Categories on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/categories/</link>
+		<description>Recent content in Categories on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/categories/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Data</title>
+				<link>https://www-staging.alwaldend.com/categories/data/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/categories/data/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Infra</title>
+				<link>https://www-staging.alwaldend.com/categories/infra/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/categories/infra/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Misc</title>
+				<link>https://www-staging.alwaldend.com/categories/misc/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/categories/misc/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Project</title>
+				<link>https://www-staging.alwaldend.com/categories/project/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/categories/project/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Third_party</title>
+				<link>https://www-staging.alwaldend.com/categories/third_party/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/categories/third_party/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Tool</title>
+				<link>https://www-staging.alwaldend.com/categories/tool/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/categories/tool/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>User</title>
+				<link>https://www-staging.alwaldend.com/categories/user/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/categories/user/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

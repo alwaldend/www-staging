@@ -1,0 +1,689 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js" data-theme-init>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000000">
+
+<style>
+  html { background: Canvas; color: CanvasText; }
+  @media (prefers-color-scheme: dark) {
+    html { background: #0b0d12; color: #e6e6e6; }
+  }
+  html[data-theme-init] * { transition: none !important; }
+</style>
+
+<script>
+  (function() {
+    const themeKey = 'td-color-theme';
+    const storedTheme = localStorage.getItem(themeKey);
+    let theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (theme === 'auto') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
+<link rel="canonical" type="text/html" href="https://www-staging.alwaldend.com/docs/infra/src/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://www-staging.alwaldend.com/docs/infra/src/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+<title>Source repository | Alwaldend</title>
+<meta name="description" content="Repository evolution specifications and workflow history">
+<meta property="og:url" content="https://www-staging.alwaldend.com/docs/infra/src/">
+	<meta property="og:site_name" content="Alwaldend">
+	<meta property="og:title" content="Source repository">
+	<meta property="og:description" content="Repository evolution specifications and workflow history">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="Source repository">
+	<meta itemprop="description" content="Repository evolution specifications and workflow history">
+	<meta itemprop="dateModified" content="2026-09-19T20:06:21+03:00">
+	<meta itemprop="wordCount" content="85">
+	<meta itemprop="keywords" content="Infra">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Source repository">
+	<meta name="twitter:description" content="Repository evolution specifications and workflow history">
+<link rel="preload" href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" as="style" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<link href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" rel="stylesheet" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll">
+<div class="td-navbar-container container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">Alwaldend</span></a>
+  <div class="td-navbar__main td-navbar-nav-scroll td-navbar-nav-scroll--indicator" id="main_navbar">
+    <div class="scroll-indicator scroll-left"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/projects/"><span>Projects</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item td-navbar__light-dark-menu">
+        <div class="td-light-dark-menu dropdown"><svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+<button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        title="Toggle theme (Auto)"
+        aria-label="Toggle theme (Auto)">
+  <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="bd-theme">
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
+      Light
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>
+      Dark
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+      <svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>
+      Auto
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+</ul>
+</div>
+
+      </li>
+      </ul>
+    <div class="scroll-indicator scroll-right"></div>
+  </div>
+  <div class="td-navbar__search d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon" aria-hidden="true"></div>
+  <input
+    type="search"
+    name="q"
+    class="td-search__input form-control"
+    placeholder='Search this site…'
+    aria-label='Search this site…'
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/infra/src/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Source repository</h1>
+<div class="lead">Repository evolution specifications and workflow history</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-5af29881c75d831958c8737fda369450"></a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1.1: <a href="#pg-797285fb2b29d526addf62f1d13cd593"></a></li>
+
+
+    
+  
+    
+    
+	
+<li>1.2: <a href="#pg-cc3c87837ad1ff9bf91f41890da9af88"></a></li>
+
+
+    
+  
+    
+    
+	
+<li>1.3: <a href="#pg-c8750e23cfc87061c0ef77ac0fe6060a"></a></li>
+
+
+    
+  
+
+    </ul>
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      <p>This project owns the <a href="/docs/infra/src/openspec/">OpenSpec workspace</a> describing
+evolution of the alwaldend/src monorepo: its shared structure, build system
+and development workflows. It also retains the index of the goal-to-OpenSpec
+migration. Individual projects own their own specifications and change history.</p>
+<p>The repository root remains the Bazel workspace and owns shared executable
+configuration. This directory owns repository development specifications;
+adding or changing them does not provision infrastructure.</p>
+<p>Run the <a href="../../tools/openspec/README.md">pinned CLI</a> from the repository root.
+It selects this project by default:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel_agent bazel run //tools/openspec -- list --specs
+</span></span></code></pre></div>
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-5af29881c75d831958c8737fda369450">1 - </h1>
+    
+	<h1 id="print-7e33ab7c282b877266711b62eeedc88f-repository-evolution">Repository evolution<a class="td-heading-self-link" href="#print-7e33ab7c282b877266711b62eeedc88f-repository-evolution" aria-label="Heading self-link"></a></h1><p>This OpenSpec workspace describes evolution of the alwaldend/src repository
+itself: its shared structure, build system and development workflows.
+<a href="/docs/infra/src/openspec/specs/repository/spec/"><code>specs/repository/spec.md</code></a> records that contract;
+<code>changes/</code> records proposed and completed changes to it.</p>
+<p>Each component owns a separate OpenSpec workspace beside its source:</p>
+<ul>
+<li><code>projects/&lt;project&gt;/openspec/</code> holds that project&rsquo;s specs and changes.</li>
+<li><code>tools/&lt;project&gt;/openspec/</code> holds that tool project&rsquo;s specs and changes.</li>
+<li><code>infra/&lt;project&gt;/openspec/</code> holds that infrastructure project&rsquo;s specs and changes.</li>
+<li><code>infra/src/openspec/</code> holds the repository&rsquo;s own specs and changes.</li>
+</ul>
+<p>Select the narrowest owner of the requested behavior. A project change belongs
+in that project&rsquo;s workspace, including when it has a standalone Bazel module.
+Changes to shared repository structure belong here. Work spanning owners
+keeps each affected contract with its owner and links related changes.
+Component READMEs and build declarations retain their existing authority.</p>
+<h2 id="print-7e33ab7c282b877266711b62eeedc88f-run-openspec">Run OpenSpec<a class="td-heading-self-link" href="#print-7e33ab7c282b877266711b62eeedc88f-run-openspec" aria-label="Heading self-link"></a></h2><p>The <a href="/docs/tools/rules_openspec/">pinned CLI</a> runs from the Git worktree
+root. It selects <code>infra/src</code> by default; use <code>OPENSPEC_PROJECT</code> for a component:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel_agent bazel run //tools/openspec -- list --specs
+</span></span><span style="display:flex;"><span>OPENSPEC_PROJECT<span style="color:#f92672">=</span>projects/agents bazel_agent bazel run //tools/openspec -- list
+</span></span><span style="display:flex;"><span>OPENSPEC_PROJECT<span style="color:#f92672">=</span>infra/vault bazel_agent bazel run //tools/openspec -- list --specs
+</span></span></code></pre></div><p>Use <code>new change</code>, <code>status</code>, <code>instructions</code>, <code>validate</code>, and <code>archive</code> with the
+same owner selection. The packaged <a href="../../../projects/agents/skills/openspec/SKILL.md">OpenSpec skill</a>
+documents continuation and acceptance. No global install or assistant
+configuration rewrite is needed. The CLI isolates configuration and disables
+telemetry.</p>
+<p>Repository validation checks every component workspace as well as this one:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel_agent bazel test //infra/src/openspec/validation:validate_test //infra/src/openspec/validation:archive_test
+</span></span></code></pre></div><p>Validation checks artifact structure and, for archives, task completion.
+Requirement acceptance still needs evidence from the owning implementation.
+Infrastructure specs describe checked-in definitions, not observed deployment.</p>
+<h2 id="print-7e33ab7c282b877266711b62eeedc88f-maintain-work">Maintain work<a class="td-heading-self-link" href="#print-7e33ab7c282b877266711b62eeedc88f-maintain-work" aria-label="Heading self-link"></a></h2><p>In the selected workspace, <code>changes/&lt;name&gt;/proposal.md</code> states outcome and
+scope, <code>design.md</code> records decisions and continuation, <code>tasks.md</code> records
+remaining actions, and <code>specs/&lt;capability&gt;/spec.md</code> contains requirement deltas.
+Read an existing matching change before creating another. Keep temporary
+notes, raw logs and validation receipts under ignored <code>out/&lt;task&gt;/</code>.</p>
+<p>On interruption, preserve the candidate, evidence, execution state and next
+action. Keep blocked or unfinished work explicit. OpenSpec files and Git do
+not supply the removed legacy goal store&rsquo;s transaction locks or evidence verdicts;
+one coordinator owns a change and reconciles concurrent edits.</p>
+<p>After acceptance, validate and archive the change in its owning workspace,
+then inspect the resulting baseline specs. Specifications and generated
+instructions neither expand user authority nor introduce an approval gate.</p>
+<h2 id="print-7e33ab7c282b877266711b62eeedc88f-goal-migration">Goal migration<a class="td-heading-self-link" href="#print-7e33ab7c282b877266711b62eeedc88f-goal-migration" aria-label="Heading self-link"></a></h2><p><a href="/docs/infra/src/openspec/migration/"><code>migration.md</code></a> maps the nine maintained goals to their current
+owner-local changes. It records a repository workflow migration; the actual
+history and work state live with Agents, MCP Cordis and Renders. Original
+history, checksums and acceptance states are preserved. Historical deltas
+were archived without applying them to current specs. Reimu Fumo remains
+open and blocked.</p>
+<p>The legacy goal tool, its skill, and its store have been removed. New
+maintained work uses the owning OpenSpec workspace; the migration record above
+preserves the historical record.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-797285fb2b29d526addf62f1d13cd593">1.1 - </h1>
+    
+	<h1 id="print-44481c6e2bf3bb456eeadd73dd49887c-goal-migration-to-openspec">Goal migration to OpenSpec<a class="td-heading-self-link" href="#print-44481c6e2bf3bb456eeadd73dd49887c-goal-migration-to-openspec" aria-label="Heading self-link"></a></h1><p>On 2026-09-08, all nine tracked maintained project goal records at source commit <code>550d7e79b1f5fdbc2b6017b75178471d6914082f</code> were migrated into native OpenSpec changes. Each change now lives in its owning project’s <code>openspec/</code> workspace. Eight completed records are imported as archived history. The Reimu Fumo change remains open with blocked execution and no accepted candidate.</p>
+<p>The <a href="migration.json">machine-readable inventory</a> maps all 222 tracked source files (834,320 bytes) to byte-identical provenance snapshots. Test fixtures and ignored task scratch are outside the maintained-record inventory.</p>
+<h2 id="print-44481c6e2bf3bb456eeadd73dd49887c-record-mapping">Record mapping<a class="td-heading-self-link" href="#print-44481c6e2bf3bb456eeadd73dd49887c-record-mapping" aria-label="Heading self-link"></a></h2><table>
+	<thead>
+			<tr>
+					<th>Former maintained goal</th>
+					<th>OpenSpec change</th>
+					<th>Preserved outcome</th>
+					<th>Preserved execution</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>projects/agents/goals/agent-system-phase-1</code></td>
+					<td><a href="../../../projects/agents/openspec/changes/archive/2026-09-08-agent-system-phase-1/proposal.md">agent-system-phase-1</a></td>
+					<td>achieved</td>
+					<td>paused</td>
+			</tr>
+			<tr>
+					<td><code>projects/agents/goals/agent-system-phase-2</code></td>
+					<td><a href="../../../projects/agents/openspec/changes/archive/2026-09-08-agent-system-phase-2/proposal.md">agent-system-phase-2</a></td>
+					<td>achieved</td>
+					<td>paused</td>
+			</tr>
+			<tr>
+					<td><code>projects/agents/goals/agent-system-phase-3</code></td>
+					<td><a href="../../../projects/agents/openspec/changes/archive/2026-09-08-agent-system-phase-3/proposal.md">agent-system-phase-3</a></td>
+					<td>achieved</td>
+					<td>paused</td>
+			</tr>
+			<tr>
+					<td><code>projects/agents/goals/agent-system-phase-4</code></td>
+					<td><a href="../../../projects/agents/openspec/changes/archive/2026-09-08-agent-system-phase-4/proposal.md">agent-system-phase-4</a></td>
+					<td>achieved</td>
+					<td>paused</td>
+			</tr>
+			<tr>
+					<td><code>projects/agents/goals/agent-system-phase-five-followup</code></td>
+					<td><a href="../../../projects/agents/openspec/changes/archive/2026-09-08-agent-system-phase-five-followup/proposal.md">agent-system-phase-five-followup</a></td>
+					<td>achieved</td>
+					<td>paused</td>
+			</tr>
+			<tr>
+					<td><code>projects/agents/goals/agent-system-phase-six-ergonomics</code></td>
+					<td><a href="../../../projects/agents/openspec/changes/archive/2026-09-08-agent-system-phase-six-ergonomics/proposal.md">agent-system-phase-six-ergonomics</a></td>
+					<td>achieved</td>
+					<td>paused</td>
+			</tr>
+			<tr>
+					<td><code>projects/agents/goals/repo-agent-system</code></td>
+					<td><a href="../../../projects/agents/openspec/changes/archive/2026-09-08-repo-agent-system/proposal.md">repo-agent-system</a></td>
+					<td>achieved</td>
+					<td>paused</td>
+			</tr>
+			<tr>
+					<td><code>projects/renders/goals/reimu-fumo-finish</code></td>
+					<td><a href="../../../projects/renders/openspec/changes/reimu-fumo-finish/proposal.md">reimu-fumo-finish</a></td>
+					<td>open</td>
+					<td>blocked</td>
+			</tr>
+			<tr>
+					<td><code>projects/mcp_cordis/goals/runtime_extensions</code></td>
+					<td><a href="../../../projects/mcp_cordis/openspec/changes/archive/2026-09-08-runtime-extensions/proposal.md">runtime_extensions</a></td>
+					<td>achieved</td>
+					<td>unavailable in source</td>
+			</tr>
+	</tbody>
+</table>
+<h2 id="print-44481c6e2bf3bb456eeadd73dd49887c-mapping-and-acceptance">Mapping and acceptance<a class="td-heading-self-link" href="#print-44481c6e2bf3bb456eeadd73dd49887c-mapping-and-acceptance" aria-label="Heading self-link"></a></h2><ul>
+<li>Objective and scope map to <code>proposal.md</code>; accepted plans, decisions, rejected approaches, and constraints map to <code>design.md</code>.</li>
+<li>The latest acceptance criteria map to <code>tasks.md</code> and meaningful capability delta requirements. Each YAML criterion keeps its stable ID and revision in <code>migration.json</code>; original revisions, attempts, review verdicts, and evidence remain in provenance.</li>
+<li>Completed task checkboxes reproduce explicit historical acceptance reviews. They do not revalidate today&rsquo;s source. The Markdown Cordis record declares Complete and no failing criteria; its absent execution field stays unavailable rather than being guessed.</li>
+<li>Reimu acceptance and continuation tasks remain unchecked. A supported authorized unblock can change execution while the outcome remains open until every required criterion passes.</li>
+<li>Completed records were placed directly in their owner’s <code>openspec/changes/archive/2026-09-08-&lt;id&gt;/</code>. No archive or spec-sync command applied their historical deltas. Current baseline specifications were derived separately from maintained owner source. Do not reapply historical deltas.</li>
+<li>Historical Phase 5 acceptance includes an explicit fixture-gap inventory. Its accepted review and still-pending prose are both retained; migration does not claim the missing infrastructure fixtures were implemented.</li>
+</ul>
+<h2 id="print-44481c6e2bf3bb456eeadd73dd49887c-provenance-and-navigation">Provenance and navigation<a class="td-heading-self-link" href="#print-44481c6e2bf3bb456eeadd73dd49887c-provenance-and-navigation" aria-label="Heading self-link"></a></h2><p>Each change has <code>migration.json</code>, a checksum inventory at <code>provenance/manifest.json</code>, original record bytes at <code>provenance/source/</code>, and a provenance navigation guide. The old agent goal landing and BUILD file are also retained under the repository-agent-system archive. The historical BUILD snapshot uses <code>.original</code> to preserve bytes without creating a new Bazel package.</p>
+<p>Among preserved Markdown links, 47 links depend on the former location; companion navigation tables resolve them where the referenced artifact exists. 46 historical targets are unavailable in the checkout. Original bytes and historical Git identities are not rewritten to disguise unavailable scratch or superseded paths.</p>
+<p>The former maintained goal directories are removed, and the legacy goal tool and its store were later removed as well; native OpenSpec work is the continuation surface. Provenance files are excluded from generic formatting so their source digests remain stable. The migration inventory is import evidence, not an alternate work scheduler or mutable status catalog. The removal change is <a href="changes/remove-deprecated-goal-component/proposal.md">remove-deprecated-goal-component</a>.</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-cc3c87837ad1ff9bf91f41890da9af88">1.2 - </h1>
+    
+	<h1 id="print-94ba0afea6b2cedcd3970d33f46ae336-go-mod-version-specification">go-mod-version Specification<a class="td-heading-self-link" href="#print-94ba0afea6b2cedcd3970d33f46ae336-go-mod-version-specification" aria-label="Heading self-link"></a></h1><h2 id="print-94ba0afea6b2cedcd3970d33f46ae336-purpose">Purpose<a class="td-heading-self-link" href="#print-94ba0afea6b2cedcd3970d33f46ae336-purpose" aria-label="Heading self-link"></a></h2><p>Keep tracked <code>go.mod</code> files on the Go version configured for
+<a href="/docs/tools/go_mod/"><code>tools/go_mod</code></a>.</p>
+<p>Sources: <a href="/docs/tools/go_mod/">tool README</a>,
+<a href="../../../../../tools/go_mod/cmd/go_mod/BUILD.bazel">tool BUILD</a>, and
+<a href="../../changes/archive/2026-09-12-add-go-mod-version-tool/proposal.md">archive</a>.</p>
+<h2 id="print-94ba0afea6b2cedcd3970d33f46ae336-requirements">Requirements<a class="td-heading-self-link" href="#print-94ba0afea6b2cedcd3970d33f46ae336-requirements" aria-label="Heading self-link"></a></h2><h3 id="print-94ba0afea6b2cedcd3970d33f46ae336-requirement-configured-gomod-version">Requirement: Configured go.mod version<a class="td-heading-self-link" href="#print-94ba0afea6b2cedcd3970d33f46ae336-requirement-configured-gomod-version" aria-label="Heading self-link"></a></h3><p>The repository SHALL provide a <code>tools/go_mod</code> command that discovers every
+tracked <code>go.mod</code> file and sets its <code>go</code> directive to the version configured in
+the tool&rsquo;s BUILD file. The command MUST offer an update mode and a check mode.</p>
+<h4 id="print-94ba0afea6b2cedcd3970d33f46ae336-scenario-update-module-files">Scenario: Update module files<a class="td-heading-self-link" href="#print-94ba0afea6b2cedcd3970d33f46ae336-scenario-update-module-files" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> a user runs the update target</li>
+<li><strong>THEN</strong> every tracked <code>go.mod</code> file whose <code>go</code> directive differs from the
+configured version is rewritten to that version</li>
+<li><strong>AND</strong> files already on the configured version remain unchanged</li>
+</ul>
+<h4 id="print-94ba0afea6b2cedcd3970d33f46ae336-scenario-check-module-files">Scenario: Check module files<a class="td-heading-self-link" href="#print-94ba0afea6b2cedcd3970d33f46ae336-scenario-check-module-files" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the check test runs</li>
+<li><strong>THEN</strong> it fails if any tracked <code>go.mod</code> file has a <code>go</code> directive
+different from the configured version</li>
+<li><strong>AND</strong> it passes when every tracked <code>go.mod</code> file matches</li>
+</ul>
+<h3 id="print-94ba0afea6b2cedcd3970d33f46ae336-requirement-repository-quality-integration">Requirement: Repository quality integration<a class="td-heading-self-link" href="#print-94ba0afea6b2cedcd3970d33f46ae336-requirement-repository-quality-integration" aria-label="Heading self-link"></a></h3><p>The go.mod version check MUST run as part of <code>//:repo_quality_test</code> so a
+version mismatch fails repository quality.</p>
+<h4 id="print-94ba0afea6b2cedcd3970d33f46ae336-scenario-quality-suite-covers-the-check">Scenario: Quality suite covers the check<a class="td-heading-self-link" href="#print-94ba0afea6b2cedcd3970d33f46ae336-scenario-quality-suite-covers-the-check" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> a <code>go.mod</code> file&rsquo;s <code>go</code> directive differs from the configured
+version</li>
+<li><strong>THEN</strong> <code>//:repo_quality_test</code> fails</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-c8750e23cfc87061c0ef77ac0fe6060a">1.3 - </h1>
+    
+	<h1 id="print-c378dc05c1ccc435141658b0f6b0a137-repository-evolution-specification">Repository Evolution Specification<a class="td-heading-self-link" href="#print-c378dc05c1ccc435141658b0f6b0a137-repository-evolution-specification" aria-label="Heading self-link"></a></h1><h2 id="print-c378dc05c1ccc435141658b0f6b0a137-purpose">Purpose<a class="td-heading-self-link" href="#print-c378dc05c1ccc435141658b0f6b0a137-purpose" aria-label="Heading self-link"></a></h2><p>Define how the alwaldend/src monorepo evolves its shared structure, build
+system and development workflows. Component behavior is specified in each
+owner&rsquo;s local OpenSpec workspace. This baseline was inspected at source revision
+<code>550d7e79b1f5fdbc2b6017b75178471d6914082f</code> on 2026-09-08 and incorporates the
+OpenSpec migration delivered with this specification. Changes in <code>infra/src</code>
+record repository evolution; they do not collect unrelated component work or claim
+runtime health or deployed infrastructure.</p>
+<p>Sources: <a href="/docs/">repository map</a>, <a href="../../../../../AGENTS.md">agent policy</a>,
+<a href="../../../../../BUILD.bazel">root build</a>, <a href="/docs/projects/">project boundary</a>,
+<a href="/docs/infra/">infrastructure boundary</a>,
+<a href="/docs/tools/">tool boundary</a>, and <a href="/docs/infra/src/openspec/">OpenSpec workflow</a>.</p>
+<h2 id="print-c378dc05c1ccc435141658b0f6b0a137-requirements">Requirements<a class="td-heading-self-link" href="#print-c378dc05c1ccc435141658b0f6b0a137-requirements" aria-label="Heading self-link"></a></h2><h3 id="print-c378dc05c1ccc435141658b0f6b0a137-requirement-component-ownership-and-source-boundaries">Requirement: Component ownership and source boundaries<a class="td-heading-self-link" href="#print-c378dc05c1ccc435141658b0f6b0a137-requirement-component-ownership-and-source-boundaries" aria-label="Heading self-link"></a></h3><p>The repository MUST keep component purpose and publication boundaries in the
+nearest owner README, executable and dependency structure in BUILD and MODULE
+files, and agent policy in the applicable AGENTS.md chain. Specifications SHALL
+describe component requirements with links to these owners.</p>
+<h4 id="print-c378dc05c1ccc435141658b0f6b0a137-scenario-select-an-implementation-owner">Scenario: Select an implementation owner<a class="td-heading-self-link" href="#print-c378dc05c1ccc435141658b0f6b0a137-scenario-select-an-implementation-owner" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> a change affects a project, tool or infrastructure component</li>
+<li><strong>THEN</strong> its owning documents and Bazel workspace determine the affected
+paths and supported consumers</li>
+<li><strong>AND</strong> a repository-wide catalog or specification does not grant broader
+publication or execution authority</li>
+</ul>
+<h3 id="print-c378dc05c1ccc435141658b0f6b0a137-requirement-reproducible-bazel-development">Requirement: Reproducible Bazel development<a class="td-heading-self-link" href="#print-c378dc05c1ccc435141658b0f6b0a137-requirement-reproducible-bazel-development" aria-label="Heading self-link"></a></h3><p>Repository agent build and test operations MUST use <code>bazel_agent bazel</code> in the
+owning workspace with pinned dependencies and the repository&rsquo;s shared agent
+configuration. Generated dependency and catalog files MUST be updated through
+their owning generator.</p>
+<p>Every nested module that declares <code>MODULE.bazel</code> MUST declare only
+dependencies its own sources use, with a resolvable version or an override
+that applies when that module is the root. Every nested module directory MUST
+appear in the root <code>.bazelignore</code> so root target expansion does not cross the
+workspace boundary. Each nested workspace MUST build and test standalone.</p>
+<h4 id="print-c378dc05c1ccc435141658b0f6b0a137-scenario-change-a-shared-dependency">Scenario: Change a shared dependency<a class="td-heading-self-link" href="#print-c378dc05c1ccc435141658b0f6b0a137-scenario-change-a-shared-dependency" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> an implementation adds an external build input</li>
+<li><strong>THEN</strong> its owner records an immutable version and integrity information</li>
+<li><strong>AND</strong> applicable generated locks and package checks validate the declared
+dependency through the pinned build workflow</li>
+</ul>
+<h4 id="print-c378dc05c1ccc435141658b0f6b0a137-scenario-build-a-nested-module-standalone">Scenario: Build a nested module standalone<a class="td-heading-self-link" href="#print-c378dc05c1ccc435141658b0f6b0a137-scenario-build-a-nested-module-standalone" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> a nested Bazel workspace is built or tested on its own</li>
+<li><strong>THEN</strong> its module graph resolves without depending on root-only overrides</li>
+<li><strong>AND</strong> the workspace builds and tests through its shared configuration</li>
+</ul>
+<h4 id="print-c378dc05c1ccc435141658b0f6b0a137-scenario-expand-root-targets-across-a-nested-boundary">Scenario: Expand root targets across a nested boundary<a class="td-heading-self-link" href="#print-c378dc05c1ccc435141658b0f6b0a137-scenario-expand-root-targets-across-a-nested-boundary" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the root workspace expands targets beneath a nested module directory</li>
+<li><strong>THEN</strong> the nested workspace is excluded by the root ignore list</li>
+<li><strong>AND</strong> root expansion neither loads nor silently omits that module</li>
+</ul>
+<h3 id="print-c378dc05c1ccc435141658b0f6b0a137-requirement-isolated-implementation-and-evidence">Requirement: Isolated implementation and evidence<a class="td-heading-self-link" href="#print-c378dc05c1ccc435141658b0f6b0a137-requirement-isolated-implementation-and-evidence" aria-label="Heading self-link"></a></h3><p>Repository modifications MUST use a dedicated feature branch and linked
+worktree. Task scratch MUST remain under ignored <code>out/&lt;task&gt;/</code> in the
+applicable workspace. Acceptance SHALL identify the candidate and relevant
+checks and representative output before delivery.</p>
+<h4 id="print-c378dc05c1ccc435141658b0f6b0a137-scenario-finish-a-repository-change">Scenario: Finish a repository change<a class="td-heading-self-link" href="#print-c378dc05c1ccc435141658b0f6b0a137-scenario-finish-a-repository-change" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> an authorized implementation is ready for delivery</li>
+<li><strong>THEN</strong> task-owned changes pass applicable formatting, quality and semantic
+checks and are committed and published through the repository procedure</li>
+<li><strong>AND</strong> unrelated edits, scratch and protected data are excluded</li>
+</ul>
+<h3 id="print-c378dc05c1ccc435141658b0f6b0a137-requirement-declarative-infrastructure-authority">Requirement: Declarative infrastructure authority<a class="td-heading-self-link" href="#print-c378dc05c1ccc435141658b0f6b0a137-requirement-declarative-infrastructure-authority" aria-label="Heading self-link"></a></h3><p>Persistent infrastructure configuration MUST be defined in checked-in owning
+infrastructure code. Infrastructure operations MUST require the user&rsquo;s exact
+operation and scope authorization; an implementation validation request SHALL
+NOT authorize live deployment.</p>
+<h4 id="print-c378dc05c1ccc435141658b0f6b0a137-scenario-validate-an-infrastructure-specification">Scenario: Validate an infrastructure specification<a class="td-heading-self-link" href="#print-c378dc05c1ccc435141658b0f6b0a137-scenario-validate-an-infrastructure-specification" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> an agent adds or updates an infra component specification</li>
+<li><strong>THEN</strong> it inspects source and runs applicable offline checks</li>
+<li><strong>AND</strong> it does not infer deployed state or execute live apply or deployment
+from the existence of the specification</li>
+</ul>
+<h3 id="print-c378dc05c1ccc435141658b0f6b0a137-requirement-openspec-coverage-and-work-state">Requirement: OpenSpec coverage and work state<a class="td-heading-self-link" href="#print-c378dc05c1ccc435141658b0f6b0a137-requirement-openspec-coverage-and-work-state" aria-label="Heading self-link"></a></h3><p>Each direct project in <code>projects/</code> and <code>infra/</code> SHALL keep its baseline
+specifications and maintained changes in its own <code>openspec/</code> workspace.
+<code>infra/src/openspec</code> SHALL describe evolution of the repository itself,
+including shared structure, build system and development workflows. The
+repository root SHALL NOT collect component specifications or change records.
+Maintained work SHALL preserve outcome, decisions, tasks and requirement
+deltas. Existing task authority MUST survive workflow transitions.</p>
+<h4 id="print-c378dc05c1ccc435141658b0f6b0a137-scenario-change-a-component-contract">Scenario: Change a component contract<a class="td-heading-self-link" href="#print-c378dc05c1ccc435141658b0f6b0a137-scenario-change-a-component-contract" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> a change affects a project&rsquo;s supported behavior</li>
+<li><strong>THEN</strong> its specifications and change artifacts remain in that project&rsquo;s
+<code>openspec/</code> directory</li>
+<li><strong>AND</strong> the pinned CLI and context routing select that owner workspace</li>
+</ul>
+<h4 id="print-c378dc05c1ccc435141658b0f6b0a137-scenario-evolve-the-repository-itself">Scenario: Evolve the repository itself<a class="td-heading-self-link" href="#print-c378dc05c1ccc435141658b0f6b0a137-scenario-evolve-the-repository-itself" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> a change affects the monorepo&rsquo;s shared structure or development workflow</li>
+<li><strong>THEN</strong> <code>infra/src/openspec</code> records its repository requirements and evolution</li>
+<li><strong>AND</strong> component contracts remain with their respective owners</li>
+</ul>
+<h4 id="print-c378dc05c1ccc435141658b0f6b0a137-scenario-resume-unfinished-maintained-work">Scenario: Resume unfinished maintained work<a class="td-heading-self-link" href="#print-c378dc05c1ccc435141658b0f6b0a137-scenario-resume-unfinished-maintained-work" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> an agent resumes a named OpenSpec change</li>
+<li><strong>THEN</strong> it reads that owner&rsquo;s change artifacts, candidate, evidence and next action</li>
+<li><strong>AND</strong> unfinished or blocked acceptance remains explicit until evidence
+supports completion</li>
+</ul>
+<h4 id="print-c378dc05c1ccc435141658b0f6b0a137-scenario-validate-a-standalone-project">Scenario: Validate a standalone project<a class="td-heading-self-link" href="#print-c378dc05c1ccc435141658b0f6b0a137-scenario-validate-a-standalone-project" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> a project has its own Bazel module</li>
+<li><strong>THEN</strong> repository OpenSpec validation still checks its declared local workspace</li>
+<li><strong>AND</strong> a successful repository check does not omit that project&rsquo;s requirements</li>
+</ul>
+<h3 id="print-c378dc05c1ccc435141658b0f6b0a137-requirement-legacy-goal-migration-and-deprecation">Requirement: Legacy goal migration and deprecation<a class="td-heading-self-link" href="#print-c378dc05c1ccc435141658b0f6b0a137-requirement-legacy-goal-migration-and-deprecation" aria-label="Heading self-link"></a></h3><p>The migration SHALL preserve all tracked maintained goal history and its
+recorded acceptance and execution states with source-to-change mappings and
+checksums. The goal skill MUST be disabled for discovery and the goal tool
+MUST identify itself as deprecated compatibility functionality.</p>
+<h4 id="print-c378dc05c1ccc435141658b0f6b0a137-scenario-inspect-a-migrated-historical-record">Scenario: Inspect a migrated historical record<a class="td-heading-self-link" href="#print-c378dc05c1ccc435141658b0f6b0a137-scenario-inspect-a-migrated-historical-record" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> a reader follows a legacy goal&rsquo;s migration entry</li>
+<li><strong>THEN</strong> its OpenSpec change exposes the original history and status</li>
+<li><strong>AND</strong> historical completion does not establish acceptance for a different
+candidate or automatically apply old specification deltas</li>
+</ul>
+<h3 id="print-c378dc05c1ccc435141658b0f6b0a137-requirement-rule-scripts-and-generated-documentation">Requirement: Rule scripts and generated documentation<a class="td-heading-self-link" href="#print-c378dc05c1ccc435141658b0f6b0a137-requirement-rule-scripts-and-generated-documentation" aria-label="Heading self-link"></a></h3><p>Bazel rules MUST NOT embed templated executable content in rule source. A rule
+that needs an executable MUST reference an ordinary checked-in script and
+supply its inputs as declared arguments or data files. Every public rule set
+MUST generate stardoc documentation for its public <code>.bzl</code> entry points, and the
+repository&rsquo;s main documentation output MUST include that generated
+documentation.</p>
+<h4 id="print-c378dc05c1ccc435141658b0f6b0a137-scenario-a-rule-needs-to-run-scripted-logic">Scenario: A rule needs to run scripted logic<a class="td-heading-self-link" href="#print-c378dc05c1ccc435141658b0f6b0a137-scenario-a-rule-needs-to-run-scripted-logic" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> an implementation needs a rule to run a script</li>
+<li><strong>THEN</strong> the script is checked in as a normal file with its own target and receives data through arguments or a declared data file</li>
+<li><strong>AND</strong> generated shell or program text does not live in the <code>.bzl</code> source</li>
+</ul>
+<h4 id="print-c378dc05c1ccc435141658b0f6b0a137-scenario-a-rule-set-exposes-public-rules">Scenario: A rule set exposes public rules<a class="td-heading-self-link" href="#print-c378dc05c1ccc435141658b0f6b0a137-scenario-a-rule-set-exposes-public-rules" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> a project publishes a public Bazel rule or macro</li>
+<li><strong>THEN</strong> it declares stardoc coverage for the declaring file</li>
+<li><strong>AND</strong> the generated pages appear in the repository documentation build</li>
+</ul>
+<h3 id="print-c378dc05c1ccc435141658b0f6b0a137-requirement-bazel-rule-modules-are-tool-components">Requirement: Bazel rule modules are tool components<a class="td-heading-self-link" href="#print-c378dc05c1ccc435141658b0f6b0a137-requirement-bazel-rule-modules-are-tool-components" aria-label="Heading self-link"></a></h3><p>First-party standalone Bazel rule modules SHALL live under <code>tools/&lt;module&gt;/</code>.
+Their relocation MUST preserve module names, supported public rule and macro
+interfaces, standalone workspace resolution, generated rule documentation,
+and owner-local specifications. Repository consumers and discovery mechanisms
+MUST resolve their new source locations through the owning declarations.</p>
+<h4 id="print-c378dc05c1ccc435141658b0f6b0a137-scenario-consume-a-relocated-rule-module">Scenario: Consume a relocated rule module<a class="td-heading-self-link" href="#print-c378dc05c1ccc435141658b0f6b0a137-scenario-consume-a-relocated-rule-module" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> a root or nested workspace loads a relocated rule module through its
+supported module name and public rule interface</li>
+<li><strong>THEN</strong> the module resolves from its new tool-owned location</li>
+<li><strong>AND</strong> its supported build behavior remains available without changing the
+public module identity</li>
+</ul>
+<h4 id="print-c378dc05c1ccc435141658b0f6b0a137-scenario-discover-a-relocated-owners-specifications-and-rules">Scenario: Discover a relocated owner&rsquo;s specifications and rules<a class="td-heading-self-link" href="#print-c378dc05c1ccc435141658b0f6b0a137-scenario-discover-a-relocated-owners-specifications-and-rules" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> repository documentation, skill discovery, or OpenSpec validation
+traverses the relocated modules</li>
+<li><strong>THEN</strong> it selects the modules&rsquo; new owner paths</li>
+<li><strong>AND</strong> generated rule documentation and existing component specifications
+remain included in their declared outputs and checks</li>
+</ul>
+<h3 id="print-c378dc05c1ccc435141658b0f6b0a137-requirement-rule-tools-do-not-publish-dedicated-project-landings">Requirement: Rule tools do not publish dedicated project landings<a class="td-heading-self-link" href="#print-c378dc05c1ccc435141658b0f6b0a137-requirement-rule-tools-do-not-publish-dedicated-project-landings" aria-label="Heading self-link"></a></h3><p>The relocated rule modules SHALL have no dedicated project landing-site
+configuration. After authorized retirement, their selected landing repository
+and DNS declarations MUST be absent from the owning infrastructure, and
+shared-catalog consumers MUST exclude those retired repositories. Retirement
+MUST preserve unrelated repositories, sites, access grants, and authentication
+resources.</p>
+<h4 id="print-c378dc05c1ccc435141658b0f6b0a137-scenario-build-or-import-the-remaining-repository-catalog">Scenario: Build or import the remaining repository catalog<a class="td-heading-self-link" href="#print-c378dc05c1ccc435141658b0f6b0a137-scenario-build-or-import-the-remaining-repository-catalog" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the catalog is projected for GitHub or GitLab after rule-landing
+retirement</li>
+<li><strong>THEN</strong> the retired landing repositories are absent</li>
+<li><strong>AND</strong> remaining repositories retain their catalog identities, names, and
+configured access behavior</li>
+</ul>
+<h4 id="print-c378dc05c1ccc435141658b0f6b0a137-scenario-retire-a-selected-landing-site">Scenario: Retire a selected landing site<a class="td-heading-self-link" href="#print-c378dc05c1ccc435141658b0f6b0a137-scenario-retire-a-selected-landing-site" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the owning declarative workflows execute the user&rsquo;s explicitly
+authorized retirement scope</li>
+<li><strong>THEN</strong> the selected Pages repository and matching DNS record are removed</li>
+<li><strong>AND</strong> the reviewed plans and postconditions show no unrelated deletion or
+replacement</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        Built with <a href="https://gohugo.io/">Hugo 0.165.0</a>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="/js/main.min.259204f469f58eb3b665605a24e964264772df2adaded180b3669b6ce33d84c8.js" integrity="sha256-JZIE9Gn1jrO2ZWBaJOlkJkdy3yra3tGAs2abbOM9hMg=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.decf3b53d8827d840369f490775626e2a5200e150a733f78f0081c126426cbbf.js" integrity="sha256-3s87U9iCfYQDafSQd1Ym4qUgDhUKcz948AgcEmQmy78=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

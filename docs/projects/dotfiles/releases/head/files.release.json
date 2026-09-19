@@ -1,0 +1,221 @@
+{
+    "items": [
+        {
+            "file": {
+                "hashes": [
+                    {
+                        "algo": "SHA-256",
+                        "content": "15880f85dfdf62b1bcf24ddcfa269712da6ebd79c9ac0f52c92b66a18a4ef6e4"
+                    },
+                    {
+                        "algo": "MD5",
+                        "content": "d126fd738f02977b66b5d7fc2b251eb0"
+                    }
+                ],
+                "name": "dotfiles.tar",
+                "safeName": "dotfiles_tar",
+                "size": "122880"
+            },
+            "deployments": [
+                {
+                    "oci": {
+                        "repository": "docker.io/alwaldend/src",
+                        "tags": [
+                            "docker.io/alwaldend/src:_ergohaven_k03_v3_json_"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "file": {
+                "hashes": [
+                    {
+                        "algo": "SHA-256",
+                        "content": "9b06e7cd5e1095e8b9997c572ab53b6d59ff970078965a575495885e923c26e9"
+                    },
+                    {
+                        "algo": "MD5",
+                        "content": "bccc6e814bd31eba1520e30a16a6746d"
+                    }
+                ],
+                "name": "adguard-server.json",
+                "safeName": "adguard_server_json",
+                "size": "1065"
+            },
+            "deployments": [
+                {
+                    "oci": {
+                        "repository": "docker.io/alwaldend/src",
+                        "tags": [
+                            "docker.io/alwaldend/src:_ergohaven_k03_v3_json_"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "file": {
+                "hashes": [
+                    {
+                        "algo": "SHA-256",
+                        "content": "64f1c8f1c3aedcfe994b87c503a0a8a3d6e9bf5d8e79908c5ae0678bc925bc22"
+                    },
+                    {
+                        "algo": "MD5",
+                        "content": "1894940687198ed4eb56ddfe738bf6aa"
+                    }
+                ],
+                "name": "cookie-auto-delete-core-settings.json",
+                "safeName": "cookie_auto_delete_core_settings_json",
+                "size": "2789"
+            },
+            "deployments": [
+                {
+                    "oci": {
+                        "repository": "docker.io/alwaldend/src",
+                        "tags": [
+                            "docker.io/alwaldend/src:_ergohaven_k03_v3_json_"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "file": {
+                "hashes": [
+                    {
+                        "algo": "SHA-256",
+                        "content": "572271eb65c5c5f44f5d620127c699fbc7b7255ce110c024b214898793aaf0b8"
+                    },
+                    {
+                        "algo": "MD5",
+                        "content": "4b66ffc9e57875ba229bd401b1e87fe3"
+                    }
+                ],
+                "name": "ergohaven_hpd.json",
+                "safeName": "ergohaven_hpd_json",
+                "size": "23507"
+            },
+            "deployments": [
+                {
+                    "oci": {
+                        "repository": "docker.io/alwaldend/src",
+                        "tags": [
+                            "docker.io/alwaldend/src:_ergohaven_k03_v3_json_"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "file": {
+                "hashes": [
+                    {
+                        "algo": "SHA-256",
+                        "content": "64dc2b2932f9b9ef837329d6548f79bb2a8bf0c3a0a9e400b9dacc61097efb51"
+                    },
+                    {
+                        "algo": "MD5",
+                        "content": "eff0ff5a7d676de7cbd98e2bc0f5c8a3"
+                    }
+                ],
+                "name": "ergohaven_hpd_v2.json",
+                "safeName": "ergohaven_hpd_v2_json",
+                "size": "23382"
+            },
+            "deployments": [
+                {
+                    "oci": {
+                        "repository": "docker.io/alwaldend/src",
+                        "tags": [
+                            "docker.io/alwaldend/src:_ergohaven_k03_v3_json_"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "file": {
+                "hashes": [
+                    {
+                        "algo": "SHA-256",
+                        "content": "edfed43f86e77851b8ff7c8451d26b3c5c85262849c3f60f073b44cde78769d4"
+                    },
+                    {
+                        "algo": "MD5",
+                        "content": "b6ca81cfdf035893167952baddfe18b7"
+                    }
+                ],
+                "name": "ergohaven_k02.json",
+                "safeName": "ergohaven_k02_json",
+                "size": "23714"
+            },
+            "deployments": [
+                {
+                    "oci": {
+                        "repository": "docker.io/alwaldend/src",
+                        "tags": [
+                            "docker.io/alwaldend/src:_ergohaven_k03_v3_json_"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "file": {
+                "hashes": [
+                    {
+                        "algo": "SHA-256",
+                        "content": "9c52f84ac4b2278d45af4470a735d77eed88b44b2738d9d30879383bbce7798f"
+                    },
+                    {
+                        "algo": "MD5",
+                        "content": "0aadcbeeb014f5a8d3105b019ebaa916"
+                    }
+                ],
+                "name": "ergohaven_k03.json",
+                "safeName": "ergohaven_k03_json",
+                "size": "23603"
+            },
+            "deployments": [
+                {
+                    "oci": {
+                        "repository": "docker.io/alwaldend/src",
+                        "tags": [
+                            "docker.io/alwaldend/src:_ergohaven_k03_v3_json_"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "file": {
+                "hashes": [
+                    {
+                        "algo": "SHA-256",
+                        "content": "b57872ae1f0a3b8ec07431cecc7f764c095f682faf6b908bb3b3ddcb2a021b76"
+                    },
+                    {
+                        "algo": "MD5",
+                        "content": "7863804f99e3be4bed0eefc00a43f9b3"
+                    }
+                ],
+                "name": "ergohaven_k03_v3.json",
+                "safeName": "ergohaven_k03_v3_json",
+                "size": "56615"
+            },
+            "deployments": [
+                {
+                    "oci": {
+                        "repository": "docker.io/alwaldend/src",
+                        "tags": [
+                            "docker.io/alwaldend/src:_ergohaven_k03_v3_json_"
+                        ]
+                    }
+                }
+            ]
+        }
+    ],
+    "project": {}
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>harbor on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/docs/infra/harbor/</link>
+		<description>Recent content in harbor on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/docs/infra/harbor/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title></title>
+				<link>https://www-staging.alwaldend.com/docs/infra/harbor/openspec/specs/infra-harbor/spec/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/harbor/openspec/specs/infra-harbor/spec/</guid>
+				<description>&lt;h1 id=&#34;harbor-infrastructure-specification&#34;&gt;Harbor infrastructure specification&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#harbor-infrastructure-specification&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#purpose&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Describe the Harbor registry infrastructure owned by &lt;code&gt;infra/harbor&lt;/code&gt;, spanning&#xA;Proxmox setup, K3s host configuration, Flux-managed chart declarations, and&#xA;Harbor service Terraform. The &lt;code&gt;tf_setup&lt;/code&gt;, &lt;code&gt;ansible&lt;/code&gt;, &lt;code&gt;cl&lt;/code&gt;, and &lt;code&gt;tf&lt;/code&gt; packages&#xA;are implementation stages of this owner. This is a checked-in source&#xA;baseline, without an observation of live registry availability or deployment&#xA;success.&lt;/p&gt;&#xA;&lt;p&gt;Baseline revision: &lt;code&gt;550d7e79b1f5fdbc2b6017b75178471d6914082f&lt;/code&gt;.&#xA;Observed: 2026-09-08. Sources: &lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/harbor/&#34;&gt;owner README&lt;/a&gt;,&#xA;&lt;a href=&#34;../../../BUILD.bazel&#34;&gt;BUILD&lt;/a&gt;, and the implementation links below.&lt;/p&gt;&#xA;&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirements&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id=&#34;requirement-dedicated-k3s-registry-host&#34;&gt;Requirement: Dedicated K3s registry host&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirement-dedicated-k3s-registry-host&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Setup SHALL declare a Proxmox VM in the &lt;code&gt;src_infra_harbor&lt;/code&gt; pool with two&#xA;cores, 4096 MiB memory, and 20 GiB boot, 20 GiB K3s data, and 40 GiB K3s&#xA;storage disks. Ansible SHALL apply the shared host and K3s roles with K3s&#xA;secrets encryption enabled. Its firewall variables SHALL scope API port&#xA;6443 access to the declared Flux host address.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title></title>
+				<link>https://www-staging.alwaldend.com/docs/infra/harbor/openspec/specs/owned-dns/spec/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/harbor/openspec/specs/owned-dns/spec/</guid>
+				<description>&lt;h1 id=&#34;owned-dns-specification&#34;&gt;owned-dns Specification&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#owned-dns-specification&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#purpose&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Define Harbor DNS management through the owner&amp;rsquo;s &lt;code&gt;tf_setup&lt;/code&gt; root,&#xA;including canonical declarations, scoped credentials, and offline source checks&#xA;before adopting live records.&lt;/p&gt;&#xA;&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirements&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id=&#34;requirement-owner-local-dns-configuration&#34;&gt;Requirement: Owner-local DNS configuration&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirement-owner-local-dns-configuration&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The &lt;code&gt;tf_setup&lt;/code&gt; root SHALL consume this owner&amp;rsquo;s canonical &lt;code&gt;dnsconfig.json&lt;/code&gt; through&#xA;the shared DNS Terraform module, preserving declared record identities and views.&#xA;DNS resources SHALL default to disabled before adoption and SHALL default to&#xA;enabled in the reviewed adoption revision and after adoption. Adoption SHALL&#xA;import the exact existing provider records and require a scoped no-change import plan before saved-plan&#xA;apply. Subsequent reconciliation with unchanged root inputs SHALL preserve&#xA;adopted records, unrelated DNS records, and non-DNS resources in the root.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

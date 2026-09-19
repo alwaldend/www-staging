@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Host Bot on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/docs/users/simeonwarren/host_bot/</link>
+		<description>Recent content in Host Bot on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/docs/users/simeonwarren/host_bot/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title></title>
+				<link>https://www-staging.alwaldend.com/docs/users/simeonwarren/host_bot/openspec/spec/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/users/simeonwarren/host_bot/openspec/spec/</guid>
+				<description>&lt;h1 id=&#34;owned-dns-specification&#34;&gt;owned-dns Specification&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#owned-dns-specification&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#purpose&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Define Host Bot DNS management through the owner&amp;rsquo;s &lt;code&gt;tf&lt;/code&gt; root,&#xA;including canonical declarations, scoped credentials, and offline source checks&#xA;before adopting live records.&lt;/p&gt;&#xA;&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirements&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id=&#34;requirement-owner-local-dns-configuration&#34;&gt;Requirement: Owner-local DNS configuration&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirement-owner-local-dns-configuration&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The &lt;code&gt;tf&lt;/code&gt; root SHALL consume this owner&amp;rsquo;s canonical &lt;code&gt;dnsconfig.json&lt;/code&gt; through&#xA;the shared DNS Terraform module, preserving declared record identities and views.&#xA;DNS resources SHALL default to disabled until the shared migration adopts them&#xA;and SHALL retain enabled ownership after authorized adoption into the owner&amp;rsquo;s&#xA;state. Reconciliation of adopted records with unchanged declarations SHALL&#xA;propose no record additions, changes, replacements, or deletions.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

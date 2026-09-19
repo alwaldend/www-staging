@@ -1,0 +1,2055 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js" data-theme-init>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000000">
+
+<style>
+  html { background: Canvas; color: CanvasText; }
+  @media (prefers-color-scheme: dark) {
+    html { background: #0b0d12; color: #e6e6e6; }
+  }
+  html[data-theme-init] * { transition: none !important; }
+</style>
+
+<script>
+  (function() {
+    const themeKey = 'td-color-theme';
+    const storedTheme = localStorage.getItem(themeKey);
+    let theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (theme === 'auto') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
+<link rel="canonical" type="text/html" href="https://www-staging.alwaldend.com/docs/data/books/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://www-staging.alwaldend.com/docs/data/books/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+<title>Books | Alwaldend</title>
+<meta name="description" content="Book data">
+<meta property="og:url" content="https://www-staging.alwaldend.com/docs/data/books/">
+	<meta property="og:site_name" content="Alwaldend">
+	<meta property="og:title" content="Books">
+	<meta property="og:description" content="Book data">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="Books">
+	<meta itemprop="description" content="Book data">
+	<meta itemprop="dateModified" content="2026-09-19T20:06:20+03:00">
+	<meta itemprop="wordCount" content="5678">
+	<meta itemprop="keywords" content="Books">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Books">
+	<meta name="twitter:description" content="Book data">
+<link rel="preload" href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" as="style" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<link href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" rel="stylesheet" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll">
+<div class="td-navbar-container container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">Alwaldend</span></a>
+  <div class="td-navbar__main td-navbar-nav-scroll td-navbar-nav-scroll--indicator" id="main_navbar">
+    <div class="scroll-indicator scroll-left"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/projects/"><span>Projects</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item td-navbar__light-dark-menu">
+        <div class="td-light-dark-menu dropdown"><svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+<button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        title="Toggle theme (Auto)"
+        aria-label="Toggle theme (Auto)">
+  <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="bd-theme">
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
+      Light
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>
+      Dark
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+      <svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>
+      Auto
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+</ul>
+</div>
+
+      </li>
+      </ul>
+    <div class="scroll-indicator scroll-right"></div>
+  </div>
+  <div class="td-navbar__search d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon" aria-hidden="true"></div>
+  <input
+    type="search"
+    name="q"
+    class="td-search__input form-control"
+    placeholder='Search this site…'
+    aria-label='Search this site…'
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/data/books/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Books</h1>
+<div class="lead">Book data</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+
+    </ul>
+
+
+<div class="content">
+      <h2 id="print-7075f5914744fa823c1987e445d9c37c-books">Books<a class="td-heading-self-link" href="#print-7075f5914744fa823c1987e445d9c37c-books" aria-label="Heading self-link"></a></h2><pre tabindex="0"><code>[[book]]
+title = &#34;Reverend Insanity&#34;
+alt_titles = [&#34;Gu Daoist Master&#34;, &#34;蛊真人&#34;]
+thumbnail = &#34;https://cdn.novelupdates.com/images/2025/06/Reverend-Insanity.jpg&#34;
+quality = &#34;Peak&#34;
+reading = &#34;Finished available, C2334&#34;
+authors = [&#34;gu-zhen-ren&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/reverend-insanity/&#34; },
+]
+
+[[book]]
+title = &#34;Virtuous Sons&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/41330-virtuous-sons-a-greco-roman-xianxia.jpg&#34;
+quality = &#34;Peak&#34;
+reading = &#34;Finished available (hiatus), C2.22&#34;
+authors = [&#34;ya-boy&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/41330/virtuous-sons-a-greco-roman-xianxia&#34; },
+]
+
+[[book]]
+title = &#34;My Longevity Simulation&#34;
+thumbnail = &#34;https://cdn.novelupdates.com/images/2024/08/My-Longevity-Simulation.jpg&#34;
+quality = &#34;Good&#34;
+reading = &#34;Dropped, C838&#34;
+authors = [&#34;angry-squid&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/my-longevity-simulation/&#34; },
+  { title = &#34;novelbin&#34;, url = &#34;https://novelbin.com/b/my-longevity-simulation/chapter-724&#34; },
+]
+
+[[book]]
+title = &#34;Unintended Immortality&#34;
+alt_titles = [&#34;The Unintentional Path to Immortality&#34;, &#34;我本无意成仙&#34;]
+thumbnail = &#34;https://cdn.novelupdates.com/images/2024/11/The-Unintentional-Path-to-Immortality.jpg&#34;
+quality = &#34;Good&#34;
+reading = &#34;Finished, C713&#34;
+authors = [&#34;golden-jasmine&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/the-unintentional-path-to-immortality/&#34; },
+  { title = &#34;novelfile&#34;, url = &#34;https://novelfire.net/book/unintended-immortality/chapter-447&#34; },
+]
+
+[[book]]
+title = &#34;Lord of the Mysteries&#34;
+thumbnail = &#34;https://cdn.novelupdates.com/images/2018/11/Lord-of-the-Mysteries.jpeg&#34;
+quality = &#34;Good&#34;
+reading = &#34;Finished volume 2&#34;
+authors = [&#34;cuttlefish-that-loves-diving&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/lord-of-the-mysteries/&#34; },
+]
+
+[[book]]
+title = &#34;Ze Tian Ji&#34;
+alt_titles = [&#34;Way of Choices&#34;, &#34;择天记&#34;]
+thumbnail = &#34;https://cdn.novelupdates.com/images/2015/06/Zetianji.jpg&#34;
+quality = &#34;Good&#34;
+reading = &#34;Finished&#34;
+authors = [&#34;mao-ni&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/ze-tian-ji/&#34; },
+]
+
+[[book]]
+title = &#34;The Path Toward Heaven&#34;
+alt_titles = [&#34;大道朝天&#34;]
+thumbnail = &#34;https://cdn.novelupdates.com/images/2017/10/pathtowardheaven.jpg&#34;
+quality = &#34;Good&#34;
+reading = &#34;Finished available chapters&#34;
+authors = [&#34;mao-ni&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/the-path-toward-heaven/&#34; },
+]
+
+[[book]]
+title = &#34;Nightfall&#34;
+alt_titles = [&#34;Ever Night&#34;, &#34;将夜&#34;]
+thumbnail = &#34;https://cdn.novelupdates.com/images/2015/06/JiangYe-.jpg&#34;
+quality = &#34;Good&#34;
+reading = &#34;Finished&#34;
+authors = [&#34;mao-ni&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/nightfall/&#34; },
+]
+
+[[book]]
+title = &#34;The Experimental Log of the Crazy Lich&#34;
+alt_titles = [&#34;疯巫妖的实验日志&#34;]
+thumbnail = &#34;https://cdn.novelupdates.com/images/2017/11/The-Experimental-Log-of-the-Crazy-Lich.jpg&#34;
+quality = &#34;Good&#34;
+reading = &#34;Finished volume 1&#34;
+authors = [&#34;angry-squirrel&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/the-experimental-log-of-the-crazy-lich/&#34; },
+]
+
+[[book]]
+title = &#34;The Sage Who Transcended Samsara&#34;
+alt_titles = [&#34;一世之尊&#34;]
+thumbnail = &#34;https://cdn.novelupdates.com/images/2019/05/17435126d0d51135aa4a70eb4c00f08bc818d0de901c670ce979f03a966bf10f.jpg&#34;
+quality = &#34;Good&#34;
+reading = &#34;Finished, dropped at the end&#34;
+authors = [&#34;cuttlefish-that-loves-diving&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/the-sage-who-transcended-samsara/&#34; },
+]
+
+[[book]]
+title = &#34;Outside of time&#34;
+alt_titles = [&#34;光阴之外&#34;]
+thumbnail = &#34;https://cdn.novelupdates.com/images/2024/08/Outside-of-Time.jpg&#34;
+quality = &#34;Ok&#34;
+reading = &#34;Dropped, C1470&#34;
+authors = [&#34;er-gen&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/beyond-the-timescape/&#34; },
+]
+
+[[book]]
+title = &#34;Archfiend&#34;
+alt_titles = [&#34;最强妖孽&#34;]
+thumbnail = &#34;https://cdn.novelupdates.com/images/2017/11/strongest-evildoer.jpeg&#34;
+quality = &#34;Decent&#34;
+reading = &#34;Finished translated chapters, chapter 528&#34;
+authors = [&#34;nocturnal-stranger&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/archfiend/&#34; },
+]
+
+[[book]]
+title = &#34;Godclads&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/59663-godclads.jpg&#34;
+quality = &#34;Good, a bit too dramatic&#34;
+reading = &#34;Dropped, C37-11&#34;
+authors = [&#34;ostensible-mammal&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/59663/godclads&#34; },
+]
+
+[[book]]
+title = &#34;Defiance of the Fall&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/24709-defiance-of-the-fall.jpg&#34;
+quality = &#34;Decent&#34;
+reading = &#34;Dropped, C1370&#34;
+authors = [&#34;thefirstdefier&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/24709/defiance-of-the-fall&#34; },
+]
+
+[[book]]
+title = &#34;Matabar&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/matabar-aaaa9rj72ru.jpg&#34;
+quality = &#34;Good&#34;
+reading = &#34;Dropped, chapter 120&#34;
+authors = [&#34;kirill-klevanski&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/94398/matabar&#34; },
+]
+
+[[book]]
+title = &#34;Renegade Immortal&#34;
+thumbnail = &#34;https://cdn.novelupdates.com/images/2016/03/xianni-1.jpg&#34;
+quality = &#34;Good&#34;
+reading = &#34;Finished&#34;
+authors = [&#34;er-gen&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/renegade-immortal/&#34; },
+]
+
+[[book]]
+title = &#34;The Years of Apocalypse&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/the-years-of-apocalypse-a-time-loop-progression.jpg&#34;
+quality = &#34;Decent&#34;
+reading = &#34;Dropped, C226&#34;
+authors = [&#34;uraniumphoenix&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/81002/the-years-of-apocalypse-a-time-loop-progression&#34; },
+]
+
+[[book]]
+title = &#34;Downtown Druid&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/79173-downtown-druid.jpg&#34;
+quality = &#34;Decent&#34;
+reading = &#34;Finished volume 1&#34;
+authors = [&#34;seersucker&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/79173/downtown-druid-book-1-stubbed&#34; },
+]
+
+[[book]]
+title = &#34;A Practical Guide to Sorcery&#34;
+thumbnail = &#34;https://www.azaleaellis.com/wp-content/uploads/2022/10/A-Conjuring-of-Ravens-Web-800w-683x1024.jpg&#34;
+quality = &#34;Decent, slow upload&#34;
+reading = &#34;Dropped, C262&#34;
+authors = [&#34;azalea-ellis&#34;]
+links = [
+  { title = &#34;azaleaellis&#34;, url = &#34;https://www.azaleaellis.com/a-practical-guide-to-sorcery/&#34; },
+]
+
+[[book]]
+title = &#34;Dungeon Crawler Carl&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-full/29358-dungeon-crawler-carl.jpg&#34;
+quality = &#34;Good&#34;
+reading = &#34;Finished available, B7&#34;
+authors = [&#34;doctorhepa&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/29358/dungeon-crawler-carl-book-6-the-ghosts-of-earth&#34; },
+]
+
+[[book]]
+title = &#34;Beware Of Chicken&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-full/beware-of-chicken-aacav1xoeg8.jpg&#34;
+quality = &#34;Decent&#34;
+reading = &#34;Dropped, V4(V6)C68&#34;
+authors = [&#34;casualfarmer&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/39408/beware-of-chicken&#34; },
+]
+
+[[book]]
+title = &#34;I Shall Seal the Heavens&#34;
+thumbnail = &#34;https://cdn.novelupdates.com/images/2015/06/15_ISSTH.jpg&#34;
+quality = &#34;Good&#34;
+reading = &#34;Finished&#34;
+authors = [&#34;er-gen&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/i-shall-seal-the-heavens/&#34; },
+]
+
+[[book]]
+title = &#34;World of Cultivation&#34;
+alt_titles = [&#34;修真世界&#34;]
+quality = &#34;Good&#34;
+reading = &#34;Finished&#34;
+authors = [&#34;fang-xiang&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/world-of-cultivation/&#34; },
+]
+
+[[book]]
+title = &#34;Return of the Runebound Professor&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/68679-return-of-the-runebound-professor.jpg&#34;
+quality = &#34;Ok&#34;
+reading = &#34;Reading, B7C749&#34;
+authors = [&#34;actus&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/68679/return-of-the-runebound-professor-book-6-stubbed&#34; },
+]
+
+[[book]]
+title = &#34;I Am Become Death&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/109537-i-am-become-death-a-progression-fantasy.jpg&#34;
+quality = &#34;Decent&#34;
+summary = &#34;Nothing exceptional&#34;
+reading = &#34;Dropped, chapter 55&#34;
+authors = [&#34;clarke&#34;]
+links = [
+  { title = &#34;royalroard&#34;, url = &#34;https://www.royalroad.com/fiction/109537/i-am-become-death-a-progression-fantasy-cultivation-based&#34; },
+]
+
+[[book]]
+title = &#34;Ghost of the Truthseeker&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/56136-ghost-of-the-truthseeker.jpg&#34;
+quality = &#34;Ok&#34;
+reading = &#34;Dropped, chapter 220&#34;
+authors = [&#34;strungbound&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/56136/ghost-of-the-truthseeker-book-4-being-released&#34; },
+]
+
+[[book]]
+title = &#34;The Beginning After the End&#34;
+thumbnail = &#34;https://upload.wikimedia.org/wikipedia/en/c/cc/The_Beginning_After_the_End_webtoon_volume_1_cover.jpg&#34;
+quality = &#34;Bad, isekai slop&#34;
+reading = &#34;Dropped, volume 1, chapter 13&#34;
+authors = [&#34;turtleme&#34;]
+links = [
+  { title = &#34;wikipedia&#34;, url = &#34;https://en.wikipedia.org/wiki/The_Beginning_After_the_End&#34; },
+]
+
+[[book]]
+title = &#34;Rise of the Living Forge&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/79094-rise-of-the-living-forge-stubbing-in-october.jpg&#34;
+quality = &#34;Ok&#34;
+reading = &#34;Dropped, C509&#34;
+authors = [&#34;actus&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/79094/rise-of-the-living-forge-a-blacksmith-litrpg&#34; },
+]
+
+[[book]]
+title = &#34;Vigor Mortis&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/40373-vigor-mortis.jpg&#34;
+quality = &#34;Ok&#34;
+reading = &#34;Dropped, V4C27&#34;
+authors = [&#34;thundamoo&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/40373/vigor-mortis&#34; },
+]
+
+[[book]]
+title = &#34;Ultimate Level 1&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/76259-ultimate-level-1-litrpg-book-8-stubs-531.jpg&#34;
+quality = &#34;Bad, litrpg slop&#34;
+reading = &#34;Dropped, V1C17&#34;
+authors = [&#34;dads-bedtime-stories&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/76259/ultimate-level-1-litrpg&#34; },
+]
+
+[[book]]
+title = &#34;If It’s for My Daughter, I’d Even Defeat a Demon Lord&#34;
+thumbnail = &#34;https://cdn.novelupdates.com/images/2020/05/uchimusuLNv2.jpg&#34;
+quality = &#34;Bad, Japanese slice-of-life litrpg fantasy slop&#34;
+reading = &#34;Dropped, V4C2&#34;
+authors = [&#34;chirolu&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/if-its-for-my-daughter-id-even-defeat-a-demon-lord/&#34; },
+]
+
+[[book]]
+title = &#34;Mark of the Fool&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/41618-mark-of-the-fool.jpg&#34;
+quality = &#34;Decent, not enough progression&#34;
+reading = &#34;Finished&#34;
+authors = [&#34;clarke&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/41618/mark-of-the-fool&#34; },
+]
+
+[[book]]
+title = &#34;DIE. RESPAWN. REPEAT.&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/66643-die-respawn-repeat.jpg&#34;
+quality = &#34;Decent, a bit bland&#34;
+reading = &#34;Dropped, volume 4, chapter 8 (chapter 222)&#34;
+authors = [&#34;silverlinings&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/66643/die-respawn-repeat&#34; },
+]
+
+[[book]]
+title = &#34;System Breaker&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/89249-system-breaker-xianxia-system-apocalypse.jpg&#34;
+quality = &#34;Decent, MC is a bit immature&#34;
+reading = &#34;Dropped, volume 2, chapter 55&#34;
+authors = [&#34;ostensiblemammal&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/89249/system-breaker-xianxia-system-apocalypse-litrpg&#34; },
+]
+
+[[book]]
+title = &#34;Reborn as a Demonic Tree&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/62881-reborn-as-a-demonic-tree.jpg&#34;
+quality = &#34;Ok, mediocre&#34;
+reading = &#34;Dropped, volume 8, chapter 421&#34;
+authors = [&#34;xkarnation&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/62881/reborn-as-a-demonic-tree&#34; },
+]
+
+[[book]]
+title = &#34;Accel World&#34;
+thumbnail = &#34;https://cdn.novelupdates.com/images/2023/08/Accel-World.jpg&#34;
+quality = &#34;Bad, japanese slop&#34;
+reading = &#34;Dropped at some point&#34;
+authors = [&#34;kawahara-reki&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/accel-world/&#34; },
+]
+
+[[book]]
+title = &#34;The Jester of Apocalypse&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/62411-the-jester-of-apocalypse.jpg&#34;
+quality = &#34;Ok, basic and a bit edgy&#34;
+reading = &#34;Finished available chapters&#34;
+authors = [&#34;robert-blaise&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/62411/the-jester-of-apocalypse&#34; },
+]
+
+[[book]]
+title = &#34;Throne of Magical Arcana&#34;
+thumbnail = &#34;https://cdn.novelupdates.com/images/2017/04/Throne-of-Magical-Arcana.jpg&#34;
+quality = &#34;Decent, a bit mediocre&#34;
+reading = &#34;Dropped near the end when the main plot ended&#34;
+authors = [&#34;cuttlefish-that-loves-diving&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/throne-of-magical-arcana/&#34; },
+]
+
+[[book]]
+title = &#34;The Charm of Soul Pets&#34;
+thumbnail = &#34;https://cdn.novelupdates.com/images/2016/08/The-Charm-of-Soul-Pets-1.jpg&#34;
+quality = &#34;Don&#39;t remember&#34;
+reading = &#34;Dropped, chapter 42&#34;
+authors = [&#34;chaos&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/the-charm-of-soul-pets/&#34; },
+]
+
+[[book]]
+title = &#34;12 Miles Below&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/42367-12-miles-below.jpg&#34;
+quality = &#34;Decent&#34;
+reading = &#34;Dropped at some point&#34;
+authors = [&#34;mark-arrows&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/42367/12-miles-below&#34; },
+]
+
+[[book]]
+title = &#34;Worm&#34;
+thumbnail = &#34;https://parahumans.wordpress.com/wp-content/uploads/2011/06/cityscape2.jpg&#34;
+quality = &#34;Decent&#34;
+reading = &#34;Finished&#34;
+authors = [&#34;wildbow&#34;]
+links = [{ title = &#34;website&#34;, url = &#34;https://parahumans.wordpress.com/&#34; }]
+
+[[book]]
+title = &#34;Full Murderhobo&#34;
+thumbnail = &#34;https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1598478055i/55134991._SX120_.jpg&#34;
+quality = &#34;Ok, a bit basic&#34;
+reading = &#34;Finished, volume 3&#34;
+authors = [&#34;dakota-krout&#34;]
+links = [
+  { title = &#34;goodreads&#34;, url = &#34;https://www.goodreads.com/series/298351-full-murderhobo&#34; },
+]
+
+[[book]]
+title = &#34;The Divine Dungeon&#34;
+thumbnail = &#34;https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1476063034i/32509131.jpg&#34;
+quality = &#34;Ok, a bit basic&#34;
+reading = &#34;Finished&#34;
+authors = [&#34;dakota-krout&#34;]
+links = [
+  { title = &#34;goodreads&#34;, url = &#34;https://www.goodreads.com/series/192510-the-divine-dungeon&#34; },
+]
+
+[[book]]
+title = &#34;SSS-Class Suicide Hunter&#34;
+thumbnail = &#34;https://cdn.novelupdates.com/images/2021/05/SSSClass-Suicide-Hunter.jpg&#34;
+quality = &#34;Ok, too much emotional bullshit&#34;
+reading = &#34;Dropped at some point&#34;
+authors = [&#34;sinnoa&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/sss-class-suicide-hunter&#34; },
+]
+
+[[book]]
+title = &#34;Corpo Age&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/75446-corpo-age-cyberpunk-progression-litrpg.jpg&#34;
+quality = &#34;Ok, feels basic&#34;
+reading = &#34;Dropped, volume 1, chapter 2&#34;
+authors = [&#34;randombluecat&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/75446/corpo-age&#34; },
+]
+
+[[book]]
+title = &#34;Shen Yin Wang Zuo&#34;
+alt_titles = [&#34;Sealed Divine Throne&#34;, &#34;神印王座&#34;]
+thumbnail = &#34;https://cdn.novelupdates.com/images/2015/06/sywz.jpg&#34;
+quality = &#34;Bad, too bland&#34;
+reading = &#34;Dropped, chapter 101&#34;
+authors = [&#34;tang-jia-san-shao&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/shen-yin-wang-zuo/&#34; },
+]
+
+[[book]]
+title = &#34;Warlock of the Magus World&#34;
+thumbnail = &#34;https://cdn.novelupdates.com/images/2022/05/Warlock-of-the-Magus-World_1653417756.jpg&#34;
+quality = &#34;Bad, edgy slop, too much &#39;AI chip, do the thing&#39;&#34;
+reading = &#34;Dropped, chapter 58&#34;
+authors = [&#34;the-plagiarist&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/warlock-of-the-magus-world/&#34; },
+]
+
+[[book]]
+title = &#34;Perfect World&#34;
+thumbnail = &#34;https://cdn.novelupdates.com/images/2018/03/perfectworld.jpeg&#34;
+quality = &#34;Don&#39;t remember, children are boring&#34;
+reading = &#34;Dropped, chapter 75&#34;
+authors = [&#34;chen-dong&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/perfect-world/&#34; },
+]
+
+[[book]]
+title = &#34;Trash of the Count’s Family&#34;
+thumbnail = &#34;https://cdn.novelupdates.com/images/2022/10/Trash-of-the-Counts-Family.jpg&#34;
+quality = &#34;Bad&#34;
+summary = &#34;Korean slop, the same stuff happens over and over again, endless saving of useless garbage, humble bragging&#34;
+reading = &#34;Dropped, chapter 215&#34;
+authors = [&#34;yu-ryeo-han&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/trash-of-the-counts-family/&#34; },
+]
+
+[[book]]
+title = &#34;Forty Millenniums of Cultivation&#34;
+alt_titles = [&#34;Forty Thousand Years Of Cultivation&#34;, &#34;修真四万年&#34;]
+thumbnail = &#34;https://cdn.novelupdates.com/images/2017/03/Forty-Millenniums-of-Cultivation.jpg&#34;
+quality = &#34;Ok&#34;
+summary = &#34;Good worldbuilding, but too many empty exclamations and not enough substance&#34;
+reading = &#34;Dropped, chapter 2935&#34;
+authors = [&#34;the-enlightened-master-crouching-cow&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/forty-millenniums-of-cultivation/&#34; },
+]
+
+[[book]]
+title = &#34;The Empty Box and Zeroth Maria&#34;
+alt_titles = [&#34;Utsuro no Hako to Zero no Maria&#34;, &#34;空ろの箱と零のマリア&#34;]
+thumbnail = &#34;https://cdn.novelupdates.com/images/2023/04/Utsuro-no-Hako-to-Zero-no-Maria.jpg&#34;
+quality = &#34;Decent?&#34;
+summary = &#34;Don&#39;t remember&#34;
+reading = &#34;Finished&#34;
+authors = [&#34;mikage-eiji&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/utsuro-no-hako-to-zero-no-maria/&#34; },
+]
+
+[[book]]
+title = &#34;Rune Seeker&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/73095-rune-seeker-a-progression-fantasy-litrpg.jpg&#34;
+quality = &#34;Ok&#34;
+summary = &#34;Shallow&#34;
+reading = &#34;Dropped, volume 2, chapter 12&#34;
+authors = [&#34;clarke&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/73095/rune-seeker-a-progression-fantasy-litrpg-book&#34; },
+]
+
+[[book]]
+title = &#34;Chrysalis&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-full/22518-chrysalis.jpg&#34;
+quality = &#34;Ok&#34;
+reading = &#34;Dropped, C1654&#34;
+authors = [&#34;rinoz&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/22518/chrysalis&#34; },
+]
+
+[[book]]
+title = &#34;My House of Horrors&#34;
+alt_titles = [&#34;我有一座冒险屋&#34;]
+thumbnail = &#34;https://cdn.novelupdates.com/images/2024/09/My-House-of-Horrors.jpg&#34;
+quality = &#34;Ok&#34;
+summary = &#34;Repetitive&#34;
+reading = &#34;Dropped at some point&#34;
+authors = [&#34;can-fix-air-conditioners&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/my-house-of-horrors/&#34; },
+]
+
+[[book]]
+title = &#34;The Spiritual Attainment of Minghe&#34;
+alt_titles = [&#34;明和的精神境界&#34;]
+thumbnail = &#34;https://cdn.novelupdates.com/images/2018/02/attain1.jpg&#34;
+quality = &#34;Ok&#34;
+summary = &#34;Shallow, bad translation&#34;
+reading = &#34;Dropped, chapter 8&#34;
+authors = [&#34;god-loves-the-world&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/the-spiritual-attainment-of-minghe/&#34; },
+]
+
+[[book]]
+title = &#34;Unbound&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/30321-unbound.jpg&#34;
+quality = &#34;Ok&#34;
+summary = &#34;Shallow&#34;
+reading = &#34;Dropped, finisehd volume 3&#34;
+authors = [&#34;necariin&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/30321/unbound&#34; },
+]
+
+[[book]]
+title = &#34;The Stubborn Skill-Grinder In A Time Loop&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/83294-the-stubborn-skill-grinder-in-a-time-loop.jpg&#34;
+quality = &#34;Ok&#34;
+summary = &#34;Shallow litrpg slop&#34;
+reading = &#34;Dropped, chapter 44&#34;
+authors = [&#34;x-rhoden-x&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/83294/the-stubborn-skill-grinder-in-a-time-loop&#34; },
+]
+
+[[book]]
+title = &#34;I Shall Be Everlasting In the World of Immortals&#34;
+alt_titles = [&#34;我在修仙界万古长青&#34;]
+thumbnail = &#34;https://cdn.novelupdates.com/images/2024/08/I-Shall-Be-Everlasting-In-the-World-of-Immortals.jpg&#34;
+quality = &#34;Ok&#34;
+summary = &#34;Shallow&#34;
+reading = &#34;Dropped, chapter 241&#34;
+authors = [&#34;fast-food-restaurant&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/i-shall-be-everlasting-in-the-world-of-immortals/&#34; },
+]
+
+[[book]]
+title = &#34;Solo Leveling&#34;
+alt_titles = [&#34;我独自升级&#34;]
+thumbnail = &#34;https://cdn.novelupdates.com/images/2019/01/Solo-Leveling.jpg&#34;
+quality = &#34;Ok&#34;
+summary = &#34;Shallow litrpg slop&#34;
+reading = &#34;Dropped, chapter 52&#34;
+authors = [&#34;chugong&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/solo-leveling/&#34; },
+]
+
+[[book]]
+title = &#34;The Strongest System&#34;
+alt_titles = [&#34;最强的系统&#34;]
+thumbnail = &#34;https://cdn.novelupdates.com/images/2022/06/The-Strongest-System.jpg&#34;
+quality = &#34;Ok&#34;
+summary = &#34;Shallow&#34;
+reading = &#34;Dropped, chapter 113&#34;
+authors = [&#34;xin-feng&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/the-strongest-system/&#34; },
+]
+
+[[book]]
+title = &#34;Cultivation Chat Group&#34;
+alt_titles = [&#34;修真聊天群&#34;]
+thumbnail = &#34;https://cdn.novelupdates.com/images/2017/10/Cultivation-Chat-Group.jpg&#34;
+quality = &#34;Decent&#34;
+reading = &#34;Finished&#34;
+authors = [&#34;legend-of-the-paladin&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/cultivation-chat-group/&#34; },
+]
+
+[[book]]
+title = &#34;Dao of the Bizarre Immortal&#34;
+alt_titles = [&#34;道诡异仙&#34;]
+thumbnail = &#34;https://cdn.novelupdates.com/images/2023/10/Mutated-Tao.jpg&#34;
+quality = &#34;Decent&#34;
+reading = &#34;Finished&#34;
+authors = [&#34;foxtail-quill&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/dao-of-the-bizarre-immortal/&#34; },
+]
+
+[[book]]
+title = &#34;Blood &amp; Fur&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/70234-blood-fur.jpg&#34;
+quality = &#34;Good&#34;
+reading = &#34;Finished&#34;
+authors = [&#34;maxime-j-durand&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/70234/blood-fur&#34; },
+]
+
+[[book]]
+title = &#34;The Perfect Run&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-full/36735-the-perfect-run.jpg&#34;
+quality = &#34;Decent&#34;
+reading = &#34;Finished&#34;
+authors = [&#34;maxime-j-durand&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/36735/the-perfect-run&#34; },
+]
+
+[[book]]
+title = &#34;Dungeon Inspector&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/63331-dungeon-inspector-book-2-complete.jpg&#34;
+quality = &#34;Ok, mediocre&#34;
+reading = &#34;Dropped, finished volume 1&#34;
+authors = [&#34;flossindune&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/63331/dungeon-inspector-book-1-complete-book-2-starts&#34; },
+]
+
+[[book]]
+title = &#34;Why Are the Talismans I Drawn Banned Again?!&#34;
+alt_titles = [&#34;我画的符箓必被禁用&#34;]
+thumbnail = &#34;https://cdn.novelupdates.com/images/2024/11/Why-are-the-Talismans-I-Drawn-Banned-Again.jpg&#34;
+quality = &#34;Slop, rushed ending&#34;
+reading = &#34;Finshed, chapter 258&#34;
+authors = [&#34;quiet-support&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/why-are-the-talismans-i-drawn-banned-again/&#34; },
+]
+
+[[book]]
+title = &#34;Versatile Mage&#34;
+alt_titles = [&#34;全职法师&#34;]
+thumbnail = &#34;https://cdn.novelupdates.com/images/2017/08/Versatile-Mage.jpg&#34;
+quality = &#34;Slop&#34;
+reading = &#34;Dropped, chapter 8&#34;
+authors = [&#34;chaos&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/versatile-mage/&#34; },
+]
+
+[[book]]
+title = &#34;1% Lifesteal&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/72301-1-lifesteal.jpg&#34;
+quality = &#34;Ok, boring protagonist&#34;
+reading = &#34;Dropped, C128 (volume 2)&#34;
+authors = [&#34;robert-blaise&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/72301/1-lifesteal&#34; },
+]
+
+[[book]]
+title = &#34;Saving the school would have been easier as a cafeteria worker&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/86874-saving-the-school-would-have-been-easier.jpg&#34;
+quality = &#34;Decent&#34;
+reading = &#34;Finished available (hiatus), chapter 90&#34;
+authors = [&#34;cluelessrr&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/86874/saving-the-school-would-have-been-easier-as-a&#34; },
+]
+
+[[book]]
+title = &#34;Theos&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/64789-theos.jpg&#34;
+quality = &#34;Decent&#34;
+reading = &#34;Hiatus, B3C4&#34;
+authors = [&#34;arthur-wordsmith&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/64789/theos&#34; },
+]
+
+[[book]]
+title = &#34;The System is Abstract, Luckily, So Am I&#34;
+thumbnail = &#34;https://cdn.novelupdates.com/images/2025/02/The-System-is-Abstract-Luckily-So-Am-I.png&#34;
+quality = &#34;Slop&#34;
+reading = &#34;Dropped, C311&#34;
+authors = [&#34;pu-jie-tianxian&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/the-system-is-abstract-luckily-so-am-i/&#34; },
+]
+
+[[book]]
+title = &#34;Kill the Sun&#34;
+thumbnail = &#34;https://book-pic.webnovel.com/bookcover/27467949206850305?imageMogr2/thumbnail/180x|imageMogr2/quality/70!&amp;imageId=1732809259404&#34;
+quality = &#34;Decent&#34;
+reading = &#34;Finished, C992&#34;
+authors = [&#34;warmaisach&#34;]
+links = [
+  { title = &#34;webnovel&#34;, url = &#34;https://m.webnovel.com/book/kill-the-sun_27467949206850305&#34; },
+]
+
+[[book]]
+title = &#34;I Just Want to Slack Off in Cultivation&#34;
+thumbnail = &#34;https://cdn.novelupdates.com/images/2023/10/I-just-want-to-slack-off-in-cultivation.jpg&#34;
+alt_titles = [&#34;我只想安静的做个苟道中人&#34;]
+quality = &#34;Slop&#34;
+reading = &#34;Dropped, C54&#34;
+authors = [&#34;exploding-small-latte&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/__trashed-43/&#34; },
+]
+
+[[book]]
+title = &#34;New Life As A Max Level Archmage&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/118891-new-life-as-a-max-level-archmage.jpg&#34;
+quality = &#34;Ok&#34;
+reading = &#34;Dropped, C44&#34;
+authors = [&#34;arcanecadence&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/118891/new-life-as-a-max-level-archmage&#34; },
+]
+
+[[book]]
+title = &#34;Only at the Mahayana Stage Does the Reversal System Appear&#34;
+thumbnail = &#34;https://cdn.novelupdates.com/images/2025/02/Only-at-the-Mahayana-Stage-Does-the-Reversal-System-Appear.jpeg&#34;
+quality = &#34;Ok, bad translation&#34;
+reading = &#34;Dropped, C164&#34;
+authors = [&#34;the-whitest-crow&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/only-at-the-mahayana-stage-does-the-reversal-system-appear/&#34; },
+]
+
+[[book]]
+title = &#34;Etherious&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/52083-etherious--a-litrpg-story-book-2-stubbing.jpg&#34;
+quality = &#34;Ok&#34;
+reading = &#34;Dropped, finished V4&#34;
+authors = [&#34;emes&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/52083/etherious--a-litrpg-story&#34; },
+]
+
+[[book]]
+title = &#34;The Shards of Etherious&#34;
+thumbnail = &#34;https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1611195421i/56769296.jpg&#34;
+quality = &#34;Bad&#34;
+reading = &#34;Dropped, V1C9&#34;
+authors = [&#34;colin-j-d-crooks&#34;]
+links = [
+  { title = &#34;goodreads&#34;, url = &#34;https://www.goodreads.com/book/show/56769296-arisen&#34; },
+]
+
+[[book]]
+title = &#34;I Became The Necromancer Of The Academy&#34;
+thumbnail = &#34;https://cdn.novelupdates.com/images/2024/03/I-Became-The-Necromancer-Of-The-Academy.jpg&#34;
+quality = &#34;Slop&#34;
+reading = &#34;Dropped, C37&#34;
+authors = [&#34;_172&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/i-became-the-necromancer-of-the-academy/&#34; },
+]
+
+[[book]]
+title = &#34;Dear Spellbook&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/49881-dear-spellbook.jpg&#34;
+quality = &#34;Ok&#34;
+reading = &#34;Dropped, V3C13&#34;
+authors = [&#34;tk523&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/49881/dear-spellbook&#34; },
+]
+
+[[book]]
+title = &#34;All the Dust that Falls&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/60292-all-the-dust-that-falls.jpg&#34;
+quality = &#34;Ok&#34;
+reading = &#34;Finished, V4&#34;
+authors = [&#34;zaifyr&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/60292/all-the-dust-that-falls&#34; },
+]
+
+[[book]]
+title = &#34;Nightmare Realm Summoner&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/89034-nightmare-realm-summoner-stubbing-in-1-week.jpg&#34;
+quality = &#34;Ok&#34;
+reading = &#34;Dropped, C278&#34;
+authors = [&#34;actus&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/89034/nightmare-realm-summoner&#34; },
+]
+
+[[book]]
+title = &#34;Mage Tank&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/mage-tank-aacalggbnhq.jpg&#34;
+quality = &#34;Slop&#34;
+reading = &#34;Dropped, V1C50&#34;
+authors = [&#34;cornman&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/76463/mage-tank&#34; },
+]
+
+[[book]]
+title = &#34;Salvage System&#34;
+thumbnail = &#34;https://b2419162.smushcdn.com/2419162/wp-content/uploads/2025/09/81bMdsFQzCL._SL1500_-1.jpg?lossy=2&amp;strip=1&amp;webp=1&#34;
+quality = &#34;Slop&#34;
+reading = &#34;Dropped, V1C11&#34;
+authors = [&#34;nicholas_sansbury_smith&#34;]
+links = [
+  { title = &#34;aethonbooks&#34;, url = &#34;https://aethonbooks.com/book/salvage-system/&#34; },
+]
+
+[[book]]
+title = &#34;Shrouded Seascape&#34;
+alt_titles = [&#34;诡秘地海&#34;]
+thumbnail = &#34;./shrouded_seascape.jpg&#34;
+quality = &#34;Good&#34;
+reading = &#34;Finished, C1149&#34;
+authors = [&#34;foxtail-quill&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/shrouded-seascape/&#34; },
+]
+
+[[book]]
+title = &#34;Diary of a Dead Wizard&#34;
+alt_titles = [&#34;死亡巫师日记&#34;]
+thumbnail = &#34;./diary_of_a_dead_wizard.jpeg&#34;
+quality = &#34;Good&#34;
+reading = &#34;Finished, C1037&#34;
+authors = [&#34;jin-nai&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/diary-of-a-dead-wizard/&#34; },
+]
+
+[[book]]
+title = &#34;The Crazy Knight’s Age of the Universe&#34;
+alt_titles = [&#34;疯骑士的宇宙时代&#34;]
+thumbnail = &#34;https://img.wtr-lab.com/cdn/series/V59LQYUDTF-TfhZh1GsBO6WG1VvW3p6MTAOqKYwFyFA.jpeg&#34;
+quality = &#34;Ok, lost the vibe of the first book&#34;
+reading = &#34;Dropped, C167&#34;
+authors = [&#34;angry-squirrel&#34;]
+links = [
+  { title = &#34;wtr-lab&#34;, url = &#34;https://wtr-lab.com/en/novel/21563/the-crazy-knights-age-of-the-universe/&#34; },
+]
+
+[[book]]
+title = &#34;Are You Even Human&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/are-you-even-human-aabawaw0tbu.jpg&#34;
+quality = &#34;Decent&#34;
+reading = &#34;Dropped, C54&#34;
+authors = [&#34;thundamoo&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/92549/are-you-even-human&#34; },
+]
+
+[[book]]
+title = &#34;A Gamer&#39;s Guide To Beating The Tutorial&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/73205-a-gamers-guide-to-beating-the-tutorial.jpg&#34;
+quality = &#34;Ok&#34;
+reading = &#34;Dropped, C352&#34;
+authors = [&#34;palt&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/73205/a-gamers-guide-to-beating-the-tutorial&#34; },
+]
+
+[[book]]
+title = &#34;Unsong&#34;
+thumbnail = &#34;https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1632785897i/28589297.jpg&#34;
+quality = &#34;Good, disgusting ending&#34;
+reading = &#34;Finished&#34;
+authors = [&#34;scott_alexander&#34;]
+links = [{ title = &#34;site&#34;, url = &#34;https://unsongbook.com/&#34; }]
+
+[[book]]
+title = &#34;Young Master&#39;s PoV: Woke Up As A Villain In A Game One Day&#34;
+thumbnail = &#34;./young_masters_pov_woke_up_as_a_villain_in_a_game_one_day.jpg&#34;
+quality = &#34;Ok&#34;
+reading = &#34;Dropped, C293&#34;
+authors = [&#34;the-one-who-was&#34;]
+links = [
+  { title = &#34;webnovel&#34;, url = &#34;https://www.webnovel.com/book/young-master&#39;s-pov-woke-up-as-a-villain-in-a-game-one-day_30581672200350205&#34; },
+]
+
+[[book]]
+title = &#34;Throne Hunters&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/85769-throne-hunters-dungeon-focused-progression.jpg&#34;
+quality = &#34;Ok&#34;
+reading = &#34;Dropped, V1C44&#34;
+authors = [&#34;phill_tucker&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/85769/throne-hunters-dungeon-focused-progression-fantasystubbed&#34; },
+]
+
+[[book]]
+title = &#34;For the Glory of Rome&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/104561-for-the-glory-of-rome-chronicles-of-an.jpg&#34;
+quality = &#34;Ok&#34;
+reading = &#34;Dropped, V3C12&#34;
+authors = [&#34;zaifyr&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/104561/for-the-glory-of-rome-chronicles-of-an-isekaid&#34; },
+]
+
+[[book]]
+title = &#34;Magical Girl Gunslinger&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/48402-magical-girl-gunslinger.jpg?time=1693597835&#34;
+quality = &#34;Ok&#34;
+reading = &#34;Finished available (hiatus), C37&#34;
+authors = [&#34;mikasane&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/48402/magical-girl-gunslinger&#34; },
+]
+
+[[book]]
+title = &#34;This Magical Girl is Mine&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/this-magical-girl-is-mine-aacauifwgrc.jpg&#34;
+quality = &#34;Ok&#34;
+reading = &#34;Dropped, V5C1.2&#34;
+authors = [&#34;voravora&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/118714/this-magical-girl-is-mine&#34; },
+]
+
+[[book]]
+title = &#34;Magical Girl Mechanical Heart&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/magical-girl-mechanical-heart-aadaukdlry.jpg&#34;
+quality = &#34;Ok&#34;
+reading = &#34;Dropped, C52&#34;
+authors = [&#34;thundamoo&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/106438/magical-girl-mechanical-heart&#34; },
+]
+
+[[book]]
+title = &#34;Grotesqueries of the Old Domain&#34;
+alt_titles = [&#34;旧域怪诞&#34;, &#34;The Grotesque Old Domain&#34;]
+thumbnail = &#34;./grotesqueries_of_the_old_domain.jpg&#34;
+quality = &#34;Good?&#34;
+reading = &#34;Dropped, C268&#34;
+authors = [&#34;foxtail-quill&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/grotesqueries-of-the-old-domain/&#34; },
+]
+
+[[book]]
+title = &#34;The Hundred Reigns&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/the-hundred-reigns-timeloop-litrpg-aabay6rm6bc.jpg&#34;
+quality = &#34;Ok&#34;
+reading = &#34;Dropped, C183&#34;
+authors = [&#34;maxime-j-durand&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/139212/the-hundred-reigns-timeloop-litrpg&#34; },
+]
+
+[[book]]
+title = &#34;Afterlife 2.0&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/111416-afterlife-20-litrpg-in-hell.jpg&#34;
+quality = &#34;Decent&#34;
+reading = &#34;Finished available (hiatus), C86&#34;
+authors = [&#34;quickduckling&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/111416/afterlife-20-litrpg-in-hell&#34; },
+]
+
+[[book]]
+title = &#34;Mask of Humanity&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/80031-mask-of-humanity-grimdark-cultivation-litrpg.jpg&#34;
+quality = &#34;Decent&#34;
+reading = &#34;Dropped, C366&#34;
+authors = [&#34;slaughterbot&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/80031/mask-of-humanity&#34; },
+]
+
+[[book]]
+title = &#34;Changeling&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/75345-changeling.jpg&#34;
+quality = &#34;Decent&#34;
+reading = &#34;Dropped, C103&#34;
+authors = [&#34;mecanimus&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/75345/changeling&#34; },
+]
+
+[[book]]
+title = &#34;The Tower of Infinite Evil&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/122142-the-tower-of-infinite-evil-a-litrpg-horror.jpg&#34;
+quality = &#34;Decent&#34;
+reading = &#34;Dropped, C127&#34;
+authors = [&#34;lit-homunculus&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/122142/the-tower-of-infinite-evil-a-litrpg-horror-comedy&#34; },
+]
+
+[[book]]
+title = &#34;Pale Lights&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/65058-pale-lights.jpg?time=1745679158&#34;
+quality = &#34;Good&#34;
+reading = &#34;Dropped, V3C37&#34;
+authors = [&#34;erraticerrata&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/65058/pale-lights&#34; },
+]
+
+[[book]]
+title = &#34;Shadow Slave&#34;
+thumbnail = &#34;./shadow_slave.jpg&#34;
+quality = &#34;Decent&#34;
+reading = &#34;Dropped, chapter 2777&#34;
+authors = [&#34;guilty-three&#34;]
+links = [
+  { title = &#34;webnovel&#34;, url = &#34;https://www.webnovel.com/book/shadow-slave_22196546206090805&#34; },
+]
+
+[[book]]
+title = &#34;I Cultivate Legally, Why Call Me a Demon?&#34;
+alt_titles = [&#34;我合法修仙，凭什么叫我魔头？&#34;]
+thumbnail = &#34;https://cdn.novelupdates.com/images/2025/09/I-Cultivate-Legally-Why-Call-Me-a-Demon.jpg&#34;
+quality = &#34;Slop&#34;
+reading = &#34;Dropped, C89&#34;
+authors = [&#34;一辈子小说家&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/i-cultivate-legally-why-call-me-a-demon/&#34; },
+]
+
+[[book]]
+title = &#34;I Am a Demon Cultivator, Not a Conscientious Capitalist&#34;
+alt_titles = [&#34;我是魔修，不是良心资本家&#34;]
+thumbnail = &#34;https://cdn.novelupdates.com/images/2025/09/I-Am-a-Demon-Cultivator-Not-a-Conscientious-Capitalist.jpg&#34;
+quality = &#34;Slop&#34;
+reading = &#34;Dropped, C19&#34;
+authors = [&#34;窗边的鸽子&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/i-am-a-demon-cultivator-not-a-conscientious-capitalist/&#34; },
+]
+
+[[book]]
+title = &#34;Shan He Ji&#34;
+alt_titles = [&#34;山河稷&#34;, &#34;Mountains, Rivers, and the Grain God&#34;]
+thumbnail = &#34;https://cdn.novelupdates.com/images/2025/07/Shan-He-Ji.jpg&#34;
+quality = &#34;Ok&#34;
+reading = &#34;Dropped, C27&#34;
+authors = [&#34;姬叉&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/shan-he-ji/&#34; },
+]
+
+[[book]]
+title = &#34;Staring directly at the ancient gods for a whole year&#34;
+alt_titles = [&#34;直视古神一整年&#34;]
+thumbnail = &#34;https://img.wtr-lab.com/dSO3hnkuy2rqyLSKcLj1gjd_4jLT-ZU_4KetR6Aj99Y/rs:fit:344:0:0/q:80/g:no/czM6Ly93dHJpbWcvc2VyaWVzLzFFdXZOQ0EyS2ZsT2NmUlczYVlQZUEud2VicA&#34;
+quality = &#34;Slop&#34;
+reading = &#34;Dropped, C100&#34;
+authors = [&#34;三藏的左轮&#34;]
+links = [
+  { title = &#34;wtrlab&#34;, url = &#34;https://wtr-lab.com/en/novel/5006/staring-directly-at-the-ancient-gods-for-a-whole-year&#34; },
+]
+
+[[book]]
+title = &#34;Mysterious Revival&#34;
+thumbnail = &#34;https://book-pic.webnovel.com/bookcover/19115759305319405?imageMogr2/thumbnail/180x|imageMogr2/format/webp|imageMogr2/quality/70!&amp;imageId=1721123894271&#34;
+quality = &#34;Ok&#34;
+reading = &#34;Dropped, C54&#34;
+authors = [&#34;offering-flowers-before-the-buddha&#34;]
+links = [
+  { title = &#34;webnovel&#34;, url = &#34;https://m.webnovel.com/book/mysterious-revival_19115759305319405&#34; },
+]
+
+[[book]]
+title = &#34;Explorer of Edregon&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/100744-explorer-of-edregon.jpg?time=1763178307&#34;
+quality = &#34;Ok, bland&#34;
+reading = &#34;Dropped, C20&#34;
+authors = [&#34;wizardly_dude&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/100744/explorer-of-edregon-book-5-complete&#34; },
+]
+
+[[book]]
+title = &#34;No More Heroes&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/89019-no-more-heroes-superhero-litrpg.jpg?time=1721951587&#34;
+quality = &#34;Ok, boring&#34;
+reading = &#34;Dropped, C22&#34;
+authors = [&#34;lokithequick&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/89019/no-more-heroes-superhero-litrpg&#34; },
+]
+
+[[book]]
+title = &#34;DIE TRYING&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/124235-die-trying-a-roguelite-extraction-litrpg.jpg?time=1759079259&#34;
+quality = &#34;Ok, bland&#34;
+reading = &#34;Dropped, C47&#34;
+authors = [&#34;markarrows&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/124235/die-trying-a-roguelite-extraction-litrpg&#34; },
+]
+
+[[book]]
+title = &#34;Shadow Clone Sorcery&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/117529-shadow-clone-sorcery.jpg?time=1748092724&#34;
+quality = &#34;Ok, bland&#34;
+reading = &#34;Dropped, C110&#34;
+authors = [&#34;jpwrites&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/117529/shadow-clone-sorcery-book-1-complete&#34; },
+]
+
+[[book]]
+title = &#34;To Walk The Red Path &#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/to-walk-the-red-path-a-story-of-dungeon-crawling.jpg?time=1741212789&#34;
+quality = &#34;Ok, bland&#34;
+reading = &#34;Dropped, F6P2C10&#34;
+authors = [&#34;cashen&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/107964/to-walk-the-red-path-a-story-of-dungeon-crawling&#34; },
+]
+
+[[book]]
+title = &#34;[Grave Robber]&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/178197-grave-robber.jpg?time=1783922076&#34;
+quality = &#34;Ok, mediorce&#34;
+reading = &#34;Dropped, C6&#34;
+authors = [&#34;disheveledvagabond&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/178197/grave-robber&#34; },
+]
+
+[[book]]
+title = &#34;Throne of Time&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/throne-of-time-aabavht89hg.jpg?time=1780498434&#34;
+quality = &#34;Ok, bland&#34;
+reading = &#34;Dropped, C23&#34;
+authors = [&#34;cognosticon&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/172653/throne-of-time-magical-academy-time-loop-mystery&#34; },
+]
+
+[[book]]
+title = &#34;Path of the Deathless&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/122502-path-of-the-deathless-book-4-completed.jpg&#34;
+quality = &#34;Decent&#34;
+reading = &#34;Dropped, C333&#34;
+authors = [&#34;ostensiblemammal&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/122502/path-of-the-deathless-book-4-completed&#34; },
+]
+
+[[book]]
+title = &#34;The Legend of William Oh&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/the-legend-of-william-oh-aadavnw8qxu.jpg&#34;
+quality = &#34;Decent&#34;
+reading = &#34;Dropped, C264&#34;
+authors = [&#34;macronomicon&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/92144/the-legend-of-william-oh&#34; },
+]
+
+[[book]]
+title = &#34;Re:Cursed&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/104556-recursed.jpg?time=1763017950&#34;
+quality = &#34;Decent&#34;
+reading = &#34;Dropped, C176&#34;
+authors = [&#34;joroboros&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/104556/recursed&#34; },
+]
+
+[[book]]
+title = &#34;Reforged from Ruin&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/78756-reforged-from-ruin-eldritch-xianxia-cultivation.jpg&#34;
+quality = &#34;Decent&#34;
+reading = &#34;Dropped, C390&#34;
+authors = [&#34;silv3rtongue&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/78756/reforged-from-ruin-eldritch-xianxia-cultivation&#34; },
+]
+
+[[book]]
+title = &#34;Hell Difficulty Tutorial&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/64916-hell-difficulty-tutorial.jpg&#34;
+quality = &#34;Decent&#34;
+reading = &#34;Dropped, C841&#34;
+authors = [&#34;cerim&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/64916/hell-difficulty-tutorial&#34; },
+]
+
+[[book]]
+title = &#34;Book Of The Dead&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-full/47038-book-of-the-dead.jpg&#34;
+quality = &#34;Decent&#34;
+reading = &#34;Dropped, B6C8&#34;
+authors = [&#34;rinoz&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/47038/book-of-the-dead&#34; },
+]
+
+[[book]]
+title = &#34;The Mirror Legacy&#34;
+thumbnail = &#34;https://cdn.novelupdates.com/images/2024/06/The-Mirror-Legacy.jpg&#34;
+alt_titles = [&#34;玄鉴仙族&#34;]
+quality = &#34;Decent?&#34;
+reading = &#34;Dropped, C10&#34;
+authors = [&#34;季越人&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/the-mirror-legacy/&#34; },
+]
+
+[[book]]
+title = &#34;Corpse Retriever&#34;
+alt_titles = [&#34;捞尸人&#34;]
+thumbnail = &#34;https://cdn.novelupdates.com/images/2025/04/Corpse-Retriever.jpg&#34;
+quality = &#34;Decent?&#34;
+reading = &#34;Dropped, C26&#34;
+authors = [&#34;纯洁滴小龙&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/corpse-retriever/&#34; },
+]
+
+[[book]]
+title = &#34;How Can You Cultivate Immortality Without Money?&#34;
+alt_titles = [&#34;没钱修什么仙？&#34;, &#34;No Money to Cultivate Immortality?&#34;]
+thumbnail = &#34;https://cdn.novelupdates.com/images/2024/11/No-Money-to-Cultivate-Immortality.png&#34;
+quality = &#34;Decent&#34;
+reading = &#34;Dropped, C827 (C815)&#34;
+authors = [&#34;熊狼狗&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/no-money-to-cultivate-immortality/&#34; },
+]
+
+[[book]]
+title = &#34;Surviving as a Talent in the Primordial Saint Sect&#34;
+alt_titles = [
+  &#34;苟在初圣魔门当人材&#34;,
+  &#34;Lying Low as the First Saint Demonic Sect’s ‘Top Talent’&#34;,
+]
+thumbnail = &#34;./struggling_to_survive_with_regression_power_in_the_primordial_saint_sect.png&#34;
+quality = &#34;Decent&#34;
+reading = &#34;Finished, C1537 (C1441)&#34;
+authors = [&#34;crane-by-the-moonlit-pond&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/series/struggling-to-survive-with-regression-power-in-the-primordial-saint-sect/&#34; },
+]
+
+[[book]]
+title = &#34;Girls&#39; Last Tour&#34;
+alt_titles = [&#34;少女終末旅行&#34;]
+quality = &#34;Good&#34;
+reading = &#34;Finished, V6C43.6&#34;
+authors = [&#34;tsukumizu&#34;]
+links = [
+  { title = &#34;wikipedia&#34;, url = &#34;https://en.wikipedia.org/wiki/Girls%27_Last_Tour&#34; },
+]
+
+[[book]]
+title = &#34;Sky Pride&#34;
+thumbnail = &#34;https://www.royalroadcdn.com/public/covers-large/107917-sky-pride.jpg&#34;
+quality = &#34;Good&#34;
+reading = &#34;Dropped, B6C25&#34;
+authors = [&#34;warby-picus&#34;]
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/fiction/107917/sky-pride&#34; },
+]
+</code></pre>
+<h2 id="print-7075f5914744fa823c1987e445d9c37c-authors">Authors<a class="td-heading-self-link" href="#print-7075f5914744fa823c1987e445d9c37c-authors" aria-label="Heading self-link"></a></h2><pre tabindex="0"><code>[author.mao-ni]
+name = &#34;Mao Ni&#34;
+alt_names = [&#34;猫腻&#34;]
+
+[author.gu-zhen-ren]
+name = &#34;Gu Zhen Ren&#34;
+alt_names = [&#34;蛊真人&#34;]
+
+[author.angry-squid]
+name = &#34;Angry Squid&#34;
+alt_names = [&#34;愤怒的乌贼&#34;]
+
+[author.angry-squirrel]
+name = &#34;Angry Squirrel&#34;
+alt_names = [&#34;愤怒的松鼠&#34;]
+
+[author.golden-jasmine]
+name = &#34;Golden Jasmine&#34;
+alt_names = [&#34;金色茉莉花&#34;]
+
+[author.cuttlefish-that-loves-diving]
+name = &#34;Cuttlefish That Loves Diving&#34;
+alt_names = [&#34;爱潜水的乌贼&#34;]
+
+[author.er-gen]
+name = &#34;Er Gen&#34;
+alt_names = [&#34;耳根&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/nauthor/er-gen/&#34; },
+]
+
+[author.fang-xiang]
+name = &#34;Fang Xiang&#34;
+alt_names = [&#34;方想&#34;]
+
+[author.chaos]
+name = &#34;Chaos&#34;
+alt_names = [&#34;乱&#34;]
+
+[author.tang-jia-san-shao]
+name = &#34;Tang Jia San Shao&#34;
+alt_names = [&#34;唐家三少&#34;]
+
+[author.can-fix-air-conditioners]
+name = &#34;Can Fix Air-Conditioners&#34;
+alt_names = [&#34;我会修空调&#34;]
+
+[author.thefirstdefier]
+name = &#34;TheFirstDefier&#34;
+
+[author.kirill-klevanski]
+name = &#34;Kirill Klevanski&#34;
+
+[author.ostensible-mammal]
+name = &#34;OstensibleMammal&#34;
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/profile/293473&#34; },
+]
+
+[author.rinoz]
+name = &#34;RinoZ&#34;
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/profile/97247&#34; },
+]
+
+[author.guilty-three]
+name = &#34;Guiltythree&#34;
+
+[author.uraniumphoenix]
+name = &#34;UraniumPhoenix&#34;
+
+[author.seersucker]
+name = &#34;seersucker&#34;
+
+[author.azalea-ellis]
+name = &#34;Azalea Ellis&#34;
+
+[author.doctorhepa]
+name = &#34;DoctorHepa&#34;
+
+[author.casualfarmer]
+name = &#34;Casualfarmer&#34;
+
+[author.cerim]
+name = &#34;Cerim&#34;
+
+[author.actus]
+name = &#34;Actus&#34;
+
+[author.clarke]
+name = &#34;J.M. Clarke&#34;
+alt_names = [&#34;U Juggernaut&#34;]
+
+[author.thundamoo]
+name = &#34;Thundamoo&#34;
+
+[author.strungbound]
+name = &#34;Strungbound&#34;
+
+[author.mecanimus]
+name = &#34;Mecanimus&#34;
+
+[author.turtleme]
+name = &#34;TurtleMe&#34;
+
+[author.dads-bedtime-stories]
+name = &#34;Dads Bedtime Stories&#34;
+
+[author.chirolu]
+name = &#34;Chirolu&#34;
+
+[author.silverlinings]
+name = &#34;SilverLinings&#34;
+
+[author.xkarnation]
+name = &#34;XKARNATION&#34;
+
+[author.kawahara-reki]
+name = &#34;Kawahara Reki&#34;
+
+[author.robert-blaise]
+name = &#34;Robert Blaise&#34;
+
+[author.mark-arrows]
+name = &#34;Mark Arrows&#34;
+
+[author.wildbow]
+name = &#34;Wildbow&#34;
+
+[author.dakota-krout]
+name = &#34;Dakota Krout&#34;
+
+[author.sinnoa]
+name = &#34;Sinnoa&#34;
+
+[author.randombluecat]
+name = &#34;RandomBlueCat&#34;
+
+[author.the-plagiarist]
+name = &#34;The Plagiarist&#34;
+
+[author.chen-dong]
+name = &#34;Chen Dong&#34;
+alt_names = [&#34;辰东&#34;]
+
+[author.yu-ryeo-han]
+name = &#34;Yu Ryeo Han&#34;
+alt_names = [&#34;유려한&#34;]
+
+[author.the-enlightened-master-crouching-cow]
+name = &#34;The Enlightened Master Crouching Cow&#34;
+alt_names = [&#34;卧牛真人&#34;]
+
+[author.mikage-eiji]
+name = &#34;Mikage Eiji&#34;
+
+[author.nocturnal-stranger]
+name = &#34;Nocturnal Stranger&#34;
+alt_names = [&#34;厄夜怪客&#34;]
+
+[author.ya-boy]
+name = &#34;Ya Boy&#34;
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/profile/202632&#34; },
+]
+
+[author.god-loves-the-world]
+name = &#34;God Loves The World&#34;
+alt_names = [&#34;神仙爱凡尘&#34;]
+
+[author.necariin]
+name = &#34;Necariin&#34;
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/profile/122394&#34; },
+]
+
+[author.x-rhoden-x]
+name = &#34;X-RHODEN-X&#34;
+
+[author.fast-food-restaurant]
+name = &#34;Fast Food Restaurant&#34;
+alt_names = [&#34;快餐店&#34;]
+
+[author.chugong]
+name = &#34;Chugong&#34;
+alt_names = [&#34;추공&#34;]
+
+[author.xin-feng]
+name = &#34;Xin Feng&#34;
+alt_names = [&#34;新丰&#34;]
+
+[author.legend-of-the-paladin]
+name = &#34;Legend of the Paladin&#34;
+alt_names = [&#34;圣骑士的传说&#34;]
+
+[author.foxtail-quill]
+name = &#34;Foxtail Quill&#34;
+alt_names = [&#34;狐尾的笔&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/nauthor/foxtail-quill/&#34; },
+]
+
+[author.maxime-j-durand]
+name = &#34;Maxime J. Durand&#34;
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/profile/107213&#34; },
+]
+
+[author.jin-nai]
+name = &#34;Jin Nai&#34;
+alt_names = [&#34;今奈&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/nauthor/jin-nai/&#34; },
+]
+
+[author.warby-picus]
+name = &#34;Warby Picus&#34;
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/profile/261544&#34; },
+]
+
+[author.flossindune]
+name = &#34;Flossindune&#34;
+links = [
+  { title = &#34;royalorad&#34;, url = &#34;https://www.royalroad.com/profile/299461&#34; },
+]
+
+[author.quiet-support]
+name = &#34;Quiet Support&#34;
+alt_names = [&#34;安静捧场&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/nauthor/quiet-support/&#34; },
+]
+
+[author.cluelessrr]
+name = &#34;CluelessRR&#34;
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/profile/471901&#34; },
+]
+
+[author.arthur-wordsmith]
+name = &#34;Arthur Wordsmith&#34;
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/profile/323423&#34; },
+]
+
+[author.pu-jie-tianxian]
+name = &#34;Pū jiē tiānxiàn&#34;
+alt_names = [&#34;扑街天线&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/nauthor/%e6%89%91%e8%a1%97%e5%a4%a9%e7%ba%bf/&#34; },
+]
+
+[author.warmaisach]
+name = &#34;Warmaisach&#34;
+links = [
+  { title = &#34;webnovel&#34;, url = &#34;https://m.webnovel.com/profile/3286855836&#34; },
+]
+
+[author.exploding-small-latte]
+name = &#34;Exploding Small Latte&#34;
+alt_names = [&#34;爆炸小拿铁&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/nauthor/exploding-small-latte/&#34; },
+]
+
+[author.arcanecadence]
+name = &#34;ArcaneCadence&#34;
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/profile/729989&#34; },
+]
+
+[author.the-whitest-crow]
+name = &#34;The Whitest Crow&#34;
+alt_names = [&#34;最白的乌鸦&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/nauthor/%e6%9c%80%e7%99%bd%e7%9a%84%e4%b9%8c%e9%b8%a6/&#34; },
+]
+
+[author.emes]
+name = &#34;EmEs&#34;
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/profile/235726&#34; },
+]
+
+[author.colin-j-d-crooks]
+name = &#34;Colin J.D. Crooks&#34;
+links = [
+  { title = &#34;goodreads&#34;, url = &#34;https://www.goodreads.com/author/show/21106941.Colin_J_D_Crooks&#34; },
+]
+
+[author._172]
+name = &#34;_172&#34;
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/nauthor/_172/&#34; },
+]
+
+[author.tk523]
+name = &#34;TK523&#34;
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/profile/112902&#34; },
+]
+
+[author.zaifyr]
+name = &#34;zaifyr&#34;
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/profile/285838&#34; },
+]
+
+[author.cornman]
+name = &#34;Cornman&#34;
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/profile/394190&#34; },
+]
+
+[author.the-one-who-was]
+name = &#34;The_One_Who_Was&#34;
+links = [
+  { title = &#34;webnovel&#34;, url = &#34;https://www.webnovel.com/profile/4324450853&#34; },
+]
+
+[author.lit-homunculus]
+name = &#34;Lit Homunculus&#34;
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/profile/56125&#34; },
+]
+
+[author.macronomicon]
+name = &#34;Macronomicon&#34;
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/profile/100060&#34; },
+]
+
+[author.crane-by-the-moonlit-pond]
+name = &#34;Crane by the Moonlit Pond&#34;
+alt_names = [&#34;鹤守月满池&#34;]
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/nauthor/crane-by-the-moonlit-pond/&#34; },
+]
+
+[author.nicholas_sansbury_smith]
+name = &#34;Nicholas Sansbury Smith&#34;
+links = [
+  { title = &#34;aethonbooks&#34;, url = &#34;https://aethonbooks.com/book-author/nicholas-sansbury-smith/&#34; },
+]
+
+[author.scott_alexander]
+name = &#34;Scott Alexander&#34;
+links = [
+  { title = &#34;goodreads&#34;, url = &#34;https://www.goodreads.com/author/show/10866248.Scott_Alexander&#34; },
+]
+
+[author.erraticerrata]
+name = &#34;ErraticErrata&#34;
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/profile/21586&#34; },
+]
+
+[authors.palt]
+name = &#34;Palt&#34;
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/profile/35937&#34; },
+]
+
+[author.phill_tucker]
+name = &#34;Phill Tucker&#34;
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/profile/73941&#34; },
+]
+
+[author.slaughterbot]
+name = &#34;SlaughterBot&#34;
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/profile/413099&#34; },
+]
+
+[author.mikasane]
+name = &#34;Mikasane&#34;
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/profile/244859&#34; },
+]
+
+[author.voravora]
+name = &#34;VoraVora&#34;
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/profile/236517&#34; },
+]
+
+[author.quickduckling]
+name = &#34;QuickDuckling&#34;
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/profile/472328&#34; },
+]
+
+[author.&#34;一辈子小说家&#34;]
+name = &#34;一辈子小说家&#34;
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/nauthor/%e4%b8%80%e8%be%88%e5%ad%90%e5%b0%8f%e8%af%b4%e5%ae%b6/&#34; },
+]
+
+[author.&#34;姬叉&#34;]
+name = &#34;姬叉&#34;
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/nauthor/%e5%a7%ac%e5%8f%89/&#34; },
+]
+
+[author.&#34;窗边的鸽子&#34;]
+name = &#34;窗边的鸽子&#34;
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/nauthor/%e7%aa%97%e8%be%b9%e7%9a%84%e9%b8%bd%e5%ad%90/&#34; },
+]
+
+[author.&#34;熊狼狗&#34;]
+name = &#34;熊狼狗&#34;
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/nauthor/%e7%86%8a%e7%8b%bc%e7%8b%97/&#34; },
+]
+
+[author.joroboros]
+name = &#34;Joroboros&#34;
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/profile/115230&#34; },
+]
+
+[author.silv3rtongue]
+name = &#34;Silv3rtongue&#34;
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/profile/418109&#34; },
+]
+
+[author.&#34;纯洁滴小龙&#34;]
+name = &#34;纯洁滴小龙&#34;
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/nauthor/%e7%ba%af%e6%b4%81%e6%bb%b4%e5%b0%8f%e9%be%99/&#34; },
+]
+
+[author.&#34;三藏的左轮&#34;]
+name = &#34;三藏的左轮&#34;
+links = [
+  { title = &#34;wtrlab&#34;, url = &#34;https://wtr-lab.com/en/author/%E4%B8%89%E8%97%8F%E7%9A%84%E5%B7%A6%E8%BD%AE&#34; },
+]
+
+[author.offering-flowers-before-the-buddha]
+name = &#34;Offering flowers before the Buddha&#34;
+links = []
+
+[author.&#34;季越人&#34;]
+name = &#34;季越人&#34;
+links = [
+  { title = &#34;novelupdates&#34;, url = &#34;https://www.novelupdates.com/nauthor/%e5%ad%a3%e8%b6%8a%e4%ba%ba/&#34; },
+]
+
+[author.tsukumizu]
+name = &#34;Tsukumizu&#34;
+alt_names = [&#34;つくみず&#34;]
+links = [
+  { title = &#34;wikipedia&#34;, url = &#34;https://en.wikipedia.org/wiki/Tsukumizu&#34; },
+]
+
+[author.wizardly_dude]
+name = &#34;Wizardly Dude&#34;
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/profile/559659&#34; },
+]
+
+[author.lokithequick]
+name = &#34;LokiTheQuick&#34;
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/profile/456668&#34; },
+]
+
+[author.markarrows]
+name = &#34;Mark Arrows&#34;
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/profile/150899&#34; },
+]
+
+[author.jpwrites]
+name = &#34;JPwrites &#34;
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/profile/9705&#34; },
+]
+
+[author.cashen]
+name = &#34;Jman8763 C. Ashen&#34;
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/profile/210709&#34; },
+]
+
+[author.disheveledvagabond]
+name = &#34;DisheveledVagabond &#34;
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/profile/192594&#34; },
+]
+
+[author.cognosticon]
+name = &#34;Cognosticon&#34;
+links = [
+  { title = &#34;royalroad&#34;, url = &#34;https://www.royalroad.com/profile/270595&#34; },
+]
+</code></pre>
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        Built with <a href="https://gohugo.io/">Hugo 0.165.0</a>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="/js/main.min.259204f469f58eb3b665605a24e964264772df2adaded180b3669b6ce33d84c8.js" integrity="sha256-JZIE9Gn1jrO2ZWBaJOlkJkdy3yra3tGAs2abbOM9hMg=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.decf3b53d8827d840369f490775626e2a5200e150a733f78f0081c126426cbbf.js" integrity="sha256-3s87U9iCfYQDafSQd1Ym4qUgDhUKcz948AgcEmQmy78=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

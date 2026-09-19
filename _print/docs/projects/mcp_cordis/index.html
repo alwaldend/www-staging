@@ -1,0 +1,376 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js" data-theme-init>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000000">
+
+<style>
+  html { background: Canvas; color: CanvasText; }
+  @media (prefers-color-scheme: dark) {
+    html { background: #0b0d12; color: #e6e6e6; }
+  }
+  html[data-theme-init] * { transition: none !important; }
+</style>
+
+<script>
+  (function() {
+    const themeKey = 'td-color-theme';
+    const storedTheme = localStorage.getItem(themeKey);
+    let theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (theme === 'auto') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
+<link rel="canonical" type="text/html" href="https://www-staging.alwaldend.com/docs/projects/mcp_cordis/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://www-staging.alwaldend.com/docs/projects/mcp_cordis/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+<title>MCP Cordis | Alwaldend</title>
+<meta name="description" content="Workspace-local runtime packages behind a stable MCP server">
+<meta property="og:url" content="https://www-staging.alwaldend.com/docs/projects/mcp_cordis/">
+	<meta property="og:site_name" content="Alwaldend">
+	<meta property="og:title" content="MCP Cordis">
+	<meta property="og:description" content="Workspace-local runtime packages behind a stable MCP server">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="MCP Cordis">
+	<meta itemprop="description" content="Workspace-local runtime packages behind a stable MCP server">
+	<meta itemprop="dateModified" content="2026-09-19T20:06:21+03:00">
+	<meta itemprop="wordCount" content="1119">
+	<meta itemprop="keywords" content="Project,Active">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="MCP Cordis">
+	<meta name="twitter:description" content="Workspace-local runtime packages behind a stable MCP server">
+<link rel="preload" href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" as="style" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<link href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" rel="stylesheet" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll">
+<div class="td-navbar-container container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">Alwaldend</span></a>
+  <div class="td-navbar__main td-navbar-nav-scroll td-navbar-nav-scroll--indicator" id="main_navbar">
+    <div class="scroll-indicator scroll-left"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/projects/"><span>Projects</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item td-navbar__light-dark-menu">
+        <div class="td-light-dark-menu dropdown"><svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+<button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        title="Toggle theme (Auto)"
+        aria-label="Toggle theme (Auto)">
+  <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="bd-theme">
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
+      Light
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>
+      Dark
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+      <svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>
+      Auto
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+</ul>
+</div>
+
+      </li>
+      </ul>
+    <div class="scroll-indicator scroll-right"></div>
+  </div>
+  <div class="td-navbar__search d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon" aria-hidden="true"></div>
+  <input
+    type="search"
+    name="q"
+    class="td-search__input form-control"
+    placeholder='Search this site…'
+    aria-label='Search this site…'
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/projects/mcp_cordis/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">MCP Cordis</h1>
+<div class="lead">Workspace-local runtime packages behind a stable MCP server</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+
+    </ul>
+
+
+<div class="content">
+      <p><code>mcp_cordis</code> is a standalone stdio MCP server that mounts runtime JavaScript
+packages through <a href="https://github.com/deepseek-ai/deepseek-harness">Cordis</a>.
+It is intentionally an MCP server, not a Codex plugin bundle.</p>
+<p>Reusable definitions are ordinary ESM files in
+<code>projects/mcp_cordis/plugins</code>, listed by <code>projects/mcp_cordis/cordis.yaml</code>.
+Disposable definitions use the same layout under
+<code>out/&lt;task&gt;/mcp_cordis/runs/&lt;run&gt;/</code>. Each run writes a bounded manifest with
+explicit task, run, worker, information, budget, retention, lock, and cleanup
+fields. <code>AGENT_TASK_ID</code>, <code>AGENT_RUN_ID</code>, and <code>AGENT_WORKER_ID</code> may provide
+stable identities; the launcher otherwise creates process-scoped identities.
+Every
+package is addressed by both scope and name, so a scratch package never
+silently shadows a reusable package.</p>
+<h2 id="print-a451f10117562d9adb1c7bea81b4dbac-run">Run<a class="td-heading-self-link" href="#print-a451f10117562d9adb1c7bea81b4dbac-run" aria-label="Heading self-link"></a></h2><p>The repository&rsquo;s <code>.codex/config.toml</code> registers <code>mcp_cordis</code> as a
+project-scoped stdio server. Codex loads that file for a trusted workspace and
+finds the active Git worktree before starting the server. Separate clones and
+worktrees therefore use their own source, <code>projects/mcp_cordis</code> packages, and
+task/run-namespaced scratch packages. Trusting the repository&rsquo;s root checkout
+also covers its linked worktrees; a glob trust entry is neither needed nor
+supported. A new Codex session is needed after the MCP registration itself is
+first added; package changes after that do not require another session.</p>
+<p>The registration calls <code>cmd/mcp_cordis/launch.sh</code>. With a current installed
+<code>bazel_agent</code>, the launcher selects a content-addressed runtime from the
+per-user tool cache and executes it directly. The first exact source version
+is built and atomically installed under a per-key lock; subsequent worktrees
+with the same inputs do not start Bazel or load a configured graph. An older
+runner falls back to asking Bazel for a launch script under the task&rsquo;s ignored
+<code>out</code> directory. Either path releases Bazel&rsquo;s output-base lock before the
+long-lived stdio server starts, so builds and tests can run normally while
+Codex remains connected.</p>
+<p>The cached artifact contains the stable server runtime and pinned JavaScript
+dependencies, but not <code>cordis.yaml</code> or reusable plugins. It always reads those
+from the explicit active workspace, so editing a package changes live behavior
+without repackaging the runtime or selecting a new cache key.</p>
+<p>The same project configuration starts an optional asynchronous <code>SessionStart</code>
+hook that starts the worktree&rsquo;s Bazel server and warms <code>repo_delivery</code>. It
+produces no session context, ignores failure, and never queries the whole
+workspace graph. Cordis itself is already warmed by its MCP launch path, so the
+hook does not start a duplicate Cordis build.</p>
+<p>To build and run the server directly from the repository root:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel_agent bazel run //projects/mcp_cordis:mcp_cordis -- <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --workspace-root <span style="color:#e6db74">&#34;</span>$PWD<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --task-id example-task <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --run-id example-run
+</span></span></code></pre></div><p>The workspace root is mandatory unless <code>BUILD_WORKSPACE_DIRECTORY</code> is
+present. The checked-in launcher resolves the current Git worktree explicitly
+and supplies that path to the server.</p>
+<p>The fixed <code>cordis_*</code> tools define, start, inspect, invoke, update, stop,
+remove, and promote packages without reconnecting the MCP client. Package
+handlers are called through <code>cordis_invoke</code>; this remains reliable even when
+an MCP client caches its initial tool list.</p>
+<h2 id="print-a451f10117562d9adb1c7bea81b4dbac-cordis-configuration-and-plugin-format">Cordis configuration and plugin format<a class="td-heading-self-link" href="#print-a451f10117562d9adb1c7bea81b4dbac-cordis-configuration-and-plugin-format" aria-label="Heading self-link"></a></h2><p><code>cordis.yaml</code> uses the standard Cordis Include entry-list format:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#f92672">id</span>: <span style="color:#ae81ff">hello</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">./plugins/hello.mjs</span>
+</span></span></code></pre></div><p>The referenced file is a normal ESM Cordis plugin:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">plugin</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">description</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Provide a greeting.&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">apply</span>(<span style="color:#a6e22e">ctx</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ctx</span>.<span style="color:#a6e22e">tool</span>(
+</span></span><span style="display:flex;"><span>      {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;hello_world&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">description</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Return a greeting.&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">inputSchema</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;object&#34;</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">properties</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;string&#34;</span> } },
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">additionalProperties</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>      ({ <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;world&#34;</span> }) =&gt; ({ <span style="color:#a6e22e">greeting</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`Hello, </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">!`</span> }),
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">plugin</span>.<span style="color:#a6e22e">apply</span>.<span style="color:#a6e22e">description</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">plugin</span>.<span style="color:#a6e22e">description</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">plugin</span>;
+</span></span></code></pre></div><p>Cordis normalizes an object plugin to its <code>apply</code> callback. Attaching the
+optional package description to that callback exposes it through
+<code>cordis_list</code> and <code>cordis_inspect</code>; tool descriptions remain part of each
+<code>ctx.tool()</code> definition.</p>
+<p>The server mounts the official Cordis Loader, Include, and HMR services.
+<code>cordis_define</code> syntax-checks and atomically persists the ordinary module.
+Creating or enabling an entry refreshes any cached module through Cordis HMR,
+then uses the public Include refresh API and waits for activation. Updating an
+already-running entry returns <code>activation: &quot;pending&quot;</code>; poll <code>cordis_invoke</code> or
+<code>cordis_list_tools</code> until the new behavior is visible.
+The reproducibly pinned HMR package carries a focused pnpm patch that
+serializes module reloads and drains source changes arriving during an
+in-flight reload, so the latest persisted source is not lost.</p>
+<p>Syntax errors are rejected before the file changes. Evaluation and <code>apply()</code>
+failures follow native Cordis HMR behavior; the wrapper does not add a second
+activation transaction around them. It also does not inject source markers,
+inspect Loader caches, correlate watcher events, or maintain its own source
+rollback/version store. Reusable history is normal Git history. Manual edits
+to watched plugin files are also picked up by Cordis HMR.</p>
+<p>Runtime modules use normal Cordis semantics, including static imports,
+top-level <code>await</code>, and asynchronous <code>apply(ctx, config)</code>. Package code is
+trusted: a never-settling module evaluation or activation can therefore stall
+Cordis lifecycle work. The stdio launcher reserves its protocol stream and
+redirects package stdout to stderr, keeping accidental <code>console.log()</code> calls
+off the JSON-RPC wire.</p>
+<p>The package context exposes <code>ctx.workspaceRoot</code>, <code>ctx.resolveWorkspace()</code>,
+<code>ctx.readText()</code>, and structured <code>ctx.exec()</code> in addition to <code>ctx.tool()</code>.
+<code>ctx.exec()</code> returns <code>code</code>, <code>signal</code>, <code>stdout</code>, <code>stderr</code>, <code>truncated</code>, and
+<code>outputLimitExceeded</code>; <code>maxBytes</code> is a combined stdout/stderr budget. By
+default, exceeding that budget or producing invalid UTF-8 rejects with
+<code>EXEC_OUTPUT_LIMIT</code> or <code>EXEC_INVALID_UTF8</code>. Packages that explicitly set
+<code>allowTruncatedOutput: true</code> instead receive the valid retained prefix with
+<code>truncated</code> set; <code>outputLimitExceeded</code> distinguishes the byte cap from UTF-8
+loss. A Fiber-owned supervisor admits each launch atomically, and results
+settle only after the direct child and every live member of its original Linux
+process group have stopped. Limits, timeouts, and plugin disposal use the same
+cleanup path. A process that deliberately creates a new session escapes that
+group and is outside this trusted-package contract. <code>ctx.exec()</code> therefore
+fails closed with <code>EXEC_UNSUPPORTED_PLATFORM</code> away from Linux. Package code
+also has normal Node built-ins; this host is a reliability boundary, not a
+security sandbox.</p>
+<p><code>cordis_invoke.timeout_ms</code> bounds how long the gateway waits for a result; it
+does not cancel an already admitted JavaScript handler. The handler keeps its
+Fiber lease until it finishes, so stop, remove, and shutdown wait for it.
+Cordis HMR waits for a retired Fiber to finish draining before it activates
+and publishes the replacement, so a live invocation can delay a reload. Any
+<code>ctx.exec()</code> launched by a timed-out invocation is cancelled and its process
+group is confirmed stopped before the timeout response settles.</p>
+<h2 id="print-a451f10117562d9adb1c7bea81b4dbac-included-packages">Included packages<a class="td-heading-self-link" href="#print-a451f10117562d9adb1c7bea81b4dbac-included-packages" aria-label="Heading self-link"></a></h2><ul>
+<li><code>repo_context</code>: bounded repository reads and searches.</li>
+<li><code>git_worktree</code>: read-only branch, status, log, and comparison snapshots.</li>
+<li><code>network_probe</code>: DNS, TCP/TLS, and HTTP diagnostics.</li>
+</ul>
+<p>These were selected from aggregate recurring task categories in recent local
+sessions. No transcript content, credentials, or private outputs are included.</p>
+<h2 id="print-a451f10117562d9adb1c7bea81b4dbac-maintained-change-history">Maintained change history<a class="td-heading-self-link" href="#print-a451f10117562d9adb1c7bea81b4dbac-maintained-change-history" aria-label="Heading self-link"></a></h2><p>The completed <a href="openspec/changes/archive/2026-09-08-runtime-extensions/">runtime extensions change</a>
+preserves acceptance criteria, decisions, failed attempts and supporting
+evidence. New work uses the <a href="openspec/">project OpenSpec workspace</a>
+and a new change; the archived acceptance remains historical.</p>
+<h2 id="print-a451f10117562d9adb1c7bea81b4dbac-dependency-notices">Dependency notices<a class="td-heading-self-link" href="#print-a451f10117562d9adb1c7bea81b4dbac-dependency-notices" aria-label="Heading self-link"></a></h2><p>The runtime directly uses <code>@deepseek-ai/cordis</code>, its official Loader, Include,
+HMR, and Timer plugins, and the Model Context Protocol TypeScript SDK. Their
+license texts are retained in the resolved package artifacts by the pinned
+pnpm/Bazel dependency graph.</p>
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        Built with <a href="https://gohugo.io/">Hugo 0.165.0</a>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="/js/main.min.259204f469f58eb3b665605a24e964264772df2adaded180b3669b6ce33d84c8.js" integrity="sha256-JZIE9Gn1jrO2ZWBaJOlkJkdy3yra3tGAs2abbOM9hMg=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.decf3b53d8827d840369f490775626e2a5200e150a733f78f0081c126426cbbf.js" integrity="sha256-3s87U9iCfYQDafSQd1Ym4qUgDhUKcz948AgcEmQmy78=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

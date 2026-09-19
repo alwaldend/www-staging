@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Third_party on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/categories/third_party/</link>
+		<description>Recent content in Third_party on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/categories/third_party/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Third party</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/</guid>
+				<description>&lt;p&gt;This tree contains vendored and externally sourced code. All tracked content&#xA;follows the repository&amp;rsquo;s public-source policy and retains its upstream license&#xA;and provenance requirements.&lt;/p&gt;&#xA;&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirements&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Bazel targets MUST use repository-internal visibility unless an owning&#xA;toolchain contract requires otherwise.&lt;/li&gt;&#xA;&lt;li&gt;Third-party content MUST NOT be represented or published as first-party&#xA;source or artifacts.&lt;/li&gt;&#xA;&lt;li&gt;Third-party content MAY be used in builds.&lt;/li&gt;&#xA;&lt;li&gt;An explicit repackaging or mirroring target MAY publish an upstream artifact&#xA;under its owner and license policy.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;publish-vendored-helm&#34;&gt;Publish vendored helm&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#publish-vendored-helm&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This is a state-changing operator example. An agent needs explicit publication&#xA;authority and must invoke the target through &lt;code&gt;bazel_agent&lt;/code&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title></title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/openspec/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/openspec/</guid>
+				<description>&lt;h1 id=&#34;openspec&#34;&gt;OpenSpec&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#openspec&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;The pinned OpenSpec CLI wrapper lives at &lt;code&gt;//tools/openspec&lt;/code&gt;. Its generated&#xA;&lt;code&gt;openspec-*&lt;/code&gt; agent skills are materialized from the pinned upstream release&#xA;archive declared in &lt;code&gt;third_party/org_fissionai_openspec/&lt;/code&gt;; the resulting&#xA;&lt;code&gt;.agents/skills/openspec-*&lt;/code&gt; entries are written as regular files by&#xA;&lt;code&gt;//.agents:write_skills&lt;/code&gt; and verified by &lt;code&gt;//.agents:write_skills_test&lt;/code&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title></title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/org_fissionai_openspec/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/org_fissionai_openspec/</guid>
+				<description>&lt;h1 id=&#34;openspec&#34;&gt;OpenSpec&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#openspec&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Upstream OpenSpec release archive pinned by tag. &lt;code&gt;//third_party/openspec&lt;/code&gt;&#xA;materializes the &lt;code&gt;skills/openspec-*&lt;/code&gt; instructions from this archive into the&#xA;consuming repository.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>ai_opencode_opencode</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/ai_opencode_opencode/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/ai_opencode_opencode/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://opencode.ai/&#34;&gt;https://opencode.ai/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Repo: &lt;a href=&#34;https://github.com/anomalyco/opencode&#34;&gt;https://github.com/anomalyco/opencode&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>com_drawio_desktop_bin</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/com_drawio_desktop_bin/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/com_drawio_desktop_bin/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://www.drawio.com/&#34;&gt;https://www.drawio.com/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Repo: &lt;a href=&#34;https://github.com/jgraph/drawio-desktop&#34;&gt;https://github.com/jgraph/drawio-desktop&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>com_github_bazelbuild_bazel_protobuf</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/com_github_bazelbuild_bazel_protobuf/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/com_github_bazelbuild_bazel_protobuf/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>com_github_bazelbuild_bazelisk</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/com_github_bazelbuild_bazelisk/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/com_github_bazelbuild_bazelisk/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://github.com/bazelbuild/bazelisk&#34;&gt;https://github.com/bazelbuild/bazelisk&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Releases: &lt;a href=&#34;https://github.com/bazelbuild/bazelisk/releases&#34;&gt;https://github.com/bazelbuild/bazelisk/releases&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>com_github_georgewfraser_java_language_server</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/com_github_georgewfraser_java_language_server/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/com_github_georgewfraser_java_language_server/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>com_nanovms_ops</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/com_nanovms_ops/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/com_nanovms_ops/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://ops.city/&#34;&gt;https://ops.city/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Nanovms site: &lt;a href=&#34;https://nanovms.com/&#34;&gt;https://nanovms.com/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>com_nousresearch_hermes_agent</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/com_nousresearch_hermes_agent/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/com_nousresearch_hermes_agent/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://hermes-agent.nousresearch.com/&#34;&gt;https://hermes-agent.nousresearch.com/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Repo: &lt;a href=&#34;https://github.com/NousResearch/hermes-agent&#34;&gt;https://github.com/NousResearch/hermes-agent&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Release: &lt;a href=&#34;https://github.com/NousResearch/hermes-agent/releases/tag/v2026.7.20&#34;&gt;https://github.com/NousResearch/hermes-agent/releases/tag/v2026.7.20&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>com_truenas_scale</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/com_truenas_scale/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/com_truenas_scale/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Download: &lt;a href=&#34;https://download.sys.truenas.net/TrueNAS-SCALE-Goldeye/25.10.6/&#34;&gt;https://download.sys.truenas.net/TrueNAS-SCALE-Goldeye/25.10.6/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>dev_sanaei_3xui</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/dev_sanaei_3xui/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/dev_sanaei_3xui/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://docs.sanaei.dev/&#34;&gt;https://docs.sanaei.dev/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Releases: &lt;a href=&#34;https://github.com/MHSanaei/3x-ui/releases&#34;&gt;https://github.com/MHSanaei/3x-ui/releases&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>flux</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/io_fluxcd_flux/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/io_fluxcd_flux/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://fluxcd.io/flux/installation/&#34;&gt;https://fluxcd.io/flux/installation/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Releases: &lt;a href=&#34;https://github.com/fluxcd/flux2/releases&#34;&gt;https://github.com/fluxcd/flux2/releases&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Gradle</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/net_gradle_gradle/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/net_gradle_gradle/</guid>
+				<description>&lt;p&gt;Pinned Gradle 8.13 binary distribution from the primary publisher.&lt;/p&gt;&#xA;&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Source code: &lt;a href=&#34;https://github.com/gradle/gradle/tree/v8.13.0&#34;&gt;https://github.com/gradle/gradle/tree/v8.13.0&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Images</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/images/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/images/</guid>
+				<description>&lt;h2 id=&#34;deploy-iso-to-proxmox&#34;&gt;Deploy ISO to Proxmox&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#deploy-iso-to-proxmox&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bazel run //third_party/images:deploy_proxmox&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;deploy-iso-to-yandex-cloud&#34;&gt;Deploy ISO to Yandex Cloud&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#deploy-iso-to-yandex-cloud&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bazel run //third_party/images:deploy_yc&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+			</item>
+			<item>
+				<title>io_cert_manager_cmctl</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/io_cert_manager_cmctl/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/io_cert_manager_cmctl/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://cert-manager.io/docs/reference/cmctl/#installation&#34;&gt;https://cert-manager.io/docs/reference/cmctl/#installation&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>io_controlplane_flux_operator</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/io_controlplane_flux_operator/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/io_controlplane_flux_operator/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://fluxoperator.dev&#34;&gt;https://fluxoperator.dev&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Releases: &lt;a href=&#34;https://github.com/controlplaneio-fluxcd/flux-operator/releases&#34;&gt;https://github.com/controlplaneio-fluxcd/flux-operator/releases&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>io_docker_library_alpine</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/io_docker_library_alpine/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/io_docker_library_alpine/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Image: &lt;a href=&#34;https://hub.docker.com/_/alpine/&#34;&gt;https://hub.docker.com/_/alpine/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>io_getsops_sops</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/io_getsops_sops/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/io_getsops_sops/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://getsops.io/&#34;&gt;https://getsops.io/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>io_goharbor_harbor_cli</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/io_goharbor_harbor_cli/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/io_goharbor_harbor_cli/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://goharbor.io/&#34;&gt;https://goharbor.io/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Releases: &lt;a href=&#34;https://github.com/goharbor/harbor-cli/releases&#34;&gt;https://github.com/goharbor/harbor-cli/releases&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>io_goharbor_helm_harbor</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/io_goharbor_helm_harbor/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/io_goharbor_helm_harbor/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Releases: &lt;a href=&#34;https://github.com/goharbor/harbor-helm/releases&#34;&gt;https://github.com/goharbor/harbor-helm/releases&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>io_goharbor_offline_installer</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/io_goharbor_offline_installer/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/io_goharbor_offline_installer/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://goharbor.io/&#34;&gt;https://goharbor.io/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Releases: &lt;a href=&#34;https://github.com/goharbor/harbor/releases&#34;&gt;https://github.com/goharbor/harbor/releases&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>io_k3s_k3s</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/io_k3s_k3s/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/io_k3s_k3s/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://docs.k3s.io/&#34;&gt;https://docs.k3s.io/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Repo: &lt;a href=&#34;https://github.com/k3s-io/k3s&#34;&gt;https://github.com/k3s-io/k3s&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>io_kubernetes_kubectl</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/io_kubernetes_kubectl/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/io_kubernetes_kubectl/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/&#34;&gt;https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>io_traefik_traefik</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/io_traefik_traefik/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/io_traefik_traefik/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Repo: &lt;a href=&#34;https://github.com/traefik/traefik&#34;&gt;https://github.com/traefik/traefik&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Lego ACME client</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/com_github_go_acme_lego_bin/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/com_github_go_acme_lego_bin/</guid>
+				<description>&lt;p&gt;This package supplies the Linux x86-64 build of&#xA;&lt;a href=&#34;https://github.com/go-acme/lego/releases/tag/v5.4.1&#34;&gt;Lego 5.4.1&lt;/a&gt;, licensed under&#xA;MIT. Its archive checksum matches both the publisher&amp;rsquo;s release checksum file&#xA;and GitHub release asset metadata. The binary is packaged by the XCP-ng&#xA;Ansible workflow; no package manager or lifecycle download runs on the host.&lt;/p&gt;&#xA;&lt;p&gt;The &lt;code&gt;binary_toolchain.json&lt;/code&gt; file owns the immutable version and integrity pin.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>net_zlib_zlib</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/net_zlib_zlib/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/net_zlib_zlib/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://zlib.net/&#34;&gt;https://zlib.net/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Module: &lt;a href=&#34;https://registry.bazel.build/modules/zlib&#34;&gt;https://registry.bazel.build/modules/zlib&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>OpenHands canvas UI compatibility module</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/com_openhands_openhands_canvas_ui_tool/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/com_openhands_openhands_canvas_ui_tool/</guid>
+				<description>&lt;p&gt;&lt;code&gt;tools/canvas_ui_tool.py&lt;/code&gt; from &lt;code&gt;OpenHands/OpenHands&lt;/code&gt; at tag &lt;code&gt;v1.18.0&lt;/code&gt;&#xA;(commit &lt;code&gt;9120ff6cbbe23640f0e475661e5a9c9729cdbf1f&lt;/code&gt;). The OpenHands Agent&#xA;Canvas launchers import it into the agent server through&#xA;&lt;code&gt;--import-modules canvas_ui_tool&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;It is required because the automation preset builds its agent with a&#xA;&lt;code&gt;finish_tool_response_schema&lt;/code&gt;, which registers the SDK&amp;rsquo;s builtin &lt;code&gt;FinishTool&lt;/code&gt;&#xA;only inside the preset&amp;rsquo;s own process while advertising it to the agent server as&#xA;&lt;code&gt;openhands.sdk.tool.builtins.finish&lt;/code&gt;. That SDK module does not self-register, so&#xA;every automation-dispatched remote conversation fails to resolve &lt;code&gt;FinishTool&lt;/code&gt;&#xA;unless the compatibility module registers it in the agent server process first.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>org_codeberg_forgejo</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/org_codeberg_forgejo/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/org_codeberg_forgejo/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://forgejo.org/&#34;&gt;https://forgejo.org/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Repo: &lt;a href=&#34;https://codeberg.org/forgejo/forgejo&#34;&gt;https://codeberg.org/forgejo/forgejo&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>org_codeberg_forgejo_bin</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/org_codeberg_forgejo_bin/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/org_codeberg_forgejo_bin/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://forgejo.org/&#34;&gt;https://forgejo.org/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Repo: &lt;a href=&#34;https://codeberg.org/forgejo/forgejo&#34;&gt;https://codeberg.org/forgejo/forgejo&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>org_codeberg_forgejo_contrib_forgejo_cli_bin</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/org_codeberg_forgejo_contrib_forgejo_cli_bin/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/org_codeberg_forgejo_contrib_forgejo_cli_bin/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://forgejo.org/&#34;&gt;https://forgejo.org/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Repo: &lt;a href=&#34;https://codeberg.org/forgejo-contrib/forgejo-cli&#34;&gt;https://codeberg.org/forgejo-contrib/forgejo-cli&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>org_codeberg_forgejo_runner_bin</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/org_codeberg_forgejo_runner_bin/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/org_codeberg_forgejo_runner_bin/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://forgejo.org/&#34;&gt;https://forgejo.org/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Repo: &lt;a href=&#34;https://code.forgejo.org/forgejo/runner&#34;&gt;https://code.forgejo.org/forgejo/runner&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>org_fedora_cloud</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/org_fedora_cloud/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/org_fedora_cloud/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Download: &lt;a href=&#34;https://fedoraproject.org/cloud/download/&#34;&gt;https://fedoraproject.org/cloud/download/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>org_kernel_headers</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/org_kernel_headers/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/org_kernel_headers/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://www.kernel.org/&#34;&gt;https://www.kernel.org/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Header install: &lt;a href=&#34;https://www.kernel.org/doc/Documentation/kbuild/headers_install.txt&#34;&gt;https://www.kernel.org/doc/Documentation/kbuild/headers_install.txt&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Reference: &lt;a href=&#34;https://github.com/DanielEliad/rules_linux_kernel_headers/tree/main&#34;&gt;https://github.com/DanielEliad/rules_linux_kernel_headers/tree/main&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;generate-the-config&#34;&gt;Generate the config&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#generate-the-config&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;zcat /proc/config.gz &amp;gt;third_party/org_kernel_headers/config.txt&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+			</item>
+			<item>
+				<title>org_nmap_nmap</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/org_nmap_nmap/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/org_nmap_nmap/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://nmap.org/&#34;&gt;https://nmap.org/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Build: &lt;a href=&#34;https://nmap.org/book/inst-source.html&#34;&gt;https://nmap.org/book/inst-source.html&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>org_openssl_openssl</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/org_openssl_openssl/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/org_openssl_openssl/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://www.openssl.org/&#34;&gt;https://www.openssl.org/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>org_pcre_pcre2</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/org_pcre_pcre2/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/org_pcre_pcre2/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://www.pcre.org/&#34;&gt;https://www.pcre.org/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Repo: &lt;a href=&#34;https://github.com/PCRE2Project/pcre2&#34;&gt;https://github.com/PCRE2Project/pcre2&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>org_xcp_ng</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/org_xcp_ng/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/org_xcp_ng/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Download: &lt;a href=&#34;https://updates.xcp-ng.org/isos/8.3/&#34;&gt;https://updates.xcp-ng.org/isos/8.3/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>sh_helm_helm</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/sh_helm_helm/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/sh_helm_helm/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://helm.sh/&#34;&gt;https://helm.sh/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Releases: &lt;a href=&#34;https://github.com/helm/helm/releases&#34;&gt;https://github.com/helm/helm/releases&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Terraform dependencies</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/terraform/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/terraform/</guid>
+				<description>&lt;p&gt;&lt;code&gt;include.MODULE.bazel&lt;/code&gt; owns the repository&amp;rsquo;s Terraform provider versions,&#xA;immutable release URLs, and SHA256 integrity. Consumers select the generated&#xA;provider labels through the public&#xA;&lt;a href=&#34;https://www-staging.alwaldend.com/docs/tools/rules_terraform/&#34;&gt;rules_terraform&lt;/a&gt; rules. One version is&#xA;selected per provider source; the rule module&amp;rsquo;s resolution boundary can support&#xA;an explicit override policy later.&lt;/p&gt;&#xA;&lt;p&gt;The pins were verified against the publishers&amp;rsquo; release checksums listed by the&#xA;&lt;a href=&#34;https://developer.hashicorp.com/terraform/internals/provider-registry-protocol&#34;&gt;Terraform registry protocol&lt;/a&gt;.&#xA;Provider downloads use Bazel&amp;rsquo;s verified downloader. Terraform installs only&#xA;from the selected runfiles mirror and writes provider locks in runtime workspaces.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Tf</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/images/tf/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/images/tf/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>us_nasm_nasm</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/us_nasm_nasm/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/us_nasm_nasm/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://nasm.us/&#34;&gt;https://nasm.us/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Xen Orchestra OIDC plugin</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/com_github_vatesfr_xen_orchestra_oidc/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/com_github_vatesfr_xen_orchestra_oidc/</guid>
+				<description>&lt;p&gt;This package supplies Xen Orchestra&amp;rsquo;s AGPL-3.0-or-later &lt;code&gt;auth-oidc&lt;/code&gt; 0.4.0&#xA;from upstream commit &lt;code&gt;4bc614ffd1417d3e0563522aeb4a195fa494c57c&lt;/code&gt;, including&#xA;OIDC group synchronization and the single-group claim fix. It can be installed&#xA;independently of the XO server; the Ansible deployment verifies its runtime&#xA;before restarting XO.&lt;/p&gt;&#xA;&lt;p&gt;The plugin is plain CommonJS. Its complete runtime dependency set is&#xA;&lt;code&gt;passport-openidconnect&lt;/code&gt; 0.1.2 (MIT), &lt;code&gt;passport-strategy&lt;/code&gt; 1.0.0 (MIT), and&#xA;&lt;code&gt;oauth&lt;/code&gt; 0.10.2 (MIT). The npm archives retain upstream license files and use&#xA;integrity values from the appliance revision&amp;rsquo;s&#xA;&lt;a href=&#34;https://github.com/vatesfr/xen-orchestra/blob/961b505cfb74cbf24aaeb8d61c5613f97e78de2c/yarn.lock&#34;&gt;upstream lockfile&lt;/a&gt;.&#xA;Bazel fetches and verifies all inputs before deployment; Ansible extracts them&#xA;without a package-manager resolution or lifecycle script.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

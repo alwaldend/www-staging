@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Bzl on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/languages/bzl/</link>
+		<description>Recent content in Bzl on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/languages/bzl/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Agents</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/agents/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/agents/</guid>
+				<description>&lt;h1 id=&#34;repository-agent-skills&#34;&gt;Repository agent skills&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#repository-agent-skills&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;This project owns the reusable cross-repository agent skills. Maintained&#xA;improvement work lives in this project&amp;rsquo;s &lt;a href=&#34;openspec/&#34;&gt;OpenSpec workspace&lt;/a&gt;. It&#xA;does not centralize component facts or runtime state: each fact remains&#xA;canonical at its natural owner.&lt;/p&gt;&#xA;&lt;h2 id=&#34;start-here&#34;&gt;Start here&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#start-here&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;table&gt;&#xA;&#x9;&lt;thead&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;Document&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;Purpose&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/thead&gt;&#xA;&#x9;&lt;tbody&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;&lt;a href=&#34;openspec/changes/&#34;&gt;OpenSpec changes&lt;/a&gt;&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;Maintained work, acceptance, and preserved goal history&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;&lt;a href=&#34;https://github.com/alwaldend/src/blob/master/AGENTS.md&#34;&gt;Root agent guide&lt;/a&gt;&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;Current repository-wide operating policy&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;Dated audits remain in&#xA;&lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/src/openspec/migration/&#34;&gt;migrated history&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;ownership-boundaries&#34;&gt;Ownership boundaries&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#ownership-boundaries&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;openspec/&lt;/code&gt; owns agent-system requirements, changes, and evidence;&#xA;&lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/src/openspec/migration/&#34;&gt;the migration map&lt;/a&gt; locates historical records.&lt;/li&gt;&#xA;&lt;li&gt;Other components own their specifications and changes under their own&#xA;&lt;code&gt;openspec/&lt;/code&gt; directory. &lt;code&gt;infra/src/openspec/&lt;/code&gt; describes repository evolution.&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;skills/&lt;/code&gt; owns reusable cross-product, repository-wide agent procedures and&#xA;their development-time evaluations. A product-specific procedure belongs&#xA;with its product; a procedure that no narrower project genuinely owns lives&#xA;here rather than in a contrived local home.&lt;/li&gt;&#xA;&lt;li&gt;Product-specific skills remain with their project at&#xA;&lt;code&gt;projects/&amp;lt;project&amp;gt;/skills/&amp;lt;name&amp;gt;&lt;/code&gt;. Do not split one skill across owners.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;skill-packaging-and-discovery&#34;&gt;Skill packaging and discovery&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#skill-packaging-and-discovery&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Every canonical skill is packaged as a &lt;code&gt;skill_library&lt;/code&gt; in its owning&#xA;directory.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Agents</title>
+				<link>https://www-staging.alwaldend.com/projects/agents/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/projects/agents/</guid>
+				<description>&lt;p&gt;This project owns the reusable, cross-project agent skills used across&#xA;this repository. Each skill is a procedure with its own scope and ownership&#xA;rules, so an agent loads the guidance it needs for the task at hand instead of&#xA;one large document.&lt;/p&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#features&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;One skill per procedure, with an explicit description and scope&lt;/li&gt;&#xA;&lt;li&gt;Discovery written into the agent skills directory from declared sources&lt;/li&gt;&#xA;&lt;li&gt;Product-specific skills stay with their product; only genuinely shared ones&#xA;live here&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Al</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/al/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/al/</guid>
+				<description>&lt;p&gt;AL is a command runner that prepares credentials and environment variables&#xA;through plugins, runs your command, and cleans up afterward. Its Bazel rules&#xA;package commands with their configuration and required plugins.&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;al tool&lt;/code&gt; runs tools declared in AL configuration from a source-keyed executable&#xA;cache. With no &lt;code&gt;--config&lt;/code&gt;, it uses the repository-root &lt;code&gt;al.lua&lt;/code&gt;; explicit&#xA;&lt;code&gt;--config&lt;/code&gt; paths replace that default. Cache misses build the tool&amp;rsquo;s configured&#xA;Bazel label and publish the selected executable under&#xA;&lt;code&gt;$XDG_CACHE_HOME/al/tools&lt;/code&gt;. &lt;code&gt;AL_TOOL_CACHE&lt;/code&gt; or &lt;code&gt;tool --cache-root PATH&lt;/code&gt; selects&#xA;an alternate cache root.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Al</title>
+				<link>https://www-staging.alwaldend.com/projects/al/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/projects/al/</guid>
+				<description>&lt;p&gt;AL is a command runner that prepares credentials and environment&#xA;variables through plugins, runs your command, and cleans up afterward. Its Bazel&#xA;rules package commands together with the configuration and plugins they need.&lt;/p&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#features&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Plugin-based credential and environment preparation around any command&lt;/li&gt;&#xA;&lt;li&gt;Bazel rules that package a command with its configuration and plugins&lt;/li&gt;&#xA;&lt;li&gt;A source-keyed executable cache for running declared tools&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Ansible</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/ansible/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/ansible/</guid>
+				<description>&lt;p&gt;&lt;code&gt;ansible_lint&lt;/code&gt; runs &lt;code&gt;ansible-lint&lt;/code&gt; from Bazel-managed Python&#xA;dependencies. A Go test runner exposes the CLI binaries under their&#xA;hyphenated names, configures writable Ansible paths, and invokes the&#xA;linter against workspace-relative sources.&lt;/p&gt;&#xA;&lt;p&gt;Molecule is not integrated yet. The likely path is to add Molecule to&#xA;these Python requirements and invoke it through a Bazel-native Go runner,&#xA;but practical scenarios require choosing and provisioning a Molecule&#xA;driver before any scenarios can run.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Bazel shell worker</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/shell_worker/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/shell_worker/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Blender</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/blender/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/blender/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://www.blender.org/&#34;&gt;https://www.blender.org/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Bzl</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/bzl/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/bzl/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Bzlenv</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/bzlenv/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/bzlenv/</guid>
+				<description>&lt;p&gt;Rules to create a bazel environment which functions similar to venv&lt;/p&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#features&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Adds bazel-built tools to &lt;code&gt;${PATH}&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Exports .env&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#usage&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Create env and activate:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;. &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;bazel run //tools/bzlenv&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Activate existing env:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;. .bzlenv/bin/activate&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Deactivate env:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bzlenv_deactivate&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+			</item>
+			<item>
+				<title>com_github_bazelbuild_bazel_protobuf</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/com_github_bazelbuild_bazel_protobuf/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/com_github_bazelbuild_bazel_protobuf/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Dart Sass</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/sass/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/sass/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;https://sass-lang.com/dart-sass&#34;&gt;Dart Sass&lt;/a&gt; binary toolchain, used by Hugo&#xA;for &lt;code&gt;toCSS &amp;quot;dartsass&amp;quot;&lt;/code&gt; builds.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Drawio</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/drawio/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/drawio/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/rlespinasse/docker-drawio-desktop-headless&#34;&gt;https://github.com/rlespinasse/docker-drawio-desktop-headless&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;reproducible-svgs&#34;&gt;Reproducible SVGs&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#reproducible-svgs&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;code&gt;drawio_svg&lt;/code&gt; in &lt;code&gt;defs.bzl&lt;/code&gt; renders named pages from a &lt;code&gt;.drawio&lt;/code&gt; file with the&#xA;pinned Drawio web exporter and the existing pinned Chrome-for-Testing browser.&#xA;The extraction action unpacks the web application from the Drawio AppImage;&#xA;rendering uses a small Puppeteer bridge for its export messages. Neither action&#xA;uses a host display server or accesses the network. JavaScript keeps this&#xA;adapter close to Drawio&amp;rsquo;s browser API and the existing Puppeteer dependency.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>File installer</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/file_installer/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/file_installer/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Git</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/git/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/git/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Go</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/go/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/go/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Gzip</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/gzip/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/gzip/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Helm</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/helm/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/helm/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://helm.sh&#34;&gt;https://helm.sh&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Http server</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/http_server/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/http_server/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Hugo</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/hugo/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/hugo/</guid>
+				<description>&lt;p&gt;Hugo binary toolchain for the repository. Build rules live in&#xA;&lt;a href=&#34;https://www-staging.alwaldend.com/docs/tools/rules_hugo/&#34;&gt;&lt;code&gt;rules_hugo&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Install file</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/install_file/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/install_file/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Leetcode downloader</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/leetcode_downloader/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/leetcode_downloader/</guid>
+				<description>&lt;p&gt;This project exports LeetCode submissions and generates documentation from&#xA;submission files using a CLI and Bazel rules. A Tampermonkey script provides&#xA;a browser-based download path; direct CLI downloads are currently blocked by&#xA;LeetCode bot protection.&lt;/p&gt;&#xA;&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Source code: &lt;a href=&#34;https://github.com/alwaldend/src/tree/master/projects/leetcode_downloader&#34;&gt;https://github.com/alwaldend/src/tree/master/projects/leetcode_downloader&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#features&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;CLI and bzl code to generate submission docs&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.tampermonkey.net/&#34;&gt;Tampermonkey&lt;/a&gt; script to download submissions&lt;/li&gt;&#xA;&lt;li&gt;CLI to download submissions (Doesn&amp;rsquo;t work because of bot protection)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#usage&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id=&#34;generate-submission-from-a-submission-file&#34;&gt;Generate submission from a submission file&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#generate-submission-from-a-submission-file&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bazel run //projects/leetcode_downloader -- &lt;span style=&#34;color:#ae81ff&#34;&gt;\&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    --submissions-file &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;PWD&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;/out/submissions.json&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;\&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    --root-dir &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;PWD&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;\&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    generate&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;help&#34;&gt;Help&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#help&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Usage of flags:&#xA;  -base_url string&#xA;    &#x9; (default &amp;#34;https://leetcode.com&amp;#34;)&#xA;  -cookie string&#xA;&#xA;  -limit uint&#xA;    &#x9; (default 20)&#xA;  -offset uint&#xA;&#xA;  -root-dir string&#xA;    &#x9; (default &amp;#34;${PWD}&amp;#34;)&#xA;  -submissions-file string&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+			</item>
+			<item>
+				<title>Leetcode downloader</title>
+				<link>https://www-staging.alwaldend.com/projects/leetcode_downloader/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/projects/leetcode_downloader/</guid>
+				<description>&lt;p&gt;Tools for exporting your LeetCode submissions and turning them into&#xA;documentation. This work is still in progress.&lt;/p&gt;&#xA;&lt;h2 id=&#34;status&#34;&gt;Status&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#status&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;In progress. The export and documentation tooling is not yet complete.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Lua</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/lua/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/lua/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Make install</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/make_install/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/make_install/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Md</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/md/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/md/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Minisign</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/minisign/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/minisign/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Oras</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/oras/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/oras/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Repo: &lt;a href=&#34;https://github.com/oras-project/oras&#34;&gt;https://github.com/oras-project/oras&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Docs: &lt;a href=&#34;https://oras.land/docs&#34;&gt;https://oras.land/docs&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Patch</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/patch/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/patch/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Pkg</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/pkg/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/pkg/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Print deps</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/print_deps/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/print_deps/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Proto</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/proto/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/proto/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Py</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/py/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/py/</guid>
+				<description>&lt;p&gt;The repository Python dependency lock remains in root &lt;code&gt;requirements.txt&lt;/code&gt;, next&#xA;to &lt;code&gt;pyproject.toml&lt;/code&gt;. Update it with &lt;code&gt;//tools/py:requirements.update&lt;/code&gt; and validate&#xA;it with &lt;code&gt;//tools/py:requirements.test&lt;/code&gt;; the root labels remain compatibility&#xA;entry points. These upstream pip-tools workflows require network access to&#xA;resolve and validate package versions and run outside the action sandbox.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Qt</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/qt/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/qt/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://bazel.build/extending/toolchains&#34;&gt;https://bazel.build/extending/toolchains&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;hermetic-qt&#34;&gt;Hermetic Qt&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#hermetic-qt&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The module configuration downloads SHA-256-pinned Qt 6.8.3 distributions via&#xA;&lt;code&gt;rules_qt&lt;/code&gt; and registers its build tools. Bazel builds do not require Qt under&#xA;&lt;code&gt;/opt&lt;/code&gt; or another host installation.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Readme tree</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/readme_tree/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/readme_tree/</guid>
+				<description>&lt;h2 id=&#34;example&#34;&gt;Example&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#example&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bazel run tools/readme_tree -- parse -g -C &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;PWD&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; .&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+			</item>
+			<item>
+				<title>Release</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/release/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/release/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Replace section</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/replace_section/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/replace_section/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Repo map</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/repo_map/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/repo_map/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Resolved toolchain</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/resolved_toolchain/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/resolved_toolchain/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://bazel.build/extending/toolchains&#34;&gt;https://bazel.build/extending/toolchains&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Rfc</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/rfc/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/rfc/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;RFC Editor: &lt;a href=&#34;https://www.rfc-editor.org/&#34;&gt;https://www.rfc-editor.org/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Rules binary toolchain</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/rules_binary_toolchain/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/rules_binary_toolchain/</guid>
+				<description>&lt;p&gt;&lt;code&gt;rules_binary_toolchain&lt;/code&gt; creates Bazel toolchains and runnable targets for&#xA;packaged executable binaries. Archive entries can include runtime files,&#xA;which the generated binary targets expose through Bazel runfiles.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Rules docs</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/rules_docs/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/rules_docs/</guid>
+				<description>&lt;p&gt;&lt;code&gt;rules_docs&lt;/code&gt; packages Markdown documentation under a common archive prefix.&lt;/p&gt;&#xA;&lt;h2 id=&#34;documentation-rule&#34;&gt;Documentation rule&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#documentation-rule&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Add the module dependency:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-starlark&#34; data-lang=&#34;starlark&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bazel_dep(name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;rules_docs&amp;#34;&lt;/span&gt;, version &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;lt;VERSION&amp;gt;&amp;#34;&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then declare the package documentation. &lt;code&gt;srcs&lt;/code&gt; defaults to&#xA;&lt;code&gt;glob([&amp;quot;*.md&amp;quot;])&lt;/code&gt;; &lt;code&gt;visibility&lt;/code&gt; is optional.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-starlark&#34; data-lang=&#34;starlark&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;load(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;@rules_docs//docs:defs.bzl&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;docs_filegroup&amp;#34;&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docs_filegroup(&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;docs&amp;#34;&lt;/span&gt;,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    deps &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;child&amp;#34;&lt;/span&gt;],&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Relative dependency names without a colon are normalized to the child&#xA;package&amp;rsquo;s &lt;code&gt;docs&lt;/code&gt; target. &lt;code&gt;prefix&lt;/code&gt; defaults to the current package beneath&#xA;&lt;code&gt;content/docs/&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Files are packaged at their basename by default. When a package&amp;rsquo;s sources span&#xA;subdirectories that hold identically named files, set &lt;code&gt;preserve_paths = True&lt;/code&gt;&#xA;so each source keeps its package-relative path and the destinations stay&#xA;distinct.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Rules Hugo</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/rules_hugo/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/rules_hugo/</guid>
+				<description>&lt;p&gt;&lt;code&gt;rules_hugo&lt;/code&gt; builds Hugo sites with a registered Hugo toolchain. It keeps the&#xA;site archive in the target configuration and the Hugo binary in the execution&#xA;configuration so site sources are not rebuilt for the execution platform.&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;al_hugo_site&lt;/code&gt; wraps a site source archive and its PostCSS tooling.&#xA;&lt;code&gt;al_hugo_run_binary&lt;/code&gt; builds the site with the registered Hugo toolchain and&#xA;&lt;code&gt;al_hugo_binary&lt;/code&gt; exposes a runnable Hugo command for a site. The optional&#xA;&lt;code&gt;al_hugo_worker&lt;/code&gt; rule runs the build through a persistent worker.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Rules Promptfoo</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/rules_promptfoo/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/rules_promptfoo/</guid>
+				<description>&lt;p&gt;&lt;code&gt;rules_promptfoo&lt;/code&gt; runs repository skills through a pinned Promptfoo CLI. It&#xA;keeps dependency resolution reproducible in Bazel while deliberately running&#xA;model calls only at test runtime.&lt;/p&gt;&#xA;&lt;h2 id=&#34;setup&#34;&gt;Setup&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#setup&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Add the module and its skill-provider dependency:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-starlark&#34; data-lang=&#34;starlark&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bazel_dep(name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;rules_promptfoo&amp;#34;&lt;/span&gt;, version &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;lt;VERSION&amp;gt;&amp;#34;&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bazel_dep(name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;rules_skills&amp;#34;&lt;/span&gt;, version &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;lt;VERSION&amp;gt;&amp;#34;&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The development checkout uses sibling &lt;code&gt;local_path_override&lt;/code&gt; declarations.&#xA;Published releases must replace those local overrides with registry versions.&lt;/p&gt;&#xA;&lt;h2 id=&#34;evaluate-a-skill&#34;&gt;Evaluate a skill&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#evaluate-a-skill&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-starlark&#34; data-lang=&#34;starlark&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;load(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;@rules_promptfoo//promptfoo:defs.bzl&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;promptfoo_test&amp;#34;&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;promptfoo_test(&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;answer_question_eval&amp;#34;&lt;/span&gt;,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    config &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;promptfooconfig.yaml&amp;#34;&lt;/span&gt;,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    skills &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;//projects/agents/skills/answer-question:skill&amp;#34;&lt;/span&gt;],&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    env_inherit &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;CODEX_HOME&amp;#34;&lt;/span&gt;,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;CODEX_PATH_OVERRIDE&amp;#34;&lt;/span&gt;,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ],&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    reuse_codex_login &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The runner physically copies each selected &lt;code&gt;SkillInfo.files_by_path&lt;/code&gt; bundle&#xA;to an isolated Bazel test-temporary&#xA;&lt;code&gt;workspace/.agents/skills/&amp;lt;name&amp;gt;/&lt;/code&gt; tree. Point the Codex SDK provider at the&#xA;exported workspace and, when using a compatible host Codex executable, at the&#xA;exported executable path:&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Rules skill</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/rules_skills/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/rules_skills/</guid>
+				<description>&lt;p&gt;&lt;code&gt;rules_skills&lt;/code&gt; packages all files belonging to a Codex skill and validates its&#xA;instructions and optional OpenAI metadata with a hermetic Bazel aspect.&lt;/p&gt;&#xA;&lt;h2 id=&#34;getting-started&#34;&gt;Getting started&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#getting-started&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Add the module and register the validation aspect:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-starlark&#34; data-lang=&#34;starlark&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bazel_dep(name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;rules_skills&amp;#34;&lt;/span&gt;, version &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;lt;VERSION&amp;gt;&amp;#34;&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;build --aspects @rules_skills//skill:defs.bzl%skill_validation_aspect&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;build --output_groups=+skill_validation&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Declare one library in the skill&amp;rsquo;s named, non-root package:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-starlark&#34; data-lang=&#34;starlark&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;load(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;@rules_skills//skill:defs.bzl&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;skill_library&amp;#34;&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;skill_library(&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;skill&amp;#34;&lt;/span&gt;,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    srcs &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; glob(&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;**&amp;#34;&lt;/span&gt;],&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        exclude &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;BUILD.bazel&amp;#34;&lt;/span&gt;,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;BUILD&amp;#34;&lt;/span&gt;,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;evals/**&amp;#34;&lt;/span&gt;,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        ],&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ),&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The package&amp;rsquo;s final path segment is the skill name, so a &lt;code&gt;skill_library&lt;/code&gt;&#xA;cannot be declared in a repository root package. Move a root-level skill into&#xA;a named subpackage before declaring it.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Rules template</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/rules_template/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/rules_template/</guid>
+				<description>&lt;p&gt;&lt;code&gt;rules_template&lt;/code&gt; provides Bazel rules and a Go command for rendering template&#xA;files. A registered toolchain supplies the templating executable to build&#xA;actions.&lt;/p&gt;&#xA;&lt;h2 id=&#34;getting-started&#34;&gt;Getting started&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#getting-started&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;code&gt;MODULE.bazel&lt;/code&gt;:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bazel_dep(name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;rules_template&amp;#34;&lt;/span&gt;, version &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;lt;VERSION&amp;gt;&amp;#34;&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;register_toolchains(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;@rules_template//main/bzl:all&amp;#34;&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;BUILD.bazel&lt;/code&gt;:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+			</item>
+			<item>
+				<title>Run tool</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/run_tool/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/run_tool/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Sh</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/sh/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/sh/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Toml</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/toml/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/toml/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Transitive sources</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/transitive_sources/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/transitive_sources/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Trufflehog</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/trufflehog/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/trufflehog/</guid>
+				<description>&lt;p&gt;The normal &lt;code&gt;//tools/trufflehog:repo_test&lt;/code&gt; scans the history reachable from the&#xA;checked-out &lt;code&gt;HEAD&lt;/code&gt; and skips unrelated local refs. Run the manual&#xA;&lt;code&gt;//tools/trufflehog:repo_all_refs_test&lt;/code&gt; target explicitly when an audit must&#xA;include every local Git ref, such as T3 checkpoint refs from other worktrees.&lt;/p&gt;&#xA;&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Repo: &lt;a href=&#34;https://github.com/trufflesecurity/trufflehog&#34;&gt;https://github.com/trufflesecurity/trufflehog&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Txt</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/txt/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/txt/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Vial</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/vial/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/vial/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Website: &lt;a href=&#34;https://vial.rocks&#34;&gt;https://vial.rocks&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+	</channel>
+</rss>

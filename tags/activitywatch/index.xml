@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Activitywatch on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/tags/activitywatch/</link>
+		<description>Recent content in Activitywatch on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/tags/activitywatch/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>ActivityWatch ingester Android</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/activitywatch_ingester_android/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/activitywatch_ingester_android/</guid>
+				<description>&lt;h1 id=&#34;activitywatch-ingester-android&#34;&gt;ActivityWatch ingester Android&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#activitywatch-ingester-android&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;An Android collector that reads supported browser address-bar text through&#xA;Android accessibility and sends it to an ActivityWatch server. The app holds&#xA;full accessibility permission only to obtain the URL; it never uses that&#xA;permission for anything else.&lt;/p&gt;&#xA;&lt;h2 id=&#34;how-it-works&#34;&gt;How it works&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#how-it-works&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Enabling accessibility for this app lets it read the focused address bar.&lt;/li&gt;&#xA;&lt;li&gt;The accessibility service matches browser view IDs (&lt;code&gt;url_bar&lt;/code&gt; and common&#xA;Chrome-derived variants), extracts the current URL, and sends an&#xA;ActivityWatch heartbeat for the &lt;code&gt;web.tab.current&lt;/code&gt; bucket to a configurable&#xA;server.&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;web.tab.current&lt;/code&gt; heartbeats use &lt;code&gt;pulsetime=1.0&lt;/code&gt;; consecutive URLs are sent&#xA;with the time spent on the previous tab as the &lt;code&gt;duration&lt;/code&gt; field.&lt;/li&gt;&#xA;&lt;li&gt;Data goes directly from this app to the ActivityWatch HTTP API; it is not&#xA;uploaded to any other service.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;configuration&#34;&gt;Configuration&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#configuration&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Open the app to configure:&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>ActivityWatch ingester Android</title>
+				<link>https://www-staging.alwaldend.com/projects/activitywatch_ingester_android/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/projects/activitywatch_ingester_android/</guid>
+				<description>&lt;p&gt;An Android collector that reads the browser address bar through Android&#xA;accessibility services and sends visited URLs to an ActivityWatch server, so&#xA;browser activity appears alongside the rest of your tracked time.&lt;/p&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#features&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Reads supported browsers through accessibility, with no browser extension&lt;/li&gt;&#xA;&lt;li&gt;Sends browser URLs to a configured ActivityWatch server&lt;/li&gt;&#xA;&lt;li&gt;Written in Kotlin for Android&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+	</channel>
+</rss>

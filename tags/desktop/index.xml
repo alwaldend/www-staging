@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Desktop on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/tags/desktop/</link>
+		<description>Recent content in Desktop on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/tags/desktop/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Useless QT GUI</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/useless_qt_gui/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/useless_qt_gui/</guid>
+				<description>&lt;p&gt;Useless QT GUI is a desktop application built with C++ and Qt. Its Bazel build&#xA;uses a pinned Qt distribution without requiring a system Qt installation.&lt;/p&gt;&#xA;&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Source code: &lt;a href=&#34;https://github.com/alwaldend/src/tree/master/projects/useless_qt_gui&#34;&gt;https://github.com/alwaldend/src/tree/master/projects/useless_qt_gui&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#features&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Desktop GUI&lt;/li&gt;&#xA;&lt;li&gt;C++, &lt;a href=&#34;https://www.qt.io/&#34;&gt;Qt&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;build&#34;&gt;Build&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#build&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The Bazel build downloads a SHA-256-pinned Qt 6.8.3 distribution through&#xA;&lt;code&gt;rules_qt&lt;/code&gt;; a system Qt installation is not required. The project previously&#xA;targeted Qt 6.9.0. Using 6.8.3 is a deliberate downgrade to the LTS version&#xA;supported and tested by the pinned &lt;code&gt;rules_qt&lt;/code&gt; release.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Useless QT GUI</title>
+				<link>https://www-staging.alwaldend.com/projects/useless_qt_gui/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/projects/useless_qt_gui/</guid>
+				<description>&lt;p&gt;A desktop application built with C++ and Qt, packaged with a Bazel&#xA;build.&lt;/p&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#features&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Native desktop interface in C++ and Qt&lt;/li&gt;&#xA;&lt;li&gt;Bazel build and packaging&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+	</channel>
+</rss>

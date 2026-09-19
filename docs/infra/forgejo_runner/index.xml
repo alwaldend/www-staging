@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Forgejo runner on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/docs/infra/forgejo_runner/</link>
+		<description>Recent content in Forgejo runner on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/docs/infra/forgejo_runner/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title></title>
+				<link>https://www-staging.alwaldend.com/docs/infra/forgejo_runner/openspec/specs/infra-forgejo-runner/spec/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/forgejo_runner/openspec/specs/infra-forgejo-runner/spec/</guid>
+				<description>&lt;h1 id=&#34;forgejo-runner-infrastructure-specification&#34;&gt;Forgejo runner infrastructure specification&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#forgejo-runner-infrastructure-specification&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#purpose&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Describe the Forgejo Actions runner VM and deployment scaffold owned by&#xA;&lt;code&gt;infra/forgejo_runner&lt;/code&gt;. Its &lt;code&gt;tf_setup&lt;/code&gt; and &lt;code&gt;ansible&lt;/code&gt; packages are stages of&#xA;this owner. The runner role is commented out in the baseline playbook;&#xA;the checked-in configuration therefore does not establish a deployed or&#xA;registered Actions worker. No live runner state was observed.&lt;/p&gt;&#xA;&lt;p&gt;Baseline revision: &lt;code&gt;550d7e79b1f5fdbc2b6017b75178471d6914082f&lt;/code&gt;.&#xA;Observed: 2026-09-08. Sources:&#xA;&lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/forgejo_runner/&#34;&gt;owner README&lt;/a&gt;,&#xA;&lt;a href=&#34;../../../BUILD.bazel&#34;&gt;BUILD&lt;/a&gt;, and the implementation&#xA;links below.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title></title>
+				<link>https://www-staging.alwaldend.com/docs/infra/forgejo_runner/openspec/specs/owned-dns/spec/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/forgejo_runner/openspec/specs/owned-dns/spec/</guid>
+				<description>&lt;h1 id=&#34;owned-dns-specification&#34;&gt;owned-dns Specification&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#owned-dns-specification&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#purpose&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Define Forgejo Actions runner DNS management through the owner&amp;rsquo;s &lt;code&gt;tf_setup&lt;/code&gt; root,&#xA;including canonical declarations, scoped execution, adoption of existing records,&#xA;and offline source checks.&lt;/p&gt;&#xA;&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirements&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id=&#34;requirement-owner-local-dns-configuration&#34;&gt;Requirement: Owner-local DNS configuration&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirement-owner-local-dns-configuration&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The &lt;code&gt;tf_setup&lt;/code&gt; root SHALL consume this owner&amp;rsquo;s canonical &lt;code&gt;dnsconfig.json&lt;/code&gt; through&#xA;the shared DNS Terraform module, preserving declared record identities and views.&#xA;DNS resources SHALL default to disabled before adoption and SHALL remain enabled&#xA;by default after authorized adoption. Adoption SHALL bind existing provider records&#xA;to the owner&amp;rsquo;s state without adding, changing, replacing, or deleting DNS records.&#xA;Subsequent reconciliation of unchanged declarations SHALL preserve owned and&#xA;unrelated records.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

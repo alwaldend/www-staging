@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Pki on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/tags/pki/</link>
+		<description>Recent content in Pki on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/tags/pki/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Alwaldend.com</title>
+				<link>https://www-staging.alwaldend.com/docs/data/ssl/alwaldend.com/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/data/ssl/alwaldend.com/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Generation: &lt;a href=&#34;https://arminreiter.com/2022/01/create-your-own-certificate-authority-ca-using-openssl/&#34;&gt;https://arminreiter.com/2022/01/create-your-own-certificate-authority-ca-using-openssl/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Vault: &lt;a href=&#34;https://developer.hashicorp.com/vault/tutorials/pki/pki-engine-external-ca&#34;&gt;https://developer.hashicorp.com/vault/tutorials/pki/pki-engine-external-ca&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;root-ca&#34;&gt;Root CA&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#root-ca&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Source: &lt;a href=&#34;https://www-staging.alwaldend.com/docs/data/ssl/alwaldend.com/root_ca.crt&#34;&gt;./root_ca.crt&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Update: manually&lt;/p&gt;&#xA;&lt;h2 id=&#34;intermediate-ca1&#34;&gt;Intermediate CA1&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#intermediate-ca1&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Source: &lt;a href=&#34;https://www-staging.alwaldend.com/docs/data/ssl/alwaldend.com/ica1.crt&#34;&gt;./ica1.crt&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Update: manually&lt;/p&gt;&#xA;&lt;h2 id=&#34;client-certificate-ca&#34;&gt;Client certificate CA&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#client-certificate-ca&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Source: &lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/vault/tf/output/&#34;&gt;../../../infra/vault/tf/output&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Update: automatically&lt;/p&gt;&#xA;&lt;h2 id=&#34;server-certificate-ca&#34;&gt;Server certificate CA&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#server-certificate-ca&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Source: &lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/vault/tf/output/&#34;&gt;../../../infra/vault/tf/output&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Update: automatically&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Gen client cert</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/vault/gen_client_cert/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/vault/gen_client_cert/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Ssl</title>
+				<link>https://www-staging.alwaldend.com/docs/data/ssl/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/data/ssl/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

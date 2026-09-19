@@ -1,0 +1,789 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js" data-theme-init>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000000">
+
+<style>
+  html { background: Canvas; color: CanvasText; }
+  @media (prefers-color-scheme: dark) {
+    html { background: #0b0d12; color: #e6e6e6; }
+  }
+  html[data-theme-init] * { transition: none !important; }
+</style>
+
+<script>
+  (function() {
+    const themeKey = 'td-color-theme';
+    const storedTheme = localStorage.getItem(themeKey);
+    let theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (theme === 'auto') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
+<link rel="canonical" type="text/html" href="https://www-staging.alwaldend.com/docs/tools/helm/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://www-staging.alwaldend.com/docs/tools/helm/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+<title>Helm | Alwaldend</title>
+<meta name="description" content="Bazel rules for helm">
+<meta property="og:url" content="https://www-staging.alwaldend.com/docs/tools/helm/">
+	<meta property="og:site_name" content="Alwaldend">
+	<meta property="og:title" content="Helm">
+	<meta property="og:description" content="Bazel rules for helm">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="Helm">
+	<meta itemprop="description" content="Bazel rules for helm">
+	<meta itemprop="dateModified" content="2026-09-19T20:06:21+03:00">
+	<meta itemprop="wordCount" content="3">
+	<meta itemprop="keywords" content="Bzl_rules,Helm">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Helm">
+	<meta name="twitter:description" content="Bazel rules for helm">
+<link rel="preload" href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" as="style" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<link href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" rel="stylesheet" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll">
+<div class="td-navbar-container container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">Alwaldend</span></a>
+  <div class="td-navbar__main td-navbar-nav-scroll td-navbar-nav-scroll--indicator" id="main_navbar">
+    <div class="scroll-indicator scroll-left"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/projects/"><span>Projects</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item td-navbar__light-dark-menu">
+        <div class="td-light-dark-menu dropdown"><svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+<button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        title="Toggle theme (Auto)"
+        aria-label="Toggle theme (Auto)">
+  <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="bd-theme">
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
+      Light
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>
+      Dark
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+      <svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>
+      Auto
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+</ul>
+</div>
+
+      </li>
+      </ul>
+    <div class="scroll-indicator scroll-right"></div>
+  </div>
+  <div class="td-navbar__search d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon" aria-hidden="true"></div>
+  <input
+    type="search"
+    name="q"
+    class="td-search__input form-control"
+    placeholder='Search this site…'
+    aria-label='Search this site…'
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/tools/helm/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Helm</h1>
+<div class="lead">Bazel rules for helm</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-73a23519e4d1c8aff1438e0fddeec687">Bzl</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1.1: <a href="#pg-24ff3b5ecbd71a0a3dc674df46c0b794">al_helm_binary</a></li>
+
+
+    
+  
+    
+    
+	
+<li>1.2: <a href="#pg-9e4330bb8bc3f8c4cd64750b8f1fe51a">al_helm_chart</a></li>
+
+
+    
+  
+    
+    
+	
+<li>1.3: <a href="#pg-cab9f7b8e20913b9767c13a2f2c4dbe1">al_helm_chart_info</a></li>
+
+
+    
+  
+    
+    
+	
+<li>1.4: <a href="#pg-58cf4211abb41d510bf8aa4fea92f3fd">al_helm_chart_lock</a></li>
+
+
+    
+  
+    
+    
+	
+<li>1.5: <a href="#pg-70d7e1e3889b2c8f87ba3a4af56e6c92">al_helm_cmds</a></li>
+
+
+    
+  
+    
+    
+	
+<li>1.6: <a href="#pg-565166647d5871258dfb1f121433de21">al_helm_deps</a></li>
+
+
+    
+  
+    
+    
+	
+<li>1.7: <a href="#pg-1654b75b5b6ae456e59bc0548709c83e">al_helm_deps_repo</a></li>
+
+
+    
+  
+    
+    
+	
+<li>1.8: <a href="#pg-c93f55e2bd6f13d33959a725d35f07ce">al_helm_toolchain</a></li>
+
+
+    
+  
+
+    </ul>
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      <h2 id="print-ef3a312bd2ff20904993ca4e3a08e7d2-links">Links<a class="td-heading-self-link" href="#print-ef3a312bd2ff20904993ca4e3a08e7d2-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Site: <a href="https://helm.sh">https://helm.sh</a></li>
+</ul>
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-73a23519e4d1c8aff1438e0fddeec687">1 - Bzl</h1>
+    <div class="lead">Bazel code</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-24ff3b5ecbd71a0a3dc674df46c0b794">1.1 - al_helm_binary</h1>
+    
+	<!-- Generated with Stardoc: http://skydoc.bazel.build -->
+<p><a id="print-b8b2cbf7c495b3bba5485e227e71507c-al_helm_binary"></a></p>
+<h2>al_helm_binary<a class="td-heading-self-link" href="#print-b8b2cbf7c495b3bba5485e227e71507c-al_helm_binary" aria-label="Heading self-link"></a></h2><pre>
+load("@com_alwaldend_src//tools/helm/main/bzl:al_helm_binary.bzl", "al_helm_binary")
+
+al_helm_binary(<a href="#print-b8b2cbf7c495b3bba5485e227e71507c-al_helm_binary-name">name</a>, <a href="#print-b8b2cbf7c495b3bba5485e227e71507c-al_helm_binary-data">data</a>, <a href="#print-b8b2cbf7c495b3bba5485e227e71507c-al_helm_binary-arguments">arguments</a>, <a href="#print-b8b2cbf7c495b3bba5485e227e71507c-al_helm_binary-cd">cd</a>)
+</pre>
+<p>Helm binary</p>
+<p><strong>ATTRIBUTES</strong></p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Name</th>
+					<th style="text-align: left">Description</th>
+					<th style="text-align: left">Type</th>
+					<th style="text-align: left">Mandatory</th>
+					<th style="text-align: left">Default</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><a id="print-b8b2cbf7c495b3bba5485e227e71507c-al_helm_binary-name"></a>name</td>
+					<td style="text-align: left">A unique name for this target.</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels#target-names">Name</a></td>
+					<td style="text-align: left">required</td>
+					<td style="text-align: left"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-b8b2cbf7c495b3bba5485e227e71507c-al_helm_binary-data"></a>data</td>
+					<td style="text-align: left">Helm chart</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>[]</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-b8b2cbf7c495b3bba5485e227e71507c-al_helm_binary-arguments"></a>arguments</td>
+					<td style="text-align: left">Helm arguments</td>
+					<td style="text-align: left">List of strings</td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>[]</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-b8b2cbf7c495b3bba5485e227e71507c-al_helm_binary-cd"></a>cd</td>
+					<td style="text-align: left">Cd to a directory before running bazel</td>
+					<td style="text-align: left">String</td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>&quot;.&quot;</code></td>
+			</tr>
+	</tbody>
+</table>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-9e4330bb8bc3f8c4cd64750b8f1fe51a">1.2 - al_helm_chart</h1>
+    
+	<!-- Generated with Stardoc: http://skydoc.bazel.build -->
+<p><a id="print-8e5b631d1a425a19beee4abfa6f5bb33-al_helm_chart"></a></p>
+<h2>al_helm_chart<a class="td-heading-self-link" href="#print-8e5b631d1a425a19beee4abfa6f5bb33-al_helm_chart" aria-label="Heading self-link"></a></h2><pre>
+load("@com_alwaldend_src//tools/helm/main/bzl:al_helm_chart.bzl", "al_helm_chart")
+
+al_helm_chart(<a href="#print-8e5b631d1a425a19beee4abfa6f5bb33-al_helm_chart-name">name</a>, <a href="#print-8e5b631d1a425a19beee4abfa6f5bb33-al_helm_chart-deps">deps</a>, <a href="#print-8e5b631d1a425a19beee4abfa6f5bb33-al_helm_chart-package">package</a>, <a href="#print-8e5b631d1a425a19beee4abfa6f5bb33-al_helm_chart-source">source</a>)
+</pre>
+<p>Helm chart</p>
+<p><strong>ATTRIBUTES</strong></p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Name</th>
+					<th style="text-align: left">Description</th>
+					<th style="text-align: left">Type</th>
+					<th style="text-align: left">Mandatory</th>
+					<th style="text-align: left">Default</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><a id="print-8e5b631d1a425a19beee4abfa6f5bb33-al_helm_chart-name"></a>name</td>
+					<td style="text-align: left">A unique name for this target.</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels#target-names">Name</a></td>
+					<td style="text-align: left">required</td>
+					<td style="text-align: left"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-8e5b631d1a425a19beee4abfa6f5bb33-al_helm_chart-deps"></a>deps</td>
+					<td style="text-align: left">Helm chart deps</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>[]</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-8e5b631d1a425a19beee4abfa6f5bb33-al_helm_chart-package"></a>package</td>
+					<td style="text-align: left">Helm chart package</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels">Label</a></td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>None</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-8e5b631d1a425a19beee4abfa6f5bb33-al_helm_chart-source"></a>source</td>
+					<td style="text-align: left">Helm chart source</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels">Label</a></td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>None</code></td>
+			</tr>
+	</tbody>
+</table>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-cab9f7b8e20913b9767c13a2f2c4dbe1">1.3 - al_helm_chart_info</h1>
+    
+	<!-- Generated with Stardoc: http://skydoc.bazel.build -->
+<p><a id="AlHelmChartInfo"></a></p>
+<h2 id="print-7cb643af4e6e37c82284dbee0b45ba5d-alhelmchartinfo">AlHelmChartInfo<a class="td-heading-self-link" href="#print-7cb643af4e6e37c82284dbee0b45ba5d-alhelmchartinfo" aria-label="Heading self-link"></a></h2><pre>
+load("@com_alwaldend_src//tools/helm/main/bzl:al_helm_chart_info.bzl", "AlHelmChartInfo")
+
+AlHelmChartInfo(<a href="#print-7cb643af4e6e37c82284dbee0b45ba5d-AlHelmChartInfo-source">source</a>, <a href="#print-7cb643af4e6e37c82284dbee0b45ba5d-AlHelmChartInfo-package">package</a>, <a href="#print-7cb643af4e6e37c82284dbee0b45ba5d-AlHelmChartInfo-deps">deps</a>, <a href="#print-7cb643af4e6e37c82284dbee0b45ba5d-AlHelmChartInfo-files_info">files_info</a>)
+</pre>
+<p>Information about a helm chart</p>
+<p><strong>FIELDS</strong></p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Name</th>
+					<th style="text-align: left">Description</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><a id="print-7cb643af4e6e37c82284dbee0b45ba5d-AlHelmChartInfo-source"></a>source</td>
+					<td style="text-align: left">Chart sources (PackageFilegroupInfo, optional)</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-7cb643af4e6e37c82284dbee0b45ba5d-AlHelmChartInfo-package"></a>package</td>
+					<td style="text-align: left">Chart package (tgz file)</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-7cb643af4e6e37c82284dbee0b45ba5d-AlHelmChartInfo-deps"></a>deps</td>
+					<td style="text-align: left">Chart deps (depset of AlHelmChartInfo)</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-7cb643af4e6e37c82284dbee0b45ba5d-AlHelmChartInfo-files_info"></a>files_info</td>
+					<td style="text-align: left">Chart file structure (PackageFilesInfo)</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-58cf4211abb41d510bf8aa4fea92f3fd">1.4 - al_helm_chart_lock</h1>
+    
+	<!-- Generated with Stardoc: http://skydoc.bazel.build -->
+<p><a id="print-d79f654a2011718c5170779beebd80f5-al_helm_chart_lock"></a></p>
+<h2>al_helm_chart_lock<a class="td-heading-self-link" href="#print-d79f654a2011718c5170779beebd80f5-al_helm_chart_lock" aria-label="Heading self-link"></a></h2><pre>
+load("@com_alwaldend_src//tools/helm/main/bzl:al_helm_chart_lock.bzl", "al_helm_chart_lock")
+
+al_helm_chart_lock(<a href="#print-d79f654a2011718c5170779beebd80f5-al_helm_chart_lock-name">name</a>, <a href="#print-d79f654a2011718c5170779beebd80f5-al_helm_chart_lock-lock">lock</a>, <a href="#print-d79f654a2011718c5170779beebd80f5-al_helm_chart_lock-lock_out">lock_out</a>)
+</pre>
+<p>Generate targets for a chart lock</p>
+<p><strong>PARAMETERS</strong></p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Name</th>
+					<th style="text-align: left">Description</th>
+					<th style="text-align: left">Default Value</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><a id="print-d79f654a2011718c5170779beebd80f5-al_helm_chart_lock-name"></a>name</td>
+					<td style="text-align: left">name</td>
+					<td style="text-align: left">none</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-d79f654a2011718c5170779beebd80f5-al_helm_chart_lock-lock"></a>lock</td>
+					<td style="text-align: left">lock label</td>
+					<td style="text-align: left">none</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-d79f654a2011718c5170779beebd80f5-al_helm_chart_lock-lock_out"></a>lock_out</td>
+					<td style="text-align: left">parsed lock filename</td>
+					<td style="text-align: left">none</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-70d7e1e3889b2c8f87ba3a4af56e6c92">1.5 - al_helm_cmds</h1>
+    
+	<!-- Generated with Stardoc: http://skydoc.bazel.build -->
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-565166647d5871258dfb1f121433de21">1.6 - al_helm_deps</h1>
+    
+	<!-- Generated with Stardoc: http://skydoc.bazel.build -->
+<p><a id="print-1d9427588251b001adb18560fb3f85f5-al_helm_deps"></a></p>
+<h2>al_helm_deps<a class="td-heading-self-link" href="#print-1d9427588251b001adb18560fb3f85f5-al_helm_deps" aria-label="Heading self-link"></a></h2><pre>
+al_helm_deps = use_extension("@com_alwaldend_src//tools/helm/main/bzl:al_helm_deps.bzl", "al_helm_deps")
+al_helm_deps.from_locks(<a href="#print-1d9427588251b001adb18560fb3f85f5-al_helm_deps.from_locks-name">name</a>, <a href="#print-1d9427588251b001adb18560fb3f85f5-al_helm_deps.from_locks-integrity">integrity</a>, <a href="#print-1d9427588251b001adb18560fb3f85f5-al_helm_deps.from_locks-locks">locks</a>)
+</pre>
+<p>Extension to download helm dependencies</p>
+<p><strong>TAG CLASSES</strong></p>
+<p><a id="print-1d9427588251b001adb18560fb3f85f5-al_helm_deps.from_locks"></a></p>
+<h3 id="print-1d9427588251b001adb18560fb3f85f5-from_locks">from_locks<a class="td-heading-self-link" href="#print-1d9427588251b001adb18560fb3f85f5-from_locks" aria-label="Heading self-link"></a></h3><p><strong>Attributes</strong></p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Name</th>
+					<th style="text-align: left">Description</th>
+					<th style="text-align: left">Type</th>
+					<th style="text-align: left">Mandatory</th>
+					<th style="text-align: left">Default</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><a id="print-1d9427588251b001adb18560fb3f85f5-al_helm_deps.from_locks-name"></a>name</td>
+					<td style="text-align: left">Repo name</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels#target-names">Name</a></td>
+					<td style="text-align: left">required</td>
+					<td style="text-align: left"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-1d9427588251b001adb18560fb3f85f5-al_helm_deps.from_locks-integrity"></a>integrity</td>
+					<td style="text-align: left">Intergrity for locks, keys are packages, values are integrity</td>
+					<td style="text-align: left"><a href="https://bazel.build/rules/lib/core/dict">Dictionary: String -&gt; String</a></td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>{}</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-1d9427588251b001adb18560fb3f85f5-al_helm_deps.from_locks-locks"></a>locks</td>
+					<td style="text-align: left">Helm lock labels</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>[]</code></td>
+			</tr>
+	</tbody>
+</table>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-1654b75b5b6ae456e59bc0548709c83e">1.7 - al_helm_deps_repo</h1>
+    
+	<!-- Generated with Stardoc: http://skydoc.bazel.build -->
+<p><a id="print-3a662fdc092bdec563cc839551ba8ab3-al_helm_deps_repo"></a></p>
+<h2>al_helm_deps_repo<a class="td-heading-self-link" href="#print-3a662fdc092bdec563cc839551ba8ab3-al_helm_deps_repo" aria-label="Heading self-link"></a></h2><pre>
+load("@com_alwaldend_src//tools/helm/main/bzl:al_helm_deps_repo.bzl", "al_helm_deps_repo")
+
+al_helm_deps_repo(<a href="#print-3a662fdc092bdec563cc839551ba8ab3-al_helm_deps_repo-name">name</a>, <a href="#print-3a662fdc092bdec563cc839551ba8ab3-al_helm_deps_repo-integrity">integrity</a>, <a href="#print-3a662fdc092bdec563cc839551ba8ab3-al_helm_deps_repo-locks">locks</a>, <a href="#print-3a662fdc092bdec563cc839551ba8ab3-al_helm_deps_repo-repo_mapping">repo_mapping</a>)
+</pre>
+<p>Helm deps repo</p>
+<p><strong>ATTRIBUTES</strong></p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Name</th>
+					<th style="text-align: left">Description</th>
+					<th style="text-align: left">Type</th>
+					<th style="text-align: left">Mandatory</th>
+					<th style="text-align: left">Default</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><a id="print-3a662fdc092bdec563cc839551ba8ab3-al_helm_deps_repo-name"></a>name</td>
+					<td style="text-align: left">A unique name for this repository.</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels#target-names">Name</a></td>
+					<td style="text-align: left">required</td>
+					<td style="text-align: left"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-3a662fdc092bdec563cc839551ba8ab3-al_helm_deps_repo-integrity"></a>integrity</td>
+					<td style="text-align: left">Intergrity for locks, keys are packages, values are integrity</td>
+					<td style="text-align: left"><a href="https://bazel.build/rules/lib/core/dict">Dictionary: String -&gt; String</a></td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>{}</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-3a662fdc092bdec563cc839551ba8ab3-al_helm_deps_repo-locks"></a>locks</td>
+					<td style="text-align: left">Lock labels to parse</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>[]</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-3a662fdc092bdec563cc839551ba8ab3-al_helm_deps_repo-repo_mapping"></a>repo_mapping</td>
+					<td style="text-align: left">In <code>WORKSPACE</code> context only: a dictionary from local repository name to global repository name. This allows controls over workspace dependency resolution for dependencies of this repository.<br><br>For example, an entry <code>&quot;@foo&quot;: &quot;@bar&quot;</code> declares that, for any time this repository depends on <code>@foo</code> (such as a dependency on <code>@foo//some:target</code>, it should actually resolve that dependency within globally-declared <code>@bar</code> (<code>@bar//some:target</code>).<br><br>This attribute is <em>not</em> supported in <code>MODULE.bazel</code> context (when invoking a repository rule inside a module extension&rsquo;s implementation function).</td>
+					<td style="text-align: left"><a href="https://bazel.build/rules/lib/core/dict">Dictionary: String -&gt; String</a></td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"></td>
+			</tr>
+	</tbody>
+</table>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-c93f55e2bd6f13d33959a725d35f07ce">1.8 - al_helm_toolchain</h1>
+    
+	<!-- Generated with Stardoc: http://skydoc.bazel.build -->
+<p><a id="print-6c196d1b46837787e34cb5934ae78cb6-al_helm_toolchain"></a></p>
+<h2>al_helm_toolchain<a class="td-heading-self-link" href="#print-6c196d1b46837787e34cb5934ae78cb6-al_helm_toolchain" aria-label="Heading self-link"></a></h2><pre>
+load("@com_alwaldend_src//tools/helm/main/bzl:al_helm_toolchain.bzl", "al_helm_toolchain")
+
+al_helm_toolchain(<a href="#print-6c196d1b46837787e34cb5934ae78cb6-al_helm_toolchain-name">name</a>, <a href="#print-6c196d1b46837787e34cb5934ae78cb6-al_helm_toolchain-helm">helm</a>)
+</pre>
+<p>Helm toolchain</p>
+<p><strong>ATTRIBUTES</strong></p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Name</th>
+					<th style="text-align: left">Description</th>
+					<th style="text-align: left">Type</th>
+					<th style="text-align: left">Mandatory</th>
+					<th style="text-align: left">Default</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><a id="print-6c196d1b46837787e34cb5934ae78cb6-al_helm_toolchain-name"></a>name</td>
+					<td style="text-align: left">A unique name for this target.</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels#target-names">Name</a></td>
+					<td style="text-align: left">required</td>
+					<td style="text-align: left"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-6c196d1b46837787e34cb5934ae78cb6-al_helm_toolchain-helm"></a>helm</td>
+					<td style="text-align: left">Helm binary</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels">Label</a></td>
+					<td style="text-align: left">required</td>
+					<td style="text-align: left"></td>
+			</tr>
+	</tbody>
+</table>
+
+</div>
+
+
+
+    
+	
+  
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        Built with <a href="https://gohugo.io/">Hugo 0.165.0</a>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="/js/main.min.259204f469f58eb3b665605a24e964264772df2adaded180b3669b6ce33d84c8.js" integrity="sha256-JZIE9Gn1jrO2ZWBaJOlkJkdy3yra3tGAs2abbOM9hMg=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.decf3b53d8827d840369f490775626e2a5200e150a733f78f0081c126426cbbf.js" integrity="sha256-3s87U9iCfYQDafSQd1Ym4qUgDhUKcz948AgcEmQmy78=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

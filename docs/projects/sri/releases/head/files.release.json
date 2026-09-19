@@ -1,0 +1,32 @@
+{
+    "items": [
+        {
+            "file": {
+                "hashes": [
+                    {
+                        "algo": "SHA-256",
+                        "content": "911c5be5e7b0e51f13fd054f8362f7c95c6231b938d08f90214b28370b75a29b"
+                    },
+                    {
+                        "algo": "MD5",
+                        "content": "6494203fb9ca24e86c6e552cd169d37a"
+                    }
+                ],
+                "name": "sri",
+                "safeName": "sri",
+                "size": "17088"
+            },
+            "deployments": [
+                {
+                    "oci": {
+                        "repository": "docker.io/alwaldend/src",
+                        "tags": [
+                            "docker.io/alwaldend/src:_sri_"
+                        ]
+                    }
+                }
+            ]
+        }
+    ],
+    "project": {}
+}

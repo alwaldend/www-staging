@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>User on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/categories/user/</link>
+		<description>Recent content in User on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/categories/user/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Users</title>
+				<link>https://www-staging.alwaldend.com/docs/users/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/users/</guid>
+				<description>&lt;p&gt;This tree contains user-specific code and infrastructure. Tracked source&#xA;follows the repository&amp;rsquo;s public-source policy. Personal information and&#xA;secrets must not be tracked or disclosed. Non-secret, non-personal operational&#xA;facts remain public even when they describe generated or live state.&lt;/p&gt;&#xA;&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirements&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Bazel targets MUST use repository-internal visibility.&lt;/li&gt;&#xA;&lt;li&gt;User artifacts MUST NOT be published.&lt;/li&gt;&#xA;&lt;li&gt;User targets MUST NOT be dependencies of production build targets.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title></title>
+				<link>https://www-staging.alwaldend.com/docs/users/simeonwarren/host_bot/openspec/spec/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/users/simeonwarren/host_bot/openspec/spec/</guid>
+				<description>&lt;h1 id=&#34;owned-dns-specification&#34;&gt;owned-dns Specification&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#owned-dns-specification&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#purpose&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Define Host Bot DNS management through the owner&amp;rsquo;s &lt;code&gt;tf&lt;/code&gt; root,&#xA;including canonical declarations, scoped credentials, and offline source checks&#xA;before adopting live records.&lt;/p&gt;&#xA;&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirements&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id=&#34;requirement-owner-local-dns-configuration&#34;&gt;Requirement: Owner-local DNS configuration&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirement-owner-local-dns-configuration&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The &lt;code&gt;tf&lt;/code&gt; root SHALL consume this owner&amp;rsquo;s canonical &lt;code&gt;dnsconfig.json&lt;/code&gt; through&#xA;the shared DNS Terraform module, preserving declared record identities and views.&#xA;DNS resources SHALL default to disabled until the shared migration adopts them&#xA;and SHALL retain enabled ownership after authorized adoption into the owner&amp;rsquo;s&#xA;state. Reconciliation of adopted records with unchanged declarations SHALL&#xA;propose no record additions, changes, replacements, or deletions.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title></title>
+				<link>https://www-staging.alwaldend.com/docs/users/simeonwarren/host_bot/tf/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/users/simeonwarren/host_bot/tf/</guid>
+				<description>&lt;h1 id=&#34;dns-terraform&#34;&gt;DNS Terraform&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#dns-terraform&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;This root packages the owner&amp;rsquo;s canonical &lt;a href=&#34;../dnsconfig.json&#34;&gt;DNS declarations&lt;/a&gt;&#xA;through the shared DNS module and keeps state in the DNS AppRole&amp;rsquo;s Vault HTTP&#xA;backend. It uses the dedicated &lt;code&gt;dns_al&lt;/code&gt; configuration; Ansible retains its&#xA;separate &lt;code&gt;al&lt;/code&gt; configuration and &lt;code&gt;user_simeonwarren&lt;/code&gt; authority.&#xA;The root contains DNS resources only. &lt;code&gt;dns_enabled&lt;/code&gt; defaults to &lt;code&gt;true&lt;/code&gt; after&#xA;verified adoption. Keep it enabled to retain records; disabling it would&#xA;propose deletion.&lt;/p&gt;&#xA;&lt;p&gt;The &lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/dns/&#34;&gt;DNS migration procedure&lt;/a&gt; owns&#xA;credential provisioning, reconciliation, and recovery. The &lt;a href=&#34;../openspec/changes/archive/2026-09-13-adopt-dns-records/design.md&#34;&gt;adoption record&lt;/a&gt;&#xA;contains import and verification evidence. Use the normal explicit&#xA;&lt;code&gt;//users/simeonwarren/host_bot/tf:tf&lt;/code&gt; wrappers for DNS operations and the&#xA;&lt;code&gt;//users/simeonwarren/host_bot/tf:tf_tests.fmt_test&lt;/code&gt; target for offline source&#xA;validation.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Ansible</title>
+				<link>https://www-staging.alwaldend.com/docs/users/simeonwarren/ansible/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/users/simeonwarren/ansible/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Ansible</title>
+				<link>https://www-staging.alwaldend.com/docs/users/simeonwarren/host_bot/ansible/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/users/simeonwarren/host_bot/ansible/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Host Bot</title>
+				<link>https://www-staging.alwaldend.com/docs/users/simeonwarren/host_bot/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/users/simeonwarren/host_bot/</guid>
+				<description>&lt;p&gt;Host Bot runs Traefik with mTLS in front of T3 Code. The host firewall blocks&#xA;direct external access to T3 Code and accepts new connections only on SSH,&#xA;HTTP, and HTTPS ports.&lt;/p&gt;&#xA;&lt;p&gt;The &lt;a href=&#34;https://www-staging.alwaldend.com/docs/users/simeonwarren/host_bot/tf/&#34;&gt;DNS Terraform package&lt;/a&gt; uses the dedicated&#xA;&lt;code&gt;src_users_simeonwarren_host_bot&lt;/code&gt; AppRole through &lt;code&gt;dns_al&lt;/code&gt;. Ansible retains&#xA;its existing &lt;code&gt;al&lt;/code&gt; configuration and &lt;code&gt;user_simeonwarren&lt;/code&gt; authentication.&lt;/p&gt;&#xA;&lt;p&gt;T3 Code controls permissions per thread. Its &lt;strong&gt;Auto&lt;/strong&gt; mode maps to Codex&#xA;Auto-review. The managed Codex requirements allow read-only and &lt;code&gt;host-bot&lt;/code&gt;&#xA;permissions with on-request approvals, so threads cannot select &lt;strong&gt;Full&#xA;access&lt;/strong&gt; or disable approvals. The requirements file only allowlists the&#xA;&lt;code&gt;host-bot&lt;/code&gt; profile; it must not define the profile because T3 Code supplies a&#xA;per-thread config layer with the same name, and Codex rejects profiles defined&#xA;by both requirements and config. The normal and isolated provider configs&#xA;define &lt;code&gt;host-bot&lt;/code&gt; with workspace writes, public command-network access, and&#xA;write access to the Bazel cache and Bazelisk directories while keeping local&#xA;network binding and loopback connections available for Bazel servers. Other&#xA;private network targets remain blocked. T3 Code must select that profile for&#xA;the thread. Hosted web search is not restricted by this role.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>simeonwarren</title>
+				<link>https://www-staging.alwaldend.com/docs/users/simeonwarren/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/users/simeonwarren/</guid>
+				<description>&lt;h2 id=&#34;generate-a-client-cert&#34;&gt;Generate a client cert&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#generate-a-client-cert&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bazel run //users/simeonwarren:gen_client_cert -- --host phone1 --ttl &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;180d&amp;#34;&lt;/span&gt; --output_dir &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;PWD&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;/certs&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;run-opencode&#34;&gt;Run opencode&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#run-opencode&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bazel run //users/simeonwarren:opencode -- &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;PWD&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;apply-terraform&#34;&gt;Apply terraform&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#apply-terraform&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bazel run //users/simeonwarren/tf:tf.apply&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;prepare-opencode&#34;&gt;Prepare opencode&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#prepare-opencode&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ln -s &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;PWD&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;/users/simeonwarren/opencode.json&amp;#34;&lt;/span&gt; ~/.config/opencode/opencode.json&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ln -s &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;PWD&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;/users/simeonwarren/tui.json&amp;#34;&lt;/span&gt; ~/.config/opencode/tui.json&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+			</item>
+			<item>
+				<title>Tf</title>
+				<link>https://www-staging.alwaldend.com/docs/users/simeonwarren/tf/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/users/simeonwarren/tf/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

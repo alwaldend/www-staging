@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>GitHub on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/docs/infra/github/</link>
+		<description>Recent content in GitHub on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/docs/infra/github/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title></title>
+				<link>https://www-staging.alwaldend.com/docs/infra/github/openspec/spec/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/github/openspec/spec/</guid>
+				<description>&lt;h1 id=&#34;infrastructure-github&#34;&gt;Infrastructure GitHub&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#infrastructure-github&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#purpose&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Describe Terraform ownership of the catalog-defined GitHub organization,&#xA;repositories, member access, default-branch restrictions, and Pages settings.&#xA;These requirements describe source guarantees; they do not assert that a plan&#xA;has been applied or that published sites are healthy.&lt;/p&gt;&#xA;&lt;p&gt;Sources: &lt;a href=&#34;https://www-staging.alwaldend.com/docs/&#34;&gt;component documentation&lt;/a&gt;,&#xA;&lt;a href=&#34;../../../tf/README.md&#34;&gt;Terraform workflow&lt;/a&gt;,&#xA;&lt;a href=&#34;../../../../repos/README.md&#34;&gt;shared catalog&lt;/a&gt;,&#xA;&lt;a href=&#34;../../../tf/BUILD.bazel&#34;&gt;packaged inputs&lt;/a&gt;,&#xA;&lt;a href=&#34;../../../tf/repositories.tf&#34;&gt;repository resources&lt;/a&gt;,&#xA;&lt;a href=&#34;../../../tf/organization.tf&#34;&gt;organization access&lt;/a&gt;,&#xA;&lt;a href=&#34;../../../tf/branch_rules.tf&#34;&gt;branch rules&lt;/a&gt;, and&#xA;&lt;a href=&#34;../../../tf/provider.tf&#34;&gt;provider configuration&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirements&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id=&#34;requirement-consume-the-shared-organization-and-repository-catalog&#34;&gt;Requirement: Consume the shared organization and repository catalog&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirement-consume-the-shared-organization-and-repository-catalog&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The package SHALL consume organization identity, administrator and developer&#xA;lists, repository identity, default branches, repository settings, and Pages&#xA;configuration through &lt;code&gt;infra/repos/tf&lt;/code&gt;. It SHALL NOT generate a second inventory&#xA;from the build-project registry. Its provider instance SHALL require exactly&#xA;one configured GitHub organization.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

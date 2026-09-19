@@ -1,0 +1,516 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js" data-theme-init>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000000">
+
+<style>
+  html { background: Canvas; color: CanvasText; }
+  @media (prefers-color-scheme: dark) {
+    html { background: #0b0d12; color: #e6e6e6; }
+  }
+  html[data-theme-init] * { transition: none !important; }
+</style>
+
+<script>
+  (function() {
+    const themeKey = 'td-color-theme';
+    const storedTheme = localStorage.getItem(themeKey);
+    let theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (theme === 'auto') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
+<link rel="canonical" type="text/html" href="https://www-staging.alwaldend.com/docs/projects/tf_modules/dns_records/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://www-staging.alwaldend.com/docs/projects/tf_modules/dns_records/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+<title>DNS records | Alwaldend</title>
+<meta name="description" content="Canonical DNS declarations for Cloudflare and RouterOS">
+<meta property="og:url" content="https://www-staging.alwaldend.com/docs/projects/tf_modules/dns_records/">
+	<meta property="og:site_name" content="Alwaldend">
+	<meta property="og:title" content="DNS records">
+	<meta property="og:description" content="Canonical DNS declarations for Cloudflare and RouterOS">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="DNS records">
+	<meta itemprop="description" content="Canonical DNS declarations for Cloudflare and RouterOS">
+	<meta itemprop="dateModified" content="2026-09-19T20:06:21+03:00">
+	<meta itemprop="wordCount" content="504">
+	<meta itemprop="keywords" content="Project">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="DNS records">
+	<meta name="twitter:description" content="Canonical DNS declarations for Cloudflare and RouterOS">
+<link rel="preload" href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" as="style" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<link href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" rel="stylesheet" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll">
+<div class="td-navbar-container container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">Alwaldend</span></a>
+  <div class="td-navbar__main td-navbar-nav-scroll td-navbar-nav-scroll--indicator" id="main_navbar">
+    <div class="scroll-indicator scroll-left"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/projects/"><span>Projects</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item td-navbar__light-dark-menu">
+        <div class="td-light-dark-menu dropdown"><svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+<button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        title="Toggle theme (Auto)"
+        aria-label="Toggle theme (Auto)">
+  <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="bd-theme">
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
+      Light
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>
+      Dark
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+      <svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>
+      Auto
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+</ul>
+</div>
+
+      </li>
+      </ul>
+    <div class="scroll-indicator scroll-right"></div>
+  </div>
+  <div class="td-navbar__search d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon" aria-hidden="true"></div>
+  <input
+    type="search"
+    name="q"
+    class="td-search__input form-control"
+    placeholder='Search this site…'
+    aria-label='Search this site…'
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/projects/tf_modules/dns_records/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">DNS records</h1>
+<div class="lead">Canonical DNS declarations for Cloudflare and RouterOS</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-fe7016f44cae2eab765c8a856ce8e41b">DNS normalization</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-add666eb82370d6f0c093864e9e702c9">DNS test providers</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-e50e594afa64dd31ddced0b568890202">Global DNS records</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      <p>This reusable module translates an owner&rsquo;s decoded <code>dnsconfig.json</code> through
+its provider-free <a href="/docs/projects/tf_modules/dns_records/normalize/">normalizer</a>, then manages individual
+global Cloudflare and dc1 RouterOS records with caller-provided providers.
+Owners with only global records use the <a href="/docs/projects/tf_modules/dns_records/global/">global entrypoint</a>,
+which needs only Cloudflare. The combined entrypoint delegates Cloudflare
+resources to that same module and consumes its normalization for RouterOS.
+Repository infrastructure roots may consume its Bazel source filegroups;
+the child normalizer also supports provider-free inspection.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-hcl" data-lang="hcl"><span style="display:flex;"><span><span style="color:#66d9ef">module</span> <span style="color:#e6db74">&#34;dns&#34;</span> {
+</span></span><span style="display:flex;"><span>  source             <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;../../../projects/tf_modules/dns_records&#34;</span>
+</span></span><span style="display:flex;"><span>  document           <span style="color:#f92672">=</span> <span style="color:#66d9ef">jsondecode</span>(<span style="color:#66d9ef">file</span>(<span style="color:#e6db74">&#34;${path.module}/../dnsconfig.json&#34;</span>))
+</span></span><span style="display:flex;"><span>  cloudflare_zone_id <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">dns_cloudflare_zone_id</span>
+</span></span><span style="display:flex;"><span>  enabled            <span style="color:#f92672">=</span> <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">dns_enabled</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><code>zone</code> defaults to <code>alwaldend.com</code>. An explicit <code>cloudflare_zone_id</code> is optional;
+when it is null or empty, enabled global records resolve exactly one Cloudflare
+zone matching <code>zone</code>. The token must permit zone listing and reading. Disabled
+ownership and declarations without global records skip this lookup.
+<code>enabled</code> defaults to false so a prepared root owns
+no provider records. Keep it true after adoption: setting it false in a state
+that already owns records plans deletion and is not a rollback procedure.
+Disabling ownership does not suppress provider initialization. Operational
+Terraform commands still require the caller&rsquo;s real provider configuration
+and the owning Vault/AppRole prerequisites. In particular, the pinned
+RouterOS provider probes its configured API even when no DNS records are
+enabled. Use the provider-free normalizer for offline inspection.
+The <a href="../../../infra/dns/openspec/changes/archive/2026-09-13-migrate-project-dns-to-terraform/design.md">migration runbook</a>
+owns cutover, import, and rollback ordering. This module supplies no provider
+credentials or state backend.</p>
+<p>The input contains exactly one <code>records</code> object. Each stable logical key
+contains one or more scalar type members and a nonempty <code>dsp</code> list. Supported
+destinations are <code>global</code>, <code>dc1</code>, and <code>all</code>; repeated destinations are deduplicated.</p>
+<table>
+	<thead>
+			<tr>
+					<th>Type</th>
+					<th>Required member fields</th>
+					<th>Default TTL</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>A</td>
+					<td><code>name</code>, <code>address</code></td>
+					<td>300</td>
+			</tr>
+			<tr>
+					<td>AAAA</td>
+					<td><code>name</code>, <code>address</code></td>
+					<td>600</td>
+			</tr>
+			<tr>
+					<td>CNAME</td>
+					<td><code>name</code>, <code>target</code></td>
+					<td>600</td>
+			</tr>
+			<tr>
+					<td>NS</td>
+					<td><code>name</code>, <code>address</code></td>
+					<td>300</td>
+			</tr>
+			<tr>
+					<td>MX</td>
+					<td><code>name</code>, <code>target</code>, <code>priority</code></td>
+					<td>300</td>
+			</tr>
+			<tr>
+					<td>TXT</td>
+					<td><code>name</code>, <code>content</code></td>
+					<td>300</td>
+			</tr>
+	</tbody>
+</table>
+<p>Every member accepts an integer <code>ttl</code> from 60 through 86400 seconds. MX
+priorities range from 0 through 65535. Multiple scalar values at the same
+name and type use distinct logical keys; changing values never changes
+resource identity. Unsupported fields and malformed members are rejected.</p>
+<p>Names accept <code>@</code>, relative names, or zone-qualified names. Absolute owner
+names ending with a dot must be inside the zone. CNAME, MX, and NS targets
+accept <code>@</code>, relative names, zone-qualified names, or absolute external names
+ending with a dot. Normalization lowercases domain names and omits final dots;
+address and TXT bytes are preserved. <code>relative_name</code> is <code>@</code> at the apex.</p>
+<p><code>normalized_records</code> maps <code>logical_key/type/view</code> to <code>key</code>, <code>name</code>,
+<code>relative_name</code>, <code>type</code>, <code>value</code>, <code>priority</code> (null except MX), <code>ttl</code>, <code>view</code>,
+and <code>proxied</code> (always false). This output remains available while disabled.
+The same keys index <code>module.global.cloudflare_dns_record.records</code> and
+<code>module.dc1[0].routeros_ip_dns_record.records</code> in the combined entrypoint; the global-only
+entrypoint uses <code>cloudflare_dns_record.records</code>. <code>import_addresses</code> exposes
+these addresses relative to the selected module, including while staged.
+The pinned providers import Cloudflare
+records by <code>zone_id/record_id</code> and RouterOS records by static IDs such as <code>*1A</code>.</p>
+<p>Terraform tests use mocked providers and pinned local provider packages.
+The global-only test root has no RouterOS provider dependency. Normalization
+tests require no providers. Both run without network access;
+they establish declaration and resource mapping behavior, not live adoption.</p>
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-fe7016f44cae2eab765c8a856ce8e41b">1 - DNS normalization</h1>
+    <div class="lead">Provider-free canonical DNS declaration transformation</div>
+	<p>This child module owns the canonical transformation described by the
+<a href="/docs/projects/tf_modules/dns_records/">DNS module</a>. Its <code>document</code> and <code>zone</code> inputs produce
+<code>normalized_records</code> without a provider, backend, or managed resources.
+Terraform writers and provider-free inspection consume this output.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-add666eb82370d6f0c093864e9e702c9">2 - DNS test providers</h1>
+    <div class="lead">Pinned provider packages for offline Terraform tests</div>
+	<p>The <a href="../BUILD.bazel">test target</a> uses the public
+<a href="/docs/tools/rules_terraform/">rules_terraform</a> wrapper with
+the same Cloudflare, RouterOS, and Proxmox provider labels as infrastructure
+targets. The shared extension owns provider versions, release URLs, and
+checksums. Bazel fetches the declared archives before tests execute; Terraform
+uses the wrapper&rsquo;s packaged filesystem mirror without a registry fallback.</p>
+<p>Each regression runs Terraform in a caller-owned temporary module directory.
+Tests retain an explicit environment without inherited provider credentials;
+provider installation and mocked lifecycles require no network access.</p>
+<p>The targeted import regression matches the owning Proxmox provider block by
+omitting <code>pm_api_url</code>. It checks both empty state and existing Proxmox resource
+state with no credentials. Without <code>PM_API_URL</code>, provider validation fails
+before target pruning; supplying only a loopback endpoint permits the DNS
+operation. The endpoint must receive zero requests.</p>
+<p>The test imports a built-in Terraform resource through a root map into
+<code>module.dns</code>, checks the exact no-op import, applies that saved plan, and verifies
+the next targeted plan has no changes. Existing Proxmox resource attributes
+remain unchanged. An untargeted control must fail authentication before
+contacting the endpoint. These checks cover provider selection and state
+preservation; live DNS adoption retains its separate inventory and plan checks.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-e50e594afa64dd31ddced0b568890202">3 - Global DNS records</h1>
+    <div class="lead">Cloudflare-only entrypoint for canonical DNS declarations</div>
+	<p>Global-only owners use this entrypoint with the <a href="/docs/projects/tf_modules/dns_records/">shared module API</a>
+to avoid requiring RouterOS configuration. The combined module also delegates
+its Cloudflare resources here, so both entrypoints share one implementation.
+Normalization returns all declared views, but this entrypoint owns only global
+records. Mixed-view owners use the parent module to manage dc1 as well.</p>
+<p>Enabled global records use the explicit <code>cloudflare_zone_id</code> when supplied.
+Otherwise, the pinned <code>cloudflare_zone</code> data source resolves the configured
+<code>zone</code> name and rejects missing or ambiguous matches. This requires zone-list
+and zone-read access in addition to record permissions. Disabled ownership and
+declarations without global records perform no zone lookup.</p>
+<p>The optional zone ID must be known during planning so Terraform can select
+whether discovery is needed. The repository&rsquo;s AL injection supplies a known
+value or an empty string before Terraform starts. Zone-name discovery uses the
+normalizer&rsquo;s canonical name, including case and final-dot handling.</p>
+<p><code>import_addresses</code> contains global addresses relative to this entrypoint.
+<code>record_ids</code> exposes bound Cloudflare IDs for adoption and identity checks.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        Built with <a href="https://gohugo.io/">Hugo 0.165.0</a>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="/js/main.min.259204f469f58eb3b665605a24e964264772df2adaded180b3669b6ce33d84c8.js" integrity="sha256-JZIE9Gn1jrO2ZWBaJOlkJkdy3yra3tGAs2abbOM9hMg=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.decf3b53d8827d840369f490775626e2a5200e150a733f78f0081c126426cbbf.js" integrity="sha256-3s87U9iCfYQDafSQd1Ym4qUgDhUKcz948AgcEmQmy78=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

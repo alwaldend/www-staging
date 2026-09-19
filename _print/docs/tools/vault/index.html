@@ -1,0 +1,1112 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js" data-theme-init>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000000">
+
+<style>
+  html { background: Canvas; color: CanvasText; }
+  @media (prefers-color-scheme: dark) {
+    html { background: #0b0d12; color: #e6e6e6; }
+  }
+  html[data-theme-init] * { transition: none !important; }
+</style>
+
+<script>
+  (function() {
+    const themeKey = 'td-color-theme';
+    const storedTheme = localStorage.getItem(themeKey);
+    let theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (theme === 'auto') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
+<link rel="canonical" type="text/html" href="https://www-staging.alwaldend.com/docs/tools/vault/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://www-staging.alwaldend.com/docs/tools/vault/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+<title>Vault | Alwaldend</title>
+<meta name="description" content="Vault">
+<meta property="og:url" content="https://www-staging.alwaldend.com/docs/tools/vault/">
+	<meta property="og:site_name" content="Alwaldend">
+	<meta property="og:title" content="Vault">
+	<meta property="og:description" content="Vault">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="Vault">
+	<meta itemprop="description" content="Vault">
+	<meta itemprop="dateModified" content="2026-09-19T20:06:21+03:00">
+	<meta itemprop="wordCount" content="29">
+	<meta itemprop="keywords" content="Tool">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Vault">
+	<meta name="twitter:description" content="Vault">
+<link rel="preload" href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" as="style" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<link href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" rel="stylesheet" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll">
+<div class="td-navbar-container container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">Alwaldend</span></a>
+  <div class="td-navbar__main td-navbar-nav-scroll td-navbar-nav-scroll--indicator" id="main_navbar">
+    <div class="scroll-indicator scroll-left"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/projects/"><span>Projects</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item td-navbar__light-dark-menu">
+        <div class="td-light-dark-menu dropdown"><svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+<button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        title="Toggle theme (Auto)"
+        aria-label="Toggle theme (Auto)">
+  <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="bd-theme">
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
+      Light
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>
+      Dark
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+      <svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>
+      Auto
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+</ul>
+</div>
+
+      </li>
+      </ul>
+    <div class="scroll-indicator scroll-right"></div>
+  </div>
+  <div class="td-navbar__search d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon" aria-hidden="true"></div>
+  <input
+    type="search"
+    name="q"
+    class="td-search__input form-control"
+    placeholder='Search this site…'
+    aria-label='Search this site…'
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/tools/vault/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Vault</h1>
+<div class="lead">Vault</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-aefea9d5c447985620fe443626a16330">Backup</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-e2ef3e755f2b9b82043c74dead7c06cd">Forgejo login</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>2.1: <a href="#pg-016c3d67c6aa8c5306c267b2e2d94e0c">api</a></li>
+
+
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-cae3c6406cd7f0beab92ac62e52eeb06">Gen client cert</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>4: <a href="#pg-f43e8788840dafd43d4f505944371399">Gen root token</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>5: <a href="#pg-c6b1dafc90ff70943ef5ca5593500a08">Harbor login</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>5.1: <a href="#pg-4c7e7d1be66da6d50952f158f23c17f0">api</a></li>
+
+
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>6: <a href="#pg-9b04319a9711db4eed8dc781aedb4887">Injector</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>6.1: <a href="#pg-b69ec13422b4f7b5373308f2b8516e28">api</a></li>
+
+
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>7: <a href="#pg-12ad066a35d8e1cfe5f119141e8f9336">Login</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>8: <a href="#pg-a5b1d93f0d9f1c18d0bfe7630c4cebca">PVE login</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>8.1: <a href="#pg-5e6863d3330b5c4ee495b8207b4a1ee8">api</a></li>
+
+
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>9: <a href="#pg-172b5a9d697d743491cef630872406dc">Tf backend</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>9.1: <a href="#pg-32190bc37a299fdcd2fb9acc6abc6cbf">api</a></li>
+
+
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>10: <a href="#pg-fff2de1f32dfebfb55aabb141433ea37">Unseal</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      <h2 id="print-65e377f360d9e0c0b6e9d9df77d9ce1d-links">Links<a class="td-heading-self-link" href="#print-65e377f360d9e0c0b6e9d9df77d9ce1d-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Repo: <a href="https://github.com/hashicorp/vault">https://github.com/hashicorp/vault</a></li>
+</ul>
+<p>The root <code>//:vault</code> and <code>//:vault.*</code> labels delegate to wrappers in
+<code>//tools/vault/cmd/workspace</code>, using <code>//tools/al:config</code>. <code>//tools/vault:vault</code>
+is the standalone CLI; the wrappers add the existing AL environment injection.</p>
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-aefea9d5c447985620fe443626a16330">1 - Backup</h1>
+    <div class="lead">Run backup for Vault</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-e2ef3e755f2b9b82043c74dead7c06cd">2 - Forgejo login</h1>
+    <div class="lead">Get a short-lived Forgejo token using OIDC</div>
+	<p>The plugin registers token removal before issuance, using a unique token name.
+Startup failure and normal shutdown attempt removal through the authenticated
+Forgejo browser session, including when creation did not return a usable token.
+Cleanup parses the complete applications settings page and verifies token absence
+after deletion. It then logs out the invocation&rsquo;s browser session and verifies
+that the retained original cookie no longer accesses authenticated settings.
+Cleanup failures are reported.</p>
+<p>The parser follows the <a href="https://codeberg.org/forgejo/forgejo/src/tag/v15.0.3/templates/user/settings/applications.tmpl">Forgejo 15.0.3 applications template</a>: all tokens appear on
+one page, each in a <code>flex-item</code> row with a title and a matching delete button.
+It requires the applications page marker and new-token link before accepting an
+empty list. Login pages, invalid token IDs, duplicates, and responses larger than
+4 MiB fail closed. A changed upstream template may require a parser update.
+Network requests have a ten-second timeout and honor cancellation. Forced process
+termination or an unavailable Forgejo server can prevent cleanup; Forgejo tokens
+do not acquire an expiry merely because this plugin created them.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-016c3d67c6aa8c5306c267b2e2d94e0c">2.1 - api</h1>
+    <div class="lead">Proto docs for api.proto</div>
+	<h2 id="print-b32f4a08b5e8fab0b98fb771d4f90473-java">Java<a class="td-heading-self-link" href="#print-b32f4a08b5e8fab0b98fb771d4f90473-java" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bzl" data-lang="bzl"><span style="display:flex;"><span>load(<span style="color:#e6db74">&#34;@rules_java//java:defs.bzl&#34;</span>, <span style="color:#e6db74">&#34;java_library&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>java_library(
+</span></span><span style="display:flex;"><span>    name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;name&#34;</span>,
+</span></span><span style="display:flex;"><span>    deps <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;@com_alwaldend_src//tools/vault/forgejo_login:api_java_library&#34;</span>,
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h2 id="print-b32f4a08b5e8fab0b98fb771d4f90473-golang">Golang<a class="td-heading-self-link" href="#print-b32f4a08b5e8fab0b98fb771d4f90473-golang" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bzl" data-lang="bzl"><span style="display:flex;"><span>load(<span style="color:#e6db74">&#34;@rules_go//go:def.bzl&#34;</span>, <span style="color:#e6db74">&#34;go_library&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>go_library(
+</span></span><span style="display:flex;"><span>    name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;name&#34;</span>,
+</span></span><span style="display:flex;"><span>    deps <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;@com_alwaldend_src//tools/vault/forgejo_login:forgejo_login&#34;</span>,
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h2 id="print-b32f4a08b5e8fab0b98fb771d4f90473-proto">Proto<a class="td-heading-self-link" href="#print-b32f4a08b5e8fab0b98fb771d4f90473-proto" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-proto" data-lang="proto"><span style="display:flex;"><span><span style="color:#66d9ef">syntax</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;proto3&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">package</span> com.alwaldend.src.tools.vault.forgejo_login.forgejo_login_proto;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">option</span> go_package <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;git.alwaldend.com/alwaldend/src/tools/vault/forgejo_login/forgejo_login_proto&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">Config</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> forgejo_url <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> forgejo_oauth_name <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> vault_conn <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> vault_auth <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-cae3c6406cd7f0beab92ac62e52eeb06">3 - Gen client cert</h1>
+    <div class="lead">Generate a client certificate</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-f43e8788840dafd43d4f505944371399">4 - Gen root token</h1>
+    <div class="lead">Generate a root token for Vault</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-c6b1dafc90ff70943ef5ca5593500a08">5 - Harbor login</h1>
+    <div class="lead">Create a harbor session using OIDC</div>
+	<p>The plugin destroys its Harbor session on normal shutdown and checks that the
+original session ID is rejected by the current-user API. Cleanup uses Harbor&rsquo;s
+<code>/c/oidc/logout</code> endpoint (available in newer Harbor releases) and does not follow
+the optional identity-provider logout redirect. Unsupported endpoints, network
+failures, or sessions that remain valid are reported as cleanup errors. Session
+expiry remains server-controlled; forced termination cannot guarantee logout.</p>
+<p>The session destruction behavior is defined by Harbor&rsquo;s
+<a href="https://github.com/goharbor/harbor/blob/main/src/core/controllers/oidc.go">OIDC controller</a>.
+Vault tokens created by the invocation are revoked after session cleanup.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-4c7e7d1be66da6d50952f158f23c17f0">5.1 - api</h1>
+    <div class="lead">Proto docs for api.proto</div>
+	<h2 id="print-dead1f87438882a26b409663e3b60c38-java">Java<a class="td-heading-self-link" href="#print-dead1f87438882a26b409663e3b60c38-java" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bzl" data-lang="bzl"><span style="display:flex;"><span>load(<span style="color:#e6db74">&#34;@rules_java//java:defs.bzl&#34;</span>, <span style="color:#e6db74">&#34;java_library&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>java_library(
+</span></span><span style="display:flex;"><span>    name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;name&#34;</span>,
+</span></span><span style="display:flex;"><span>    deps <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;@com_alwaldend_src//tools/vault/harbor_login:api_java_library&#34;</span>,
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h2 id="print-dead1f87438882a26b409663e3b60c38-golang">Golang<a class="td-heading-self-link" href="#print-dead1f87438882a26b409663e3b60c38-golang" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bzl" data-lang="bzl"><span style="display:flex;"><span>load(<span style="color:#e6db74">&#34;@rules_go//go:def.bzl&#34;</span>, <span style="color:#e6db74">&#34;go_library&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>go_library(
+</span></span><span style="display:flex;"><span>    name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;name&#34;</span>,
+</span></span><span style="display:flex;"><span>    deps <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;@com_alwaldend_src//tools/vault/harbor_login:harbor_login&#34;</span>,
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h2 id="print-dead1f87438882a26b409663e3b60c38-proto">Proto<a class="td-heading-self-link" href="#print-dead1f87438882a26b409663e3b60c38-proto" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-proto" data-lang="proto"><span style="display:flex;"><span><span style="color:#66d9ef">syntax</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;proto3&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">package</span> com.alwaldend.src.tools.vault.harbor_login.harbor_login_proto;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">option</span> go_package <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;git.alwaldend.com/alwaldend/src/tools/vault/harbor_login/harbor_login_proto&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">Config</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> harbor_url <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> vault_conn <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> vault_auth <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-9b04319a9711db4eed8dc781aedb4887">6 - Injector</h1>
+    <div class="lead">Secret injector</div>
+	<p>Shutdown first drains plugin requests, then stops and waits for resource
+processes, revokes invocation-owned Vault credentials, and deletes temporary
+files and SSH key directories. Failed cleanup is reported. Registration after
+shutdown is rejected; a fetcher removes any unregistered temporary material.
+Temporary files use mode <code>0600</code> and directories use <code>0700</code>. Deletion is filesystem
+unlinking, not secure erasure, and cannot run after <code>SIGKILL</code> or host failure.</p>
+<p><code>no_auth</code> explicitly sets the injected <code>VAULT_TOKEN</code> to an empty value so an
+inherited token is overridden. This does not remove the user&rsquo;s token-helper
+file; commands that independently consult that helper may still authenticate.
+Template errors and OIDC status errors omit input and response contents.
+OIDC requests honor cancellation and do not follow redirects.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-b69ec13422b4f7b5373308f2b8516e28">6.1 - api</h1>
+    <div class="lead">Proto docs for api.proto</div>
+	<h2 id="print-84caa4ff8b915b6d2a3aeac05bc89204-java">Java<a class="td-heading-self-link" href="#print-84caa4ff8b915b6d2a3aeac05bc89204-java" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bzl" data-lang="bzl"><span style="display:flex;"><span>load(<span style="color:#e6db74">&#34;@rules_java//java:defs.bzl&#34;</span>, <span style="color:#e6db74">&#34;java_library&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>java_library(
+</span></span><span style="display:flex;"><span>    name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;name&#34;</span>,
+</span></span><span style="display:flex;"><span>    deps <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;@com_alwaldend_src//tools/vault/injector:api_java_library&#34;</span>,
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h2 id="print-84caa4ff8b915b6d2a3aeac05bc89204-golang">Golang<a class="td-heading-self-link" href="#print-84caa4ff8b915b6d2a3aeac05bc89204-golang" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bzl" data-lang="bzl"><span style="display:flex;"><span>load(<span style="color:#e6db74">&#34;@rules_go//go:def.bzl&#34;</span>, <span style="color:#e6db74">&#34;go_library&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>go_library(
+</span></span><span style="display:flex;"><span>    name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;name&#34;</span>,
+</span></span><span style="display:flex;"><span>    deps <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;@com_alwaldend_src//tools/vault/injector:injector&#34;</span>,
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h2 id="print-84caa4ff8b915b6d2a3aeac05bc89204-proto">Proto<a class="td-heading-self-link" href="#print-84caa4ff8b915b6d2a3aeac05bc89204-proto" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-proto" data-lang="proto"><span style="display:flex;"><span><span style="color:#66d9ef">syntax</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;proto3&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">package</span> com.alwaldend.src.tools.vault.injector.injector_proto;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">option</span> go_package <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;git.alwaldend.com/alwaldend/src/tools/vault/injector/injector_proto&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">File</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> value <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> from_file <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">map</span>&lt;<span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">string</span>&gt; extra <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">Env</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> value <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">Kv</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Secret path
+</span></span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> path <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Secret mount
+</span></span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> mount <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">Op</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> method <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> path <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">map</span>&lt;<span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">string</span>&gt; data <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">VaultSsh</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> backend <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int64</span> ttl <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">Process</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> name <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">repeated</span> <span style="color:#66d9ef">string</span> args <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">Oidc</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> name <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> scope <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> client_id <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> redirect_uri <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">VaultEnv</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Vault connection
+</span></span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> conn <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Vault auth
+</span></span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> auth <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">Resource</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Resource name
+</span></span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> name <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Vault connection for the resource
+</span></span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> vault_conn <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Vault auth for the resource
+</span></span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> vault_auth <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Dependencies
+</span></span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">repeated</span> <span style="color:#66d9ef">string</span> deps <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">oneof</span> res {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Vault operation
+</span></span></span><span style="display:flex;"><span>    Op op <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Vault KV secret
+</span></span></span><span style="display:flex;"><span>    Kv kv <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Environment variable
+</span></span></span><span style="display:flex;"><span>    Env env <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// File
+</span></span></span><span style="display:flex;"><span>    File file <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Vault environment variables
+</span></span></span><span style="display:flex;"><span>    VaultEnv vault_env <span style="color:#f92672">=</span> <span style="color:#ae81ff">9</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Ssh key signed by Vautl
+</span></span></span><span style="display:flex;"><span>    VaultSsh vault_ssh <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Run a cmd
+</span></span></span><span style="display:flex;"><span>    Process process <span style="color:#f92672">=</span> <span style="color:#ae81ff">11</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Create an OIDC token
+</span></span></span><span style="display:flex;"><span>    Oidc oidc <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">Config</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Resources
+</span></span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">repeated</span> Resource res <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-12ad066a35d8e1cfe5f119141e8f9336">7 - Login</h1>
+    <div class="lead">Login to vault using the yubikey</div>
+	<h2 id="print-41438ab395f66d814b96b7d2d1760e45-usage">Usage<a class="td-heading-self-link" href="#print-41438ab395f66d814b96b7d2d1760e45-usage" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //tools/vault/login
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-a5b1d93f0d9f1c18d0bfe7630c4cebca">8 - PVE login</h1>
+    <div class="lead">Get a login ticket using OIDC</div>
+	<p>The plugin requests an API token with a one-hour expiry and deletes that token
+on shutdown using the retained login ticket and CSRF token. The token name is
+registered for cleanup before creation, so cleanup is attempted even when a
+creation response is lost or malformed. Failures to delete are reported; expiry
+is the fallback when shutdown cannot complete. Pre-existing credentials are not
+revoked. Vault tokens created by the invocation are revoked after token cleanup.</p>
+<p>Token deletion uses the Proxmox
+<a href="https://github.com/proxmox/pve-access-control/blob/master/src/PVE/API2/User.pm">user token API</a>.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-5e6863d3330b5c4ee495b8207b4a1ee8">8.1 - api</h1>
+    <div class="lead">Proto docs for api.proto</div>
+	<h2 id="print-d61478c2d3a8fba7db43010c6390c082-java">Java<a class="td-heading-self-link" href="#print-d61478c2d3a8fba7db43010c6390c082-java" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bzl" data-lang="bzl"><span style="display:flex;"><span>load(<span style="color:#e6db74">&#34;@rules_java//java:defs.bzl&#34;</span>, <span style="color:#e6db74">&#34;java_library&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>java_library(
+</span></span><span style="display:flex;"><span>    name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;name&#34;</span>,
+</span></span><span style="display:flex;"><span>    deps <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;@com_alwaldend_src//tools/vault/pve_login:api_java_library&#34;</span>,
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h2 id="print-d61478c2d3a8fba7db43010c6390c082-golang">Golang<a class="td-heading-self-link" href="#print-d61478c2d3a8fba7db43010c6390c082-golang" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bzl" data-lang="bzl"><span style="display:flex;"><span>load(<span style="color:#e6db74">&#34;@rules_go//go:def.bzl&#34;</span>, <span style="color:#e6db74">&#34;go_library&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>go_library(
+</span></span><span style="display:flex;"><span>    name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;name&#34;</span>,
+</span></span><span style="display:flex;"><span>    deps <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;@com_alwaldend_src//tools/vault/pve_login:pve_login&#34;</span>,
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h2 id="print-d61478c2d3a8fba7db43010c6390c082-proto">Proto<a class="td-heading-self-link" href="#print-d61478c2d3a8fba7db43010c6390c082-proto" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-proto" data-lang="proto"><span style="display:flex;"><span><span style="color:#66d9ef">syntax</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;proto3&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">package</span> com.alwaldend.src.tools.vault.pve_login.pve_login_proto;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">option</span> go_package <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;git.alwaldend.com/alwaldend/src/tools/vault/pve_login/pve_login_proto&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">Config</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> pve_base_url <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> pve_redirect_url <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> pve_realm <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> vault_conn <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> vault_auth <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-172b5a9d697d743491cef630872406dc">9 - Tf backend</h1>
+    <div class="lead">Http terraform backend backed by Vault</div>
+	<p>The plugin tracks each running backend for shutdown, including backends created
+before a later call fails. Shutdown drains HTTP requests before revoking the
+backend&rsquo;s invocation-owned Vault credentials. If the shutdown deadline expires,
+connections are forcibly closed and the timeout is reported. Normal HTTP server
+closure is not an error. Vault requests use their incoming request context.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-32190bc37a299fdcd2fb9acc6abc6cbf">9.1 - api</h1>
+    <div class="lead">Proto docs for api.proto</div>
+	<h2 id="print-85aedcda6e51eb8c4b74bebbc6c7a0e9-java">Java<a class="td-heading-self-link" href="#print-85aedcda6e51eb8c4b74bebbc6c7a0e9-java" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bzl" data-lang="bzl"><span style="display:flex;"><span>load(<span style="color:#e6db74">&#34;@rules_java//java:defs.bzl&#34;</span>, <span style="color:#e6db74">&#34;java_library&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>java_library(
+</span></span><span style="display:flex;"><span>    name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;name&#34;</span>,
+</span></span><span style="display:flex;"><span>    deps <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;@com_alwaldend_src//tools/vault/tf_backend:api_java_library&#34;</span>,
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h2 id="print-85aedcda6e51eb8c4b74bebbc6c7a0e9-golang">Golang<a class="td-heading-self-link" href="#print-85aedcda6e51eb8c4b74bebbc6c7a0e9-golang" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bzl" data-lang="bzl"><span style="display:flex;"><span>load(<span style="color:#e6db74">&#34;@rules_go//go:def.bzl&#34;</span>, <span style="color:#e6db74">&#34;go_library&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>go_library(
+</span></span><span style="display:flex;"><span>    name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;name&#34;</span>,
+</span></span><span style="display:flex;"><span>    deps <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;@com_alwaldend_src//tools/vault/tf_backend:tf_backend&#34;</span>,
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h2 id="print-85aedcda6e51eb8c4b74bebbc6c7a0e9-proto">Proto<a class="td-heading-self-link" href="#print-85aedcda6e51eb8c4b74bebbc6c7a0e9-proto" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-proto" data-lang="proto"><span style="display:flex;"><span><span style="color:#66d9ef">syntax</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;proto3&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">package</span> com.alwaldend.src.tools.vault.tf_backend.tf_backend_proto;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">option</span> go_package <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;git.alwaldend.com/alwaldend/src/tools/vault/tf_backend/tf_backend_proto&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">Config</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> vault_conn <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> vault_auth <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> vault_secret <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> vault_secret_mount <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-fff2de1f32dfebfb55aabb141433ea37">10 - Unseal</h1>
+    <div class="lead">Unseal the vault</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        Built with <a href="https://gohugo.io/">Hugo 0.165.0</a>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="/js/main.min.259204f469f58eb3b665605a24e964264772df2adaded180b3669b6ce33d84c8.js" integrity="sha256-JZIE9Gn1jrO2ZWBaJOlkJkdy3yra3tGAs2abbOM9hMg=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.decf3b53d8827d840369f490775626e2a5200e150a733f78f0081c126426cbbf.js" integrity="sha256-3s87U9iCfYQDafSQd1Ym4qUgDhUKcz948AgcEmQmy78=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

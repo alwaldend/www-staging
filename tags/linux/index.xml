@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Linux on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/tags/linux/</link>
+		<description>Recent content in Linux on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>com_truenas_scale</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/com_truenas_scale/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/com_truenas_scale/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Download: &lt;a href=&#34;https://download.sys.truenas.net/TrueNAS-SCALE-Goldeye/25.10.6/&#34;&gt;https://download.sys.truenas.net/TrueNAS-SCALE-Goldeye/25.10.6/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>org_fedora_cloud</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/org_fedora_cloud/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/org_fedora_cloud/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Download: &lt;a href=&#34;https://fedoraproject.org/cloud/download/&#34;&gt;https://fedoraproject.org/cloud/download/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>org_xcp_ng</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/org_xcp_ng/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/org_xcp_ng/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Download: &lt;a href=&#34;https://updates.xcp-ng.org/isos/8.3/&#34;&gt;https://updates.xcp-ng.org/isos/8.3/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+	</channel>
+</rss>

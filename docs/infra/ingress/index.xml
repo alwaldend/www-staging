@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>ingress on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/docs/infra/ingress/</link>
+		<description>Recent content in ingress on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/docs/infra/ingress/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title></title>
+				<link>https://www-staging.alwaldend.com/docs/infra/ingress/openspec/specs/infra-ingress/spec/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/ingress/openspec/specs/infra-ingress/spec/</guid>
+				<description>&lt;h1 id=&#34;infrastructure-ingress&#34;&gt;Infrastructure ingress&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#infrastructure-ingress&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#purpose&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Describe Yandex Cloud ingress provisioning, the RouterOS WireGuard connection,&#xA;and the Ansible-managed Traefik configuration. The baseline covers checked-in&#xA;desired state, not a live routing or availability observation.&lt;/p&gt;&#xA;&lt;p&gt;Baseline source revision: &lt;code&gt;550d7e79b1f5fdbc2b6017b75178471d6914082f&lt;/code&gt;.&#xA;Observation date: 2026-09-08. Sources are linked in full; no excerpts are used.&lt;/p&gt;&#xA;&lt;p&gt;Sources: &lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/ingress/&#34;&gt;component contract&lt;/a&gt;,&#xA;&lt;a href=&#34;../../../tf/vms.tf&#34;&gt;VM resources&lt;/a&gt;,&#xA;&lt;a href=&#34;../../../tf/wireguard.tf&#34;&gt;WireGuard resources&lt;/a&gt;,&#xA;&lt;a href=&#34;../../../ansible/playbook_deploy.yaml&#34;&gt;deployment playbook&lt;/a&gt;,&#xA;&lt;a href=&#34;../../../ansible/files/traefik.toml&#34;&gt;Traefik entry points&lt;/a&gt;, and&#xA;&lt;a href=&#34;../../../ansible/files/traefik_dynamic.toml&#34;&gt;Traefik routes&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirements&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id=&#34;requirement-provision-ingress-hosts-from-the-declared-host-map&#34;&gt;Requirement: Provision ingress hosts from the declared host map&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirement-provision-ingress-hosts-from-the-declared-host-map&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Terraform SHALL create addresses, encrypted boot disks, and instances for the&#xA;active &lt;code&gt;local.vpc&lt;/code&gt; entries, using the shared cloud-init source. The baseline&#xA;active map SHALL contain &lt;code&gt;host1&lt;/code&gt; in &lt;code&gt;ru-central1-d&lt;/code&gt;; the commented &lt;code&gt;host2&lt;/code&gt; entry&#xA;SHALL NOT be treated as an enabled resource declaration.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title></title>
+				<link>https://www-staging.alwaldend.com/docs/infra/ingress/openspec/specs/owned-dns/spec/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/ingress/openspec/specs/owned-dns/spec/</guid>
+				<description>&lt;h1 id=&#34;owned-dns-specification&#34;&gt;owned-dns Specification&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#owned-dns-specification&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#purpose&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Define retained ingress DNS ownership through the owner&amp;rsquo;s &lt;code&gt;tf&lt;/code&gt; root,&#xA;including canonical declarations, scoped execution, and offline source checks.&lt;/p&gt;&#xA;&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirements&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id=&#34;requirement-owner-local-dns-configuration&#34;&gt;Requirement: Owner-local DNS configuration&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirement-owner-local-dns-configuration&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The &lt;code&gt;tf&lt;/code&gt; root SHALL consume this owner&amp;rsquo;s canonical &lt;code&gt;dnsconfig.json&lt;/code&gt; through&#xA;the shared DNS Terraform module, preserving declared record identities and views.&#xA;DNS resources SHALL default to disabled until the authorized adoption revision&#xA;and SHALL retain enabled ownership after existing records are imported into the&#xA;owner&amp;rsquo;s state. Reconciliation against unchanged declarations and adopted state&#xA;SHALL propose no record additions, changes, replacements, or deletions.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

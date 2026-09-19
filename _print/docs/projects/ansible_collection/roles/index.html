@@ -1,0 +1,5811 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js" data-theme-init>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000000">
+
+<style>
+  html { background: Canvas; color: CanvasText; }
+  @media (prefers-color-scheme: dark) {
+    html { background: #0b0d12; color: #e6e6e6; }
+  }
+  html[data-theme-init] * { transition: none !important; }
+</style>
+
+<script>
+  (function() {
+    const themeKey = 'td-color-theme';
+    const storedTheme = localStorage.getItem(themeKey);
+    let theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (theme === 'auto') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
+<link rel="canonical" type="text/html" href="https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+<title>Roles | Alwaldend</title>
+<meta name="description" content="Ansible roles">
+<meta property="og:url" content="https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/">
+	<meta property="og:site_name" content="Alwaldend">
+	<meta property="og:title" content="Roles">
+	<meta property="og:description" content="Ansible roles">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="Roles">
+	<meta itemprop="description" content="Ansible roles">
+	<meta itemprop="dateModified" content="2026-09-19T20:06:21+03:00">
+	<meta itemprop="keywords" content="Project">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Roles">
+	<meta name="twitter:description" content="Ansible roles">
+<link rel="preload" href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" as="style" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<link href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" rel="stylesheet" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll">
+<div class="td-navbar-container container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">Alwaldend</span></a>
+  <div class="td-navbar__main td-navbar-nav-scroll td-navbar-nav-scroll--indicator" id="main_navbar">
+    <div class="scroll-indicator scroll-left"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/projects/"><span>Projects</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item td-navbar__light-dark-menu">
+        <div class="td-light-dark-menu dropdown"><svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+<button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        title="Toggle theme (Auto)"
+        aria-label="Toggle theme (Auto)">
+  <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="bd-theme">
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
+      Light
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>
+      Dark
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+      <svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>
+      Auto
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+</ul>
+</div>
+
+      </li>
+      </ul>
+    <div class="scroll-indicator scroll-right"></div>
+  </div>
+  <div class="td-navbar__search d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon" aria-hidden="true"></div>
+  <input
+    type="search"
+    name="q"
+    class="td-search__input form-control"
+    placeholder='Search this site…'
+    aria-label='Search this site…'
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/projects/ansible_collection/roles/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Roles</h1>
+<div class="lead">Ansible roles</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-30a89200860df610245a2902c212694c">Adguard</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1.1: <a href="#pg-3efff43ac08f84b01a5d15e3d949dc8d">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-a3020e644ec307cbd988e41217bd1f02">Caddy</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>2.1: <a href="#pg-790b8a8ac3ffe8836c4798374a36899e">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-dfd3ab501fa8e0c817ea6e986d3e2748">CIFS</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>3.1: <a href="#pg-4c12f13db1cbd670c3bca9662cd2e52d">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>4: <a href="#pg-906007041565cf30f8e3b78acddd3a70">Consul</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>4.1: <a href="#pg-249b793a8050d10c6e57a9e9048df28a">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>5: <a href="#pg-5f4f7eb71338ef09ee1ac3d83846c441">Consul</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>5.1: <a href="#pg-b2a92dffeb12f2367cdb2a1eef398101">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>6: <a href="#pg-3a7f180913bc358da5d918b0bbf25bee">Consul envoy</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>6.1: <a href="#pg-081e1fecbb396235f4ad3cb6a73fda71">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>7: <a href="#pg-b468c288181bb536f4f1cfecf4f59e8a">Dev VM</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>7.1: <a href="#pg-e8c5f2773c93be64da592be9d74f3ed2">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>8: <a href="#pg-8c210c768b2817e55830cc5a27aeec9a">DNS</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>8.1: <a href="#pg-138215aa6c7ef5186f29880fb48ba249">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>9: <a href="#pg-4d756cd75b3f4c8877626f2e348797b1">Docker</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>9.1: <a href="#pg-b776c1dd79eb644be9005f97ba55e9c7">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>10: <a href="#pg-5f4f536033ac30537465643e1056e375">Facts</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>10.1: <a href="#pg-66799841577d4b5802fda22d743c2aea">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>11: <a href="#pg-ede63e85de543401d818ba63462e4254">Filesystem</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>11.1: <a href="#pg-b6ece5aaf654f686941f4c5e9e5736fa">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>12: <a href="#pg-438109bcba665e99f3b3a3d035bb7657">Firewall</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>12.1: <a href="#pg-194557cb0b5c7c9fb55d52880c00c0af">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>13: <a href="#pg-596ccc899bfabdf4b2b138d187c37828">Forgejo</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>13.1: <a href="#pg-40f888afaa6ea28285da05a2ae37147c">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>14: <a href="#pg-eeb5fce79753e8ff99af7ae0b7d064d2">Forgejo</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>14.1: <a href="#pg-d2d9fd5a259c68d2e77940605cb2f9a0">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>15: <a href="#pg-3ee6617a8cdfe138eabef4133b767176">Forgejo runner</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>15.1: <a href="#pg-fa5d4818ace6c148648578af161fe013">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>16: <a href="#pg-84bbcb99c5eed40e2ac36c7565564888">Gpg</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>16.1: <a href="#pg-c450234c52cdd2ebb4a96bf26acc58de">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>17: <a href="#pg-bab8076304ad49c6d27d6f54bbf70085">Harboer</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>17.1: <a href="#pg-098b0bba08352e4bca2c23bdd7c0f365">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>18: <a href="#pg-6af445c2efb4d8ebc5ea285e2838a7e4">Hermes</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>18.1: <a href="#pg-d9b98687d51ec86231af45d338184159">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>19: <a href="#pg-e774e85ba522a5b9e3cd2f9364f59c5a">Hiddify manager</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>19.1: <a href="#pg-31439a6dfe74cbccb756a6472fbf6ad2">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>20: <a href="#pg-aab5daa82477b3920ff5ee8ec7efbbd0">Hiddify manager with host</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>20.1: <a href="#pg-5d897bd81c6f320bb7c327bac0e088df">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>21: <a href="#pg-91c65ef0b148bbccf32c7deb1a09c514">Host</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>21.1: <a href="#pg-9d6bd2cd0303d370abc4f1d98b1650c2">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>22: <a href="#pg-0ae7d79d28b7979bd77473d7161978d2">Install CA</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>22.1: <a href="#pg-714cea8bd11c34ec2ba4ea189f660ca5">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>23: <a href="#pg-47fdf99e151dc4c2d11aef1552036c0a">K3s</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>23.1: <a href="#pg-edc0b3e5e84347496c4c9fae00e2aebf">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>24: <a href="#pg-ed02860b5498ad955756c1ae81bfa6e3">K3s bootstrap</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>24.1: <a href="#pg-c5427a830d474331a32ebec771196c6f">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>25: <a href="#pg-620e18e5f1e2bb0d02d255ed581516d3">K3s cluster</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>25.1: <a href="#pg-b8bbef7b6877eb0f828c8e76a4bcc802">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>26: <a href="#pg-3d72c448b167525b5f6765a966b3eb1d">K3s kubeconfig</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>26.1: <a href="#pg-01fcd0c7a9352bd763b197b4c9275e6b">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>27: <a href="#pg-d757f966a205ed92aac77c1f3c14ca0f">lvg</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>27.1: <a href="#pg-f6ba6722e5465a9ef61d0da23727ada6">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>28: <a href="#pg-b532322fe69e751ad3d298d87b7a6b16">lvol</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>28.1: <a href="#pg-b9e1cc0a62ee53569f03431b71de8273">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>29: <a href="#pg-4a4b7b5ef0e0187c3c5420d669484a7d">Mount</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>29.1: <a href="#pg-c4d6ea46c48ad096d36834b2c8e0f1b9">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>30: <a href="#pg-2faf89637ce45c3c11978a03f34df8fb">Opencode</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>30.1: <a href="#pg-5a088df76aacc7d9a1626a718d95b89b">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>31: <a href="#pg-8f16ed99dffc054d82e681e91d9a5bbb">OpenHands automation</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>31.1: <a href="#pg-100d3badbacb25a3a7c5e33be04db89b">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>32: <a href="#pg-fb7d7237a70fc92a8cdf5d02f64f136e">OpenHands canvas</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>32.1: <a href="#pg-f2c07c1b38af02b3779f42b821b6e0df">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>33: <a href="#pg-2d602d34e7e5b7019c58368006db085e">Openhands server</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>33.1: <a href="#pg-b3f999f9111671a6ecb52fddfafa9b31">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>34: <a href="#pg-81cd85a6a11107a59ac2700f5626df64">OS</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>34.1: <a href="#pg-d90e69704a044104228b9bd720807f68">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>35: <a href="#pg-ccfef1c852adb3fdfbeaa6d6837b0f61">Posgresql</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>35.1: <a href="#pg-aee59c3bc577b9587347f7b56ca553c5">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>36: <a href="#pg-739f1b451351381b851c6f249f6fc808">Pve</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>36.1: <a href="#pg-8564db10a71fc5786f849671abe0e156">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>37: <a href="#pg-17e405829e07a73eec1091b7b246a811">PVE cluster</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>37.1: <a href="#pg-d67bf79c871dbdfcbf94618fa898fee3">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>38: <a href="#pg-ca3da3c1ba5fb5da1f283e57dbb393b9">PVE VM</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>38.1: <a href="#pg-1038e347d9491190d1fef56cdc6469f8">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>39: <a href="#pg-64980a72cc74b50f841ad4687789acdf">PVE VM remove</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>39.1: <a href="#pg-703b55defb376903ababd3202b7a958f">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>40: <a href="#pg-b591ef4b5b69e8540a2eacfd64b7910b">Raspberry pi</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>40.1: <a href="#pg-0a950c5bb25da1b69e51de2927e9df59">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>41: <a href="#pg-30a1060fb79f9cb980286abd5f8e426c">SSH</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>41.1: <a href="#pg-29c97f0a38749962edd84ec904e3d79d">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>42: <a href="#pg-0a5e3196a671524154fb7d4dd62777e7">SSH port forwarding</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>42.1: <a href="#pg-dbc6a0cb7660b05fe7144cf801836b1f">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>43: <a href="#pg-e6c943af3ee2deb48964eba01ea05920">SSH update known hosts</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>43.1: <a href="#pg-083f8862e92b5e12065dc0ae806fb880">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>44: <a href="#pg-7b517b2a48241ac82a260fd1374e7e58">T3 Code</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>44.1: <a href="#pg-37b088e02f219bf0cb82141a8f007232">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>45: <a href="#pg-8c1b9c9270f159fcca7a1514b870376f">Traefik</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>45.1: <a href="#pg-64c36144da7ca469126b8b4625766582">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>46: <a href="#pg-4de9e089ea6df40baefc1b5b76c8ed26">Traefik (old)</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>46.1: <a href="#pg-097cf66cf2e33f82f65b95df93467657">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>47: <a href="#pg-17a4d2717c20f3b83ef3b560e84d88b2">Update all packages</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>47.1: <a href="#pg-2847c001f3a68d2b412fe1f456ef83af">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>48: <a href="#pg-223eb1fd50fcaae788edd245a26950b5">Users</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>48.1: <a href="#pg-0a03a2cb41721fbbb4cc7b575e99682b">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>49: <a href="#pg-cb528d56ecec0a9c20bb4bddddd23208">Vault</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>49.1: <a href="#pg-26a8a6b79522c1530b2b2867d0dac032">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>50: <a href="#pg-143d4797f9b8079b3ab27d7445d99320">Wireguard</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>50.1: <a href="#pg-c56e62cca984605c452317c05cdf57f6">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>51: <a href="#pg-c8e05c61db7c7cd176ffc9268956bd82">Xray</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>51.1: <a href="#pg-9b6da274af8561381ca8cbf5f469fad3">Defaults</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-30a89200860df610245a2902c212694c">1 - Adguard</h1>
+    <div class="lead">Role to deploy adguard</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-3efff43ac08f84b01a5d15e3d949dc8d">1.1 - Defaults</h1>
+    <div class="lead">Defaults for adguard</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">adguard_dir</span>: <span style="color:#ae81ff">/etc/adguard</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">adguard_work_dir</span>: <span style="color:#e6db74">&#34;{{ adguard_dir }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">adguard_gpg_key_url</span>: <span style="color:#ae81ff">https://keys.openpgp.org/vks/v1/by-fingerprint/28645AC9776EC4C00BCE2AFC0FE641E7235E2EC6</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">adguard_gpg_key_src</span>: <span style="color:#ae81ff">files/key.asc</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">adguard_gpg_key_path</span>: <span style="color:#e6db74">&#34;{{ adguard_dir }}/release-key.asc&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">adguard_gpg_key_checksum</span>: <span style="color:#e6db74">&#34;22d78dbacb461667861ee7d2dd13d13240ee003d&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">adguard_release_source_url</span>: <span style="color:#ae81ff">https://github.com/AdguardTeam/AdGuardHome/releases/download</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">adguard_release_version</span>: <span style="color:#ae81ff">v0.107.48</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">adguard_release_checksum</span>: <span style="color:#e6db74">&#34;sha512:c0a336212e3792ae6fc6b8de976befce0038c5d6ddde919a00994c43a929349958c7bd65f7fb7fdd471962afa20855ecbf5830cc7a1d26f3037a716db638c101&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">adguard_release_distrib</span>: <span style="color:#ae81ff">AdGuardHome_linux_amd64.tar.gz</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">adguard_release_url</span>: <span style="color:#e6db74">&#34;{{ adguard_release_source_url }}/{{ adguard_release_version }}/{{ adguard_release_distrib }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">adguard_release_archive_dest</span>: <span style="color:#e6db74">&#34;{{ adguard_dir }}/release-{{ adguard_release_version }}-{{ adguard_release_distrib }}&#34;</span> 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">adguard_release_dest</span>: <span style="color:#e6db74">&#34;{{ adguard_dir }}/release-{{ adguard_release_version }}&#34;</span> 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">adguard_release_dir</span>: <span style="color:#e6db74">&#34;{{ adguard_release_dest }}/AdGuardHome&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">adguard_release_bin</span>: <span style="color:#e6db74">&#34;{{ adguard_release_dir }}/AdGuardHome&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">adguard_release_sig</span>: <span style="color:#e6db74">&#34;{{ adguard_release_bin }}.sig&#34;</span>
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-a3020e644ec307cbd988e41217bd1f02">2 - Caddy</h1>
+    <div class="lead">Role to deploy caddy</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-790b8a8ac3ffe8836c4798374a36899e">2.1 - Defaults</h1>
+    <div class="lead">Defaults for caddy</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">caddy_enabled</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">caddy_user</span>: <span style="color:#ae81ff">caddy</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">caddy_config_path</span>: <span style="color:#ae81ff">/etc/caddy/Caddyfile</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">caddy_config_dir</span>: <span style="color:#ae81ff">/etc/caddy/configs</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">caddy_config</span>: |<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  import {{ caddy_config_dir }}/*</span>
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-dfd3ab501fa8e0c817ea6e986d3e2748">3 - CIFS</h1>
+    <div class="lead">Setup cifs</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-4c12f13db1cbd670c3bca9662cd2e52d">3.1 - Defaults</h1>
+    <div class="lead">Defaults for cifs</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">cifs_enabled</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">cifs_systemd_dir</span>: <span style="color:#ae81ff">/etc/systemd/system</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">cifs_mounts</span>: []
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-906007041565cf30f8e3b78acddd3a70">4 - Consul</h1>
+    <div class="lead">Consul</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-249b793a8050d10c6e57a9e9048df28a">4.1 - Defaults</h1>
+    <div class="lead">Defaults for consul</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">consul_user</span>: <span style="color:#ae81ff">consul</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_user_uid</span>: <span style="color:#ae81ff">4266</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_dir</span>: <span style="color:#e6db74">&#34;/opt/consul&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_data_dir</span>: <span style="color:#e6db74">&#34;{{ consul_dir }}/data&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_config_dir</span>: <span style="color:#e6db74">&#34;{{ consul_dir }}/configs&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_config_path</span>: <span style="color:#e6db74">&#34;{{ consul_config_dir }}/consul.hcl&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_config_local_path</span>: <span style="color:#e6db74">&#34;files/consul.hcl&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_log_dir</span>: <span style="color:#e6db74">&#34;{{ consul_dir }}/logs&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_tls_dir</span>: <span style="color:#e6db74">&#34;{{ consul_dir }}/tls&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_service_path</span>: <span style="color:#e6db74">&#34;/lib/systemd/system/consul.service&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_tls_ca_file_local_path</span>: <span style="color:#ae81ff">files/pki_ca_servers.crt</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_tls_ca_file_path</span>: <span style="color:#e6db74">&#34;{{ consul_tls_dir }}/tls_ca_file.crt&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_tls_cert_file_path</span>: <span style="color:#e6db74">&#34;{{ consul_tls_dir }}/cert_file.crt&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_tls_key_file_path</span>: <span style="color:#e6db74">&#34;{{ consul_tls_dir }}/key_file.crt&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_tls_common_name</span>: <span style="color:#e6db74">&#34;{{ inventory_hostname }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_tls_ttl</span>: <span style="color:#e6db74">&#34;2629746&#34;</span> <span style="color:#75715e"># month</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_tls_alt_names</span>: <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_vault_local_path</span>: <span style="color:#e6db74">&#34;{{ role_path }}/files/vault&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_bin_local_path</span>: <span style="color:#e6db74">&#34;{{ role_path }}/files/consul&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_bin_path</span>: <span style="color:#ae81ff">/usr/bin/consul</span>
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-5f4f7eb71338ef09ee1ac3d83846c441">5 - Consul</h1>
+    <div class="lead">Setup consul</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-b2a92dffeb12f2367cdb2a1eef398101">5.1 - Defaults</h1>
+    <div class="lead">Defaults for consul_old</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">consul_is_server</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_user_name</span>: <span style="color:#ae81ff">consul</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_user_uid</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_dir</span>: <span style="color:#e6db74">&#34;/opt/consul&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_persistence_dir</span>: <span style="color:#e6db74">&#34;{{ consul_dir }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_releases_dir</span>: <span style="color:#e6db74">&#34;{{ consul_dir }}/releases&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_config_symlink_dir</span>: <span style="color:#e6db74">&#34;{{ consul_configs_dir }}/current&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_config_symlink_data_dir</span>: <span style="color:#e6db74">&#34;{{ consul_config_symlink_dir }}/configs&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_configs_dir</span>: <span style="color:#e6db74">&#34;{{ consul_persistence_dir }}/configs/{{ inventory_hostname }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_data_dir</span>: <span style="color:#e6db74">&#34;{{ consul_persistence_dir }}/data/{{ inventory_hostname }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_config_path</span>: <span style="color:#e6db74">&#34;{{ consul_config_config_dir }}/consul.json&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_config_dir</span>: <span style="color:#e6db74">&#34;{{ consul_configs_dir }}/{{ consul_config_dir_name }}&#34;</span> 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_config_data_dir</span>: <span style="color:#e6db74">&#34;{{ consul_config_dir }}/data&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_config_config_dir</span>: <span style="color:#e6db74">&#34;{{ consul_config_dir }}/configs&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_config_dir_name</span>: <span style="color:#e6db74">&#34;{{ consul_config_version }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_config_version</span>: <span style="color:#e6db74">&#34;{{ lookup(&#39;ansible.builtin.pipe&#39;, &#39;git rev-parse HEAD&#39;) }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_env</span>: {}
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_configs</span>: []
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_env_path</span>: <span style="color:#e6db74">&#34;{{ consul_config_data_dir }}/consul.env&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_env_symlink_path</span>: <span style="color:#e6db74">&#34;{{ consul_config_symlink_dir }}/data/consul.env&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_release_dir</span>: <span style="color:#e6db74">&#34;{{ consul_releases_dir }}/{{ consul_release_dir_name }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_release_dir_name</span>: <span style="color:#e6db74">&#34;{{ consul_release_version }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_release_symlink_path</span>: <span style="color:#e6db74">&#34;{{ consul_releases_dir }}/current&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_release_symlink_bin_path</span>: <span style="color:#e6db74">&#34;{{ consul_release_symlink_path }}/consul&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_release_version</span>: <span style="color:#ae81ff">1.20.2</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_release_archive_name</span>: <span style="color:#e6db74">&#34;consul_{{ consul_release_version }}_linux_amd64&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_release_archive_fullname</span>: <span style="color:#e6db74">&#34;{{ consul_release_archive_name }}.zip&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_release_bin_path</span>: <span style="color:#e6db74">&#34;{{ consul_release_dir }}/consul&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_release_url</span>: <span style="color:#e6db74">&#34;https://releases.hashicorp.com/consul/{{ consul_release_version }}/{{ consul_release_archive_fullname }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_release_checksum</span>: <span style="color:#e6db74">&#34;sha256:1bf7ddf332f02e6e36082b0fdf6c3e8ce12a391e7ec7dafd3237bb12766a7fd5&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_agent_ca_cert_path</span>: <span style="color:#e6db74">&#34;{{ consul_config_data_dir }}/agent_ca_cert.pub&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_agent_ca_cert</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_server_cert_path</span>: <span style="color:#e6db74">&#34;{{ consul_config_data_dir }}/server_cert_{{ inventory_hostname }}.pub&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_server_cert</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_server_key_path</span>: <span style="color:#e6db74">&#34;{{ consul_config_data_dir }}/server_cert_{{ inventory_hostname }}.key&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_server_key</span>:
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-3a7f180913bc358da5d918b0bbf25bee">6 - Consul envoy</h1>
+    <div class="lead">Setup envoy for consul</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-081e1fecbb396235f4ad3cb6a73fda71">6.1 - Defaults</h1>
+    <div class="lead">Defaults for consul_envoy</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">consul_envoy_dir</span>: <span style="color:#e6db74">&#34;/opt/consul_envoy&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_envoy_deployments_dir</span>: <span style="color:#e6db74">&#34;{{ consul_envoy_dir }}/deployments&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_envoy_releases_dir</span>: <span style="color:#e6db74">&#34;{{ consul_envoy_dir }}/releases&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_envoy_deployment_dir</span>: <span style="color:#e6db74">&#34;{{ consul_envoy_deployments_dir }}/{{ consul_envoy_deployment_version }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_envoy_release_dir</span>: <span style="color:#e6db74">&#34;{{ consul_envoy_releases_dir }}/{{ consul_envoy_release_version }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_envoy_configs_dir</span>: <span style="color:#e6db74">&#34;{{ consul_envoy_deployment_dir }}/configs&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_envoy_bootstrap_config_path</span>: <span style="color:#e6db74">&#34;{{ consul_envoy_configs_dir }}/bootstrap.json&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_envoy_deployment_version</span>: <span style="color:#e6db74">&#34;{{ lookup(&#39;ansible.builtin.pipe&#39;, &#39;git rev-parse HEAD&#39;) }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_envoy_user_name</span>: <span style="color:#ae81ff">consul_envoy</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_envoy_release_version</span>: <span style="color:#ae81ff">1.31.0</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_envoy_release_archive_fullname</span>: <span style="color:#e6db74">&#34;envoy_{{ consul_envoy_release_version }}_linux_amd64.zip&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_envoy_release_url</span>: <span style="color:#e6db74">&#34;https://releases.hashicorp.com/envoy/{{ consul_envoy_release_version }}/{{ consul_envoy_release_archive_fullname }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_envoy_release_bin_path</span>: <span style="color:#e6db74">&#34;{{ consul_envoy_release_dir }}/envoy&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_envoy_release_symlink_path</span>: <span style="color:#e6db74">&#34;{{ consul_envoy_releases_dir }}/current&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">consul_envoy_release_checksum</span>: <span style="color:#e6db74">&#34;sha256:350782275de0fe50699844b4f9096d77a0193a5bcf205e14b8ad964ec429d45e&#34;</span>
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-b468c288181bb536f4f1cfecf4f59e8a">7 - Dev VM</h1>
+    <div class="lead">Set up repositories and packages for a development VM</div>
+	<p>The default task entry point configures package repositories and development
+packages. It uses the same <code>dev_vm_packages</code> list with either the ordinary
+package manager or RPM-OSTree layering. <code>dev_vm_package_backend</code> accepts
+<code>auto</code>, <code>package</code>, or <code>rpm_ostree</code>; <code>auto</code> selects RPM-OSTree when
+<code>/run/ostree-booted</code> exists. Set <code>dev_vm_install_packages</code> to <code>false</code> to skip
+repository and package management entirely.</p>
+<p>RPM-OSTree changes are staged for the next boot by default. The role reports a
+pending deployment but does not reboot the host. Set
+<code>dev_vm_rpm_ostree_apply_live</code> to <code>true</code> only when live application is known to
+be safe for the selected packages.</p>
+<p>The packaged Fedora mirror and Bazelisk tool currently make this role specific
+to Linux x86-64 development hosts.</p>
+<p>The <code>packages</code> task entry point exposes package management separately from
+other role tasks. The <code>bazel</code> task entry point installs a caller-provided Bazel
+rc, Bazelisk, and the repository&rsquo;s <code>bazel_agent</code> runner for one developer
+account.</p>
+<p>Import the Bazel entry point with <code>tasks_from: bazel</code> and set:</p>
+<ul>
+<li><code>dev_vm_bazel_user</code>: owner of the installed files.</li>
+<li><code>dev_vm_bazel_group</code>: group of the installed files; defaults to the user.</li>
+<li><code>dev_vm_bazel_home</code>: absolute home directory for the developer account.</li>
+<li><code>dev_vm_bazelrc_src</code>: controller-side Bazel rc source; defaults to <code>bazelrc</code>.</li>
+<li><code>dev_vm_bazelisk_src</code>: controller-side Bazelisk source; defaults to
+<code>bazelisk</code>.</li>
+<li><code>dev_vm_bazel_agent_src</code>: controller-side <code>bazel_agent</code> source; defaults to
+<code>bazel_agent</code>.</li>
+</ul>
+<p>The role packages its default Linux x86-64 Bazelisk and <code>bazel_agent</code> sources.
+The calling playbook must package the Bazel rc, plus any overridden binary
+sources, in an Ansible file search path. Cache storage and machine-specific
+Bazel settings remain the caller&rsquo;s responsibility.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-e8c5f2773c93be64da592be9d74f3ed2">7.1 - Defaults</h1>
+    <div class="lead">Defaults for dev_vm</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span><span style="color:#f92672">dev_vm_install_packages</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">dev_vm_package_backend</span>: <span style="color:#ae81ff">auto</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">dev_vm_rpm_ostree_apply_live</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">dev_vm_packages</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">clang</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">clang-tools-extra</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">java-latest-openjdk-devel</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">rust</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">cargo</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">mesa-libGL-devel</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">go</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Xvfb</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">python3</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">gmp-devel</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">patch</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">podman</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">git</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">git-lfs</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">fuse</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">fuse-libs</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">pcsc-lite</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">pcsc-lite-devel</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">openssl</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">gnutls-utils</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">opensc</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">openssl-pkcs11</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">libdnet</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">qemu-kvm</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">qemu-img</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">dev_vm_bazel_user</span>: <span style="color:#e6db74">&#34;{{ undefined() }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">dev_vm_bazel_group</span>: <span style="color:#e6db74">&#34;{{ dev_vm_bazel_user }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">dev_vm_bazel_home</span>: <span style="color:#e6db74">&#34;{{ undefined() }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">dev_vm_bazelrc_src</span>: <span style="color:#ae81ff">bazelrc</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">dev_vm_bazelisk_src</span>: <span style="color:#ae81ff">bazelisk</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">dev_vm_bazel_agent_src</span>: <span style="color:#ae81ff">bazel_agent</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">dev_vm_selinux_android_emulation</span>: <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-8c210c768b2817e55830cc5a27aeec9a">8 - DNS</h1>
+    <div class="lead">Setup dns records</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-138215aa6c7ef5186f29880fb48ba249">8.1 - Defaults</h1>
+    <div class="lead">Defaults for dns</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">dns_records</span>: []
+</span></span><span style="display:flex;"><span><span style="color:#f92672">dns_domains</span>: []
+</span></span><span style="display:flex;"><span><span style="color:#f92672">dns_njalla_api_url</span>: <span style="color:#ae81ff">https://njal.la/api/1/</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">dns_njalla_token</span>:
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-4d756cd75b3f4c8877626f2e348797b1">9 - Docker</h1>
+    <div class="lead">Setup docker</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-b776c1dd79eb644be9005f97ba55e9c7">9.1 - Defaults</h1>
+    <div class="lead">Defaults for docker</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">docker_enabled</span>: <span style="color:#66d9ef">false</span>
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-5f4f536033ac30537465643e1056e375">10 - Facts</h1>
+    <div class="lead">Setup ansible facts</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-66799841577d4b5802fda22d743c2aea">10.1 - Defaults</h1>
+    <div class="lead">Defaults for facts</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">facts_debug</span>: <span style="color:#66d9ef">false</span>
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-ede63e85de543401d818ba63462e4254">11 - Filesystem</h1>
+    <div class="lead">Setup filesystems</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-b6ece5aaf654f686941f4c5e9e5736fa">11.1 - Defaults</h1>
+    <div class="lead">Defaults for filesystem</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">filesystem_setup</span>: []
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-438109bcba665e99f3b3a3d035bb7657">12 - Firewall</h1>
+    <div class="lead">Setup firewall</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-194557cb0b5c7c9fb55d52880c00c0af">12.1 - Defaults</h1>
+    <div class="lead">Defaults for firewall</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">firewall_state</span>: <span style="color:#ae81ff">enabled</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">firewall_enabled</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">firewall_allow_port_from</span>: []
+</span></span><span style="display:flex;"><span><span style="color:#f92672">firewall_allow_forward</span>: []
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-596ccc899bfabdf4b2b138d187c37828">13 - Forgejo</h1>
+    <div class="lead">Forgejo</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-40f888afaa6ea28285da05a2ae37147c">13.1 - Defaults</h1>
+    <div class="lead">Defaults for forgejo</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">forgejo_user</span>: <span style="color:#ae81ff">forgejo</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">forgejo_user_uid</span>: <span style="color:#ae81ff">5157</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">forgejo_dir</span>: <span style="color:#e6db74">&#34;/opt/forgejo&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">forgejo_data_dir</span>: <span style="color:#e6db74">&#34;{{ forgejo_dir }}/data&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">forgejo_config_dir</span>: <span style="color:#e6db74">&#34;{{ forgejo_dir }}/configs&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">forgejo_work_dir</span>: <span style="color:#e6db74">&#34;{{ forgejo_dir }}/work&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">forgejo_config_path</span>: <span style="color:#e6db74">&#34;{{ forgejo_config_dir }}/forgejo.ini&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">forgejo_config_local_path</span>: <span style="color:#e6db74">&#34;files/forgejo.ini&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">forgejo_disk</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">forgejo_log_dir</span>: <span style="color:#e6db74">&#34;{{ forgejo_dir }}/logs&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">forgejo_service_path</span>: <span style="color:#e6db74">&#34;/lib/systemd/system/forgejo.service&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">forgejo_vault_local_path</span>: <span style="color:#e6db74">&#34;{{ role_path }}/files/vault&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">forgejo_bin_local_path</span>: <span style="color:#e6db74">&#34;{{ role_path }}/files/forgejo&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">forgejo_bin_path</span>: <span style="color:#ae81ff">/usr/bin/forgejo</span>
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-eeb5fce79753e8ff99af7ae0b7d064d2">14 - Forgejo</h1>
+    <div class="lead">Forgejo</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-d2d9fd5a259c68d2e77940605cb2f9a0">14.1 - Defaults</h1>
+    <div class="lead">Defaults for threexui</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">threexui_user</span>: <span style="color:#ae81ff">threexui</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">threexui_user_uid</span>: <span style="color:#ae81ff">6468</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">threexui_dir</span>: <span style="color:#e6db74">&#34;/opt/threexui&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">threexui_data_dir</span>: <span style="color:#e6db74">&#34;{{ threexui_dir }}/data&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">threexui_work_dir</span>: <span style="color:#e6db74">&#34;{{ threexui_dir }}/work&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">threexui_disk</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">threexui_log_dir</span>: <span style="color:#e6db74">&#34;{{ threexui_dir }}/logs&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">threexui_service_path</span>: <span style="color:#e6db74">&#34;/lib/systemd/system/threexui.service&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">threexui_vault_local_path</span>: <span style="color:#e6db74">&#34;{{ role_path }}/files/vault&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">threexui_bin_dir</span>: <span style="color:#e6db74">&#34;{{ threexui_dir }}/bin&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">threexui_bin_local_dir</span>: <span style="color:#e6db74">&#34;{{ role_path }}/files/threexui_bin&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">threexui_config_dir</span>: <span style="color:#e6db74">&#34;{{ threexui_dir }}/configs&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">threexui_env_path</span>: <span style="color:#e6db74">&#34;{{ threexui_config_dir }}/threexui.env&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">threexui_env_override</span>: {}
+</span></span><span style="display:flex;"><span><span style="color:#f92672">threexui_base_path</span>: <span style="color:#ae81ff">/</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">threexui_username</span>: <span style="color:#e6db74">&#34;{{ undefined() }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">threexui_password</span>: <span style="color:#e6db74">&#34;{{ undefined() }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">threexui_port</span>: <span style="color:#e6db74">&#34;2053&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">threexui_debug</span>: <span style="color:#e6db74">&#34;false&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">threexui_env</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># https://docs.sanaei.dev/docs/reference/env-vars/</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">XUI_DB_TYPE</span>: <span style="color:#ae81ff">sqlite</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">XUI_DB_FOLDER</span>: <span style="color:#e6db74">&#34;{{ threexui_data_dir }}&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">XUI_PORT</span>: <span style="color:#e6db74">&#34;{{ threexui_port }}&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">XUI_INIT_WEB_BASE_PATH</span>: <span style="color:#e6db74">&#34;{{ threexui_base_path }}&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">XUI_ENABLE_FAIL2BAN</span>: <span style="color:#e6db74">&#34;true&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">XUI_SKIP_HSTS</span>: <span style="color:#e6db74">&#34;true&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">XUI_LOG_LEVEL</span>: <span style="color:#ae81ff">info</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">XUI_DEBUG</span>: <span style="color:#e6db74">&#34;{{ threexui_debug }}&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">XUI_LOG_FOLDER</span>: <span style="color:#e6db74">&#34;{{ threexui_log_dir }}&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">XUI_BIN_FOLDER</span>: <span style="color:#e6db74">&#34;{{ threexui_bin_dir }}/bin&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">XRAY_VMESS_AEAD_FORCED</span>: <span style="color:#e6db74">&#34;false&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">XUI_ACCESS_URL</span>: <span style="color:#e6db74">&#34;https://{{ inventory_hostname }}{{ threexui_base_path }}&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">XUI_USERNAME</span>: <span style="color:#e6db74">&#34;{{ threexui_username }}&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">XUI_PASSWORD</span>: <span style="color:#e6db74">&#34;{{ threexui_password }}&#34;</span>
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-3ee6617a8cdfe138eabef4133b767176">15 - Forgejo runner</h1>
+    <div class="lead">Install and register a Forgejo Actions runner</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-fa5d4818ace6c148648578af161fe013">15.1 - Defaults</h1>
+    <div class="lead">Defaults for forgejo_runner</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">forgejo_runner_user</span>: <span style="color:#ae81ff">forgejo-runner</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">forgejo_runner_user_uid</span>: <span style="color:#ae81ff">5721</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">forgejo_runner_dir</span>: <span style="color:#ae81ff">/opt/forgejo-runner</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">forgejo_runner_disk</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">forgejo_runner_home_dir</span>: <span style="color:#ae81ff">/opt/forgejo-runner/home</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">forgejo_runner_work_dir</span>: <span style="color:#ae81ff">/opt/forgejo-runner/work</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">forgejo_runner_bin_local_path</span>: <span style="color:#e6db74">&#34;{{ role_path }}/files/forgejo-runner&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">forgejo_runner_bin_path</span>: <span style="color:#ae81ff">/usr/bin/forgejo-runner</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">forgejo_runner_service_path</span>: <span style="color:#ae81ff">/lib/systemd/system/forgejo-runner.service</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">forgejo_runner_instance</span>: <span style="color:#e6db74">&#34;{{ undefined() }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">forgejo_runner_token</span>: <span style="color:#e6db74">&#34;{{ undefined() }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">forgejo_runner_name</span>: <span style="color:#e6db74">&#34;{{ inventory_hostname }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">forgejo_runner_labels</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#e6db74">&#34;self-hosted:host&#34;</span>
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-84bbcb99c5eed40e2ac36c7565564888">16 - Gpg</h1>
+    <div class="lead">Setup GPG</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-c450234c52cdd2ebb4a96bf26acc58de">16.1 - Defaults</h1>
+    <div class="lead">Defaults for gpg</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">gpg_users</span>: []
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-bab8076304ad49c6d27d6f54bbf70085">17 - Harboer</h1>
+    <div class="lead">Harbor</div>
+	<h2 id="print-5e9dc31d6ded1b48b4396c9223afe3ce-links">Links<a class="td-heading-self-link" href="#print-5e9dc31d6ded1b48b4396c9223afe3ce-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Site: <a href="https://goharbor.io/">https://goharbor.io/</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-098b0bba08352e4bca2c23bdd7c0f365">17.1 - Defaults</h1>
+    <div class="lead">Defaults for harbor</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">harbor_user</span>: <span style="color:#ae81ff">harbor</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">harbor_user_uid</span>: <span style="color:#ae81ff">7049</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">harbor_dir</span>: <span style="color:#e6db74">&#34;/opt/harbor&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">harbor_installer_dir</span>: <span style="color:#e6db74">&#34;{{ harbor_dir }}/installer&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">harbor_logs_dir</span>: <span style="color:#e6db74">&#34;{{ harbor_dir }}/logs&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">harbor_data_dir</span>: <span style="color:#e6db74">&#34;{{ harbor_dir }}/data&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">harbor_installer_local_dir</span>: <span style="color:#e6db74">&#34;{{ role_path }}/files/harbor_installer&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">harbor_config_path</span>: <span style="color:#e6db74">&#34;{{ harbor_installer_dir }}/harbor.yml&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">harbor_config_local_path</span>: <span style="color:#e6db74">&#34;files/harbor.yaml&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">harbor_domain</span>: <span style="color:#e6db74">&#34;{{ undefined() }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">harbor_ca_local_path</span>: <span style="color:#e6db74">&#34;{{ role_path }}/files/pki_ca_servers.crt&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">harbor_ca_path</span>: <span style="color:#ae81ff">/etc/docker/certs.d/{{ harbor_domain }}/ca.crt</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">harbor_root_ca_local_path</span>: <span style="color:#e6db74">&#34;{{ role_path }}/files/pki_ca_root.crt&#34;</span>
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-6af445c2efb4d8ebc5ea285e2838a7e4">18 - Hermes</h1>
+    <div class="lead">Install and run the Hermes Agent gateway</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-d9b98687d51ec86231af45d338184159">18.1 - Defaults</h1>
+    <div class="lead">Defaults for hermes</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">hermes_user</span>: <span style="color:#ae81ff">hermes</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">hermes_user_uid</span>: <span style="color:#ae81ff">8150</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">hermes_dir</span>: <span style="color:#ae81ff">/opt/hermes</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">hermes_home_dir</span>: <span style="color:#e6db74">&#34;{{ hermes_dir }}/home&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">hermes_install_dir</span>: <span style="color:#e6db74">&#34;{{ hermes_dir }}/hermes-agent&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">hermes_disk</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">hermes_port</span>: <span style="color:#ae81ff">8642</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">hermes_commit</span>: <span style="color:#e6db74">&#34;{{ undefined() }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">hermes_installer_local_path</span>: <span style="color:#e6db74">&#34;{{ role_path }}/files/install.sh&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">hermes_installer_path</span>: <span style="color:#e6db74">&#34;{{ hermes_dir }}/install.sh&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">hermes_config_local_path</span>: <span style="color:#e6db74">&#34;files/hermes.yaml&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">hermes_config_path</span>: <span style="color:#e6db74">&#34;{{ hermes_home_dir }}/.hermes/config.yaml&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">hermes_env_path</span>: <span style="color:#e6db74">&#34;{{ hermes_home_dir }}/.hermes/.env&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">hermes_env</span>: {}
+</span></span><span style="display:flex;"><span><span style="color:#f92672">hermes_bin_path</span>: <span style="color:#e6db74">&#34;{{ hermes_home_dir }}/.local/bin/hermes&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">hermes_dashboard_service_path</span>: <span style="color:#ae81ff">/lib/systemd/system/hermes-dashboard.service</span>
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-e774e85ba522a5b9e3cd2f9364f59c5a">19 - Hiddify manager</h1>
+    <div class="lead">Setup hiddify manager</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-31439a6dfe74cbccb756a6472fbf6ad2">19.1 - Defaults</h1>
+    <div class="lead">Defaults for hiddify_manager</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">hiddify_manager_env</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">HIDDIFY_MANAGER_IMAGE</span>: <span style="color:#ae81ff">ghcr.io/hiddify/hiddify-manager:main@sha256:d5edef06d2133ffa26f0fcbb67e711f4356dba44c44a41a96570c4e03845a84c</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">HIDDIFY_MANAGER_REDIS_IMAGE</span>: <span style="color:#ae81ff">redis:7.4.1@sha256:bb142a9c18ac18a16713c1491d779697b4e107c22a97266616099d288237ef47</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">HIDDIFY_MANAGER_MARIADB_IMAGE</span>: <span style="color:#ae81ff">mariadb:11.6.2@sha256:a9547599cd87d7242435aea6fda22a9d83e2c06d16c658ef70d2868b3d3f6a80</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">HIDDIFY_MANAGER_REDIS_PASSWORD</span>: <span style="color:#e6db74">&#34;{{ lookup(&#39;ansible.builtin.env&#39;, &#39;HIDDIFY_MANAGER_REDIS_PASSWORD&#39;, default=undef()) }}&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">HIDDIFY_MANAGER_MYSQL_PASSWORD</span>: <span style="color:#e6db74">&#34;{{ lookup(&#39;ansible.builtin.env&#39;, &#39;HIDDIFY_MANAGER_MYSQL_PASSWORD&#39;, default=undef()) }}&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">HIDDIFY_MANAGER_MARIADB_PASSWORD</span>: <span style="color:#e6db74">&#34;{{ lookup(&#39;ansible.builtin.env&#39;, &#39;HIDDIFY_MANAGER_MARIADB_PASSWORD&#39;, default=undef()) }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">hiddify_manager_env_override</span>: {}
+</span></span><span style="display:flex;"><span><span style="color:#f92672">hiddify_manager_dir</span>: <span style="color:#ae81ff">/opt/hiddify_manager</span>
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-aab5daa82477b3920ff5ee8ec7efbbd0">20 - Hiddify manager with host</h1>
+    <div class="lead">Setup host and then hiddify manager</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-5d897bd81c6f320bb7c327bac0e088df">20.1 - Defaults</h1>
+    <div class="lead">Defaults for hiddify_manager_host</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-91c65ef0b148bbccf32c7deb1a09c514">21 - Host</h1>
+    <div class="lead">Common host setup</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-9d6bd2cd0303d370abc4f1d98b1650c2">21.1 - Defaults</h1>
+    <div class="lead">Defaults for host</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-0ae7d79d28b7979bd77473d7161978d2">22 - Install CA</h1>
+    <div class="lead">Install a certificate authority</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-714cea8bd11c34ec2ba4ea189f660ca5">22.1 - Defaults</h1>
+    <div class="lead">Defaults for install_ca</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">install_ca</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">path</span>: <span style="color:#e6db74">&#34;{{ role_path }}/files/pki_ca_root.crt&#34;</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">path</span>: <span style="color:#e6db74">&#34;{{ role_path }}/files/pki_ca_servers.crt&#34;</span>
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-47fdf99e151dc4c2d11aef1552036c0a">23 - K3s</h1>
+    <div class="lead">Setup k3s</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-edc0b3e5e84347496c4c9fae00e2aebf">23.1 - Defaults</h1>
+    <div class="lead">Defaults for k3s</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">k3s_data_dir</span>: <span style="color:#ae81ff">/srv/k3s_data</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">k3s_service_name</span>: <span style="color:#ae81ff">k3s</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">k3s_data_disk</span>: <span style="color:#ae81ff">/dev/sdb</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">k3s_storage_dir</span>: <span style="color:#ae81ff">/srv/k3s_storage</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">k3s_storage_disk</span>: <span style="color:#ae81ff">/dev/sdc</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">k3s_config_path</span>: <span style="color:#e6db74">&#34;/etc/rancher/k3s/config.yaml&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">k3s_config_local_path</span>: <span style="color:#e6db74">&#34;files/k3s.yaml&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">k3s_admission_config_path</span>: <span style="color:#e6db74">&#34;/etc/rancher/k3s/admission.yaml&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">k3s_admission_config_local_path</span>: <span style="color:#e6db74">&#34;files/k3s_admission.yaml&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">k3s_auth_config_path</span>: <span style="color:#e6db74">&#34;{{ [(k3s_config_path | dirname), &#39;k3s_auth.yaml&#39;] | path_join }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">k3s_auth_config_local_path</span>: <span style="color:#e6db74">&#34;files/k3s_auth.yaml&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">k3s_manifests_local_path</span>: <span style="color:#e6db74">&#34;files/k3s_manifests.yaml&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">k3s_manifests_path</span>: <span style="color:#e6db74">&#34;{{ k3s_data_dir }}/server/manifests/k3s-manifests.yaml&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">k3s_bin_local_path</span>: <span style="color:#e6db74">&#34;{{ role_path }}/files/k3s&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">k3s_bin_path</span>: <span style="color:#ae81ff">/usr/local/bin/k3s</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">k3s_install_script_local_path</span>: <span style="color:#e6db74">&#34;{{ role_path }}/files/k3s_install&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">k3s_install_script_path</span>: <span style="color:#ae81ff">/usr/local/bin/k3s_install</span>
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-ed02860b5498ad955756c1ae81bfa6e3">24 - K3s bootstrap</h1>
+    <div class="lead">Bootstrap k3s cluster</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-c5427a830d474331a32ebec771196c6f">24.1 - Defaults</h1>
+    <div class="lead">Defaults for k3s_bootstrap</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">k3s_bootstrap_apply_path</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">k3s_bootstrap_token_name</span>: <span style="color:#e6db74">&#34;{{ lookup(&#39;ansible.builtin.env&#39;, &#39;USER&#39;, default=undef()) }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">k3s_bootstrap_token_namespace</span>: <span style="color:#ae81ff">kube-system</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">k3s_bootstrap_venv_dir</span>: <span style="color:#e6db74">&#34;/opt/bootstrap-venv&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">k3s_bootstrap_venv_bin</span>: <span style="color:#e6db74">&#34;{{ k3s_bootstrap_venv_dir | mandatory }}/bin/python&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">k3s_bootstrap_kubeconfig</span>: <span style="color:#ae81ff">/etc/rancher/k3s/k3s.yaml</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">k3s_bootstrap_cluster_name</span>: <span style="color:#e6db74">&#34;{{ inventory_hostname }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">k3s_bootstrap_cluster_ca_path</span>: <span style="color:#e6db74">&#34;{{ lookup(&#39;ansible.builtin.env&#39;, &#39;HOME&#39;, default=undef()) }}/.kube/ca-{{ k3s_bootstrap_cluster_name | mandatory }}.ca.crt&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">k3s_bootstrap_user_ca_path</span>: <span style="color:#e6db74">&#34;{{ k3s_bootstrap_cluster_ca_path | mandatory | dirname }}/ca-{{ k3s_bootstrap_cluster_name | mandatory }}-{{ k3s_bootstrap_token_name | mandatory }}.ca.crt&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">k3s_bootstrap_user_name</span>: <span style="color:#e6db74">&#34;{{ k3s_bootstrap_cluster_name | mandatory }}-{{ k3s_bootstrap_token_name | mandatory }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">k3s_bootstrap_cluster_port</span>:
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-620e18e5f1e2bb0d02d255ed581516d3">25 - K3s cluster</h1>
+    <div class="lead">Setup k3s cluster</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-b8bbef7b6877eb0f828c8e76a4bcc802">25.1 - Defaults</h1>
+    <div class="lead">Defaults for k3s_cluster</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-3d72c448b167525b5f6765a966b3eb1d">26 - K3s kubeconfig</h1>
+    <div class="lead">Write k3s kubeconfig to a secret</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-01fcd0c7a9352bd763b197b4c9275e6b">26.1 - Defaults</h1>
+    <div class="lead">Defaults for k3s_kubeconfig</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">k3s_kubeconfig_secret_path</span>: <span style="color:#e6db74">&#34;{{ undefined() }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">k3s_kubeconfig_secret_mount</span>: <span style="color:#e6db74">&#34;{{ undefined() }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">k3s_kubeconfig_path</span>: <span style="color:#ae81ff">/etc/rancher/k3s/k3s.yaml</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">k3s_kubeconfig_vault_bin_local_path</span>: <span style="color:#e6db74">&#34;{{ role_path }}/files/vault&#34;</span>
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-d757f966a205ed92aac77c1f3c14ca0f">27 - lvg</h1>
+    <div class="lead">Setup LVM volume groups</div>
+	<p><code>lvg_volume_groups</code> describes the complete desired physical-volume list for
+each volume group. Extra physical volumes are not removed unless a caller sets
+<code>remove_extra_pvs: true</code>.</p>
+<p>Creating a volume group initializes every listed device as an LVM physical
+volume. Callers must resolve stable device paths and verify that each device is
+the intended, unused disk before applying this role; <code>pvcreate</code> may overwrite
+an existing disk signature.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-f6ba6722e5465a9ef61d0da23727ada6">27.1 - Defaults</h1>
+    <div class="lead">Defaults for lvg</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">lvg_volume_groups</span>: []
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-b532322fe69e751ad3d298d87b7a6b16">28 - lvol</h1>
+    <div class="lead">Setup LVM logical volumes</div>
+	<p>Each <code>lvol_volumes</code> entry can constrain allocation with <code>pvs</code>, pass creation
+arguments with <code>opts</code>, and disable shrinking with <code>shrink: false</code>.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-b9e1cc0a62ee53569f03431b71de8273">28.1 - Defaults</h1>
+    <div class="lead">Defaults for lvol</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">lvol_volumes</span>: []
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-4a4b7b5ef0e0187c3c5420d669484a7d">29 - Mount</h1>
+    <div class="lead">Setup posix mounts</div>
+	<p>Mount entries can set <code>opts</code>, <code>dump</code>, and <code>passno</code>; <code>state: mounted</code> keeps the
+mount active and writes its persistent <code>/etc/fstab</code> entry.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-c4d6ea46c48ad096d36834b2c8e0f1b9">29.1 - Defaults</h1>
+    <div class="lead">Defaults for mount</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">mount_points</span>: []
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-2faf89637ce45c3c11978a03f34df8fb">30 - Opencode</h1>
+    <div class="lead">Opencode</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-5a088df76aacc7d9a1626a718d95b89b">30.1 - Defaults</h1>
+    <div class="lead">Defaults for opencode</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">opencode_user</span>: <span style="color:#ae81ff">opencode</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">opencode_user_uid</span>: <span style="color:#ae81ff">8149</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">opencode_dir</span>: <span style="color:#e6db74">&#34;/opt/opencode&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">opencode_port</span>: <span style="color:#ae81ff">4096</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">opencode_domain</span>: <span style="color:#e6db74">&#34;{{ undefined() }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">opencode_log_dir</span>: <span style="color:#e6db74">&#34;{{ opencode_dir }}/logs&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">opencode_work_dir</span>: <span style="color:#e6db74">&#34;{{ opencode_dir }}/work&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">opencode_home_dir</span>: <span style="color:#e6db74">&#34;{{ opencode_dir }}/home&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">opencode_config_dir</span>: <span style="color:#e6db74">&#34;{{ opencode_home_dir }}/.config/opencode&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">opencode_config_path</span>: <span style="color:#e6db74">&#34;{{ opencode_config_dir }}/opencode.json&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">opencode_config_local_path</span>: <span style="color:#e6db74">&#34;files/opencode.json&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">opencode_disk</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">opencode_service_path</span>: <span style="color:#e6db74">&#34;/lib/systemd/system/opencode.service&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">opencode_bin_local_path</span>: <span style="color:#e6db74">&#34;{{ role_path }}/files/opencode&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">opencode_bin_path</span>: <span style="color:#ae81ff">/usr/bin/opencode</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">opencode_env_path</span>: <span style="color:#e6db74">&#34;{{ opencode_config_dir }}/opencode.env&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">opencode_env_override</span>: {}
+</span></span><span style="display:flex;"><span><span style="color:#f92672">opencode_ssh_public_key</span>: <span style="color:#e6db74">&#34;{{ undefined() }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">opencode_ssh_private_key</span>: <span style="color:#e6db74">&#34;{{ undefined() }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">opencode_server_username</span>: <span style="color:#e6db74">&#34;{{ undefined() }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">opencode_server_password</span>: <span style="color:#e6db74">&#34;{{ undefined() }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">opencode_env</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">OPENCODE_SERVER_USERNAME</span>: <span style="color:#e6db74">&#34;{{ opencode_server_username }}&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">OPENCODE_SERVER_PASSWORD</span>: <span style="color:#e6db74">&#34;{{ opencode_server_password }}&#34;</span>
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-8f16ed99dffc054d82e681e91d9a5bbb">31 - OpenHands automation</h1>
+    <div class="lead">OpenHands automation server</div>
+	<p>Runs the OpenHands automation server natively from a <code>uv</code>-managed virtual
+environment. It stores schedules and event triggers, tracks run lifecycle, and
+dispatches conversations to the agent server.</p>
+<p>The automation server is not a sandbox. It records which agent server should
+run a dispatched conversation and hands that work to
+<code>AUTOMATION_AGENT_SERVER_URL</code>; setting that variable selects the agent
+server&rsquo;s local mode, which uses a persistent local agent server instead of
+managed OpenHands Cloud sandboxes.</p>
+<p><code>openhands_automation_agent_server_api_key</code> must equal the agent server&rsquo;s
+session API key because both services authenticate the same
+<code>X-Session-API-Key</code> value. <code>openhands_automation_local_api_key</code> is the key
+browsers present to this service.</p>
+<p>The service stores state in SQLite via <code>AUTOMATION_DB_URL</code> by default, which
+local mode supports without a separate database role. Set
+<code>openhands_automation_database_url</code> to a PostgreSQL URL to use one instead.
+<code>openhands_automation_kv_secret</code> enables the automation key-value store and is
+required for automations that persist state between runs.</p>
+<p><code>openhands_automation_base_url</code> is the externally reachable origin the service
+appends <code>/api/automation</code> to when it builds callback URLs, so it must be the
+origin the browser and the dispatched agent server side both use.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-100d3badbacb25a3a7c5e33be04db89b">31.1 - Defaults</h1>
+    <div class="lead">Defaults for openhands_automation</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">openhands_automation_user</span>: <span style="color:#ae81ff">openhands</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_automation_user_uid</span>: <span style="color:#ae81ff">8154</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_automation_dir</span>: <span style="color:#ae81ff">/opt/openhands-automation</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_automation_home_dir</span>: <span style="color:#e6db74">&#34;{{ openhands_automation_dir }}/home&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_automation_work_dir</span>: <span style="color:#e6db74">&#34;{{ openhands_automation_dir }}/work&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_automation_state_dir</span>: <span style="color:#e6db74">&#34;{{ openhands_automation_dir }}/state&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_automation_disk</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_automation_packages</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">python3.12</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">uv</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_automation_host</span>: <span style="color:#ae81ff">127.0.0.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_automation_port</span>: <span style="color:#ae81ff">18001</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_automation_version</span>: <span style="color:#e6db74">&#34;{{ undefined() }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_automation_agent_server_version</span>: <span style="color:#e6db74">&#34;{{ undefined() }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_automation_agent_server_url</span>: <span style="color:#e6db74">&#34;{{ undefined() }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_automation_sandbox_agent_server_url</span>: <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_automation_agent_server_api_key</span>: <span style="color:#e6db74">&#34;{{ undefined() }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_automation_base_url</span>: <span style="color:#e6db74">&#34;{{ undefined() }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_automation_local_api_key</span>: <span style="color:#e6db74">&#34;{{ undefined() }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_automation_kv_secret</span>: <span style="color:#e6db74">&#34;{{ undefined() }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_automation_database_url</span>: <span style="color:#e6db74">&#34;sqlite+aiosqlite:///{{ openhands_automation_state_dir }}/automations.db&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_automation_workspace_base</span>: <span style="color:#e6db74">&#34;{{ openhands_automation_work_dir }}/automations&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_automation_venv_dir</span>: <span style="color:#e6db74">&#34;{{ openhands_automation_dir }}/venv&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_automation_service_path</span>: <span style="color:#ae81ff">/lib/systemd/system/openhands-automation.service</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_automation_env_path</span>: <span style="color:#e6db74">&#34;{{ openhands_automation_dir }}/.env&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_automation_env</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">PYTHONUTF8</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">OPENHANDS_REMOTE_WS_READY_REQUIRED</span>: <span style="color:#e6db74">&#34;false&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">OPENHANDS_SUPPRESS_BANNER</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_automation_env_override</span>: {}
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-fb7d7237a70fc92a8cdf5d02f64f136e">32 - OpenHands canvas</h1>
+    <div class="lead">OpenHands Agent Canvas frontend</div>
+	<p>Runs the OpenHands Agent Canvas browser client from the published npm package.
+The service listens on loopback port <code>openhands_canvas_port</code>; TLS, the public
+hostname, and routing to the agent server and automation API belong to the
+deployment&rsquo;s Traefik role.</p>
+<p>The service runs the package&rsquo;s <code>scripts/static-server.mjs</code> directly with Node,
+an explicit loopback host, and the package&rsquo;s <code>build/</code> directory. It serves the
+browser client without starting an agent server, an automation server, or the
+npm launcher&rsquo;s additional ingress process. Agent Canvas owns no conversation
+or automation state and executes no tools.</p>
+<p>The browser starts with no configured backend. The operator adds one with the
+canvas origin as the host and the agent server&rsquo;s session key as the credential.
+The static server receives no session key and injects none into served assets.
+This configuration does not advertise an embedded VSCode editor.</p>
+<p>The npm prefix is installed inside <code>openhands_canvas_dir</code>.
+<code>openhands_canvas_package_dir</code> identifies the installed package containing the
+static server and browser assets.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-f2c07c1b38af02b3779f42b821b6e0df">32.1 - Defaults</h1>
+    <div class="lead">Defaults for openhands_canvas</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">openhands_canvas_user</span>: <span style="color:#ae81ff">openhands</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_canvas_user_uid</span>: <span style="color:#ae81ff">8153</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_canvas_dir</span>: <span style="color:#ae81ff">/opt/openhands-canvas</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_canvas_home_dir</span>: <span style="color:#e6db74">&#34;{{ openhands_canvas_dir }}/home&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_canvas_work_dir</span>: <span style="color:#e6db74">&#34;{{ openhands_canvas_dir }}/work&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_canvas_state_dir</span>: <span style="color:#e6db74">&#34;{{ openhands_canvas_dir }}/state&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_canvas_package_dir</span>: <span style="color:#e6db74">&#34;{{ openhands_canvas_dir }}/lib/node_modules/@openhands/agent-canvas&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_canvas_disk</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_canvas_packages</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">nodejs24</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">nodejs24-npm</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_canvas_host</span>: <span style="color:#ae81ff">127.0.0.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_canvas_port</span>: <span style="color:#ae81ff">8000</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_canvas_version</span>: <span style="color:#e6db74">&#34;{{ undefined() }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_canvas_service_path</span>: <span style="color:#ae81ff">/lib/systemd/system/openhands-canvas.service</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_canvas_env_path</span>: <span style="color:#e6db74">&#34;{{ openhands_canvas_dir }}/.env&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_canvas_env</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">NODE_ENV</span>: <span style="color:#ae81ff">production</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_canvas_env_override</span>: {}
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-2d602d34e7e5b7019c58368006db085e">33 - Openhands server</h1>
+    <div class="lead">OpenHands agent server</div>
+	<p>Runs the OpenHands agent server natively from a <code>uv</code>-managed virtual
+environment. It hosts conversations, executes tools, and streams events for
+Agent Canvas. The service binds loopback only; TLS and external reachability
+belong to the calling deployment.</p>
+<p>Set <code>openhands_server_secure</code> to <code>true</code> to require a session API key. The
+unsecured mode omits the session key and is only appropriate where the loopback
+boundary is trusted.</p>
+<p>The caller can set <code>openhands_server_install_packages</code> to <code>false</code> and install
+<code>openhands_server_packages</code> through its host-specific package workflow.
+OSTree hosts use the shared <code>dev_vm</code> package entry point and must boot into a
+deployment containing those dependencies before installing the service. They
+also set <code>openhands_server_service_path</code> under <code>/etc/systemd/system</code>.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-b3f999f9111671a6ecb52fddfafa9b31">33.1 - Defaults</h1>
+    <div class="lead">Defaults for openhands_server</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">openhands_server_user</span>: <span style="color:#ae81ff">openhands</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_server_user_uid</span>: <span style="color:#ae81ff">8152</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_server_dir</span>: <span style="color:#ae81ff">/opt/openhands-server</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_server_home_dir</span>: <span style="color:#e6db74">&#34;{{ openhands_server_dir }}/home&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_server_work_dir</span>: <span style="color:#e6db74">&#34;{{ openhands_server_dir }}/work&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_server_state_dir</span>: <span style="color:#e6db74">&#34;{{ openhands_server_dir }}/state&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_server_conversations_dir</span>: <span style="color:#e6db74">&#34;{{ openhands_server_state_dir }}/conversations&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_server_persistence_dir</span>: <span style="color:#e6db74">&#34;{{ openhands_server_state_dir }}/persistence&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_server_workspace_dir</span>: <span style="color:#e6db74">&#34;{{ openhands_server_work_dir }}/project&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_server_bash_events_dir</span>: <span style="color:#e6db74">&#34;{{ openhands_server_state_dir }}/bash_events&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_server_tools_dir</span>: <span style="color:#e6db74">&#34;{{ openhands_server_dir }}/tools&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_server_disk</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_server_secure</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_server_install_packages</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_server_packages</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">python3.12</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">uv</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_server_host</span>: <span style="color:#ae81ff">127.0.0.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_server_port</span>: <span style="color:#ae81ff">18000</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_server_version</span>: <span style="color:#e6db74">&#34;{{ undefined() }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_server_session_api_key</span>: <span style="color:#e6db74">&#34;{{ undefined() }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_server_secret_key</span>: <span style="color:#e6db74">&#34;{{ undefined() }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_server_import_modules</span>: <span style="color:#ae81ff">canvas_ui_tool</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_server_vscode_port</span>: <span style="color:#ae81ff">8001</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_server_vscode_base_path</span>: <span style="color:#ae81ff">/vscode</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_server_venv_dir</span>: <span style="color:#e6db74">&#34;{{ openhands_server_dir }}/venv&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_server_venv_python</span>: <span style="color:#e6db74">&#34;{{ openhands_server_venv_dir }}/bin/python&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_server_service_path</span>: <span style="color:#ae81ff">/lib/systemd/system/openhands-server.service</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_server_env_path</span>: <span style="color:#e6db74">&#34;{{ openhands_server_dir }}/.env&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">openhands_server_env</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">LOG_JSON</span>: <span style="color:#e6db74">&#34;true&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">PYTHONUTF8</span>: <span style="color:#e6db74">&#34;1&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">OPENHANDS_REMOTE_WS_READY_REQUIRED</span>: <span style="color:#e6db74">&#34;false&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">OH_PERSISTENCE_DIR</span>: <span style="color:#e6db74">&#34;{{ openhands_server_persistence_dir }}&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">OH_CONVERSATIONS_PATH</span>: <span style="color:#e6db74">&#34;{{ openhands_server_conversations_dir }}&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">OH_WORKSPACE_PATH</span>: <span style="color:#e6db74">&#34;{{ openhands_server_workspace_dir }}&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">OH_BASH_EVENTS_DIR</span>: <span style="color:#e6db74">&#34;{{ openhands_server_bash_events_dir }}&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">OH_SECRET_KEY</span>: <span style="color:#e6db74">&#34;{{ openhands_server_secret_key }}&#34;</span>
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-81cd85a6a11107a59ac2700f5626df64">34 - OS</h1>
+    <div class="lead">Common os setup</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-d90e69704a044104228b9bd720807f68">34.1 - Defaults</h1>
+    <div class="lead">Defaults for os</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">os_hardening_enabled</span>: <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-ccfef1c852adb3fdfbeaa6d6837b0f61">35 - Posgresql</h1>
+    <div class="lead">Setup Postgresql</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-aee59c3bc577b9587347f7b56ca553c5">35.1 - Defaults</h1>
+    <div class="lead">Defaults for postgresql</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">postgresql_packages</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">postgresql-server</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">postgresql-contrib</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">postgresql_service</span>: <span style="color:#ae81ff">postgresql</span>
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-739f1b451351381b851c6f249f6fc808">36 - Pve</h1>
+    <div class="lead">Proxmox Virtual Environment deploy</div>
+	<h2 id="print-da7b96794fe0cf8d07f5bdce65efaa50-links">Links<a class="td-heading-self-link" href="#print-da7b96794fe0cf8d07f5bdce65efaa50-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Install guide: <a href="https://pve.proxmox.com/wiki/Install_Proxmox_VE_on_Debian_13_Trixie">https://pve.proxmox.com/wiki/Install_Proxmox_VE_on_Debian_13_Trixie</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-8564db10a71fc5786f849671abe0e156">36.1 - Defaults</h1>
+    <div class="lead">Defaults for pve</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">pve_repo_keyring_path</span>: <span style="color:#ae81ff">/usr/share/keyrings/proxmox-archive-keyring.gpg</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_repo_path</span>: <span style="color:#ae81ff">/etc/apt/sources.list.d/pve-install-repo.sources</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_repo_keyring_url</span>: <span style="color:#ae81ff">https://enterprise.proxmox.com/debian/proxmox-archive-keyring-trixie.gpg</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_repo_keyring_checksum</span>: <span style="color:#e6db74">&#34;sha256:136673be77aba35dcce385b28737689ad64fd785a797e57897589aed08db6e45&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_snippets_dir</span>: <span style="color:#ae81ff">/var/lib/vz/snippets</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_snippets</span>: []
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_repo_content</span>: |<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  Types: deb
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  URIs: http://download.proxmox.com/debian/pve
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  Suites: trixie
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  Components: pve-no-subscription
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  Signed-By: {{ pve_repo_keyring_path }}</span>
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-17e405829e07a73eec1091b7b246a811">37 - PVE cluster</h1>
+    <div class="lead">Setup PVE cluster</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-d67bf79c871dbdfcbf94618fa898fee3">37.1 - Defaults</h1>
+    <div class="lead">Defaults for pve_cluster</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">pve_cluster_remove_repos</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">pve-enterprise.list </span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">ceph.list</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_cluster_add_repos</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">pve-no-subscription</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">value</span>: <span style="color:#ae81ff">deb http://download.proxmox.com/debian/pve bookworm pve-no-subscription</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">ceph-squid</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">value</span>: <span style="color:#ae81ff">deb http://download.proxmox.com/debian/ceph-squid bookworm no-subscription</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_cluster_node_config</span>: []
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_cluster_admins</span>: []
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_cluster_cluster_name</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_cluster_acme_accounts</span>: []
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_cluster_acme_plugins</span>: []
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_cluster_venv_dir</span>: <span style="color:#ae81ff">/opt/ansible/pve_cluster_venv</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_cluster_venv_packages</span>: 
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">pexpect</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_cluster_base_image_dir</span>: <span style="color:#ae81ff">/var/lib/vz/template</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_cluster_node_name</span>: <span style="color:#e6db74">&#34;{{ inventory_hostname | mandatory | split(&#39;.&#39;) | first }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_cluster_ceph_enabled</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_cluster_ceph_repository</span>: <span style="color:#66d9ef">no</span>-<span style="color:#ae81ff">subscription</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_cluster_ceph_osd</span>: []
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_cluster_ceph_pools</span>: []
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_cluster_ceph_mon</span>: []
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_cluster_ceph_mgr</span>: []
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_cluster_ceph_mds</span>: []
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_cluster_storages</span>: []
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_cluster_storage_config_path</span>: <span style="color:#ae81ff">/etc/pve/storage.cfg</span>
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-ca3da3c1ba5fb5da1f283e57dbb393b9">38 - PVE VM</h1>
+    <div class="lead">Setup PVE VM</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-1038e347d9491190d1fef56cdc6469f8">38.1 - Defaults</h1>
+    <div class="lead">Defaults for pve_vm</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">pve_vm_agent</span>: 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_vm_name</span>: <span style="color:#e6db74">&#34;{{ inventory_hostname }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_vm_delegate_update_known_hosts</span>: <span style="color:#ae81ff">localhost</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_vm_delegate_pve</span>: 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_vm_set</span>: <span style="color:#e6db74">&#34;{{ pve_vm_set_default + pve_vm_set_additional }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_vm_set_default</span>: []
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_vm_set_additional</span>: []
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_vm_set_creation</span>: <span style="color:#e6db74">&#34;{{ pve_vm_set_creation_default + pve_vm_set_creation_additional }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_vm_set_creation_default</span>: []
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_vm_set_creation_additional</span>: []
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_vm_resize</span>: []
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_vm_venv_dir</span>: <span style="color:#e6db74">&#34;/opt/ansible/pve_vm_venv&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_vm_init_user</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pve_vm_venv_packages</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">proxmoxer</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">requests</span>
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-64980a72cc74b50f841ad4687789acdf">39 - PVE VM remove</h1>
+    <div class="lead">Remove PVE VM</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-703b55defb376903ababd3202b7a958f">39.1 - Defaults</h1>
+    <div class="lead">Defaults for pve_vm_remove</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-b591ef4b5b69e8540a2eacfd64b7910b">40 - Raspberry pi</h1>
+    <div class="lead">Setup raspberry pi</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-0a950c5bb25da1b69e51de2927e9df59">40.1 - Defaults</h1>
+    <div class="lead">Defaults for raspberry_pi</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">raspberry_pi_argon_enabled</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">raspberry_pi_containers_enabled</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">raspberry_pi_argon_eeprom_script_path</span>: <span style="color:#ae81ff">/usr/local/bin/argon_argon_eeprom.sh</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">raspberry_pi_argon_argon1_script_path</span>: <span style="color:#ae81ff">/usr/local/bin/argon_argon1.sh</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">raspberry_pi_cmdline_path</span>: <span style="color:#ae81ff">/boot/firmware/cmdline.txt</span>
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-30a1060fb79f9cb980286abd5f8e426c">41 - SSH</h1>
+    <div class="lead">Setup ssh</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-29c97f0a38749962edd84ec904e3d79d">41.1 - Defaults</h1>
+    <div class="lead">Defaults for ssh</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">ssh_hardening_enabled</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">ssh_vault_mount</span>: <span style="color:#ae81ff">ssh/servers</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">ssh_vault_role</span>: <span style="color:#e6db74">&#34;{{ undefined }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">ssh_sign_ignore_errors</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">ssh_valid_principals</span>: []
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-0a5e3196a671524154fb7d4dd62777e7">42 - SSH port forwarding</h1>
+    <div class="lead">Setup SSH port forwarding</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-dbc6a0cb7660b05fe7144cf801836b1f">42.1 - Defaults</h1>
+    <div class="lead">Defaults for ssh_port_forward</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">ssh_port_forward_local_addr</span>: <span style="color:#ae81ff">127.0.0.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">ssh_port_forward_script_path</span>: <span style="color:#ae81ff">/usr/local/bin/ssh-port-forward</span>
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-e6c943af3ee2deb48964eba01ea05920">43 - SSH update known hosts</h1>
+    <div class="lead">Update known hosts</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-083f8862e92b5e12065dc0ae806fb880">43.1 - Defaults</h1>
+    <div class="lead">Defaults for ssh_update_known_hosts</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">ssh_update_known_hosts_hosts</span>: []
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-7b517b2a48241ac82a260fd1374e7e58">44 - T3 Code</h1>
+    <div class="lead">Run the T3 Code server as a systemd service</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-37b088e02f219bf0cb82141a8f007232">44.1 - Defaults</h1>
+    <div class="lead">Defaults for t3code</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">t3code_user</span>: <span style="color:#ae81ff">t3code</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">t3code_user_uid</span>: <span style="color:#ae81ff">8151</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">t3code_dir</span>: <span style="color:#ae81ff">/opt/t3code</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">t3code_home_dir</span>: <span style="color:#e6db74">&#34;{{ t3code_dir }}/home&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">t3code_work_dir</span>: <span style="color:#e6db74">&#34;{{ t3code_dir }}/work&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">t3code_disk</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">t3code_port</span>: <span style="color:#ae81ff">5120</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">t3code_version</span>: <span style="color:#e6db74">&#34;{{ undefined() }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">t3code_state_dir</span>: <span style="color:#e6db74">&#34;{{ t3code_dir }}/state&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">t3code_auth_token</span>: <span style="color:#e6db74">&#34;{{ undefined() }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">t3code_service_path</span>: <span style="color:#ae81ff">/lib/systemd/system/t3code.service</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">t3code_env_path</span>: <span style="color:#e6db74">&#34;{{ t3code_dir }}/.env&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">t3code_env</span>: {}
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-8c1b9c9270f159fcca7a1514b870376f">45 - Traefik</h1>
+    <div class="lead">Traefik</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-64c36144da7ca469126b8b4625766582">45.1 - Defaults</h1>
+    <div class="lead">Defaults for traefik</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">traefik_user</span>: <span style="color:#ae81ff">traefik</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_no_user</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_owner</span>: <span style="color:#ae81ff">root</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_user_uid</span>: <span style="color:#ae81ff">3578</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_dir</span>: <span style="color:#e6db74">&#34;/opt/traefik&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_log_dir</span>: <span style="color:#e6db74">&#34;{{ traefik_dir }}/logs&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_data_dir</span>: <span style="color:#e6db74">&#34;{{ traefik_dir }}/data&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_tls_dir</span>: <span style="color:#e6db74">&#34;{{ traefik_dir }}/tls&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_disk</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_mtls_ca_local_path</span>: <span style="color:#e6db74">&#34;{{ role_path }}/files/traefik_mtls_ca.crt&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_mtls_ca_path</span>: <span style="color:#e6db74">&#34;{{ traefik_tls_dir }}/mtls_ca.crt&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_acme_path</span>: <span style="color:#e6db74">&#34;{{ undefined }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_config_dir</span>: <span style="color:#e6db74">&#34;{{ traefik_dir }}/configs&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_config_path</span>: <span style="color:#e6db74">&#34;{{ traefik_config_dir }}/traefik.toml&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_disable_eab</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_config_local_path</span>: <span style="color:#e6db74">&#34;files/traefik.toml&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_dynamic_config_path</span>: <span style="color:#e6db74">&#34;{{ traefik_config_dir }}/traefik_dynamic.toml&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_dynamic_config_local_path</span>: <span style="color:#e6db74">&#34;files/traefik_dynamic.toml&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_service_path</span>: <span style="color:#e6db74">&#34;/lib/systemd/system/traefik.service&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_service_scope</span>: <span style="color:#ae81ff">system</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_bin_local_path</span>: <span style="color:#e6db74">&#34;{{ role_path }}/files/traefik&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_bin_path</span>: <span style="color:#ae81ff">/usr/bin/traefik</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_vault_bin_local_path</span>: <span style="color:#e6db74">&#34;{{ role_path }}/files/vault&#34;</span>
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-4de9e089ea6df40baefc1b5b76c8ed26">46 - Traefik (old)</h1>
+    <div class="lead">Old traefik role</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-097cf66cf2e33f82f65b95df93467657">46.1 - Defaults</h1>
+    <div class="lead">Defaults for traefik_old</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">traefik_user</span>: <span style="color:#ae81ff">traefik</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_user_uid</span>: <span style="color:#ae81ff">3653</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_env</span>: {}
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_data_dir</span>: <span style="color:#ae81ff">/mnt/traefik</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_log_dir</span>: <span style="color:#e6db74">&#34;/var/log/traefik&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_certificates_dir</span>: <span style="color:#e6db74">&#34;{{ traefik_data_dir }}/certificates&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_configs_dir</span>: <span style="color:#e6db74">&#34;{{ traefik_data_dir }}/configs&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_configs_version</span>: <span style="color:#e6db74">&#34;{{ lookup(&#39;ansible.builtin.pipe&#39;, &#39;git rev-parse HEAD&#39;) }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_configs_dynamic_dir</span>: <span style="color:#e6db74">&#34;{{ traefik_configs_cur_dir }}/dynamic&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_configs_dynamic_dir_symlink</span>: <span style="color:#e6db74">&#34;{{ traefik_configs_symlink }}/dynamic&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_configs_cur_dir_name</span>: <span style="color:#e6db74">&#34;{{ traefik_configs_version }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_configs_cur_dir</span>: <span style="color:#e6db74">&#34;{{ traefik_configs_dir }}/{{ traefik_configs_cur_dir_name }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_configs_symlink</span>: <span style="color:#e6db74">&#34;{{ traefik_configs_dir }}/current&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_static_config_path</span>: <span style="color:#e6db74">&#34;{{ traefik_configs_symlink }}/traefik.yaml&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_releases_dir</span>: <span style="color:#ae81ff">/opt/traefik/releases</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_static_config</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_dynamic_configs</span>: []
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_release_version</span>: <span style="color:#ae81ff">v3.3.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_release_dir_name</span>: <span style="color:#e6db74">&#34;{{ traefik_release_version }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_release_dir</span>: <span style="color:#e6db74">&#34;{{ traefik_releases_dir }}/{{ traefik_release_dir_name }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_release_symlink</span>: <span style="color:#e6db74">&#34;{{ traefik_releases_dir }}/current&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_release_symlink_bin</span>: <span style="color:#e6db74">&#34;{{ traefik_release_symlink }}/traefik&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_release_archive_name</span>: <span style="color:#e6db74">&#34;traefik_{{ traefik_release_version }}_linux_amd64&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_release_archive_full</span>: <span style="color:#e6db74">&#34;traefik_{{ traefik_release_version }}_linux_amd64.tar.gz&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_release_bin_path</span>: <span style="color:#e6db74">&#34;{{ traefik_release_dir }}/traefik&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_release_download_url</span>: <span style="color:#e6db74">&#34;https://github.com/traefik/traefik/releases/download/{{ traefik_release_version }}/{{ traefik_release_archive_full }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">traefik_release_download_checksum</span>: <span style="color:#ae81ff">sha256:27fd502a8d80fc81b97faf5cebd7a1cbc1a2c5369d18e0f4471a66d1a8c139ce</span>
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-17a4d2717c20f3b83ef3b560e84d88b2">47 - Update all packages</h1>
+    <div class="lead">Update all system packages</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-2847c001f3a68d2b412fe1f456ef83af">47.1 - Defaults</h1>
+    <div class="lead">Defaults for update_all_packages</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-223eb1fd50fcaae788edd245a26950b5">48 - Users</h1>
+    <div class="lead">Setup system users</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-0a03a2cb41721fbbb4cc7b575e99682b">48.1 - Defaults</h1>
+    <div class="lead">Defaults for users</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">users_regular</span>: {}
+</span></span><span style="display:flex;"><span><span style="color:#f92672">users_remove</span>: {}
+</span></span><span style="display:flex;"><span><span style="color:#f92672">users_admins</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">ansible</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">ansible</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">disable_passwd</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">sudo_no_passwd</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">users_ssh_keys</span>: {}
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-cb528d56ecec0a9c20bb4bddddd23208">49 - Vault</h1>
+    <div class="lead">Setup Hashicorp Vault</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-26a8a6b79522c1530b2b2867d0dac032">49.1 - Defaults</h1>
+    <div class="lead">Defaults for vault</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">vault_user</span>: <span style="color:#ae81ff">vault</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">vault_user_uid</span>: <span style="color:#ae81ff">3123</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">vault_dir</span>: <span style="color:#e6db74">&#34;/opt/vault&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">vault_data_dir</span>: <span style="color:#e6db74">&#34;{{ vault_dir }}/data&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">vault_raft_dir</span>: <span style="color:#e6db74">&#34;{{ vault_dir }}/raft&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">vault_config_dir</span>: <span style="color:#e6db74">&#34;{{ vault_dir }}/configs&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">vault_config_path</span>: <span style="color:#e6db74">&#34;{{ vault_config_dir }}/vault.hcl&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">vault_config_local_path</span>: <span style="color:#e6db74">&#34;files/vault.hcl&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">vault_log_dir</span>: <span style="color:#e6db74">&#34;{{ vault_dir }}/logs&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">vault_tls_dir</span>: <span style="color:#e6db74">&#34;{{ vault_dir }}/tls&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">vault_service_path</span>: <span style="color:#e6db74">&#34;/lib/systemd/system/vault.service&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">vault_tls_client_ca_file_local_path</span>: <span style="color:#ae81ff">files/tls_client_ca_file.pem</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">vault_tls_client_ca_file_path</span>: <span style="color:#e6db74">&#34;{{ vault_tls_dir }}/tls_client_ca_file.pem&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">vault_tls_cert_file_path</span>: <span style="color:#e6db74">&#34;{{ vault_tls_dir }}/tls_cert_file.pem&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">vault_tls_key_file_path</span>: <span style="color:#e6db74">&#34;{{ vault_tls_dir }}/tls_key_file.pem&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">vault_tls_issue_path</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">vault_tls_alt_names</span>: <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">vault_bin_local_path</span>: <span style="color:#e6db74">&#34;{{ role_path }}/files/vault&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">vault_bin_path</span>: <span style="color:#ae81ff">/usr/bin/vault</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">vault_peers_write</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">vault_peers_local_path</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">vault_peers_remote_path</span>: <span style="color:#e6db74">&#34;{{ vault_raft_dir }}/raft/peers.json&#34;</span>
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-143d4797f9b8079b3ab27d7445d99320">50 - Wireguard</h1>
+    <div class="lead">Setup wireguard</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-c56e62cca984605c452317c05cdf57f6">50.1 - Defaults</h1>
+    <div class="lead">Defaults for wireguard</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">wireguard_dir</span>: <span style="color:#e6db74">&#34;/etc/wireguard&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">wireguard_local_config_paths</span>: []
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-c8e05c61db7c7cd176ffc9268956bd82">51 - Xray</h1>
+    <div class="lead">Setup xray</div>
+	<p>Links:</p>
+<ul>
+<li><a href="https://xtls.github.io/en/">https://xtls.github.io/en/</a></li>
+</ul>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-9b6da274af8561381ca8cbf5f469fad3">51.1 - Defaults</h1>
+    <div class="lead">Defaults for xray</div>
+	<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">xray_enabled</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">xray_config_dir</span>: <span style="color:#ae81ff">/usr/local/etc/xray</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">xray_log_dir</span>: <span style="color:#ae81ff">/var/log/xray</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">xray_config_path</span>: <span style="color:#e6db74">&#34;{{ xray_config_dir }}/0-main.json&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">xray_client_id</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">xray_wireguard_relays</span>: []
+</span></span><span style="display:flex;"><span><span style="color:#f92672">xray_wireguard_ipv4_address</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">xray_wireguard_ipv6_address</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">xray_wireguard_private_key</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">xray_config</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">xray_configs</span>: {}
+</span></span><span style="display:flex;"><span><span style="color:#f92672">xray_user</span>: <span style="color:#ae81ff">xray</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">xray_socket_dir</span>: <span style="color:#ae81ff">/var/shm/xray</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">xray_caddy_config_path</span>: <span style="color:#ae81ff">/etc/caddy/configs/xray.Caddyfile</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">xray_subscriptions_dir</span>: <span style="color:#ae81ff">/usr/local/etc/xray-subscriptions</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">xray_caddy_user</span>: <span style="color:#ae81ff">caddy</span>
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        Built with <a href="https://gohugo.io/">Hugo 0.165.0</a>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="/js/main.min.259204f469f58eb3b665605a24e964264772df2adaded180b3669b6ce33d84c8.js" integrity="sha256-JZIE9Gn1jrO2ZWBaJOlkJkdy3yra3tGAs2abbOM9hMg=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.decf3b53d8827d840369f490775626e2a5200e150a733f78f0081c126426cbbf.js" integrity="sha256-3s87U9iCfYQDafSQd1Ym4qUgDhUKcz948AgcEmQmy78=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

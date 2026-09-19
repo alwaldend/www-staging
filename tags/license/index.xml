@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>License on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/tags/license/</link>
+		<description>Recent content in License on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/tags/license/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>License</title>
+				<link>https://www-staging.alwaldend.com/docs/data/license/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/data/license/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

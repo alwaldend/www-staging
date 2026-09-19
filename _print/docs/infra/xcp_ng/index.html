@@ -1,0 +1,728 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js" data-theme-init>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000000">
+
+<style>
+  html { background: Canvas; color: CanvasText; }
+  @media (prefers-color-scheme: dark) {
+    html { background: #0b0d12; color: #e6e6e6; }
+  }
+  html[data-theme-init] * { transition: none !important; }
+</style>
+
+<script>
+  (function() {
+    const themeKey = 'td-color-theme';
+    const storedTheme = localStorage.getItem(themeKey);
+    let theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (theme === 'auto') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
+<link rel="canonical" type="text/html" href="https://www-staging.alwaldend.com/docs/infra/xcp_ng/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://www-staging.alwaldend.com/docs/infra/xcp_ng/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+<title>XCP-ng | Alwaldend</title>
+<meta name="description" content="XCP-ng infrastructure">
+<meta property="og:url" content="https://www-staging.alwaldend.com/docs/infra/xcp_ng/">
+	<meta property="og:site_name" content="Alwaldend">
+	<meta property="og:title" content="XCP-ng">
+	<meta property="og:description" content="XCP-ng infrastructure">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="XCP-ng">
+	<meta itemprop="description" content="XCP-ng infrastructure">
+	<meta itemprop="dateModified" content="2026-09-19T20:06:21+03:00">
+	<meta itemprop="wordCount" content="910">
+	<meta itemprop="keywords" content="Terraform,Xcp-Ng">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="XCP-ng">
+	<meta name="twitter:description" content="XCP-ng infrastructure">
+<link rel="preload" href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" as="style" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<link href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" rel="stylesheet" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll">
+<div class="td-navbar-container container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">Alwaldend</span></a>
+  <div class="td-navbar__main td-navbar-nav-scroll td-navbar-nav-scroll--indicator" id="main_navbar">
+    <div class="scroll-indicator scroll-left"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/projects/"><span>Projects</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item td-navbar__light-dark-menu">
+        <div class="td-light-dark-menu dropdown"><svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+<button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        title="Toggle theme (Auto)"
+        aria-label="Toggle theme (Auto)">
+  <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="bd-theme">
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
+      Light
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>
+      Dark
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+      <svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>
+      Auto
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+</ul>
+</div>
+
+      </li>
+      </ul>
+    <div class="scroll-indicator scroll-right"></div>
+  </div>
+  <div class="td-navbar__search d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon" aria-hidden="true"></div>
+  <input
+    type="search"
+    name="q"
+    class="td-search__input form-control"
+    placeholder='Search this site…'
+    aria-label='Search this site…'
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/infra/xcp_ng/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">XCP-ng</h1>
+<div class="lead">XCP-ng infrastructure</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-3d1c25cdada8f9c68821eda2e8cc3f73"></a></li>
+
+
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-54e4b5f8ef0b3b55342c1d194f10b60e"></a></li>
+
+
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-20a95b014b094a42ec41f4b923b24d6e">Terraform</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>4: <a href="#pg-04bdc1aeae9677c6e4b1ed106c9d55f1">Xen Orchestra certificates</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      <p>Terraform in <code>tf</code> manages a Xen Orchestra resource set for every
+entity in Vault&rsquo;s <code>approles</code> group, following <code>infra/pve/tf</code>. Resource sets
+are the XO grouping and delegation mechanism; XCP-ng host pools represent
+physical clusters and are not created per AppRole.</p>
+<p><code>resource_set_inventory</code> assigns a pool, template, storage repository and
+network by name to each AppRole. Native provider lookups resolve their IDs
+and reject ambiguous matches. Forgejo and OpenHands have assignments by default;
+other sets remain empty. Subjects are the exact synchronized OIDC users
+selected by Vault issuer and immutable AppRole entity UUID. Bootstrap has
+synchronized the 18 AppRole users; new AppRoles need their first OIDC login
+before Terraform can bind their sets. <code>resource_set_cpu_limit</code> defaults to
+32 CPUs per set. Creating a set does not allocate CPUs or storage.</p>
+<p>The provider is pinned to <code>vatesfr/xenorchestra</code> 0.41.0. The single
+<code>infra/xcp_ng/al.lua</code> configuration supplies administrator authentication for
+XCP-ng infrastructure operations: its named <code>xcp_ng</code> Vault AppRole injects
+<code>XOA_TOKEN</code> from key <code>xoa_token</code> in
+<code>secrets/alwaldend.com/vault1/approles/src_infra_xcp_ng/xoa</code>.
+Forgejo instead uses its own Vault identity through the
+<a href="cmd/xo_login/README.md">XO login plugin</a>, which issues an invocation-scoped
+XO session and revokes it on shutdown. It retains its own Terraform backend
+and does not inherit the infrastructure administrator token. Token values
+are not Terraform inputs or outputs.</p>
+<p>The default endpoint is <code>wss://xoa.xcp-ng.alwaldend.com</code>. DNS maps the XO
+appliance to <code>192.168.1.206</code> and the XCP-ng host to <code>192.168.1.213</code>.
+TLS verification is enabled. <code>xoa_insecure</code> is an explicit temporary
+bootstrap override for an appliance whose certificate has not been replaced.
+The HTTP backend stores state under the AppRole&rsquo;s <code>tf_backend</code> Vault path.</p>
+<h2 id="print-a5f61c6f77b362000863e6095dc97a9a-oidc-and-certificates">OIDC and certificates<a class="td-heading-self-link" href="#print-a5f61c6f77b362000863e6095dc97a9a-oidc-and-certificates" aria-label="Heading self-link"></a></h2><p><code>infra/vault/tf</code> owns the <code>src_infra_xcp_ng_provider</code> OIDC client, the
+<code>src_infra_xcp_ng_users</code> and <code>src_infra_xcp_ng_admins</code> groups, and the
+<code>src_infra_xcp_ng_pki_server</code> ACME role. Apply those scoped prerequisites
+before the XO configuration. The callback is
+<code>https://xoa.xcp-ng.alwaldend.com/signin/oidc/callback</code>.</p>
+<p>XO must have the <code>auth-oidc</code> plugin installed and trust Vault&rsquo;s CA. The
+Terraform provider has no plugin resource, so <code>terraform_data.oidc</code> invokes
+the packaged Go JSON-RPC helper directly, without a shell. It configures
+Vault discovery, the client, and the <code>user groups</code> scopes, enables autoload,
+and verifies the plugin is loaded. The OIDC client secret remains sensitive
+and is stored in the Vault-protected Terraform state. The provisioner signs
+the XCP-ng AppRole in through Vault to create the synchronized OIDC groups.
+Plugin reconciliation runs when configuration or the helper binary changes,
+without native drift refresh. Use <code>-replace=terraform_data.oidc</code> to reapply
+after manual plugin drift.</p>
+<p>Native <code>xenorchestra_acl</code> resources manage the administrators group&rsquo;s pool
+permissions. An import block adopts matching existing ACLs using their
+discovered API IDs. The helper only reads these ACLs; it does not change them.
+The users group grants login eligibility, with membership refreshed at login.
+Per-AppRole resource-set membership and existing VM ownership use direct user
+subjects. The Forgejo user receives administration permission on its own VM;
+no shared pool-wide view grant is configured.</p>
+<p>The helper remains for gaps in the pinned provider: OIDC plugin configuration
+and bootstrap, discovery of external identity subjects and synchronized
+groups, host registration, prepared VHD template import, and diagnostics.
+Resources, ACLs and named infrastructure lookups use the native provider.</p>
+<p>The resource-set management page is
+<a href="https://xoa.xcp-ng.alwaldend.com/#/self">Self Service</a>. In the deployed XO
+source revision <code>961b505cfb74cbf24aaeb8d61c5613f97e78de2c</code>, its
+<a href="https://github.com/vatesfr/xen-orchestra/blob/961b505cfb74cbf24aaeb8d61c5613f97e78de2c/packages/xo-web/src/xo-app/menu/index.js#L298">menu entry</a>
+requires a global administrator. The
+<a href="https://github.com/vatesfr/xen-orchestra/blob/961b505cfb74cbf24aaeb8d61c5613f97e78de2c/packages/xo-web/src/xo-app/self/index.js#L697">page</a>
+also requires <code>XOA_PLAN &gt; 3</code>, corresponding to
+<a href="https://github.com/vatesfr/xen-orchestra/blob/961b505cfb74cbf24aaeb8d61c5613f97e78de2c/packages/xo-web/src/common/xoa-plans.js">Premium or Community</a>.
+The runtime edition has not been verified. Pool-level administrator ACLs do
+not satisfy the page&rsquo;s global-administrator requirement.</p>
+<p>The <a href="/docs/infra/xcp_ng/ansible/">certificate playbook</a> uses Certbot with Vault EAB,
+installs XO&rsquo;s Vault CA trust, and configures renewal. It requires appliance
+SSH access and inspected HTTPS certificate paths. Initial issuance and
+renewal briefly interrupt XO management access, not running guest VMs.</p>
+<h2 id="print-a5f61c6f77b362000863e6095dc97a9a-commands">Commands<a class="td-heading-self-link" href="#print-a5f61c6f77b362000863e6095dc97a9a-commands" aria-label="Heading self-link"></a></h2><p>The XO server must be connected to an XCP-ng host before discovering
+templates or creating VMs. <code>xo_inspect</code> prints selected operational metadata
+without credentials or plugin configuration:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>XOA_URL<span style="color:#f92672">=</span>wss://xoa.xcp-ng.alwaldend.com bazel_agent bazel run //infra/xcp_ng:xo_inspect
+</span></span><span style="display:flex;"><span>bazel_agent bazel run //infra/xcp_ng/tf:tf.plan
+</span></span><span style="display:flex;"><span>bazel_agent bazel run //infra/xcp_ng/tf:tf.apply
+</span></span><span style="display:flex;"><span>bazel_agent bazel test //infra/xcp_ng/tf:tf_tests.fmt_test //infra/xcp_ng/cmd/xo_config:xo_config_test
+</span></span></code></pre></div><p>Formatting and helper tests run without live authentication. See
+<a href="/docs/infra/forgejo/tf_setup/">Forgejo provisioning</a> for VM prerequisites.</p>
+<p>To register <code>host1</code>, store its <code>xcpng_username</code> and <code>xcpng_password</code> fields
+in <code>secrets/alwaldend.com/vault1/approles/src_infra_xcp_ng/host1</code>, then run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>XOA_URL<span style="color:#f92672">=</span>wss://xoa.xcp-ng.alwaldend.com XCPNG_HOST<span style="color:#f92672">=</span>192.168.1.213 bazel_agent bazel run //infra/xcp_ng:xo_register_host
+</span></span></code></pre></div><p>The command uses the XOA token to register the host and supplies its separate
+host credentials through AL. It waits for a connected pool and leaves an
+already connected host unchanged. Duplicate registrations are rejected.
+<code>XCPNG_INSECURE=true</code> explicitly allows the host&rsquo;s bootstrap certificate;
+<code>XOA_INSECURE=true</code> separately controls verification of XO&rsquo;s certificate.</p>
+<p><code>//infra/xcp_ng:xo_import_template</code> imports the repository-pinned image from
+<code>//third_party/org_fedora_cloud</code> through XO&rsquo;s disk-upload API. Supply
+<code>XO_TEMPLATE_SHA256</code> from the image&rsquo;s pinned checksum, <code>XO_TEMPLATE_SR</code>,
+<code>XO_BASE_TEMPLATE_ID</code> (a diskless Generic Linux BIOS template), and
+<code>XO_TEMPLATE_NAME</code>, together with <code>XOA_URL</code>. The host must support QCOW2
+imports. The command verifies the image before creating anything, creates an
+unbooted template with only a boot disk at device 0, and verifies the final
+disk layout. It rejects incomplete or conflicting prior imports for inspection.
+This keeps cloud-init fresh for cloned VMs and prevents empty CD drives from
+shifting the Forgejo data disks to unexpected device names.</p>
+<p>Older XO releases, including 5.192.1, require VHD rather than QCOW2 uploads.
+For those releases, convert the pinned image to dynamic VHD in task-private
+scratch, verify the decoded contents against the original with <code>qemu-img compare</code>, and record the converter version and converted file&rsquo;s SHA256.
+Use <code>//infra/xcp_ng:xo_import_prepared_template</code> with <code>XO_TEMPLATE_IMAGE</code>
+set to the absolute converted path, <code>XO_TEMPLATE_FORMAT=vhd</code>, and
+<code>XO_TEMPLATE_SHA256</code> set to the converted checksum. The other inputs are
+the same as for the pinned-image importer.</p>
+<p>An interrupted import can resume on an inspected empty, halted task VM by
+setting <code>XO_TEMPLATE_RESUME_ID</code>, <code>XO_TEMPLATE_PREVIOUS_FORMAT</code>, and
+<code>XO_TEMPLATE_PREVIOUS_SHA256</code> to its exact prior identity and image marker.
+Resume preserves that VM and refuses any attached disk or network interface.</p>
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-3d1c25cdada8f9c68821eda2e8cc3f73">1 - </h1>
+    
+	<h1 id="print-fc99bcdbc54d2d044f2190f11fa5f5cb-xcp-ng-infrastructure-specification">XCP-ng infrastructure Specification<a class="td-heading-self-link" href="#print-fc99bcdbc54d2d044f2190f11fa5f5cb-xcp-ng-infrastructure-specification" aria-label="Heading self-link"></a></h1><h2 id="print-fc99bcdbc54d2d044f2190f11fa5f5cb-purpose">Purpose<a class="td-heading-self-link" href="#print-fc99bcdbc54d2d044f2190f11fa5f5cb-purpose" aria-label="Heading self-link"></a></h2><p>Specify Xen Orchestra resource delegation, scoped authentication, and
+certificate deployment owned by <code>infra/xcp_ng</code>. The baseline is checked-in
+source at revision <code>550d7e79b1f5fdbc2b6017b75178471d6914082f</code>, observed on
+2026-09-08. Existing operational observations in project documentation are
+historical context; this baseline does not verify current deployment, edition,
+identity synchronization, or service health.</p>
+<h2 id="print-fc99bcdbc54d2d044f2190f11fa5f5cb-requirements">Requirements<a class="td-heading-self-link" href="#print-fc99bcdbc54d2d044f2190f11fa5f5cb-requirements" aria-label="Heading self-link"></a></h2><h3 id="print-fc99bcdbc54d2d044f2190f11fa5f5cb-requirement-approle-resource-sets-with-named-inventory">Requirement: AppRole resource sets with named inventory<a class="td-heading-self-link" href="#print-fc99bcdbc54d2d044f2190f11fa5f5cb-requirement-approle-resource-sets-with-named-inventory" aria-label="Heading self-link"></a></h3><p>Terraform SHALL declare one Xen Orchestra resource set per entity in Vault&rsquo;s
+<code>approles</code> group. Each set SHALL contain its explicitly assigned template,
+storage repository, and network resolved by names within the selected pool;
+unassigned sets SHALL contain no inventory objects. Each set SHALL have a
+positive integer CPU quota, defaulting to 32. These resource sets SHALL
+represent delegation groups rather than new physical host pools.</p>
+<p>Sources: <a href="../../../tf/pools.tf">resource sets</a>,
+<a href="../../../tf/inventory.tf">named inventory</a>, and
+<a href="/docs/infra/xcp_ng/">project contract</a>.</p>
+<h4 id="print-fc99bcdbc54d2d044f2190f11fa5f5cb-scenario-an-approle-has-no-assigned-inventory">Scenario: An AppRole has no assigned inventory<a class="td-heading-self-link" href="#print-fc99bcdbc54d2d044f2190f11fa5f5cb-scenario-an-approle-has-no-assigned-inventory" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> an AppRole exists in Vault&rsquo;s group but has no <code>resource_set_inventory</code> entry</li>
+<li><strong>THEN</strong> its resource set contains no assigned inventory objects and retains
+the configured CPU quota.</li>
+</ul>
+<h3 id="print-fc99bcdbc54d2d044f2190f11fa5f5cb-requirement-immutable-oidc-subjects-and-explicit-existing-vm-ownership">Requirement: Immutable OIDC subjects and explicit existing-VM ownership<a class="td-heading-self-link" href="#print-fc99bcdbc54d2d044f2190f11fa5f5cb-requirement-immutable-oidc-subjects-and-explicit-existing-vm-ownership" aria-label="Heading self-link"></a></h3><p>Resource-set membership SHALL select the exact synchronized OIDC user by Vault
+issuer and immutable AppRole entity UUID. AppRoles without synchronized users
+SHALL be reported in <code>approles_pending_oidc_login</code> and have no resource-set
+subjects. Existing-VM owner ACLs SHALL require exactly one VM matching the
+hostname and owning AppRole tag within its named pool, and SHALL grant <code>admin</code>
+to the owner&rsquo;s synchronized user. Unknown owners, ambiguous VMs, or missing
+owner synchronization SHALL fail planning. Native Terraform ACL resources
+SHALL separately manage the synchronized administrators group&rsquo;s pool grants.</p>
+<p>Sources: <a href="/docs/infra/xcp_ng/tf/">identity contract</a>,
+<a href="../../../tf/authorization.tf">owner ACLs and preconditions</a>,
+<a href="../../../tf/pools.tf">resource-set subjects</a>, and
+<a href="../../../tf/admin_acl.tf">administrator ACLs</a>.</p>
+<h4 id="print-fc99bcdbc54d2d044f2190f11fa5f5cb-scenario-a-new-approle-has-not-logged-in-to-xo">Scenario: A new AppRole has not logged in to XO<a class="td-heading-self-link" href="#print-fc99bcdbc54d2d044f2190f11fa5f5cb-scenario-a-new-approle-has-not-logged-in-to-xo" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> identity discovery cannot find its synchronized OIDC subject</li>
+<li><strong>THEN</strong> its resource set has no subjects and its name appears in the pending
+login output; an existing-VM ownership grant for it fails its precondition.</li>
+</ul>
+<h4 id="print-fc99bcdbc54d2d044f2190f11fa5f5cb-scenario-an-existing-vm-name-does-not-identify-a-unique-owned-vm">Scenario: An existing VM name does not identify a unique owned VM<a class="td-heading-self-link" href="#print-fc99bcdbc54d2d044f2190f11fa5f5cb-scenario-an-existing-vm-name-does-not-identify-a-unique-owned-vm" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> hostname and AppRole tag matching in the named pool returns zero or multiple VMs</li>
+<li><strong>THEN</strong> Terraform rejects the existing-VM ownership configuration.</li>
+</ul>
+<h3 id="print-fc99bcdbc54d2d044f2190f11fa5f5cb-requirement-invocation-scoped-tenant-authentication">Requirement: Invocation-scoped tenant authentication<a class="td-heading-self-link" href="#print-fc99bcdbc54d2d044f2190f11fa5f5cb-requirement-invocation-scoped-tenant-authentication" aria-label="Heading self-link"></a></h3><p>The XO login plugin SHALL authenticate using the calling component&rsquo;s Vault
+identity and export <code>XOA_TOKEN</code>, <code>XOA_URL</code>, and <code>XOA_INSECURE=false</code> to the
+invoked process. XO HTTPS verification SHALL be mandatory for this plugin.
+Session cookies and tokens SHALL remain in process memory, and normal plugin
+shutdown SHALL revoke only the XO token issued by that invocation. Tenant
+authentication SHALL remain separate from the infrastructure administrator
+token. Forced termination or a lost callback can leave a session until XO&rsquo;s
+configured expiry and SHALL not be described as guaranteed revocation.</p>
+<p>Sources: <a href="../../../cmd/xo_login/README.md">XO login contract</a> and
+<a href="/docs/infra/xcp_ng/">authentication ownership</a>.</p>
+<h4 id="print-fc99bcdbc54d2d044f2190f11fa5f5cb-scenario-a-component-finishes-its-authenticated-invocation">Scenario: A component finishes its authenticated invocation<a class="td-heading-self-link" href="#print-fc99bcdbc54d2d044f2190f11fa5f5cb-scenario-a-component-finishes-its-authenticated-invocation" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> normal plugin shutdown follows a successful XO login</li>
+<li><strong>THEN</strong> the plugin revokes its issued session using <code>token.deleteOwn</code>
+without revoking unrelated sessions.</li>
+</ul>
+<h3 id="print-fc99bcdbc54d2d044f2190f11fa5f5cb-requirement-declarative-certificate-issuance-and-renewal">Requirement: Declarative certificate issuance and renewal<a class="td-heading-self-link" href="#print-fc99bcdbc54d2d044f2190f11fa5f5cb-requirement-declarative-certificate-issuance-and-renewal" aria-label="Heading self-link"></a></h3><p>The XO appliance playbook SHALL use Certbot with Vault external account
+binding, retain the inspected listener certificate paths, install
+service-specific Vault CA trust, and configure twice-daily renewal checks.
+The host playbook SHALL use its packaged compatibility helper and the
+checksum-verified Lego release to install certificates through XAPI&rsquo;s
+supported certificate-install command. Temporary EAB registration material
+SHALL be removed after use. Appliance renewal may interrupt XO management
+access; host renewal SHALL not stop XAPI or running VMs.</p>
+<p>Sources: <a href="/docs/infra/xcp_ng/ansible/">certificate deployment contract</a>
+and <a href="../../../ansible/BUILD.bazel">packaged playbooks and runtime inputs</a>.</p>
+<h4 id="print-fc99bcdbc54d2d044f2190f11fa5f5cb-scenario-renew-an-xcp-ng-host-certificate">Scenario: Renew an XCP-ng host certificate<a class="td-heading-self-link" href="#print-fc99bcdbc54d2d044f2190f11fa5f5cb-scenario-renew-an-xcp-ng-host-certificate" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the renewal helper obtains a certificate different from the installed certificate</li>
+<li><strong>THEN</strong> it uses <code>xe host-server-certificate-install</code>, with installation
+retry tracked independently of issuance, while preserving running VMs.</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-54e4b5f8ef0b3b55342c1d194f10b60e">2 - </h1>
+    
+	<h1 id="print-8c641e6d61c1fbfc02b2ea0e6bb040c0-owned-dns-specification">owned-dns Specification<a class="td-heading-self-link" href="#print-8c641e6d61c1fbfc02b2ea0e6bb040c0-owned-dns-specification" aria-label="Heading self-link"></a></h1><h2 id="print-8c641e6d61c1fbfc02b2ea0e6bb040c0-purpose">Purpose<a class="td-heading-self-link" href="#print-8c641e6d61c1fbfc02b2ea0e6bb040c0-purpose" aria-label="Heading self-link"></a></h2><p>Define XCP-ng infrastructure DNS management through the owner&rsquo;s <code>tf</code> root,
+including canonical declarations, scoped execution, and offline source checks
+through preparation, adoption, and ongoing reconciliation.</p>
+<h2 id="print-8c641e6d61c1fbfc02b2ea0e6bb040c0-requirements">Requirements<a class="td-heading-self-link" href="#print-8c641e6d61c1fbfc02b2ea0e6bb040c0-requirements" aria-label="Heading self-link"></a></h2><h3 id="print-8c641e6d61c1fbfc02b2ea0e6bb040c0-requirement-owner-local-dns-configuration">Requirement: Owner-local DNS configuration<a class="td-heading-self-link" href="#print-8c641e6d61c1fbfc02b2ea0e6bb040c0-requirement-owner-local-dns-configuration" aria-label="Heading self-link"></a></h3><p>The <code>tf</code> root SHALL consume this owner&rsquo;s canonical <code>dnsconfig.json</code> through
+the shared DNS Terraform module, preserving declared record identities and views.
+DNS resources SHALL default to disabled until the authorized adoption revision
+and SHALL retain enabled ownership after existing records are imported into the
+owner&rsquo;s state. Reconciliation against unchanged declarations and adopted state
+SHALL propose no record additions, changes, replacements, or deletions.</p>
+<h4 id="print-8c641e6d61c1fbfc02b2ea0e6bb040c0-scenario-inspect-the-preparatory-configuration">Scenario: Inspect the preparatory configuration<a class="td-heading-self-link" href="#print-8c641e6d61c1fbfc02b2ea0e6bb040c0-scenario-inspect-the-preparatory-configuration" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the checked-in root is evaluated with default inputs before its
+authorized adoption revision</li>
+<li><strong>THEN</strong> it reads this owner&rsquo;s declaration and disables managed DNS records</li>
+<li><strong>AND</strong> the package contains the module and declaration inputs</li>
+</ul>
+<h4 id="print-8c641e6d61c1fbfc02b2ea0e6bb040c0-scenario-adopt-existing-dns-records">Scenario: Adopt existing DNS records<a class="td-heading-self-link" href="#print-8c641e6d61c1fbfc02b2ea0e6bb040c0-scenario-adopt-existing-dns-records" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the authorized adoption audits competing writers, controls those
+identified within its observed scope, and enables the owner&rsquo;s record management</li>
+<li><strong>THEN</strong> the owning root imports existing records by exact provider ID into
+its state while preserving their declared identities and views</li>
+</ul>
+<h4 id="print-8c641e6d61c1fbfc02b2ea0e6bb040c0-scenario-inspect-adopted-source-defaults">Scenario: Inspect adopted source defaults<a class="td-heading-self-link" href="#print-8c641e6d61c1fbfc02b2ea0e6bb040c0-scenario-inspect-adopted-source-defaults" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the adopted root uses its checked-in source defaults</li>
+<li><strong>THEN</strong> DNS ownership remains enabled and the package retains the module
+and canonical declaration inputs</li>
+</ul>
+<h4 id="print-8c641e6d61c1fbfc02b2ea0e6bb040c0-scenario-reconcile-existing-dns-records">Scenario: Reconcile existing DNS records<a class="td-heading-self-link" href="#print-8c641e6d61c1fbfc02b2ea0e6bb040c0-scenario-reconcile-existing-dns-records" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the owning root plans against its adopted state and unchanged declarations</li>
+<li><strong>THEN</strong> it proposes no record additions, changes, replacements, or deletions</li>
+</ul>
+<h3 id="print-8c641e6d61c1fbfc02b2ea0e6bb040c0-requirement-scoped-dns-execution-and-offline-checks">Requirement: Scoped DNS execution and offline checks<a class="td-heading-self-link" href="#print-8c641e6d61c1fbfc02b2ea0e6bb040c0-requirement-scoped-dns-execution-and-offline-checks" aria-label="Heading self-link"></a></h3><p>The DNS-only plan, show, and saved-plan apply commands SHALL select <code>dns=1</code>
+through the repository AL flow, using <code>src_infra_xcp_ng</code> through its named
+<code>xcp_ng</code> Vault authentication. They SHALL target <code>module.dns</code> in the existing
+<code>tf</code> root and backend and keep secret values in injected variables. The ordinary
+service wrappers SHALL retain their existing <code>xcp_ng_tf</code>, <code>xoa</code>, and Vault
+environment labels and authentication behavior. Real DNS credentials and Vault
+policy grants SHALL be prerequisites for operational Terraform calls. RouterOS
+DNS credentials SHALL be isolated from unrelated RouterOS resources. The package
+SHALL expose a format test that does not authenticate to Vault or contact DNS
+providers. Successful DNS-only execution SHALL establish only the scoped DNS
+result, not full service health.</p>
+<h4 id="print-8c641e6d61c1fbfc02b2ea0e6bb040c0-scenario-validate-the-terraform-source">Scenario: Validate the Terraform source<a class="td-heading-self-link" href="#print-8c641e6d61c1fbfc02b2ea0e6bb040c0-scenario-validate-the-terraform-source" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the package format test executes</li>
+<li><strong>THEN</strong> it checks the packaged Terraform configuration without live credentials</li>
+<li><strong>AND</strong> existing non-DNS authentication and backend paths remain unchanged</li>
+</ul>
+<h4 id="print-8c641e6d61c1fbfc02b2ea0e6bb040c0-scenario-prepare-an-operational-terraform-invocation">Scenario: Prepare an operational Terraform invocation<a class="td-heading-self-link" href="#print-8c641e6d61c1fbfc02b2ea0e6bb040c0-scenario-prepare-an-operational-terraform-invocation" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the DNS wrapper selects <code>dns=1</code></li>
+<li><strong>THEN</strong> it selects DNS credential injection through the owner AppRole while
+preserving the existing root and backend without starting XO authentication</li>
+<li><strong>AND</strong> disabled DNS resources do not imply offline provider configuration</li>
+</ul>
+<h4 id="print-8c641e6d61c1fbfc02b2ea0e6bb040c0-scenario-review-and-apply-only-dns-resources">Scenario: Review and apply only DNS resources<a class="td-heading-self-link" href="#print-8c641e6d61c1fbfc02b2ea0e6bb040c0-scenario-review-and-apply-only-dns-resources" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the operator reviews and applies a saved plan through the DNS-only
+plan, show, and apply commands</li>
+<li><strong>THEN</strong> the operation is limited to <code>module.dns</code> and its dependencies</li>
+<li><strong>AND</strong> its success does not establish the health of the other services in the root</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-20a95b014b094a42ec41f4b923b24d6e">3 - Terraform</h1>
+    <div class="lead">AppRole resource sets and Vault-backed Xen Orchestra authentication</div>
+	<p>This configuration manages one Xen Orchestra resource set per Vault AppRole
+and configures the installed XO OIDC plugin through a packaged JSON-RPC helper.
+See the <a href="/docs/infra/xcp_ng/">project documentation</a> for requirements and checks.</p>
+<p>Resource-set subjects reference exact synchronized OIDC users whose OIDC
+subject identifiers match Vault AppRole entity UUIDs. AppRole groups can include other
+service entities, so using those groups would grant access across deployments.
+Bootstrap XO&rsquo;s OIDC configuration first, then log in through OIDC as each
+AppRole and run the full Terraform apply. Identity discovery runs at plan
+time and never creates users. AppRoles that have not logged in are listed in
+<code>approles_pending_oidc_login</code>; their sets remain without subjects until the
+next apply after login. Groups remain responsible for login entitlement and
+administrative access, separately from these per-AppRole grants.</p>
+<p><code>resource_set_inventory</code> supplies <code>pool</code>, <code>template</code>, <code>storage</code> and <code>network</code>
+names per AppRole. Native data sources resolve a unique pool and unique
+objects within that pool. Unassigned resource sets remain empty. These inputs
+have no UUID defaults; resolved IDs remain necessary for XO API operations.</p>
+<p><code>existing_vms</code> maps hostnames to an owning AppRole and pool name. Discovery
+requires exactly one VM with both the hostname and AppRole tag in that pool.
+The owner receives an explicit <code>admin</code> ACL. Resource-set membership permits
+provisioning and does not transfer existing VM ownership. Missing or ambiguous
+VMs, unknown AppRoles and unsynchronized OIDC users fail planning. ACL resource
+keys retain the AppRole and resolved VM ID, preserving their addresses when
+the same existing VMs are found through names.</p>
+<p>Native <code>xenorchestra_acl.pool_administrator</code> resources manage the synchronized
+administrators group&rsquo;s permissions on connected pools. The read-only helper
+identifies existing matching ACLs, and an <code>import</code> block adopts them without
+recreating access. Fresh installations must bootstrap <code>terraform_data.oidc</code>
+before the full plan so the synchronized groups exist. There is no shared
+pool-view grant and the helper performs no ACL writes.</p>
+<p>The pinned <code>hashicorp/external</code> provider calls the packaged helper&rsquo;s read-only
+<code>oidc-identities</code> command. XO exposes login names as <code>email</code> and authentication
+providers in <code>authProviders</code>; the helper accepts only OIDC-authenticated
+identities from the configured Vault issuer and indexes them by
+<code>authProviders[&quot;oidc:&quot; + issuer].id</code>, the Vault entity UUID.
+Duplicate OIDC subjects are an error. Mutable login names and inherited group
+membership do not select the ACL subject. Group discovery selects only
+synchronized OIDC groups and rejects duplicate names. The provider has no
+group datasource and its user datasource does not expose immutable external
+subjects. API credentials remain in the injected environment.</p>
+<p>Use this package&rsquo;s <code>dns.plan</code>, <code>dns.show</code>, and <code>dns.apply</code> targets for the
+<a href="/docs/infra/dns/">scoped DNS adoption workflow</a>.
+These commands select <code>dns=1</code> and target <code>module.dns</code> in this same root and
+backend, using the existing <code>src_infra_xcp_ng</code> AppRole through named <code>xcp_ng</code>
+Vault authentication. The ordinary service wrappers retain their XO
+authentication and labels. A successful DNS-only operation verifies its scoped
+DNS result; full service health requires the service&rsquo;s own checks.</p>
+<p>DNS ownership defaults to enabled after the completed
+<a href="../openspec/changes/archive/2026-09-13-adopt-dns-records/design.md">record adoption</a>.
+Keep that default enabled to retain the imported records.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-04bdc1aeae9677c6e4b1ed106c9d55f1">4 - Xen Orchestra certificates</h1>
+    <div class="lead">Vault ACME certificate issuance and renewal for the XOA appliance</div>
+	<p>This playbook installs Debian&rsquo;s Certbot package and obtains a certificate for
+<code>xoa.xcp-ng.alwaldend.com</code> and <code>host1.xoa.xcp-ng.alwaldend.com</code> from the Vault
+<code>src_infra_xcp_ng_pki_server</code> ACME role. The XCP-ng AppRole creates the
+external account binding; its registration file is removed after issuance.</p>
+<p>The target injects <code>xoa_ssh_password</code> from
+<code>secrets/alwaldend.com/vault1/approles/src_infra_xcp_ng/xoa</code> for the appliance&rsquo;s
+<code>xoa</code> SSH account and sudo. Ansible uses its <code>sshpass</code> password mechanism;
+the controller must provide <code>sshpass</code> and a verified SSH host key. Passwords
+are runtime environment inputs and are not stored in inventory.</p>
+<p>Run the read-only inspection target before deploying a different appliance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel_agent bazel run //infra/xcp_ng/ansible:ansible.inspect
+</span></span><span style="display:flex;"><span>bazel_agent bazel run //infra/xcp_ng/ansible:ansible
+</span></span></code></pre></div><p>The checked-in settings match the inspected appliance: <code>xo-server</code> runs as
+root and listens on HTTPS with <code>/etc/ssl/cert.pem</code> and <code>/etc/ssl/key.pem</code>.
+Native <code>autoCert</code> is disabled. The deployment preserves these listener paths.
+Apply the Vault PKI role before certificate issuance.</p>
+<p>Certbot uses standalone HTTP-01 validation. Vault must resolve both names to
+the appliance and reach TCP port 80. Issuance and renewal briefly stop
+<code>xo-server</code> to free that port, interrupting management access but not guest VMs.
+The existing TLS files are preserved with <code>.before-vault-acme</code> suffixes before
+their paths become symlinks to Certbot&rsquo;s renewable files. The dedicated
+<code>xo-acme-renew.timer</code> checks twice daily. Certbot is configured to renew the
+seven-day Vault certificates with two days remaining; stop/start hooks run
+when renewal is needed. Certificate keys and ACME account files remain root-only.</p>
+<p>The playbook adds a service-specific Vault CA trust override using
+<code>NODE_EXTRA_CA_CERTS</code> so XO can also validate Vault&rsquo;s OIDC endpoint. It verifies
+the appliance HTTPS endpoint against that CA after deployment.</p>
+<p>The deployment target is <code>//infra/xcp_ng/ansible:ansible</code>. Building
+<code>//infra/xcp_ng/ansible:ansible_bin</code> packages the playbook without deploying it.</p>
+<p>XO&rsquo;s <a href="https://github.com/vatesfr/xen-orchestra/blob/master/%40xen-orchestra/mixins/SslCertificate.mjs">native ACME implementation</a>
+does not pass EAB credentials to its ACME client. Certbot supports
+<a href="https://eff-certbot.readthedocs.io/en/stable/using.html#configuration-file">external account binding</a>
+without changing Vault&rsquo;s mandatory-EAB policy.</p>
+<h2 id="print-3d313e067793daf7730ee8cf099bb18b-xcp-ng-host-certificates">XCP-ng host certificates<a class="td-heading-self-link" href="#print-3d313e067793daf7730ee8cf099bb18b-xcp-ng-host-certificates" aria-label="Heading self-link"></a></h2><p><code>//infra/xcp_ng/ansible:ansible.host</code> provisions a Vault ACME certificate for
+<code>host1.xcp-ng.alwaldend.com</code> and <code>xcp-ng.alwaldend.com</code>. Inspect a different
+host with <code>//infra/xcp_ng/ansible:ansible.inspect_host</code> before deployment.
+The host must serve <code>/opt/xensource/www/.well-known/acme-challenge</code> through
+HTTP or an HTTP-to-HTTPS redirect; the inspection verifies and cleans up a
+public probe file. This host supports that path without changing XAPI settings.</p>
+<p>XCP-ng&rsquo;s Python 3.6 cannot run the current Ansible modules. The playbook uses
+Ansible&rsquo;s script transport for a Python 3.6-compatible helper, without adding
+packages to dom0. The helper downloads the immutable Lego release declared in
+<code>third_party/com_github_go_acme_lego_bin/binary_toolchain.json</code>, verifies its
+checksum, and installs it under root-only <code>/etc/xcp-ng-acme</code>.</p>
+<p>The initial EAB is temporary. Only the ACME account remains for unattended
+renewal; no Vault token is retained on the host. The client requests RSA4096
+keys to match the Vault role. <code>xcp-ng-acme-renew.timer</code> runs twice daily and
+uses XAPI&rsquo;s supported <code>xe host-server-certificate-install</code> command when the
+issued certificate differs from the installed certificate. Installation is
+retried independently of issuance. Renewal does not stop XAPI or running VMs.
+The final deployment verifies HTTPS and enables the timer.</p>
+<p>Set an absolute task-private <code>TMPDIR</code> for controller registration scratch.
+Ansible removes the temporary registration script after execution. The
+<code>bootstrap</code> tag updates the helper without ordering a certificate.</p>
+<h2 id="print-3d313e067793daf7730ee8cf099bb18b-openid-connect-plugin">OpenID Connect plugin<a class="td-heading-self-link" href="#print-3d313e067793daf7730ee8cf099bb18b-openid-connect-plugin" aria-label="Heading self-link"></a></h2><p>The XO playbook installs the official <code>xo-server-auth-oidc</code> 0.4.0 plugin with
+pinned, checksum-verified upstream files and isolated dependencies. This
+version supports Vault group synchronization while remaining compatible with
+the installed XO core. Ansible verifies the plugin before restarting XO;
+Terraform configures it and reconciles group ACLs through the API.</p>
+<p>SSH connection reuse keeps deployment within the appliance&rsquo;s existing UFW
+limit of six new SSH connections per 30 seconds. No firewall exception is
+required.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        Built with <a href="https://gohugo.io/">Hugo 0.165.0</a>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="/js/main.min.259204f469f58eb3b665605a24e964264772df2adaded180b3669b6ce33d84c8.js" integrity="sha256-JZIE9Gn1jrO2ZWBaJOlkJkdy3yra3tGAs2abbOM9hMg=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.decf3b53d8827d840369f490775626e2a5200e150a733f78f0081c126426cbbf.js" integrity="sha256-3s87U9iCfYQDafSQd1Ym4qUgDhUKcz948AgcEmQmy78=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

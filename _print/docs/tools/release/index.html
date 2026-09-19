@@ -1,0 +1,1023 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js" data-theme-init>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000000">
+
+<style>
+  html { background: Canvas; color: CanvasText; }
+  @media (prefers-color-scheme: dark) {
+    html { background: #0b0d12; color: #e6e6e6; }
+  }
+  html[data-theme-init] * { transition: none !important; }
+</style>
+
+<script>
+  (function() {
+    const themeKey = 'td-color-theme';
+    const storedTheme = localStorage.getItem(themeKey);
+    let theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (theme === 'auto') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
+<link rel="canonical" type="text/html" href="https://www-staging.alwaldend.com/docs/tools/release/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://www-staging.alwaldend.com/docs/tools/release/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+<title>Release | Alwaldend</title>
+<meta name="description" content="Release rules">
+<meta property="og:url" content="https://www-staging.alwaldend.com/docs/tools/release/">
+	<meta property="og:site_name" content="Alwaldend">
+	<meta property="og:title" content="Release">
+	<meta property="og:description" content="Release rules">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="Release">
+	<meta itemprop="description" content="Release rules">
+	<meta itemprop="dateModified" content="2026-09-19T20:06:21+03:00">
+	<meta itemprop="keywords" content="Proto,Releases,Bzl_rules">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Release">
+	<meta name="twitter:description" content="Release rules">
+<link rel="preload" href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" as="style" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<link href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" rel="stylesheet" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll">
+<div class="td-navbar-container container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">Alwaldend</span></a>
+  <div class="td-navbar__main td-navbar-nav-scroll td-navbar-nav-scroll--indicator" id="main_navbar">
+    <div class="scroll-indicator scroll-left"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/projects/"><span>Projects</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item td-navbar__light-dark-menu">
+        <div class="td-light-dark-menu dropdown"><svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+<button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        title="Toggle theme (Auto)"
+        aria-label="Toggle theme (Auto)">
+  <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="bd-theme">
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
+      Light
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>
+      Dark
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+      <svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>
+      Auto
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+</ul>
+</div>
+
+      </li>
+      </ul>
+    <div class="scroll-indicator scroll-right"></div>
+  </div>
+  <div class="td-navbar__search d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon" aria-hidden="true"></div>
+  <input
+    type="search"
+    name="q"
+    class="td-search__input form-control"
+    placeholder='Search this site…'
+    aria-label='Search this site…'
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/tools/release/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Release</h1>
+<div class="lead">Release rules</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-c5e7d3e0f262a77185c653db31edd2af">Bzl</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1.1: <a href="#pg-58158a6c2e8e265f7ce8ae3881ed4996">al_release</a></li>
+
+
+    
+  
+    
+    
+	
+<li>1.2: <a href="#pg-473271db3f2e11874ef35f4ea934e3a3">al_release_binary</a></li>
+
+
+    
+  
+    
+    
+	
+<li>1.3: <a href="#pg-68c6d7c0cebac97c53399f3922456b1b">al_release_deployment</a></li>
+
+
+    
+  
+    
+    
+	
+<li>1.4: <a href="#pg-51fcde7fea35f6885e23c36f97c12e17">al_release_deployment_info</a></li>
+
+
+    
+  
+    
+    
+	
+<li>1.5: <a href="#pg-957b8b2fb088eaf2ddf5ae9e8fa3374c">al_release_deps</a></li>
+
+
+    
+  
+    
+    
+	
+<li>1.6: <a href="#pg-db802b1d7e4918f37d0833684a6399cd">al_release_files</a></li>
+
+
+    
+  
+    
+    
+	
+<li>1.7: <a href="#pg-037d82a9d2f66cf7b294c018b4ec16be">al_release_files_info</a></li>
+
+
+    
+  
+    
+    
+	
+<li>1.8: <a href="#pg-1a3ba228d9b81016eb58f87e07a1015f">al_release_info</a></li>
+
+
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-f654f2b8636388720f346b3780320753">Proto</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>2.1: <a href="#pg-9caedc9dadce8921346c6dcb0e744173">contracts</a></li>
+
+
+    
+  
+
+    </ul>
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-c5e7d3e0f262a77185c653db31edd2af">1 - Bzl</h1>
+    <div class="lead">Bazel bindings for the release tool</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-58158a6c2e8e265f7ce8ae3881ed4996">1.1 - al_release</h1>
+    
+	<!-- Generated with Stardoc: http://skydoc.bazel.build -->
+<p><a id="print-ad9cd7f35e114a1767fba5d543348693-al_release"></a></p>
+<h2>al_release<a class="td-heading-self-link" href="#print-ad9cd7f35e114a1767fba5d543348693-al_release" aria-label="Heading self-link"></a></h2><pre>
+load("@com_alwaldend_src//tools/release/main/bzl:al_release.bzl", "al_release")
+
+al_release(<a href="#print-ad9cd7f35e114a1767fba5d543348693-al_release-name">name</a>, <a href="#print-ad9cd7f35e114a1767fba5d543348693-al_release-srcs">srcs</a>, <a href="#print-ad9cd7f35e114a1767fba5d543348693-al_release-git_bundle">git_bundle</a>, <a href="#print-ad9cd7f35e114a1767fba5d543348693-al_release-git_state">git_state</a>, <a href="#print-ad9cd7f35e114a1767fba5d543348693-al_release-manifest">manifest</a>, <a href="#print-ad9cd7f35e114a1767fba5d543348693-al_release-project">project</a>, <a href="#print-ad9cd7f35e114a1767fba5d543348693-al_release-release_name">release_name</a>, <a href="#print-ad9cd7f35e114a1767fba5d543348693-al_release-release_tool">release_tool</a>,
+           <a href="#print-ad9cd7f35e114a1767fba5d543348693-al_release-root_prefix">root_prefix</a>)
+</pre>
+<p>Rule describing a release</p>
+<p><strong>ATTRIBUTES</strong></p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Name</th>
+					<th style="text-align: left">Description</th>
+					<th style="text-align: left">Type</th>
+					<th style="text-align: left">Mandatory</th>
+					<th style="text-align: left">Default</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><a id="print-ad9cd7f35e114a1767fba5d543348693-al_release-name"></a>name</td>
+					<td style="text-align: left">A unique name for this target.</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels#target-names">Name</a></td>
+					<td style="text-align: left">required</td>
+					<td style="text-align: left"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-ad9cd7f35e114a1767fba5d543348693-al_release-srcs"></a>srcs</td>
+					<td style="text-align: left">Sources</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>[]</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-ad9cd7f35e114a1767fba5d543348693-al_release-git_bundle"></a>git_bundle</td>
+					<td style="text-align: left">Deterministic Git bundle used to generate release metadata</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels">Label</a></td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>&quot;@com_alwaldend_src_tools_git//:release_git_state&quot;</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-ad9cd7f35e114a1767fba5d543348693-al_release-git_state"></a>git_state</td>
+					<td style="text-align: left">Additional declared Git state used to generate release metadata</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>[]</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-ad9cd7f35e114a1767fba5d543348693-al_release-manifest"></a>manifest</td>
+					<td style="text-align: left">Load manifest from a file instead of generating it from srcs</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels">Label</a></td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>None</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-ad9cd7f35e114a1767fba5d543348693-al_release-project"></a>project</td>
+					<td style="text-align: left">Project package_name</td>
+					<td style="text-align: left">String</td>
+					<td style="text-align: left">required</td>
+					<td style="text-align: left"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-ad9cd7f35e114a1767fba5d543348693-al_release-release_name"></a>release_name</td>
+					<td style="text-align: left">Release name</td>
+					<td style="text-align: left">String</td>
+					<td style="text-align: left">required</td>
+					<td style="text-align: left"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-ad9cd7f35e114a1767fba5d543348693-al_release-release_tool"></a>release_tool</td>
+					<td style="text-align: left">Release tool</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels">Label</a></td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>&quot;@com_alwaldend_src//tools/release/main/go&quot;</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-ad9cd7f35e114a1767fba5d543348693-al_release-root_prefix"></a>root_prefix</td>
+					<td style="text-align: left">Root prefix</td>
+					<td style="text-align: left">String</td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>&quot;content/docs&quot;</code></td>
+			</tr>
+	</tbody>
+</table>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-473271db3f2e11874ef35f4ea934e3a3">1.2 - al_release_binary</h1>
+    
+	<!-- Generated with Stardoc: http://skydoc.bazel.build -->
+<p><a id="print-78d91e3e301be73d29284b97497b92ee-al_release_binary"></a></p>
+<h2>al_release_binary<a class="td-heading-self-link" href="#print-78d91e3e301be73d29284b97497b92ee-al_release_binary" aria-label="Heading self-link"></a></h2><pre>
+load("@com_alwaldend_src//tools/release/main/bzl:al_release_binary.bzl", "al_release_binary")
+
+al_release_binary(<a href="#print-78d91e3e301be73d29284b97497b92ee-al_release_binary-name">name</a>, <a href="#print-78d91e3e301be73d29284b97497b92ee-al_release_binary-srcs">srcs</a>, <a href="#print-78d91e3e301be73d29284b97497b92ee-al_release_binary-arguments">arguments</a>, <a href="#print-78d91e3e301be73d29284b97497b92ee-al_release_binary-cmd">cmd</a>, <a href="#print-78d91e3e301be73d29284b97497b92ee-al_release_binary-oras">oras</a>, <a href="#print-78d91e3e301be73d29284b97497b92ee-al_release_binary-release_tool">release_tool</a>)
+</pre>
+<p>Release binary</p>
+<p><strong>ATTRIBUTES</strong></p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Name</th>
+					<th style="text-align: left">Description</th>
+					<th style="text-align: left">Type</th>
+					<th style="text-align: left">Mandatory</th>
+					<th style="text-align: left">Default</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><a id="print-78d91e3e301be73d29284b97497b92ee-al_release_binary-name"></a>name</td>
+					<td style="text-align: left">A unique name for this target.</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels#target-names">Name</a></td>
+					<td style="text-align: left">required</td>
+					<td style="text-align: left"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-78d91e3e301be73d29284b97497b92ee-al_release_binary-srcs"></a>srcs</td>
+					<td style="text-align: left">Releases</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>[]</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-78d91e3e301be73d29284b97497b92ee-al_release_binary-arguments"></a>arguments</td>
+					<td style="text-align: left">Arguments</td>
+					<td style="text-align: left">List of strings</td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>[]</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-78d91e3e301be73d29284b97497b92ee-al_release_binary-cmd"></a>cmd</td>
+					<td style="text-align: left">Cmd</td>
+					<td style="text-align: left">String</td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>&quot;deploy&quot;</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-78d91e3e301be73d29284b97497b92ee-al_release_binary-oras"></a>oras</td>
+					<td style="text-align: left">Oras binary</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels">Label</a></td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>&quot;@com_alwaldend_src//tools/oras&quot;</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-78d91e3e301be73d29284b97497b92ee-al_release_binary-release_tool"></a>release_tool</td>
+					<td style="text-align: left">Release tool</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels">Label</a></td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>&quot;@com_alwaldend_src//tools/release/main/go&quot;</code></td>
+			</tr>
+	</tbody>
+</table>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-68c6d7c0cebac97c53399f3922456b1b">1.3 - al_release_deployment</h1>
+    
+	<!-- Generated with Stardoc: http://skydoc.bazel.build -->
+<p><a id="print-b492fd71a14a3e05ab780d32e9c1006d-al_release_deployment"></a></p>
+<h2>al_release_deployment<a class="td-heading-self-link" href="#print-b492fd71a14a3e05ab780d32e9c1006d-al_release_deployment" aria-label="Heading self-link"></a></h2><pre>
+load("@com_alwaldend_src//tools/release/main/bzl:al_release_deployment.bzl", "al_release_deployment")
+
+al_release_deployment(<a href="#print-b492fd71a14a3e05ab780d32e9c1006d-al_release_deployment-name">name</a>, <a href="#print-b492fd71a14a3e05ab780d32e9c1006d-al_release_deployment-oci_repository">oci_repository</a>)
+</pre>
+<p>Deployment info</p>
+<p><strong>ATTRIBUTES</strong></p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Name</th>
+					<th style="text-align: left">Description</th>
+					<th style="text-align: left">Type</th>
+					<th style="text-align: left">Mandatory</th>
+					<th style="text-align: left">Default</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><a id="print-b492fd71a14a3e05ab780d32e9c1006d-al_release_deployment-name"></a>name</td>
+					<td style="text-align: left">A unique name for this target.</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels#target-names">Name</a></td>
+					<td style="text-align: left">required</td>
+					<td style="text-align: left"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-b492fd71a14a3e05ab780d32e9c1006d-al_release_deployment-oci_repository"></a>oci_repository</td>
+					<td style="text-align: left">OCI repository url</td>
+					<td style="text-align: left">String</td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>&quot;&quot;</code></td>
+			</tr>
+	</tbody>
+</table>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-51fcde7fea35f6885e23c36f97c12e17">1.4 - al_release_deployment_info</h1>
+    
+	<!-- Generated with Stardoc: http://skydoc.bazel.build -->
+<p><a id="AlReleaseDeploymentInfo"></a></p>
+<h2 id="print-741434255b76a3f7a9280a564e7b8202-alreleasedeploymentinfo">AlReleaseDeploymentInfo<a class="td-heading-self-link" href="#print-741434255b76a3f7a9280a564e7b8202-alreleasedeploymentinfo" aria-label="Heading self-link"></a></h2><pre>
+load("@com_alwaldend_src//tools/release/main/bzl:al_release_deployment_info.bzl", "AlReleaseDeploymentInfo")
+
+AlReleaseDeploymentInfo(<a href="#print-741434255b76a3f7a9280a564e7b8202-AlReleaseDeploymentInfo-info">info</a>, <a href="#print-741434255b76a3f7a9280a564e7b8202-AlReleaseDeploymentInfo-info_file">info_file</a>)
+</pre>
+<p>Deployment info</p>
+<p><strong>FIELDS</strong></p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Name</th>
+					<th style="text-align: left">Description</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><a id="print-741434255b76a3f7a9280a564e7b8202-AlReleaseDeploymentInfo-info"></a>info</td>
+					<td style="text-align: left">Deployment info struct</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-741434255b76a3f7a9280a564e7b8202-AlReleaseDeploymentInfo-info_file"></a>info_file</td>
+					<td style="text-align: left">Deployment info file</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-957b8b2fb088eaf2ddf5ae9e8fa3374c">1.5 - al_release_deps</h1>
+    
+	<!-- Generated with Stardoc: http://skydoc.bazel.build -->
+<p><a id="print-6583e9dbc6730d0959524193f1bbe1c9-al_release_deps"></a></p>
+<h2>al_release_deps<a class="td-heading-self-link" href="#print-6583e9dbc6730d0959524193f1bbe1c9-al_release_deps" aria-label="Heading self-link"></a></h2><pre>
+load("@com_alwaldend_src//tools/release/main/bzl:al_release_deps.bzl", "al_release_deps")
+
+al_release_deps(<a href="#print-6583e9dbc6730d0959524193f1bbe1c9-al_release_deps-name">name</a>, <a href="#print-6583e9dbc6730d0959524193f1bbe1c9-al_release_deps-srcs">srcs</a>, <a href="#print-6583e9dbc6730d0959524193f1bbe1c9-al_release_deps-visibility">visibility</a>, <a href="#print-6583e9dbc6730d0959524193f1bbe1c9-al_release_deps-kwargs">**kwargs</a>)
+</pre>
+<p>Generate a dependency diagram using genquery</p>
+<p><strong>PARAMETERS</strong></p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Name</th>
+					<th style="text-align: left">Description</th>
+					<th style="text-align: left">Default Value</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><a id="print-6583e9dbc6730d0959524193f1bbe1c9-al_release_deps-name"></a>name</td>
+					<td style="text-align: left">name</td>
+					<td style="text-align: left">none</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-6583e9dbc6730d0959524193f1bbe1c9-al_release_deps-srcs"></a>srcs</td>
+					<td style="text-align: left">list of labels to generate deps for (should be full labels)</td>
+					<td style="text-align: left">none</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-6583e9dbc6730d0959524193f1bbe1c9-al_release_deps-visibility"></a>visibility</td>
+					<td style="text-align: left">visibility</td>
+					<td style="text-align: left"><code>None</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-6583e9dbc6730d0959524193f1bbe1c9-al_release_deps-kwargs"></a>kwargs</td>
+					<td style="text-align: left">kwargs for al_release_files</td>
+					<td style="text-align: left">none</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-db802b1d7e4918f37d0833684a6399cd">1.6 - al_release_files</h1>
+    
+	<!-- Generated with Stardoc: http://skydoc.bazel.build -->
+<p><a id="print-cb782a254e48fc6b0bc27f96856c7b11-al_release_files"></a></p>
+<h2>al_release_files<a class="td-heading-self-link" href="#print-cb782a254e48fc6b0bc27f96856c7b11-al_release_files" aria-label="Heading self-link"></a></h2><pre>
+load("@com_alwaldend_src//tools/release/main/bzl:al_release_files.bzl", "al_release_files")
+
+al_release_files(<a href="#print-cb782a254e48fc6b0bc27f96856c7b11-al_release_files-name">name</a>, <a href="#print-cb782a254e48fc6b0bc27f96856c7b11-al_release_files-deps">deps</a>, <a href="#print-cb782a254e48fc6b0bc27f96856c7b11-al_release_files-srcs">srcs</a>, <a href="#print-cb782a254e48fc6b0bc27f96856c7b11-al_release_files-deployments">deployments</a>, <a href="#print-cb782a254e48fc6b0bc27f96856c7b11-al_release_files-ignore_suffixes">ignore_suffixes</a>, <a href="#print-cb782a254e48fc6b0bc27f96856c7b11-al_release_files-release_tool">release_tool</a>)
+</pre>
+<p><strong>ATTRIBUTES</strong></p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Name</th>
+					<th style="text-align: left">Description</th>
+					<th style="text-align: left">Type</th>
+					<th style="text-align: left">Mandatory</th>
+					<th style="text-align: left">Default</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><a id="print-cb782a254e48fc6b0bc27f96856c7b11-al_release_files-name"></a>name</td>
+					<td style="text-align: left">A unique name for this target.</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels#target-names">Name</a></td>
+					<td style="text-align: left">required</td>
+					<td style="text-align: left"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-cb782a254e48fc6b0bc27f96856c7b11-al_release_files-deps"></a>deps</td>
+					<td style="text-align: left">Deps</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>[]</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-cb782a254e48fc6b0bc27f96856c7b11-al_release_files-srcs"></a>srcs</td>
+					<td style="text-align: left">Sources</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>[]</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-cb782a254e48fc6b0bc27f96856c7b11-al_release_files-deployments"></a>deployments</td>
+					<td style="text-align: left">Deployment info</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>[]</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-cb782a254e48fc6b0bc27f96856c7b11-al_release_files-ignore_suffixes"></a>ignore_suffixes</td>
+					<td style="text-align: left">Ignore src files ending with these suffixes</td>
+					<td style="text-align: left">List of strings</td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>[]</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-cb782a254e48fc6b0bc27f96856c7b11-al_release_files-release_tool"></a>release_tool</td>
+					<td style="text-align: left">Release tool</td>
+					<td style="text-align: left"><a href="https://bazel.build/concepts/labels">Label</a></td>
+					<td style="text-align: left">optional</td>
+					<td style="text-align: left"><code>&quot;@com_alwaldend_src//tools/release/main/go&quot;</code></td>
+			</tr>
+	</tbody>
+</table>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-037d82a9d2f66cf7b294c018b4ec16be">1.7 - al_release_files_info</h1>
+    
+	<!-- Generated with Stardoc: http://skydoc.bazel.build -->
+<p><a id="AlReleaseFilesInfo"></a></p>
+<h2 id="print-a1addd46d9c251fe2a064258f99735d9-alreleasefilesinfo">AlReleaseFilesInfo<a class="td-heading-self-link" href="#print-a1addd46d9c251fe2a064258f99735d9-alreleasefilesinfo" aria-label="Heading self-link"></a></h2><pre>
+load("@com_alwaldend_src//tools/release/main/bzl:al_release_files_info.bzl", "AlReleaseFilesInfo")
+
+AlReleaseFilesInfo(<a href="#print-a1addd46d9c251fe2a064258f99735d9-AlReleaseFilesInfo-files">files</a>, <a href="#print-a1addd46d9c251fe2a064258f99735d9-AlReleaseFilesInfo-manifest">manifest</a>)
+</pre>
+<p>Release files</p>
+<p><strong>FIELDS</strong></p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Name</th>
+					<th style="text-align: left">Description</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><a id="print-a1addd46d9c251fe2a064258f99735d9-AlReleaseFilesInfo-files"></a>files</td>
+					<td style="text-align: left">File dict, keys are filenames, values are Files</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-a1addd46d9c251fe2a064258f99735d9-AlReleaseFilesInfo-manifest"></a>manifest</td>
+					<td style="text-align: left">Release manifest for srcs</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-1a3ba228d9b81016eb58f87e07a1015f">1.8 - al_release_info</h1>
+    
+	<!-- Generated with Stardoc: http://skydoc.bazel.build -->
+<p><a id="AlReleaseInfo"></a></p>
+<h2 id="print-cda70ce2d54610ca433bf5524a7e4fde-alreleaseinfo">AlReleaseInfo<a class="td-heading-self-link" href="#print-cda70ce2d54610ca433bf5524a7e4fde-alreleaseinfo" aria-label="Heading self-link"></a></h2><pre>
+load("@com_alwaldend_src//tools/release/main/bzl:al_release_info.bzl", "AlReleaseInfo")
+
+AlReleaseInfo(<a href="#print-cda70ce2d54610ca433bf5524a7e4fde-AlReleaseInfo-release_name">release_name</a>, <a href="#print-cda70ce2d54610ca433bf5524a7e4fde-AlReleaseInfo-project">project</a>, <a href="#print-cda70ce2d54610ca433bf5524a7e4fde-AlReleaseInfo-files">files</a>, <a href="#print-cda70ce2d54610ca433bf5524a7e4fde-AlReleaseInfo-manifest">manifest</a>)
+</pre>
+<p>Release information</p>
+<p><strong>FIELDS</strong></p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Name</th>
+					<th style="text-align: left">Description</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><a id="print-cda70ce2d54610ca433bf5524a7e4fde-AlReleaseInfo-release_name"></a>release_name</td>
+					<td style="text-align: left">Release name (string)</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-cda70ce2d54610ca433bf5524a7e4fde-AlReleaseInfo-project"></a>project</td>
+					<td style="text-align: left">Project subdir (string)</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-cda70ce2d54610ca433bf5524a7e4fde-AlReleaseInfo-files"></a>files</td>
+					<td style="text-align: left">File dict, keys are filenames, values are Files</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a id="print-cda70ce2d54610ca433bf5524a7e4fde-AlReleaseInfo-manifest"></a>manifest</td>
+					<td style="text-align: left">Release manifest (File)</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>
+
+
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-f654f2b8636388720f346b3780320753">2 - Proto</h1>
+    <div class="lead">Protobuf contracts</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-9caedc9dadce8921346c6dcb0e744173">2.1 - contracts</h1>
+    <div class="lead">Proto docs for contracts.proto</div>
+	<h2 id="print-a628bd9e0f4d9e1d725ba99ef3e410d3-java">Java<a class="td-heading-self-link" href="#print-a628bd9e0f4d9e1d725ba99ef3e410d3-java" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bzl" data-lang="bzl"><span style="display:flex;"><span>load(<span style="color:#e6db74">&#34;@rules_java//java:defs.bzl&#34;</span>, <span style="color:#e6db74">&#34;java_library&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>java_library(
+</span></span><span style="display:flex;"><span>    name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;name&#34;</span>,
+</span></span><span style="display:flex;"><span>    deps <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;@com_alwaldend_src//tools/release/main/proto/contracts:contracts_java_library&#34;</span>,
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h2 id="print-a628bd9e0f4d9e1d725ba99ef3e410d3-golang">Golang<a class="td-heading-self-link" href="#print-a628bd9e0f4d9e1d725ba99ef3e410d3-golang" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bzl" data-lang="bzl"><span style="display:flex;"><span>load(<span style="color:#e6db74">&#34;@rules_go//go:def.bzl&#34;</span>, <span style="color:#e6db74">&#34;go_library&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>go_library(
+</span></span><span style="display:flex;"><span>    name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;name&#34;</span>,
+</span></span><span style="display:flex;"><span>    deps <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;@com_alwaldend_src//tools/release/main/proto/contracts:contracts&#34;</span>,
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h2 id="print-a628bd9e0f4d9e1d725ba99ef3e410d3-proto">Proto<a class="td-heading-self-link" href="#print-a628bd9e0f4d9e1d725ba99ef3e410d3-proto" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-proto" data-lang="proto"><span style="display:flex;"><span><span style="color:#66d9ef">syntax</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;proto3&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">package</span> release;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;tools/git/main/proto/contracts/contracts.proto&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">option</span> go_package <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;git.alwaldend.com/alwaldend/src/tools/release/main/proto/contracts&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">ReleaseHash</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> algo <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> content <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">ReleaseFile</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">repeated</span> ReleaseHash hashes <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> name <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> safe_name <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> url <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int64</span> size <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> local_path <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">ReleaseItem</span> {
+</span></span><span style="display:flex;"><span>  ReleaseFile file <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">repeated</span> ReleaseDeployment deployments <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">Project</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> subdir <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> safe_subdir <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">Git</span> {
+</span></span><span style="display:flex;"><span>  git.GitCommit revision <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">repeated</span> git.GitCommit commits <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">ReleasePageSectionItemAttr</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> name <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> content <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">ReleasePageSectionItem</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> content <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> content_url <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">repeated</span> ReleasePageSectionItemAttr attrs <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">ReleasePageSection</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> title <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">repeated</span> ReleasePageSectionItem items <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">ReleasePage</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">repeated</span> ReleasePageSection sections <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">ReleaseDeploymentOci</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> repository <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">repeated</span> <span style="color:#66d9ef">string</span> tags <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">ReleaseDeployment</span> {
+</span></span><span style="display:flex;"><span>  ReleaseDeploymentOci oci <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">message</span> <span style="color:#a6e22e">Release</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">repeated</span> ReleaseItem items <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">string</span> name <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>  Project project <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>  Git git <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+	
+  
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        Built with <a href="https://gohugo.io/">Hugo 0.165.0</a>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="/js/main.min.259204f469f58eb3b665605a24e964264772df2adaded180b3669b6ce33d84c8.js" integrity="sha256-JZIE9Gn1jrO2ZWBaJOlkJkdy3yra3tGAs2abbOM9hMg=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.decf3b53d8827d840369f490775626e2a5200e150a733f78f0081c126426cbbf.js" integrity="sha256-3s87U9iCfYQDafSQd1Ym4qUgDhUKcz948AgcEmQmy78=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

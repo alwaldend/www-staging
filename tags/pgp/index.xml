@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Pgp on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/tags/pgp/</link>
+		<description>Recent content in Pgp on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/tags/pgp/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Pgp</title>
+				<link>https://www-staging.alwaldend.com/docs/misc/pgp/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/misc/pgp/</guid>
+				<description>&lt;h2 id=&#34;openpgp-with-yubikey&#34;&gt;Openpgp with Yubikey&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#openpgp-with-yubikey&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://support.yubico.com/s/article/Using-Your-YubiKey-with-OpenPGP&#34;&gt;https://support.yubico.com/s/article/Using-Your-YubiKey-with-OpenPGP&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;advanced-yubikey-with-openpgp-guide&#34;&gt;Advanced Yubikey with openpgp guide&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#advanced-yubikey-with-openpgp-guide&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/drduh/YubiKey-Guide&#34;&gt;https://github.com/drduh/YubiKey-Guide&lt;/a&gt;&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

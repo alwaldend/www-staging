@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Dns on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/tags/dns/</link>
+		<description>Recent content in Dns on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 19 Sep 2026 20:06:21 +0300</lastBuildDate>
+		
+			<atom:link href="https://www-staging.alwaldend.com/tags/dns/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>DNS management in a monorepo</title>
+				<link>https://www-staging.alwaldend.com/blog/dns-management-in-a-monorepo/</link>
+				<pubDate>Sun, 13 Sep 2026 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/blog/dns-management-in-a-monorepo/</guid>
+				<description>&lt;p&gt;Buying a domain is one of the best purchases you can make because they are very cheap and owning one offers you more independence - you can have your email not tied to a specific provider, you can have a site, etc.&lt;/p&gt;&#xA;&lt;p&gt;After I bought a domain, I needed a way to manage DNS of that domain. Since using the registrar&amp;rsquo;s UI to do that is not the best idea, I searched for an IaC tool that can do that for me - I settled on &lt;a href=&#34;https://dnscontrol.org/&#34;&gt;DNSControl&lt;/a&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Dns</title>
+				<link>https://www-staging.alwaldend.com/docs/infra/dns/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/dns/</guid>
+				<description>&lt;p&gt;DNS records live in each owner&amp;rsquo;s &lt;code&gt;dnsconfig.json&lt;/code&gt;. Each owner manages its records&#xA;through the reusable &lt;a href=&#34;https://www-staging.alwaldend.com/docs/projects/tf_modules/dns_records/&#34;&gt;Terraform DNS module&lt;/a&gt;&#xA;from its designated &lt;code&gt;tf_setup&lt;/code&gt; or &lt;code&gt;tf&lt;/code&gt; root. This component&amp;rsquo;s&#xA;&lt;a href=&#34;dnsconfig.json&#34;&gt;dnsconfig.json&lt;/a&gt; owns shared apex and mail records.&lt;/p&gt;&#xA;&lt;h2 id=&#34;declaration-pages&#34;&gt;Declaration pages&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#declaration-pages&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/dns/cloudflare_dns/&#34;&gt;Cloudflare DNS&lt;/a&gt; and &lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/dns/mikrotik_dns/&#34;&gt;Mikrotik DNS&lt;/a&gt; list the&#xA;records this repository declares for each destination view, with the owning&#xA;declaration for every record. They are generated from &lt;code&gt;dnsconfig.json&lt;/code&gt;:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bazel_agent bazel run //infra/dns/cmd/dump -- --write&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;//infra/dns:config_test&lt;/code&gt; fails when a checked-in page is out of date, so the&#xA;pages cannot drift from the declarations they project.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Dnscontrol</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/dnscontrol/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/dnscontrol/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://github.com/StackExchange/dnscontrol&#34;&gt;https://github.com/StackExchange/dnscontrol&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Rules Dnscontrol</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/rules_dnscontrol/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/rules_dnscontrol/</guid>
+				<description>&lt;p&gt;&lt;code&gt;rules_dnscontrol&lt;/code&gt; packages a DNSControl JavaScript entrypoint together with&#xA;its record configuration files and emits a generated &lt;code&gt;requires.json&lt;/code&gt; manifest&#xA;of relative paths matching the Bazel runfiles tree. Record symlinks retain a&#xA;&lt;code&gt;.json&lt;/code&gt; suffix so DNSControl parses them as JSON. Load the manifest with&#xA;&lt;code&gt;require()&lt;/code&gt; and load each listed path with another &lt;code&gt;require()&lt;/code&gt; call;&#xA;DNSControl&amp;rsquo;s JavaScript loader does not implement CommonJS &lt;code&gt;module.exports&lt;/code&gt;.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

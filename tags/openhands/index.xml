@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Openhands on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/tags/openhands/</link>
+		<description>Recent content in Openhands on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/tags/openhands/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>OpenHands</title>
+				<link>https://www-staging.alwaldend.com/docs/infra/openhands/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/openhands/</guid>
+				<description>&lt;p&gt;OpenHands deploys as separate components because each owns a distinct&#xA;responsibility and trust boundary:&lt;/p&gt;&#xA;&lt;table&gt;&#xA;&#x9;&lt;thead&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;Component&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;Responsibility&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/thead&gt;&#xA;&#x9;&lt;tbody&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;Agent Canvas&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;Browser client for conversations, files, settings, backends, automations&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;Agent Server&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;Runs conversations, agents, tools, and workspace operations&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;Automation Server&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;Stores schedules and triggers, tracks runs, dispatches conversations&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;The agent server runs directly on the host with the service account&amp;rsquo;s&#xA;permissions. Its workspace is a working directory; operating-system account&#xA;permissions define its access to the host. Treat the agent server host as&#xA;trusted infrastructure.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>OpenHands automation</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/openhands_automation/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/openhands_automation/</guid>
+				<description>&lt;p&gt;Runs the OpenHands automation server natively from a &lt;code&gt;uv&lt;/code&gt;-managed virtual&#xA;environment. It stores schedules and event triggers, tracks run lifecycle, and&#xA;dispatches conversations to the agent server.&lt;/p&gt;&#xA;&lt;p&gt;The automation server is not a sandbox. It records which agent server should&#xA;run a dispatched conversation and hands that work to&#xA;&lt;code&gt;AUTOMATION_AGENT_SERVER_URL&lt;/code&gt;; setting that variable selects the agent&#xA;server&amp;rsquo;s local mode, which uses a persistent local agent server instead of&#xA;managed OpenHands Cloud sandboxes.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>OpenHands canvas</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/openhands_canvas/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/openhands_canvas/</guid>
+				<description>&lt;p&gt;Runs the OpenHands Agent Canvas browser client from the published npm package.&#xA;The service listens on loopback port &lt;code&gt;openhands_canvas_port&lt;/code&gt;; TLS, the public&#xA;hostname, and routing to the agent server and automation API belong to the&#xA;deployment&amp;rsquo;s Traefik role.&lt;/p&gt;&#xA;&lt;p&gt;The service runs the package&amp;rsquo;s &lt;code&gt;scripts/static-server.mjs&lt;/code&gt; directly with Node,&#xA;an explicit loopback host, and the package&amp;rsquo;s &lt;code&gt;build/&lt;/code&gt; directory. It serves the&#xA;browser client without starting an agent server, an automation server, or the&#xA;npm launcher&amp;rsquo;s additional ingress process. Agent Canvas owns no conversation&#xA;or automation state and executes no tools.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>OpenHands canvas UI compatibility module</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/com_openhands_openhands_canvas_ui_tool/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/com_openhands_openhands_canvas_ui_tool/</guid>
+				<description>&lt;p&gt;&lt;code&gt;tools/canvas_ui_tool.py&lt;/code&gt; from &lt;code&gt;OpenHands/OpenHands&lt;/code&gt; at tag &lt;code&gt;v1.18.0&lt;/code&gt;&#xA;(commit &lt;code&gt;9120ff6cbbe23640f0e475661e5a9c9729cdbf1f&lt;/code&gt;). The OpenHands Agent&#xA;Canvas launchers import it into the agent server through&#xA;&lt;code&gt;--import-modules canvas_ui_tool&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;It is required because the automation preset builds its agent with a&#xA;&lt;code&gt;finish_tool_response_schema&lt;/code&gt;, which registers the SDK&amp;rsquo;s builtin &lt;code&gt;FinishTool&lt;/code&gt;&#xA;only inside the preset&amp;rsquo;s own process while advertising it to the agent server as&#xA;&lt;code&gt;openhands.sdk.tool.builtins.finish&lt;/code&gt;. That SDK module does not self-register, so&#xA;every automation-dispatched remote conversation fails to resolve &lt;code&gt;FinishTool&lt;/code&gt;&#xA;unless the compatibility module registers it in the agent server process first.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Openhands server</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/openhands_server/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/openhands_server/</guid>
+				<description>&lt;p&gt;Runs the OpenHands agent server natively from a &lt;code&gt;uv&lt;/code&gt;-managed virtual&#xA;environment. It hosts conversations, executes tools, and streams events for&#xA;Agent Canvas. The service binds loopback only; TLS and external reachability&#xA;belong to the calling deployment.&lt;/p&gt;&#xA;&lt;p&gt;Set &lt;code&gt;openhands_server_secure&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require a session API key. The&#xA;unsecured mode omits the session key and is only appropriate where the loopback&#xA;boundary is trusted.&lt;/p&gt;&#xA;&lt;p&gt;The caller can set &lt;code&gt;openhands_server_install_packages&lt;/code&gt; to &lt;code&gt;false&lt;/code&gt; and install&#xA;&lt;code&gt;openhands_server_packages&lt;/code&gt; through its host-specific package workflow.&#xA;OSTree hosts use the shared &lt;code&gt;dev_vm&lt;/code&gt; package entry point and must boot into a&#xA;deployment containing those dependencies before installing the service. They&#xA;also set &lt;code&gt;openhands_server_service_path&lt;/code&gt; under &lt;code&gt;/etc/systemd/system&lt;/code&gt;.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

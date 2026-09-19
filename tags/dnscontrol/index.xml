@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Dnscontrol on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/tags/dnscontrol/</link>
+		<description>Recent content in Dnscontrol on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 19 Sep 2026 20:06:21 +0300</lastBuildDate>
+		
+			<atom:link href="https://www-staging.alwaldend.com/tags/dnscontrol/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>DNS management in a monorepo</title>
+				<link>https://www-staging.alwaldend.com/blog/dns-management-in-a-monorepo/</link>
+				<pubDate>Sun, 13 Sep 2026 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/blog/dns-management-in-a-monorepo/</guid>
+				<description>&lt;p&gt;Buying a domain is one of the best purchases you can make because they are very cheap and owning one offers you more independence - you can have your email not tied to a specific provider, you can have a site, etc.&lt;/p&gt;&#xA;&lt;p&gt;After I bought a domain, I needed a way to manage DNS of that domain. Since using the registrar&amp;rsquo;s UI to do that is not the best idea, I searched for an IaC tool that can do that for me - I settled on &lt;a href=&#34;https://dnscontrol.org/&#34;&gt;DNSControl&lt;/a&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Dnscontrol</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/dnscontrol/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/dnscontrol/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://github.com/StackExchange/dnscontrol&#34;&gt;https://github.com/StackExchange/dnscontrol&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Rules Dnscontrol</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/rules_dnscontrol/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/rules_dnscontrol/</guid>
+				<description>&lt;p&gt;&lt;code&gt;rules_dnscontrol&lt;/code&gt; packages a DNSControl JavaScript entrypoint together with&#xA;its record configuration files and emits a generated &lt;code&gt;requires.json&lt;/code&gt; manifest&#xA;of relative paths matching the Bazel runfiles tree. Record symlinks retain a&#xA;&lt;code&gt;.json&lt;/code&gt; suffix so DNSControl parses them as JSON. Load the manifest with&#xA;&lt;code&gt;require()&lt;/code&gt; and load each listed path with another &lt;code&gt;require()&lt;/code&gt; call;&#xA;DNSControl&amp;rsquo;s JavaScript loader does not implement CommonJS &lt;code&gt;module.exports&lt;/code&gt;.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

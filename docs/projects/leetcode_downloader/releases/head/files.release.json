@@ -1,0 +1,86 @@
+{
+    "items": [
+        {
+            "file": {
+                "hashes": [
+                    {
+                        "algo": "SHA-256",
+                        "content": "73de8957822a98ae8eda6776d194f32832800895ab16ad0cedaffa7de67ab1e7"
+                    },
+                    {
+                        "algo": "MD5",
+                        "content": "5dfa90807d436506cae780b5eec95bb6"
+                    }
+                ],
+                "name": "contracts.proto",
+                "safeName": "contracts_proto",
+                "size": "1249"
+            },
+            "deployments": [
+                {
+                    "oci": {
+                        "repository": "docker.io/alwaldend/src",
+                        "tags": [
+                            "docker.io/alwaldend/src:_go_cross_binary_linux_amd64_exe_"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "file": {
+                "hashes": [
+                    {
+                        "algo": "SHA-256",
+                        "content": "e1eb5e78da797365a8fbf8d28c0f3a92842b4dfde4ee373755649233e92a6b73"
+                    },
+                    {
+                        "algo": "MD5",
+                        "content": "11b8c3b98df4a67efff8d8a25a8bbbc9"
+                    }
+                ],
+                "name": "leetcode_downloader_tampermonkey.js",
+                "safeName": "leetcode_downloader_tampermonkey_js",
+                "size": "4088"
+            },
+            "deployments": [
+                {
+                    "oci": {
+                        "repository": "docker.io/alwaldend/src",
+                        "tags": [
+                            "docker.io/alwaldend/src:_go_cross_binary_linux_amd64_exe_"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "file": {
+                "hashes": [
+                    {
+                        "algo": "SHA-256",
+                        "content": "2b3a450a1ace4fd6b3c13446838bfaa830e5517ca0acd30e8c9307de3ff35233"
+                    },
+                    {
+                        "algo": "MD5",
+                        "content": "f5b39adba99f5014880fae067a454cc1"
+                    }
+                ],
+                "name": "go_cross_binary.linux_amd64.exe",
+                "safeName": "go_cross_binary_linux_amd64_exe",
+                "size": "9244834"
+            },
+            "deployments": [
+                {
+                    "oci": {
+                        "repository": "docker.io/alwaldend/src",
+                        "tags": [
+                            "docker.io/alwaldend/src:_go_cross_binary_linux_amd64_exe_"
+                        ]
+                    }
+                }
+            ]
+        }
+    ],
+    "project": {}
+}

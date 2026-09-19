@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Bzl on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/docs/tools/patch/main/bzl/</link>
+		<description>Recent content in Bzl on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/docs/tools/patch/main/bzl/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>al_apply_patches</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/patch/main/bzl/bzl/al_apply_patches.stardoc/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/patch/main/bzl/bzl/al_apply_patches.stardoc/</guid>
+				<description>&lt;!-- Generated with Stardoc: http://skydoc.bazel.build --&gt;&#xA;&lt;p&gt;&lt;a id=&#34;al_apply_patches&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2&gt;al_apply_patches&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#al_apply_patches&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;pre&gt;&#xA;load(&#34;@com_alwaldend_src//tools/patch/main/bzl:al_apply_patches.bzl&#34;, &#34;al_apply_patches&#34;)&#xA;&#xA;al_apply_patches(&lt;a href=&#34;#al_apply_patches-name&#34;&gt;name&lt;/a&gt;, &lt;a href=&#34;#al_apply_patches-src&#34;&gt;src&lt;/a&gt;, &lt;a href=&#34;#al_apply_patches-patches&#34;&gt;patches&lt;/a&gt;, &lt;a href=&#34;#al_apply_patches-visibility&#34;&gt;visibility&lt;/a&gt;, &lt;a href=&#34;#al_apply_patches-kwargs&#34;&gt;**kwargs&lt;/a&gt;)&#xA;&lt;/pre&gt;&#xA;&lt;p&gt;Create a genrule applying patches&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;PARAMETERS&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;table&gt;&#xA;&#x9;&lt;thead&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th style=&#34;text-align: left&#34;&gt;Name&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th style=&#34;text-align: left&#34;&gt;Description&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th style=&#34;text-align: left&#34;&gt;Default Value&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/thead&gt;&#xA;&#x9;&lt;tbody&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;&lt;a id=&#34;al_apply_patches-name&#34;&gt;&lt;/a&gt;name&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;genrule name&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;none&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;&lt;a id=&#34;al_apply_patches-src&#34;&gt;&lt;/a&gt;src&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;source archive label&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;none&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;&lt;a id=&#34;al_apply_patches-patches&#34;&gt;&lt;/a&gt;patches&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;patches label&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;none&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;&lt;a id=&#34;al_apply_patches-visibility&#34;&gt;&lt;/a&gt;visibility&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;visibility&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;[&amp;quot;//:__subpackages__&amp;quot;]&lt;/code&gt;&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;&lt;a id=&#34;al_apply_patches-kwargs&#34;&gt;&lt;/a&gt;kwargs&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;other genrule kwargs&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;none&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/tbody&gt;&#xA;&lt;/table&gt;</description>
+			</item>
+	</channel>
+</rss>

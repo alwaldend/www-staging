@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Gradle on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/tags/gradle/</link>
+		<description>Recent content in Gradle on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/tags/gradle/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Gradle</title>
+				<link>https://www-staging.alwaldend.com/docs/third_party/net_gradle_gradle/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/third_party/net_gradle_gradle/</guid>
+				<description>&lt;p&gt;Pinned Gradle 8.13 binary distribution from the primary publisher.&lt;/p&gt;&#xA;&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Source code: &lt;a href=&#34;https://github.com/gradle/gradle/tree/v8.13.0&#34;&gt;https://github.com/gradle/gradle/tree/v8.13.0&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Maven Install Gradle Converter</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/maven_install_gradle_converter/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/maven_install_gradle_converter/</guid>
+				<description>&lt;p&gt;Converts &lt;code&gt;rules_jvm_external&lt;/code&gt; &lt;code&gt;maven_install.json&lt;/code&gt; lock files into Gradle&#xA;version catalogs and dependency verification metadata so Bazel-built Android&#xA;apps can maintain the parallel Gradle build required for F-Droid.&lt;/p&gt;&#xA;&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#usage&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Use the &lt;code&gt;al_gradle_lock&lt;/code&gt; Starlark macro from&#xA;&lt;code&gt;main/bzl/gradle_lock.bzl&lt;/code&gt; in your app&amp;rsquo;s &lt;code&gt;gradle/BUILD.bazel&lt;/code&gt;:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-starlark&#34; data-lang=&#34;starlark&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;load(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;//tools/maven_install_gradle_converter:defs.bzl&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;al_gradle_lock&amp;#34;&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;al_gradle_lock(&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;update&amp;#34;&lt;/span&gt;,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    lock_file &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;//projects/&amp;lt;app&amp;gt;:maven_lock.json&amp;#34;&lt;/span&gt;,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    tool &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;//tools/maven_install_gradle_converter/cmd/gradle_lock_gen&amp;#34;&lt;/span&gt;,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Run &lt;code&gt;bazel run :update_toml_write&lt;/code&gt; to regenerate the checked-in version&#xA;catalog. The corresponding &lt;code&gt;*_write_test&lt;/code&gt; target fails when it goes stale.&lt;/p&gt;&#xA;&lt;p&gt;Gradle owns &lt;code&gt;verification-metadata.xml&lt;/code&gt; because it must record the plugin&#xA;classpath in addition to the Bazel lock. Regenerate it with:&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

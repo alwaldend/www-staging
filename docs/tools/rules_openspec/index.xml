@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>OpenSpec on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/docs/tools/rules_openspec/</link>
+		<description>Recent content in OpenSpec on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/docs/tools/rules_openspec/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title></title>
+				<link>https://www-staging.alwaldend.com/docs/tools/rules_openspec/openspec/spec/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/rules_openspec/openspec/spec/</guid>
+				<description>&lt;h1 id=&#34;project-rules-openspec-specification&#34;&gt;project-rules-openspec Specification&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#project-rules-openspec-specification&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#purpose&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Define reusable Bazel validation and execution behavior for owner-local OpenSpec workspaces.&lt;/p&gt;&#xA;&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirements&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id=&#34;openspec-validation&#34;&gt;OpenSpec validation&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#openspec-validation&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The system SHALL validate one owner-local OpenSpec workspace in a sandbox using the pinned OpenSpec CLI.&lt;/p&gt;&#xA;&lt;h4 id=&#34;scenario-current-validation&#34;&gt;Scenario: current validation&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#scenario-current-validation&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;WHEN&lt;/strong&gt; a caller runs the validation target&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;THEN&lt;/strong&gt; OpenSpec validates current specifications and active changes with strict mode&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h4 id=&#34;scenario-archived-validation&#34;&gt;Scenario: archived validation&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#scenario-archived-validation&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;WHEN&lt;/strong&gt; a caller requests archived validation&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;THEN&lt;/strong&gt; OpenSpec validates completed archived changes with strict mode&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+	</channel>
+</rss>

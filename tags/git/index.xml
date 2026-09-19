@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Git on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/tags/git/</link>
+		<description>Recent content in Git on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Git</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/git/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/git/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Repository delivery</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/repo_delivery/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/repo_delivery/</guid>
+				<description>&lt;p&gt;&lt;code&gt;repo_delivery&lt;/code&gt; implements the deterministic part of repository delivery. It&#xA;invokes native Git and a selected forge CLI; it does not infer task ownership,&#xA;choose validation commands, resolve conflicts, or judge review feedback.&lt;/p&gt;&#xA;&lt;h2 id=&#34;provider-and-delivery-workflow&#34;&gt;Provider and delivery workflow&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#provider-and-delivery-workflow&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Run delivery commands from this Git worktree&amp;rsquo;s repository root, which owns the&#xA;root &lt;code&gt;MODULE.bazel&lt;/code&gt; and &lt;code&gt;tools/repo_delivery&lt;/code&gt;. This also applies when changed&#xA;files belong to a nested Bazel module: its workspace does not own the delivery&#xA;target. Use the same feature worktree, not another checkout. The baseline works&#xA;with older installed runners. Detect the provider without printing a&#xA;credential-bearing remote URL:&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

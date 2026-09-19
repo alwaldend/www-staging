@@ -1,0 +1,500 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js" data-theme-init>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000000">
+
+<style>
+  html { background: Canvas; color: CanvasText; }
+  @media (prefers-color-scheme: dark) {
+    html { background: #0b0d12; color: #e6e6e6; }
+  }
+  html[data-theme-init] * { transition: none !important; }
+</style>
+
+<script>
+  (function() {
+    const themeKey = 'td-color-theme';
+    const storedTheme = localStorage.getItem(themeKey);
+    let theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (theme === 'auto') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
+<link rel="canonical" type="text/html" href="https://www-staging.alwaldend.com/docs/infra/forgejo_runner/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://www-staging.alwaldend.com/docs/infra/forgejo_runner/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+<title>Forgejo runner | Alwaldend</title>
+<meta name="description" content="Forgejo Actions runner deployment">
+<meta property="og:url" content="https://www-staging.alwaldend.com/docs/infra/forgejo_runner/">
+	<meta property="og:site_name" content="Alwaldend">
+	<meta property="og:title" content="Forgejo runner">
+	<meta property="og:description" content="Forgejo Actions runner deployment">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="Forgejo runner">
+	<meta itemprop="description" content="Forgejo Actions runner deployment">
+	<meta itemprop="dateModified" content="2026-09-19T20:06:21+03:00">
+	<meta itemprop="wordCount" content="13">
+	<meta itemprop="keywords" content="Forgejo,Ansible,Pve">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Forgejo runner">
+	<meta name="twitter:description" content="Forgejo Actions runner deployment">
+<link rel="preload" href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" as="style" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<link href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" rel="stylesheet" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll">
+<div class="td-navbar-container container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">Alwaldend</span></a>
+  <div class="td-navbar__main td-navbar-nav-scroll td-navbar-nav-scroll--indicator" id="main_navbar">
+    <div class="scroll-indicator scroll-left"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/projects/"><span>Projects</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item td-navbar__light-dark-menu">
+        <div class="td-light-dark-menu dropdown"><svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+<button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        title="Toggle theme (Auto)"
+        aria-label="Toggle theme (Auto)">
+  <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="bd-theme">
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
+      Light
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>
+      Dark
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+      <svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>
+      Auto
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+</ul>
+</div>
+
+      </li>
+      </ul>
+    <div class="scroll-indicator scroll-right"></div>
+  </div>
+  <div class="td-navbar__search d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon" aria-hidden="true"></div>
+  <input
+    type="search"
+    name="q"
+    class="td-search__input form-control"
+    placeholder='Search this site…'
+    aria-label='Search this site…'
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/infra/forgejo_runner/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Forgejo runner</h1>
+<div class="lead">Forgejo Actions runner deployment</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-9abcd9986c5b24d182b4538a6c4cba88"></a></li>
+
+
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-3bb8cb3d1c905f1f6075618f1ef69610"></a></li>
+
+
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-f066b695c0dd6eed475cb0158d9cb746">Ansible</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>4: <a href="#pg-f9ffc9e12b9f5551f238d6b09bbc9cc1">Terraform setup</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      <h2 id="print-1be3fa60768c7ba248d4de62766e0ac5-deploy-vms">Deploy VMs<a class="td-heading-self-link" href="#print-1be3fa60768c7ba248d4de62766e0ac5-deploy-vms" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //infra/forgejo_runner/tf_setup <span style="color:#75715e"># Create VMs</span>
+</span></span><span style="display:flex;"><span>bazel run //infra/forgejo_runner/ansible <span style="color:#75715e"># Configure VMs</span>
+</span></span></code></pre></div>
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-9abcd9986c5b24d182b4538a6c4cba88">1 - </h1>
+    
+	<h1 id="print-aa9fd2e826bb291d5e08428692924afd-forgejo-runner-infrastructure-specification">Forgejo runner infrastructure specification<a class="td-heading-self-link" href="#print-aa9fd2e826bb291d5e08428692924afd-forgejo-runner-infrastructure-specification" aria-label="Heading self-link"></a></h1><h2 id="print-aa9fd2e826bb291d5e08428692924afd-purpose">Purpose<a class="td-heading-self-link" href="#print-aa9fd2e826bb291d5e08428692924afd-purpose" aria-label="Heading self-link"></a></h2><p>Describe the Forgejo Actions runner VM and deployment scaffold owned by
+<code>infra/forgejo_runner</code>. Its <code>tf_setup</code> and <code>ansible</code> packages are stages of
+this owner. The runner role is commented out in the baseline playbook;
+the checked-in configuration therefore does not establish a deployed or
+registered Actions worker. No live runner state was observed.</p>
+<p>Baseline revision: <code>550d7e79b1f5fdbc2b6017b75178471d6914082f</code>.
+Observed: 2026-09-08. Sources:
+<a href="/docs/infra/forgejo_runner/">owner README</a>,
+<a href="../../../BUILD.bazel">BUILD</a>, and the implementation
+links below.</p>
+<h2 id="print-aa9fd2e826bb291d5e08428692924afd-requirements">Requirements<a class="td-heading-self-link" href="#print-aa9fd2e826bb291d5e08428692924afd-requirements" aria-label="Heading self-link"></a></h2><h3 id="print-aa9fd2e826bb291d5e08428692924afd-requirement-dedicated-runner-vm-allocation">Requirement: Dedicated runner VM allocation<a class="td-heading-self-link" href="#print-aa9fd2e826bb291d5e08428692924afd-requirement-dedicated-runner-vm-allocation" aria-label="Heading self-link"></a></h3><p>Setup SHALL declare <code>runner1</code> as Proxmox VM 1200 in the
+<code>src_infra_forgejo_runner</code> pool, with eight cores, 16 GiB memory, a 20 GiB
+boot disk, and a 300 GiB runner disk on <code>ceph-ec</code> storage. Its hostname and
+address SHALL derive from the owner&rsquo;s DNS declaration.</p>
+<p>Source: <a href="../../../tf_setup/vms.tf">VM definition</a>.</p>
+<h4 id="print-aa9fd2e826bb291d5e08428692924afd-scenario-inspect-the-runner-capacity-definition">Scenario: Inspect the runner capacity definition<a class="td-heading-self-link" href="#print-aa9fd2e826bb291d5e08428692924afd-scenario-inspect-the-runner-capacity-definition" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> a maintainer evaluates the runner VM configuration</li>
+<li><strong>THEN</strong> the source declares the dedicated runner pool, compute allocation,
+and separate boot and runner disks</li>
+<li><strong>AND</strong> DNS source supplies the hostname and address</li>
+</ul>
+<h3 id="print-aa9fd2e826bb291d5e08428692924afd-requirement-explicit-host-only-deployment-baseline">Requirement: Explicit host-only deployment baseline<a class="td-heading-self-link" href="#print-aa9fd2e826bb291d5e08428692924afd-requirement-explicit-host-only-deployment-baseline" aria-label="Heading self-link"></a></h3><p>The baseline deployment playbook SHALL apply the shared host role to the
+<code>forgejo_runner</code> inventory group. The specification MUST identify the
+commented-out Forgejo runner role as inactive and MUST NOT interpret the
+available runner variables as evidence that the worker is installed or
+registered.</p>
+<p>Sources: <a href="../../../ansible/playbook_deploy.yaml">deployment playbook</a>
+and <a href="../../../ansible/group_vars/all.yaml">runner variables</a>.</p>
+<h4 id="print-aa9fd2e826bb291d5e08428692924afd-scenario-determine-the-effect-of-the-current-playbook">Scenario: Determine the effect of the current playbook<a class="td-heading-self-link" href="#print-aa9fd2e826bb291d5e08428692924afd-scenario-determine-the-effect-of-the-current-playbook" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the current playbook&rsquo;s active roles are inspected</li>
+<li><strong>THEN</strong> only the shared host role is enabled</li>
+<li><strong>AND</strong> runner installation and registration remain outside the behavior
+established by this source baseline</li>
+</ul>
+<h3 id="print-aa9fd2e826bb291d5e08428692924afd-requirement-packaged-setup-and-deployment-configuration">Requirement: Packaged setup and deployment configuration<a class="td-heading-self-link" href="#print-aa9fd2e826bb291d5e08428692924afd-requirement-packaged-setup-and-deployment-configuration" aria-label="Heading self-link"></a></h3><p>The owner SHALL expose Terraform setup and packaged Ansible entry points
+through its <code>al</code> configuration and Vault injection dependencies. The runner
+configuration SHALL reference <code>https://git.alwaldend.com</code>, <code>/dev/sdb</code>, and
+an environment-supplied <code>FORGEJO_RUNNER_TOKEN</code> rather than a checked-in
+registration token.</p>
+<p>Sources: <a href="../../../tf_setup/BUILD.bazel">setup BUILD</a>,
+<a href="../../../ansible/BUILD.bazel">Ansible BUILD</a>, and
+<a href="../../../ansible/group_vars/all.yaml">runner variables</a>.</p>
+<h4 id="print-aa9fd2e826bb291d5e08428692924afd-scenario-resolve-the-registration-credential-source">Scenario: Resolve the registration credential source<a class="td-heading-self-link" href="#print-aa9fd2e826bb291d5e08428692924afd-scenario-resolve-the-registration-credential-source" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> a maintainer inspects the runner configuration scaffold</li>
+<li><strong>THEN</strong> its token value is an environment lookup and its instance URL is
+the canonical Forgejo service</li>
+<li><strong>AND</strong> the token reference alone does not enable the inactive runner role</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-3bb8cb3d1c905f1f6075618f1ef69610">2 - </h1>
+    
+	<h1 id="print-9fa054b557a948ef8431020aa21c7f40-owned-dns-specification">owned-dns Specification<a class="td-heading-self-link" href="#print-9fa054b557a948ef8431020aa21c7f40-owned-dns-specification" aria-label="Heading self-link"></a></h1><h2 id="print-9fa054b557a948ef8431020aa21c7f40-purpose">Purpose<a class="td-heading-self-link" href="#print-9fa054b557a948ef8431020aa21c7f40-purpose" aria-label="Heading self-link"></a></h2><p>Define Forgejo Actions runner DNS management through the owner&rsquo;s <code>tf_setup</code> root,
+including canonical declarations, scoped execution, adoption of existing records,
+and offline source checks.</p>
+<h2 id="print-9fa054b557a948ef8431020aa21c7f40-requirements">Requirements<a class="td-heading-self-link" href="#print-9fa054b557a948ef8431020aa21c7f40-requirements" aria-label="Heading self-link"></a></h2><h3 id="print-9fa054b557a948ef8431020aa21c7f40-requirement-owner-local-dns-configuration">Requirement: Owner-local DNS configuration<a class="td-heading-self-link" href="#print-9fa054b557a948ef8431020aa21c7f40-requirement-owner-local-dns-configuration" aria-label="Heading self-link"></a></h3><p>The <code>tf_setup</code> root SHALL consume this owner&rsquo;s canonical <code>dnsconfig.json</code> through
+the shared DNS Terraform module, preserving declared record identities and views.
+DNS resources SHALL default to disabled before adoption and SHALL remain enabled
+by default after authorized adoption. Adoption SHALL bind existing provider records
+to the owner&rsquo;s state without adding, changing, replacing, or deleting DNS records.
+Subsequent reconciliation of unchanged declarations SHALL preserve owned and
+unrelated records.</p>
+<h4 id="print-9fa054b557a948ef8431020aa21c7f40-scenario-inspect-the-preparatory-configuration">Scenario: Inspect the preparatory configuration<a class="td-heading-self-link" href="#print-9fa054b557a948ef8431020aa21c7f40-scenario-inspect-the-preparatory-configuration" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the checked-in root is evaluated with default inputs before adoption</li>
+<li><strong>THEN</strong> it reads this owner&rsquo;s declaration and disables managed DNS records</li>
+<li><strong>AND</strong> the package contains the module and declaration inputs</li>
+</ul>
+<h4 id="print-9fa054b557a948ef8431020aa21c7f40-scenario-inspect-the-adopted-configuration">Scenario: Inspect the adopted configuration<a class="td-heading-self-link" href="#print-9fa054b557a948ef8431020aa21c7f40-scenario-inspect-the-adopted-configuration" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the adopted root is evaluated with default inputs</li>
+<li><strong>THEN</strong> it reads this owner&rsquo;s declaration and enables managed DNS records</li>
+<li><strong>AND</strong> the package contains the module and declaration inputs</li>
+</ul>
+<h4 id="print-9fa054b557a948ef8431020aa21c7f40-scenario-adopt-existing-records">Scenario: Adopt existing records<a class="td-heading-self-link" href="#print-9fa054b557a948ef8431020aa21c7f40-scenario-adopt-existing-records" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the owner adopts matched existing provider records through
+<code>//infra/forgejo_runner/tf_setup:dns.plan</code>, <code>:dns.show</code>, and <code>:dns.apply</code></li>
+<li><strong>THEN</strong> the owner state binds each declared record to its existing provider identity</li>
+<li><strong>AND</strong> the reviewed adoption plan proposes no record additions, changes,
+replacements, or deletions</li>
+</ul>
+<h4 id="print-9fa054b557a948ef8431020aa21c7f40-scenario-reconcile-unchanged-declarations">Scenario: Reconcile unchanged declarations<a class="td-heading-self-link" href="#print-9fa054b557a948ef8431020aa21c7f40-scenario-reconcile-unchanged-declarations" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the adopted root plans and applies unchanged declarations through its
+scoped <code>//infra/forgejo_runner/tf_setup:dns</code> wrappers</li>
+<li><strong>THEN</strong> it makes no DNS resource changes</li>
+<li><strong>AND</strong> owned records retain their declared values and views while unrelated
+records remain unchanged</li>
+</ul>
+<h3 id="print-9fa054b557a948ef8431020aa21c7f40-requirement-scoped-dns-execution-and-offline-checks">Requirement: Scoped DNS execution and offline checks<a class="td-heading-self-link" href="#print-9fa054b557a948ef8431020aa21c7f40-requirement-scoped-dns-execution-and-offline-checks" aria-label="Heading self-link"></a></h3><p>The DNS wrapper SHALL select <code>src_infra_forgejo_runner</code> through the repository
+AL flow and keep secret values in injected variables. Dedicated DNS plan, show,
+and apply targets SHALL select <code>dns=1</code> alone and target <code>module.dns</code> while reusing
+the owning setup root and backend. DNS apply SHALL consume only a reviewed saved
+plan. Ordinary setup targets SHALL retain their existing <code>tf=setup</code> flow.
+Real DNS credentials and Vault policy grants SHALL be prerequisites for
+operational Terraform calls. RouterOS DNS credentials SHALL be isolated from
+unrelated RouterOS resources. The package SHALL expose a format test that does
+not authenticate to Vault or contact DNS providers.</p>
+<h4 id="print-9fa054b557a948ef8431020aa21c7f40-scenario-validate-the-terraform-source">Scenario: Validate the Terraform source<a class="td-heading-self-link" href="#print-9fa054b557a948ef8431020aa21c7f40-scenario-validate-the-terraform-source" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the package format test executes</li>
+<li><strong>THEN</strong> it checks the packaged Terraform configuration without live credentials</li>
+<li><strong>AND</strong> existing non-DNS authentication and backend paths remain unchanged</li>
+</ul>
+<h4 id="print-9fa054b557a948ef8431020aa21c7f40-scenario-prepare-an-operational-terraform-invocation">Scenario: Prepare an operational Terraform invocation<a class="td-heading-self-link" href="#print-9fa054b557a948ef8431020aa21c7f40-scenario-prepare-an-operational-terraform-invocation" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> a dedicated DNS target selects its execution label</li>
+<li><strong>THEN</strong> it selects <code>dns=1</code> and DNS credential injection through the owner AppRole</li>
+<li><strong>AND</strong> it retains the setup backend while limiting reconciliation to <code>module.dns</code></li>
+<li><strong>AND</strong> disabled DNS resources do not imply offline provider configuration</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-f066b695c0dd6eed475cb0158d9cb746">3 - Ansible</h1>
+    <div class="lead">Forgejo runner configuration</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-f9ffc9e12b9f5551f238d6b09bbc9cc1">4 - Terraform setup</h1>
+    <div class="lead">Forgejo runner VM</div>
+	<p>Use this package&rsquo;s <code>dns.plan</code>, <code>dns.show</code>, and <code>dns.apply</code> targets for the
+<a href="/docs/infra/dns/">scoped DNS adoption workflow</a>.</p>
+<p>These targets select <code>dns=1</code> and target <code>module.dns</code> with the existing
+<code>src_infra_forgejo_runner</code> AppRole and setup backend. Plan declared imports,
+inspect the saved plan with <code>dns.show</code>, and apply only the reviewed file with
+<code>dns.apply</code>. Ordinary setup commands retain their <code>tf=setup</code> flow.</p>
+<p><code>dns_enabled</code> defaults to <code>true</code> after verified adoption. Keep it enabled to
+retain existing records; disabling it would propose deletion. The
+<a href="../openspec/changes/archive/2026-09-13-adopt-dns-records/design.md">adoption record</a>
+contains the import, follow-up plan, inventory, and DNS verification evidence.
+The shared <a href="../../dns/openspec/changes/archive/2026-09-13-migrate-project-dns-to-terraform/cutover.md#prepare-the-owner">cutover procedure</a>
+owns prerequisites and recovery. Scoped DNS checks do not establish VM or runner
+service health.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        Built with <a href="https://gohugo.io/">Hugo 0.165.0</a>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="/js/main.min.259204f469f58eb3b665605a24e964264772df2adaded180b3669b6ce33d84c8.js" integrity="sha256-JZIE9Gn1jrO2ZWBaJOlkJkdy3yra3tGAs2abbOM9hMg=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.decf3b53d8827d840369f490775626e2a5200e150a733f78f0081c126426cbbf.js" integrity="sha256-3s87U9iCfYQDafSQd1Ym4qUgDhUKcz948AgcEmQmy78=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

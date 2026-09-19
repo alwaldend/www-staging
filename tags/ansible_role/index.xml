@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Ansible_role on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/tags/ansible_role/</link>
+		<description>Recent content in Ansible_role on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/tags/ansible_role/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Adguard</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/adguard/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/adguard/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Caddy</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/caddy/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/caddy/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>CIFS</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/cifs/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/cifs/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Consul</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/consul/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/consul/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Consul</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/consul_old/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/consul_old/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Consul envoy</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/consul_envoy/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/consul_envoy/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Dev VM</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/dev_vm/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/dev_vm/</guid>
+				<description>&lt;p&gt;The default task entry point configures package repositories and development&#xA;packages. It uses the same &lt;code&gt;dev_vm_packages&lt;/code&gt; list with either the ordinary&#xA;package manager or RPM-OSTree layering. &lt;code&gt;dev_vm_package_backend&lt;/code&gt; accepts&#xA;&lt;code&gt;auto&lt;/code&gt;, &lt;code&gt;package&lt;/code&gt;, or &lt;code&gt;rpm_ostree&lt;/code&gt;; &lt;code&gt;auto&lt;/code&gt; selects RPM-OSTree when&#xA;&lt;code&gt;/run/ostree-booted&lt;/code&gt; exists. Set &lt;code&gt;dev_vm_install_packages&lt;/code&gt; to &lt;code&gt;false&lt;/code&gt; to skip&#xA;repository and package management entirely.&lt;/p&gt;&#xA;&lt;p&gt;RPM-OSTree changes are staged for the next boot by default. The role reports a&#xA;pending deployment but does not reboot the host. Set&#xA;&lt;code&gt;dev_vm_rpm_ostree_apply_live&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; only when live application is known to&#xA;be safe for the selected packages.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>DNS</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/dns/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/dns/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Docker</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/docker/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/docker/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Facts</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/facts/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/facts/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Filesystem</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/filesystem/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/filesystem/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Firewall</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/firewall/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/firewall/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Forgejo</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/forgejo/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/forgejo/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Forgejo</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/threexui/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/threexui/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Forgejo runner</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/forgejo_runner/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/forgejo_runner/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Gpg</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/gpg/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/gpg/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Harboer</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/harbor/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/harbor/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Site: &lt;a href=&#34;https://goharbor.io/&#34;&gt;https://goharbor.io/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Hermes</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/hermes/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/hermes/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Hiddify manager</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/hiddify_manager/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/hiddify_manager/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Hiddify manager with host</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/hiddify_manager_host/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/hiddify_manager_host/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Host</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/host/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/host/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Install CA</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/install_ca/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/install_ca/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>K3s</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/k3s/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/k3s/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>K3s bootstrap</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/k3s_bootstrap/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/k3s_bootstrap/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>K3s cluster</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/k3s_cluster/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/k3s_cluster/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>K3s kubeconfig</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/k3s_kubeconfig/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/k3s_kubeconfig/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>lvg</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/lvg/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/lvg/</guid>
+				<description>&lt;p&gt;&lt;code&gt;lvg_volume_groups&lt;/code&gt; describes the complete desired physical-volume list for&#xA;each volume group. Extra physical volumes are not removed unless a caller sets&#xA;&lt;code&gt;remove_extra_pvs: true&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Creating a volume group initializes every listed device as an LVM physical&#xA;volume. Callers must resolve stable device paths and verify that each device is&#xA;the intended, unused disk before applying this role; &lt;code&gt;pvcreate&lt;/code&gt; may overwrite&#xA;an existing disk signature.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>lvol</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/lvol/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/lvol/</guid>
+				<description>&lt;p&gt;Each &lt;code&gt;lvol_volumes&lt;/code&gt; entry can constrain allocation with &lt;code&gt;pvs&lt;/code&gt;, pass creation&#xA;arguments with &lt;code&gt;opts&lt;/code&gt;, and disable shrinking with &lt;code&gt;shrink: false&lt;/code&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Mount</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/mount/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/mount/</guid>
+				<description>&lt;p&gt;Mount entries can set &lt;code&gt;opts&lt;/code&gt;, &lt;code&gt;dump&lt;/code&gt;, and &lt;code&gt;passno&lt;/code&gt;; &lt;code&gt;state: mounted&lt;/code&gt; keeps the&#xA;mount active and writes its persistent &lt;code&gt;/etc/fstab&lt;/code&gt; entry.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Opencode</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/opencode/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/opencode/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>OpenHands automation</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/openhands_automation/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/openhands_automation/</guid>
+				<description>&lt;p&gt;Runs the OpenHands automation server natively from a &lt;code&gt;uv&lt;/code&gt;-managed virtual&#xA;environment. It stores schedules and event triggers, tracks run lifecycle, and&#xA;dispatches conversations to the agent server.&lt;/p&gt;&#xA;&lt;p&gt;The automation server is not a sandbox. It records which agent server should&#xA;run a dispatched conversation and hands that work to&#xA;&lt;code&gt;AUTOMATION_AGENT_SERVER_URL&lt;/code&gt;; setting that variable selects the agent&#xA;server&amp;rsquo;s local mode, which uses a persistent local agent server instead of&#xA;managed OpenHands Cloud sandboxes.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>OpenHands canvas</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/openhands_canvas/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/openhands_canvas/</guid>
+				<description>&lt;p&gt;Runs the OpenHands Agent Canvas browser client from the published npm package.&#xA;The service listens on loopback port &lt;code&gt;openhands_canvas_port&lt;/code&gt;; TLS, the public&#xA;hostname, and routing to the agent server and automation API belong to the&#xA;deployment&amp;rsquo;s Traefik role.&lt;/p&gt;&#xA;&lt;p&gt;The service runs the package&amp;rsquo;s &lt;code&gt;scripts/static-server.mjs&lt;/code&gt; directly with Node,&#xA;an explicit loopback host, and the package&amp;rsquo;s &lt;code&gt;build/&lt;/code&gt; directory. It serves the&#xA;browser client without starting an agent server, an automation server, or the&#xA;npm launcher&amp;rsquo;s additional ingress process. Agent Canvas owns no conversation&#xA;or automation state and executes no tools.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Openhands server</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/openhands_server/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/openhands_server/</guid>
+				<description>&lt;p&gt;Runs the OpenHands agent server natively from a &lt;code&gt;uv&lt;/code&gt;-managed virtual&#xA;environment. It hosts conversations, executes tools, and streams events for&#xA;Agent Canvas. The service binds loopback only; TLS and external reachability&#xA;belong to the calling deployment.&lt;/p&gt;&#xA;&lt;p&gt;Set &lt;code&gt;openhands_server_secure&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require a session API key. The&#xA;unsecured mode omits the session key and is only appropriate where the loopback&#xA;boundary is trusted.&lt;/p&gt;&#xA;&lt;p&gt;The caller can set &lt;code&gt;openhands_server_install_packages&lt;/code&gt; to &lt;code&gt;false&lt;/code&gt; and install&#xA;&lt;code&gt;openhands_server_packages&lt;/code&gt; through its host-specific package workflow.&#xA;OSTree hosts use the shared &lt;code&gt;dev_vm&lt;/code&gt; package entry point and must boot into a&#xA;deployment containing those dependencies before installing the service. They&#xA;also set &lt;code&gt;openhands_server_service_path&lt;/code&gt; under &lt;code&gt;/etc/systemd/system&lt;/code&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>OS</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/os/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/os/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Pve</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/pve/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/pve/</guid>
+				<description>&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Install guide: &lt;a href=&#34;https://pve.proxmox.com/wiki/Install_Proxmox_VE_on_Debian_13_Trixie&#34;&gt;https://pve.proxmox.com/wiki/Install_Proxmox_VE_on_Debian_13_Trixie&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>PVE cluster</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/pve_cluster/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/pve_cluster/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>PVE VM</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/pve_vm/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/pve_vm/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>PVE VM remove</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/pve_vm_remove/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/pve_vm_remove/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Raspberry pi</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/raspberry_pi/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/raspberry_pi/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>SSH</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/ssh/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/ssh/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>SSH port forwarding</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/ssh_port_forward/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/ssh_port_forward/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>SSH update known hosts</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/ssh_update_known_hosts/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/ssh_update_known_hosts/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>T3 Code</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/t3code/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/t3code/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Traefik</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/traefik/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/traefik/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Traefik (old)</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/traefik_old/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/traefik_old/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Update all packages</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/update_all_packages/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/update_all_packages/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Users</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/users/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/users/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Vault</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/vault/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/vault/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Wireguard</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/wireguard/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/wireguard/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Xray</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/xray/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/ansible_collection/roles/xray/</guid>
+				<description>&lt;p&gt;Links:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://xtls.github.io/en/&#34;&gt;https://xtls.github.io/en/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+	</channel>
+</rss>

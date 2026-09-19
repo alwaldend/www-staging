@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Sh on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/languages/sh/</link>
+		<description>Recent content in Sh on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/languages/sh/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Bazel agent</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/bazel_agent/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/bazel_agent/</guid>
+				<description>&lt;p&gt;&lt;code&gt;bazel_agent&lt;/code&gt; is the repository Bazel entry point for agents. It keeps the&#xA;Bazel invocation behind a validated subcommand while consistently applying the&#xA;agent configuration:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bazel_agent bazel test //path/to/package:all&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    -&amp;gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bazel test --config=agent //path/to/package:all&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;bazel&lt;/code&gt; is the only Bazel entry point, and it is a validated subcommand. The&#xA;runner accepts a known Bazel command after the &lt;code&gt;bazel&lt;/code&gt; keyword, rejects&#xA;arbitrary leading arguments, and places &lt;code&gt;--config=agent&lt;/code&gt; after the command.&#xA;Targets, command options, and arguments after the &lt;code&gt;--&lt;/code&gt; separator of a&#xA;&lt;code&gt;bazel run&lt;/code&gt; invocation pass through unchanged. Later options therefore retain&#xA;Bazel&amp;rsquo;s normal precedence and can override settings supplied by the agent&#xA;configuration. The runner resolves &lt;code&gt;bazel&lt;/code&gt; from &lt;code&gt;PATH&lt;/code&gt; and replaces itself&#xA;with that process, so signals and the final exit status are not mediated by&#xA;another wrapper process. Uses of the persistent Bazel server follow the host&#xA;Codex network policy; the &lt;code&gt;host-bot&lt;/code&gt; profile allows loopback so the&#xA;client-server connection is not blocked.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Bazel agent</title>
+				<link>https://www-staging.alwaldend.com/projects/bazel_agent/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/projects/bazel_agent/</guid>
+				<description>&lt;p&gt;&lt;code&gt;bazel_agent&lt;/code&gt; is the Bazel entry point for agents working in this&#xA;repository. It keeps Bazel behind a validated subcommand while consistently&#xA;applying the agent configuration.&lt;/p&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#features&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Validated &lt;code&gt;bazel&lt;/code&gt; subcommand instead of arbitrary arguments&lt;/li&gt;&#xA;&lt;li&gt;Applies the agent configuration in the required position&lt;/li&gt;&#xA;&lt;li&gt;Preserves signals and exit status by replacing itself with the Bazel process&lt;/li&gt;&#xA;&lt;li&gt;Read-only &lt;code&gt;doctor&lt;/code&gt; diagnostics for runner and workspace state&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Dotfiles</title>
+				<link>https://www-staging.alwaldend.com/docs/projects/dotfiles/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/projects/dotfiles/</guid>
+				<description>&lt;p&gt;This project packages personal configuration files into an installable&#xA;archive. Make and Bazel entry points compare the packaged files with the&#xA;local system and install selected configurations.&lt;/p&gt;&#xA;&lt;h2 id=&#34;links&#34;&gt;Links&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#links&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Source code: &lt;a href=&#34;https://github.com/alwaldend/src/tree/master/projects/dotfiles&#34;&gt;https://github.com/alwaldend/src/tree/master/projects/dotfiles&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#features&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Archive with dotfiles that can be installed using make&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;bazel-usage&#34;&gt;Bazel usage&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#bazel-usage&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bazel run //projects/dotfiles:help &lt;span style=&#34;color:#75715e&#34;&gt;# Show help&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bazel run //projects/dotfiles:diff &lt;span style=&#34;color:#75715e&#34;&gt;# Show diff&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bazel run //projects/dotfiles:install &lt;span style=&#34;color:#75715e&#34;&gt;# Install files&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;archive-usage&#34;&gt;Archive usage&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#archive-usage&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;oras pull --output &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;PWD&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; docker.io/alwaldend/src:projects_dotfiles_dotfiles_tar_head&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd releases/projects/dotfiles/head/files&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tar -xf dotfiles.tar&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd dotfiles&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;make help &lt;span style=&#34;color:#75715e&#34;&gt;# Show help&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;make diff &lt;span style=&#34;color:#75715e&#34;&gt;# Check diff between system files and those from the archive&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;make diff/nvim &lt;span style=&#34;color:#75715e&#34;&gt;# Check diff for all nvim files&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;make diff/nvim/.config/nvim/lazy-lock.json &lt;span style=&#34;color:#75715e&#34;&gt;# Diff specific file&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;make install &lt;span style=&#34;color:#75715e&#34;&gt;# Install all files from the archive&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;make install/nvim &lt;span style=&#34;color:#75715e&#34;&gt;# Install nvim files&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;make install/nvim/.config/nvim/lazy-lock.json &lt;span style=&#34;color:#75715e&#34;&gt;# Install a specific file&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;help&#34;&gt;Help&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#help&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;help: Show help&#xA;install: Install files from the archive&#xA;diff: Show diff between archive files and system files&#xA;install/bin: Install bin files&#xA;diff/bin: Diff bin files&#xA;install/home: Install home files&#xA;diff/home: Diff home files&#xA;install/nvim: Install nvim files&#xA;diff/nvim: Diff nvim files&#xA;make: Nothing to be done for &amp;#39;help&amp;#39;.&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+			</item>
+			<item>
+				<title>Dotfiles</title>
+				<link>https://www-staging.alwaldend.com/projects/dotfiles/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/projects/dotfiles/</guid>
+				<description>&lt;p&gt;This project packages personal configuration files into an installable&#xA;archive. Entry points compare the packaged files against the local system and&#xA;install selected configurations.&lt;/p&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#features&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;Configuration files packaged into one installable archive&lt;/li&gt;&#xA;&lt;li&gt;Comparison against the local system before installing&lt;/li&gt;&#xA;&lt;li&gt;Selective installation instead of all-or-nothing&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Repository quality</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/repo_quality/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/repo_quality/</guid>
+				<description>&lt;p&gt;This package uses upstream &lt;code&gt;aspect_rules_lint&lt;/code&gt; formatting and linting rules to&#xA;discover Git-tracked files and inspect declared source targets with established&#xA;tools acquired by Bazel. It does not implement a formatter or linter and does&#xA;not download tools at runtime. Thin workspace adapters extend the upstream&#xA;language list with the official Go SDK for module and workspace manifests,&#xA;StyLua and Selene for Lua, and the existing Prettier XML plugin for Qt &lt;code&gt;.ui&lt;/code&gt;&#xA;and &lt;code&gt;.qrc&lt;/code&gt; files.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Sh</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/sh/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/sh/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

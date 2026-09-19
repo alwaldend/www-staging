@@ -1,0 +1,331 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js" data-theme-init>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000000">
+
+<style>
+  html { background: Canvas; color: CanvasText; }
+  @media (prefers-color-scheme: dark) {
+    html { background: #0b0d12; color: #e6e6e6; }
+  }
+  html[data-theme-init] * { transition: none !important; }
+</style>
+
+<script>
+  (function() {
+    const themeKey = 'td-color-theme';
+    const storedTheme = localStorage.getItem(themeKey);
+    let theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (theme === 'auto') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
+<link rel="canonical" type="text/html" href="https://www-staging.alwaldend.com/docs/tools/rules_skills/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://www-staging.alwaldend.com/docs/tools/rules_skills/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+<title>Rules skill | Alwaldend</title>
+<meta name="description" content="Bazel rules and validation for Codex skills">
+<meta property="og:url" content="https://www-staging.alwaldend.com/docs/tools/rules_skills/">
+	<meta property="og:site_name" content="Alwaldend">
+	<meta property="og:title" content="Rules skill">
+	<meta property="og:description" content="Bazel rules and validation for Codex skills">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="Rules skill">
+	<meta itemprop="description" content="Bazel rules and validation for Codex skills">
+	<meta itemprop="dateModified" content="2026-09-19T20:06:21+03:00">
+	<meta itemprop="wordCount" content="586">
+	<meta itemprop="keywords" content="Bzl_rules">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Rules skill">
+	<meta name="twitter:description" content="Bazel rules and validation for Codex skills">
+<link rel="preload" href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" as="style" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<link href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" rel="stylesheet" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll">
+<div class="td-navbar-container container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">Alwaldend</span></a>
+  <div class="td-navbar__main td-navbar-nav-scroll td-navbar-nav-scroll--indicator" id="main_navbar">
+    <div class="scroll-indicator scroll-left"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/projects/"><span>Projects</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item td-navbar__light-dark-menu">
+        <div class="td-light-dark-menu dropdown"><svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+<button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        title="Toggle theme (Auto)"
+        aria-label="Toggle theme (Auto)">
+  <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="bd-theme">
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
+      Light
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>
+      Dark
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+      <svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>
+      Auto
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+</ul>
+</div>
+
+      </li>
+      </ul>
+    <div class="scroll-indicator scroll-right"></div>
+  </div>
+  <div class="td-navbar__search d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon" aria-hidden="true"></div>
+  <input
+    type="search"
+    name="q"
+    class="td-search__input form-control"
+    placeholder='Search this site…'
+    aria-label='Search this site…'
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/tools/rules_skills/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Rules skill</h1>
+<div class="lead">Bazel rules and validation for Codex skills</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+
+    </ul>
+
+
+<div class="content">
+      <p><code>rules_skills</code> packages all files belonging to a Codex skill and validates its
+instructions and optional OpenAI metadata with a hermetic Bazel aspect.</p>
+<h2 id="print-2ad7f5461c1ed7ee7ed76c6b87e2c711-getting-started">Getting started<a class="td-heading-self-link" href="#print-2ad7f5461c1ed7ee7ed76c6b87e2c711-getting-started" aria-label="Heading self-link"></a></h2><p>Add the module and register the validation aspect:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-starlark" data-lang="starlark"><span style="display:flex;"><span>bazel_dep(name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;rules_skills&#34;</span>, version <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&lt;VERSION&gt;&#34;</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>build --aspects @rules_skills//skill:defs.bzl%skill_validation_aspect
+</span></span><span style="display:flex;"><span>build --output_groups=+skill_validation
+</span></span></code></pre></div><p>Declare one library in the skill&rsquo;s named, non-root package:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-starlark" data-lang="starlark"><span style="display:flex;"><span>load(<span style="color:#e6db74">&#34;@rules_skills//skill:defs.bzl&#34;</span>, <span style="color:#e6db74">&#34;skill_library&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>skill_library(
+</span></span><span style="display:flex;"><span>    name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;skill&#34;</span>,
+</span></span><span style="display:flex;"><span>    srcs <span style="color:#f92672">=</span> glob(
+</span></span><span style="display:flex;"><span>        [<span style="color:#e6db74">&#34;**&#34;</span>],
+</span></span><span style="display:flex;"><span>        exclude <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;BUILD.bazel&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;BUILD&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;evals/**&#34;</span>,
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>    ),
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p>The package&rsquo;s final path segment is the skill name, so a <code>skill_library</code>
+cannot be declared in a repository root package. Move a root-level skill into
+a named subpackage before declaring it.</p>
+<p>Building the library materializes the <code>skill_validation</code> output group. The
+aspect checks <code>SKILL.md</code>, verifies that the frontmatter name matches its
+package directory, and validates <code>agents/openai.yaml</code> when it is present.</p>
+<h2 id="print-2ad7f5461c1ed7ee7ed76c6b87e2c711-consuming-a-skill">Consuming a skill<a class="td-heading-self-link" href="#print-2ad7f5461c1ed7ee7ed76c6b87e2c711-consuming-a-skill" aria-label="Heading self-link"></a></h2><p>Rules that install or evaluate skills can require the public <code>SkillInfo</code>
+provider:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-starlark" data-lang="starlark"><span style="display:flex;"><span>load(<span style="color:#e6db74">&#34;@rules_skills//skill:defs.bzl&#34;</span>, <span style="color:#e6db74">&#34;SkillInfo&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>attrs <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;skill&#34;</span>: attr<span style="color:#f92672">.</span>label(providers <span style="color:#f92672">=</span> [SkillInfo]),
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><code>SkillInfo</code> exposes these fields:</p>
+<ul>
+<li><code>name</code> is the logical skill name derived from the final segment of <code>root</code>.
+The validation aspect verifies that the <code>SKILL.md</code> frontmatter uses the same
+name.</li>
+<li><code>root</code> is the owning Bazel package path within the skill&rsquo;s repository, such
+as <code>projects/agents/skills/answer-question</code>. It has no repository,
+execution-path, or runfiles prefix. It is always non-empty because
+repository root packages are unsupported.</li>
+<li><code>files_by_path</code> maps slash-separated paths relative to <code>root</code> to Bazel
+<code>File</code> values. It includes <code>SKILL.md</code>, preserves nested paths such as
+<code>agents/openai.yaml</code>, and has the same shape for source and generated files.</li>
+<li><code>files</code> remains the <code>depset</code> of all skill files. <code>skill</code> is the distinguished
+<code>SKILL.md</code> file, and <code>openai_yaml</code> is the optional distinguished
+<code>agents/openai.yaml</code> file.</li>
+</ul>
+<p>Consumers should use <code>files_by_path</code> when staging a bundle instead of parsing
+<code>File.path</code> or <code>File.short_path</code>. Every source must belong to the skill&rsquo;s Bazel
+package, and duplicate logical paths are rejected during analysis.</p>
+<h2 id="print-2ad7f5461c1ed7ee7ed76c6b87e2c711-packaging-skills-from-an-external-archive">Packaging skills from an external archive<a class="td-heading-self-link" href="#print-2ad7f5461c1ed7ee7ed76c6b87e2c711-packaging-skills-from-an-external-archive" aria-label="Heading self-link"></a></h2><p>Use <code>skill_archives</code> when skills are maintained upstream and consumed as a
+pinned archive. The external repository&rsquo;s <code>BUILD</code> file derives one target per
+skill directory from a wildcard, so a new upstream skill needs no edit here:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-starlark" data-lang="starlark"><span style="display:flex;"><span>load(<span style="color:#e6db74">&#34;@rules_skills//skill:defs.bzl&#34;</span>, <span style="color:#e6db74">&#34;skill_archives&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>skill_archives(
+</span></span><span style="display:flex;"><span>    name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;skills&#34;</span>,
+</span></span><span style="display:flex;"><span>    roots <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>        manifest<span style="color:#f92672">.</span>rsplit(<span style="color:#e6db74">&#34;/&#34;</span>, <span style="color:#ae81ff">1</span>)[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> manifest <span style="color:#f92672">in</span> glob([<span style="color:#e6db74">&#34;skills/*/SKILL.md&#34;</span>])
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p><code>skill_archives</code> is a macro over the <code>skill_archive</code> rule. Each generated
+target&rsquo;s name is its skill directory&rsquo;s final segment, <code>root</code> is the skill
+directory inside the package, and its packaged logical paths are relative to
+<code>root</code>. Analysis fails when a root has no <code>SKILL.md</code>. Declare one
+<code>skill_archive</code> directly when a single skill needs a hand-written target.</p>
+<h2 id="print-2ad7f5461c1ed7ee7ed76c6b87e2c711-writing-the-source-tree-discovery-directory">Writing the source-tree discovery directory<a class="td-heading-self-link" href="#print-2ad7f5461c1ed7ee7ed76c6b87e2c711-writing-the-source-tree-discovery-directory" aria-label="Heading self-link"></a></h2><p>Use <code>skills_write</code> to reconcile <code>.agents/skills</code> from declared skills. Each
+<code>symlinks</code> label is installed as a direct relative symlink to its canonical
+root; each <code>archives</code> label is copied in as regular files, which is how archive
+skills are materialized into the consuming repository:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-starlark" data-lang="starlark"><span style="display:flex;"><span>load(<span style="color:#e6db74">&#34;@rules_skills//skill:defs.bzl&#34;</span>, <span style="color:#e6db74">&#34;skills_write&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>skills_write(
+</span></span><span style="display:flex;"><span>    name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;write_skills&#34;</span>,
+</span></span><span style="display:flex;"><span>    archives <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;@org_fissionai_openspec//:openspec-propose&#34;</span>],
+</span></span><span style="display:flex;"><span>    discovery_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;.agents/skills&#34;</span>,
+</span></span><span style="display:flex;"><span>    symlinks <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;//projects/agents/skills/answer-question:skill&#34;</span>],
+</span></span><span style="display:flex;"><span>    workspace_marker <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;//:AGENTS.md&#34;</span>,
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p><code>workspace_marker</code> is a source file in the consuming repository used to
+resolve the workspace root from test runfiles. Reconcile and verify:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //.agents:write_skills
+</span></span><span style="display:flex;"><span>bazel test //.agents:write_skills_test
+</span></span></code></pre></div><p>The generated check requires exactly the declared names: missing, extra, or
+stale entries fail, and a written entry must match its declared source
+byte-for-byte. The updater holds a sibling <code>&lt;discovery_dir&gt;.lock</code> directory
+while it changes entries; a process killed without running its exit trap can
+leave that lock behind. After confirming no updater is active, remove the empty
+lock directory and rerun the updater.</p>
+<p>Both rules require POSIX symlinks and Bash and are limited to Linux and macOS
+checkouts; native Windows checkouts are not supported.</p>
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        Built with <a href="https://gohugo.io/">Hugo 0.165.0</a>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="/js/main.min.259204f469f58eb3b665605a24e964264772df2adaded180b3669b6ce33d84c8.js" integrity="sha256-JZIE9Gn1jrO2ZWBaJOlkJkdy3yra3tGAs2abbOM9hMg=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.decf3b53d8827d840369f490775626e2a5200e150a733f78f0081c126426cbbf.js" integrity="sha256-3s87U9iCfYQDafSQd1Ym4qUgDhUKcz948AgcEmQmy78=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

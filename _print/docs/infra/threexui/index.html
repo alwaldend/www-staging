@@ -1,0 +1,601 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js" data-theme-init>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000000">
+
+<style>
+  html { background: Canvas; color: CanvasText; }
+  @media (prefers-color-scheme: dark) {
+    html { background: #0b0d12; color: #e6e6e6; }
+  }
+  html[data-theme-init] * { transition: none !important; }
+</style>
+
+<script>
+  (function() {
+    const themeKey = 'td-color-theme';
+    const storedTheme = localStorage.getItem(themeKey);
+    let theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (theme === 'auto') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
+<link rel="canonical" type="text/html" href="https://www-staging.alwaldend.com/docs/infra/threexui/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://www-staging.alwaldend.com/docs/infra/threexui/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+<title>threexui | Alwaldend</title>
+<meta name="description" content="3x-ui">
+<meta property="og:url" content="https://www-staging.alwaldend.com/docs/infra/threexui/">
+	<meta property="og:site_name" content="Alwaldend">
+	<meta property="og:title" content="threexui">
+	<meta property="og:description" content="3x-ui">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="threexui">
+	<meta itemprop="description" content="3x-ui">
+	<meta itemprop="dateModified" content="2026-09-19T20:06:21+03:00">
+	<meta itemprop="wordCount" content="32">
+	<meta itemprop="keywords" content="Xray,Vpn">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="threexui">
+	<meta name="twitter:description" content="3x-ui">
+<link rel="preload" href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" as="style" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<link href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" rel="stylesheet" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll">
+<div class="td-navbar-container container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">Alwaldend</span></a>
+  <div class="td-navbar__main td-navbar-nav-scroll td-navbar-nav-scroll--indicator" id="main_navbar">
+    <div class="scroll-indicator scroll-left"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/projects/"><span>Projects</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item td-navbar__light-dark-menu">
+        <div class="td-light-dark-menu dropdown"><svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+<button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        title="Toggle theme (Auto)"
+        aria-label="Toggle theme (Auto)">
+  <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="bd-theme">
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
+      Light
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>
+      Dark
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+      <svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>
+      Auto
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+</ul>
+</div>
+
+      </li>
+      </ul>
+    <div class="scroll-indicator scroll-right"></div>
+  </div>
+  <div class="td-navbar__search d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon" aria-hidden="true"></div>
+  <input
+    type="search"
+    name="q"
+    class="td-search__input form-control"
+    placeholder='Search this site…'
+    aria-label='Search this site…'
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/infra/threexui/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">threexui</h1>
+<div class="lead">3x-ui</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-b17734a8ea31e989c276c4d2af121fe5"></a></li>
+
+
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-e6aae853bbcbc2be261d633e4b35ff39"></a></li>
+
+
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-0285e5414ecda3e14ec3377e1c3ca7ec">Ansible</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>4: <a href="#pg-9f45366f1c27fe41503e491be089db11">sub</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>5: <a href="#pg-0c61b5306eb2ede5d5fb46f298e59667">Tf</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>6: <a href="#pg-0fb932b22c95b085c45384ac9291e3ba">Tf setup</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      <h2 id="print-a222de584d9850c7b3584c1204012b05-links">Links<a class="td-heading-self-link" href="#print-a222de584d9850c7b3584c1204012b05-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Site: <a href="https://docs.sanaei.dev/">https://docs.sanaei.dev/</a></li>
+<li>Releases: <a href="https://github.com/MHSanaei/3x-ui/releases">https://github.com/MHSanaei/3x-ui/releases</a></li>
+</ul>
+<h2 id="print-a222de584d9850c7b3584c1204012b05-fetch-and-fix-subs-for-a-particular-subscription-id">Fetch and fix subs for a particular subscription id<a class="td-heading-self-link" href="#print-a222de584d9850c7b3584c1204012b05-fetch-and-fix-subs-for-a-particular-subscription-id" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //infra/threexui:fix_subs -- --hosts njalla1.nodes.threexui.alwaldend.com,yc1.nodes.threexui.alwaldend.com --sub_id subid
+</span></span></code></pre></div><h2 id="print-a222de584d9850c7b3584c1204012b05-fix-subs-from-a-local-file">Fix subs from a local file<a class="td-heading-self-link" href="#print-a222de584d9850c7b3584c1204012b05-fix-subs-from-a-local-file" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //infra/threexui:fix_subs -- --sub_file path_to_file
+</span></span></code></pre></div>
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-b17734a8ea31e989c276c4d2af121fe5">1 - </h1>
+    
+	<h1 id="print-c81fa215ad21b2f7a7bf828c1150a6a6-infrastructure-3x-ui">Infrastructure 3x-ui<a class="td-heading-self-link" href="#print-c81fa215ad21b2f7a7bf828c1150a6a6-infrastructure-3x-ui" aria-label="Heading self-link"></a></h1><h2 id="print-c81fa215ad21b2f7a7bf828c1150a6a6-purpose">Purpose<a class="td-heading-self-link" href="#print-c81fa215ad21b2f7a7bf828c1150a6a6-purpose" aria-label="Heading self-link"></a></h2><p>Describe 3x-ui provisioning, host deployment, node routing configuration, and
+the subscription URL transformer. This baseline describes checked-in source,
+not verified live node access. The advertised host-only subscription command
+has a source limitation: <code>sub/main.go</code> also attempts to read <code>sub_file</code> when it
+is empty, so successful host-only operation is not a baseline guarantee.</p>
+<p>Baseline source revision: <code>550d7e79b1f5fdbc2b6017b75178471d6914082f</code>.
+Observation date: 2026-09-08. Sources are linked in full; no excerpts are used.</p>
+<p>Sources: <a href="/docs/infra/threexui/">component documentation</a>,
+<a href="../../../BUILD.bazel">root wrappers</a>,
+<a href="../../../tf_setup/BUILD.bazel">provisioning package</a>,
+<a href="../../../tf/BUILD.bazel">configuration package</a>,
+<a href="../../../ansible/playbook_deploy.yaml">host playbook</a>,
+<a href="../../../ansible/files/traefik_dynamic.toml">Traefik routes</a>,
+<a href="../../../tf/nodes.tf">node definitions</a>,
+<a href="../../../tf/node/inbounds.tf">node inbounds</a>,
+<a href="../../../tf/node/routing.tf">node routing</a>, and
+<a href="../../../sub/main.go">subscription transformer</a>.</p>
+<h2 id="print-c81fa215ad21b2f7a7bf828c1150a6a6-requirements">Requirements<a class="td-heading-self-link" href="#print-c81fa215ad21b2f7a7bf828c1150a6a6-requirements" aria-label="Heading self-link"></a></h2><h3 id="print-c81fa215ad21b2f7a7bf828c1150a6a6-requirement-separate-provisioning-deployment-and-service-configuration">Requirement: Separate provisioning, deployment, and service configuration<a class="td-heading-self-link" href="#print-c81fa215ad21b2f7a7bf828c1150a6a6-requirement-separate-provisioning-deployment-and-service-configuration" aria-label="Heading self-link"></a></h3><p>The package SHALL keep infrastructure creation in <code>tf_setup</code>, host deployment
+in Ansible, and 3x-ui API resources in <code>tf</code>. The deployment playbook SHALL apply
+host, Traefik, and 3x-ui roles to the control-plane and data-plane inventory
+groups.</p>
+<h4 id="print-c81fa215ad21b2f7a7bf828c1150a6a6-scenario-select-a-3x-ui-workflow">Scenario: Select a 3x-ui workflow<a class="td-heading-self-link" href="#print-c81fa215ad21b2f7a7bf828c1150a6a6-scenario-select-a-3x-ui-workflow" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> an authorized operator selects the setup or main Terraform wrapper</li>
+<li><strong>THEN</strong> its AL plugin selects the corresponding Terraform stage</li>
+<li><strong>AND</strong> the Ansible playbook remains the owner of host and service installation</li>
+</ul>
+<h3 id="print-c81fa215ad21b2f7a7bf828c1150a6a6-requirement-terminate-proxy-traffic-at-the-declared-local-services">Requirement: Terminate proxy traffic at the declared local services<a class="td-heading-self-link" href="#print-c81fa215ad21b2f7a7bf828c1150a6a6-requirement-terminate-proxy-traffic-at-the-declared-local-services" aria-label="Heading self-link"></a></h3><p>The Traefik route template SHALL forward the panel to loopback port 2053 and
+subscription requests to loopback port 2096. It SHALL define HTTP inbound routes
+for ports 40000 through 40149 and TCP inbound routes for ports 40150 through
+40299, forwarding to corresponding loopback ports.</p>
+<h4 id="print-c81fa215ad21b2f7a7bf828c1150a6a6-scenario-render-a-subscription-route">Scenario: Render a subscription route<a class="td-heading-self-link" href="#print-c81fa215ad21b2f7a7bf828c1150a6a6-scenario-render-a-subscription-route" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the checked-in dynamic Traefik template is rendered</li>
+<li><strong>THEN</strong> requests matching the configured subscription path prefix route to
+<code>http://127.0.0.1:2096</code></li>
+<li><strong>AND</strong> the router selects the configured TLS certificate resolver</li>
+</ul>
+<h3 id="print-c81fa215ad21b2f7a7bf828c1150a6a6-requirement-declare-explicit-node-and-outbound-routing-relationships">Requirement: Declare explicit node and outbound routing relationships<a class="td-heading-self-link" href="#print-c81fa215ad21b2f7a7bf828c1150a6a6-requirement-declare-explicit-node-and-outbound-routing-relationships" aria-label="Heading self-link"></a></h3><p>Terraform SHALL configure the <code>njalla1</code> and <code>yc1</code> nodes through the shared node
+module. The node routing declaration SHALL block the advertising category and
+private IP destinations before routing the freedom inbound directly and each
+<code>mullvad_min</code> or <code>http_proxy</code> inbound through its named WireGuard outbound.
+The enabled <code>mullvad_min_lb</code> inbound has no active dedicated balancing rule;
+commented balancing rules SHALL NOT be treated as enabled routing behavior.</p>
+<h4 id="print-c81fa215ad21b2f7a7bf828c1150a6a6-scenario-inspect-a-configured-mullvad-inbound-route">Scenario: Inspect a configured Mullvad inbound route<a class="td-heading-self-link" href="#print-c81fa215ad21b2f7a7bf828c1150a6a6-scenario-inspect-a-configured-mullvad-inbound-route" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> a node&rsquo;s selected relay creates a Mullvad inbound</li>
+<li><strong>THEN</strong> the inbound listens on loopback</li>
+<li><strong>AND</strong> its routing rule selects the matching <code>out-mullvad-min-</code> outbound tag</li>
+<li><strong>AND</strong> the node declaration supplies its own relay selection to the module</li>
+</ul>
+<h3 id="print-c81fa215ad21b2f7a7bf828c1150a6a6-requirement-normalize-subscription-urls-from-readable-inputs">Requirement: Normalize subscription URLs from readable inputs<a class="td-heading-self-link" href="#print-c81fa215ad21b2f7a7bf828c1150a6a6-requirement-normalize-subscription-urls-from-readable-inputs" aria-label="Heading self-link"></a></h3><p>For readable local subscription files, the transformer SHALL ignore blank and
+comment lines, parse each remaining URL, set <code>security=tls</code> and <code>sni</code> to the URL
+hostname, sort URLs by fragment, and write one URL per output line. It SHALL
+return a nonzero exit status when input reading or URL parsing fails.</p>
+<h4 id="print-c81fa215ad21b2f7a7bf828c1150a6a6-scenario-transform-a-local-subscription-file">Scenario: Transform a local subscription file<a class="td-heading-self-link" href="#print-c81fa215ad21b2f7a7bf828c1150a6a6-scenario-transform-a-local-subscription-file" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> <code>fix_subs</code> receives a readable <code>--sub_file</code> containing subscription URLs</li>
+<li><strong>THEN</strong> output URL queries contain <code>security=tls</code> and the matching hostname SNI</li>
+<li><strong>AND</strong> output is ordered by URL fragment with blank and comment lines omitted</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-e6aae853bbcbc2be261d633e4b35ff39">2 - </h1>
+    
+	<h1 id="print-6a942adb1557116d41e776b468fcbb2d-owned-dns-specification">owned-dns Specification<a class="td-heading-self-link" href="#print-6a942adb1557116d41e776b468fcbb2d-owned-dns-specification" aria-label="Heading self-link"></a></h1><h2 id="print-6a942adb1557116d41e776b468fcbb2d-purpose">Purpose<a class="td-heading-self-link" href="#print-6a942adb1557116d41e776b468fcbb2d-purpose" aria-label="Heading self-link"></a></h2><p>Define retained 3x-ui DNS ownership through the owner&rsquo;s <code>tf_setup</code> root,
+including canonical declarations, scoped execution, and offline source checks.</p>
+<h2 id="print-6a942adb1557116d41e776b468fcbb2d-requirements">Requirements<a class="td-heading-self-link" href="#print-6a942adb1557116d41e776b468fcbb2d-requirements" aria-label="Heading self-link"></a></h2><h3 id="print-6a942adb1557116d41e776b468fcbb2d-requirement-owner-local-dns-configuration">Requirement: Owner-local DNS configuration<a class="td-heading-self-link" href="#print-6a942adb1557116d41e776b468fcbb2d-requirement-owner-local-dns-configuration" aria-label="Heading self-link"></a></h3><p>The <code>tf_setup</code> root SHALL consume this owner&rsquo;s canonical <code>dnsconfig.json</code> through
+the shared DNS Terraform module, preserving declared record identities and views.
+DNS resources SHALL default to disabled before the adoption revision and SHALL
+retain enabled ownership after authorized adoption into the owner&rsquo;s state.
+Reconciliation against adopted state and unchanged declarations SHALL propose
+no record additions, changes, replacements, or deletions.</p>
+<h4 id="print-6a942adb1557116d41e776b468fcbb2d-scenario-inspect-the-preparatory-configuration">Scenario: Inspect the preparatory configuration<a class="td-heading-self-link" href="#print-6a942adb1557116d41e776b468fcbb2d-scenario-inspect-the-preparatory-configuration" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the preparatory root is evaluated with default inputs before its
+adoption revision</li>
+<li><strong>THEN</strong> it reads this owner&rsquo;s declaration and disables managed DNS records</li>
+<li><strong>AND</strong> the package contains the module and declaration inputs</li>
+</ul>
+<h4 id="print-6a942adb1557116d41e776b468fcbb2d-scenario-inspect-adopted-source-defaults">Scenario: Inspect adopted source defaults<a class="td-heading-self-link" href="#print-6a942adb1557116d41e776b468fcbb2d-scenario-inspect-adopted-source-defaults" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the adopted root is evaluated with its checked-in default inputs</li>
+<li><strong>THEN</strong> DNS ownership is enabled and the root reads the canonical declaration</li>
+<li><strong>AND</strong> the package contains the module and declaration inputs</li>
+</ul>
+<h4 id="print-6a942adb1557116d41e776b468fcbb2d-scenario-adopt-existing-dns-records">Scenario: Adopt existing DNS records<a class="td-heading-self-link" href="#print-6a942adb1557116d41e776b468fcbb2d-scenario-adopt-existing-dns-records" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> authorized adoption coordinates the previous writers and enables
+this owner&rsquo;s record ownership</li>
+<li><strong>THEN</strong> the owner imports existing provider identities into its own state
+through the owning scoped DNS wrappers and reviewed saved-plan import blocks</li>
+<li><strong>AND</strong> existing record values and declared DNS views are preserved</li>
+</ul>
+<h4 id="print-6a942adb1557116d41e776b468fcbb2d-scenario-reconcile-adopted-dns-records">Scenario: Reconcile adopted DNS records<a class="td-heading-self-link" href="#print-6a942adb1557116d41e776b468fcbb2d-scenario-reconcile-adopted-dns-records" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the owner plans against its adopted state and unchanged declarations</li>
+<li><strong>THEN</strong> it proposes no record additions, changes, replacements, or deletions</li>
+<li><strong>AND</strong> unrelated records remain unchanged</li>
+</ul>
+<h3 id="print-6a942adb1557116d41e776b468fcbb2d-requirement-scoped-dns-execution-and-offline-checks">Requirement: Scoped DNS execution and offline checks<a class="td-heading-self-link" href="#print-6a942adb1557116d41e776b468fcbb2d-requirement-scoped-dns-execution-and-offline-checks" aria-label="Heading self-link"></a></h3><p>The DNS wrappers SHALL select <code>src_infra_threexui</code> through the repository AL flow
+and keep secret values in injected variables. <code>dns.plan</code>, <code>dns.show</code>, and
+<code>dns.apply</code> SHALL retain the owning root and backend, select <code>dns=1</code>, and scope
+planning to <code>module.dns</code>. Apply SHALL require the reviewed saved plan. This
+workflow SHALL preserve ordinary service authentication and SHALL NOT establish
+overall service health. Required DNS credentials and Vault grants SHALL remain
+operational prerequisites, and RouterOS DNS credentials SHALL remain isolated
+from unrelated RouterOS resources. The package SHALL expose a format test
+without Vault authentication or DNS provider access.</p>
+<h4 id="print-6a942adb1557116d41e776b468fcbb2d-scenario-validate-the-terraform-source">Scenario: Validate the Terraform source<a class="td-heading-self-link" href="#print-6a942adb1557116d41e776b468fcbb2d-scenario-validate-the-terraform-source" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the package format test executes</li>
+<li><strong>THEN</strong> it checks the packaged Terraform configuration without live credentials</li>
+<li><strong>AND</strong> existing non-DNS authentication and backend paths remain unchanged</li>
+</ul>
+<h4 id="print-6a942adb1557116d41e776b468fcbb2d-scenario-prepare-an-operational-terraform-invocation">Scenario: Prepare an operational Terraform invocation<a class="td-heading-self-link" href="#print-6a942adb1557116d41e776b468fcbb2d-scenario-prepare-an-operational-terraform-invocation" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the operator selects the owning DNS wrappers</li>
+<li><strong>THEN</strong> they select DNS credential injection through the owner AppRole with <code>dns=1</code></li>
+<li><strong>AND</strong> their scoped plan validates DNS and its dependencies</li>
+<li><strong>AND</strong> disabled DNS resources do not imply offline provider configuration</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-0285e5414ecda3e14ec3377e1c3ca7ec">3 - Ansible</h1>
+    <div class="lead">Ansible setup</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-9f45366f1c27fe41503e491be089db11">4 - sub</h1>
+    <div class="lead">Fetch subscriptions and fix them</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-0c61b5306eb2ede5d5fb46f298e59667">5 - Tf</h1>
+    <div class="lead">Terraform config</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-0fb932b22c95b085c45384ac9291e3ba">6 - Tf setup</h1>
+    <div class="lead">Terraform setup</div>
+	<p>Use this package&rsquo;s <code>dns.plan</code>, <code>dns.show</code>, and <code>dns.apply</code> targets for the
+<a href="/docs/infra/dns/">scoped DNS adoption workflow</a>.</p>
+<p>DNS ownership is enabled by default after the verified 2026-09-13 adoption.
+The <a href="../openspec/changes/archive/2026-09-13-adopt-dns-records/design.md">adoption evidence</a>
+records 12 imports, a no-change follow-up plan, and preserved provider inventories.
+The DNS wrappers select <code>dns=1</code> and <code>module.dns</code> within this setup root and
+backend; their validation covers DNS and its dependencies. Apply requires a
+reviewed saved plan, and ordinary service authentication remains separate.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        Built with <a href="https://gohugo.io/">Hugo 0.165.0</a>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="/js/main.min.259204f469f58eb3b665605a24e964264772df2adaded180b3669b6ce33d84c8.js" integrity="sha256-JZIE9Gn1jrO2ZWBaJOlkJkdy3yra3tGAs2abbOM9hMg=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.decf3b53d8827d840369f490775626e2a5200e150a733f78f0081c126426cbbf.js" integrity="sha256-3s87U9iCfYQDafSQd1Ym4qUgDhUKcz948AgcEmQmy78=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

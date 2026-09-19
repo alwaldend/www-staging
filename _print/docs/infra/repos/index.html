@@ -1,0 +1,452 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js" data-theme-init>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000000">
+
+<style>
+  html { background: Canvas; color: CanvasText; }
+  @media (prefers-color-scheme: dark) {
+    html { background: #0b0d12; color: #e6e6e6; }
+  }
+  html[data-theme-init] * { transition: none !important; }
+</style>
+
+<script>
+  (function() {
+    const themeKey = 'td-color-theme';
+    const storedTheme = localStorage.getItem(themeKey);
+    let theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (theme === 'auto') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
+<link rel="canonical" type="text/html" href="https://www-staging.alwaldend.com/docs/infra/repos/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://www-staging.alwaldend.com/docs/infra/repos/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+<title>Repositories | Alwaldend</title>
+<meta name="description" content="Shared organization, repository, and access configuration">
+<meta property="og:url" content="https://www-staging.alwaldend.com/docs/infra/repos/">
+	<meta property="og:site_name" content="Alwaldend">
+	<meta property="og:title" content="Repositories">
+	<meta property="og:description" content="Shared organization, repository, and access configuration">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="Repositories">
+	<meta itemprop="description" content="Shared organization, repository, and access configuration">
+	<meta itemprop="dateModified" content="2026-09-19T20:06:21+03:00">
+	<meta itemprop="wordCount" content="385">
+	<meta itemprop="keywords" content="Infra">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Repositories">
+	<meta name="twitter:description" content="Shared organization, repository, and access configuration">
+<link rel="preload" href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" as="style" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<link href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" rel="stylesheet" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll">
+<div class="td-navbar-container container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">Alwaldend</span></a>
+  <div class="td-navbar__main td-navbar-nav-scroll td-navbar-nav-scroll--indicator" id="main_navbar">
+    <div class="scroll-indicator scroll-left"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/projects/"><span>Projects</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item td-navbar__light-dark-menu">
+        <div class="td-light-dark-menu dropdown"><svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+<button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        title="Toggle theme (Auto)"
+        aria-label="Toggle theme (Auto)">
+  <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="bd-theme">
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
+      Light
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>
+      Dark
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+      <svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>
+      Auto
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+</ul>
+</div>
+
+      </li>
+      </ul>
+    <div class="scroll-indicator scroll-right"></div>
+  </div>
+  <div class="td-navbar__search d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon" aria-hidden="true"></div>
+  <input
+    type="search"
+    name="q"
+    class="td-search__input form-control"
+    placeholder='Search this site…'
+    aria-label='Search this site…'
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/infra/repos/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Repositories</h1>
+<div class="lead">Shared organization, repository, and access configuration</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-bf32c28e38c1d96ed1558a29973640b5"></a></li>
+
+
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-17bd46f184939acc851df4aa7caadba6">Repository catalog module</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      <p>This project owns the organization and repository catalog consumed by
+<a href="/docs/infra/github/tf/">GitHub</a>, <a href="/docs/infra/gitlab/tf/">GitLab</a>, and
+<a href="/docs/infra/forgejo/tf/">Forgejo</a>. Named organization administrators and
+developers belong in this catalog. <a href="config.json">Root configuration</a> owns
+the schema version and defaults. Each organization owns
+<code>orgs/&lt;organization&gt;/org.json</code> and one
+<code>orgs/&lt;organization&gt;/repos/&lt;repository&gt;.json</code> file per repository. Vault
+continues to own Forgejo login identities and service-specific access.</p>
+<p>First-party means owned by us, regardless of forge. Our repositories retain
+their chosen names across GitHub, GitLab, and Forgejo: <code>alwaldend/src</code> stays
+<code>alwaldend/src</code>, including when copied or synchronized between those forges.</p>
+<p>Forks and mirrors of external repositories must belong to an organization in
+the catalog. Their names use the original upstream hostname in reverse order,
+followed by its full owner and repository path, in lowercase with punctuation
+replaced by underscores. For example, <code>https://gitlab.com/fdroid/fdroiddata</code>
+becomes <code>alwaldend/com_gitlab_fdroid_fdroiddata</code>. Copies on another forge keep
+that name; they do not add a prefix for our intermediate copy. This naming
+rule also applies to external repositories imported once for later syncing.</p>
+<p>The <a href="/docs/infra/repos/tf/">Terraform module</a> owns this derivation. A forge key opts a
+repository into that consumer. GitLab <code>import_from</code> refers to the corresponding
+catalog source; <code>fork_from</code> identifies a GitLab upstream. External origins
+belong in the repository&rsquo;s <code>upstream_url</code>. Forge-specific overrides preserve
+settings such as Pages sites and repository descriptions during adoption.</p>
+<p>Consumers retain their own providers, state, and Vault authentication. They
+adopt existing remote resources by import and preserve managed resource
+addresses or declare explicit moves. Named developers can read repositories,
+write feature branches, and open pull or merge requests; protected default
+branches restrict pushes and merges to administrators and any separately
+owned existing service grants. Catalog GitHub repositories permit merge
+commits only: the shared defaults disable squash merges and rebase merges, and
+a catalog precondition rejects any repository record that enables them. Merging
+therefore keeps the reviewed feature commit as a parent of the default-branch
+commit instead of replacing it. GitLab and Forgejo merge methods are not owned
+here. Dedicated per-project landing repositories are retired: the main site
+publishes every project landing at <code>/projects/&lt;name&gt;/</code>, so the catalog carries
+no landing repository. The apex site repository keeps the Pages configuration
+that serves it.</p>
+<p>Catalog targets are repository-internal infrastructure inputs. They are not
+production build dependencies or published artifacts.</p>
+<p>GitLab receives one-time repository imports and the configured upstream fork.
+The user will arrange ongoing synchronization separately; the decision and
+adoption evidence live in <a href="openspec/changes/archive/2026-09-13-adopt-shared-repository-catalog/design.md">OpenSpec</a>.</p>
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-bf32c28e38c1d96ed1558a29973640b5">1 - </h1>
+    
+	<h1 id="print-acc40b601934fff97691d69673e0c63a-repository-catalog-specification">repository-catalog Specification<a class="td-heading-self-link" href="#print-acc40b601934fff97691d69673e0c63a-repository-catalog-specification" aria-label="Heading self-link"></a></h1><h2 id="print-acc40b601934fff97691d69673e0c63a-purpose">Purpose<a class="td-heading-self-link" href="#print-acc40b601934fff97691d69673e0c63a-purpose" aria-label="Heading self-link"></a></h2><p>Define shared organization, repository identity, naming, and named access
+configuration for the GitHub, GitLab, and Forgejo infrastructure consumers.</p>
+<h2 id="print-acc40b601934fff97691d69673e0c63a-requirements">Requirements<a class="td-heading-self-link" href="#print-acc40b601934fff97691d69673e0c63a-requirements" aria-label="Heading self-link"></a></h2><h3 id="print-acc40b601934fff97691d69673e0c63a-requirement-authoritative-organization-and-repository-inventory">Requirement: Authoritative organization and repository inventory<a class="td-heading-self-link" href="#print-acc40b601934fff97691d69673e0c63a-requirement-authoritative-organization-and-repository-inventory" aria-label="Heading self-link"></a></h3><p>The repository catalog SHALL store shared defaults and schema version at its
+root, one configuration file per organization, and one configuration file per
+repository beneath its organization. Those records SHALL own the configured
+organizations, repositories, named administrators, and named developers.
+Each forge consumer SHALL use
+that catalog for its selected repositories and named roles, preserving
+forge-specific settings without maintaining another copy of the inventory.
+Authentication and service-specific grants SHALL remain with their existing
+owners.</p>
+<h4 id="print-acc40b601934fff97691d69673e0c63a-scenario-consume-one-organization-definition">Scenario: Consume one organization definition<a class="td-heading-self-link" href="#print-acc40b601934fff97691d69673e0c63a-scenario-consume-one-organization-definition" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> an organization assigns named administrators and developers and
+selects repositories for multiple forges</li>
+<li><strong>THEN</strong> each selected consumer uses the same catalog assignments and
+repository identities</li>
+<li><strong>AND</strong> forge-specific settings and service identities remain with their
+declared owners</li>
+</ul>
+<h3 id="print-acc40b601934fff97691d69673e0c63a-requirement-stable-names-follow-ownership-and-original-upstream">Requirement: Stable names follow ownership and original upstream<a class="td-heading-self-link" href="#print-acc40b601934fff97691d69673e0c63a-requirement-stable-names-follow-ownership-and-original-upstream" aria-label="Heading self-link"></a></h3><p>First-party repository names SHALL remain the same across forges, including
+when copied or synchronized. External forks and mirrors SHALL belong to a
+catalog organization and use a name derived from the original upstream&rsquo;s
+reversed hostname followed by its full owner and repository path, in
+lowercase with punctuation replaced by underscores. Cross-forge copies of
+external repositories SHALL retain that name rather than naming the
+intermediate copy as their upstream.</p>
+<h4 id="print-acc40b601934fff97691d69673e0c63a-scenario-copy-an-organization-owned-repository">Scenario: Copy an organization-owned repository<a class="td-heading-self-link" href="#print-acc40b601934fff97691d69673e0c63a-scenario-copy-an-organization-owned-repository" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the first-party <code>alwaldend/src</code> repository is copied from GitHub to
+GitLab or Forgejo</li>
+<li><strong>THEN</strong> its destination remains <code>alwaldend/src</code></li>
+</ul>
+<h4 id="print-acc40b601934fff97691d69673e0c63a-scenario-fork-an-external-repository">Scenario: Fork an external repository<a class="td-heading-self-link" href="#print-acc40b601934fff97691d69673e0c63a-scenario-fork-an-external-repository" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> <code>https://gitlab.com/fdroid/fdroiddata</code> is forked into <code>alwaldend</code></li>
+<li><strong>THEN</strong> its organization-owned name is
+<code>alwaldend/com_gitlab_fdroid_fdroiddata</code></li>
+<li><strong>AND</strong> subsequent copies on another forge retain that name</li>
+</ul>
+<h3 id="print-acc40b601934fff97691d69673e0c63a-requirement-named-developer-access-excludes-protected-default-writes">Requirement: Named developer access excludes protected default writes<a class="td-heading-self-link" href="#print-acc40b601934fff97691d69673e0c63a-requirement-named-developer-access-excludes-protected-default-writes" aria-label="Heading self-link"></a></h3><p>Consumers SHALL grant catalog administrators administrative access and
+catalog developers repository reads, feature-branch writes, and pull or
+merge request creation. Catalog developers SHALL NOT receive direct push
+or merge access to protected default branches through their named roles or
+overlapping retained grants. Existing service-specific permissions SHALL be
+preserved and distinguished from named developer assignments.</p>
+<h4 id="print-acc40b601934fff97691d69673e0c63a-scenario-develop-on-a-feature-branch">Scenario: Develop on a feature branch<a class="td-heading-self-link" href="#print-acc40b601934fff97691d69673e0c63a-scenario-develop-on-a-feature-branch" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> a catalog developer accesses a selected repository</li>
+<li><strong>THEN</strong> the developer can read its contents, create a feature branch, and
+open a pull or merge request</li>
+<li><strong>AND</strong> the developer cannot push or merge to its protected default branch</li>
+</ul>
+<h3 id="print-acc40b601934fff97691d69673e0c63a-requirement-adopt-existing-resources-without-recreation">Requirement: Adopt existing resources without recreation<a class="td-heading-self-link" href="#print-acc40b601934fff97691d69673e0c63a-requirement-adopt-existing-resources-without-recreation" aria-label="Heading self-link"></a></h3><p>Consumers SHALL adopt existing remote resources through imports and preserve
+their remote identities. Existing managed resource addresses SHALL remain
+stable or use explicit state-preserving moves. Existing GitHub repository
+settings and Pages configuration SHALL remain intact, and default branches
+SHALL remain unchanged. No deletion or replacement SHALL execute without
+separate user approval for its concrete scope.</p>
+<h4 id="print-acc40b601934fff97691d69673e0c63a-scenario-adopt-an-existing-repository">Scenario: Adopt an existing repository<a class="td-heading-self-link" href="#print-acc40b601934fff97691d69673e0c63a-scenario-adopt-an-existing-repository" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> a catalog repository already exists remotely or in Terraform state</li>
+<li><strong>THEN</strong> its import or state move preserves the existing remote repository
+ID and contents</li>
+<li><strong>AND</strong> the reviewed plan does not recreate it to resolve a name collision</li>
+</ul>
+<h4 id="print-acc40b601934fff97691d69673e0c63a-scenario-encounter-a-destructive-plan">Scenario: Encounter a destructive plan<a class="td-heading-self-link" href="#print-acc40b601934fff97691d69673e0c63a-scenario-encounter-a-destructive-plan" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> any reviewed plan proposes a deletion or replacement</li>
+<li><strong>THEN</strong> execution of that operation stops pending the user&rsquo;s explicit
+approval for the identified operation and scope</li>
+</ul>
+<h3 id="print-acc40b601934fff97691d69673e0c63a-requirement-gitlab-copies-and-fork-preserve-their-source-identity">Requirement: GitLab copies and fork preserve their source identity<a class="td-heading-self-link" href="#print-acc40b601934fff97691d69673e0c63a-requirement-gitlab-copies-and-fork-preserve-their-source-identity" aria-label="Heading self-link"></a></h3><p>GitLab SHALL receive a one-time Git import of every catalog-selected GitHub
+repository and an organization-owned fork of the selected F-Droid metadata
+upstream. Imports SHALL preserve the source default branch, and the fork
+SHALL retain its upstream fork relationship. This change SHALL configure no
+ongoing synchronization.</p>
+<h4 id="print-acc40b601934fff97691d69673e0c63a-scenario-complete-the-initial-gitlab-population">Scenario: Complete the initial GitLab population<a class="td-heading-self-link" href="#print-acc40b601934fff97691d69673e0c63a-scenario-complete-the-initial-gitlab-population" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the GitHub default-branch migration completes and the initial
+GitLab imports and fork finish</li>
+<li><strong>THEN</strong> every selected GitHub repository has its intended GitLab copy and
+source default branch</li>
+<li><strong>AND</strong> the metadata repository retains its F-Droid upstream fork identity</li>
+<li><strong>AND</strong> later upstream changes are not promised to synchronize</li>
+</ul>
+<h3 id="print-acc40b601934fff97691d69673e0c63a-requirement-adopt-gitlab-default-branch-protections-without-removal">Requirement: Adopt GitLab default-branch protections without removal<a class="td-heading-self-link" href="#print-acc40b601934fff97691d69673e0c63a-requirement-adopt-gitlab-default-branch-protections-without-removal" aria-label="Heading self-link"></a></h3><p>GitLab default-branch access SHALL be established through group defaults
+before new repositories are populated. Existing automatically created
+protections SHALL be verified and imported before standalone protection
+management is applied. Adoption SHALL preserve the existing protections;
+provider limitations SHALL be reported rather than bypassed by unprotecting
+or recreating them.</p>
+<h4 id="print-acc40b601934fff97691d69673e0c63a-scenario-adopt-an-automatically-protected-default-branch">Scenario: Adopt an automatically protected default branch<a class="td-heading-self-link" href="#print-acc40b601934fff97691d69673e0c63a-scenario-adopt-an-automatically-protected-default-branch" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> an imported GitLab repository has an existing default-branch rule</li>
+<li><strong>THEN</strong> Terraform adopts that rule by import before applying permitted
+in-place access changes</li>
+<li><strong>AND</strong> adoption does not invoke unprotect-and-recreate behavior</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-17bd46f184939acc851df4aa7caadba6">2 - Repository catalog module</h1>
+    
+	<p>This provider-free Terraform module reads the <a href="/docs/infra/repos/">catalog files</a>, merges
+forge defaults, and projects organization-owned repository names and settings
+for each consumer. It creates no resources and uses no credentials.</p>
+<p>Fork and mirror names follow the <a href="/docs/infra/repos/">catalog naming contract</a>.
+Output keys retain the organization and catalog key, independently of the
+derived destination name. The consumers retain their existing state addresses
+where resources were already managed.</p>
+<p>The catalog test runs without network access or provider initialization:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel_agent bazel test //infra/repos/tf:tf_tests.catalog_test
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        Built with <a href="https://gohugo.io/">Hugo 0.165.0</a>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="/js/main.min.259204f469f58eb3b665605a24e964264772df2adaded180b3669b6ce33d84c8.js" integrity="sha256-JZIE9Gn1jrO2ZWBaJOlkJkdy3yra3tGAs2abbOM9hMg=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.decf3b53d8827d840369f490775626e2a5200e150a733f78f0081c126426cbbf.js" integrity="sha256-3s87U9iCfYQDafSQd1Ym4qUgDhUKcz948AgcEmQmy78=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

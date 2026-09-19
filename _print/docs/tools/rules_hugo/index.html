@@ -1,0 +1,361 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js" data-theme-init>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000000">
+
+<style>
+  html { background: Canvas; color: CanvasText; }
+  @media (prefers-color-scheme: dark) {
+    html { background: #0b0d12; color: #e6e6e6; }
+  }
+  html[data-theme-init] * { transition: none !important; }
+</style>
+
+<script>
+  (function() {
+    const themeKey = 'td-color-theme';
+    const storedTheme = localStorage.getItem(themeKey);
+    let theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (theme === 'auto') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
+<link rel="canonical" type="text/html" href="https://www-staging.alwaldend.com/docs/tools/rules_hugo/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://www-staging.alwaldend.com/docs/tools/rules_hugo/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+<title>Rules Hugo | Alwaldend</title>
+<meta name="description" content="Bazel rules for Hugo sites">
+<meta property="og:url" content="https://www-staging.alwaldend.com/docs/tools/rules_hugo/">
+	<meta property="og:site_name" content="Alwaldend">
+	<meta property="og:title" content="Rules Hugo">
+	<meta property="og:description" content="Bazel rules for Hugo sites">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="Rules Hugo">
+	<meta itemprop="description" content="Bazel rules for Hugo sites">
+	<meta itemprop="dateModified" content="2026-09-19T20:06:21+03:00">
+	<meta itemprop="wordCount" content="168">
+	<meta itemprop="keywords" content="Bzl_rules,Hugo">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Rules Hugo">
+	<meta name="twitter:description" content="Bazel rules for Hugo sites">
+<link rel="preload" href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" as="style" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<link href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" rel="stylesheet" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll">
+<div class="td-navbar-container container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">Alwaldend</span></a>
+  <div class="td-navbar__main td-navbar-nav-scroll td-navbar-nav-scroll--indicator" id="main_navbar">
+    <div class="scroll-indicator scroll-left"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/projects/"><span>Projects</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item td-navbar__light-dark-menu">
+        <div class="td-light-dark-menu dropdown"><svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+<button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        title="Toggle theme (Auto)"
+        aria-label="Toggle theme (Auto)">
+  <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="bd-theme">
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
+      Light
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>
+      Dark
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+      <svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>
+      Auto
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+</ul>
+</div>
+
+      </li>
+      </ul>
+    <div class="scroll-indicator scroll-right"></div>
+  </div>
+  <div class="td-navbar__search d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon" aria-hidden="true"></div>
+  <input
+    type="search"
+    name="q"
+    class="td-search__input form-control"
+    placeholder='Search this site…'
+    aria-label='Search this site…'
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/tools/rules_hugo/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Rules Hugo</h1>
+<div class="lead">Bazel rules for Hugo sites</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-b7bd1064bc684b96c4791021fa504451"></a></li>
+
+
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-05fc0b27ebf9730710e460e0249a515c"></a></li>
+
+
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      <p><code>rules_hugo</code> builds Hugo sites with a registered Hugo toolchain. It keeps the
+site archive in the target configuration and the Hugo binary in the execution
+configuration so site sources are not rebuilt for the execution platform.</p>
+<p><code>al_hugo_site</code> wraps a site source archive and its PostCSS tooling.
+<code>al_hugo_run_binary</code> builds the site with the registered Hugo toolchain and
+<code>al_hugo_binary</code> exposes a runnable Hugo command for a site. The optional
+<code>al_hugo_worker</code> rule runs the build through a persistent worker.</p>
+<h2 id="print-2ff778da7aca62bb3541c2efd19535a5-module-setup">Module setup<a class="td-heading-self-link" href="#print-2ff778da7aca62bb3541c2efd19535a5-module-setup" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-starlark" data-lang="starlark"><span style="display:flex;"><span>bazel_dep(name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;rules_hugo&#34;</span>, version <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&lt;VERSION&gt;&#34;</span>)
+</span></span></code></pre></div><p>The Hugo toolchain is generated by the <code>al_hugo_extension</code> module
+extension, not declared in <code>@rules_hugo//pkg/bzl</code>. Declare the extension
+in the root module, request the toolchain archives for the Hugo version,
+and register the generated toolchain repository:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-starlark" data-lang="starlark"><span style="display:flex;"><span>al_hugo_extension <span style="color:#f92672">=</span> use_extension(
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;@rules_hugo//pkg/bzl:al_hugo_extension.bzl&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;al_hugo_extension&#34;</span>,
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>al_hugo_extension<span style="color:#f92672">.</span>toolchains(
+</span></span><span style="display:flex;"><span>    name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;my_hugo_toolchain&#34;</span>,
+</span></span><span style="display:flex;"><span>    version <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;0.165.0&#34;</span>,
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>use_repo(
+</span></span><span style="display:flex;"><span>    al_hugo_extension,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;my_hugo_toolchain_os_linux_cpu_x86_64&#34;</span>,
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>register_toolchains(<span style="color:#e6db74">&#34;@my_hugo_toolchain_os_linux_cpu_x86_64&#34;</span>)
+</span></span></code></pre></div><p>The generated repository name is <code>&quot;&lt;name&gt;_&lt;os&gt;_&lt;cpu&gt;&quot;</code> for each platform
+in the requested version&rsquo;s archive set. See
+<code>projects/alwaldend.com/include.MODULE.bazel</code> for a complete example that
+also wires the Hugo lock file and remote themes.</p>
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-b7bd1064bc684b96c4791021fa504451">1 - </h1>
+    
+	<h1 id="print-f1af8d8a4b4257a26592b7a8924ae6fd-project-dns-specification">project-dns Specification<a class="td-heading-self-link" href="#print-f1af8d8a4b4257a26592b7a8924ae6fd-project-dns-specification" aria-label="Heading self-link"></a></h1><h2 id="print-f1af8d8a4b4257a26592b7a8924ae6fd-purpose">Purpose<a class="td-heading-self-link" href="#print-f1af8d8a4b4257a26592b7a8924ae6fd-purpose" aria-label="Heading self-link"></a></h2><p>Record the retirement of <code>rules_hugo</code> landing infrastructure while preserving
+its reusable Bazel module.</p>
+<h2 id="print-f1af8d8a4b4257a26592b7a8924ae6fd-requirements">Requirements<a class="td-heading-self-link" href="#print-f1af8d8a4b4257a26592b7a8924ae6fd-requirements" aria-label="Heading self-link"></a></h2><h3 id="print-f1af8d8a4b4257a26592b7a8924ae6fd-requirement-keep-landing-infrastructure-retired">Requirement: Keep landing infrastructure retired<a class="td-heading-self-link" href="#print-f1af8d8a4b4257a26592b7a8924ae6fd-requirement-keep-landing-infrastructure-retired" aria-label="Heading self-link"></a></h3><p>The module SHALL follow the <a href="/docs/tools/">tools boundary</a> and SHALL
+have no dedicated landing DNS declarations, Terraform root, or operational
+source exports.</p>
+<h4 id="print-f1af8d8a4b4257a26592b7a8924ae6fd-scenario-inspect-the-module-after-landing-retirement">Scenario: Inspect the module after landing retirement<a class="td-heading-self-link" href="#print-f1af8d8a4b4257a26592b7a8924ae6fd-scenario-inspect-the-module-after-landing-retirement" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the module is consumed from <code>tools/rules_hugo</code></li>
+<li><strong>THEN</strong> its reusable Bazel rules remain available without landing infrastructure.</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-05fc0b27ebf9730710e460e0249a515c">2 - </h1>
+    
+	<h1 id="print-679dd9edf76ef239ebb5f15df39d4960-rules-hugo">Rules Hugo<a class="td-heading-self-link" href="#print-679dd9edf76ef239ebb5f15df39d4960-rules-hugo" aria-label="Heading self-link"></a></h1><h2 id="print-679dd9edf76ef239ebb5f15df39d4960-purpose">Purpose<a class="td-heading-self-link" href="#print-679dd9edf76ef239ebb5f15df39d4960-purpose" aria-label="Heading self-link"></a></h2><p>Build and run Hugo sites with registered Bazel toolchains, site source archives,
+and declared PostCSS tooling. This source baseline was observed on 2026-09-08
+at revision <code>550d7e79b1f5fdbc2b6017b75178471d6914082f</code>.</p>
+<p>Sources: <a href="/docs/tools/rules_hugo/">project description</a>,
+<a href="../../../pkg/bzl/al_hugo_site.bzl">site provider rule</a>,
+<a href="../../../pkg/bzl/al_hugo_run_binary.bzl">build rule</a>,
+<a href="../../../pkg/bzl/al_hugo_extension.bzl">toolchain extension</a>,
+and <a href="../../../pkg/bzl/al_hugo_worker.bzl">worker rule</a>.</p>
+<h2 id="print-679dd9edf76ef239ebb5f15df39d4960-requirements">Requirements<a class="td-heading-self-link" href="#print-679dd9edf76ef239ebb5f15df39d4960-requirements" aria-label="Heading self-link"></a></h2><h3 id="print-679dd9edf76ef239ebb5f15df39d4960-requirement-separate-site-inputs-from-execution-tools">Requirement: Separate site inputs from execution tools<a class="td-heading-self-link" href="#print-679dd9edf76ef239ebb5f15df39d4960-requirement-separate-site-inputs-from-execution-tools" aria-label="Heading self-link"></a></h3><p><code>al_hugo_site</code> SHALL retain the <code>.tar</code> site archive in the target configuration
+and resolve its executable PostCSS dependency in the execution configuration.
+Build rules SHALL obtain Hugo from the registered Hugo toolchain.</p>
+<h4 id="print-679dd9edf76ef239ebb5f15df39d4960-scenario-the-target-and-execution-platforms-differ">Scenario: The target and execution platforms differ<a class="td-heading-self-link" href="#print-679dd9edf76ef239ebb5f15df39d4960-scenario-the-target-and-execution-platforms-differ" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> Bazel analyzes a Hugo site build for distinct target and execution platforms</li>
+<li><strong>THEN</strong> the site archive remains a target input and Hugo and PostCSS are selected as execution tools.</li>
+</ul>
+<h3 id="print-679dd9edf76ef239ebb5f15df39d4960-requirement-build-into-a-declared-destination-directory">Requirement: Build into a declared destination directory<a class="td-heading-self-link" href="#print-679dd9edf76ef239ebb5f15df39d4960-requirement-build-into-a-declared-destination-directory" aria-label="Heading self-link"></a></h3><p><code>al_hugo_run_binary</code> SHALL unpack the site archive, make its PostCSS executable
+available to Hugo, and invoke Hugo with <code>--destination</code> pointing to the declared
+output directory.</p>
+<h4 id="print-679dd9edf76ef239ebb5f15df39d4960-scenario-a-site-build-specifies-an-output-directory">Scenario: A site build specifies an output directory<a class="td-heading-self-link" href="#print-679dd9edf76ef239ebb5f15df39d4960-scenario-a-site-build-specifies-an-output-directory" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> a caller supplies <code>out_dir</code> and additional Hugo arguments</li>
+<li><strong>THEN</strong> the action appends the declared destination to those arguments and exposes the output directory through <code>DefaultInfo</code>.</li>
+</ul>
+<h3 id="print-679dd9edf76ef239ebb5f15df39d4960-requirement-generate-platform-specific-toolchain-repositories">Requirement: Generate platform-specific toolchain repositories<a class="td-heading-self-link" href="#print-679dd9edf76ef239ebb5f15df39d4960-requirement-generate-platform-specific-toolchain-repositories" aria-label="Heading self-link"></a></h3><p>The Hugo module extension SHALL create toolchain repositories from the archive
+set associated with the requested version, carrying each archive&rsquo;s declared
+integrity and execution-platform constraints.</p>
+<h4 id="print-679dd9edf76ef239ebb5f15df39d4960-scenario-a-supported-version-has-a-linux-x86-64-archive">Scenario: A supported version has a Linux x86-64 archive<a class="td-heading-self-link" href="#print-679dd9edf76ef239ebb5f15df39d4960-scenario-a-supported-version-has-a-linux-x86-64-archive" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> a toolchain tag requests that version under a repository name prefix</li>
+<li><strong>THEN</strong> the extension creates the corresponding <code>&lt;name&gt;_os_linux_cpu_x86_64</code> repository with a Hugo toolchain constrained to that platform.</li>
+</ul>
+<h3 id="print-679dd9edf76ef239ebb5f15df39d4960-requirement-support-an-explicit-persistent-worker-build-path">Requirement: Support an explicit persistent-worker build path<a class="td-heading-self-link" href="#print-679dd9edf76ef239ebb5f15df39d4960-requirement-support-an-explicit-persistent-worker-build-path" aria-label="Heading self-link"></a></h3><p><code>al_hugo_worker</code> SHALL serialize site inputs, arguments, tools, environment, and
+output location into a flag file and invoke its worker with Bazel&rsquo;s protobuf
+worker protocol requirements.</p>
+<h4 id="print-679dd9edf76ef239ebb5f15df39d4960-scenario-a-caller-chooses-the-worker-rule">Scenario: A caller chooses the worker rule<a class="td-heading-self-link" href="#print-679dd9edf76ef239ebb5f15df39d4960-scenario-a-caller-chooses-the-worker-rule" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> a site is built with <code>al_hugo_worker</code></li>
+<li><strong>THEN</strong> Bazel receives a worker-capable <code>HugoSite</code> action whose declared output directory is <code>&lt;target&gt;.dest</code>.</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        Built with <a href="https://gohugo.io/">Hugo 0.165.0</a>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="/js/main.min.259204f469f58eb3b665605a24e964264772df2adaded180b3669b6ce33d84c8.js" integrity="sha256-JZIE9Gn1jrO2ZWBaJOlkJkdy3yra3tGAs2abbOM9hMg=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.decf3b53d8827d840369f490775626e2a5200e150a733f78f0081c126426cbbf.js" integrity="sha256-3s87U9iCfYQDafSQd1Ym4qUgDhUKcz948AgcEmQmy78=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

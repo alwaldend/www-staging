@@ -1,0 +1,471 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js" data-theme-init>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000000">
+
+<style>
+  html { background: Canvas; color: CanvasText; }
+  @media (prefers-color-scheme: dark) {
+    html { background: #0b0d12; color: #e6e6e6; }
+  }
+  html[data-theme-init] * { transition: none !important; }
+</style>
+
+<script>
+  (function() {
+    const themeKey = 'td-color-theme';
+    const storedTheme = localStorage.getItem(themeKey);
+    let theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (theme === 'auto') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
+<link rel="canonical" type="text/html" href="https://www-staging.alwaldend.com/docs/data/pgp/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://www-staging.alwaldend.com/docs/data/pgp/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+<title>Pgp | Alwaldend</title>
+<meta name="description" content="PGP keys">
+<meta property="og:url" content="https://www-staging.alwaldend.com/docs/data/pgp/">
+	<meta property="og:site_name" content="Alwaldend">
+	<meta property="og:title" content="Pgp">
+	<meta property="og:description" content="PGP keys">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="Pgp">
+	<meta itemprop="description" content="PGP keys">
+	<meta itemprop="dateModified" content="2026-09-19T20:06:20+03:00">
+	<meta itemprop="wordCount" content="260">
+	<meta itemprop="keywords" content="Data">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Pgp">
+	<meta name="twitter:description" content="PGP keys">
+<link rel="preload" href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" as="style" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<link href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" rel="stylesheet" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll">
+<div class="td-navbar-container container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">Alwaldend</span></a>
+  <div class="td-navbar__main td-navbar-nav-scroll td-navbar-nav-scroll--indicator" id="main_navbar">
+    <div class="scroll-indicator scroll-left"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/projects/"><span>Projects</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item td-navbar__light-dark-menu">
+        <div class="td-light-dark-menu dropdown"><svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+<button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        title="Toggle theme (Auto)"
+        aria-label="Toggle theme (Auto)">
+  <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="bd-theme">
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
+      Light
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>
+      Dark
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+      <svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>
+      Auto
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+</ul>
+</div>
+
+      </li>
+      </ul>
+    <div class="scroll-indicator scroll-right"></div>
+  </div>
+  <div class="td-navbar__search d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon" aria-hidden="true"></div>
+  <input
+    type="search"
+    name="q"
+    class="td-search__input form-control"
+    placeholder='Search this site…'
+    aria-label='Search this site…'
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/data/pgp/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Pgp</h1>
+<div class="lead">PGP keys</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+
+    </ul>
+
+
+<div class="content">
+      <h2 id="print-7a9ffb9fc5b88a179aa923ae35238744-simeonwarren">Simeonwarren<a class="td-heading-self-link" href="#print-7a9ffb9fc5b88a179aa923ae35238744-simeonwarren" aria-label="Heading self-link"></a></h2><pre tabindex="0"><code>-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+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
+9+8=
+=9DMa
+-----END PGP PUBLIC KEY BLOCK-----
+</code></pre>
+<h3 id="print-7a9ffb9fc5b88a179aa923ae35238744-detached-signature-created-using-the-old-key">Detached signature created using the old key<a class="td-heading-self-link" href="#print-7a9ffb9fc5b88a179aa923ae35238744-detached-signature-created-using-the-old-key" aria-label="Heading self-link"></a></h3><pre tabindex="0"><code>-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCab/V6AAKCRD3LMCDXvUI
+euylAP9F9HHcjEg2ABQaZ3pbtOxGqqgZkAxna1zo76XWsDqWGQEAq4eJamdvVnyy
++YTOnHXfG6GswSyaavue0DlxHhx2cQ8=
+=LJwp
+-----END PGP SIGNATURE-----
+</code></pre>
+<h3 id="print-7a9ffb9fc5b88a179aa923ae35238744-old">Old<a class="td-heading-self-link" href="#print-7a9ffb9fc5b88a179aa923ae35238744-old" aria-label="Heading self-link"></a></h3><pre tabindex="0"><code>-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+mDMEaA4PTxYJKwYBBAHaRw8BAQdAqQlRlsv3N0tK9onuKxG7RIt5AGtXyI1k35cM
+WZa2jA60UnNpbWVvbndhcnJlbiAoc2ltZW9ud2FycmVuLWxhcHRvcDAxLXZtLWRl
+dikgPHNpbWVvbndhcnJlbi1naXQtcHpld3FAYWx3YWxkZW5kLmNvbT6ImQQTFgoA
+QRYhBDM3YFC+edylfa4Sn/cswINe9Qh6BQJoDg9PAhsDBQkB4TOABQsJCAcCAiIC
+BhUKCQgLAgQWAgMBAh4HAheAAAoJEPcswINe9Qh6ofgBANcxQFFPu0SsDHzwzPoo
+EETvNUIy+MOKlFWHowx+o/EEAP4iEWXFg+9ujKIn52G7Vi+MR4KT9I0gOnKKYv03
+teGZCrg4BGgOD08SCisGAQQBl1UBBQEBB0BojOTJPJWTlFUdWcjnPYU1dT2B0lE6
+sl3EJEY+r9PzewMBCAeIfgQYFgoAJhYhBDM3YFC+edylfa4Sn/cswINe9Qh6BQJo
+Dg9PAhsMBQkB4TOAAAoJEPcswINe9Qh6dzQA+wanGg8efVClaSu9TBqqTtiIltAH
+gQ8/G/6Wo1xY9DvlAP0SzZXlF5o2d0tqAuQ1MdEoXb+3TL7M6R4vxkjLvfeRDA==
+=mJFu
+-----END PGP PUBLIC KEY BLOCK-----
+</code></pre>
+<h2 id="print-7a9ffb9fc5b88a179aa923ae35238744-openbao">Openbao<a class="td-heading-self-link" href="#print-7a9ffb9fc5b88a179aa923ae35238744-openbao" aria-label="Heading self-link"></a></h2><pre tabindex="0"><code>-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+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
+=coUG
+-----END PGP PUBLIC KEY BLOCK-----
+</code></pre>
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        Built with <a href="https://gohugo.io/">Hugo 0.165.0</a>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="/js/main.min.259204f469f58eb3b665605a24e964264772df2adaded180b3669b6ce33d84c8.js" integrity="sha256-JZIE9Gn1jrO2ZWBaJOlkJkdy3yra3tGAs2abbOM9hMg=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.decf3b53d8827d840369f490775626e2a5200e150a733f78f0081c126426cbbf.js" integrity="sha256-3s87U9iCfYQDafSQd1Ym4qUgDhUKcz948AgcEmQmy78=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

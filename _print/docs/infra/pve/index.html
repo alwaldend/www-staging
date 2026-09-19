@@ -1,0 +1,530 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js" data-theme-init>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000000">
+
+<style>
+  html { background: Canvas; color: CanvasText; }
+  @media (prefers-color-scheme: dark) {
+    html { background: #0b0d12; color: #e6e6e6; }
+  }
+  html[data-theme-init] * { transition: none !important; }
+</style>
+
+<script>
+  (function() {
+    const themeKey = 'td-color-theme';
+    const storedTheme = localStorage.getItem(themeKey);
+    let theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (theme === 'auto') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
+<link rel="canonical" type="text/html" href="https://www-staging.alwaldend.com/docs/infra/pve/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://www-staging.alwaldend.com/docs/infra/pve/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+<title>Pve | Alwaldend</title>
+<meta name="description" content="Proxmox cluster pve.alwaldend.com">
+<meta property="og:url" content="https://www-staging.alwaldend.com/docs/infra/pve/">
+	<meta property="og:site_name" content="Alwaldend">
+	<meta property="og:title" content="Pve">
+	<meta property="og:description" content="Proxmox cluster pve.alwaldend.com">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="Pve">
+	<meta itemprop="description" content="Proxmox cluster pve.alwaldend.com">
+	<meta itemprop="dateModified" content="2026-09-19T20:06:21+03:00">
+	<meta itemprop="wordCount" content="92">
+	<meta itemprop="keywords" content="Ansible,Pve">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Pve">
+	<meta name="twitter:description" content="Proxmox cluster pve.alwaldend.com">
+<link rel="preload" href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" as="style" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<link href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" rel="stylesheet" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll">
+<div class="td-navbar-container container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">Alwaldend</span></a>
+  <div class="td-navbar__main td-navbar-nav-scroll td-navbar-nav-scroll--indicator" id="main_navbar">
+    <div class="scroll-indicator scroll-left"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/projects/"><span>Projects</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item td-navbar__light-dark-menu">
+        <div class="td-light-dark-menu dropdown"><svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+<button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        title="Toggle theme (Auto)"
+        aria-label="Toggle theme (Auto)">
+  <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="bd-theme">
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
+      Light
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>
+      Dark
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+      <svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>
+      Auto
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+</ul>
+</div>
+
+      </li>
+      </ul>
+    <div class="scroll-indicator scroll-right"></div>
+  </div>
+  <div class="td-navbar__search d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon" aria-hidden="true"></div>
+  <input
+    type="search"
+    name="q"
+    class="td-search__input form-control"
+    placeholder='Search this site…'
+    aria-label='Search this site…'
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/infra/pve/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Pve</h1>
+<div class="lead">Proxmox cluster pve.alwaldend.com</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-3947b603777d539dd93f2fcdbab24f9e"></a></li>
+
+
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-eb926d93af8c4824bab6617b9c239447"></a></li>
+
+
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-f2ca64eb6e8b88d953d4b1367c0a0df2">Ansible</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>4: <a href="#pg-77d854308dcf639524b72459ae4fe51a">Tf</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      <h2 id="print-cf1407a5a11f935a7972527e91fd6211-links">Links<a class="td-heading-self-link" href="#print-cf1407a5a11f935a7972527e91fd6211-links" aria-label="Heading self-link"></a></h2><ul>
+<li>Docs: <a href="https://www.proxmox.com/en/products/proxmox-virtual-environment/overview">https://www.proxmox.com/en/products/proxmox-virtual-environment/overview</a></li>
+</ul>
+<h2 id="print-cf1407a5a11f935a7972527e91fd6211-deployment">Deployment<a class="td-heading-self-link" href="#print-cf1407a5a11f935a7972527e91fd6211-deployment" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //infra/pve/ansible <span style="color:#75715e"># host setup</span>
+</span></span><span style="display:flex;"><span>bazel run //infra/pve/tf/tf.apply <span style="color:#75715e"># tf setup</span>
+</span></span></code></pre></div><h2 id="print-cf1407a5a11f935a7972527e91fd6211-recreate-the-test-vm">Recreate the test VM<a class="td-heading-self-link" href="#print-cf1407a5a11f935a7972527e91fd6211-recreate-the-test-vm" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //infra/pve/tf:tf.apply -- --replace module.vm_cloudinit_test.proxmox_vm_qemu.vm
+</span></span></code></pre></div><h2 id="print-cf1407a5a11f935a7972527e91fd6211-cloud-init-snippet-update">Cloud-init snippet update<a class="td-heading-self-link" href="#print-cf1407a5a11f935a7972527e91fd6211-cloud-init-snippet-update" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //infra/pve/ansible -- --tags pve_snippets
+</span></span></code></pre></div><h2 id="print-cf1407a5a11f935a7972527e91fd6211-update-acme-account">Update ACME account<a class="td-heading-self-link" href="#print-cf1407a5a11f935a7972527e91fd6211-update-acme-account" aria-label="Heading self-link"></a></h2><ul>
+<li>Create an EAB:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //infra/dc1/vault -- write -f pki/ica_servers/roles/src_infra_dc1_pve1_pki_server/acme/new-eab
+</span></span></code></pre></div></li>
+<li>Login as <code>root@pam</code></li>
+<li>Go to Datacenter -&gt; ACME</li>
+<li>Create a new account with the EAB and a directory:
+<pre tabindex="0"><code>https://vault.dc1.alwaldend.com:8200/v1/pki/ica_servers/roles/src_infra_dc1_pve1_pki_server/acme/directory
+</code></pre></li>
+</ul>
+<h2 id="print-cf1407a5a11f935a7972527e91fd6211-pve-token">Pve token<a class="td-heading-self-link" href="#print-cf1407a5a11f935a7972527e91fd6211-pve-token" aria-label="Heading self-link"></a></h2><ul>
+<li>Create a token with Privilege Separation</li>
+<li>Grant it required roles</li>
+<li>Create json:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;token_id&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;token_secret&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>Write the data:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //infra/pve:vault.kv_put alwaldend.com/vault1/approles/src_infra_dc1_pve1/pve_token @<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>PWD<span style="color:#e6db74">}</span><span style="color:#e6db74">/data.json&#34;</span>
+</span></span></code></pre></div></li>
+</ul>
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-3947b603777d539dd93f2fcdbab24f9e">1 - </h1>
+    
+	<h1 id="print-f2ebab15af42864005c5c748c28f51e0-proxmox-infrastructure-specification">Proxmox infrastructure Specification<a class="td-heading-self-link" href="#print-f2ebab15af42864005c5c748c28f51e0-proxmox-infrastructure-specification" aria-label="Heading self-link"></a></h1><h2 id="print-f2ebab15af42864005c5c748c28f51e0-purpose">Purpose<a class="td-heading-self-link" href="#print-f2ebab15af42864005c5c748c28f51e0-purpose" aria-label="Heading self-link"></a></h2><p>Specify the Proxmox cluster configuration, resource pools, and bootstrap test
+VM owned by <code>infra/pve</code>. The baseline is checked-in source at revision
+<code>550d7e79b1f5fdbc2b6017b75178471d6914082f</code>, observed on 2026-09-08.
+It describes declared infrastructure and packaged operator entry points;
+deployment and cluster health have not been observed for this baseline.</p>
+<h2 id="print-f2ebab15af42864005c5c748c28f51e0-requirements">Requirements<a class="td-heading-self-link" href="#print-f2ebab15af42864005c5c748c28f51e0-requirements" aria-label="Heading self-link"></a></h2><h3 id="print-f2ebab15af42864005c5c748c28f51e0-requirement-approle-resource-pools">Requirement: AppRole resource pools<a class="td-heading-self-link" href="#print-f2ebab15af42864005c5c748c28f51e0-requirement-approle-resource-pools" aria-label="Heading self-link"></a></h3><p>The Terraform configuration SHALL resolve the members of Vault&rsquo;s <code>approles</code>
+identity group and declare one Proxmox pool per resolved entity, keyed and
+named by that entity&rsquo;s name. It SHALL also declare a separate <code>templates</code> pool.</p>
+<p>Sources: <a href="/docs/infra/pve/">project documentation</a> and
+<a href="../../../tf/pools.tf">resource pool definitions</a>.</p>
+<h4 id="print-f2ebab15af42864005c5c748c28f51e0-scenario-declare-pools-for-known-approles">Scenario: Declare pools for known AppRoles<a class="td-heading-self-link" href="#print-f2ebab15af42864005c5c748c28f51e0-scenario-declare-pools-for-known-approles" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> Terraform resolves the entities in the Vault <code>approles</code> group</li>
+<li><strong>THEN</strong> the desired configuration includes a pool with each entity&rsquo;s name
+and the dedicated <code>templates</code> pool.</li>
+</ul>
+<h3 id="print-f2ebab15af42864005c5c748c28f51e0-requirement-packaged-host-and-snippet-configuration">Requirement: Packaged host and snippet configuration<a class="td-heading-self-link" href="#print-f2ebab15af42864005c5c748c28f51e0-requirement-packaged-host-and-snippet-configuration" aria-label="Heading self-link"></a></h3><p>The PVE Ansible entry point SHALL package the inventory and deployment playbook
+and apply the shared host and PVE roles to the <code>pve1</code> inventory group. It SHALL
+package the canonical shared cloud-init files under <code>files/cloud_init.yaml</code>
+and <code>files/cloud_init_min.yaml</code>, preserving the existing snippet update flow.</p>
+<p>Sources: <a href="../../../ansible/BUILD.bazel">deployment target</a>,
+<a href="../../../ansible/playbook_deploy.yaml">playbook</a>, and
+<a href="../../../ansible/group_vars/all.yaml">snippet variables</a>.</p>
+<h4 id="print-f2ebab15af42864005c5c748c28f51e0-scenario-assemble-the-pve-deployment-package">Scenario: Assemble the PVE deployment package<a class="td-heading-self-link" href="#print-f2ebab15af42864005c5c748c28f51e0-scenario-assemble-the-pve-deployment-package" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the Ansible binary&rsquo;s source package is built</li>
+<li><strong>THEN</strong> it includes the playbook, inventory, shared role collection, and
+both shared cloud-init files under their established aliases.</li>
+</ul>
+<h3 id="print-f2ebab15af42864005c5c748c28f51e0-requirement-cloud-init-test-virtual-machine">Requirement: Cloud-init test virtual machine<a class="td-heading-self-link" href="#print-f2ebab15af42864005c5c748c28f51e0-requirement-cloud-init-test-virtual-machine" aria-label="Heading self-link"></a></h3><p>The Terraform configuration SHALL declare its cloud-init test VM through the
+shared <code>pve_vm_qemu</code> module, derive its hostname and address from the project&rsquo;s
+DNS configuration, and place it in the <code>src_infra_dc1_pve1</code> AppRole pool. The
+baseline declaration SHALL use VM ID 100, a 5G <code>scsi0</code> disk, and the <code>test</code> tag.</p>
+<p>Sources: <a href="../../../tf/vms.tf">VM definition</a> and
+<a href="../../../dnsconfig.json">DNS configuration</a>.</p>
+<h4 id="print-f2ebab15af42864005c5c748c28f51e0-scenario-resolve-the-test-vms-desired-configuration">Scenario: Resolve the test VM&rsquo;s desired configuration<a class="td-heading-self-link" href="#print-f2ebab15af42864005c5c748c28f51e0-scenario-resolve-the-test-vms-desired-configuration" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> Terraform evaluates <code>module.vm_cloudinit_test</code></li>
+<li><strong>THEN</strong> its name and <code>/24</code> address derive from <code>cloudinit_test</code> DNS fields,
+and its pool resolves to the declared PVE AppRole pool.</li>
+</ul>
+<h3 id="print-f2ebab15af42864005c5c748c28f51e0-requirement-repository-managed-execution-inputs">Requirement: Repository-managed execution inputs<a class="td-heading-self-link" href="#print-f2ebab15af42864005c5c748c28f51e0-requirement-repository-managed-execution-inputs" aria-label="Heading self-link"></a></h3><p>PVE Terraform commands SHALL use the project&rsquo;s AL configuration and the
+declared Terraform, PVE-login, and Vault-environment plugins. The package SHALL
+include the lockfile, Terraform source, shared backend and VM modules, and
+required Vault helper targets. PVE Ansible commands SHALL likewise use the
+project AL configuration and packaged injector.</p>
+<p>Sources: <a href="../../../tf/BUILD.bazel">Terraform wrapper</a> and
+<a href="../../../ansible/BUILD.bazel">Ansible wrapper</a>.</p>
+<h4 id="print-f2ebab15af42864005c5c748c28f51e0-scenario-construct-a-pve-terraform-invocation">Scenario: Construct a PVE Terraform invocation<a class="td-heading-self-link" href="#print-f2ebab15af42864005c5c748c28f51e0-scenario-construct-a-pve-terraform-invocation" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> a repository Terraform command target is invoked with authorization
+for its operation</li>
+<li><strong>THEN</strong> the wrapper supplies the declared modules and helper inputs and
+selects the <code>tf</code>, <code>pve_login</code>, and <code>vault_env=default_default</code> plugins.</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-eb926d93af8c4824bab6617b9c239447">2 - </h1>
+    
+	<h1 id="print-173f55f59f4771cd3fb1b6de65cd0f6a-owned-dns-specification">owned-dns Specification<a class="td-heading-self-link" href="#print-173f55f59f4771cd3fb1b6de65cd0f6a-owned-dns-specification" aria-label="Heading self-link"></a></h1><h2 id="print-173f55f59f4771cd3fb1b6de65cd0f6a-purpose">Purpose<a class="td-heading-self-link" href="#print-173f55f59f4771cd3fb1b6de65cd0f6a-purpose" aria-label="Heading self-link"></a></h2><p>Define Proxmox cluster DNS management through the owner&rsquo;s <code>tf</code> root,
+including canonical declarations, scoped credentials, and offline source checks
+before adopting live records.</p>
+<h2 id="print-173f55f59f4771cd3fb1b6de65cd0f6a-requirements">Requirements<a class="td-heading-self-link" href="#print-173f55f59f4771cd3fb1b6de65cd0f6a-requirements" aria-label="Heading self-link"></a></h2><h3 id="print-173f55f59f4771cd3fb1b6de65cd0f6a-requirement-owner-local-dns-configuration">Requirement: Owner-local DNS configuration<a class="td-heading-self-link" href="#print-173f55f59f4771cd3fb1b6de65cd0f6a-requirement-owner-local-dns-configuration" aria-label="Heading self-link"></a></h3><p>The <code>tf</code> root SHALL consume this owner&rsquo;s canonical <code>dnsconfig.json</code> through
+the shared DNS Terraform module, preserving declared record identities and views.
+DNS resources SHALL default to disabled until the authorized adoption revision
+and SHALL retain enabled ownership after existing records are imported into the
+owner&rsquo;s state. Reconciliation against unchanged declarations and adopted state
+SHALL propose no record additions, changes, replacements, or deletions.</p>
+<h4 id="print-173f55f59f4771cd3fb1b6de65cd0f6a-scenario-inspect-the-preparatory-configuration">Scenario: Inspect the preparatory configuration<a class="td-heading-self-link" href="#print-173f55f59f4771cd3fb1b6de65cd0f6a-scenario-inspect-the-preparatory-configuration" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the checked-in root is evaluated with default inputs before its
+authorized adoption revision</li>
+<li><strong>THEN</strong> it reads this owner&rsquo;s declaration and disables managed DNS records</li>
+<li><strong>AND</strong> the package contains the module and declaration inputs</li>
+</ul>
+<h4 id="print-173f55f59f4771cd3fb1b6de65cd0f6a-scenario-adopt-existing-dns-records">Scenario: Adopt existing DNS records<a class="td-heading-self-link" href="#print-173f55f59f4771cd3fb1b6de65cd0f6a-scenario-adopt-existing-dns-records" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the authorized adoption audits competing writers, keeps identified
+writers stopped within the recorded coverage, and enables owner record management</li>
+<li><strong>THEN</strong> the owning root imports existing records by exact provider ID into
+its state while preserving their declared identities and views</li>
+</ul>
+<h4 id="print-173f55f59f4771cd3fb1b6de65cd0f6a-scenario-inspect-adopted-source-defaults">Scenario: Inspect adopted source defaults<a class="td-heading-self-link" href="#print-173f55f59f4771cd3fb1b6de65cd0f6a-scenario-inspect-adopted-source-defaults" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the adopted root uses its checked-in source defaults</li>
+<li><strong>THEN</strong> DNS ownership remains enabled and the package retains the module
+and canonical declaration inputs</li>
+</ul>
+<h4 id="print-173f55f59f4771cd3fb1b6de65cd0f6a-scenario-reconcile-existing-dns-records">Scenario: Reconcile existing DNS records<a class="td-heading-self-link" href="#print-173f55f59f4771cd3fb1b6de65cd0f6a-scenario-reconcile-existing-dns-records" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the owning root plans against its adopted state and unchanged declarations</li>
+<li><strong>THEN</strong> it proposes no record additions, changes, replacements, or deletions</li>
+</ul>
+<h3 id="print-173f55f59f4771cd3fb1b6de65cd0f6a-requirement-scoped-dns-execution-and-offline-checks">Requirement: Scoped DNS execution and offline checks<a class="td-heading-self-link" href="#print-173f55f59f4771cd3fb1b6de65cd0f6a-requirement-scoped-dns-execution-and-offline-checks" aria-label="Heading self-link"></a></h3><p>The DNS wrappers SHALL select <code>src_infra_dc1_pve1</code> through the repository AL flow
+and keep secret values in injected variables. <code>dns.plan</code>, <code>dns.show</code>, and
+<code>dns.apply</code> SHALL select <code>dns=1</code> and operate on <code>module.dns</code> in the existing <code>tf</code>
+root and backend. Apply SHALL consume the reviewed saved plan. Required root
+inputs SHALL retain their existing Vault readers, while ordinary Proxmox
+authentication SHALL remain separate. Scoped DNS operations SHALL verify DNS
+and its dependencies without establishing overall PVE service health.
+Real DNS credentials and Vault policy grants SHALL be prerequisites for
+operational Terraform calls. RouterOS DNS credentials SHALL be isolated from
+unrelated RouterOS resources. The package SHALL expose a format test that does
+not authenticate to Vault or contact DNS providers.</p>
+<h4 id="print-173f55f59f4771cd3fb1b6de65cd0f6a-scenario-validate-the-terraform-source">Scenario: Validate the Terraform source<a class="td-heading-self-link" href="#print-173f55f59f4771cd3fb1b6de65cd0f6a-scenario-validate-the-terraform-source" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the package format test executes</li>
+<li><strong>THEN</strong> it checks the packaged Terraform configuration without live credentials</li>
+<li><strong>AND</strong> existing non-DNS authentication and backend paths remain unchanged</li>
+</ul>
+<h4 id="print-173f55f59f4771cd3fb1b6de65cd0f6a-scenario-prepare-an-operational-terraform-invocation">Scenario: Prepare an operational Terraform invocation<a class="td-heading-self-link" href="#print-173f55f59f4771cd3fb1b6de65cd0f6a-scenario-prepare-an-operational-terraform-invocation" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the scoped DNS wrapper selects <code>dns=1</code></li>
+<li><strong>THEN</strong> it selects DNS credential injection through the owner AppRole and uses
+the existing root and backend without starting Proxmox login</li>
+<li><strong>AND</strong> the targeted plan and saved-plan apply cover DNS and its dependencies,
+without proving PVE host or API health</li>
+<li><strong>AND</strong> disabled DNS resources do not imply offline provider configuration</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-f2ca64eb6e8b88d953d4b1367c0a0df2">3 - Ansible</h1>
+    <div class="lead">Ansible setup</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-77d854308dcf639524b72459ae4fe51a">4 - Tf</h1>
+    <div class="lead">Terraform config</div>
+	<p>Use this package&rsquo;s <code>dns.plan</code>, <code>dns.show</code>, and <code>dns.apply</code> targets for the
+<a href="/docs/infra/dns/">scoped DNS adoption workflow</a>.
+They select <code>dns=1</code> and target <code>module.dns</code> in this root, retaining the
+<code>src_infra_dc1_pve1</code> AppRole and existing backend. Use the
+<a href="../../dns/openspec/changes/archive/2026-09-13-migrate-project-dns-to-terraform/cutover.md#prepare-the-owner">owner preparation and import procedure</a>
+for declarative import maps and reviewed saved-plan apply.</p>
+<p><code>dns_enabled</code> defaults to <code>true</code> after the
+<a href="../openspec/changes/archive/2026-09-13-adopt-dns-records/design.md">completed adoption</a>.
+Reconciliation against adopted state and unchanged declarations produces no DNS
+changes. DNS targeting covers DNS and its dependencies; it does not establish
+PVE host, API, or service health. Ordinary Terraform commands retain their
+existing Proxmox authentication.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        Built with <a href="https://gohugo.io/">Hugo 0.165.0</a>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="/js/main.min.259204f469f58eb3b665605a24e964264772df2adaded180b3669b6ce33d84c8.js" integrity="sha256-JZIE9Gn1jrO2ZWBaJOlkJkdy3yra3tGAs2abbOM9hMg=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.decf3b53d8827d840369f490775626e2a5200e150a733f78f0081c126426cbbf.js" integrity="sha256-3s87U9iCfYQDafSQd1Ym4qUgDhUKcz948AgcEmQmy78=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

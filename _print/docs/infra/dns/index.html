@@ -1,0 +1,1578 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js" data-theme-init>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000000">
+
+<style>
+  html { background: Canvas; color: CanvasText; }
+  @media (prefers-color-scheme: dark) {
+    html { background: #0b0d12; color: #e6e6e6; }
+  }
+  html[data-theme-init] * { transition: none !important; }
+</style>
+
+<script>
+  (function() {
+    const themeKey = 'td-color-theme';
+    const storedTheme = localStorage.getItem(themeKey);
+    let theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (theme === 'auto') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
+<link rel="canonical" type="text/html" href="https://www-staging.alwaldend.com/docs/infra/dns/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://www-staging.alwaldend.com/docs/infra/dns/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+<title>Dns | Alwaldend</title>
+<meta name="description" content="Project-owned DNS declarations for alwaldend.com">
+<meta property="og:url" content="https://www-staging.alwaldend.com/docs/infra/dns/">
+	<meta property="og:site_name" content="Alwaldend">
+	<meta property="og:title" content="Dns">
+	<meta property="og:description" content="Project-owned DNS declarations for alwaldend.com">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="Dns">
+	<meta itemprop="description" content="Project-owned DNS declarations for alwaldend.com">
+	<meta itemprop="dateModified" content="2026-09-19T20:06:21+03:00">
+	<meta itemprop="wordCount" content="610">
+	<meta itemprop="keywords" content="Dns,Terraform">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Dns">
+	<meta name="twitter:description" content="Project-owned DNS declarations for alwaldend.com">
+<link rel="preload" href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" as="style" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<link href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" rel="stylesheet" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll">
+<div class="td-navbar-container container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">Alwaldend</span></a>
+  <div class="td-navbar__main td-navbar-nav-scroll td-navbar-nav-scroll--indicator" id="main_navbar">
+    <div class="scroll-indicator scroll-left"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/projects/"><span>Projects</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item td-navbar__light-dark-menu">
+        <div class="td-light-dark-menu dropdown"><svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+<button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        title="Toggle theme (Auto)"
+        aria-label="Toggle theme (Auto)">
+  <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="bd-theme">
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
+      Light
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>
+      Dark
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+      <svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>
+      Auto
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+</ul>
+</div>
+
+      </li>
+      </ul>
+    <div class="scroll-indicator scroll-right"></div>
+  </div>
+  <div class="td-navbar__search d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon" aria-hidden="true"></div>
+  <input
+    type="search"
+    name="q"
+    class="td-search__input form-control"
+    placeholder='Search this site…'
+    aria-label='Search this site…'
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/infra/dns/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Dns</h1>
+<div class="lead">Project-owned DNS declarations for alwaldend.com</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-a2a8fb4565c12c951b85dedb4e2ccf6e"></a></li>
+
+
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-22ddd334842ae4d7e35d0a79ed454ba4">Cloudflare DNS</a></li>
+
+
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-af9794ad8c53e916c92bc2cabd8f5748">Mikrotik DNS</a></li>
+
+
+    
+  
+    
+    
+	
+<li>4: <a href="#pg-5182c83d4964c12536210ac055ef6ebd">Shared DNS Terraform</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      <p>DNS records live in each owner&rsquo;s <code>dnsconfig.json</code>. Each owner manages its records
+through the reusable <a href="/docs/projects/tf_modules/dns_records/">Terraform DNS module</a>
+from its designated <code>tf_setup</code> or <code>tf</code> root. This component&rsquo;s
+<a href="dnsconfig.json">dnsconfig.json</a> owns shared apex and mail records.</p>
+<h2 id="print-96520b58d4fcbdeb2ce1fb77f32b72c4-declaration-pages">Declaration pages<a class="td-heading-self-link" href="#print-96520b58d4fcbdeb2ce1fb77f32b72c4-declaration-pages" aria-label="Heading self-link"></a></h2><p><a href="/docs/infra/dns/cloudflare_dns/">Cloudflare DNS</a> and <a href="/docs/infra/dns/mikrotik_dns/">Mikrotik DNS</a> list the
+records this repository declares for each destination view, with the owning
+declaration for every record. They are generated from <code>dnsconfig.json</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel_agent bazel run //infra/dns/cmd/dump -- --write
+</span></span></code></pre></div><p><code>//infra/dns:config_test</code> fails when a checked-in page is out of date, so the
+pages cannot drift from the declarations they project.</p>
+<h2 id="print-96520b58d4fcbdeb2ce1fb77f32b72c4-inspect-and-lint-declarations">Inspect and lint declarations<a class="td-heading-self-link" href="#print-96520b58d4fcbdeb2ce1fb77f32b72c4-inspect-and-lint-declarations" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel_agent bazel run //infra/dns:lint
+</span></span></code></pre></div><p>The linter discovers <code>dnsconfig.json</code> files in the current workspace at runtime
+and prints their DNS declarations as a table. It includes nested project
+workspaces and excludes task scratch, tool caches, and generated directories.
+There is no central source registry to maintain when a project adds a file.</p>
+<p>A canonical domain name must belong to one source file. Multiple values, record
+types, and destination views within that file are valid. Duplicate JSON object
+keys and domains declared by different source files are errors. The command
+reads checked-in declarations without contacting Terraform backends or DNS
+providers.</p>
+<p><code>bazel_agent bazel test //infra/dns:config_test</code> runs the linter&rsquo;s fixture tests
+and checks every DNS declaration in the current checkout. The repository test
+resolves the root <code>MODULE.bazel</code> runfile to the checkout and runs without sandboxing
+or cached test results so newly added files and nested workspaces are included
+on every run. It only reads local files.</p>
+<h2 id="print-96520b58d4fcbdeb2ce1fb77f32b72c4-terraform-records">Terraform records<a class="td-heading-self-link" href="#print-96520b58d4fcbdeb2ce1fb77f32b72c4-terraform-records" aria-label="Heading self-link"></a></h2><p>The <a href="/docs/projects/tf_modules/dns_records/normalize/">provider-free normalization module</a>
+owns the Terraform input schema, relative-name handling, TTL defaults, and stable
+resource keys. Each logical key can contain several record-type members; <code>dsp</code>
+selects <code>global</code>, <code>dc1</code>, or <code>all</code>. Explicit member TTLs preserve shared apex and
+mail settings. The normalization module remains an internal dependency of each
+owner&rsquo;s Terraform DNS module.</p>
+<p>Owner-local roots receive their provider credentials and Vault HTTP state
+backend through the existing AL configuration. The shared module resolves the
+Cloudflare zone by name when no optional zone ID is provided. DNS and ingress
+reuse the RouterOS endpoint declared in the <a href="../al_lib.lua">shared AL configuration</a>,
+while their separate credentials remain in Vault. Neither integration requires
+adding metadata fields to the existing credential entries.
+Validate their source with the
+owning package&rsquo;s offline checks. A live plan, import, apply, or state operation
+requires separate authorization for that owner and operation.</p>
+<p>Service roots expose <code>dns.plan</code>, <code>dns.show</code>, and <code>dns.apply</code> alongside their
+ordinary Terraform commands. They retain the owning root, AppRole and backend,
+select the DNS AL calls, and plan <code>module.dns</code>. Required root inputs still load
+through the existing read-only Vault injectors. Unrelated service authentication
+is not selected. Apply accepts only a reviewed saved plan file and rejects
+Terraform CLI argument environment overrides. See the runbook for the optional
+import-ID maps and adoption checks.</p>
+<h2 id="print-96520b58d4fcbdeb2ce1fb77f32b72c4-migration-and-recovery">Migration and recovery<a class="td-heading-self-link" href="#print-96520b58d4fcbdeb2ce1fb77f32b72c4-migration-and-recovery" aria-label="Heading self-link"></a></h2><p>The <a href="openspec/changes/archive/2026-09-13-migrate-project-dns-to-terraform/">migration change</a> and
+<a href="openspec/changes/archive/2026-09-13-migrate-project-dns-to-terraform/cutover.md">cutover runbook</a>
+describe adoption, imports, recovery, and retirement requirements. Each owner&rsquo;s
+adoption change records its verified live transfer; source implementation alone
+does not establish operational ownership. The completed coordination record
+links the operational acceptance evidence and its coverage limits.</p>
+<p>Current source no longer exposes the central DNSControl deployment commands.
+Before an owner begins Terraform reconciliation, stop central deployment jobs
+identified by the active and scheduled writer audit. Record coverage and
+unavailable observations, and coordinate one owner at a time. Adopt existing
+records into the owner&rsquo;s state with an exact-ID, no-change plan. Fresh complete
+inventories may establish missing declarations for a separately reviewed
+additions-only plan that preserves all existing records.
+Rollback requires stopping the affected Terraform writers and following the
+runbook&rsquo;s recorded prior revision and state-reconciliation procedure.</p>
+<p>Deployment snapshots are not maintained here. The generated declaration pages
+above project declared state, and the declarations themselves remain the only
+inventory.</p>
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-a2a8fb4565c12c951b85dedb4e2ccf6e">1 - </h1>
+    
+	<h1 id="print-26cd59c7e44d32ec3ca3f4e479c54e54-infrastructure-dns">Infrastructure DNS<a class="td-heading-self-link" href="#print-26cd59c7e44d32ec3ca3f4e479c54e54-infrastructure-dns" aria-label="Heading self-link"></a></h1><h2 id="print-26cd59c7e44d32ec3ca3f4e479c54e54-purpose">Purpose<a class="td-heading-self-link" href="#print-26cd59c7e44d32ec3ca3f4e479c54e54-purpose" aria-label="Heading self-link"></a></h2><p>Describe owner-local Terraform DNS declarations and runtime source-ownership
+validation for global and dc1 records. This contract describes checked-in
+source; it does not establish live adoption or authorize infrastructure writes.</p>
+<p>Sources: <a href="/docs/">component documentation</a>,
+<a href="../../../BUILD.bazel">target definitions</a>,
+<a href="../../../cmd/lint/main.go">runtime linter</a>, and
+<a href="../../../tf/dns.tf">Terraform root</a>.</p>
+<h2 id="print-26cd59c7e44d32ec3ca3f4e479c54e54-requirements">Requirements<a class="td-heading-self-link" href="#print-26cd59c7e44d32ec3ca3f4e479c54e54-requirements" aria-label="Heading self-link"></a></h2><h3 id="print-26cd59c7e44d32ec3ca3f4e479c54e54-requirement-aggregate-records-from-their-owning-components">Requirement: Aggregate records from their owning components<a class="td-heading-self-link" href="#print-26cd59c7e44d32ec3ca3f4e479c54e54-requirement-aggregate-records-from-their-owning-components" aria-label="Heading self-link"></a></h3><p>DNS declarations SHALL remain in their owners&rsquo; <code>dnsconfig.json</code> files. Runtime
+inventory SHALL discover all canonical files, including nested modules and
+empty declarations, without a checked-in ownership registry. The inventory
+SHALL print a deterministic table of files, DNS names, types and views.</p>
+<p>Project landing declarations retain their declared direct targets.</p>
+<h4 id="print-26cd59c7e44d32ec3ca3f4e479c54e54-scenario-a-new-project-adds-a-canonical-declaration">Scenario: A new project adds a canonical declaration<a class="td-heading-self-link" href="#print-26cd59c7e44d32ec3ca3f4e479c54e54-scenario-a-new-project-adds-a-canonical-declaration" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the runtime linter scans a workspace containing the new file</li>
+<li><strong>THEN</strong> it includes the file without requiring a registry update</li>
+</ul>
+<h3 id="print-26cd59c7e44d32ec3ca3f4e479c54e54-requirement-preserve-distinct-global-and-site-local-views">Requirement: Preserve distinct global and site-local views<a class="td-heading-self-link" href="#print-26cd59c7e44d32ec3ca3f4e479c54e54-requirement-preserve-distinct-global-and-site-local-views" aria-label="Heading self-link"></a></h3><p>The Terraform module SHALL preserve Cloudflare global and MikroTik dc1 views.
+It SHALL retain every type member, expand and deduplicate destinations, reject
+unknown inputs and preserve effective values, TTLs, priorities and multiplicity.</p>
+<h4 id="print-26cd59c7e44d32ec3ca3f4e479c54e54-scenario-an-entry-declares-a-and-aaaa-in-all-views">Scenario: An entry declares A and AAAA in all views<a class="td-heading-self-link" href="#print-26cd59c7e44d32ec3ca3f4e479c54e54-scenario-an-entry-declares-a-and-aaaa-in-all-views" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the shared module normalizes the entry</li>
+<li><strong>THEN</strong> both types appear exactly once in each destination view</li>
+</ul>
+<h4 id="print-26cd59c7e44d32ec3ca3f4e479c54e54-scenario-an-input-names-an-unsupported-destination">Scenario: An input names an unsupported destination<a class="td-heading-self-link" href="#print-26cd59c7e44d32ec3ca3f4e479c54e54-scenario-an-input-names-an-unsupported-destination" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> a record names an unsupported destination</li>
+<li><strong>THEN</strong> normalization fails with an actionable diagnostic</li>
+</ul>
+<h3 id="print-26cd59c7e44d32ec3ca3f4e479c54e54-requirement-validate-configuration-without-provider-access">Requirement: Validate configuration without provider access<a class="td-heading-self-link" href="#print-26cd59c7e44d32ec3ca3f4e479c54e54-requirement-validate-configuration-without-provider-access" aria-label="Heading self-link"></a></h3><p>The linter and module tests SHALL validate source ownership, names, inputs,
+normalization and provider mappings without credentials or live provider access.
+Existing JSON-based VM consumers SHALL remain compatible.</p>
+<h4 id="print-26cd59c7e44d32ec3ca3f4e479c54e54-scenario-validate-a-changed-declaration">Scenario: Validate a changed declaration<a class="td-heading-self-link" href="#print-26cd59c7e44d32ec3ca3f4e479c54e54-scenario-validate-a-changed-declaration" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> offline checks run</li>
+<li><strong>THEN</strong> they validate the declaration and fixtures without deploying records</li>
+</ul>
+<h3 id="print-26cd59c7e44d32ec3ca3f4e479c54e54-requirement-inject-credentials-into-operational-wrappers">Requirement: Inject credentials into operational wrappers<a class="td-heading-self-link" href="#print-26cd59c7e44d32ec3ca3f4e479c54e54-requirement-inject-credentials-into-operational-wrappers" aria-label="Heading self-link"></a></h3><p>Owner Terraform roots SHALL use the existing AL/Vault authentication, backend
+and credential injection workflow. They SHALL obtain only their required view
+credentials. Operational provider initialization may require live credentials
+even with resource creation disabled. Central DNSControl write entrypoints
+SHALL be removed from the candidate.</p>
+<h4 id="print-26cd59c7e44d32ec3ca3f4e479c54e54-scenario-a-global-only-owner-operates-its-root">Scenario: A global-only owner operates its root<a class="td-heading-self-link" href="#print-26cd59c7e44d32ec3ca3f4e479c54e54-scenario-a-global-only-owner-operates-its-root" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> an authorized operator invokes the root after bootstrap</li>
+<li><strong>THEN</strong> it uses that owner&rsquo;s AppRole and Cloudflare credentials</li>
+<li><strong>AND</strong> RouterOS credentials and resources are not required</li>
+</ul>
+<h3 id="print-26cd59c7e44d32ec3ca3f4e479c54e54-requirement-reconcile-dns-through-its-owners-terraform-state">Requirement: Reconcile DNS through its owner&rsquo;s Terraform state<a class="td-heading-self-link" href="#print-26cd59c7e44d32ec3ca3f4e479c54e54-requirement-reconcile-dns-through-its-owners-terraform-state" aria-label="Heading self-link"></a></h3><p>Each owner SHALL instantiate the shared module in <code>tf_setup</code> when present,
+otherwise in <code>tf</code>. Missing roots and AppRoles SHALL be added. Related
+AppRole resources SHALL be grouped in modules under
+<code>infra/vault/tf/approles/&lt;name&gt;</code>. Provider instance keys SHALL be stable across
+value-only changes; unrelated owners SHALL remain outside the state.</p>
+<h4 id="print-26cd59c7e44d32ec3ca3f4e479c54e54-scenario-an-owner-has-both-stages">Scenario: An owner has both stages<a class="td-heading-self-link" href="#print-26cd59c7e44d32ec3ca3f4e479c54e54-scenario-an-owner-has-both-stages" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the integration is prepared</li>
+<li><strong>THEN</strong> only its setup root declares the DNS module</li>
+</ul>
+<h3 id="print-26cd59c7e44d32ec3ca3f4e479c54e54-requirement-one-declaration-file-owns-each-dns-name">Requirement: One declaration file owns each DNS name<a class="td-heading-self-link" href="#print-26cd59c7e44d32ec3ca3f4e479c54e54-requirement-one-declaration-file-owns-each-dns-name" aria-label="Heading self-link"></a></h3><p>The runtime linter SHALL reject different files managing the same canonical
+fully qualified DNS name, across types and views. Multiple records within one
+file SHALL be allowed. Diagnostics SHALL identify both files.</p>
+<h4 id="print-26cd59c7e44d32ec3ca3f4e479c54e54-scenario-different-files-split-a-name-across-types-or-views">Scenario: Different files split a name across types or views<a class="td-heading-self-link" href="#print-26cd59c7e44d32ec3ca3f4e479c54e54-scenario-different-files-split-a-name-across-types-or-views" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> one file declares an A record and another an AAAA record or a
+different view for the same name</li>
+<li><strong>THEN</strong> lint fails and identifies both source files</li>
+</ul>
+<h4 id="print-26cd59c7e44d32ec3ca3f4e479c54e54-scenario-one-file-manages-multiple-records-for-a-name">Scenario: One file manages multiple records for a name<a class="td-heading-self-link" href="#print-26cd59c7e44d32ec3ca3f4e479c54e54-scenario-one-file-manages-multiple-records-for-a-name" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> one file declares several values, types or views for a name</li>
+<li><strong>THEN</strong> ownership lint accepts the sole source</li>
+</ul>
+<h3 id="print-26cd59c7e44d32ec3ca3f4e479c54e54-requirement-preserve-live-records-during-transfer">Requirement: Preserve live records during transfer<a class="td-heading-self-link" href="#print-26cd59c7e44d32ec3ca3f4e479c54e54-requirement-preserve-live-records-during-transfer" aria-label="Heading self-link"></a></h3><p>Operational cutover SHALL audit active and scheduled central writers, stop
+identified competing writers, and coordinate one owner at a time. Evidence
+SHALL state the audit&rsquo;s coverage and unavailable observations. Each existing
+record SHALL be imported using its actual provider ID into exactly one owner
+state, followed by a no-change adoption plan before writes. Fresh complete
+inventories MAY establish missing declarations for an exact additions-only
+plan that preserves every existing record. Endpoint-owning batches SHALL
+verify an independent authenticated recovery path first.</p>
+<p>The shared apex and mail records owned by <code>infra/dns</code> SHALL remain disabled
+by default in its <code>tf</code> root before the authorized adoption revision and SHALL
+retain enabled ownership after import. Reconciliation against the adopted state
+and unchanged declarations SHALL propose no record additions, changes,
+replacements, or deletions and SHALL preserve unrelated provider records.</p>
+<h4 id="print-26cd59c7e44d32ec3ca3f4e479c54e54-scenario-an-owner-is-adopted">Scenario: An owner is adopted<a class="td-heading-self-link" href="#print-26cd59c7e44d32ec3ca3f4e479c54e54-scenario-an-owner-is-adopted" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> its authorized cutover runs</li>
+<li><strong>THEN</strong> exact-ID imports preserve existing records</li>
+<li><strong>AND</strong> the operator coordinates exclusive active writers and verifies
+unrelated records remain unchanged</li>
+</ul>
+<h4 id="print-26cd59c7e44d32ec3ca3f4e479c54e54-scenario-deploy-verified-missing-declarations">Scenario: Deploy verified missing declarations<a class="td-heading-self-link" href="#print-26cd59c7e44d32ec3ca3f4e479c54e54-scenario-deploy-verified-missing-declarations" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> complete provider inventories establish that declared names are absent
+and conflict-free</li>
+<li><strong>THEN</strong> the reviewed DNS plan creates only those missing declarations</li>
+<li><strong>AND</strong> every existing provider identity and attribute remains unchanged</li>
+<li><strong>AND</strong> a follow-up DNS plan contains no changes</li>
+</ul>
+<h4 id="print-26cd59c7e44d32ec3ca3f4e479c54e54-scenario-inspect-the-prepared-shared-record-defaults">Scenario: Inspect the prepared shared-record defaults<a class="td-heading-self-link" href="#print-26cd59c7e44d32ec3ca3f4e479c54e54-scenario-inspect-the-prepared-shared-record-defaults" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the shared <code>tf</code> root uses its checked-in defaults before its
+authorized adoption revision</li>
+<li><strong>THEN</strong> shared-record ownership is disabled and the root retains the
+canonical shared declaration and module inputs</li>
+</ul>
+<h4 id="print-26cd59c7e44d32ec3ca3f4e479c54e54-scenario-inspect-adopted-shared-record-defaults">Scenario: Inspect adopted shared-record defaults<a class="td-heading-self-link" href="#print-26cd59c7e44d32ec3ca3f4e479c54e54-scenario-inspect-adopted-shared-record-defaults" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the adopted shared <code>tf</code> root uses its checked-in source defaults</li>
+<li><strong>THEN</strong> ownership is enabled for the shared apex and mail records in
+their declared views</li>
+</ul>
+<h4 id="print-26cd59c7e44d32ec3ca3f4e479c54e54-scenario-reconcile-existing-shared-records">Scenario: Reconcile existing shared records<a class="td-heading-self-link" href="#print-26cd59c7e44d32ec3ca3f4e479c54e54-scenario-reconcile-existing-shared-records" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the shared <code>tf</code> root plans against adopted state and unchanged declarations</li>
+<li><strong>THEN</strong> it proposes no record additions, changes, replacements, or deletions</li>
+<li><strong>AND</strong> unrelated provider records remain unchanged</li>
+</ul>
+<h3 id="print-26cd59c7e44d32ec3ca3f4e479c54e54-requirement-avoid-a-separate-dns-exporter">Requirement: Avoid a separate DNS exporter<a class="td-heading-self-link" href="#print-26cd59c7e44d32ec3ca3f4e479c54e54-requirement-avoid-a-separate-dns-exporter" aria-label="Heading self-link"></a></h3><p>The implementation SHALL derive its declaration views from the owning
+<code>dnsconfig.json</code> files rather than maintaining a normalized inventory or BIND
+exporter. Historical provider snapshots SHALL NOT be presented as current
+desired state, and no provider snapshot SHALL be committed as a declaration
+source.</p>
+<h4 id="print-26cd59c7e44d32ec3ca3f4e479c54e54-scenario-inspect-declared-ownership">Scenario: Inspect declared ownership<a class="td-heading-self-link" href="#print-26cd59c7e44d32ec3ca3f4e479c54e54-scenario-inspect-declared-ownership" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the runtime linter succeeds</li>
+<li><strong>THEN</strong> its table reports the discovered declarations without an export step</li>
+</ul>
+<h3 id="print-26cd59c7e44d32ec3ca3f4e479c54e54-requirement-publish-declaration-pages-per-destination-view">Requirement: Publish declaration pages per destination view<a class="td-heading-self-link" href="#print-26cd59c7e44d32ec3ca3f4e479c54e54-requirement-publish-declaration-pages-per-destination-view" aria-label="Heading self-link"></a></h3><p>The implementation SHALL render one documentation page per destination view
+from the declared records, with the owning declaration for every record, and
+SHALL fail its offline check when a checked-in page differs from the
+declarations it projects.</p>
+<h4 id="print-26cd59c7e44d32ec3ca3f4e479c54e54-scenario-regenerate-a-declaration-page">Scenario: Regenerate a declaration page<a class="td-heading-self-link" href="#print-26cd59c7e44d32ec3ca3f4e479c54e54-scenario-regenerate-a-declaration-page" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> an owner changes a declaration and the generation command runs</li>
+<li><strong>THEN</strong> the affected view&rsquo;s page lists the declared records with their owner</li>
+<li><strong>AND</strong> the check passes against the regenerated page</li>
+</ul>
+<h4 id="print-26cd59c7e44d32ec3ca3f4e479c54e54-scenario-a-declaration-page-is-stale">Scenario: A declaration page is stale<a class="td-heading-self-link" href="#print-26cd59c7e44d32ec3ca3f4e479c54e54-scenario-a-declaration-page-is-stale" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> a checked-in page no longer matches the declarations</li>
+<li><strong>THEN</strong> the offline check fails rather than serving a stale inventory</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-22ddd334842ae4d7e35d0a79ed454ba4">2 - Cloudflare DNS</h1>
+    <div class="lead">Records declared for the public zone served by Cloudflare</div>
+	<p>Every record this repository declares for the public zone, which Cloudflare serves.</p>
+<p>This page is generated from the declarations; run <code>bazel run //infra/dns/cmd/dump -- --write</code> after changing them. The authoritative source is each owner&rsquo;s <code>dnsconfig.json</code>.</p>
+<table>
+	<thead>
+			<tr>
+					<th>Domain</th>
+					<th>Type</th>
+					<th>TTL</th>
+					<th>Value</th>
+					<th>Declaration</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>@</td>
+					<td>A</td>
+					<td>300</td>
+					<td>185.199.108.153</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>@</td>
+					<td>A</td>
+					<td>300</td>
+					<td>185.199.109.153</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>@</td>
+					<td>A</td>
+					<td>300</td>
+					<td>185.199.110.153</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>@</td>
+					<td>A</td>
+					<td>300</td>
+					<td>185.199.111.153</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>@</td>
+					<td>AAAA</td>
+					<td>300</td>
+					<td>2606:50c0:8000::153</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>@</td>
+					<td>AAAA</td>
+					<td>300</td>
+					<td>2606:50c0:8001::153</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>@</td>
+					<td>AAAA</td>
+					<td>300</td>
+					<td>2606:50c0:8002::153</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>@</td>
+					<td>AAAA</td>
+					<td>300</td>
+					<td>2606:50c0:8003::153</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>@</td>
+					<td>MX</td>
+					<td>300</td>
+					<td>10 mail.protonmail.ch.</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>@</td>
+					<td>MX</td>
+					<td>300</td>
+					<td>20 mailsec.protonmail.ch.</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>@</td>
+					<td>TXT</td>
+					<td>300</td>
+					<td>_globalsign-domain-verification=0QBJgVV_uwcFLTi1Rot3bb1LyJ5uW1WD0ygvIS4OM5</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>@</td>
+					<td>TXT</td>
+					<td>300</td>
+					<td>protonmail-verification=bdcd133d3f472fa17f66328950d02fbeae1bef75</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>@</td>
+					<td>TXT</td>
+					<td>300</td>
+					<td>v=spf1 include:_spf.protonmail.ch ~all</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>_dmarc</td>
+					<td>TXT</td>
+					<td>300</td>
+					<td>v=DMARC1; p=quarantine; adkim=s</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>_dmarc.simplelogin</td>
+					<td>TXT</td>
+					<td>10800</td>
+					<td>v=DMARC1; p=quarantine; pct=100; adkim=s; aspf=s</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>canvas.openhands</td>
+					<td>CNAME</td>
+					<td>default</td>
+					<td>ingress.alwaldend.com.</td>
+					<td>infra/openhands/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>cloud</td>
+					<td>CNAME</td>
+					<td>default</td>
+					<td>ingress.alwaldend.com.</td>
+					<td>infra/nas/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>dc1.automation.openhands</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.10.92</td>
+					<td>infra/openhands/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>dc1.canvas.openhands</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.10.90</td>
+					<td>infra/openhands/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>dc1.cloud</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.1.209</td>
+					<td>infra/nas/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>dc1.host-bot.simeonwarren.users</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.1.210</td>
+					<td>users/simeonwarren/host_bot/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>dc1.server.openhands</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.10.91</td>
+					<td>infra/openhands/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>dc1.t3code.host-bot.simeonwarren.users</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.1.210</td>
+					<td>users/simeonwarren/host_bot/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>dkim._domainkey.simplelogin</td>
+					<td>CNAME</td>
+					<td>10800</td>
+					<td>dkim._domainkey.simplelogin.co.</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>dkim02._domainkey.simplelogin</td>
+					<td>CNAME</td>
+					<td>10800</td>
+					<td>dkim02._domainkey.simplelogin.co.</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>dkim03._domainkey.simplelogin</td>
+					<td>CNAME</td>
+					<td>10800</td>
+					<td>dkim03._domainkey.simplelogin.co.</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>forgejo</td>
+					<td>CNAME</td>
+					<td>default</td>
+					<td>ingress.alwaldend.com.</td>
+					<td>infra/forgejo/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>git</td>
+					<td>CNAME</td>
+					<td>default</td>
+					<td>ingress.alwaldend.com.</td>
+					<td>infra/forgejo/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>host1.ingress</td>
+					<td>A</td>
+					<td>default</td>
+					<td>81.26.185.118</td>
+					<td>infra/ingress/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>ingress</td>
+					<td>A</td>
+					<td>default</td>
+					<td>81.26.185.118</td>
+					<td>infra/ingress/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>int.forgejo</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.10.40</td>
+					<td>infra/forgejo/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>int.vault</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.1.218</td>
+					<td>infra/vault/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>mail._domainkey.yandex</td>
+					<td>TXT</td>
+					<td>300</td>
+					<td>v=DKIM1; k=rsa; t=s; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCcYzFVgkeDOhaIIkWM8gNQjxVsv0/aXfU+ax5urB5y6hA6lSjRnjRo6tm0bXbkOJf41GmiwMNgdXpwRtzgzAlX1i2aJbtEr4b9jzibEGLQ7Cvqs44bOYES9f/K3ueQpnvdTOJmFqlRReFL7ZrUyDFCoQ7f4+7h4i8s01cCcRrt5wIDAQAB</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>njalla1.nodes.threexui</td>
+					<td>A</td>
+					<td>default</td>
+					<td>45.142.141.133</td>
+					<td>infra/threexui/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>njalla1.nodes.threexui</td>
+					<td>AAAA</td>
+					<td>default</td>
+					<td>2a0a:3840:8078:141:0:2d8e:8d85:1337</td>
+					<td>infra/threexui/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>pages</td>
+					<td>A</td>
+					<td>default</td>
+					<td>185.199.108.153</td>
+					<td>projects/alwaldend.com/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>pages</td>
+					<td>AAAA</td>
+					<td>default</td>
+					<td>2606:50c0:8000::153</td>
+					<td>projects/alwaldend.com/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>protonmail._domainkey</td>
+					<td>CNAME</td>
+					<td>300</td>
+					<td>protonmail.domainkey.djgwfzcu5fgjtpoijqqomgifmqj6zeiuwdd4mzim4hrxab3zsgwkq.domains.proton.ch.</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>protonmail2._domainkey</td>
+					<td>CNAME</td>
+					<td>300</td>
+					<td>protonmail2.domainkey.djgwfzcu5fgjtpoijqqomgifmqj6zeiuwdd4mzim4hrxab3zsgwkq.domains.proton.ch.</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>protonmail3._domainkey</td>
+					<td>CNAME</td>
+					<td>300</td>
+					<td>protonmail3.domainkey.djgwfzcu5fgjtpoijqqomgifmqj6zeiuwdd4mzim4hrxab3zsgwkq.domains.proton.ch.</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>simplelogin</td>
+					<td>MX</td>
+					<td>10800</td>
+					<td>10 mx1.simplelogin.co.</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>simplelogin</td>
+					<td>MX</td>
+					<td>10800</td>
+					<td>20 mx2.simplelogin.co.</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>simplelogin</td>
+					<td>TXT</td>
+					<td>10800</td>
+					<td>sl-verification=bxfzzfjiggzsxyzxhhmkmjqkaskjgy</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>simplelogin</td>
+					<td>TXT</td>
+					<td>10800</td>
+					<td>v=spf1 include:simplelogin.co ~all</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>t3code.host-bot.simeonwarren.users</td>
+					<td>CNAME</td>
+					<td>default</td>
+					<td>ingress.alwaldend.com.</td>
+					<td>users/simeonwarren/host_bot/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>vault</td>
+					<td>CNAME</td>
+					<td>default</td>
+					<td>ingress.alwaldend.com.</td>
+					<td>infra/vault/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>www</td>
+					<td>CNAME</td>
+					<td>300</td>
+					<td>alwaldend.com.</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>www-staging</td>
+					<td>CNAME</td>
+					<td>300</td>
+					<td>alwaldend.github.io.</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>yandex</td>
+					<td>MX</td>
+					<td>21600</td>
+					<td>10 mx.yandex.net.</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>yandex</td>
+					<td>TXT</td>
+					<td>300</td>
+					<td>v=spf1 redirect=_spf.yandex.net</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>yandex</td>
+					<td>TXT</td>
+					<td>300</td>
+					<td>yandex-verification: b83672f59b3dbe16</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>yc.threexui</td>
+					<td>NS</td>
+					<td>default</td>
+					<td>ns1.yandexcloud.net.</td>
+					<td>infra/threexui/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>yc.threexui</td>
+					<td>NS</td>
+					<td>default</td>
+					<td>ns2.yandexcloud.net.</td>
+					<td>infra/threexui/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>yc1.nodes.threexui</td>
+					<td>CNAME</td>
+					<td>default</td>
+					<td>host1.nodes.yc.threexui.alwaldend.com.</td>
+					<td>infra/threexui/dnsconfig.json</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-af9794ad8c53e916c92bc2cabd8f5748">3 - Mikrotik DNS</h1>
+    <div class="lead">Records declared for the internal dc1 view served by RouterOS</div>
+	<p>Every record this repository declares for the internal <code>dc1</code> view, which RouterOS serves for that network.</p>
+<p>This page is generated from the declarations; run <code>bazel run //infra/dns/cmd/dump -- --write</code> after changing them. The authoritative source is each owner&rsquo;s <code>dnsconfig.json</code>.</p>
+<table>
+	<thead>
+			<tr>
+					<th>Domain</th>
+					<th>Type</th>
+					<th>TTL</th>
+					<th>Value</th>
+					<th>Declaration</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>@</td>
+					<td>A</td>
+					<td>300</td>
+					<td>185.199.108.153</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>@</td>
+					<td>A</td>
+					<td>300</td>
+					<td>185.199.109.153</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>@</td>
+					<td>A</td>
+					<td>300</td>
+					<td>185.199.110.153</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>@</td>
+					<td>A</td>
+					<td>300</td>
+					<td>185.199.111.153</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>@</td>
+					<td>AAAA</td>
+					<td>300</td>
+					<td>2606:50c0:8000::153</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>@</td>
+					<td>AAAA</td>
+					<td>300</td>
+					<td>2606:50c0:8001::153</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>@</td>
+					<td>AAAA</td>
+					<td>300</td>
+					<td>2606:50c0:8002::153</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>@</td>
+					<td>AAAA</td>
+					<td>300</td>
+					<td>2606:50c0:8003::153</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>@</td>
+					<td>MX</td>
+					<td>300</td>
+					<td>10 mail.protonmail.ch.</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>@</td>
+					<td>MX</td>
+					<td>300</td>
+					<td>20 mailsec.protonmail.ch.</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>@</td>
+					<td>TXT</td>
+					<td>300</td>
+					<td>_globalsign-domain-verification=0QBJgVV_uwcFLTi1Rot3bb1LyJ5uW1WD0ygvIS4OM5</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>@</td>
+					<td>TXT</td>
+					<td>300</td>
+					<td>protonmail-verification=bdcd133d3f472fa17f66328950d02fbeae1bef75</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>@</td>
+					<td>TXT</td>
+					<td>300</td>
+					<td>v=spf1 include:_spf.protonmail.ch ~all</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>_dmarc</td>
+					<td>TXT</td>
+					<td>300</td>
+					<td>v=DMARC1; p=quarantine; adkim=s</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>_dmarc.simplelogin</td>
+					<td>TXT</td>
+					<td>10800</td>
+					<td>v=DMARC1; p=quarantine; pct=100; adkim=s; aspf=s</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>automation.openhands</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.10.92</td>
+					<td>infra/openhands/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>bm1.dc1</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.1.222</td>
+					<td>infra/mikrotik/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>bm2.dc1</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.1.216</td>
+					<td>infra/pve/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>bm2.dc1</td>
+					<td>AAAA</td>
+					<td>default</td>
+					<td>fd2e:546d:5738:0:365a:60ff:fe08:6daa</td>
+					<td>infra/pve/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>bm3.dc1</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.1.218</td>
+					<td>infra/vault/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>bm3.dc1</td>
+					<td>AAAA</td>
+					<td>default</td>
+					<td>fd2e:546d:5738:0:e2be:3ff:fe2b:9a1a</td>
+					<td>infra/vault/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>canvas.openhands</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.10.90</td>
+					<td>infra/openhands/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>cloud</td>
+					<td>CNAME</td>
+					<td>default</td>
+					<td>nas.alwaldend.com.</td>
+					<td>infra/nas/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>cloudinit-test.vm.pve1.dc1</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.10.10</td>
+					<td>infra/pve/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>dc1.automation.openhands</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.10.92</td>
+					<td>infra/openhands/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>dc1.canvas.openhands</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.10.90</td>
+					<td>infra/openhands/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>dc1.cloud</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.1.209</td>
+					<td>infra/nas/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>dc1.host-bot.simeonwarren.users</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.1.210</td>
+					<td>users/simeonwarren/host_bot/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>dc1.server.openhands</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.10.91</td>
+					<td>infra/openhands/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>dc1.t3code.host-bot.simeonwarren.users</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.1.210</td>
+					<td>users/simeonwarren/host_bot/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>dkim._domainkey.simplelogin</td>
+					<td>CNAME</td>
+					<td>10800</td>
+					<td>dkim._domainkey.simplelogin.co.</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>dkim02._domainkey.simplelogin</td>
+					<td>CNAME</td>
+					<td>10800</td>
+					<td>dkim02._domainkey.simplelogin.co.</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>dkim03._domainkey.simplelogin</td>
+					<td>CNAME</td>
+					<td>10800</td>
+					<td>dkim03._domainkey.simplelogin.co.</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>flux</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.10.60</td>
+					<td>infra/flux/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>forgejo</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.10.40</td>
+					<td>infra/forgejo/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>git</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.10.40</td>
+					<td>infra/forgejo/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>harbor</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.10.50</td>
+					<td>infra/harbor/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>host-bot.simeonwarren.users</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.1.210</td>
+					<td>users/simeonwarren/host_bot/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>host1.automation.openhands</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.10.92</td>
+					<td>infra/openhands/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>host1.canvas.openhands</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.10.90</td>
+					<td>infra/openhands/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>host1.cloud</td>
+					<td>CNAME</td>
+					<td>default</td>
+					<td>host1.nas.alwaldend.com.</td>
+					<td>infra/nas/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>host1.flux</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.10.60</td>
+					<td>infra/flux/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>host1.forgejo</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.10.40</td>
+					<td>infra/forgejo/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>host1.harbor</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.10.50</td>
+					<td>infra/harbor/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>host1.ingress</td>
+					<td>A</td>
+					<td>default</td>
+					<td>81.26.185.118</td>
+					<td>infra/ingress/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>host1.nas</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.1.209</td>
+					<td>infra/nas/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>host1.pve1.dc1</td>
+					<td>CNAME</td>
+					<td>default</td>
+					<td>bm2.dc1.alwaldend.com.</td>
+					<td>infra/pve/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>host1.server.openhands</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.10.91</td>
+					<td>infra/openhands/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>host1.threexui</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.10.80</td>
+					<td>infra/threexui/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>host1.vault.dc1</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.1.218</td>
+					<td>infra/vault/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>host1.xcp-ng</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.1.213</td>
+					<td>infra/xcp_ng/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>host1.xoa.xcp-ng</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.1.206</td>
+					<td>infra/xcp_ng/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>ingress</td>
+					<td>A</td>
+					<td>default</td>
+					<td>81.26.185.118</td>
+					<td>infra/ingress/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>mail._domainkey.yandex</td>
+					<td>TXT</td>
+					<td>300</td>
+					<td>v=DKIM1; k=rsa; t=s; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCcYzFVgkeDOhaIIkWM8gNQjxVsv0/aXfU+ax5urB5y6hA6lSjRnjRo6tm0bXbkOJf41GmiwMNgdXpwRtzgzAlX1i2aJbtEr4b9jzibEGLQ7Cvqs44bOYES9f/K3ueQpnvdTOJmFqlRReFL7ZrUyDFCoQ7f4+7h4i8s01cCcRrt5wIDAQAB</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>nas</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.1.209</td>
+					<td>infra/nas/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>njalla1.nodes.threexui</td>
+					<td>A</td>
+					<td>default</td>
+					<td>45.142.141.133</td>
+					<td>infra/threexui/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>njalla1.nodes.threexui</td>
+					<td>AAAA</td>
+					<td>default</td>
+					<td>2a0a:3840:8078:141:0:2d8e:8d85:1337</td>
+					<td>infra/threexui/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>openid.flux</td>
+					<td>CNAME</td>
+					<td>default</td>
+					<td>flux.alwaldend.com.</td>
+					<td>infra/flux/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>operator.flux</td>
+					<td>CNAME</td>
+					<td>default</td>
+					<td>flux.alwaldend.com.</td>
+					<td>infra/flux/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>protonmail._domainkey</td>
+					<td>CNAME</td>
+					<td>300</td>
+					<td>protonmail.domainkey.djgwfzcu5fgjtpoijqqomgifmqj6zeiuwdd4mzim4hrxab3zsgwkq.domains.proton.ch.</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>protonmail2._domainkey</td>
+					<td>CNAME</td>
+					<td>300</td>
+					<td>protonmail2.domainkey.djgwfzcu5fgjtpoijqqomgifmqj6zeiuwdd4mzim4hrxab3zsgwkq.domains.proton.ch.</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>protonmail3._domainkey</td>
+					<td>CNAME</td>
+					<td>300</td>
+					<td>protonmail3.domainkey.djgwfzcu5fgjtpoijqqomgifmqj6zeiuwdd4mzim4hrxab3zsgwkq.domains.proton.ch.</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>pve</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.1.216</td>
+					<td>infra/pve/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>router1.dc1</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.1.1</td>
+					<td>infra/mikrotik/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>router1.dc1</td>
+					<td>AAAA</td>
+					<td>default</td>
+					<td>fd2e:546d:5738::1</td>
+					<td>infra/mikrotik/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>runner1.forgejo-runner</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.10.100</td>
+					<td>infra/forgejo_runner/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>server.openhands</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.10.91</td>
+					<td>infra/openhands/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>simplelogin</td>
+					<td>MX</td>
+					<td>10800</td>
+					<td>10 mx1.simplelogin.co.</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>simplelogin</td>
+					<td>MX</td>
+					<td>10800</td>
+					<td>20 mx2.simplelogin.co.</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>simplelogin</td>
+					<td>TXT</td>
+					<td>10800</td>
+					<td>sl-verification=bxfzzfjiggzsxyzxhhmkmjqkaskjgy</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>simplelogin</td>
+					<td>TXT</td>
+					<td>10800</td>
+					<td>v=spf1 include:simplelogin.co ~all</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>switch1.dc1</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.1.254</td>
+					<td>infra/mikrotik/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>t3code.host-bot.simeonwarren.users</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.1.210</td>
+					<td>users/simeonwarren/host_bot/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>threexui</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.10.80</td>
+					<td>infra/threexui/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>vault</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.1.218</td>
+					<td>infra/vault/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>vault.dc1</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.1.218</td>
+					<td>infra/vault/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>www</td>
+					<td>CNAME</td>
+					<td>300</td>
+					<td>alwaldend.com.</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>www-staging</td>
+					<td>CNAME</td>
+					<td>300</td>
+					<td>alwaldend.github.io.</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>xcp-ng</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.1.213</td>
+					<td>infra/xcp_ng/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>xoa.xcp-ng</td>
+					<td>A</td>
+					<td>default</td>
+					<td>192.168.1.206</td>
+					<td>infra/xcp_ng/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>yandex</td>
+					<td>MX</td>
+					<td>21600</td>
+					<td>10 mx.yandex.net.</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>yandex</td>
+					<td>TXT</td>
+					<td>300</td>
+					<td>v=spf1 redirect=_spf.yandex.net</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>yandex</td>
+					<td>TXT</td>
+					<td>300</td>
+					<td>yandex-verification: b83672f59b3dbe16</td>
+					<td>infra/dns/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>yc.threexui</td>
+					<td>NS</td>
+					<td>default</td>
+					<td>ns1.yandexcloud.net.</td>
+					<td>infra/threexui/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>yc.threexui</td>
+					<td>NS</td>
+					<td>default</td>
+					<td>ns2.yandexcloud.net.</td>
+					<td>infra/threexui/dnsconfig.json</td>
+			</tr>
+			<tr>
+					<td>yc1.nodes.threexui</td>
+					<td>CNAME</td>
+					<td>default</td>
+					<td>host1.nodes.yc.threexui.alwaldend.com.</td>
+					<td>infra/threexui/dnsconfig.json</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-5182c83d4964c12536210ac055ef6ebd">4 - Shared DNS Terraform</h1>
+    <div class="lead">Owner state for common apex and mail records</div>
+	<p>This root consumes <a href="../dnsconfig.json">the canonical common declarations</a>
+through the reusable DNS module. It uses the <code>src_infra_dns</code> AppRole and its
+existing Vault-backed HTTP state. Both Cloudflare and RouterOS credentials
+are injected through the <code>tf=1</code> stage label.</p>
+<p>Shared apex and mail records were adopted on 2026-09-13. <code>dns_enabled</code> now
+defaults to <code>true</code>; reconciliation against the adopted state and unchanged
+declarations must propose no record changes. The <a href="../openspec/changes/archive/2026-09-13-adopt-dns-records/design.md">adoption evidence</a>
+records 60 imports and preservation of both complete provider inventories.</p>
+<p>Operational calls require the AppRole policy and Vault credential fields
+described by <a href="../openspec/changes/archive/2026-09-13-migrate-project-dns-to-terraform/cutover.md">the cutover procedure</a>.
+The module&rsquo;s <code>import_addresses</code> output gives addresses relative to <code>module.dns</code>;
+actual provider IDs come from the authorized adoption inventory.</p>
+<p>Build the wrappers or run <code>:tf_tests.fmt_test</code> for offline validation. Import,
+plan and apply follow the separately authorized adoption procedure.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        Built with <a href="https://gohugo.io/">Hugo 0.165.0</a>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="/js/main.min.259204f469f58eb3b665605a24e964264772df2adaded180b3669b6ce33d84c8.js" integrity="sha256-JZIE9Gn1jrO2ZWBaJOlkJkdy3yra3tGAs2abbOM9hMg=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.decf3b53d8827d840369f490775626e2a5200e150a733f78f0081c126426cbbf.js" integrity="sha256-3s87U9iCfYQDafSQd1Ym4qUgDhUKcz948AgcEmQmy78=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

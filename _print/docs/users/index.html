@@ -1,0 +1,725 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js" data-theme-init>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000000">
+
+<style>
+  html { background: Canvas; color: CanvasText; }
+  @media (prefers-color-scheme: dark) {
+    html { background: #0b0d12; color: #e6e6e6; }
+  }
+  html[data-theme-init] * { transition: none !important; }
+</style>
+
+<script>
+  (function() {
+    const themeKey = 'td-color-theme';
+    const storedTheme = localStorage.getItem(themeKey);
+    let theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (theme === 'auto') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
+<link rel="canonical" type="text/html" href="https://www-staging.alwaldend.com/docs/users/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://www-staging.alwaldend.com/docs/users/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+<title>Users | Alwaldend</title>
+<meta name="description" content="User tree">
+<meta property="og:url" content="https://www-staging.alwaldend.com/docs/users/">
+	<meta property="og:site_name" content="Alwaldend">
+	<meta property="og:title" content="Users">
+	<meta property="og:description" content="User tree">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="Users">
+	<meta itemprop="description" content="User tree">
+	<meta itemprop="dateModified" content="2026-09-19T20:06:21+03:00">
+	<meta itemprop="wordCount" content="61">
+	<meta itemprop="keywords" content="User">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Users">
+	<meta name="twitter:description" content="User tree">
+<link rel="preload" href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" as="style" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<link href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" rel="stylesheet" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll">
+<div class="td-navbar-container container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">Alwaldend</span></a>
+  <div class="td-navbar__main td-navbar-nav-scroll td-navbar-nav-scroll--indicator" id="main_navbar">
+    <div class="scroll-indicator scroll-left"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/projects/"><span>Projects</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item td-navbar__light-dark-menu">
+        <div class="td-light-dark-menu dropdown"><svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+<button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        title="Toggle theme (Auto)"
+        aria-label="Toggle theme (Auto)">
+  <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="bd-theme">
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
+      Light
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>
+      Dark
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+      <svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>
+      Auto
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+</ul>
+</div>
+
+      </li>
+      </ul>
+    <div class="scroll-indicator scroll-right"></div>
+  </div>
+  <div class="td-navbar__search d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon" aria-hidden="true"></div>
+  <input
+    type="search"
+    name="q"
+    class="td-search__input form-control"
+    placeholder='Search this site…'
+    aria-label='Search this site…'
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/users/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Users</h1>
+<div class="lead">User tree</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-0babd36f4f5aaf233ab39e80ecc3fb27">simeonwarren</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1.1: <a href="#pg-9356aecd880a188c53d85b42f2611804">Ansible</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>1.2: <a href="#pg-9c1f2ccfceff564fdef27f91bc8d6d10">Host Bot</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1.2.1: <a href="#pg-9035d64ba8b9ecebabdee908fca856e2"></a></li>
+
+
+    
+  
+    
+    
+	
+<li>1.2.2: <a href="#pg-0602a8eef66b5449a7b3aff1c99e4201"></a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>1.2.3: <a href="#pg-e80c05316e82a2eeb8214df5e2dc13af">Ansible</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>1.3: <a href="#pg-2e582bdac1c9e107f9b37921c894313c">Tf</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      <p>This tree contains user-specific code and infrastructure. Tracked source
+follows the repository&rsquo;s public-source policy. Personal information and
+secrets must not be tracked or disclosed. Non-secret, non-personal operational
+facts remain public even when they describe generated or live state.</p>
+<h2 id="print-24e43d4867535ba7acebcdb0a300121e-requirements">Requirements<a class="td-heading-self-link" href="#print-24e43d4867535ba7acebcdb0a300121e-requirements" aria-label="Heading self-link"></a></h2><ul>
+<li>Bazel targets MUST use repository-internal visibility.</li>
+<li>User artifacts MUST NOT be published.</li>
+<li>User targets MUST NOT be dependencies of production build targets.</li>
+</ul>
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-0babd36f4f5aaf233ab39e80ecc3fb27">1 - simeonwarren</h1>
+    <div class="lead">simeonwarren</div>
+	<h2 id="print-56355eb26705cd5b8aebe10cd8bc01ef-generate-a-client-cert">Generate a client cert<a class="td-heading-self-link" href="#print-56355eb26705cd5b8aebe10cd8bc01ef-generate-a-client-cert" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //users/simeonwarren:gen_client_cert -- --host phone1 --ttl <span style="color:#e6db74">&#34;180d&#34;</span> --output_dir <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>PWD<span style="color:#e6db74">}</span><span style="color:#e6db74">/certs&#34;</span>
+</span></span></code></pre></div><h2 id="print-56355eb26705cd5b8aebe10cd8bc01ef-run-opencode">Run opencode<a class="td-heading-self-link" href="#print-56355eb26705cd5b8aebe10cd8bc01ef-run-opencode" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //users/simeonwarren:opencode -- <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>PWD<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><h2 id="print-56355eb26705cd5b8aebe10cd8bc01ef-apply-terraform">Apply terraform<a class="td-heading-self-link" href="#print-56355eb26705cd5b8aebe10cd8bc01ef-apply-terraform" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //users/simeonwarren/tf:tf.apply
+</span></span></code></pre></div><h2 id="print-56355eb26705cd5b8aebe10cd8bc01ef-prepare-opencode">Prepare opencode<a class="td-heading-self-link" href="#print-56355eb26705cd5b8aebe10cd8bc01ef-prepare-opencode" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ln -s <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>PWD<span style="color:#e6db74">}</span><span style="color:#e6db74">/users/simeonwarren/opencode.json&#34;</span> ~/.config/opencode/opencode.json
+</span></span><span style="display:flex;"><span>ln -s <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>PWD<span style="color:#e6db74">}</span><span style="color:#e6db74">/users/simeonwarren/tui.json&#34;</span> ~/.config/opencode/tui.json
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-9356aecd880a188c53d85b42f2611804">1.1 - Ansible</h1>
+    <div class="lead">Ansible setup</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-9c1f2ccfceff564fdef27f91bc8d6d10">1.2 - Host Bot</h1>
+    <div class="lead">host-bot.simeonwarren.users.alwaldend.com</div>
+	<p>Host Bot runs Traefik with mTLS in front of T3 Code. The host firewall blocks
+direct external access to T3 Code and accepts new connections only on SSH,
+HTTP, and HTTPS ports.</p>
+<p>The <a href="/docs/users/simeonwarren/host_bot/tf/">DNS Terraform package</a> uses the dedicated
+<code>src_users_simeonwarren_host_bot</code> AppRole through <code>dns_al</code>. Ansible retains
+its existing <code>al</code> configuration and <code>user_simeonwarren</code> authentication.</p>
+<p>T3 Code controls permissions per thread. Its <strong>Auto</strong> mode maps to Codex
+Auto-review. The managed Codex requirements allow read-only and <code>host-bot</code>
+permissions with on-request approvals, so threads cannot select <strong>Full
+access</strong> or disable approvals. The requirements file only allowlists the
+<code>host-bot</code> profile; it must not define the profile because T3 Code supplies a
+per-thread config layer with the same name, and Codex rejects profiles defined
+by both requirements and config. The normal and isolated provider configs
+define <code>host-bot</code> with workspace writes, public command-network access, and
+write access to the Bazel cache and Bazelisk directories while keeping local
+network binding and loopback connections available for Bazel servers. Other
+private network targets remain blocked. T3 Code must select that profile for
+the thread. Hosted web search is not restricted by this role.</p>
+<p>The deployment installs pinned Bazelisk as <code>~/.local/bin/bazel</code>, provisions
+the repository&rsquo;s <code>bazel_agent</code> runner in the same directory, and pre-seeds its
+content-addressed <code>mcp_cordis</code> and <code>repo_delivery</code> runtimes when the canonical
+repository checkout is present. New Codex worktrees can then start Cordis and
+run delivery operations without first loading their own Bazel graph.</p>
+<p>Two SATA SSDs, selected by their stable ATA IDs, back the <code>sata_ssd</code> volume
+group. Its striped <code>bazel_cache</code> logical volume is mounted persistently at
+<code>/var/cache/bazel</code>. Every Bazel workspace uses its <code>disk_cache</code> directory and
+the managed user bazelrc points its output-user root at the same filesystem.
+Automatic garbage collection caps the action disk cache at 700 GiB, leaving
+room within the 1-TiB filesystem for output bases and install state; the
+volume group retains about 900 GiB for later growth or another logical volume.
+Because the volume is striped, either SSD failing invalidates the disposable
+cache.</p>
+<p>The managed user bazelrc limits each Bazel invocation to eight concurrent jobs
+and budgets half of the host CPUs for local actions. These scheduling limits
+apply to builds and tests; they do not impose a combined CPU cap across
+independent Bazel processes or Codex sessions.</p>
+<p>Executable repository tools use <code>/var/cache/bazel/tool_cache</code>. Unlike the
+disposable action and output caches, this directory is private to the host-bot
+account. Cache entries are keyed by declared source, build configuration,
+platform, and dependency pins, and are installed atomically after a Bazel
+build on the first miss.</p>
+<p>The arXiv MCP server is pinned to version 0.7.2 and runs locally over stdio.
+Its downloaded papers and search data live under
+<code>/srv/misc/arxiv-mcp-server/papers</code> on a reusable 100-GiB <code>misc</code> logical
+volume in the existing <code>sata_ssd</code> volume group. The volume is mounted for
+reconstructible non-executable application data. Data with durability or
+different reliability requirements belongs on a separate volume.</p>
+<p>The managed Codex configuration allows up to 20 concurrent subagents per
+session. The root agent is accounted for separately.</p>
+<p>Node.js and npm are provisioned through the development VM role&rsquo;s mutable or
+OSTree package backend. Open Computer Use 0.3.3 is then installed without npm
+lifecycle scripts under the managed user&rsquo;s <code>~/.local</code> prefix. Its skill is
+then installed for the whole host under <code>/etc/codex/skills</code> from the matching
+immutable upstream revision. The deployment configures its stdio MCP server in
+the normal Codex config and the isolated OpenRouter and Abliteration homes.
+The MCP can inspect and control the logged-in desktop session, so agents must treat its actions as real user input and obtain approval before
+externally visible or destructive actions.</p>
+<p>OpenRouter is available through its isolated Codex home. Its
+configuration reads its API key from the desktop keyring entry selected by
+<code>service=openrouter</code> and <code>application=codex</code>; the key is not stored in the
+configuration. Repository work uses the repo-owned <code>$codex-migration</code> skill, while
+the user-level Codex instructions require isolated migration testing and
+intentional host changes to be mirrored into this role. Existing sessions are
+not redirected because provider-bound encrypted reasoning history cannot
+safely migrate in place.</p>
+<p>T3 Code can use OpenRouter as a separate Codex provider by setting its
+<code>CODEX_HOME path</code> to <code>/var/home/simeonwarrenbot/.codex-openrouter</code>. That
+isolated home defaults to <code>~deepseek/deepseek-v4-flash-latest</code> and shares no
+conversation state with the ChatGPT-backed Codex provider. Start a new thread
+when selecting it.</p>
+<p>The OpenRouter no-tools home at <code>~/.codex-openrouter-no-tools</code> mirrors the
+OpenRouter provider with every tool surface disabled. It reuses the same
+keyring lookup and model, sets <code>web_search = &quot;disabled&quot;</code>, turns off the shell,
+unified-exec, image, multi-agent, computer-use, browser, app, plugin, and goal
+features, and disables the <code>request_user_input</code> tool and the MCP servers.
+Codex then advertises no tools at all, so the model can only reply with text.
+This matters beyond tidiness: OpenRouter rejects a request that carries any
+tools when its routed endpoint supports none, so a single leftover tool fails
+the turn.</p>
+<p>T3 Code launches the Codex app server with
+<code>-c mcp_servers.t3-code.url=...</code>, so its own MCP server would otherwise
+reintroduce the MCP resource tools. The no-tools config therefore declares
+<code>[mcp_servers.t3-code]</code> with <code>enabled = false</code>, which still wins over that
+launch-time override.</p>
+<p>Select it in T3 Code with <code>CODEX_HOME path</code> set to
+<code>/var/home/simeonwarrenbot/.codex-openrouter-no-tools</code> and start a new thread.
+The Abliteration and standard OpenRouter homes keep their tools.</p>
+<p>Abliteration uses a separate home with
+<code>CODEX_HOME=&quot;$HOME/.codex-abliteration&quot; codex</code>, using the endpoint and model from its
+<a href="https://docs.abliteration.ai/integrations/codex">Codex integration guide</a>.
+It retrieves its API token at runtime with <code>secret-tool</code>, selecting
+<code>service=abliteration</code> and <code>application=codex</code>. Save the token from an
+interactive terminal in the same user&rsquo;s desktop keyring:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>secret-tool store --label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Abliteration API token for Codex&#39;</span> service abliteration application codex
+</span></span></code></pre></div><p>Enter the token at the hidden prompt. The configuration contains only the
+lookup command. Provider response and tool-call validation require a saved
+token. Both providers keep their configuration and conversation state outside
+the main Codex home; provider profiles in the main home are removed. For
+T3 Code, set its <code>CODEX_HOME path</code> to
+<code>/var/home/simeonwarrenbot/.codex-abliteration</code> and start a new thread.</p>
+<p><code>T3_MCP_BEARER_TOKEN</code> authenticates the Codex app-server&rsquo;s loopback MCP
+connection to T3 Code at <code>/mcp</code>. Codex excludes it from model-spawned commands
+so those subprocesses do not inherit the credential.</p>
+<h2 id="print-022a323b2ebec21acaefdb4c00ac2008-deployment">Deployment<a class="td-heading-self-link" href="#print-022a323b2ebec21acaefdb4c00ac2008-deployment" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //users/simeonwarren/host_bot/ansible
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-9035d64ba8b9ecebabdee908fca856e2">1.2.1 - </h1>
+    
+	<h1 id="print-fb62021ea833772ac61b140c388335e3-owned-dns-specification">owned-dns Specification<a class="td-heading-self-link" href="#print-fb62021ea833772ac61b140c388335e3-owned-dns-specification" aria-label="Heading self-link"></a></h1><h2 id="print-fb62021ea833772ac61b140c388335e3-purpose">Purpose<a class="td-heading-self-link" href="#print-fb62021ea833772ac61b140c388335e3-purpose" aria-label="Heading self-link"></a></h2><p>Define Host Bot DNS management through the owner&rsquo;s <code>tf</code> root,
+including canonical declarations, scoped credentials, and offline source checks
+before adopting live records.</p>
+<h2 id="print-fb62021ea833772ac61b140c388335e3-requirements">Requirements<a class="td-heading-self-link" href="#print-fb62021ea833772ac61b140c388335e3-requirements" aria-label="Heading self-link"></a></h2><h3 id="print-fb62021ea833772ac61b140c388335e3-requirement-owner-local-dns-configuration">Requirement: Owner-local DNS configuration<a class="td-heading-self-link" href="#print-fb62021ea833772ac61b140c388335e3-requirement-owner-local-dns-configuration" aria-label="Heading self-link"></a></h3><p>The <code>tf</code> root SHALL consume this owner&rsquo;s canonical <code>dnsconfig.json</code> through
+the shared DNS Terraform module, preserving declared record identities and views.
+DNS resources SHALL default to disabled until the shared migration adopts them
+and SHALL retain enabled ownership after authorized adoption into the owner&rsquo;s
+state. Reconciliation of adopted records with unchanged declarations SHALL
+propose no record additions, changes, replacements, or deletions.</p>
+<h4 id="print-fb62021ea833772ac61b140c388335e3-scenario-inspect-the-preparatory-configuration">Scenario: Inspect the preparatory configuration<a class="td-heading-self-link" href="#print-fb62021ea833772ac61b140c388335e3-scenario-inspect-the-preparatory-configuration" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the checked-in root is evaluated with default inputs before authorized
+adoption</li>
+<li><strong>THEN</strong> it reads this owner&rsquo;s declaration and disables managed DNS records</li>
+<li><strong>AND</strong> the package contains the module and declaration inputs</li>
+</ul>
+<h4 id="print-fb62021ea833772ac61b140c388335e3-scenario-inspect-adopted-source-defaults">Scenario: Inspect adopted source defaults<a class="td-heading-self-link" href="#print-fb62021ea833772ac61b140c388335e3-scenario-inspect-adopted-source-defaults" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the adopted host root is evaluated with its checked-in source defaults</li>
+<li><strong>THEN</strong> record ownership is enabled for the owner&rsquo;s declared records and views</li>
+<li><strong>AND</strong> the package retains the canonical declaration and shared module inputs</li>
+</ul>
+<h4 id="print-fb62021ea833772ac61b140c388335e3-scenario-reconcile-existing-dns-records">Scenario: Reconcile existing DNS records<a class="td-heading-self-link" href="#print-fb62021ea833772ac61b140c388335e3-scenario-reconcile-existing-dns-records" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the host root plans against its adopted state and unchanged declarations</li>
+<li><strong>THEN</strong> it proposes no record additions, changes, replacements, or deletions</li>
+<li><strong>AND</strong> records outside this owner&rsquo;s declarations remain unchanged</li>
+</ul>
+<h3 id="print-fb62021ea833772ac61b140c388335e3-requirement-scoped-dns-execution-and-offline-checks">Requirement: Scoped DNS execution and offline checks<a class="td-heading-self-link" href="#print-fb62021ea833772ac61b140c388335e3-requirement-scoped-dns-execution-and-offline-checks" aria-label="Heading self-link"></a></h3><p>The DNS wrapper SHALL select <code>src_users_simeonwarren_host_bot</code> through the repository AL flow and keep
+secret values in injected variables. DNS injection SHALL select the root&rsquo;s existing
+Terraform stage label. Real DNS credentials and Vault policy grants SHALL be
+prerequisites for operational Terraform calls. RouterOS DNS credentials SHALL be isolated
+from unrelated RouterOS resources. The package SHALL expose a format test that
+does not authenticate to Vault or contact DNS providers.</p>
+<h4 id="print-fb62021ea833772ac61b140c388335e3-scenario-validate-the-terraform-source">Scenario: Validate the Terraform source<a class="td-heading-self-link" href="#print-fb62021ea833772ac61b140c388335e3-scenario-validate-the-terraform-source" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the package format test executes</li>
+<li><strong>THEN</strong> it checks the packaged Terraform configuration without live credentials</li>
+<li><strong>AND</strong> existing non-DNS authentication and backend paths remain unchanged</li>
+</ul>
+<h4 id="print-fb62021ea833772ac61b140c388335e3-scenario-prepare-an-operational-terraform-invocation">Scenario: Prepare an operational Terraform invocation<a class="td-heading-self-link" href="#print-fb62021ea833772ac61b140c388335e3-scenario-prepare-an-operational-terraform-invocation" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the wrapper selects its Terraform stage labels</li>
+<li><strong>THEN</strong> it selects DNS credential injection through the owner AppRole</li>
+<li><strong>AND</strong> disabled DNS resources do not imply offline provider configuration</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-0602a8eef66b5449a7b3aff1c99e4201">1.2.2 - </h1>
+    
+	<h1 id="print-c881651d61a7b36b2a0dc6b851a56d3a-dns-terraform">DNS Terraform<a class="td-heading-self-link" href="#print-c881651d61a7b36b2a0dc6b851a56d3a-dns-terraform" aria-label="Heading self-link"></a></h1><p>This root packages the owner&rsquo;s canonical <a href="../dnsconfig.json">DNS declarations</a>
+through the shared DNS module and keeps state in the DNS AppRole&rsquo;s Vault HTTP
+backend. It uses the dedicated <code>dns_al</code> configuration; Ansible retains its
+separate <code>al</code> configuration and <code>user_simeonwarren</code> authority.
+The root contains DNS resources only. <code>dns_enabled</code> defaults to <code>true</code> after
+verified adoption. Keep it enabled to retain records; disabling it would
+propose deletion.</p>
+<p>The <a href="/docs/infra/dns/">DNS migration procedure</a> owns
+credential provisioning, reconciliation, and recovery. The <a href="../openspec/changes/archive/2026-09-13-adopt-dns-records/design.md">adoption record</a>
+contains import and verification evidence. Use the normal explicit
+<code>//users/simeonwarren/host_bot/tf:tf</code> wrappers for DNS operations and the
+<code>//users/simeonwarren/host_bot/tf:tf_tests.fmt_test</code> target for offline source
+validation.</p>
+<p>Operational Terraform calls require the DNS AppRole policy grants and credential
+fields described by the migration procedure. Provider configuration and
+authentication require real credentials and live access.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-e80c05316e82a2eeb8214df5e2dc13af">1.2.3 - Ansible</h1>
+    <div class="lead">Host Bot Traefik configuration</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-2e582bdac1c9e107f9b37921c894313c">1.3 - Tf</h1>
+    <div class="lead">Terraform config</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        Built with <a href="https://gohugo.io/">Hugo 0.165.0</a>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="/js/main.min.259204f469f58eb3b665605a24e964264772df2adaded180b3669b6ce33d84c8.js" integrity="sha256-JZIE9Gn1jrO2ZWBaJOlkJkdy3yra3tGAs2abbOM9hMg=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.decf3b53d8827d840369f490775626e2a5200e150a733f78f0081c126426cbbf.js" integrity="sha256-3s87U9iCfYQDafSQd1Ym4qUgDhUKcz948AgcEmQmy78=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

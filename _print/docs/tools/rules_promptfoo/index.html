@@ -1,0 +1,385 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js" data-theme-init>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000000">
+
+<style>
+  html { background: Canvas; color: CanvasText; }
+  @media (prefers-color-scheme: dark) {
+    html { background: #0b0d12; color: #e6e6e6; }
+  }
+  html[data-theme-init] * { transition: none !important; }
+</style>
+
+<script>
+  (function() {
+    const themeKey = 'td-color-theme';
+    const storedTheme = localStorage.getItem(themeKey);
+    let theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (theme === 'auto') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
+<link rel="canonical" type="text/html" href="https://www-staging.alwaldend.com/docs/tools/rules_promptfoo/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://www-staging.alwaldend.com/docs/tools/rules_promptfoo/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+<title>Rules Promptfoo | Alwaldend</title>
+<meta name="description" content="A pinned Bazel runner for Promptfoo skill evaluations">
+<meta property="og:url" content="https://www-staging.alwaldend.com/docs/tools/rules_promptfoo/">
+	<meta property="og:site_name" content="Alwaldend">
+	<meta property="og:title" content="Rules Promptfoo">
+	<meta property="og:description" content="A pinned Bazel runner for Promptfoo skill evaluations">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="Rules Promptfoo">
+	<meta itemprop="description" content="A pinned Bazel runner for Promptfoo skill evaluations">
+	<meta itemprop="dateModified" content="2026-09-19T20:06:21+03:00">
+	<meta itemprop="wordCount" content="1103">
+	<meta itemprop="keywords" content="Bzl_rules,Llm_evals">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Rules Promptfoo">
+	<meta name="twitter:description" content="A pinned Bazel runner for Promptfoo skill evaluations">
+<link rel="preload" href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" as="style" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<link href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" rel="stylesheet" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll">
+<div class="td-navbar-container container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">Alwaldend</span></a>
+  <div class="td-navbar__main td-navbar-nav-scroll td-navbar-nav-scroll--indicator" id="main_navbar">
+    <div class="scroll-indicator scroll-left"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/projects/"><span>Projects</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item td-navbar__light-dark-menu">
+        <div class="td-light-dark-menu dropdown"><svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+<button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        title="Toggle theme (Auto)"
+        aria-label="Toggle theme (Auto)">
+  <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="bd-theme">
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
+      Light
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>
+      Dark
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+      <svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>
+      Auto
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+</ul>
+</div>
+
+      </li>
+      </ul>
+    <div class="scroll-indicator scroll-right"></div>
+  </div>
+  <div class="td-navbar__search d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon" aria-hidden="true"></div>
+  <input
+    type="search"
+    name="q"
+    class="td-search__input form-control"
+    placeholder='Search this site…'
+    aria-label='Search this site…'
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/tools/rules_promptfoo/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Rules Promptfoo</h1>
+<div class="lead">A pinned Bazel runner for Promptfoo skill evaluations</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+
+    </ul>
+
+
+<div class="content">
+      <p><code>rules_promptfoo</code> runs repository skills through a pinned Promptfoo CLI. It
+keeps dependency resolution reproducible in Bazel while deliberately running
+model calls only at test runtime.</p>
+<h2 id="print-44cee6e281f02983f8e79279282bb869-setup">Setup<a class="td-heading-self-link" href="#print-44cee6e281f02983f8e79279282bb869-setup" aria-label="Heading self-link"></a></h2><p>Add the module and its skill-provider dependency:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-starlark" data-lang="starlark"><span style="display:flex;"><span>bazel_dep(name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;rules_promptfoo&#34;</span>, version <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&lt;VERSION&gt;&#34;</span>)
+</span></span><span style="display:flex;"><span>bazel_dep(name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;rules_skills&#34;</span>, version <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&lt;VERSION&gt;&#34;</span>)
+</span></span></code></pre></div><p>The development checkout uses sibling <code>local_path_override</code> declarations.
+Published releases must replace those local overrides with registry versions.</p>
+<h2 id="print-44cee6e281f02983f8e79279282bb869-evaluate-a-skill">Evaluate a skill<a class="td-heading-self-link" href="#print-44cee6e281f02983f8e79279282bb869-evaluate-a-skill" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-starlark" data-lang="starlark"><span style="display:flex;"><span>load(<span style="color:#e6db74">&#34;@rules_promptfoo//promptfoo:defs.bzl&#34;</span>, <span style="color:#e6db74">&#34;promptfoo_test&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>promptfoo_test(
+</span></span><span style="display:flex;"><span>    name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;answer_question_eval&#34;</span>,
+</span></span><span style="display:flex;"><span>    config <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;promptfooconfig.yaml&#34;</span>,
+</span></span><span style="display:flex;"><span>    skills <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;//projects/agents/skills/answer-question:skill&#34;</span>],
+</span></span><span style="display:flex;"><span>    env_inherit <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;CODEX_HOME&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;CODEX_PATH_OVERRIDE&#34;</span>,
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>    reuse_codex_login <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>,
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p>The runner physically copies each selected <code>SkillInfo.files_by_path</code> bundle
+to an isolated Bazel test-temporary
+<code>workspace/.agents/skills/&lt;name&gt;/</code> tree. Point the Codex SDK provider at the
+exported workspace and, when using a compatible host Codex executable, at the
+exported executable path:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">prompts</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#e6db74">&#34;{{ question }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">providers</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">id</span>: <span style="color:#ae81ff">openai:codex-sdk</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">config</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">codex_path_override</span>: <span style="color:#e6db74">&#34;{{ env.CODEX_PATH_OVERRIDE }}&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">working_dir</span>: <span style="color:#e6db74">&#34;{{ env.PROMPTFOO_SKILL_WORKSPACE }}&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">cli_env</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">CODEX_HOME</span>: <span style="color:#e6db74">&#34;{{ env.PROMPTFOO_SUBJECT_CODEX_HOME }}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">tests</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">vars</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">question</span>: <span style="color:#ae81ff">Why is the sky blue?</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">assert</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">type</span>: <span style="color:#ae81ff">skill-used</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">value</span>: <span style="color:#ae81ff">answer-question</span>
+</span></span></code></pre></div><p>Live eval targets are tagged <code>manual</code>, <code>requires-network</code>, <code>no-cache</code>,
+<code>no-remote</code>, and <code>local</code>. They also pass <code>--no-cache</code>, <code>--no-write</code>, and
+<code>--no-share</code> to Promptfoo; <code>local</code> prevents sandboxed or remote execution when
+the caller opts into host Codex credentials. The runner exports a separate
+empty <code>PROMPTFOO_JUDGE_WORKSPACE</code> so a model judge need not discover the skill
+it grades. Explicit results are preserved as the Bazel undeclared output
+<code>results.json</code>; Promptfoo configuration, cache, isolated workspaces, and
+subprocess temporary files stay in a mode-0700 directory below Bazel&rsquo;s
+absolute <code>TEST_TMPDIR</code> and are removed on exit. Bazel owns and cleans that
+private parent directory as a second cleanup boundary. Callers that must
+redirect test scratch can use Bazel&rsquo;s <code>--test_tmpdir</code> option.</p>
+<p>The runner deliberately uses Bazel-managed temporary storage instead of a
+source-checkout <code>out/</code> directory. Putting a no-skill control below the source
+tree would expose the checkout&rsquo;s <code>.agents</code> directory through an ancestor and
+invalidate the isolation that the control is meant to measure. This is the
+repository policy&rsquo;s operating-system-temporary exception for a tool that
+cannot safely use task-local source storage; the runner still removes its
+randomized child directory on normal exit and handled signals. The runner
+rejects a <code>TEST_TMPDIR</code> below any ancestor containing <code>.agents</code>, so do not
+redirect <code>--test_tmpdir</code> into a source checkout or another agent tree.</p>
+<p><code>results.json</code> contains the evaluated prompts and model outputs. CI may collect
+undeclared outputs when a manual eval is explicitly run, so treat the artifact
+as potentially sensitive even though the target is <code>no-cache</code> and <code>no-remote</code>.</p>
+<p>Run a live target explicitly and pass the absolute path to an existing Codex
+login and a compatible host Codex executable through the test environment,
+never credential contents through <code>env</code> or a checked-in config. Set the
+provider&rsquo;s <code>codex_path_override</code> from <code>CODEX_PATH_OVERRIDE</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel_agent bazel test //path/to:answer_question_eval <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --test_env<span style="color:#f92672">=</span>CODEX_HOME<span style="color:#f92672">=</span>/absolute/path/to/.codex <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --test_env<span style="color:#f92672">=</span>CODEX_PATH_OVERRIDE<span style="color:#f92672">=</span>/absolute/path/to/codex <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --test_output<span style="color:#f92672">=</span>errors
+</span></span></code></pre></div><p>If that Codex installation reaches OpenAI through host proxy variables, pass
+only the needed names as well (for example, <code>--test_env=HTTPS_PROXY</code> and
+<code>--test_env=NO_PROXY</code>) and declare the same names in the rule&rsquo;s <code>env_inherit</code>.
+Do not put proxy values in checked-in files.</p>
+<p>With <code>reuse_codex_login = True</code>, the runner links only the writable
+<code>CODEX_HOME/auth.json</code> into distinct, otherwise empty subject and judge Codex
+homes inside its mode-0700 state directory. Provider configs can select them
+through <code>PROMPTFOO_SUBJECT_CODEX_HOME</code> and <code>PROMPTFOO_JUDGE_CODEX_HOME</code>. The
+runner holds an exclusive advisory lock on the stable login directory for the
+complete test, serializing repository eval targets that use the same login.
+With a compatible Codex executable, an automatic refresh writes through either
+link to the persistent host file, while the host&rsquo;s <code>config.toml</code>, skills,
+plugins, memories, and MCP configuration remain unstaged and cannot contaminate
+the subject, no-skill control, or judge. This reuses the caller&rsquo;s existing
+login state; it does not mint or export a token. An API-key-backed target may
+instead inherit <code>OPENAI_API_KEY</code> without enabling login reuse.</p>
+<p>For this purpose, compatible means that file-backed auth updates open and
+truncate <code>$CODEX_HOME/auth.json</code>, preserving the symlink. The bundled Codex
+0.144.0 implementation and the tested host Codex 0.150.1 do this. Do not
+override the executable with an implementation that atomically replaces the
+isolated <code>auth.json</code> path: that would replace the symlink, split subject and
+judge state, and fail to persist a rotated refresh token. See the corresponding
+OpenAI Codex file-storage implementations for
+<a href="https://github.com/openai/codex/blob/rust-v0.144.0/codex-rs/login/src/auth/storage.rs">0.144.0</a>
+and
+<a href="https://github.com/openai/codex/blob/rust-v0.150.1/codex-rs/login/src/auth/storage.rs">0.150.1</a>.</p>
+<p>Login reuse also forces Promptfoo&rsquo;s CLI, assertion-worker, and prompt-suggestion
+concurrency to one, overriding higher configuration values so subject and judge
+Codex processes cannot race the same single-use refresh token within one test.</p>
+<p>Do not run another Codex process against the same <code>auth.json</code> concurrently;
+unrelated processes do not honor the runner&rsquo;s advisory lock. ChatGPT-managed
+auth can rotate its refresh token, so the refreshed file must remain persistent
+and have a single serialized user. The local-login mode is unsuitable for
+shared or untrusted CI; use an API key or supported workload identity there.
+In this public repository it is strictly a manual, trusted-developer workflow;
+never seed or persist ChatGPT-managed auth in repository CI or artifacts.
+See OpenAI&rsquo;s
+<a href="https://learn.chatgpt.com/docs/auth/ci-cd-auth">managed-auth guidance</a> for the
+refresh and serialization requirements.</p>
+<p>Run credentialed live targets only from a reviewed, trusted revision. The
+isolated working directory and read-only provider setting reduce accidental
+writes, but Codex still has whatever host read access its enforced sandbox
+policy permits and can send prompt context to the configured service.</p>
+<p>Files in <code>data</code> are placed in the test runfiles. <code>args</code> are passed literally;
+they do not expand Bazel location expressions. Prefer keeping checked-in
+Promptfoo prompt and dataset files beside the config and list them in <code>data</code>
+so Promptfoo&rsquo;s own config-relative path resolution remains portable.
+The <code>env</code> and <code>env_inherit</code> attributes cannot override Bazel&rsquo;s test temporary
+directories or the runner-owned <code>TMPDIR</code>, <code>TMP</code>, and <code>TEMP</code> values.</p>
+<h2 id="print-44cee6e281f02983f8e79279282bb869-validate-without-a-model-call">Validate without a model call<a class="td-heading-self-link" href="#print-44cee6e281f02983f8e79279282bb869-validate-without-a-model-call" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-starlark" data-lang="starlark"><span style="display:flex;"><span>load(
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;@rules_promptfoo//promptfoo:defs.bzl&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;promptfoo_validate_test&#34;</span>,
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>promptfoo_validate_test(
+</span></span><span style="display:flex;"><span>    name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;promptfoo_config_test&#34;</span>,
+</span></span><span style="display:flex;"><span>    config <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;promptfooconfig.yaml&#34;</span>,
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p>Validation is an ordinary offline Bazel test and does not receive the live
+eval tags. It rejects <code>env_inherit</code> so validation cannot accidentally receive
+host credentials.</p>
+<h2 id="print-44cee6e281f02983f8e79279282bb869-dependency-boundary">Dependency boundary<a class="td-heading-self-link" href="#print-44cee6e281f02983f8e79279282bb869-dependency-boundary" aria-label="Heading self-link"></a></h2><p>The module pins Promptfoo and the Codex SDK with a dedicated pnpm lock. npm
+lifecycle hooks and optional dependencies are disabled. The Codex executable
+and Promptfoo&rsquo;s libSQL binding are promoted to explicit Linux x86-64
+dependencies. AJV is also promoted because <code>ajv-formats</code> declares its runtime
+peer as optional, which would otherwise be removed by <code>no_optional</code>. The
+bundled real CLI target is intentionally compatible only with glibc-based
+Linux x86-64. Bazel enforces the OS and CPU constraints, but this repository
+does not currently expose a libc constraint. Other Promptfoo providers that
+rely on omitted optional packages or install scripts must be reviewed and
+promoted explicitly before use.</p>
+<p>The pinned Promptfoo distribution is patched so
+<code>PROMPTFOO_DISABLE_TELEMETRY=1</code> also suppresses its best-effort request to
+<code>r.promptfoo.app</code>. The upstream 0.122.2 telemetry implementation otherwise
+records a &ldquo;telemetry disabled&rdquo; event through that separate endpoint. The same
+patch makes Promptfoo&rsquo;s otherwise hard-coded prompt-suggestion concurrency
+honor the runner&rsquo;s serialization setting.</p>
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        Built with <a href="https://gohugo.io/">Hugo 0.165.0</a>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="/js/main.min.259204f469f58eb3b665605a24e964264772df2adaded180b3669b6ce33d84c8.js" integrity="sha256-JZIE9Gn1jrO2ZWBaJOlkJkdy3yra3tGAs2abbOM9hMg=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.decf3b53d8827d840369f490775626e2a5200e150a733f78f0081c126426cbbf.js" integrity="sha256-3s87U9iCfYQDafSQd1Ym4qUgDhUKcz948AgcEmQmy78=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

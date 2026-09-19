@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Mikrotik on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/docs/infra/mikrotik/</link>
+		<description>Recent content in Mikrotik on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/docs/infra/mikrotik/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title></title>
+				<link>https://www-staging.alwaldend.com/docs/infra/mikrotik/openspec/specs/infra-mikrotik/spec/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/mikrotik/openspec/specs/infra-mikrotik/spec/</guid>
+				<description>&lt;h1 id=&#34;infrastructure-mikrotik&#34;&gt;Infrastructure MikroTik&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#infrastructure-mikrotik&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#purpose&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Describe the checked-in RouterOS export snapshots and site DNS declarations for&#xA;the dc1 routers. This package is a documentation and record-input owner: its&#xA;BUILD file declares no router deployment executable. Export contents are&#xA;historical source evidence, not a verification of current device configuration.&lt;/p&gt;&#xA;&lt;p&gt;Baseline source revision: &lt;code&gt;550d7e79b1f5fdbc2b6017b75178471d6914082f&lt;/code&gt;.&#xA;Observation date: 2026-09-08. Sources are linked in full; no excerpts are used.&lt;/p&gt;&#xA;&lt;p&gt;Sources: &lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/mikrotik/&#34;&gt;export workflow&lt;/a&gt;,&#xA;&lt;a href=&#34;../../../BUILD.bazel&#34;&gt;package targets&lt;/a&gt;,&#xA;&lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/mikrotik/router1.rsc&#34;&gt;router1 snapshot&lt;/a&gt;,&#xA;&lt;a href=&#34;https://www-staging.alwaldend.com/docs/infra/mikrotik/router2.rsc&#34;&gt;router2 snapshot&lt;/a&gt;, and&#xA;&lt;a href=&#34;../../../dnsconfig.json&#34;&gt;DNS declarations&lt;/a&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title></title>
+				<link>https://www-staging.alwaldend.com/docs/infra/mikrotik/openspec/specs/owned-dns/spec/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/infra/mikrotik/openspec/specs/owned-dns/spec/</guid>
+				<description>&lt;h1 id=&#34;owned-dns-specification&#34;&gt;owned-dns Specification&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#owned-dns-specification&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#purpose&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Define MikroTik router DNS management through the owner&amp;rsquo;s &lt;code&gt;tf&lt;/code&gt; root,&#xA;including canonical declarations, scoped credentials, and offline source checks&#xA;before adopting live records.&lt;/p&gt;&#xA;&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirements&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id=&#34;requirement-owner-local-dns-configuration&#34;&gt;Requirement: Owner-local DNS configuration&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirement-owner-local-dns-configuration&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The &lt;code&gt;tf&lt;/code&gt; root SHALL consume this owner&amp;rsquo;s canonical &lt;code&gt;dnsconfig.json&lt;/code&gt; through&#xA;the shared DNS Terraform module, preserving declared record identities and views.&#xA;DNS resources SHALL default to disabled until the authorized adoption revision&#xA;and SHALL retain enabled ownership after existing records are imported into the&#xA;owner&amp;rsquo;s state. Reconciliation against unchanged declarations and adopted state&#xA;SHALL propose no record additions, changes, replacements, or deletions.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

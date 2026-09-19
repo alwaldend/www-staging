@@ -1,0 +1,605 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js" data-theme-init>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000000">
+
+<style>
+  html { background: Canvas; color: CanvasText; }
+  @media (prefers-color-scheme: dark) {
+    html { background: #0b0d12; color: #e6e6e6; }
+  }
+  html[data-theme-init] * { transition: none !important; }
+</style>
+
+<script>
+  (function() {
+    const themeKey = 'td-color-theme';
+    const storedTheme = localStorage.getItem(themeKey);
+    let theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (theme === 'auto') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
+<link rel="canonical" type="text/html" href="https://www-staging.alwaldend.com/docs/infra/openhands/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://www-staging.alwaldend.com/docs/infra/openhands/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+<title>OpenHands | Alwaldend</title>
+<meta name="description" content="openhands.alwaldend.com">
+<meta property="og:url" content="https://www-staging.alwaldend.com/docs/infra/openhands/">
+	<meta property="og:site_name" content="Alwaldend">
+	<meta property="og:title" content="OpenHands">
+	<meta property="og:description" content="openhands.alwaldend.com">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="OpenHands">
+	<meta itemprop="description" content="openhands.alwaldend.com">
+	<meta itemprop="dateModified" content="2026-09-19T20:06:21+03:00">
+	<meta itemprop="wordCount" content="490">
+	<meta itemprop="keywords" content="Openhands,Traefik,Terraform,Ansible">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="OpenHands">
+	<meta name="twitter:description" content="openhands.alwaldend.com">
+<link rel="preload" href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" as="style" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<link href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" rel="stylesheet" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll">
+<div class="td-navbar-container container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">Alwaldend</span></a>
+  <div class="td-navbar__main td-navbar-nav-scroll td-navbar-nav-scroll--indicator" id="main_navbar">
+    <div class="scroll-indicator scroll-left"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/projects/"><span>Projects</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item td-navbar__light-dark-menu">
+        <div class="td-light-dark-menu dropdown"><svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+<button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        title="Toggle theme (Auto)"
+        aria-label="Toggle theme (Auto)">
+  <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="bd-theme">
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
+      Light
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>
+      Dark
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+      <svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>
+      Auto
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+</ul>
+</div>
+
+      </li>
+      </ul>
+    <div class="scroll-indicator scroll-right"></div>
+  </div>
+  <div class="td-navbar__search d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon" aria-hidden="true"></div>
+  <input
+    type="search"
+    name="q"
+    class="td-search__input form-control"
+    placeholder='Search this site…'
+    aria-label='Search this site…'
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/infra/openhands/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">OpenHands</h1>
+<div class="lead">openhands.alwaldend.com</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-16ac8598b912ab872f5988b6ff5a261d"></a></li>
+
+
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-89791524f15a8b6f60e56e61e12d2ef9">Ansible</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-79d60ced759354cdab77ecbf73d0ef26">Tf setup</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      <p>OpenHands deploys as separate components because each owns a distinct
+responsibility and trust boundary:</p>
+<table>
+	<thead>
+			<tr>
+					<th>Component</th>
+					<th>Responsibility</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Agent Canvas</td>
+					<td>Browser client for conversations, files, settings, backends, automations</td>
+			</tr>
+			<tr>
+					<td>Agent Server</td>
+					<td>Runs conversations, agents, tools, and workspace operations</td>
+			</tr>
+			<tr>
+					<td>Automation Server</td>
+					<td>Stores schedules and triggers, tracks runs, dispatches conversations</td>
+			</tr>
+	</tbody>
+</table>
+<p>The agent server runs directly on the host with the service account&rsquo;s
+permissions. Its workspace is a working directory; operating-system account
+permissions define its access to the host. Treat the agent server host as
+trusted infrastructure.</p>
+<h2 id="print-72989d7304f81104d5bc8b8297343a70-layout">Layout<a class="td-heading-self-link" href="#print-72989d7304f81104d5bc8b8297343a70-layout" aria-label="Heading self-link"></a></h2><ul>
+<li><code>tf_setup</code> creates the Agent Canvas, secured agent server, and automation
+server VMs in the <code>src_infra_openhands</code> Xen Orchestra resource set.</li>
+<li><code>ansible</code> deploys the three VM components. The
+<a href="/docs/users/simeonwarren/host_bot/">host-bot project</a> owns and
+deploys its unsecured agent server.</li>
+<li><code>dnsconfig.json</code> owns the component hostnames and static addresses.</li>
+<li><code>al.lua</code> authenticates with the <code>src_infra_openhands</code> Vault AppRole, signs
+host keys for Ansible, and injects the component secrets.</li>
+</ul>
+<p>There is no <code>tf</code> package: these components keep their state in files and
+SQLite on their own hosts, so no API-side resources exist to declare.</p>
+<p>Canvas serves the packaged browser assets through its
+<a href="/docs/projects/ansible_collection/roles/openhands_canvas/">static-server service</a>
+on loopback. Configure the browser&rsquo;s backend with the canvas origin as its
+host and the agent server session key as its credential.</p>
+<h2 id="print-72989d7304f81104d5bc8b8297343a70-traefik-and-tls">Traefik and TLS<a class="td-heading-self-link" href="#print-72989d7304f81104d5bc8b8297343a70-traefik-and-tls" aria-label="Heading self-link"></a></h2><p>Each component host runs Traefik from the shared role with certificates issued
+by <code>src_infra_openhands_pki_server</code>. The canvas origin proxies <code>/api/*</code>,
+<code>/api/automation</code>, <code>/sockets</code>, and <code>/server_info</code> to the agent server and
+automation server, so the browser talks to one origin and issues no
+cross-origin request.</p>
+<p>The public <code>canvas.openhands.alwaldend.com</code> record is a CNAME to
+<code>ingress.alwaldend.com</code>, and <code>infra/ingress</code> forwards it to
+<code>dc1.canvas.openhands.alwaldend.com</code>. That ingress keeps its
+<code>RequireAndVerifyClientCert</code> client-auth policy, so reaching canvas from
+outside still requires a client certificate.</p>
+<h2 id="print-72989d7304f81104d5bc8b8297343a70-secrets">Secrets<a class="td-heading-self-link" href="#print-72989d7304f81104d5bc8b8297343a70-secrets" aria-label="Heading self-link"></a></h2><p><code>agent_server</code> holds <code>session_api_key</code> and <code>secret_key</code>; <code>automation</code> holds
+<code>kv_secret</code>. The session API key is shared by the agent server, the automation
+server, and the browser because all three authenticate the same
+<code>X-Session-API-Key</code> value.</p>
+<p>The unsecured host-bot server has a separate <code>secret_key</code> reference owned by
+<a href="../../users/simeonwarren/host_bot/al.lua">its host&rsquo;s AL configuration</a>.</p>
+<p>Prepare one private JSON input for each path through the
+<a href="../../projects/agents/skills/repo-secrets/SKILL.md">secret-handling workflow</a>.
+Set <code>OPENHANDS_AGENT_SERVER_JSON</code>, <code>OPENHANDS_AUTOMATION_JSON</code>, and
+<code>OPENHANDS_HOST_BOT_JSON</code> to those input file paths. Each JSON object contains
+the fields listed above for its path. Initialize the paths through standard
+input; <code>-cas=0</code> prevents overwriting existing data:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel_agent bazel run //infra/openhands:vault.kv_put -- -cas<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  alwaldend.com/vault1/approles/src_infra_openhands/agent_server <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  - &lt; <span style="color:#e6db74">&#34;</span>$OPENHANDS_AGENT_SERVER_JSON<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>bazel_agent bazel run //infra/openhands:vault.kv_put -- -cas<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  alwaldend.com/vault1/approles/src_infra_openhands/automation <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  - &lt; <span style="color:#e6db74">&#34;</span>$OPENHANDS_AUTOMATION_JSON<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>bazel_agent bazel run //users/simeonwarren:vault.kv_put -- -cas<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  alwaldend.com/vault1/approles/user_simeonwarren/openhands <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  - &lt; <span style="color:#e6db74">&#34;</span>$OPENHANDS_HOST_BOT_JSON<span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><h2 id="print-72989d7304f81104d5bc8b8297343a70-deployment">Deployment<a class="td-heading-self-link" href="#print-72989d7304f81104d5bc8b8297343a70-deployment" aria-label="Heading self-link"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel run //infra/openhands/tf_setup:tf_setup.plan
+</span></span><span style="display:flex;"><span>bazel run //infra/openhands/tf_setup:tf_setup.apply
+</span></span><span style="display:flex;"><span>bazel run //infra/openhands/ansible
+</span></span></code></pre></div><p>The component AppRole must first exist in Vault. Follow the
+<a href="/docs/infra/xcp_ng/tf/">XO authentication and resource-set workflow</a> to
+synchronize its OIDC identity and apply its resource-set assignment before
+<code>tf_setup</code> runs. The assignment in
+<a href="../xcp_ng/tf/inventory.tf"><code>resource_set_inventory</code></a> supplies the template,
+storage, and network by name. Component secrets must be written to Vault
+before Ansible runs. State and locking use the repository&rsquo;s <code>tf_backend</code>
+plugin, which stores them as Vault KV entries and creates the entries on first
+use, so no separate state bucket is required.</p>
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-16ac8598b912ab872f5988b6ff5a261d">1 - </h1>
+    
+	<h1 id="print-f89ca4b71cc1c0aace91c4551d444375-owned-dns-specification">owned-dns Specification<a class="td-heading-self-link" href="#print-f89ca4b71cc1c0aace91c4551d444375-owned-dns-specification" aria-label="Heading self-link"></a></h1><h2 id="print-f89ca4b71cc1c0aace91c4551d444375-purpose">Purpose<a class="td-heading-self-link" href="#print-f89ca4b71cc1c0aace91c4551d444375-purpose" aria-label="Heading self-link"></a></h2><p>Define OpenHands DNS management through the owner&rsquo;s <code>tf_setup</code> root,
+including canonical declarations, scoped credentials, and offline source checks
+before adopting live records.</p>
+<h2 id="print-f89ca4b71cc1c0aace91c4551d444375-requirements">Requirements<a class="td-heading-self-link" href="#print-f89ca4b71cc1c0aace91c4551d444375-requirements" aria-label="Heading self-link"></a></h2><h3 id="print-f89ca4b71cc1c0aace91c4551d444375-requirement-owner-local-dns-configuration">Requirement: Owner-local DNS configuration<a class="td-heading-self-link" href="#print-f89ca4b71cc1c0aace91c4551d444375-requirement-owner-local-dns-configuration" aria-label="Heading self-link"></a></h3><p>The <code>tf_setup</code> root SHALL consume this owner&rsquo;s canonical <code>dnsconfig.json</code> through
+the shared DNS Terraform module, preserving declared record identities and views.
+DNS resources SHALL default to disabled before adoption and SHALL default to
+enabled in the reviewed adoption revision. Adoption SHALL bind existing records
+to their exact provider identities and SHALL preserve their declared attributes.
+Existing-record adoption SHALL contain no DNS record additions, changes,
+replacements, or deletions. Verified missing declarations MAY be provisioned
+through an exact additions-only DNS plan that preserves every existing record
+and excludes non-DNS managed-resource changes. After deployment, default DNS
+reconciliation SHALL retain the bindings and preserve unrelated provider records.</p>
+<h4 id="print-f89ca4b71cc1c0aace91c4551d444375-scenario-inspect-the-preparatory-configuration">Scenario: Inspect the preparatory configuration<a class="td-heading-self-link" href="#print-f89ca4b71cc1c0aace91c4551d444375-scenario-inspect-the-preparatory-configuration" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the checked-in root is evaluated with default inputs before adoption</li>
+<li><strong>THEN</strong> it reads this owner&rsquo;s declaration and disables managed DNS records</li>
+<li><strong>AND</strong> the package contains the module and declaration inputs</li>
+</ul>
+<h4 id="print-f89ca4b71cc1c0aace91c4551d444375-scenario-inspect-the-adopted-default">Scenario: Inspect the adopted default<a class="td-heading-self-link" href="#print-f89ca4b71cc1c0aace91c4551d444375-scenario-inspect-the-adopted-default" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the reviewed adoption revision is evaluated with default inputs after adoption</li>
+<li><strong>THEN</strong> it reads this owner&rsquo;s declaration and enables managed DNS records</li>
+<li><strong>AND</strong> the package contains the module and declaration inputs</li>
+</ul>
+<h4 id="print-f89ca4b71cc1c0aace91c4551d444375-scenario-adopt-existing-records">Scenario: Adopt existing records<a class="td-heading-self-link" href="#print-f89ca4b71cc1c0aace91c4551d444375-scenario-adopt-existing-records" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the owner&rsquo;s existing records are adopted through its scoped DNS wrappers</li>
+<li><strong>THEN</strong> Terraform binds the records to their exact provider identities</li>
+<li><strong>AND</strong> their declared values, attributes, and views remain unchanged</li>
+<li><strong>AND</strong> the reviewed adoption plan contains no DNS additions, changes,
+replacements, or deletions</li>
+</ul>
+<h4 id="print-f89ca4b71cc1c0aace91c4551d444375-scenario-reconcile-without-changes-after-adoption">Scenario: Reconcile without changes after adoption<a class="td-heading-self-link" href="#print-f89ca4b71cc1c0aace91c4551d444375-scenario-reconcile-without-changes-after-adoption" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the adopted root plans with default inputs and unchanged declarations
+and provider records</li>
+<li><strong>THEN</strong> the plan retains the adopted bindings and contains no DNS additions,
+changes, replacements, or deletions</li>
+<li><strong>AND</strong> unrelated provider records remain unchanged</li>
+</ul>
+<h4 id="print-f89ca4b71cc1c0aace91c4551d444375-scenario-provision-missing-declarations">Scenario: Provision missing declarations<a class="td-heading-self-link" href="#print-f89ca4b71cc1c0aace91c4551d444375-scenario-provision-missing-declarations" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> fresh complete provider inventories prove the owner&rsquo;s declared records
+are absent and conflict-free</li>
+<li><strong>THEN</strong> the reviewed DNS plan creates only those declared missing records</li>
+<li><strong>AND</strong> existing provider identities and attributes remain unchanged</li>
+<li><strong>AND</strong> a subsequent DNS plan contains no changes</li>
+</ul>
+<h3 id="print-f89ca4b71cc1c0aace91c4551d444375-requirement-scoped-dns-execution-and-offline-checks">Requirement: Scoped DNS execution and offline checks<a class="td-heading-self-link" href="#print-f89ca4b71cc1c0aace91c4551d444375-requirement-scoped-dns-execution-and-offline-checks" aria-label="Heading self-link"></a></h3><p>The <code>dns.plan</code>, <code>dns.show</code>, and <code>dns.apply</code> wrappers SHALL select <code>dns=1</code> through
+the repository AL flow using <code>src_infra_openhands</code>, and operate on <code>module.dns</code>
+and its dependencies in the existing <code>tf_setup</code> root and Vault HTTP backend.
+Apply SHALL consume the reviewed saved plan. Ordinary VM setup SHALL retain its
+<code>tf=setup</code> and <code>xoa_login=1</code> labels, XO authentication, and existing backend paths.
+Secret values SHALL remain in injected variables. Real DNS credentials and
+Vault policy grants SHALL be prerequisites for operational DNS calls. RouterOS
+DNS credentials SHALL remain isolated from unrelated RouterOS resources.
+Successful scoped DNS execution SHALL not establish VM or service health.
+The package SHALL expose a format test that does not authenticate to Vault or
+contact DNS providers.</p>
+<h4 id="print-f89ca4b71cc1c0aace91c4551d444375-scenario-validate-the-terraform-source">Scenario: Validate the Terraform source<a class="td-heading-self-link" href="#print-f89ca4b71cc1c0aace91c4551d444375-scenario-validate-the-terraform-source" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the package format test executes</li>
+<li><strong>THEN</strong> it checks the packaged Terraform configuration without live credentials</li>
+<li><strong>AND</strong> existing non-DNS authentication and backend paths remain unchanged</li>
+</ul>
+<h4 id="print-f89ca4b71cc1c0aace91c4551d444375-scenario-prepare-an-operational-terraform-invocation">Scenario: Prepare an operational Terraform invocation<a class="td-heading-self-link" href="#print-f89ca4b71cc1c0aace91c4551d444375-scenario-prepare-an-operational-terraform-invocation" aria-label="Heading self-link"></a></h4><ul>
+<li><strong>WHEN</strong> the scoped DNS wrapper selects <code>dns=1</code></li>
+<li><strong>THEN</strong> it selects DNS credential injection through the owner AppRole and
+existing backend without starting XO login</li>
+<li><strong>AND</strong> the targeted plan and saved-plan apply cover DNS and its dependencies,
+without establishing VM or service health</li>
+<li><strong>AND</strong> disabled DNS resources do not imply offline provider configuration</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-89791524f15a8b6f60e56e61e12d2ef9">2 - Ansible</h1>
+    <div class="lead">OpenHands deployment</div>
+	<p>Deploys the OpenHands components. The inventory has three hosts in three
+groups, and the playbook applies one component role per group:</p>
+<table>
+	<thead>
+			<tr>
+					<th>Group</th>
+					<th>Host</th>
+					<th>Component</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>openhands_canvas</code></td>
+					<td><code>host1.canvas.openhands.alwaldend.com</code></td>
+					<td>Agent Canvas</td>
+			</tr>
+			<tr>
+					<td><code>openhands_server_secure</code></td>
+					<td><code>host1.server.openhands.alwaldend.com</code></td>
+					<td>Agent server (secured)</td>
+			</tr>
+			<tr>
+					<td><code>openhands_automation</code></td>
+					<td><code>host1.automation.openhands.alwaldend.com</code></td>
+					<td>Automation server</td>
+			</tr>
+	</tbody>
+</table>
+<p>The three XCP-ng VMs exist only for the secured agent server and for the
+components that must not share a trust boundary with host-bot. The secured
+group sets <code>openhands_server_session_api_key</code> and hands the same value to the
+automation server so the automation dispatcher can authenticate its
+dispatched conversations.</p>
+<p>Every component applies <code>host</code> and <code>traefik</code>. Canvas runs the published
+package&rsquo;s static server directly on loopback. The operator configures the
+browser backend with the canvas origin and the shared session key.</p>
+<p>The canvas host routes <code>/api/automation</code> to the automation host and the agent
+server API prefixes to the secured agent server. These routes take precedence
+over the frontend route, so the configured browser reaches one origin.
+Downstream routers accept the original canvas Host header.</p>
+<p>The unsecured agent server runs on host-bot and is deployed by
+<a href="/docs/users/simeonwarren/host_bot/">the host-bot project</a>, which
+owns that host entirely. It omits <code>OH_SESSION_API_KEYS_0</code> and binds to loopback
+without a session API key. Access is local to host-bot; its Traefik and firewall
+configuration add no route for this server.</p>
+<p>The group variables read the session key, secret key, and automation KV secret
+from the environment the AL Vault injector populates.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-79d60ced759354cdab77ecbf73d0ef26">3 - Tf setup</h1>
+    <div class="lead">Terraform setup</div>
+	<p>This package creates Xen Orchestra VMs in the <code>src_infra_openhands</code> resource
+set for the three OpenHands components that run off host-bot: Agent Canvas,
+the agent server, and the automation server. <code>infra/openhands/al.lua</code>
+authenticates with OpenHands&rsquo; own Vault AppRole and the packaged XO OIDC login
+plugin. The plugin supplies a temporary XO token and revokes it on shutdown;
+no infrastructure administrator token is loaded. The setup HTTP backend
+remains owned by the same OpenHands config.</p>
+<p>Before running VM setup, bootstrap the AppRole&rsquo;s XO OIDC user and apply
+its resource-set membership through <code>infra/xcp_ng/tf</code>. Subjects are matched by
+immutable Vault entity UUID under the configured OIDC issuer, not by login
+name or AppRole group membership. See
+<a href="../../xcp_ng/cmd/xo_login/README.md">XO authentication</a>.</p>
+<p><code>vms</code> holds the component definitions, and each entry names the <code>dnsconfig</code>
+record prefix that owns its hostname and address. Adding a component means
+adding a record to <code>../dnsconfig.json</code> and an entry here; the guest hostname,
+static address, and derived MAC all come from that one record. The agent
+server is sized larger because it stores every backend conversation,
+workspace, and bash event.</p>
+<p>Defaults select the imported Fedora 44 template, local storage and wired
+network by name from the OpenHands resource set. Override
+<code>TF_VAR_xoa_template_name</code>, <code>TF_VAR_xoa_storage_name</code>, and
+<code>TF_VAR_xoa_network_name</code> for another assignment. Native provider lookups run
+as OpenHands&rsquo; own identity and reject ambiguous matches. The selected network
+must carry <code>192.168.10.0/24</code>; gateway and DNS default to <code>192.168.10.1</code> (the
+wired router) and can be overridden.</p>
+<p>The PVE-based <code>infra/cloud_init:xen_linux</code> target supplies the shared Ansible
+user and CA configuration through the repository template rule. Terraform adds
+the hostname and static network configuration from <code>../dnsconfig.json</code>. After
+cloud-init completes, verify that <code>/dev/xvda</code> is the boot disk before running
+Ansible.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel_agent bazel run //infra/openhands/tf_setup:tf_setup.plan
+</span></span><span style="display:flex;"><span>bazel_agent bazel run //infra/openhands/tf_setup:tf_setup.apply
+</span></span></code></pre></div><p>Use this package&rsquo;s <code>dns.plan</code>, <code>dns.show</code>, and <code>dns.apply</code> targets for the
+<a href="/docs/infra/dns/">scoped DNS adoption workflow</a>.
+They select <code>dns=1</code> and target <code>module.dns</code> in the same root, AppRole, and
+backend without starting XO login. Apply requires the reviewed saved plan;
+the <a href="../../dns/openspec/changes/archive/2026-09-13-migrate-project-dns-to-terraform/cutover.md#prepare-the-owner">shared procedure</a>
+owns preparation and reconciliation.</p>
+<p><code>dns_enabled</code> defaults to <code>true</code> after
+<a href="../openspec/changes/archive/2026-09-13-adopt-dns-records/design.md">verified initial provisioning</a>.
+Keep it enabled to retain the managed records. Unchanged declarations and
+provider records produce a no-change DNS plan. Successful DNS checks do not
+establish VM, OpenHands service, or TLS readiness; the separate
+<a href="../openspec/changes/add-openhands-deployment/design.md">service deployment change</a>
+retains that acceptance work.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        Built with <a href="https://gohugo.io/">Hugo 0.165.0</a>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="/js/main.min.259204f469f58eb3b665605a24e964264772df2adaded180b3669b6ce33d84c8.js" integrity="sha256-JZIE9Gn1jrO2ZWBaJOlkJkdy3yra3tGAs2abbOM9hMg=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.decf3b53d8827d840369f490775626e2a5200e150a733f78f0081c126426cbbf.js" integrity="sha256-3s87U9iCfYQDafSQd1Ym4qUgDhUKcz948AgcEmQmy78=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Validation on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/tags/validation/</link>
+		<description>Recent content in Validation on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/tags/validation/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Repository quality</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/repo_quality/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/repo_quality/</guid>
+				<description>&lt;p&gt;This package uses upstream &lt;code&gt;aspect_rules_lint&lt;/code&gt; formatting and linting rules to&#xA;discover Git-tracked files and inspect declared source targets with established&#xA;tools acquired by Bazel. It does not implement a formatter or linter and does&#xA;not download tools at runtime. Thin workspace adapters extend the upstream&#xA;language list with the official Go SDK for module and workspace manifests,&#xA;StyLua and Selene for Lua, and the existing Prettier XML plugin for Qt &lt;code&gt;.ui&lt;/code&gt;&#xA;and &lt;code&gt;.qrc&lt;/code&gt; files.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

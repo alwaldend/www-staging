@@ -1,0 +1,849 @@
+{
+    "items": [
+        {
+            "file": {
+                "hashes": [
+                    {
+                        "algo": "SHA-256",
+                        "content": "73de8957822a98ae8eda6776d194f32832800895ab16ad0cedaffa7de67ab1e7"
+                    },
+                    {
+                        "algo": "MD5",
+                        "content": "5dfa90807d436506cae780b5eec95bb6"
+                    }
+                ],
+                "name": "contracts.proto",
+                "safeName": "contracts_proto",
+                "size": "1249"
+            },
+            "deployments": [
+                {
+                    "oci": {
+                        "repository": "docker.io/alwaldend/src",
+                        "tags": [
+                            "docker.io/alwaldend/src:projects_leetcode_downloader_contracts_proto_head"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "file": {
+                "hashes": [
+                    {
+                        "algo": "SHA-256",
+                        "content": "e1eb5e78da797365a8fbf8d28c0f3a92842b4dfde4ee373755649233e92a6b73"
+                    },
+                    {
+                        "algo": "MD5",
+                        "content": "11b8c3b98df4a67efff8d8a25a8bbbc9"
+                    }
+                ],
+                "name": "leetcode_downloader_tampermonkey.js",
+                "safeName": "leetcode_downloader_tampermonkey_js",
+                "size": "4088"
+            },
+            "deployments": [
+                {
+                    "oci": {
+                        "repository": "docker.io/alwaldend/src",
+                        "tags": [
+                            "docker.io/alwaldend/src:projects_leetcode_downloader_leetcode_downloader_tampermonkey_js_head"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "file": {
+                "hashes": [
+                    {
+                        "algo": "SHA-256",
+                        "content": "2b3a450a1ace4fd6b3c13446838bfaa830e5517ca0acd30e8c9307de3ff35233"
+                    },
+                    {
+                        "algo": "MD5",
+                        "content": "f5b39adba99f5014880fae067a454cc1"
+                    }
+                ],
+                "name": "go_cross_binary.linux_amd64.exe",
+                "safeName": "go_cross_binary_linux_amd64_exe",
+                "size": "9244834"
+            },
+            "deployments": [
+                {
+                    "oci": {
+                        "repository": "docker.io/alwaldend/src",
+                        "tags": [
+                            "docker.io/alwaldend/src:projects_leetcode_downloader_go_cross_binary_linux_amd64_exe_head"
+                        ]
+                    }
+                }
+            ]
+        }
+    ],
+    "name": "head",
+    "project": {
+        "subdir": "projects/leetcode_downloader",
+        "safeSubdir": "projects_leetcode_downloader"
+    },
+    "git": {
+        "revision": {
+            "hash": "976a6a218ec8b3450fee44481674463b9c5115fd",
+            "author": {
+                "name": "simeonwarrenbot",
+                "email": "simeonwarrenbot@alwaldend.com",
+                "when": "1789811800"
+            },
+            "committer": {
+                "name": "simeonwarrenbot",
+                "email": "simeonwarrenbot@alwaldend.com",
+                "when": "1789823063"
+            },
+            "pgpSignature": "-----BEGIN SSH SIGNATURE-----\nU1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAg0/OoO0fyfgVXnUZTMZXlNFA3cn\n78YxSrrdPiskRJNxUAAAADZ2l0AAAAAAAAAAZzaGE1MTIAAABTAAAAC3NzaC1lZDI1NTE5\nAAAAQFCTwf73FSK2HZgURFxfuGc1FDJ7ZDAaDQ+pmJIIsu2gjTQrOQf22bMN0TWvMdhL6j\nYsCh424/NCqnhwVpaE6Qk=\n-----END SSH SIGNATURE-----\n",
+            "message": "Move project landings into the main site\n\nPublish every registered project's visitor-facing landing page at\n/projects/<name>/ from the main site instead of a dedicated subdomain, and\nretire the per-project Pages repository, CNAME, and Terraform DNS stage that\nexisted only to serve one page derived from the project README.\n\nEach project owns its landing content in projects/<name>/site/content/ as pure\ncontent: no layouts, styles, or build rules. The main site packages those\ndirectories into content/projects/<name>/ from the registry in\nprojects/projects.bzl, so membership is declared once. The landing is a short\nhand-written page for visitors while the README keeps its /docs/projects/<name>/\nURL for repository reference documentation, and landing front matter now feeds\nthe statuses, languages, and tags taxonomies.\n\nMerge the reusable hugo_landing project into the main site: its shared canvas\nand accent styles and its landing page rules move into the apex tree, and its\nlanding macro, generated configuration, standalone publisher, and\nrepository-relative rewrite layouts are removed. The theme keeps owning the\ntaxonomy and term layouts, which are richer than the heading-only versions the\nreusable project carried. Remove the now-unused apex deploy_project.sh and\ndeploy_all.sh landing publishers with it.\n\nRetire the per-project publication and DNS ownership: the project landing\ntargets and the landing deployment command, each landing project's\ndnsconfig.json and Terraform root, the build plumbing that served only those\nstages, and the landing repository and Pages membership in the repository\ncatalog. The apex Terraform root is retained because it also declares VM\nresources, and no Vault configuration is changed.\n\nReplace the provider-snapshot zone files with generated declaration pages, one\nper destination view, that project the checked-in declarations and are verified\nfor freshness by the DNS offline check. The DNS linter, both destination pages,\nthe apex site, the skills projection, and the repository quality suite pass, and\nthe whole repository builds.\n\nOpenSpec-Change: projects/alwaldend.com/openspec/changes/consolidate-project-landings-into-apex\n\nLLM-disclaimer: This commit was generated by an LLM.\n"
+        },
+        "commits": [
+            {
+                "hash": "976a6a218ec8b3450fee44481674463b9c5115fd",
+                "author": {
+                    "name": "simeonwarrenbot",
+                    "email": "simeonwarrenbot@alwaldend.com",
+                    "when": "1789811800"
+                },
+                "committer": {
+                    "name": "simeonwarrenbot",
+                    "email": "simeonwarrenbot@alwaldend.com",
+                    "when": "1789823063"
+                },
+                "pgpSignature": "-----BEGIN SSH SIGNATURE-----\nU1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAg0/OoO0fyfgVXnUZTMZXlNFA3cn\n78YxSrrdPiskRJNxUAAAADZ2l0AAAAAAAAAAZzaGE1MTIAAABTAAAAC3NzaC1lZDI1NTE5\nAAAAQFCTwf73FSK2HZgURFxfuGc1FDJ7ZDAaDQ+pmJIIsu2gjTQrOQf22bMN0TWvMdhL6j\nYsCh424/NCqnhwVpaE6Qk=\n-----END SSH SIGNATURE-----\n",
+                "message": "Move project landings into the main site\n\nPublish every registered project's visitor-facing landing page at\n/projects/<name>/ from the main site instead of a dedicated subdomain, and\nretire the per-project Pages repository, CNAME, and Terraform DNS stage that\nexisted only to serve one page derived from the project README.\n\nEach project owns its landing content in projects/<name>/site/content/ as pure\ncontent: no layouts, styles, or build rules. The main site packages those\ndirectories into content/projects/<name>/ from the registry in\nprojects/projects.bzl, so membership is declared once. The landing is a short\nhand-written page for visitors while the README keeps its /docs/projects/<name>/\nURL for repository reference documentation, and landing front matter now feeds\nthe statuses, languages, and tags taxonomies.\n\nMerge the reusable hugo_landing project into the main site: its shared canvas\nand accent styles and its landing page rules move into the apex tree, and its\nlanding macro, generated configuration, standalone publisher, and\nrepository-relative rewrite layouts are removed. The theme keeps owning the\ntaxonomy and term layouts, which are richer than the heading-only versions the\nreusable project carried. Remove the now-unused apex deploy_project.sh and\ndeploy_all.sh landing publishers with it.\n\nRetire the per-project publication and DNS ownership: the project landing\ntargets and the landing deployment command, each landing project's\ndnsconfig.json and Terraform root, the build plumbing that served only those\nstages, and the landing repository and Pages membership in the repository\ncatalog. The apex Terraform root is retained because it also declares VM\nresources, and no Vault configuration is changed.\n\nReplace the provider-snapshot zone files with generated declaration pages, one\nper destination view, that project the checked-in declarations and are verified\nfor freshness by the DNS offline check. The DNS linter, both destination pages,\nthe apex site, the skills projection, and the repository quality suite pass, and\nthe whole repository builds.\n\nOpenSpec-Change: projects/alwaldend.com/openspec/changes/consolidate-project-landings-into-apex\n\nLLM-disclaimer: This commit was generated by an LLM.\n"
+            },
+            {
+                "hash": "6cb4d63c7b473cbff738332389c05168b9158cc4",
+                "author": {
+                    "name": "simeonwarrenbot",
+                    "email": "simeonwarrenbot@alwaldend.com",
+                    "when": "1789324459"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "bf4f0e49-086a-48b0-bafd-88001a8bf12d@simplelogin.alwaldend.com",
+                    "when": "1789386907"
+                },
+                "message": "Manage forge resources with hermetic Terraform rules\n\nCentralize organization, repository, and named access configuration in\ninfra/repos. Adopt existing GitHub resources, protect master defaults while\nretaining Pages publication on pages, and preserve existing repository\nidentities. Manage GitLab one-time imports, the F-Droid metadata fork, and\ndefault-branch protections through Vault-backed authentication. Forgejo\nconsumes the same catalog. Ongoing repository synchronization is deferred.\n\nRetire the eleven Bazel rule landing sites through their owning Terraform\nworkflows, removing their DNS records, Pages repositories, and landing\nconfiguration. Move all twelve existing standalone rule modules into tools/\nand retain their public interfaces and documentation on the main site.\n\nAdd tools/rules_terraform with verified provider downloads, packed mirrors\nin runfiles, and reusable Terraform execution rules. Enforce one version per\nprovider source at an extensible resolution boundary. Migrate every Terraform\nconsumer to thirteen shared provider pins in third_party/terraform. Execution\nand command maps belong to rules_terraform; consumers explicitly select generic\nAL wrappers for authentication and Vault injection. Remove tools/terraform\nand all 43 checked-in Terraform provider locks.\nValidate installed providers against the declared archives before execution.\n\nValidation covers all fourteen workspace builds, all thirteen standalone\ntest suites, Terraform consumers, offline real-provider regressions, rendered\ndocumentation, formatting, and semantic lint. The full root test run has\n295 passing tests and one skip; its only failure is the historical secret\nscan, reduced to four pre-existing synthetic fixture matches. Earlier live\nimports and the exact landing retirement scope have verified postconditions;\nthe Terraform rules migration uses only offline implementation checks.\n\nOpenSpec-Change: infra/repos/openspec/changes/archive/2026-09-13-adopt-shared-repository-catalog\nOpenSpec-Change: infra/src/openspec/changes/archive/2026-09-13-retire-bazel-rule-landings\nOpenSpec-Change: tools/rules_terraform/openspec/changes/archive/2026-09-14-add-hermetic-terraform-rules\nOpenSpec-Change: tools/rules_terraform/openspec/changes/archive/2026-09-14-correct-terraform-ownership\n\nLLM-disclaimer: This commit was generated by an LLM.\n"
+            },
+            {
+                "hash": "cc4f205bf73b49364ba3bd441b7f485b9872e742",
+                "author": {
+                    "name": "simeonwarrenbot",
+                    "email": "simeonwarrenbot@alwaldend.com",
+                    "when": "1789248975"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "bf4f0e49-086a-48b0-bafd-88001a8bf12d@simplelogin.alwaldend.com",
+                    "when": "1789292694"
+                },
+                "message": "Deploy project DNS through Terraform modules\n\nMove DNS ownership into each project’s Terraform state using shared modules.\nLoad dnsconfig.json files at runtime, reject conflicting domain ownership,\nand render their records as a table. Add missing project AppRoles and scoped\nDNS policies, and document grouping related Terraform resources in modules.\n\nDeploy all 45 owners sequentially: adopt 155 existing records and create 13\nmissing OpenHands records. Preserve every pre-existing provider record and\nverify no-op follow-up plans and DNS answers. Add DNS-scoped plan/show/apply\nwrappers with a saved-plan guard for roots that also manage services.\nAllow bounded aggregate path inventories large enough to deliver this migration\nwhile retaining truncation refusal in the delivery tool.\n\nValidate runtime ownership, provider imports and preservation with isolated\nfixtures, Terraform formatting, wrapper builds, repository quality checks,\nsemantic lint, and project documentation/specification builds.\n\nOpenSpec-Change: infra/dns/openspec/changes/archive/2026-09-13-migrate-project-dns-to-terraform\n\nLLM-disclaimer: This commit was generated by an LLM.\n"
+            },
+            {
+                "hash": "c50fbf5a9fe9e8a99fe26a313eefd1154f841349",
+                "author": {
+                    "name": "simeonwarrenbot",
+                    "email": "simeonwarrenbot@alwaldend.com",
+                    "when": "1788825919"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "bf4f0e49-086a-48b0-bafd-88001a8bf12d@simplelogin.alwaldend.com",
+                    "when": "1788943714"
+                },
+                "message": "Simplify OpenSpec workspace globs\n\nCollapse OpenSpec source globs to specs and changes, drop redundant\npackage visibility blocks already covered by REPO.bazel, and regenerate\nthe affected catalogs.\n\nLLM-disclaimer: This commit was generated by an LLM.\n"
+            },
+            {
+                "hash": "491eb7e05aa1ef71ff8e01b4ad320cdc355edbee",
+                "author": {
+                    "name": "simeonwarrenbot",
+                    "email": "simeonwarrenbot@alwaldend.com",
+                    "when": "1788697537"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "bf4f0e49-086a-48b0-bafd-88001a8bf12d@simplelogin.alwaldend.com",
+                    "when": "1788706451"
+                },
+                "message": "Publish project sites and reproducible infrastructure diagrams\n\nBuild and deploy all 30 remaining project sites with the standard Docsy\nheader, project descriptions and a linked documentation directory. Omit the\nrepeated page title and generated language heading. Remove\nthe unused cgit and xray_manager projects and retire their site resources.\n\nAdd a repeatable GitHub Pages publisher, staged Terraform bootstrap and direct\nGitHub Pages DNS records. Preserve repeated publication when pages is the\nremote default branch, and include Rules ISO in the main documentation.\nDocument site onboarding in a registered, validated skill. Keep AL\nintroduction short with useful links and preserve its lifecycle details in\na dedicated documentation page.\n\nRender all 15 existing infrastructure Drawio pages with pinned Drawio and\nChrome inputs, sandboxed export actions, an update target and freshness\nchecks, and include the maintained diagrams in infra/arch documentation.\nPaint an opaque white canvas to preserve readability in dark themes.\n\nValidation covers project and apex builds, rendered pages, publisher tests,\ndiagram repeatability and freshness, DNS configuration, Terraform formatting,\nsemantic lint and repository quality.\n\nGoal-Ref: build-and-deploy-every-project-landing-page-a782b800\nAttempt-ID: attempt-00941092c164\n\nLLM-disclaimer: This commit was generated by an LLM.\n"
+            },
+            {
+                "hash": "df7e40ff27251e8b4f9a4e399658f353087619d4",
+                "author": {
+                    "name": "simeonwarrenbot",
+                    "email": "simeonwarrenbot@alwaldend.com",
+                    "when": "1788439436"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "bf4f0e49-086a-48b0-bafd-88001a8bf12d@simplelogin.alwaldend.com",
+                    "when": "1788502269"
+                },
+                "message": "Extract DNSControl setup into rules_dnscontrol\n\nExtract the DNSControl setup into `rules_dnscontrol`, generate its Bazel\ndependency bundle from project-owned record files, and update the DNS\nguidance. Move Hugo rules and the worker to role-based package paths, and\ngive each non-nested project a locally owned Hugo landing target that reuses\nthe shared README-to-landing macro.\n\nClean all landing and Pages DNS records so GitHub Pages serves each project\nsubdomain directly without Cloudflare proxying. Improve the main site with\na three-panel home layout, complete project links, documentation explore\nlinks, and current deployment guidance.\n\nAll affected root-workspace landing, DNS, and site targets pass, along with\nthe nested `rules_hugo` tests, Buildifier, and repository quality checks.\n\nLLM-disclaimer: This commit was generated by an LLM.\n"
+            },
+            {
+                "hash": "6c74af20480baad6cfbaa9bb4c42f4a33e02c450",
+                "author": {
+                    "name": "simeonwarrenbot",
+                    "email": "simeonwarrenbot@alwaldend.com",
+                    "when": "1788165814"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "bf4f0e49-086a-48b0-bafd-88001a8bf12d@simplelogin.alwaldend.com",
+                    "when": "1788177939"
+                },
+                "message": "Add hermetic repository-wide formatting and linting\n\nIntegrate upstream formatters for the repository's meaningful tracked source\nand configuration file types through Bazel, and add Buildifier, Ruff, and\nShellCheck lint aspects for correctness-oriented repository-wide checks.\n\nPin all new external tools through Bzlmod or the existing pnpm lock, add thin\ncache/runfiles adapters where required, expose format and check targets, and\nwire the checks into the pre-commit workflow. Format the existing tree and fix\nthe correctness defects uncovered by the new checks. Preserve generated\nsources and exact-content fixtures that are not safely rewritable, and clarify\nthat ordinary\ninfrastructure build output is safe to display.\n\nValidation:\n- all 21 repository quality and compatibility formatter tests pass\n- Buildifier test passes\n- lint aspects analyze all 4,629 ordinary root targets without findings\n- the complete 18-command root and nested full-repository audit was exercised;\n  remaining failures are documented environment or pre-existing test limits\n\nLLM-disclaimer: This commit was generated by an LLM.\n"
+            },
+            {
+                "hash": "a0b20b74bed560720f5e9d878da53e8021859e66",
+                "author": {
+                    "name": "simeonwarrenbot",
+                    "email": "simeonwarrenbot@alwaldend.com",
+                    "when": "1787945207"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "bf4f0e49-086a-48b0-bafd-88001a8bf12d@simplelogin.alwaldend.com",
+                    "when": "1787950628"
+                },
+                "message": "Add standalone documentation rules\n\nMove docs_filegroup into a reusable rules_docs nested Bzlmod workspace and migrate every root and nested consumer to it. Add a module-aware Gazelle language that creates docs targets only for existing README packages while preserving manual mappings.\n\nWire the workspace into module resolution, documentation aggregation, and the ten-command full-repo-check. Add the bazel-nested-module skill so future nested workspaces follow the repository's rc, lockfile, docs, toolchain, Gazelle, and validation conventions.\n\nKeep reviewed Gazelle dependency canonicalization, while protecting the hand-maintained Go proto, Python resource, Android, embedded-site, and skill runner definitions that generic language plugins would otherwise break.\n\nThis commit was generated by an LLM.\n"
+            },
+            {
+                "hash": "712a305674793cd9662bd85b8ebc7e2f4a564363",
+                "author": {
+                    "name": "simeonwarrenbot",
+                    "email": "simeonwarrenbot@alwaldend.com",
+                    "when": "1787919528"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "bf4f0e49-086a-48b0-bafd-88001a8bf12d@simplelogin.alwaldend.com",
+                    "when": "1787950628"
+                },
+                "message": "Gate Harbor images and refresh generated metadata\n\nMake Harbor-backed OCI targets opt-in through --config=harbor while retaining default documentation and non-image tests. Regenerate the Python Gazelle manifest and Bazelrc preset.\\n\\nThis commit was generated by an LLM.\n"
+            },
+            {
+                "hash": "eb6ce0bc37ad32ccde8a4d0c8c59ed88eeea0348",
+                "author": {
+                    "name": "simeonwarrenbot",
+                    "email": "simeonwarrenbot@alwaldend.com",
+                    "when": "1787916570"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "bf4f0e49-086a-48b0-bafd-88001a8bf12d@simplelogin.alwaldend.com",
+                    "when": "1787950628"
+                },
+                "message": "Migrate documentation packaging to docs_filegroup\n\nPreserve custom prefixes, renames, strip prefixes, and standalone workspace behavior.\\n\\nThis commit was generated by an LLM.\n"
+            },
+            {
+                "hash": "111693cedb385fa57d3a96a8daacca27e762e926",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren@alwaldend.com",
+                    "when": "1784050662"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren@alwaldend.com",
+                    "when": "1784050662"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niQIzBAABCgAdFiEEFuxvv2wIGF1W5BG5192IqwwHN/IFAmpWc/cACgkQ192IqwwH\nN/LoiBAAt3LWao3kKgITb7v0N5zMm0/3LR3VXdDZkj+gUkumudQYJszg5JU6xkPX\nVJlDvtAo9i+wu7zhIaqHI7eNk9l6Y2TaIh2i9G5z6vfHHBbn2iAIJhOtYLRgfkHV\npy2ZS7EDXcHI56aR5xXxT+Q7PJXM2G56ybK44ARwWaA7uIK+Ms68QdLrUzPESxPB\n/KpYW6LGJqlBPSYLfOOiOxGlXjqC9EMpdYQ8NHVl0gXQXghdPodc/VS7EfOBS+I8\nsEcGO+hUILd3Igqq6jUIhYeXFp23sToKibpammBebMguilR1H13OjOUXRFC6/R0r\ndYC1nZOfi6STMvtMdb0NctaNeq50RVPY77HRo+hFxuk+qZzUzAvNrkNGPBOZJXq4\nXRwLgIhF8T9Rb0oIoyIkioRsXUhdtvr03QhHzwBqgS9cLCOaZru1vuxSKAMzd6b9\nusyoAFLtiR/J0pQkAYSz3HfGmhMYJYkUHQEEX+qETbVLjlueWZbkccl2XE47GEWX\n/ZsqHXEJlR9mPBpKzflIXT62hEUjLBy0rdt+SR1+EPzVljCly8FE1RSOmbaJHi7Q\nNQqUknIeXNdsWEt604YhexEAhPfSzsgRd/qLgvH80ydSykTc2MYYS9UkPGC9W79/\n9VUkkNQ7gVx2/ApClEpa/bJ2eLZfa2u9EAZLXkT1NylaO7j76YU=\n=B4Gc\n-----END PGP SIGNATURE-----\n",
+                "message": "Add a server to //projects/alwaldend.com\n"
+            },
+            {
+                "hash": "1be2b93374cf6102c58dd668c3ad53935f927d14",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren@alwaldend.com",
+                    "when": "1782641895"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren@alwaldend.com",
+                    "when": "1782641895"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niQIzBAABCgAdFiEEFuxvv2wIGF1W5BG5192IqwwHN/IFAmpA9QgACgkQ192IqwwH\nN/KpKg//WOM+xHi+VHT2JAdS5ZfiMnLjICBMQ7jgfvbgW3J6bAsIjXvg2URyIEN1\nCwkzdRink78NPGAzuWwln33FH2NixyA8kvBxsclEbvu8iHksAdgHJrGnNaUkGSA/\n8J6XUPkF9DO1KV7X3m+m2jjx8r9tgU8C+Yit0txo72i77hFei4L1eld0xsGElN5b\npApvV0EjdbmfNkYZYuZPVPCA4mt5Tqu3VPLbm6rausd/M4AoAbPcIyorgEDVsEmA\n7uiTEBY6eYspAdVYCqEBRJk1bmMA5IVSRRA96diZvKdFqQtvhS1QPOerIkGFkk/d\nEGioETOJGepbhQrGdwZKV9BAHNkOO2x6OyfB1U4HDmVnCjbelmdJGtmAWeXUcjw+\ncUIs1oZTO4jwPTNyIh21SnTnvPx64a952dd2EtZUj7qczGeZVtBjR7XyfxKBDXtY\n3E8ULcVVJRo6lURkRmYZFuR3AUo2RxdZxFMrz2O+R9UiRgMd+E3GsmrzBgdRHBgH\nkuOikeDcpPQ+QpkxQqZtC7DAidghn391HWlYNuUATV8wc9/yUiZuM+LOm2cXRANa\nLQ/9mhfq2YQYXhFwPU/nzniwk5fkwY8Y2J1nJ37dMRwvwv64aaSRFexk83AVLpCI\nf7mBkOaYtyKfcq4+Fv/8JxdTpq9dxdFv5rIrPY9mD/Sx5HRfHto=\n=vkuG\n-----END PGP SIGNATURE-----\n",
+                "message": "Add harbor_login, add harbor IaC, fix bazel's certificates\n"
+            },
+            {
+                "hash": "b931cb830b08d4d5e58b8db106be56ab5d100ab5",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1773073839"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1773073839"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaa71vAAKCRD3LMCDXvUI\nesvbAQDc6avOZAjdL9ElzzOf6kXoW+p6P/8qkF0zKjKlFkrY6QD/YURq/e0rZHO1\n2K1rzIOz4gXbXDSXdsf2u/owLyIj1wA=\n=maHW\n-----END PGP SIGNATURE-----\n",
+                "message": "Remove //tools/docs, remove .github\n"
+            },
+            {
+                "hash": "907501ec31859540b8444f9b9417e8aaae72e64a",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1772823895"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1772823895"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaaslewAKCRD3LMCDXvUI\neoA6AQDjXzIwzfcqz3j+fdilJzZ45BBZFJTkVON/W+X0jZrTqgEAsQBoj9ftas08\nCjvy4yyTlKwqCcBok/OauJLe7fkIXgg=\n=wUZ8\n-----END PGP SIGNATURE-----\n",
+                "message": "Change template context in rules_template, change lock format in binary_toolchain\n"
+            },
+            {
+                "hash": "aee2eb1f5c5aa614a7077e0260381f5f02482956",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1772733159"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1772733159"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaanDDAAKCRD3LMCDXvUI\nehzXAQDig9PY7NLNnEqfuYuYOBc4u0dKM6xTX96Ql0jsarHIHgEAkCb5qPPiTqo5\noUsa9RR68RdXhLLFDz1Wvx45HLr9YAE=\n=B1J0\n-----END PGP SIGNATURE-----\n",
+                "message": "Finalize rules_template refactoring\n"
+            },
+            {
+                "hash": "455c5ac5777ccd8a2705752bc19544f597ee9a98",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1772647373"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1772647373"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaahz4wAKCRD3LMCDXvUI\neuuVAP4sjRAKaRVP3d2J+yqeqLXQb6c1pTi2MzC8L4L40qtcJwEA9qsj8FJNFwqh\nDpVqk0/SgS1v+zzWPh9/vWjFH5ia+AQ=\n=FW1m\n-----END PGP SIGNATURE-----\n",
+                "message": "Update bazel to 8.6, start moving //tools/template_files to projects\n"
+            },
+            {
+                "hash": "f060f5105747e304a46a7f191cc781337a642021",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1771779872"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1771779872"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaZs3KgAKCRD3LMCDXvUI\neuIWAPsFIzxZvgJVH7O8XEgCDQyH7E2Con0bSJdcQK56ca4sZgEA8lm5VEKEN3Oo\nOShqUIMDngTOS5LrBMvPwSRCNfIKwAM=\n=tzLY\n-----END PGP SIGNATURE-----\n",
+                "message": "Add oci image to leetcode_downloader\n"
+            },
+            {
+                "hash": "c770cd12330aa2f65f803bc280e8dff5407a3121",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1771523024"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1771523024"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaZdicwAKCRD3LMCDXvUI\neudUAQDwRn9VZEmChYXMulBhHREBH7GI5+mkPknq7GT+Iw4ltQD5Afqe/klTMq4d\nfcaZifvuICprdWF6OSvQUDU+kL0TGQc=\n=Yyyl\n-----END PGP SIGNATURE-----\n",
+                "message": "Remove al_go_cross_binary, update the setup guide a bit\n"
+            },
+            {
+                "hash": "b4b9b9f8e16c0200f4122bb520add7dc6a914796",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1768323247"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1768323247"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaWZ/SgAKCRD3LMCDXvUI\nemKSAQDCiKiKH74KewS4mCwZ4sFgOjF9RWp2MykZZRINigGnAgD+OaTn6zT7UAey\nMQPDfHvFDzvMU6WOBfw4Iniu6ABgfQs=\n=keY2\n-----END PGP SIGNATURE-----\n",
+                "message": "Add build_test tests\n"
+            },
+            {
+                "hash": "43328e63f3b2bd61e3e9983f8344a9366792a3a2",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1768160039"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1768160039"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaWP7NAAKCRD3LMCDXvUI\neqN1AP42mKieWGhyzv4Y9NS6Iw7qHGjbX0sDF4XKH8wPrvfAvAEA+3uKEnyNOA1m\nuV/qklSc2r933mLRFT8vB7ysILNVuAc=\n=HzI1\n-----END PGP SIGNATURE-----\n",
+                "message": "Bump protobuf and java deps, update leetcode\n"
+            },
+            {
+                "hash": "23d34c9ca9bda49cdd63694b22a20c32983a81d8",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1767355239"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1767355239"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaVezdgAKCRD3LMCDXvUI\nenF6APwIoRV2b38vqJYBOylRejOSd/6p6Svc3M2Qf4oa1dlhigD8Cm4Fdex0pQiR\nmZ+2+Fzpcvw2yPBFjKXbeKXWnBOgKQE=\n=Yhp8\n-----END PGP SIGNATURE-----\n",
+                "message": "Revert back to REST api, update leetcode submissions\n"
+            },
+            {
+                "hash": "a21652c6de232210b07504555812cd36125e76b8",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1767026265"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1767026265"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaVKuawAKCRD3LMCDXvUI\neoZ5AP9NyPn1HLr6eHErT+BoSBkW540vlBz7xdjeGwBEaOSCkwD/TJBxxlR1gVdm\n/IXKaIZo/8nWKMpeJszorMxWt60Z3AU=\n=cwrK\n-----END PGP SIGNATURE-----\n",
+                "message": "Fix infinitime alarm update\n"
+            },
+            {
+                "hash": "5dd85a20d7eae5ac408a70c913f38909a9792a99",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1766939464"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1766939464"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaVFbWQAKCRD3LMCDXvUI\neqecAP9DfazAFXpFMUGe4kY02HkN/uKXt5/PwzLfiUYH73ZPNwD+OyGJDx1S9g2l\n/E/CCg/1SiOBKnAmhx/+zPB55TlfvAE=\n=zgeD\n-----END PGP SIGNATURE-----\n",
+                "message": "Move protobuf contracts into their corresponding modules\n"
+            },
+            {
+                "hash": "c1ba0bef1a7b62a4e7655f4ef461dc93c4f0439a",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1766851510"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1766851510"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaVADvgAKCRD3LMCDXvUI\nekiQAQD139xA+k5gN8DMxYiAXg7RvmJ2YeCtp/DmiT2GhWN2hQD/TJGka/xy72Mv\nxexjFkJIxpjlNMIV2t6MxZMZ0YBMygg=\n=arZy\n-----END PGP SIGNATURE-----\n",
+                "message": "Extract headers from HAR\n"
+            },
+            {
+                "hash": "3211f7e6814cbb7540caf47b5d2621428c2bf4f5",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1766595867"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1766595867"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaUwiAQAKCRD3LMCDXvUI\neu+ZAP9oxPgnCVAdBQsGaunpsslnUbm+R3h8Kp3zdyoDoXHuXQEA6rhPu6jltULu\ns8AgG/INakCzpTUzjhVkm1J+oFb+ZQg=\n=yGDt\n-----END PGP SIGNATURE-----\n",
+                "message": "Move submission download to graphql\n"
+            },
+            {
+                "hash": "d0c4b52c97d9ab426094d9b02805fc5bff6dc79c",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1766045894"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1766045894"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaUO5BwAKCRD3LMCDXvUI\nerJmAQD5NwEd7nA47MQvBgHyFtwtZxlr8XQUv5m3EbmgNw0YxwD+MSVnpbNvo/Xc\nI/PSjtfXU/bozLKzP4XdTa+3hMqKsAw=\n=Nbus\n-----END PGP SIGNATURE-----\n",
+                "message": "Rename go modules to git.alwaldend.com/alwaldend/src\n"
+            },
+            {
+                "hash": "061c8b8ffffaee70171d1dde4de2d3d045b52477",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1765991838"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1765991838"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaULmdAAKCRD3LMCDXvUI\nel+2AP95dQXk0vXoNsPAEuKdRQqmEBD7jqruTPuV28+7H0x5UgEAnMOYF9gIVLAk\nt4KJQntUY5jegtgiiwyakshvHOqlPQg=\n=FY0s\n-----END PGP SIGNATURE-----\n",
+                "message": "Move all the logig out of the screen to the controller\n"
+            },
+            {
+                "hash": "c535f7614334198cd71006a1c459586a32ccb20d",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1765900062"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1765900820"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaUGCLQAKCRD3LMCDXvUI\negs8AQCUeb24wFNrVSyvssdQhZEHiKAngww37jTx1h9gjC38pwD/aoI+1dvt6XbM\n7W3fvWuUjddcjOTeScA8JU8+iA1oHwQ=\n=QdWA\n-----END PGP SIGNATURE-----\n",
+                "message": "Add deploy to dockerhub, add //tools/oras\n"
+            },
+            {
+                "hash": "2b5e29940827287f7657a5671546938c17a87638",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1765736350"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1765736561"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaT8AkgAKCRD3LMCDXvUI\nejeWAP4/jq9f61sZ3gvzJ5rQbvNZYzNp16n9/FaBrtVoEqHDvAEAvrNjbYUfuZZ8\ntpzZ1bbBJHnjL67VJL1qLM2MYvoKPgk=\n=Tbdk\n-----END PGP SIGNATURE-----\n",
+                "message": "Add missing features to the Pomodoro app, update project readmes, add github pages\n"
+            },
+            {
+                "hash": "fae6386a5959c560d94c87cf7dbc6be547e31f97",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1765214282"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1765214282"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaTcIjwAKCRD3LMCDXvUI\nevwCAP9pfpbq/OvbzLuU/R+BZg9/+dr38QMkLAadb3HZQtH5ZAD8DM/YZ3KniZjg\nLQ+3rZ0PdNj+0kziVn+DLAKZe+REwgo=\n=3veL\n-----END PGP SIGNATURE-----\n",
+                "message": "Move all remaining code to main\n"
+            },
+            {
+                "hash": "a32ab0bea9298d24881223120de05f6496273c99",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1765209192"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1765209192"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaTb1PAAKCRD3LMCDXvUI\neidgAP9pgmr07qnFGEFgMjitqeiRMDgH2V5dgvPRCEJ2UxA32gEA6zszPq2mfIar\nsfcyeSxnj8SIziX/Z9WtJYd3Jw9+MgE=\n=JwQg\n-----END PGP SIGNATURE-----\n",
+                "message": "Move a portion of tool code to main\n"
+            },
+            {
+                "hash": "d34d2cc0a88baf58aa10e62c948cbc4d6559eecc",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1764860657"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1764860657"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaTGjqQAKCRD3LMCDXvUI\ner0GAP9caymmMJz1ABQ0YpoeDmKrbrMjKEHx735ooTaYGkDGVwEAtSIozBrdL2Nq\nAq//l4vEkev427IUriCC0z4XwV5k9wI=\n=zBGL\n-----END PGP SIGNATURE-----\n",
+                "message": "Move leetcode downloader go code to main\n"
+            },
+            {
+                "hash": "9951b5207b269fb5445edf1f11001f07848da337",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1764829687"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1764829687"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaTEqGwAKCRD3LMCDXvUI\nehgDAQDnOGw15OHaCa8eL6o5MnlAdwj9rNBiv4EpSq3j+FaxXgEA0nDhnXQdJAj6\na4nSfNmUM5CQH6RAto2MTK2rpwg2+AY=\n=nT9I\n-----END PGP SIGNATURE-----\n",
+                "message": "Add tools/nogo\n"
+            },
+            {
+                "hash": "475f39e884227c1ca7deac306a2b85c0d5ddf069",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1764787072"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1764787072"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaTCDkAAKCRD3LMCDXvUI\nervPAPwPzKJzSxTWecgMtB32jUsPxRD6JHkw/SfGScxaMGASnwD8DwQ6KoTA5RfI\nfDARoZrY0fzRlUP06XnPL7HczP9fxgc=\n=JrqN\n-----END PGP SIGNATURE-----\n",
+                "message": "Use separate lock files for each golang tool\n"
+            },
+            {
+                "hash": "4662141cd7788229ad5eee1dc04de5ffceea3603",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1764439593"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1764439593"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaSs2MQAKCRD3LMCDXvUI\nehquAQDCsx3pLgffOT+7FLIFkAwyxNX7Zn+1psF+nvnI6iM+/AEA9fKjv8fvbfX3\nm6b8PB9kWRoHIJV6eKQ84wqHfL9LMAQ=\n=1wV/\n-----END PGP SIGNATURE-----\n",
+                "message": "Start fixing go mod tidy errors\n"
+            },
+            {
+                "hash": "2751a3ad42bb10c81971c40384f1d57a85d627ee",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1764079351"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1764079351"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaSW3YQAKCRD3LMCDXvUI\negBJAQCa+RRgHF7GDqUbzFygUVxyQlTeHPZn6AQCl0dS0xvWeAEAkHdtBstScUig\n4MYzu3CGSI5Ana2NqC9Ofv4c3/YSCQY=\n=Mdgk\n-----END PGP SIGNATURE-----\n",
+                "message": "Move some code to main\n"
+            },
+            {
+                "hash": "d9f47bea4df0eb7428bf9bcfc3e181103c7a736c",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1763915598"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1763915598"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaSM3hwAKCRD3LMCDXvUI\neo0yAQDq9GmbO09WkKa1Ms7v7v8dyGSl6ob5nkTgVRRw+4RuYgD/f8rrmFQjbZKA\nOJYw+QqkbyPTFaonZDCBiByDQrFiNgY=\n=6JMA\n-----END PGP SIGNATURE-----\n",
+                "message": "Remove sites taxonomy, start adding xray_manager\n"
+            },
+            {
+                "hash": "f45d9d4c30fe010caa64df05958eabd40b49f718",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1763660568"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1763660568"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaR9TVgAKCRD3LMCDXvUI\neifzAP4vRve6HtPVjjBtStqmMbHtgLP3noVNTa3BbjOBFmuHpQD/YgJFzvOUl074\n/EYTPCQnNMxr1kSQLZUuNvzC8kRi9AY=\n=BmPg\n-----END PGP SIGNATURE-----\n",
+                "message": "Add release_page generation, remove redundant release templates\n"
+            },
+            {
+                "hash": "d55fc124d72edf372500135273fabc66013cc0ce",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1763463742"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1763463742"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaRxSbwAKCRD3LMCDXvUI\neopSAP9TWLu2NpDYXb5zTuaj5kJQez+ImA5mCPLz9Eu9+pGpkgD/QWAWIbdGaQQ5\nDVCBJu9TykeLdM1V64Q9a9q+rigIJw8=\n=74HO\n-----END PGP SIGNATURE-----\n",
+                "message": "Remove contracts tree\n"
+            },
+            {
+                "hash": "c9ba7023ce630f30795de79f113a3fa774cc7b33",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1763306204"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1763306204"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaRnrvQAKCRD3LMCDXvUI\neu5gAQCxmD6rSMe3P391NRO4gAZ5cw2lBWl2ZE2yvnOHmo9nRQD9FfZQlupLoKYv\nhoAT89IH36ccyu4QSfhCaNiH6ezZkg4=\n=W/Er\n-----END PGP SIGNATURE-----\n",
+                "message": "Allow docs to put content outside of docs, refactor git to just use .git directly\n"
+            },
+            {
+                "hash": "a1043546c796aaa42b63ae5450740eed3cc368be",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1763132677"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1763132677"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaRdGHQAKCRD3LMCDXvUI\neomwAP4w7iv+z36GDWREinSGaSUhi8sXqc+PNM7n9TsrQGZmEwEAiGrvO+Aa9U1B\ncHtpZX95G+GTThOWVirUC7sqwwSIRQw=\n=kNnr\n-----END PGP SIGNATURE-----\n",
+                "message": "Add cross-compilation, move leetcode downloader contracts out of //contracts\n"
+            },
+            {
+                "hash": "780895df3a143515d7a7a97e7a620c861d2354d2",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1763119133"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1763119133"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaRcQeAAKCRD3LMCDXvUI\nekKjAQDafiXpdtKhKiiJEOosb87l9ene5Vp1tg9o8qF2Ng3bkwD+KUED7j6sZ+JA\ngLLhITQ8AfD9iWwr7WXYVSQNY6omQAI=\n=o9gU\n-----END PGP SIGNATURE-----\n",
+                "message": "Refactor release templates into partials, add release cards\n"
+            },
+            {
+                "hash": "8fcfb85385cd224081374d74377f85df4bb54e1b",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1762007228"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1762007228"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaQYZPgAKCRD3LMCDXvUI\nemnfAPwMlFn90H8CzaG/eKQ8n1xdLMa1SGwMT56VPwiPu8zFewEArSX5Y3g8dRGM\nRfApVcsDj+2rl6WbzwdNwvkpKi4AIAY=\n=cbSK\n-----END PGP SIGNATURE-----\n",
+                "message": "Add more taxonomies, remove docs tree, move alwaldend.com to projects\n"
+            },
+            {
+                "hash": "cf56b8e083e10cfc1fa132fb67f0338a3424a543",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1761479444"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1761479444"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaP4LmwAKCRD3LMCDXvUI\nelNxAP4muASA8Zp0GhDQNhhH8stPRu7Zn1A4ZkEZ6OEDYKmnlAEA2jSd9dDXPhRr\nO+Q0iJcqy90nCsw1jclfaSeu3s7rRwY=\n=fqU/\n-----END PGP SIGNATURE-----\n",
+                "message": "Rename proto to contracts, add tools/proto add proto docs\n"
+            },
+            {
+                "hash": "51e5409918272c1504f76608bf5d2372fc0e1337",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1761468196"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1761468196"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaP3fWgAKCRD3LMCDXvUI\neoW4AQCamul71V5EjPyFaobFm6ZKF1tCrblluL3woGIzRQI7AgEAqnnMm+qkPH0B\nKOO/pdOw+Bm4XqAWainAr5BCSzuwtwk=\n=3QpD\n-----END PGP SIGNATURE-----\n",
+                "message": "Remove bazel target docs, add tools/docs, tag projects properly\n"
+            },
+            {
+                "hash": "3117a3914a275ad6896122256ad3a9758ed9cb97",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1761411392"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1761411392"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaP0BhQAKCRD3LMCDXvUI\nejT2AQCKF39eUx1fNnJg7gAV776W51boaMEIt50eEPHzNAHuDwEAr1Bd0EkZhr/F\nniteNnnpVbIhoVLqLaOjk51cXZy4MQc=\n=xe+P\n-----END PGP SIGNATURE-----\n",
+                "message": "Remove changelogs, ignore irrelevant directories in docs\n"
+            },
+            {
+                "hash": "8888207a57d88bf7ba9f6b485ae3325ae1d4d17f",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1761400714"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1761400714"
+                },
+                "pgpSignature": "-----BEGIN PGP SIGNATURE-----\n\niHUEABYKAB0WIQQzN2BQvnncpX2uEp/3LMCDXvUIegUCaPzX3gAKCRD3LMCDXvUI\nehS7AP0fL6eRoV+wvgEML0W649kFhyZLayI8URncMqOwYVXO+wEAya19HnDM08ip\nSF8ov6vDf+xFh6wJiShOY3mdPitLbgg=\n=oHZQ\n-----END PGP SIGNATURE-----\n",
+                "message": "Remove bzl tree\n"
+            },
+            {
+                "hash": "00bcaa157103012b187a208a240dc4b6e9feaeec",
+                "author": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1745752215"
+                },
+                "committer": {
+                    "name": "simeonwarren",
+                    "email": "simeonwarren-git-pzewq@alwaldend.com",
+                    "when": "1745752215"
+                },
+                "message": "Initial commit\n"
+            },
+            {
+                "hash": "28444214f7295282ff11dcb7aa83d8ad827ab8b4",
+                "author": {
+                    "name": "simeonwarrenbot",
+                    "email": "simeonwarrenbot@alwaldend.com",
+                    "when": "1787847446"
+                },
+                "committer": {
+                    "name": "simeonwarrenbot",
+                    "email": "simeonwarrenbot@alwaldend.com",
+                    "when": "1787847446"
+                },
+                "pgpSignature": "-----BEGIN SSH SIGNATURE-----\nU1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAg0/OoO0fyfgVXnUZTMZXlNFA3cn\n78YxSrrdPiskRJNxUAAAADZ2l0AAAAAAAAAAZzaGE1MTIAAABTAAAAC3NzaC1lZDI1NTE5\nAAAAQFleXCIfJFf2rgDHhwXqPLotFU4BO88V9IdIUoSObYTaiLW/Fo47g2NLUnF97uDMfx\n99QQEo1a8VTCBw5ZM6YQs=\n-----END SSH SIGNATURE-----\n",
+                "message": "Add spellcheck skill\n\nThis commit was generated by an LLM.\n"
+            },
+            {
+                "hash": "022861965f3e3407c0f630dd5827b54bb87ee779",
+                "author": {
+                    "name": "simeonwarrenbot",
+                    "email": "simeonwarrenbot@alwaldend.com",
+                    "when": "1789807682"
+                },
+                "committer": {
+                    "name": "simeonwarrenbot",
+                    "email": "simeonwarrenbot@alwaldend.com",
+                    "when": "1789808444"
+                },
+                "pgpSignature": "-----BEGIN SSH SIGNATURE-----\nU1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAg0/OoO0fyfgVXnUZTMZXlNFA3cn\n78YxSrrdPiskRJNxUAAAADZ2l0AAAAAAAAAAZzaGE1MTIAAABTAAAAC3NzaC1lZDI1NTE5\nAAAAQP+VcOIIqPR8DY7q4bmucDZO9dJLiApozQqq/IQXHkw4cm9pr98jiPQVSU0J4UBBtx\n0yeucLMBAFev0fFMYQigY=\n-----END SSH SIGNATURE-----\n",
+                "message": "Restore light and dark site canvases and set the shared accent\n\nThe shared Docsy canvas set the same Bootstrap dark palette and the same\nblack page background on `:root`, `[data-bs-theme=\"light\"]`, and\n`[data-bs-theme=\"dark\"]`, so the light/dark toggle changed nothing. The site\nalso rendered Bootstrap's stock blue instead of its intended accent.\n\nSplit the shared palette so light mode uses a pure white canvas with the\nlight-mode palette and dark mode uses a pure black canvas with the dark-mode\npalette, and keep the pre-stylesheet paint and footer on the active mode.\nAssign `$primary` to `#7c3aed` before Bootstrap compiles, so links, buttons,\nbadges, focus rings, and the dark-mode link tint all derive from one value\nrather than from a site-local copy.\n\nBoth files stay in the reusable shell; the apex site consumes them through\nthe existing declared exports and no longer carries the footer's own blue.\n\nOpenSpec-Change: projects/hugo_landing/openspec/changes/restore-light-dark-canvas-and-accent\n\nLLM-disclaimer: This commit was generated by an LLM.\n"
+            }
+        ]
+    }
+}

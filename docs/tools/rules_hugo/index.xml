@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Rules Hugo on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/docs/tools/rules_hugo/</link>
+		<description>Recent content in Rules Hugo on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/docs/tools/rules_hugo/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title></title>
+				<link>https://www-staging.alwaldend.com/docs/tools/rules_hugo/openspec/specs/project-dns/spec/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/rules_hugo/openspec/specs/project-dns/spec/</guid>
+				<description>&lt;h1 id=&#34;project-dns-specification&#34;&gt;project-dns Specification&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#project-dns-specification&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#purpose&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Record the retirement of &lt;code&gt;rules_hugo&lt;/code&gt; landing infrastructure while preserving&#xA;its reusable Bazel module.&lt;/p&gt;&#xA;&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirements&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id=&#34;requirement-keep-landing-infrastructure-retired&#34;&gt;Requirement: Keep landing infrastructure retired&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirement-keep-landing-infrastructure-retired&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The module SHALL follow the &lt;a href=&#34;https://www-staging.alwaldend.com/docs/tools/&#34;&gt;tools boundary&lt;/a&gt; and SHALL&#xA;have no dedicated landing DNS declarations, Terraform root, or operational&#xA;source exports.&lt;/p&gt;&#xA;&lt;h4 id=&#34;scenario-inspect-the-module-after-landing-retirement&#34;&gt;Scenario: Inspect the module after landing retirement&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#scenario-inspect-the-module-after-landing-retirement&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;WHEN&lt;/strong&gt; the module is consumed from &lt;code&gt;tools/rules_hugo&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;THEN&lt;/strong&gt; its reusable Bazel rules remain available without landing infrastructure.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title></title>
+				<link>https://www-staging.alwaldend.com/docs/tools/rules_hugo/openspec/specs/project-rules-hugo/spec/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/rules_hugo/openspec/specs/project-rules-hugo/spec/</guid>
+				<description>&lt;h1 id=&#34;rules-hugo&#34;&gt;Rules Hugo&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#rules-hugo&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#purpose&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Build and run Hugo sites with registered Bazel toolchains, site source archives,&#xA;and declared PostCSS tooling. This source baseline was observed on 2026-09-08&#xA;at revision &lt;code&gt;550d7e79b1f5fdbc2b6017b75178471d6914082f&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Sources: &lt;a href=&#34;https://www-staging.alwaldend.com/docs/tools/rules_hugo/&#34;&gt;project description&lt;/a&gt;,&#xA;&lt;a href=&#34;../../../pkg/bzl/al_hugo_site.bzl&#34;&gt;site provider rule&lt;/a&gt;,&#xA;&lt;a href=&#34;../../../pkg/bzl/al_hugo_run_binary.bzl&#34;&gt;build rule&lt;/a&gt;,&#xA;&lt;a href=&#34;../../../pkg/bzl/al_hugo_extension.bzl&#34;&gt;toolchain extension&lt;/a&gt;,&#xA;and &lt;a href=&#34;../../../pkg/bzl/al_hugo_worker.bzl&#34;&gt;worker rule&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirements&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id=&#34;requirement-separate-site-inputs-from-execution-tools&#34;&gt;Requirement: Separate site inputs from execution tools&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#requirement-separate-site-inputs-from-execution-tools&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;code&gt;al_hugo_site&lt;/code&gt; SHALL retain the &lt;code&gt;.tar&lt;/code&gt; site archive in the target configuration&#xA;and resolve its executable PostCSS dependency in the execution configuration.&#xA;Build rules SHALL obtain Hugo from the registered Hugo toolchain.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

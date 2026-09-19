@@ -1,0 +1,2870 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js" data-theme-init>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000000">
+
+<style>
+  html { background: Canvas; color: CanvasText; }
+  @media (prefers-color-scheme: dark) {
+    html { background: #0b0d12; color: #e6e6e6; }
+  }
+  html[data-theme-init] * { transition: none !important; }
+</style>
+
+<script>
+  (function() {
+    const themeKey = 'td-color-theme';
+    const storedTheme = localStorage.getItem(themeKey);
+    let theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (theme === 'auto') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
+<link rel="alternate" type="application/rss&#43;xml" href="https://www-staging.alwaldend.com/categories/infra/index.xml">
+<meta name="robots" content="index, follow">
+
+<title>Infra | Alwaldend</title>
+<meta name="description" content="">
+<meta property="og:url" content="https://www-staging.alwaldend.com/categories/infra/">
+	<meta property="og:site_name" content="Alwaldend">
+	<meta property="og:title" content="Infra">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="Infra">
+	<meta itemprop="dateModified" content="2026-09-19T20:06:21+03:00">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Infra">
+<link rel="preload" href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" as="style" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<link href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" rel="stylesheet" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-term">
+    <header>
+      <nav class="td-navbar js-navbar-scroll">
+<div class="td-navbar-container container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">Alwaldend</span></a>
+  <div class="td-navbar__main td-navbar-nav-scroll td-navbar-nav-scroll--indicator" id="main_navbar">
+    <div class="scroll-indicator scroll-left"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/projects/"><span>Projects</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item td-navbar__light-dark-menu">
+        <div class="td-light-dark-menu dropdown"><svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+<button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        title="Toggle theme (Auto)"
+        aria-label="Toggle theme (Auto)">
+  <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="bd-theme">
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
+      Light
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>
+      Dark
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+      <svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>
+      Auto
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+</ul>
+</div>
+
+      </li>
+      </ul>
+    <div class="scroll-indicator scroll-right"></div>
+  </div>
+  <div class="td-navbar__search d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon" aria-hidden="true"></div>
+  <input
+    type="search"
+    name="q"
+    class="td-search__input form-control"
+    placeholder='Search this site…'
+    aria-label='Search this site…'
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <div class="td-content">
+  <main class="taxonomy-taxonomy-page">
+    <h1>Category: <span>Infra</span></h1>
+    <div>
+      
+    </div>
+    <div>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/">Infra</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    Infra</li>
+  </ol>
+</nav><p>Infrastructure tree</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/arch/openspec/spec/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/arch/">Architecture</a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/ceph/openspec/spec/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/ceph/">Ceph</a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/dns/openspec/spec/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/dns/">Dns</a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/flux/openspec/specs/infra-flux/spec/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/flux/">flux</a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/flux/openspec/specs/owned-dns/spec/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/flux/">flux</a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/forgejo/openspec/specs/infra-forgejo/spec/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/forgejo/">forgejo</a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/forgejo/openspec/specs/owned-dns/spec/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/forgejo/">forgejo</a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/forgejo_runner/openspec/specs/infra-forgejo-runner/spec/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/forgejo_runner/">Forgejo runner</a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/forgejo_runner/openspec/specs/owned-dns/spec/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/forgejo_runner/">Forgejo runner</a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/github/openspec/spec/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/github/">GitHub</a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/harbor/openspec/specs/infra-harbor/spec/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/harbor/">harbor</a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/harbor/openspec/specs/owned-dns/spec/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/harbor/">harbor</a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/ingress/openspec/specs/infra-ingress/spec/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/ingress/">ingress</a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/ingress/openspec/specs/owned-dns/spec/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/ingress/">ingress</a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/mikrotik/openspec/specs/infra-mikrotik/spec/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/mikrotik/">Mikrotik</a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/mikrotik/openspec/specs/owned-dns/spec/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/mikrotik/">Mikrotik</a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/mikrotik/tf/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/mikrotik/">Mikrotik</a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/nas/openspec/specs/infra-nas/spec/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/nas/">Nas</a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/nas/openspec/specs/owned-dns/spec/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/nas/">Nas</a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/nas/tf/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/nas/">Nas</a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/openhands/openspec/spec/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/openhands/">OpenHands</a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/pve/openspec/specs/infra-pve/spec/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/pve/">Pve</a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/pve/openspec/specs/owned-dns/spec/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/pve/">Pve</a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/repos/openspec/spec/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/repos/">Repositories</a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/src/openspec/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/src/">Source repository</a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/src/openspec/migration/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/src/">Source repository</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/src/openspec/"></a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/src/openspec/specs/go-mod-version/spec/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/src/">Source repository</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/src/openspec/"></a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/src/openspec/specs/repository/spec/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/src/">Source repository</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/src/openspec/"></a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/threexui/openspec/specs/infra-threexui/spec/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/threexui/">threexui</a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/threexui/openspec/specs/owned-dns/spec/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/threexui/">threexui</a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/vault/openspec/specs/infra-vault/spec/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/vault/">Vault</a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/vault/openspec/specs/owned-dns/spec/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/vault/">Vault</a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/xcp_ng/openspec/specs/infra-xcp-ng/spec/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/xcp_ng/">XCP-ng</a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/xcp_ng/openspec/specs/owned-dns/spec/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/xcp_ng/">XCP-ng</a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/yandex_cloud/openspec/spec/"></a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/yandex_cloud/">Yandex Cloud</a></li>
+  <li class="td-breadcrumbs__item">
+    </li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/flux/ansible/">Ansible</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/flux/">flux</a></li>
+  <li class="td-breadcrumbs__item">
+    Ansible</li>
+  </ol>
+</nav><p>Ansible setup</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible/" data-taxonomy-term="ansible"><span class="taxonomy-label">Ansible</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/forgejo/ansible/">Ansible</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/forgejo/">forgejo</a></li>
+  <li class="td-breadcrumbs__item">
+    Ansible</li>
+  </ol>
+</nav><p>Ansible setup</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible/" data-taxonomy-term="ansible"><span class="taxonomy-label">Ansible</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/forgejo_runner/ansible/">Ansible</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/forgejo_runner/">Forgejo runner</a></li>
+  <li class="td-breadcrumbs__item">
+    Ansible</li>
+  </ol>
+</nav><p>Forgejo runner configuration</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible/" data-taxonomy-term="ansible"><span class="taxonomy-label">Ansible</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/harbor/ansible/">Ansible</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/harbor/">harbor</a></li>
+  <li class="td-breadcrumbs__item">
+    Ansible</li>
+  </ol>
+</nav><p>Ansible setup</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible/" data-taxonomy-term="ansible"><span class="taxonomy-label">Ansible</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/ingress/ansible/">Ansible</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/ingress/">ingress</a></li>
+  <li class="td-breadcrumbs__item">
+    Ansible</li>
+  </ol>
+</nav><p>Ansible setup</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible/" data-taxonomy-term="ansible"><span class="taxonomy-label">Ansible</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/openhands/ansible/">Ansible</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/openhands/">OpenHands</a></li>
+  <li class="td-breadcrumbs__item">
+    Ansible</li>
+  </ol>
+</nav><p>OpenHands deployment</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible/" data-taxonomy-term="ansible"><span class="taxonomy-label">Ansible</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/pve/ansible/">Ansible</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/pve/">Pve</a></li>
+  <li class="td-breadcrumbs__item">
+    Ansible</li>
+  </ol>
+</nav><p>Ansible setup</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible/" data-taxonomy-term="ansible"><span class="taxonomy-label">Ansible</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/threexui/ansible/">Ansible</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/threexui/">threexui</a></li>
+  <li class="td-breadcrumbs__item">
+    Ansible</li>
+  </ol>
+</nav><p>Ansible setup</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible/" data-taxonomy-term="ansible"><span class="taxonomy-label">Ansible</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/vault/ansible/">Ansible</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/vault/">Vault</a></li>
+  <li class="td-breadcrumbs__item">
+    Ansible</li>
+  </ol>
+</nav><p>Ansible setup</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible/" data-taxonomy-term="ansible"><span class="taxonomy-label">Ansible</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/arch/">Architecture</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    Architecture</li>
+  </ol>
+</nav><p>Rendered infrastructure architecture diagrams</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/arch/" data-taxonomy-term="arch"><span class="taxonomy-label">Arch</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/drawio/" data-taxonomy-term="drawio"><span class="taxonomy-label">Drawio</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/ceph/">Ceph</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    Ceph</li>
+  </ol>
+</nav><p>Ceph</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ceph/" data-taxonomy-term="ceph"><span class="taxonomy-label">Ceph</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/flux/cl/">cl</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/flux/">flux</a></li>
+  <li class="td-breadcrumbs__item">
+    cl</li>
+  </ol>
+</nav><p>Cluster manifests</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/flux/" data-taxonomy-term="flux"><span class="taxonomy-label">Flux</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/k8s/" data-taxonomy-term="k8s"><span class="taxonomy-label">K8s</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/harbor/cl/">cl</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/harbor/">harbor</a></li>
+  <li class="td-breadcrumbs__item">
+    cl</li>
+  </ol>
+</nav><p>Cluster manifests</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/k8s/" data-taxonomy-term="k8s"><span class="taxonomy-label">K8s</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/flux/" data-taxonomy-term="flux"><span class="taxonomy-label">Flux</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/cloud_init/">Cloud-init</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    Cloud-init</li>
+  </ol>
+</nav><p>Shared PVE-based infrastructure VM bootstrap configuration</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/dns/cloudflare_dns/">Cloudflare DNS</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/dns/">Dns</a></li>
+  <li class="td-breadcrumbs__item">
+    Cloudflare DNS</li>
+  </ol>
+</nav><p>Records declared for the public zone served by Cloudflare</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/dns/">Dns</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    Dns</li>
+  </ol>
+</nav><p>Project-owned DNS declarations for alwaldend.com</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/dns/" data-taxonomy-term="dns"><span class="taxonomy-label">Dns</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/terraform/" data-taxonomy-term="terraform"><span class="taxonomy-label">Terraform</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/flux/">flux</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    flux</li>
+  </ol>
+</nav><p>Fluxcd deployment</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/flux/" data-taxonomy-term="flux"><span class="taxonomy-label">Flux</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible/" data-taxonomy-term="ansible"><span class="taxonomy-label">Ansible</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/pve/" data-taxonomy-term="pve"><span class="taxonomy-label">Pve</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/k3s/" data-taxonomy-term="k3s"><span class="taxonomy-label">K3s</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/forgejo/">forgejo</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    forgejo</li>
+  </ol>
+</nav><p>git.alwaldend.com</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible/" data-taxonomy-term="ansible"><span class="taxonomy-label">Ansible</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/xcp-ng/" data-taxonomy-term="xcp-ng"><span class="taxonomy-label">Xcp-Ng</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/forgejo/" data-taxonomy-term="forgejo"><span class="taxonomy-label">Forgejo</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/forgejo_runner/">Forgejo runner</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    Forgejo runner</li>
+  </ol>
+</nav><p>Forgejo Actions runner deployment</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/forgejo/" data-taxonomy-term="forgejo"><span class="taxonomy-label">Forgejo</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible/" data-taxonomy-term="ansible"><span class="taxonomy-label">Ansible</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/pve/" data-taxonomy-term="pve"><span class="taxonomy-label">Pve</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/github/">GitHub</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    GitHub</li>
+  </ol>
+</nav><p>GitHub organization, repositories, access, and Pages configuration</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/github/tf/">GitHub Terraform</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/github/">GitHub</a></li>
+  <li class="td-breadcrumbs__item">
+    GitHub Terraform</li>
+  </ol>
+</nav><p>GitHub organization, repository, access, and Pages management</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/gitlab/">GitLab</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    GitLab</li>
+  </ol>
+</nav><p>GitLab resource management</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/gitlab/tf/">GitLab Terraform</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/gitlab/">GitLab</a></li>
+  <li class="td-breadcrumbs__item">
+    GitLab Terraform</li>
+  </ol>
+</nav><p>GitLab groups, memberships, repository imports, and forks</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/harbor/">harbor</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    harbor</li>
+  </ol>
+</nav><p>Harbor deployment</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/harbor/" data-taxonomy-term="harbor"><span class="taxonomy-label">Harbor</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible/" data-taxonomy-term="ansible"><span class="taxonomy-label">Ansible</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/pve/" data-taxonomy-term="pve"><span class="taxonomy-label">Pve</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/ingress/">ingress</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    ingress</li>
+  </ol>
+</nav><p>ingress</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ingress/" data-taxonomy-term="ingress"><span class="taxonomy-label">Ingress</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/public/" data-taxonomy-term="public"><span class="taxonomy-label">Public</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/traefik/" data-taxonomy-term="traefik"><span class="taxonomy-label">Traefik</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/mikrotik/">Mikrotik</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    Mikrotik</li>
+  </ol>
+</nav><p>Mikrotik setup for dc1.alwaldend.com</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-languages">
+  <h5 class="taxonomy-title">Languages:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/languages/rsc/" data-taxonomy-term="rsc"><span class="taxonomy-label">Rsc</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/mikrotik/" data-taxonomy-term="mikrotik"><span class="taxonomy-label">Mikrotik</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/dns/mikrotik_dns/">Mikrotik DNS</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/dns/">Dns</a></li>
+  <li class="td-breadcrumbs__item">
+    Mikrotik DNS</li>
+  </ol>
+</nav><p>Records declared for the internal dc1 view served by RouterOS</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/nas/">Nas</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    Nas</li>
+  </ol>
+</nav><p>TrueNAS deploy</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/nas/" data-taxonomy-term="nas"><span class="taxonomy-label">Nas</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/truenas/" data-taxonomy-term="truenas"><span class="taxonomy-label">Truenas</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/openhands/">OpenHands</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    OpenHands</li>
+  </ol>
+</nav><p>openhands.alwaldend.com</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/openhands/" data-taxonomy-term="openhands"><span class="taxonomy-label">Openhands</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/traefik/" data-taxonomy-term="traefik"><span class="taxonomy-label">Traefik</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/terraform/" data-taxonomy-term="terraform"><span class="taxonomy-label">Terraform</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible/" data-taxonomy-term="ansible"><span class="taxonomy-label">Ansible</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/yandex_cloud/org1/">Org1</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/yandex_cloud/">Yandex Cloud</a></li>
+  <li class="td-breadcrumbs__item">
+    Org1</li>
+  </ol>
+</nav><p>Organization 1</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/terraform/" data-taxonomy-term="terraform"><span class="taxonomy-label">Terraform</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/vault/tf/output/">Output</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/vault/">Vault</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/vault/tf/">Tf</a></li>
+  <li class="td-breadcrumbs__item">
+    Output</li>
+  </ol>
+</nav><p>Output files</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/pve/">Pve</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    Pve</li>
+  </ol>
+</nav><p>Proxmox cluster pve.alwaldend.com</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible/" data-taxonomy-term="ansible"><span class="taxonomy-label">Ansible</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/pve/" data-taxonomy-term="pve"><span class="taxonomy-label">Pve</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/repos/">Repositories</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    Repositories</li>
+  </ol>
+</nav><p>Shared organization, repository, and access configuration</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/repos/tf/">Repository catalog module</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/repos/">Repositories</a></li>
+  <li class="td-breadcrumbs__item">
+    Repository catalog module</li>
+  </ol>
+</nav><p></p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/dns/tf/">Shared DNS Terraform</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/dns/">Dns</a></li>
+  <li class="td-breadcrumbs__item">
+    Shared DNS Terraform</li>
+  </ol>
+</nav><p>Owner state for common apex and mail records</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/terraform/" data-taxonomy-term="terraform"><span class="taxonomy-label">Terraform</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/src/">Source repository</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    Source repository</li>
+  </ol>
+</nav><p>Repository evolution specifications and workflow history</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/threexui/sub/">sub</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/threexui/">threexui</a></li>
+  <li class="td-breadcrumbs__item">
+    sub</li>
+  </ol>
+</nav><p>Fetch subscriptions and fix them</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-languages">
+  <h5 class="taxonomy-title">Languages:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/languages/go/" data-taxonomy-term="go"><span class="taxonomy-label">Go</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/vpn/" data-taxonomy-term="vpn"><span class="taxonomy-label">Vpn</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/xray/" data-taxonomy-term="xray"><span class="taxonomy-label">Xray</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/xcp_ng/tf/">Terraform</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/xcp_ng/">XCP-ng</a></li>
+  <li class="td-breadcrumbs__item">
+    Terraform</li>
+  </ol>
+</nav><p>AppRole resource sets and Vault-backed Xen Orchestra authentication</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/forgejo_runner/tf_setup/">Terraform setup</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/forgejo_runner/">Forgejo runner</a></li>
+  <li class="td-breadcrumbs__item">
+    Terraform setup</li>
+  </ol>
+</nav><p>Forgejo runner VM</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/terraform/" data-taxonomy-term="terraform"><span class="taxonomy-label">Terraform</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/pve/" data-taxonomy-term="pve"><span class="taxonomy-label">Pve</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/forgejo/tf/">Tf</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/forgejo/">forgejo</a></li>
+  <li class="td-breadcrumbs__item">
+    Tf</li>
+  </ol>
+</nav><p>Terraform config</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/terraform/" data-taxonomy-term="terraform"><span class="taxonomy-label">Terraform</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/harbor/tf/">Tf</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/harbor/">harbor</a></li>
+  <li class="td-breadcrumbs__item">
+    Tf</li>
+  </ol>
+</nav><p>Terraform config</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/terraform/" data-taxonomy-term="terraform"><span class="taxonomy-label">Terraform</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/ingress/tf/">Tf</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/ingress/">ingress</a></li>
+  <li class="td-breadcrumbs__item">
+    Tf</li>
+  </ol>
+</nav><p>Terraform config</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/terraform/" data-taxonomy-term="terraform"><span class="taxonomy-label">Terraform</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/pve/tf/">Tf</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/pve/">Pve</a></li>
+  <li class="td-breadcrumbs__item">
+    Tf</li>
+  </ol>
+</nav><p>Terraform config</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/terraform/" data-taxonomy-term="terraform"><span class="taxonomy-label">Terraform</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/threexui/tf/">Tf</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/threexui/">threexui</a></li>
+  <li class="td-breadcrumbs__item">
+    Tf</li>
+  </ol>
+</nav><p>Terraform config</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/terraform/" data-taxonomy-term="terraform"><span class="taxonomy-label">Terraform</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/vault/tf/">Tf</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/vault/">Vault</a></li>
+  <li class="td-breadcrumbs__item">
+    Tf</li>
+  </ol>
+</nav><p>Terraform config</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/terraform/" data-taxonomy-term="terraform"><span class="taxonomy-label">Terraform</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/yandex_cloud/org1/tf/">Tf</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/yandex_cloud/">Yandex Cloud</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/yandex_cloud/org1/">Org1</a></li>
+  <li class="td-breadcrumbs__item">
+    Tf</li>
+  </ol>
+</nav><p>Terraform config</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/terraform/" data-taxonomy-term="terraform"><span class="taxonomy-label">Terraform</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/flux/tf_setup/">Tf setup</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/flux/">flux</a></li>
+  <li class="td-breadcrumbs__item">
+    Tf setup</li>
+  </ol>
+</nav><p>Terraform setup</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/terraform/" data-taxonomy-term="terraform"><span class="taxonomy-label">Terraform</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/pve/" data-taxonomy-term="pve"><span class="taxonomy-label">Pve</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/forgejo/tf_setup/">Tf setup</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/forgejo/">forgejo</a></li>
+  <li class="td-breadcrumbs__item">
+    Tf setup</li>
+  </ol>
+</nav><p>Terraform setup</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/terraform/" data-taxonomy-term="terraform"><span class="taxonomy-label">Terraform</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/xcp-ng/" data-taxonomy-term="xcp-ng"><span class="taxonomy-label">Xcp-Ng</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/harbor/tf_setup/">Tf setup</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/harbor/">harbor</a></li>
+  <li class="td-breadcrumbs__item">
+    Tf setup</li>
+  </ol>
+</nav><p>Terraform setup</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/terraform/" data-taxonomy-term="terraform"><span class="taxonomy-label">Terraform</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/pve/" data-taxonomy-term="pve"><span class="taxonomy-label">Pve</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/openhands/tf_setup/">Tf setup</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/openhands/">OpenHands</a></li>
+  <li class="td-breadcrumbs__item">
+    Tf setup</li>
+  </ol>
+</nav><p>Terraform setup</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/terraform/" data-taxonomy-term="terraform"><span class="taxonomy-label">Terraform</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/xcp-ng/" data-taxonomy-term="xcp-ng"><span class="taxonomy-label">Xcp-Ng</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/threexui/tf_setup/">Tf setup</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/threexui/">threexui</a></li>
+  <li class="td-breadcrumbs__item">
+    Tf setup</li>
+  </ol>
+</nav><p>Terraform setup</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/terraform/" data-taxonomy-term="terraform"><span class="taxonomy-label">Terraform</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/pve/" data-taxonomy-term="pve"><span class="taxonomy-label">Pve</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/yandex_cloud/" data-taxonomy-term="yandex_cloud"><span class="taxonomy-label">Yandex_cloud</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/vault/tf_setup/">Tf setup</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/vault/">Vault</a></li>
+  <li class="td-breadcrumbs__item">
+    Tf setup</li>
+  </ol>
+</nav><p>Terraform setup</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/terraform/" data-taxonomy-term="terraform"><span class="taxonomy-label">Terraform</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/pve/" data-taxonomy-term="pve"><span class="taxonomy-label">Pve</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/threexui/">threexui</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    threexui</li>
+  </ol>
+</nav><p>3x-ui</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/xray/" data-taxonomy-term="xray"><span class="taxonomy-label">Xray</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/vpn/" data-taxonomy-term="vpn"><span class="taxonomy-label">Vpn</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/vault/">Vault</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    Vault</li>
+  </ol>
+</nav><p>Setup for vault.dc1.alwaldend.com</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/ansible/" data-taxonomy-term="ansible"><span class="taxonomy-label">Ansible</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/terraform/" data-taxonomy-term="terraform"><span class="taxonomy-label">Terraform</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/xcp_ng/">XCP-ng</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    XCP-ng</li>
+  </ol>
+</nav><p>XCP-ng infrastructure</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/terraform/" data-taxonomy-term="terraform"><span class="taxonomy-label">Terraform</span></a></li>
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/tags/xcp-ng/" data-taxonomy-term="xcp-ng"><span class="taxonomy-label">Xcp-Ng</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/xcp_ng/ansible/">Xen Orchestra certificates</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/xcp_ng/">XCP-ng</a></li>
+  <li class="td-breadcrumbs__item">
+    Xen Orchestra certificates</li>
+  </ol>
+</nav><p>Vault ACME certificate issuance and renewal for the XOA appliance</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+        
+        <article class="card article-teaser article-type-docs">
+          <h3><a href="/docs/infra/yandex_cloud/">Yandex Cloud</a></h3>
+          <nav class="td-breadcrumbs">
+  <ol class="td-breadcrumbs__list">
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/">Docs</a></li>
+  <li class="td-breadcrumbs__item">
+    <a href="/docs/infra/">Infra</a></li>
+  <li class="td-breadcrumbs__item">
+    Yandex Cloud</li>
+  </ol>
+</nav><p>Yandex Cloud (yandex.cloud)</p>
+          <header class="article-meta">
+            <div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    <li><a class="taxonomy-term" href="https://www-staging.alwaldend.com/categories/infra/" data-taxonomy-term="infra"><span class="taxonomy-label">Infra</span></a></li>
+    </ul>
+</div>
+
+</header>
+        </article>
+      
+    </div>
+    <a href="https://www-staging.alwaldend.com/categories/" class="all-taxonomy-terms">All Categories</a>
+  </main>
+</div>
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        Built with <a href="https://gohugo.io/">Hugo 0.165.0</a>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="/js/main.min.259204f469f58eb3b665605a24e964264772df2adaded180b3669b6ce33d84c8.js" integrity="sha256-JZIE9Gn1jrO2ZWBaJOlkJkdy3yra3tGAs2abbOM9hMg=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.decf3b53d8827d840369f490775626e2a5200e150a733f78f0081c126426cbbf.js" integrity="sha256-3s87U9iCfYQDafSQd1Ym4qUgDhUKcz948AgcEmQmy78=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

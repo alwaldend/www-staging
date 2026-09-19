@@ -1,0 +1,575 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js" data-theme-init>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000000">
+
+<style>
+  html { background: Canvas; color: CanvasText; }
+  @media (prefers-color-scheme: dark) {
+    html { background: #0b0d12; color: #e6e6e6; }
+  }
+  html[data-theme-init] * { transition: none !important; }
+</style>
+
+<script>
+  (function() {
+    const themeKey = 'td-color-theme';
+    const storedTheme = localStorage.getItem(themeKey);
+    let theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (theme === 'auto') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
+<link rel="canonical" type="text/html" href="https://www-staging.alwaldend.com/docs/tools/repo_delivery/">
+<link rel="alternate" type="application/rss&#43;xml" href="https://www-staging.alwaldend.com/docs/tools/repo_delivery/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+<title>Repository delivery | Alwaldend</title>
+<meta name="description" content="Guarded Git and pull-request delivery">
+<meta property="og:url" content="https://www-staging.alwaldend.com/docs/tools/repo_delivery/">
+	<meta property="og:site_name" content="Alwaldend">
+	<meta property="og:title" content="Repository delivery">
+	<meta property="og:description" content="Guarded Git and pull-request delivery">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="Repository delivery">
+	<meta itemprop="description" content="Guarded Git and pull-request delivery">
+	<meta itemprop="dateModified" content="2026-09-19T20:06:21+03:00">
+	<meta itemprop="wordCount" content="2867">
+	<meta itemprop="keywords" content="Git,Github">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Repository delivery">
+	<meta name="twitter:description" content="Guarded Git and pull-request delivery">
+<link rel="preload" href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" as="style" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<link href="/scss/main.min.adf4bad97a73ff494b7de11b003afe008151a29a48e90085b5dec494fb91f9d3.css" rel="stylesheet" integrity="sha256-rfS62Xpz/0lLfeEbADr&#43;AIFRoppI6QCFtd7ElPuR&#43;dM=" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll">
+<div class="td-navbar-container container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">Alwaldend</span></a>
+  <div class="td-navbar__main td-navbar-nav-scroll td-navbar-nav-scroll--indicator" id="main_navbar">
+    <div class="scroll-indicator scroll-left"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/blog/"><span>Blog</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/projects/"><span>Projects</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/"><span>Docs</span></a>
+      </li>
+      <li class="nav-item td-navbar__light-dark-menu">
+        <div class="td-light-dark-menu dropdown"><svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+  </symbol>
+</svg>
+<button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        title="Toggle theme (Auto)"
+        aria-label="Toggle theme (Auto)">
+  <svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+  <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="bd-theme">
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#sun-fill"></use></svg>
+      Light
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+      <svg class="bi me-2 opacity-50"><use href="#moon-stars-fill"></use></svg>
+      Dark
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+  <li>
+    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+      <svg class="bi me-2 opacity-50"><use href="#circle-half"></use></svg>
+      Auto
+      <svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+    </button>
+  </li>
+</ul>
+</div>
+
+      </li>
+      </ul>
+    <div class="scroll-indicator scroll-right"></div>
+  </div>
+  <div class="td-navbar__search d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon" aria-hidden="true"></div>
+  <input
+    type="search"
+    name="q"
+    class="td-search__input form-control"
+    placeholder='Search this site…'
+    aria-label='Search this site…'
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.e2805023195935deec6ed13458611af6.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/tools/repo_delivery/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Repository delivery</h1>
+<div class="lead">Guarded Git and pull-request delivery</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+
+    </ul>
+
+
+<div class="content">
+      <p><code>repo_delivery</code> implements the deterministic part of repository delivery. It
+invokes native Git and a selected forge CLI; it does not infer task ownership,
+choose validation commands, resolve conflicts, or judge review feedback.</p>
+<h2 id="print-e5d718520ef5395ddf24170568b5cb5a-provider-and-delivery-workflow">Provider and delivery workflow<a class="td-heading-self-link" href="#print-e5d718520ef5395ddf24170568b5cb5a-provider-and-delivery-workflow" aria-label="Heading self-link"></a></h2><p>Run delivery commands from this Git worktree&rsquo;s repository root, which owns the
+root <code>MODULE.bazel</code> and <code>tools/repo_delivery</code>. This also applies when changed
+files belong to a nested Bazel module: its workspace does not own the delivery
+target. Use the same feature worktree, not another checkout. The baseline works
+with older installed runners. Detect the provider without printing a
+credential-bearing remote URL:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel_agent bazel run //tools/repo_delivery -- provider
+</span></span></code></pre></div><p>The optional cached form is <code>al tool repo_delivery -- ...</code>. An execution
+failure or delivery refusal still requires diagnosis. All examples below use
+the baseline.</p>
+<p>The sanitized report distinguishes forge support from Git transport support.
+<code>adapter_available</code> reports whether the forge has an adapter;
+<code>git_transport</code> reports <code>ssh</code>, <code>https</code>, or <code>mixed_or_unsupported</code>; and
+<code>delivery_transport_available</code> is true only when both captured endpoints are
+canonical SSH endpoints. It never reports either endpoint.</p>
+<p>For validation that invokes Bazel, use the cached entry point or generate a
+task-local launcher once from the repository root. Ordinary <code>bazel run</code> can
+retain the Bazel lock while its target runs; <code>--script_path</code> releases it before
+the generated launcher is executed. Refresh the launcher after changing the
+delivery tool. This requires no installed runner update:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel_agent bazel run --script_path<span style="color:#f92672">=</span>out/task/repo_delivery <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  //tools/repo_delivery
+</span></span></code></pre></div><p>For the supported GitHub adapter, the normal workflow is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel_agent bazel run //tools/repo_delivery -- inspect --base master
+</span></span><span style="display:flex;"><span>bazel_agent bazel run //tools/repo_delivery -- prepare <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --base master <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --message-file out/task/commit.md <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --receipt-file out/task/prepare.json <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --path path/to/task/file <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --rewrite &lt;inspect.local_head_oid&gt; <span style="color:#75715e"># omit when the range has no commit</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># For an explicitly reviewed task-owned multi-commit range, use</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># --consolidate &lt;inspect.local_head_oid&gt; instead of --rewrite.</span>
+</span></span><span style="display:flex;"><span>out/task/repo_delivery validate <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --receipt-file out/task/prepare.json --plan-file out/task/checks.json
+</span></span><span style="display:flex;"><span>out/task/repo_delivery <span style="color:#66d9ef">continue</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --receipt-file out/task/prepare.json --publish
+</span></span><span style="display:flex;"><span>out/task/repo_delivery <span style="color:#66d9ef">continue</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --receipt-file out/task/prepare.json
+</span></span></code></pre></div><p><code>checks.json</code> is an explicitly selected validation plan. Keep it mode 0600 in
+the same ignored <code>out/&lt;task&gt;/</code> directory as the preparation receipt. For
+example, a change confined to the delivery Go package can use:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;schema&#34;</span>: <span style="color:#e6db74">&#34;repo_delivery/validation_plan/v1&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;checks&#34;</span>: [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;workspace&#34;</span>: <span style="color:#e6db74">&#34;.&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;kind&#34;</span>: <span style="color:#e6db74">&#34;test&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;targets&#34;</span>: [
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;//tools/repo_delivery/cmd/repo_delivery:go_test&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;//:repo_quality_test&#34;</span>
+</span></span><span style="display:flex;"><span>      ],
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;timeout_seconds&#34;</span>: <span style="color:#ae81ff">3600</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;workspace&#34;</span>: <span style="color:#e6db74">&#34;.&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;kind&#34;</span>: <span style="color:#e6db74">&#34;lint&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;targets&#34;</span>: [<span style="color:#e6db74">&#34;//tools/repo_delivery/cmd/repo_delivery:all&#34;</span>],
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;timeout_seconds&#34;</span>: <span style="color:#ae81ff">3600</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  ],
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;gap_decisions&#34;</span>: []
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Allowed kinds are <code>test</code>, <code>build</code>, and <code>lint</code> (build with <code>--config=lint</code>).
+The plan accepts 1–32 sequential checks, 1–128 explicit local labels per check,
+and a 1–3600 second deadline per check. Package <code>:all</code> is supported outside the
+root package; recursive target patterns, arbitrary <code>run</code> targets, shell
+commands, and free-form flags are not. Workspace paths are relative to the Git
+worktree root and must name real Bazel workspace roots. Nested checks execute
+there; the required <code>//:repo_quality_test</code> check executes in <code>.</code>. The plan must
+lint every suggested non-root affected package and resolve each validation gap
+with exactly one <code>{ &quot;path&quot;: &quot;...&quot;, &quot;reason&quot;: &quot;...&quot; }</code> decision. The caller
+still selects sufficient consumer checks and verifies representative output.</p>
+<p><code>validate</code> runs aggregate <code>git diff --check</code> first, then the selected checks.
+It requires a fully clean worktree and ordinary index flags before and after
+checks. It records exact head/tree, preparation revision, plan bytes, inherited
+environment digest, check outcomes, and log digests beside the receipt, using
+mode 0600 files. Each output stream is capped at 96 KiB; truncation fails the
+check. The same receipt lock protects validation and continuation. Keep all
+these files trusted and unedited; they are consistency evidence, not security
+tokens. Tool binaries, ignored configuration, external services, and other
+inputs outside the recorded Git tree/environment still require the caller&rsquo;s
+input-stability judgment before publication. No passing checks are reused
+automatically by a new validation run.</p>
+<p><code>continue</code> reports readiness without publishing. Only <code>continue --publish</code>
+uses the captured passing result to call the existing guarded publication and
+verification path; it never substitutes the current mutable <code>HEAD</code> as evidence.
+Changed candidate, receipt, plan, environment, incomplete results, altered
+logs, and dirty inputs refuse publication. A base rebase records
+<code>revalidation_required</code> and stops before pushing: rerun <code>validate</code> against the
+updated receipt, then explicitly continue. An interrupted or failed publication
+remains <code>publication_attempted</code>; further continuation only verifies its remote
+postcondition and never blindly repeats a push or metadata mutation. Diagnose
+an incomplete result before using the existing manual recovery API. A new
+validation run cannot reset an uncertain attempt for the same candidate.</p>
+<p><code>prepare</code> derives <code>affected_bazel_labels</code> from the prepared aggregate changed
+paths, selecting each nearest non-root Bazel package. It never infers <code>//:all</code>
+from a root-owned file. The reported
+<code>bazel_selection_basis</code> is <code>nearest_non_root_package_without_dependency_analysis</code>:
+this bounds discovery but does not establish downstream impact. Shared build
+inputs may need explicit consumer checks.</p>
+<p><code>bazel_validation_gaps</code> lists paths requiring a separate decision, with reasons
+<code>root_package_requires_explicit_targets</code>, <code>ignored_by_root_workspace</code>,
+<code>nested_workspace</code>, or <code>no_bazel_package</code>. For each gap, select appropriate
+targets or record why no target check applies. Validate nested or ignored
+workspaces through their owner, then return to the repository root for delivery.
+The suggested commands always include the root-workspace gate
+<code>bazel_agent bazel test //:repo_quality_test</code>; that gate does not establish
+semantic correctness for BUILD, MODULE, or configuration changes. Run semantic
+lint for the selected affected targets in addition to that mandatory gate.</p>
+<p>To synchronize a prepared, task-owned, single-commit feature branch with an
+advanced base before <code>prepare</code>, use the guarded adapter workflow:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel_agent bazel run //tools/repo_delivery -- rebase --base master
+</span></span></code></pre></div><p>The command refuses dirty trees, divergent remote feature tips, multi-commit
+or merge-containing ranges, and pull-request metadata changes. It fetches
+fresh refs, replays the commit in an isolated worktree, preserves signature
+requirements, pushes only with the captured remote feature lease, verifies
+base advancement, and reports the literal resulting head. Run required
+validations against that head before <code>prepare</code> and <code>publish</code>.</p>
+<p>Remote rewrites use <code>rewrite-authorize</code> to write a typed, non-authorizing
+authorization receipt (old remote OID, new head OID, owner root, task paths,
+provider ownership), then <code>prepare --rewrite-authorization &lt;file&gt;</code> instead of
+raw <code>--replace-remote</code> handoff. Review replies accept <code>--goal-ref</code>,
+<code>--delivery-ref</code>, and <code>--defect-id</code> durable join references.</p>
+<p><code>prepare</code> refuses a divergent remote feature tip by default. Use
+<code>--replace-remote &lt;literal-inspect.remote_head_oid&gt;</code> only after the
+<code>git-rebase-remote</code> workflow has preserved that exact old tip and established
+that it is task-owned history the user authorized rewriting. Never infer the
+OID or use this escape hatch for shared, stacked, human-owned, unrelated, or
+ambiguous history. A mismatched, malformed, absent, or unnecessary
+authorization is refused. The final fresh snapshot and preparation receipt
+bind the same old remote OID for the later exact force-with-lease push.</p>
+<p><code>prepare --consolidate &lt;literal-inspect.local_head_oid&gt;</code> is the explicit
+ownership authorization for replacing a multi-commit feature range with one
+aggregate commit. It is not inferred from author names. The adapter still
+requires a merge-free linear chain, one author and committer identity across
+the range, the ownership disclaimer on its oldest commit, pull-request
+metadata matching the requested aggregate message, and the exact inspected
+head.
+It preserves any signature requirement found in the range and keeps the
+fetched remote feature tip as the publication lease. <code>--consolidate</code> and
+<code>--rewrite</code> are mutually exclusive.</p>
+<p>When a clean replay onto an advanced base makes an expected aggregate path
+disappear from the resulting diff, the adapter accepts that shrink only when
+the prior candidate and the new base have byte-identical Git tree entries at
+that path. A new path, a non-identical disappearance, or an entirely empty
+aggregate remains a refusal. The derived receipt records the reduced exact
+aggregate path set.</p>
+<p>The manual <code>publish --receipt-file &lt;path&gt; --validated-head &lt;literal-head_oid&gt;</code>
+API remains available for validations outside the structured plan and diagnosed
+recovery. Never populate that flag by resolving current <code>HEAD</code>: carry the
+literal candidate that the checks covered. A preparation receipt alone does
+not establish validation. The structured continuation path supplies that
+literal value from its recorded passing results instead.</p>
+<p>For message-only amendments, <code>deliver --message-file &lt;path&gt; --receipt-file &lt;path&gt; --owner-root &lt;root&gt; --task-path &lt;path&gt;</code> combines inspection, any needed
+rewrite authorization, and preparation. It stops before publication with a
+nonzero exit and a <code>revalidation_required</code> report containing the exact head,
+tree, receipt, affected labels, and suggested checks. Establish validation for
+that candidate using <code>validate</code>, then use <code>continue --publish</code>, or use the
+manual <code>publish</code> API and <code>verify</code>. Do not repeat <code>deliver</code> to continue, because
+that prepares another candidate.</p>
+<p>Version 1 delivery accepts only SCP-style or <code>ssh://</code> Git fetch and push
+endpoints. The <code>gh</code> CLI is still used for the GitHub forge API, but the tool
+does not import mutable global credential-helper configuration installed by
+<code>gh auth setup-git</code>. An HTTPS Git remote is therefore rejected before
+<code>inspect</code>, preparation, or publication performs network access. Configure an
+SSH remote explicitly before using delivery; the tool will not rewrite the
+repository&rsquo;s remote configuration for you.</p>
+<p><code>prepare</code> writes a strict versioned receipt under an ignored
+<code>out/&lt;task&gt;/</code> directory. The receipt binds the prepared head and tree to the
+exact worktree and Git directories, fetch and push endpoint digests, sanitized
+repository identity, forge adapter, base and head refs, fetched base, expected
+remote feature ref, expected pull-request identity or absence, and immutable
+aggregate path scope. The file contains no
+remote URL, must remain untracked, and is installed with mode 0600 by atomic
+rename. It is a consistency record, not an unforgeable authorization token.</p>
+<p>The adjacent receipt lock serializes receipt transitions and reads performed
+by cooperating <code>repo_delivery</code> processes. Keep the ignored receipt path
+trusted and do not edit, replace, copy over, or otherwise write it while
+<code>prepare</code>, <code>publish</code>, or receipt-bound <code>verify</code> is running. Stable byte and
+revision checks detect changes visible before their checks, but operating
+systems do not provide a portable atomic
+pathname-content compare-and-swap. A same-user process that ignores the lock
+can race the final comparison and rename; the tool does not claim to exclude
+that writer. A persistent exclusive revision-claim sidecar would have the same
+trust boundary, while a crash before installation could strand the receipt
+without a safe automatic cleanup decision, so it is not used.</p>
+<p>Use repeated <code>--path</code> flags for fully task-owned paths, or pre-stage only
+task-owned hunks and use <code>--use-index</code>. Both modes bind the complete existing
+feature diff, not merely the paths newly staged by that invocation.
+<code>--message-only --rewrite &lt;exact-oid&gt;</code> preserves the tree but changes the
+commit OID. Consolidation also changes the commit OID and parent structure.
+Every prepare, consolidation, or message-only amendment therefore requires a
+validation decision bound to its returned exact head. Run required checks
+after preparation by default. For a tree-preserving amendment, prior passing
+evidence may be reused only after recording its exact prior candidate, the
+matching tree OID, the new OID, and unchanged inputs relevant to each check.
+Those inputs include commands, tools, configuration, and environment. Rerun
+checks affected by commit identity, history, or stamping, and any check whose
+input stability is unknown. The caller owns and records this applicability
+judgment; the receipt neither proves validation nor authorizes reuse.
+When an authorized remote replacement is pending, rewrite evidence accepts an
+existing pull request only if its metadata matches the exact projectable local
+or fetched-remote commit projection. A legacy remote tail that lacks an
+aggregate disclaimer cannot block a matching local aggregate, and unrelated
+pull-request text remains a refusal.</p>
+<p>Publish and receipt-bound verify require a clean index and reject staged,
+unstaged, or untracked changes in the prepared task scope. They preserve
+unrelated unstaged and untracked files when no rebase is needed. A required
+rebase demands a fully clean worktree and index. Run validation from a clean
+checkout at the literal <code>head_oid</code> whenever unrelated dirty files could affect
+the check; the tool cannot infer a check&rsquo;s input set.</p>
+<p>If the base advances after preparation, <code>publish</code> rebases the exact captured
+commit in an isolated ignored worktree. It then exits nonzero before pushing
+and emits a <code>revalidation_required</code> JSON report containing the new exact head,
+tree, and derived receipt. Validate that returned head directly, then retry
+<code>publish</code> with the same receipt file and the new literal OID. Do not run
+<code>prepare</code> again unless content or the commit message must change. A receipt
+also supports a guarded retry when the remote already equals its prepared head
+but pull-request creation or metadata synchronization stopped partway through.
+Replacement pull-request identities and any state other than the exact prior
+or desired projection are refused. Multi-commit consolidation likewise
+requires an existing pull request to equal the requested aggregate message&rsquo;s
+projection, so consolidation cannot silently replace independently edited
+pull-request text.</p>
+<p>The tool creates commits with Git plumbing and pushes one exact ref with hooks
+disabled. It rejects shallow, promisor, or grafted history and ignores
+replacement objects. Each network operation runs in a fresh private,
+config-free bare Git directory bound to the captured SSH endpoint and the
+repository&rsquo;s canonical object database. It does not load mutable main-repo
+local/worktree URL rewriting, proxy, TLS, SSH-command, or remote
+configuration. Normal DNS resolution and SSH host-key verification still
+apply; the tool does not claim to pin an IP address or server key. Ordinary
+local Git operations still intentionally use repository identity and signing
+configuration. Fetches use isolated temporary refs without pruning, then
+install exact private refs locally; pushes use an exact force-with-lease.
+Repository-required hook checks remain the caller&rsquo;s responsibility and must
+complete before recording the validated OID.</p>
+<p>The feature-ref lease and base-ref checks are separate because Git forges do
+not offer a cross-ref compare-and-swap. If the base advances in the narrow push
+window, the feature ref may be visible briefly before the tool detects the
+race and attempts an exact guarded rollback. Coordinate consumers that react
+immediately to branch-update webhooks.</p>
+<h2 id="print-e5d718520ef5395ddf24170568b5cb5a-review-workflow">Review workflow<a class="td-heading-self-link" href="#print-e5d718520ef5395ddf24170568b5cb5a-review-workflow" aria-label="Heading self-link"></a></h2><p>Start with a bounded structured inventory:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel_agent bazel run //tools/repo_delivery -- review inspect
+</span></span></code></pre></div><p>Carry values from the latest inspection literally. All mutations require the
+pull-request node ID, expected head, and pull-request expectation digest. A
+top-level reply also requires the
+reported last-comment sentinel and top-level inventory digest:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel_agent bazel run //tools/repo_delivery -- review comment <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --pull-request-id &lt;pull_request.id&gt; <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --expected-head &lt;pull_request.head_ref_oid&gt; <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --expected-pull-request-digest &lt;pull_request_expectation_digest&gt; <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --expected-last-top-level-comment <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    &lt;expected_last_top_level_comment&gt; <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --expected-top-level-comments-digest <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    &lt;expected_top_level_comments_digest&gt; <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --body-file out/task/comment.md
+</span></span></code></pre></div><p>Thread replies and resolutions additionally bind the thread, its last comment,
+and its complete expectation digest:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>bazel_agent bazel run //tools/repo_delivery -- review reply <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --pull-request-id &lt;pull_request.id&gt; <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --expected-head &lt;pull_request.head_ref_oid&gt; <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --expected-pull-request-digest &lt;pull_request_expectation_digest&gt; <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --thread-id &lt;review_threads<span style="color:#f92672">[</span>index<span style="color:#f92672">]</span>.id&gt; <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --expected-last-comment-id &lt;review_threads<span style="color:#f92672">[</span>index<span style="color:#f92672">]</span>.comments<span style="color:#f92672">[</span>-1<span style="color:#f92672">]</span>.id&gt; <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --expected-thread-digest &lt;review_threads<span style="color:#f92672">[</span>index<span style="color:#f92672">]</span>.expectation_digest&gt; <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --body-file out/task/reply.md <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --reply-receipt-file out/task/reply.json
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>bazel_agent bazel run //tools/repo_delivery -- review resolve <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --pull-request-id &lt;pull_request.id&gt; <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --expected-head &lt;pull_request.head_ref_oid&gt; <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --expected-pull-request-digest &lt;pull_request_expectation_digest&gt; <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --thread-id &lt;review_threads<span style="color:#f92672">[</span>index<span style="color:#f92672">]</span>.id&gt; <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --expected-last-comment-id &lt;review_threads<span style="color:#f92672">[</span>index<span style="color:#f92672">]</span>.comments<span style="color:#f92672">[</span>-1<span style="color:#f92672">]</span>.id&gt; <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --expected-thread-digest &lt;review_threads<span style="color:#f92672">[</span>index<span style="color:#f92672">]</span>.expectation_digest&gt; <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --reply-receipt-file out/task/reply.json
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>bazel_agent bazel run //tools/repo_delivery -- review request <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --pull-request-id &lt;pull_request.id&gt; <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --expected-head &lt;pull_request.head_ref_oid&gt; <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --expected-pull-request-digest &lt;pull_request_expectation_digest&gt; <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --reviewer &lt;login&gt;
+</span></span></code></pre></div><p>Comment and reply bodies must be ignored files under <code>out/&lt;task&gt;/</code>; the tool
+adds the exact comment disclaimer. Resolution requires the strict reply
+receipt written by <code>review reply</code>, and the receipt must still match the exact
+pull request, head, thread, reply, body, and complete bounded review inventory
+projection. The parent pull-request <code>UpdatedAt</code> is a nondecreasing floor,
+rather than an exact value, because reply side effects can advance it
+asynchronously; every review, top-level comment, thread and thread comment, and
+review request remains bound.
+Reinspect after every mutation and use the newly reported IDs and digests for
+the next one.
+The one-use reply authority expires no more than five minutes after issuance.
+Resolution verifies the authority window and atomically consumes the receipt
+before contacting the provider. If a provider read fails before any resolution
+mutation is attempted, the tool can restore the original unexpired receipt
+without replacing another file or extending its authority window. Only an
+explicit restoration report permits retry with that receipt; no additional
+public reply is needed for that read failure.
+Expiration, semantic or full-inventory mismatch, mutation failure, and an
+unknown mutation outcome still consume authority. Never recreate the receipt
+yourself. Reinspect the remote state and, if resolution remains appropriate,
+leave a fresh reasoned reply to obtain new one-use authority.</p>
+<p>GitHub provides neither compare-and-swap resolution nor a documented monotonic
+review-thread epoch. A human resolve followed by unresolve can therefore be
+unobservable if it restores identical thread and pull-request state inside the
+five-minute authority window. The exact-state checks, short expiration, and
+one-use consumption narrow that risk; they do not prove that such an ABA or a
+change to provider metadata omitted from the bounded projection did not occur.
+Do not resolve a thread that may be concurrently moderated.</p>
+<p>GitHub does not expose atomic compare-and-swap mutations for pull-request
+metadata, comments, replies, resolutions, or review requests. The adapter
+checks exact expectations before each mutation and verifies the complete
+result afterward, but a concurrent human change can still occur inside that
+narrow provider-side window. Do not mutate an actively coedited pull request.
+Post-mutation inspection failures are reported as outcome unknown; reinspect
+instead of retrying blindly.</p>
+<h2 id="print-e5d718520ef5395ddf24170568b5cb5a-forge-adapters">Forge adapters<a class="td-heading-self-link" href="#print-e5d718520ef5395ddf24170568b5cb5a-forge-adapters" aria-label="Heading self-link"></a></h2><p>GitHub is supported through the <code>gh</code> CLI. Forge behavior is selected behind a
+Go interface and uses argument-vector subprocess calls, so another structured
+CLI adapter can be added without changing delivery policy. <code>--forge auto</code>
+selects GitHub for <code>github.com</code>; use
+<code>--forge github --forge-cli &lt;gh-path&gt;</code> to select an explicit executable.
+Unknown or unsupported forges fail before any commit rewrite or push.</p>
+<p>Version 1 is limited to same-repository pull requests. It cannot reliably
+discover or map an upstream pull request whose head lives in a fork. Treat
+same-repository topology as a caller-enforced precondition: do not use the
+delivery or review commands for a fork-based or otherwise cross-repository
+pull request, and stop when remote or pull-request ownership is uncertain.
+The adapter fails closed when it observes an unsupported or inconsistent
+topology, but that refusal is not a substitute for this caller check.</p>
+<p>The read-only <code>provider</code> command recognizes known Forgejo hosts, but there is
+currently no Forgejo delivery adapter. Use the repository&rsquo;s documented
+Forgejo compatibility workflow instead of pretending GitHub operations are
+portable.</p>
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        Built with <a href="https://gohugo.io/">Hugo 0.165.0</a>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="/js/main.min.259204f469f58eb3b665605a24e964264772df2adaded180b3669b6ce33d84c8.js" integrity="sha256-JZIE9Gn1jrO2ZWBaJOlkJkdy3yra3tGAs2abbOM9hMg=" crossorigin="anonymous"></script>
+<script defer src="/js/click-to-copy.min.decf3b53d8827d840369f490775626e2a5200e150a733f78f0081c126426cbbf.js" integrity="sha256-3s87U9iCfYQDafSQd1Ym4qUgDhUKcz948AgcEmQmy78=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Bzl_registry on Alwaldend</title>
+		<link>https://www-staging.alwaldend.com/tags/bzl_registry/</link>
+		<description>Recent content in Bzl_registry on Alwaldend</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://www-staging.alwaldend.com/tags/bzl_registry/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Bzl</title>
+				<link>https://www-staging.alwaldend.com/docs/tools/bzl/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://www-staging.alwaldend.com/docs/tools/bzl/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>
